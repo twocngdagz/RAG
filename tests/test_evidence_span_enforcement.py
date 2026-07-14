@@ -134,3 +134,13 @@ def test_schema_rules_state_the_required_quote_key():
 
     assert '"quote"' in rules
     assert "EVERY source_grounded field" in rules
+
+
+def test_schema_rules_demand_evidence_for_the_whole_text_not_just_part():
+    # A single quote must not license a text that asserts several things. Both
+    # audited chapters' only defect was a claim bundling facts its spans did not
+    # cover, so the rule has to say coverage, not "at least one span".
+    rules = v2.v2_schema_rules_text()
+
+    assert "EVIDENCE MUST COVER THE WHOLE TEXT" in rules
+    assert "Only assert what you can quote" in rules

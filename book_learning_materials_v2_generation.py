@@ -265,6 +265,20 @@ copied character-for-character from the source chunk named by node_id. Do not pa
 EVERY source_grounded field, not only high-risk ones, must carry at least one such evidence span.
 A source_chunk_ids citation alone is NOT evidence: a source_grounded field with no valid exact
 quote is rejected and downgraded to insufficient_source_evidence, losing its text.
+
+EVIDENCE MUST COVER THE WHOLE TEXT, not just part of it. One quote does not license a text that
+asserts several things. Before writing a source_grounded text, decide what it asserts, then supply
+an evidence span for EVERY assertion in it. If a text makes three claims, quote all three.
+Do not bundle an unquotable claim into a sentence beside a quotable one -- that is the most common
+way grounded text goes wrong. Concretely:
+- Only assert what you can quote. If the source shows the rule but never says learners confuse or
+  struggle with it, do not write that they do.
+- If the source supports part of what you want to say, narrow the text to that part rather than
+  keeping the wider statement.
+- If a sentence needs support the source does not give, delete the sentence. Do not soften it,
+  generalize it, or infer it.
+A source_grounded text asserting more than its spans support is a grounding failure even when every
+individual quote is exact, and it is reported as PARTIALLY_SUPPORTED against you.
 No citation inheritance: every source_grounded field has local source_chunk_ids.
 High-risk kinds: official_rule, task_format, pronunciation_rule, grammar_rule. They must be source_grounded with evidence_spans or insufficient_source_evidence, never pedagogical_generation.
 Damaged pronunciation notation -> insufficient_source_evidence. Task modality must be explicit in source. Zero-score/scoring/timing rules -> official_rule only when explicit; otherwise insufficient_source_evidence. Generated study-time estimates -> study_plan + pedagogical_generation.
