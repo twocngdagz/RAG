@@ -32,6 +32,28 @@ HIGH_RISK_CLAIM_KINDS = {
     "grammar_rule",
 }
 
+# Claim kinds the model is asked to invent, so they carry no evidence spans.
+#
+# misconception_statement belongs here even though it sounds factual. A
+# misconception is a false belief, named so the paired correction can refute it:
+# the source asserts the truth, never the error. Requiring it to be
+# source_grounded forced the model to attach evidence that supports the
+# *correction*, and the grounding judge then read the misconception as
+# contradicting its own evidence -- "learners need to write their answers" was
+# reported as CONTRADICTED for faithfully stating a belief the source refutes.
+# The correction stays strictly source_grounded; only the error being named is
+# generated. A source that explicitly names a misconception may still cite it as
+# source_grounded.
+PEDAGOGICAL_GENERATION_CLAIM_KINDS = {
+    "pedagogical_example",
+    "practice_question",
+    "practice_answer",
+    "learner_instruction",
+    "self_assessment",
+    "study_plan",
+    "misconception_statement",
+}
+
 GROUNDED_CONTENT_SCHEMA = {
     "text": "string or null",
     "claim_kind": "source_summary",
@@ -256,7 +278,14 @@ def v2_schema_rules_text() -> str:
 Grounded object: exactly seven keys: text, claim_kind, origin, source_chunk_ids, grounded_in_source_chunk_ids, evidence_spans, reason.
 Origins:
 - source_grounded: non-empty text, local source_chunk_ids, grounded_in_source_chunk_ids [], reason null.
-- pedagogical_generation: non-empty text, source_chunk_ids [], evidence_spans [], reason null. Use only for study_plan, pedagogical_example, practice_question, practice_answer, self_assessment, learner_instruction.
+- pedagogical_generation: non-empty text, source_chunk_ids [], evidence_spans [], reason null. Use only for study_plan, pedagogical_example, practice_question, practice_answer, self_assessment, learner_instruction, misconception_statement.
+
+common_misconceptions.misconception states the FALSE belief, so that .correction can refute it. The
+source asserts the truth, never the error, so the misconception is normally pedagogical_generation:
+a plausible wrong belief you are naming in order to correct it. Do not attach evidence to it and do
+not soften it into a true statement. Use source_grounded for it ONLY if the source explicitly names
+the misconception itself. The paired .correction is always source_grounded and must be fully covered
+by its evidence spans -- the correction is what the learner is meant to believe.
 - insufficient_source_evidence: text null, all source arrays/spans [], non-empty reason.
 Evidence spans: exact 4-80 word quotes copied from source; span node_id must be in source_chunk_ids.
 Each evidence span is an object with EXACTLY these two keys: {{"node_id": "...", "quote": "..."}}.
@@ -526,14 +555,7 @@ def normalize_grounded_content_object(
         normalized["grounded_in_source_chunk_ids"] = grounded_ids
         normalized["evidence_spans"] = []
         normalized["reason"] = None
-        if claim_kind not in {
-            "pedagogical_example",
-            "practice_question",
-            "practice_answer",
-            "learner_instruction",
-            "self_assessment",
-            "study_plan",
-        }:
+        if claim_kind not in PEDAGOGICAL_GENERATION_CLAIM_KINDS:
             normalized.update(
                 {
                     "text": None,

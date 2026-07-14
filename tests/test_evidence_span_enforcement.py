@@ -136,6 +136,64 @@ def test_schema_rules_state_the_required_quote_key():
     assert "EVERY source_grounded field" in rules
 
 
+# --------------------------------------------------------------------------- #
+# A misconception is a false belief being named, not a claim about the source.
+# --------------------------------------------------------------------------- #
+
+def test_generated_misconception_statement_is_allowed():
+    # "Learners need to write their answers" is the error the lesson exists to
+    # correct. Forcing it to be source_grounded made the judge call it
+    # CONTRADICTED for faithfully stating a belief the source refutes.
+    obj = grounded(
+        text="For this item type, learners need to write their answers.",
+        claim_kind="misconception_statement",
+        origin="pedagogical_generation",
+        source_chunk_ids=[],
+        evidence_spans=[],
+    )
+    result = normalize(obj)
+
+    assert result["origin"] == "pedagogical_generation"
+    assert result["text"] is not None
+    assert result["evidence_spans"] == []
+
+
+def test_misconception_correction_still_requires_covering_evidence():
+    # The correction is what the learner is meant to believe, so it stays strict.
+    obj = grounded(
+        text="Learners do not write anything for this item type.",
+        claim_kind="misconception_correction",
+        origin="pedagogical_generation",  # not permitted for a correction
+        source_chunk_ids=[],
+        evidence_spans=[],
+    )
+    result = normalize(obj)
+
+    assert result["origin"] == "insufficient_source_evidence"
+    assert result["text"] is None
+
+
+def test_misconception_may_still_be_source_grounded_when_the_source_names_it():
+    obj = grounded(
+        text="Candidates must answer briefly.",
+        claim_kind="misconception_statement",
+        origin="source_grounded",
+        source_chunk_ids=["c1"],
+        evidence_spans=[{"node_id": "c1", "quote": EXACT_QUOTE}],
+    )
+    result = normalize(obj)
+
+    assert result["origin"] == "source_grounded"
+    assert len(result["evidence_spans"]) == 1
+
+
+def test_schema_rules_explain_that_a_misconception_states_the_false_belief():
+    rules = v2.v2_schema_rules_text()
+
+    assert "states the FALSE belief" in rules
+    assert "misconception_statement" in rules
+
+
 def test_schema_rules_demand_evidence_for_the_whole_text_not_just_part():
     # A single quote must not license a text that asserts several things. Both
     # audited chapters' only defect was a claim bundling facts its spans did not
