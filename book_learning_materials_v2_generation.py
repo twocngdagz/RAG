@@ -259,6 +259,12 @@ Origins:
 - pedagogical_generation: non-empty text, source_chunk_ids [], evidence_spans [], reason null. Use only for study_plan, pedagogical_example, practice_question, practice_answer, self_assessment, learner_instruction.
 - insufficient_source_evidence: text null, all source arrays/spans [], non-empty reason.
 Evidence spans: exact 4-80 word quotes copied from source; span node_id must be in source_chunk_ids.
+Each evidence span is an object with EXACTLY these two keys: {{"node_id": "...", "quote": "..."}}.
+The quote key MUST be named "quote" (not "text", "span", or "excerpt"), and its value must be
+copied character-for-character from the source chunk named by node_id. Do not paraphrase it.
+EVERY source_grounded field, not only high-risk ones, must carry at least one such evidence span.
+A source_chunk_ids citation alone is NOT evidence: a source_grounded field with no valid exact
+quote is rejected and downgraded to insufficient_source_evidence, losing its text.
 No citation inheritance: every source_grounded field has local source_chunk_ids.
 High-risk kinds: official_rule, task_format, pronunciation_rule, grammar_rule. They must be source_grounded with evidence_spans or insufficient_source_evidence, never pedagogical_generation.
 Damaged pronunciation notation -> insufficient_source_evidence. Task modality must be explicit in source. Zero-score/scoring/timing rules -> official_rule only when explicit; otherwise insufficient_source_evidence. Generated study-time estimates -> study_plan + pedagogical_generation.
@@ -390,8 +396,19 @@ def normalize_evidence_spans(
     for span in spans:
         if not isinstance(span, dict):
             continue
-        node_id = span.get("node_id")
-        quote = span.get("quote", span.get("span"))
+        node_id = span.get("node_id", span.get("chunk_id", span.get("id")))
+        # Models reliably emit the span object but disagree on the quote key:
+        # gpt-5.5 uses "text", others "quote"/"span"/"excerpt". Dropping the
+        # unrecognized ones silently discarded valid, exact source quotes and
+        # nulled the claims that depended on them. Accepting the aliases is safe
+        # because the exact-substring check below still gates acceptance, so a
+        # non-quote (e.g. the claim text) can never pass.
+        quote = None
+        for key in ("quote", "span", "text", "excerpt"):
+            candidate = span.get(key)
+            if isinstance(candidate, str) and candidate.strip():
+                quote = candidate
+                break
         if not isinstance(node_id, str) or not node_id.strip():
             continue
         if not isinstance(quote, str) or not quote.strip():
@@ -465,7 +482,14 @@ def normalize_grounded_content_object(
                     "reason": "The model did not provide a valid local source citation for this field.",
                 }
             )
-        elif claim_kind in HIGH_RISK_CLAIM_KINDS and not spans:
+        elif not spans:
+            # Every source_grounded claim must carry at least one verified exact
+            # quote. Previously only HIGH_RISK_CLAIM_KINDS were checked, so any
+            # other claim could be labelled "source_grounded" on the strength of a
+            # bare chunk citation that was never matched against the source text.
+            # A citation is not evidence; without a verified span the claim is not
+            # grounded, so it is downgraded rather than carrying a false label.
+            high_risk = claim_kind in HIGH_RISK_CLAIM_KINDS
             normalized.update(
                 {
                     "text": None,
@@ -475,7 +499,11 @@ def normalize_grounded_content_object(
                     "evidence_spans": [],
                     "reason": (
                         "The model did not provide a valid exact evidence span "
-                        "for this high-risk claim."
+                        + (
+                            "for this high-risk claim."
+                            if high_risk
+                            else "for this source_grounded claim."
+                        )
                     ),
                 }
             )
