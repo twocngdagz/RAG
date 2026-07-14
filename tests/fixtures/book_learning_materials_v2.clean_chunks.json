@@ -1,0 +1,14 @@
+[
+  {
+    "node_id": "sample_chunk_001",
+    "source_pdf": "input/pdfs/sample-v2.pdf",
+    "chapter_number": 1,
+    "text": "This sample lesson states that test takers hear a short question and give a brief spoken answer. It also explains that the lesson teaches identifying question words and answering concisely."
+  },
+  {
+    "node_id": "sample_chunk_002",
+    "source_pdf": "input/pdfs/sample-v2.pdf",
+    "chapter_number": 1,
+    "text": "The source explains that learners review the main idea, compare options, and check their answer against evidence. It says practice can include a teacher-created example for discussion."
+  }
+]

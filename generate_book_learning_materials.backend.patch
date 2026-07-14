@@ -1,0 +1,246 @@
+diff --git a/generate_book_learning_materials.py b/generate_book_learning_materials.py
+index 2d065ad..e8bfee0 100644
+--- a/generate_book_learning_materials.py
++++ b/generate_book_learning_materials.py
+@@ -29,6 +29,12 @@ DEFAULT_NVIDIA_MODEL = os.getenv(
+     "NVIDIA_MODEL", "mistralai/mistral-medium-3.5-128b"
+ )
+ NVIDIA_API_KEY = os.getenv("NVIDIA_API_KEY")
++# A conforming v2 chapter package (multiple grounded objects, each with text,
++# citations, and evidence quotes) far exceeds the old 1500-token cap and was
++# silently truncating. 8000 gives comfortable headroom; override per-run with
++# --model-max-tokens.
++DEFAULT_MODEL_MAX_TOKENS = int(os.getenv("MODEL_MAX_TOKENS", "8000"))
++DEFAULT_CLAUDE_MODEL = os.getenv("CLAUDE_MODEL", "sonnet")
+ PIPELINE_VERSION = "book_learning_materials.v1"
+ TEXT_PREVIEW_MAX_CHARS = 300
+ STRUCTURE_FALLBACK_SOURCE = "lesson_header_fallback"
+@@ -124,6 +130,30 @@ def parse_args() -> argparse.Namespace:
+         default=DEFAULT_NVIDIA_MODEL,
+         help="NVIDIA/OpenAI-compatible model name.",
+     )
++    parser.add_argument(
++        "--backend",
++        choices=["nvidia", "claude-cli"],
++        default=os.getenv("MODEL_BACKEND", "nvidia"),
++        help=(
++            "Model backend for generation. 'nvidia' calls the OpenAI-compatible "
++            "endpoint (default). 'claude-cli' shells out to the local Claude Code "
++            "CLI (`claude -p`) under your subscription, with no per-token API cost."
++        ),
++    )
++    parser.add_argument(
++        "--claude-model",
++        default=DEFAULT_CLAUDE_MODEL,
++        help="Model alias passed to `claude --model` when --backend claude-cli.",
++    )
++    parser.add_argument(
++        "--model-max-tokens",
++        type=int,
++        default=DEFAULT_MODEL_MAX_TOKENS,
++        help=(
++            "Max output tokens per model call for the nvidia backend. Defaults to "
++            f"{DEFAULT_MODEL_MAX_TOKENS}. Too-low values truncate v2 chapters."
++        ),
++    )
+     parser.add_argument(
+         "--dry-run",
+         action="store_true",
+@@ -726,7 +756,7 @@ def default_complete(prompt: str, *, model: str, timeout_seconds: int) -> str:
+         api_key=NVIDIA_API_KEY,
+         is_chat_model=True,
+         context_window=262144,
+-        max_tokens=3500,
++        max_tokens=DEFAULT_MODEL_MAX_TOKENS,
+         timeout=timeout_seconds,
+     )
+     return str(Settings.llm.complete(prompt))
+@@ -737,7 +767,7 @@ def default_complete_direct_openai_like(
+     *,
+     model: str,
+     timeout_seconds: int,
+-    max_tokens: int = 1500,
++    max_tokens: int = DEFAULT_MODEL_MAX_TOKENS,
+ ) -> str:
+     from openai import OpenAI
+ 
+@@ -754,12 +784,148 @@ def default_complete_direct_openai_like(
+         temperature=0.1,
+         max_tokens=max_tokens,
+     )
+-    content = response.choices[0].message.content
++    choice = response.choices[0]
++    content = choice.message.content
+     if content is None:
+         raise ModelJSONError("Model returned an empty response.")
++    # A conforming v2 chapter package is large; if the model stopped because it
++    # hit the token ceiling the JSON is truncated and unparseable. Surface this
++    # as a retryable ModelJSONError instead of letting the truncated text fail
++    # deeper in parsing with a confusing message.
++    finish_reason = getattr(choice, "finish_reason", None)
++    if finish_reason == "length":
++        raise ModelJSONError(
++            "Model response was truncated at the token limit "
++            f"(max_tokens={max_tokens}, finish_reason='length'). "
++            "Increase --model-max-tokens."
++        )
+     return content
+ 
+ 
++def complete_via_claude_cli(
++    prompt: str,
++    *,
++    model: str,
++    timeout_seconds: int,
++) -> str:
++    """Drive the local Claude Code CLI as a single-shot completion backend.
++
++    The prompt is fed on stdin so it can be tens of KB (past shell ARG_MAX). We
++    force a non-interactive, tool-free single turn and read the model text back
++    from the JSON envelope. Runs under the user's Claude subscription with no
++    per-token API cost. Requires `claude` on PATH and a prior `claude login`.
++    """
++    # Note: do NOT pass --bare. Bare mode skips the subscription OAuth credentials
++    # from `claude login` and requires ANTHROPIC_API_KEY (metered API billing),
++    # which defeats the point of using the CLI. --max-turns 1 plus the system
++    # prompt is enough to get a single completion with no agent loop.
++    cmd = [
++        "claude",
++        "-p",
++        "--output-format",
++        "json",
++        "--model",
++        model,
++        "--max-turns",
++        "1",
++        "--append-system-prompt",
++        (
++            "You are being used as a text-completion backend. Output ONLY the "
++            "content the user prompt asks for (e.g. a single JSON object). Do not "
++            "add any preamble, explanation, commentary, or Markdown code fences, "
++            "and do not use any tools."
++        ),
++    ]
++    try:
++        completed = subprocess.run(
++            cmd,
++            input=prompt,
++            text=True,
++            capture_output=True,
++            timeout=timeout_seconds,
++        )
++    except FileNotFoundError as error:
++        raise ModelCallError(
++            "The `claude` CLI was not found on PATH. Install Claude Code and run "
++            "`claude login`, or use --backend nvidia.",
++            reason="claude_cli_not_found",
++        ) from error
++    except subprocess.TimeoutExpired as error:
++        raise ModelCallError(
++            f"claude CLI timed out after {timeout_seconds}s.",
++            reason="model_timeout",
++        ) from error
++
++    if completed.returncode != 0:
++        raise ModelCallError(
++            f"claude CLI exited {completed.returncode}: "
++            f"{(completed.stderr or '').strip()[:500]}",
++            reason="claude_cli_failed",
++        )
++
++    stdout = (completed.stdout or "").strip()
++    if not stdout:
++        raise ModelJSONError("claude CLI returned an empty response.")
++    # --output-format json wraps the run; the model text is the "result" field.
++    try:
++        envelope = json.loads(stdout)
++    except json.JSONDecodeError:
++        # If the CLI emitted plain text instead of an envelope, use it directly.
++        return stdout
++    if isinstance(envelope, dict):
++        if envelope.get("is_error"):
++            raise ModelCallError(
++                f"claude CLI reported an error: {envelope.get('result') or envelope}",
++                reason="claude_cli_error",
++            )
++        result_text = envelope.get("result")
++        if not result_text:
++            raise ModelJSONError("claude CLI response had no 'result' text.")
++        return str(result_text)
++    raise ModelJSONError("claude CLI returned an unexpected response shape.")
++
++
++def resolve_complete_fn(
++    args: argparse.Namespace,
++    injected: Callable[[str], str] | None,
++    *,
++    direct: bool,
++) -> Callable[[str], str]:
++    """Pick the model completer. Test-injected functions always win; otherwise
++    dispatch on --backend. `direct` selects the raw OpenAI-like client (used by
++    the v2 chapter path) over the LlamaIndex wrapper (v1)."""
++    if injected is not None:
++        return injected
++
++    backend = getattr(args, "backend", "nvidia")
++    timeout_seconds = int(getattr(args, "model_timeout_seconds", 180) or 180)
++
++    if backend == "claude-cli":
++        claude_model = getattr(args, "claude_model", DEFAULT_CLAUDE_MODEL)
++        return lambda model_prompt: complete_via_claude_cli(
++            model_prompt,
++            model=claude_model,
++            timeout_seconds=timeout_seconds,
++        )
++
++    max_tokens = int(
++        getattr(args, "model_max_tokens", DEFAULT_MODEL_MAX_TOKENS)
++        or DEFAULT_MODEL_MAX_TOKENS
++    )
++    if direct:
++        return lambda model_prompt: default_complete_direct_openai_like(
++            model_prompt,
++            model=args.nvidia_model,
++            timeout_seconds=timeout_seconds,
++            max_tokens=max_tokens,
++        )
++    return lambda model_prompt: default_complete(
++        model_prompt,
++        model=args.nvidia_model,
++        timeout_seconds=timeout_seconds,
++    )
++
++
+ def complete_model_with_retries(
+     *,
+     prompt: str,
+@@ -767,13 +933,7 @@ def complete_model_with_retries(
+     label: str,
+     complete_fn: Callable[[str], str] | None,
+ ) -> str:
+-    completer = complete_fn or (
+-        lambda model_prompt: default_complete(
+-            model_prompt,
+-            model=args.nvidia_model,
+-            timeout_seconds=args.model_timeout_seconds,
+-        )
+-    )
++    completer = resolve_complete_fn(args, complete_fn, direct=False)
+     max_retries = max(0, int(getattr(args, "model_max_retries", 0) or 0))
+     total_attempts = max_retries + 1
+     last_error: Exception | None = None
+@@ -2042,13 +2202,7 @@ def generate_v2_targeted_book_learning_materials(
+         for package in chapter_packages
+         if isinstance(package, dict) and package.get("chapter_number") is not None
+     }
+-    v2_complete_fn = complete_fn or (
+-        lambda model_prompt: default_complete_direct_openai_like(
+-            model_prompt,
+-            model=args.nvidia_model,
+-            timeout_seconds=args.model_timeout_seconds,
+-        )
+-    )
++    v2_complete_fn = resolve_complete_fn(args, complete_fn, direct=True)
+ 
+     for chapter in selected_chapters:
+         chapter_number = int(chapter["chapter_number"])

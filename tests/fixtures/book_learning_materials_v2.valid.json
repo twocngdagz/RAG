@@ -1,0 +1,315 @@
+{
+  "schema_version": "book_learning_materials.v2",
+  "book": {
+    "slug": "sample-v2",
+    "source_pdf": "input/pdfs/sample-v2.pdf",
+    "title": "Sample V2 Book"
+  },
+  "generation": {
+    "pipeline_version": "book_learning_materials.v2",
+    "model": "not-used-in-validator"
+  },
+  "learning_materials": {
+    "book_overview": {
+      "text": "The sample lesson focuses on short spoken answers and evidence checking.",
+      "claim_kind": "source_summary",
+      "origin": "source_grounded",
+      "source_chunk_ids": [
+        "sample_chunk_001",
+        "sample_chunk_002"
+      ],
+      "grounded_in_source_chunk_ids": [],
+      "evidence_spans": [],
+      "reason": null
+    },
+    "audience": [
+      {
+        "text": "Learners can use this sample for guided practice.",
+        "claim_kind": "learner_instruction",
+        "origin": "pedagogical_generation",
+        "source_chunk_ids": [],
+        "grounded_in_source_chunk_ids": [
+          "sample_chunk_001"
+        ],
+        "evidence_spans": [],
+        "reason": null
+      }
+    ],
+    "study_plan": [
+      {
+        "focus": {
+          "text": "Practice short-answer listening first.",
+          "claim_kind": "study_plan",
+          "origin": "pedagogical_generation",
+          "source_chunk_ids": [],
+          "grounded_in_source_chunk_ids": [
+            "sample_chunk_001"
+          ],
+          "evidence_spans": [],
+          "reason": null
+        },
+        "activities": [
+          {
+            "text": "Review the source, answer one sample question, and compare the answer with evidence.",
+            "claim_kind": "study_plan",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [
+              "sample_chunk_002"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          }
+        ]
+      }
+    ],
+    "global_key_terms": [
+      {
+        "term": "Short answer",
+        "meaning": {
+          "text": "A short answer is a brief spoken response to a question.",
+          "claim_kind": "definition",
+          "origin": "source_grounded",
+          "source_chunk_ids": [
+            "sample_chunk_001"
+          ],
+          "grounded_in_source_chunk_ids": [],
+          "evidence_spans": [],
+          "reason": null
+        }
+      }
+    ],
+    "usage_instructions": [
+      {
+        "text": "Use the generated practice example after reading the source summary.",
+        "claim_kind": "learner_instruction",
+        "origin": "pedagogical_generation",
+        "source_chunk_ids": [],
+        "grounded_in_source_chunk_ids": [],
+        "evidence_spans": [],
+        "reason": null
+      }
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "chapter_title": "Chapter 1: Short Answers",
+        "source_chunk_ids": [
+          "sample_chunk_001",
+          "sample_chunk_002"
+        ],
+        "estimated_study_time": {
+          "text": "Spend about 20 minutes on this generated practice plan.",
+          "claim_kind": "study_plan",
+          "origin": "pedagogical_generation",
+          "source_chunk_ids": [],
+          "grounded_in_source_chunk_ids": [
+            "sample_chunk_001"
+          ],
+          "evidence_spans": [],
+          "reason": null
+        },
+        "chapter_summary": {
+          "text": "The chapter teaches listening to a short question and answering concisely.",
+          "claim_kind": "source_summary",
+          "origin": "source_grounded",
+          "source_chunk_ids": [
+            "sample_chunk_001"
+          ],
+          "grounded_in_source_chunk_ids": [],
+          "evidence_spans": [],
+          "reason": null
+        },
+        "learning_objectives": [
+          {
+            "text": null,
+            "claim_kind": "learning_objective",
+            "origin": "insufficient_source_evidence",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": "The source does not state a formal learning objective."
+          }
+        ],
+        "key_terms": [
+          {
+            "term": "Question words",
+            "meaning": {
+              "text": "Question words help learners understand what answer is expected.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "sample_chunk_001"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "core_lessons": [
+          {
+            "title": "Task format",
+            "explanation": {
+              "text": "Test takers hear a short question and give a brief spoken answer.",
+              "claim_kind": "task_format",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "sample_chunk_001"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "sample_chunk_001",
+                  "quote": "test takers hear a short question and give a brief spoken answer"
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "worked_examples": [
+          {
+            "title": "Generated example",
+            "example": {
+              "text": "Question: What do people use to tell time? Answer: a clock.",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [
+                "sample_chunk_001"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "A concise answer is expected because the source says learners give a brief spoken answer.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "sample_chunk_001"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "common_misconceptions": [
+          {
+            "misconception": {
+              "text": "Learners may think they should give a long answer.",
+              "claim_kind": "misconception_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "sample_chunk_001"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "The answer should be brief and spoken.",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "sample_chunk_001"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "practice_questions": [
+          {
+            "question": {
+              "text": "What is the main action in this task?",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [
+                "sample_chunk_001"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "The learner hears a short question and gives a brief spoken answer.",
+              "claim_kind": "practice_answer",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "sample_chunk_001"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "review_checklist": [
+          {
+            "text": "I can check whether my answer matches the evidence.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [
+              "sample_chunk_002"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          }
+        ]
+      }
+    ],
+    "final_review": {
+      "summary": {
+        "text": "The review checks short-answer practice and evidence checking.",
+        "claim_kind": "source_summary",
+        "origin": "source_grounded",
+        "source_chunk_ids": [
+          "sample_chunk_001",
+          "sample_chunk_002"
+        ],
+        "grounded_in_source_chunk_ids": [],
+        "evidence_spans": [],
+        "reason": null
+      },
+      "questions": [
+        {
+          "question": {
+            "text": "What should a learner do after answering?",
+            "claim_kind": "practice_question",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [
+              "sample_chunk_002"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          "answer": {
+            "text": "The learner should check the answer against evidence.",
+            "claim_kind": "practice_answer",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "sample_chunk_002"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          }
+        }
+      ]
+    }
+  },
+  "source_chunks": [
+    {
+      "node_id": "sample_chunk_001"
+    },
+    {
+      "node_id": "sample_chunk_002"
+    }
+  ],
+  "audit": {}
+}
