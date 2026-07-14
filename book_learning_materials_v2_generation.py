@@ -777,6 +777,7 @@ def build_v2_book(
     source_chunks: list[dict[str, Any]],
     audit_status: str = "PENDING",
     generated_at: str | None = None,
+    backend: str | None = None,
 ) -> dict[str, Any]:
     return {
         "schema_version": BOOK_LEARNING_MATERIALS_V2_SCHEMA_VERSION,
@@ -789,6 +790,9 @@ def build_v2_book(
             "generated_at": generated_at or datetime.now(timezone.utc).isoformat(),
             "pipeline_version": BOOK_LEARNING_MATERIALS_V2_SCHEMA_VERSION,
             "prompt_version": BOOK_LEARNING_MATERIALS_V2_CHAPTER_PROMPT_VERSION,
+            # Which backend produced this, alongside the model it ran. Stored
+            # material is reused, so its origin has to be recorded truthfully.
+            "backend": backend,
             "model": model,
             "selection_mode": V2_SELECTION_MODE_CHAPTERS,
             "selected_chapter_numbers": selected_chapter_numbers,
