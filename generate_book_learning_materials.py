@@ -6,6 +6,7 @@ import re
 import signal
 import subprocess
 import sys
+import tempfile
 import time
 from collections import OrderedDict
 from datetime import datetime, timezone
@@ -35,6 +36,8 @@ NVIDIA_API_KEY = os.getenv("NVIDIA_API_KEY")
 # --model-max-tokens.
 DEFAULT_MODEL_MAX_TOKENS = int(os.getenv("MODEL_MAX_TOKENS", "8000"))
 DEFAULT_CLAUDE_MODEL = os.getenv("CLAUDE_MODEL", "sonnet")
+DEFAULT_CODEX_MODEL = os.getenv("CODEX_MODEL", "gpt-5.5")
+DEFAULT_CODEX_REASONING_EFFORT = os.getenv("CODEX_REASONING_EFFORT", "high")
 PIPELINE_VERSION = "book_learning_materials.v1"
 TEXT_PREVIEW_MAX_CHARS = 300
 STRUCTURE_FALLBACK_SOURCE = "lesson_header_fallback"
@@ -132,18 +135,31 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--backend",
-        choices=["nvidia", "claude-cli"],
+        choices=["nvidia", "claude-cli", "codex-cli"],
         default=os.getenv("MODEL_BACKEND", "nvidia"),
         help=(
             "Model backend for generation. 'nvidia' calls the OpenAI-compatible "
             "endpoint (default). 'claude-cli' shells out to the local Claude Code "
-            "CLI (`claude -p`) under your subscription, with no per-token API cost."
+            "CLI (`claude -p`) under your subscription. 'codex-cli' shells out to "
+            "the OpenAI Codex CLI (`codex exec`) under your ChatGPT subscription. "
+            "Both CLI backends have no per-token API cost."
         ),
     )
     parser.add_argument(
         "--claude-model",
         default=DEFAULT_CLAUDE_MODEL,
         help="Model alias passed to `claude --model` when --backend claude-cli.",
+    )
+    parser.add_argument(
+        "--codex-model",
+        default=DEFAULT_CODEX_MODEL,
+        help="Model passed to `codex exec -m` when --backend codex-cli.",
+    )
+    parser.add_argument(
+        "--codex-reasoning-effort",
+        default=DEFAULT_CODEX_REASONING_EFFORT,
+        choices=["minimal", "low", "medium", "high", "xhigh"],
+        help="Reasoning effort for codex-cli (model_reasoning_effort).",
     )
     parser.add_argument(
         "--model-max-tokens",
@@ -885,6 +901,93 @@ def complete_via_claude_cli(
     raise ModelJSONError("claude CLI returned an unexpected response shape.")
 
 
+def complete_via_codex_cli(
+    prompt: str,
+    *,
+    model: str,
+    reasoning_effort: str,
+    timeout_seconds: int,
+) -> str:
+    """Drive the OpenAI Codex CLI (`codex exec`) as a single-shot completion backend.
+
+    Runs under the user's ChatGPT subscription with no per-token API cost. The
+    completion instruction and prompt are fed on stdin (past shell ARG_MAX), the
+    sandbox is read-only so the agent cannot run tools, and the final agent
+    message is read from a temp file via `-o` (clean text, no event chatter).
+    Requires `codex` on PATH and a prior `codex login`.
+    """
+    system = (
+        "You are being used as a text-completion backend. Output ONLY the "
+        "content the user prompt asks for (e.g. a single JSON object). Do not "
+        "add any preamble, explanation, commentary, or Markdown code fences, and "
+        "do not run any tools or shell commands."
+    )
+    with tempfile.NamedTemporaryFile(
+        "r", suffix=".codex.txt", delete=False
+    ) as handle:
+        out_path = handle.name
+    # `codex exec -` reads the prompt from stdin. Model-generated shell commands
+    # are blocked by --sandbox read-only; mcp_servers={} skips MCP startup. We do
+    # NOT use --dangerously-bypass-* so the agent stays confined to a pure answer.
+    cmd = [
+        "codex",
+        "exec",
+        "-",
+        "-m",
+        model,
+        "-c",
+        f"model_reasoning_effort={reasoning_effort}",
+        "-c",
+        "mcp_servers={}",
+        "--sandbox",
+        "read-only",
+        "--skip-git-repo-check",
+        "-o",
+        out_path,
+    ]
+    try:
+        completed = subprocess.run(
+            cmd,
+            input=f"{system}\n\n{prompt}",
+            text=True,
+            capture_output=True,
+            timeout=timeout_seconds,
+        )
+    except FileNotFoundError as error:
+        with contextlib.suppress(OSError):
+            os.unlink(out_path)
+        raise ModelCallError(
+            "The `codex` CLI was not found on PATH. Install Codex and run "
+            "`codex login`, or use a different --backend.",
+            reason="codex_cli_not_found",
+        ) from error
+    except subprocess.TimeoutExpired as error:
+        with contextlib.suppress(OSError):
+            os.unlink(out_path)
+        raise ModelCallError(
+            f"codex CLI timed out after {timeout_seconds}s.",
+            reason="model_timeout",
+        ) from error
+
+    try:
+        if completed.returncode != 0:
+            raise ModelCallError(
+                f"codex CLI exited {completed.returncode}: "
+                f"{(completed.stderr or '').strip()[:500]}",
+                reason="codex_cli_failed",
+            )
+        try:
+            result_text = Path(out_path).read_text(encoding="utf-8").strip()
+        except OSError:
+            result_text = ""
+        if not result_text:
+            raise ModelJSONError("codex CLI returned an empty final message.")
+        return result_text
+    finally:
+        with contextlib.suppress(OSError):
+            os.unlink(out_path)
+
+
 def resolve_complete_fn(
     args: argparse.Namespace,
     injected: Callable[[str], str] | None,
@@ -905,6 +1008,18 @@ def resolve_complete_fn(
         return lambda model_prompt: complete_via_claude_cli(
             model_prompt,
             model=claude_model,
+            timeout_seconds=timeout_seconds,
+        )
+
+    if backend == "codex-cli":
+        codex_model = getattr(args, "codex_model", DEFAULT_CODEX_MODEL)
+        codex_effort = getattr(
+            args, "codex_reasoning_effort", DEFAULT_CODEX_REASONING_EFFORT
+        )
+        return lambda model_prompt: complete_via_codex_cli(
+            model_prompt,
+            model=codex_model,
+            reasoning_effort=codex_effort,
             timeout_seconds=timeout_seconds,
         )
 
