@@ -149,6 +149,16 @@ def resolve_audit_complete_fn(
     return complete
 
 
+def audit_judge_model_name(args: argparse.Namespace) -> str:
+    """The model actually doing the judging, per the selected backend."""
+    backend = getattr(args, "backend", "nvidia") or "nvidia"
+    if backend == "claude-cli":
+        return str(getattr(args, "claude_model", backends.DEFAULT_CLAUDE_MODEL))
+    if backend == "codex-cli":
+        return str(getattr(args, "codex_model", backends.DEFAULT_CODEX_MODEL))
+    return str(args.model)
+
+
 def resolve_audit_timeout_seconds(args: argparse.Namespace) -> int:
     """Per-call timeout, defaulting by backend family when not set explicitly."""
     explicit = getattr(args, "model_timeout_seconds", None)
@@ -386,12 +396,40 @@ def evidence_lookup(artifact: dict[str, Any]) -> dict[str, dict[str, Any]]:
     return {chunk["node_id"]: chunk for chunk in artifact["evidence_chunks"]}
 
 
+# Claims the model was *asked* to invent. Judging them for source support is a
+# category error: a self-assessment line like "I can chunk spoken questions" is
+# deliberately generated pedagogy, not an assertion about the book, and grading it
+# against the source marked five such items UNSUPPORTED and failed a chapter whose
+# every genuine source claim was sound.
+SOURCE_SUPPORT_EXEMPT_ORIGINS = {"pedagogical_generation"}
+
+
+def is_source_claim(claim: dict[str, Any]) -> bool:
+    """Whether a claim asserts something about the source, so support can be judged.
+
+    v1 claims carry no origin and are all treated as source claims, preserving the
+    old behaviour for v1 books.
+    """
+    return claim.get("grounded_origin") not in SOURCE_SUPPORT_EXEMPT_ORIGINS
+
+
+def partition_source_claims(
+    claims: list[dict[str, Any]],
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    judgeable = [claim for claim in claims if is_source_claim(claim)]
+    exempt = [claim for claim in claims if not is_source_claim(claim)]
+    return judgeable, exempt
+
+
 def select_claims(
     claims: list[dict[str, Any]], requested_claim_ids: list[str] | None
 ) -> tuple[list[dict[str, Any]], str, list[str]]:
     requested = requested_claim_ids or []
     if not requested:
-        return list(claims), "all", []
+        # Explicitly requested claim IDs are always honoured; a whole-book sweep
+        # judges only claims that actually assert something about the source.
+        judgeable, _exempt = partition_source_claims(claims)
+        return judgeable, "all", []
 
     normalized: list[str] = []
     for claim_id in requested:
@@ -1116,7 +1154,10 @@ def build_final_output(
             "selected_claim_ids": requested_claim_ids if selection_mode == "claim_ids" else [],
         },
         "generation": {
-            "model": args.model,
+            # The judge's identity, not --model, which is only the nvidia model
+            # name. A Codex-judged audit used to report itself as Mistral.
+            "backend": getattr(args, "backend", "nvidia"),
+            "model": audit_judge_model_name(args),
             "prompt_version": CLAIM_SUPPORT_PROMPT_VERSION,
             "batch_size": args.batch_size,
             "planned_batch_count": len(batches),
@@ -1329,7 +1370,7 @@ def run_audit(
             checkpoint=checkpoint,
             input_file=input_path,
             input_sha256=input_hash,
-            model=args.model,
+            model=audit_judge_model_name(args),
             batch_size=args.batch_size,
             selected_claim_ids=selected_claim_ids,
         )
@@ -1349,7 +1390,7 @@ def run_audit(
             status="IN_PROGRESS",
             input_file=input_path,
             input_sha256=input_hash,
-            model=args.model,
+            model=audit_judge_model_name(args),
             batch_size=args.batch_size,
             selected_claim_ids=selected_claim_ids,
             selected_claim_count=len(selected_claims),
@@ -1398,7 +1439,7 @@ def run_audit(
                 status="IN_PROGRESS",
                 input_file=input_path,
                 input_sha256=input_hash,
-                model=args.model,
+                model=audit_judge_model_name(args),
                 batch_size=args.batch_size,
                 selected_claim_ids=selected_claim_ids,
                 selected_claim_count=len(selected_claims),
@@ -1431,7 +1472,7 @@ def run_audit(
             status="IN_PROGRESS",
             input_file=input_path,
             input_sha256=input_hash,
-            model=args.model,
+            model=audit_judge_model_name(args),
             batch_size=args.batch_size,
             selected_claim_ids=selected_claim_ids,
             selected_claim_count=len(selected_claims),
@@ -1453,7 +1494,7 @@ def run_audit(
         status="COMPLETE",
         input_file=input_path,
         input_sha256=input_hash,
-        model=args.model,
+        model=audit_judge_model_name(args),
         batch_size=args.batch_size,
         selected_claim_ids=selected_claim_ids,
         selected_claim_count=len(selected_claims),
@@ -1483,6 +1524,14 @@ def run_audit(
 
     print("Book claim support audit completed.")
     print(f"Input claims: {len(artifact['claims'])}")
+    _judgeable, exempt_claims = partition_source_claims(artifact["claims"])
+    if exempt_claims and selection_mode == "all":
+        # Named, not silently dropped: a reader must be able to see that these were
+        # excluded by design rather than assume the audit covered everything.
+        print(
+            f"Generated claims not judged for source support: {len(exempt_claims)} "
+            "(origin=pedagogical_generation)"
+        )
     print(f"Selected claims: {len(selected_claims)}")
     print(f"Judged claims: {len(final['results'])}")
     print(f"Audit verdict: {final['audit_verdict']}")

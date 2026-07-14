@@ -192,6 +192,9 @@ def test_extracts_supported_final_book_shape_and_known_claim_types(tmp_path):
         "citation_origin": "none",
         "source_chunk_ids": [],
         "evidence_status": "NO_CITATION",
+        # v2 grounding metadata; None for a v1 plain-string field.
+        "grounded_origin": None,
+        "claim_kind": None,
     }
     assert by_id["chapter_01.key_terms.0.meaning"]["context"] == {
         "term": "Answer short question"

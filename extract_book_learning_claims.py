@@ -184,6 +184,36 @@ def as_nonempty_string(value: Any) -> str | None:
     return None
 
 
+GROUNDED_ORIGINS = {
+    "source_grounded",
+    "pedagogical_generation",
+    "insufficient_source_evidence",
+}
+
+
+def unwrap_grounded(value: Any) -> tuple[str | None, str | None, str | None, Any]:
+    """Read a field that may be a v1 plain string or a v2 grounded content object.
+
+    v2 stores {text, claim_kind, origin, source_chunk_ids, evidence_spans, reason}
+    where v1 stored a bare string. The v1 string reader returns None for a dict, so
+    every v2 grounded object was silently dropped and most of a v2 chapter -- key
+    terms, core lessons, worked examples, misconceptions -- was never extracted and
+    therefore never semantically audited.
+
+    Returns (text, origin, claim_kind, local_source_ids). origin/claim_kind are None
+    for v1 strings, and local_source_ids is None when the caller should fall back to
+    the enclosing container's citation.
+    """
+    if isinstance(value, dict) and value.get("origin") in GROUNDED_ORIGINS:
+        return (
+            as_nonempty_string(value.get("text")),
+            value.get("origin"),
+            value.get("claim_kind"),
+            value.get("source_chunk_ids"),
+        )
+    return as_nonempty_string(value), None, None, None
+
+
 def normalize_source_ids(source_ids: Any, *, claim_id: str) -> list[str]:
     if source_ids is None:
         return []
@@ -292,6 +322,8 @@ def extract_claims(book: dict[str, Any]) -> list[dict[str, Any]]:
         context: dict[str, Any] | None = None,
         citation_origin: str,
         source_ids: Any,
+        grounded_origin: str | None = None,
+        claim_kind: str | None = None,
     ) -> None:
         if claim_text is None or not isinstance(claim_text, str) or not claim_text.strip():
             return
@@ -322,6 +354,11 @@ def extract_claims(book: dict[str, Any]) -> list[dict[str, Any]]:
                 "citation_origin": citation_origin,
                 "source_chunk_ids": normalized_ids,
                 "evidence_status": "RESOLVED" if normalized_ids else "NO_CITATION",
+                # v2 grounding metadata. Without these the judge cannot tell a
+                # claim about the source from deliberately generated pedagogy, and
+                # marks invented practice content "unsupported by the source".
+                "grounded_origin": grounded_origin,
+                "claim_kind": claim_kind,
             }
         )
 
@@ -499,7 +536,11 @@ def extract_chapter_claims(
     )
     inherited_ids = inherited_source_ids(chapter)
 
+    summary_text, summary_origin, summary_kind, summary_ids = unwrap_grounded(
+        chapter.get("chapter_summary")
+    )
     origin, ids = citation_origin_for_ids(
+        local_ids=summary_ids,
         inherited_ids=inherited_ids,
         allow_inherited=True,
     )
@@ -510,17 +551,20 @@ def extract_chapter_claims(
         chapter_number=chapter_number,
         chapter_title=chapter_title,
         claim_type="chapter_summary",
-        claim_text=as_nonempty_string(chapter.get("chapter_summary")),
+        claim_text=summary_text,
         citation_origin=origin,
         source_ids=ids,
+        grounded_origin=summary_origin,
+        claim_kind=summary_kind,
     )
 
     for index, item in enumerate(chapter.get("learning_objectives") or []):
         text, container = list_item_text_and_container(
             item, ("text", "objective", "description")
         )
+        _t, g_origin, g_kind, g_ids = unwrap_grounded(item)
         origin, ids = citation_origin_for_ids(
-            local_ids=local_source_ids(container),
+            local_ids=g_ids if g_ids is not None else local_source_ids(container),
             inherited_ids=inherited_ids,
             allow_inherited=True,
         )
@@ -536,12 +580,17 @@ def extract_chapter_claims(
             claim_text=text,
             citation_origin=origin,
             source_ids=ids,
+            grounded_origin=g_origin,
+            claim_kind=g_kind,
         )
 
     for index, item in enumerate(chapter.get("key_terms") or []):
         if not isinstance(item, dict):
             continue
-        origin, ids = citation_origin_for_ids(local_ids=local_source_ids(item))
+        m_text, m_origin, m_kind, m_ids = unwrap_grounded(item.get("meaning"))
+        origin, ids = citation_origin_for_ids(
+            local_ids=m_ids if m_ids is not None else local_source_ids(item)
+        )
         add_claim(
             claim_id=chapter_claim_id(chapter, chapter_index, f"key_terms.{index}.meaning"),
             json_path=path_for_chapter(
@@ -551,16 +600,21 @@ def extract_chapter_claims(
             chapter_number=chapter_number,
             chapter_title=chapter_title,
             claim_type="key_term_definition",
-            claim_text=as_nonempty_string(item.get("meaning")),
+            claim_text=m_text,
             context={"term": item.get("term")} if item.get("term") is not None else {},
             citation_origin=origin,
             source_ids=ids,
+            grounded_origin=m_origin,
+            claim_kind=m_kind,
         )
 
     for index, item in enumerate(chapter.get("core_lessons") or []):
         if not isinstance(item, dict):
             continue
-        origin, ids = citation_origin_for_ids(local_ids=local_source_ids(item))
+        e_text, e_origin, e_kind, e_ids = unwrap_grounded(item.get("explanation"))
+        origin, ids = citation_origin_for_ids(
+            local_ids=e_ids if e_ids is not None else local_source_ids(item)
+        )
         add_claim(
             claim_id=chapter_claim_id(
                 chapter, chapter_index, f"core_lessons.{index}.explanation"
@@ -572,21 +626,26 @@ def extract_chapter_claims(
             chapter_number=chapter_number,
             chapter_title=chapter_title,
             claim_type="core_lesson_explanation",
-            claim_text=as_nonempty_string(item.get("explanation")),
+            claim_text=e_text,
             context={"title": item.get("title")} if item.get("title") is not None else {},
             citation_origin=origin,
             source_ids=ids,
+            grounded_origin=e_origin,
+            claim_kind=e_kind,
         )
 
     for index, item in enumerate(chapter.get("worked_examples") or []):
         if not isinstance(item, dict):
             continue
-        origin, ids = citation_origin_for_ids(local_ids=local_source_ids(item))
         context = {"title": item.get("title")} if item.get("title") is not None else {}
         for field, claim_type in [
             ("example", "worked_example_content"),
             ("explanation", "worked_example_explanation"),
         ]:
+            f_text, f_origin, f_kind, f_ids = unwrap_grounded(item.get(field))
+            origin, ids = citation_origin_for_ids(
+                local_ids=f_ids if f_ids is not None else local_source_ids(item)
+            )
             add_claim(
                 claim_id=chapter_claim_id(
                     chapter, chapter_index, f"worked_examples.{index}.{field}"
@@ -598,20 +657,25 @@ def extract_chapter_claims(
                 chapter_number=chapter_number,
                 chapter_title=chapter_title,
                 claim_type=claim_type,
-                claim_text=as_nonempty_string(item.get(field)),
+                claim_text=f_text,
                 context=context,
                 citation_origin=origin,
                 source_ids=ids,
+                grounded_origin=f_origin,
+                claim_kind=f_kind,
             )
 
     for index, item in enumerate(chapter.get("common_misconceptions") or []):
         if not isinstance(item, dict):
             continue
-        origin, ids = citation_origin_for_ids(local_ids=local_source_ids(item))
         for field, claim_type in [
             ("misconception", "misconception_statement"),
             ("correction", "misconception_correction"),
         ]:
+            f_text, f_origin, f_kind, f_ids = unwrap_grounded(item.get(field))
+            origin, ids = citation_origin_for_ids(
+                local_ids=f_ids if f_ids is not None else local_source_ids(item)
+            )
             add_claim(
                 claim_id=chapter_claim_id(
                     chapter, chapter_index, f"common_misconceptions.{index}.{field}"
@@ -625,15 +689,20 @@ def extract_chapter_claims(
                 chapter_number=chapter_number,
                 chapter_title=chapter_title,
                 claim_type=claim_type,
-                claim_text=as_nonempty_string(item.get(field)),
+                claim_text=f_text,
                 citation_origin=origin,
                 source_ids=ids,
+                grounded_origin=f_origin,
+                claim_kind=f_kind,
             )
 
     for index, item in enumerate(chapter.get("practice_questions") or []):
         if not isinstance(item, dict):
             continue
-        origin, ids = citation_origin_for_ids(local_ids=local_source_ids(item))
+        a_text, a_origin, a_kind, a_ids = unwrap_grounded(item.get("answer"))
+        origin, ids = citation_origin_for_ids(
+            local_ids=a_ids if a_ids is not None else local_source_ids(item)
+        )
         add_claim(
             claim_id=chapter_claim_id(
                 chapter, chapter_index, f"practice_questions.{index}.answer"
@@ -645,7 +714,7 @@ def extract_chapter_claims(
             chapter_number=chapter_number,
             chapter_title=chapter_title,
             claim_type="practice_answer",
-            claim_text=as_nonempty_string(item.get("answer")),
+            claim_text=a_text,
             context={
                 "question": item.get("question")
             }
@@ -657,8 +726,9 @@ def extract_chapter_claims(
 
     for index, item in enumerate(chapter.get("review_checklist") or []):
         text, container = list_item_text_and_container(item, ("text", "item"))
+        _t, c_origin, c_kind, c_ids = unwrap_grounded(item)
         origin, ids = citation_origin_for_ids(
-            local_ids=local_source_ids(container),
+            local_ids=c_ids if c_ids is not None else local_source_ids(container),
             inherited_ids=inherited_ids,
             allow_inherited=True,
         )

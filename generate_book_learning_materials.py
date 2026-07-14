@@ -1000,9 +1000,15 @@ def complete_via_codex_cli(
         "r", suffix=".codex.txt", delete=False
     ) as handle:
         out_path = handle.name
-    # `codex exec -` reads the prompt from stdin. Model-generated shell commands
-    # are blocked by --sandbox read-only; mcp_servers={} skips MCP startup. We do
-    # NOT use --dangerously-bypass-* so the agent stays confined to a pure answer.
+    # `codex exec -` reads the prompt from stdin. Model-generated shell commands are
+    # blocked by --sandbox read-only, and we do NOT pass --dangerously-bypass-*, so
+    # the agent stays confined to producing an answer.
+    #
+    # --ignore-user-config skips ~/.codex/config.toml. Without it every call boots
+    # the user's whole MCP fleet -- including servers that hit the network -- for a
+    # completion that uses no tools at all: measured at 8.3s of local CPU per call
+    # versus 0.8s with it, on top of failed remote-MCP auth attempts. Auth still
+    # resolves from CODEX_HOME, so this keeps the ChatGPT subscription.
     cmd = [
         "codex",
         "exec",
@@ -1011,8 +1017,7 @@ def complete_via_codex_cli(
         model,
         "-c",
         f"model_reasoning_effort={reasoning_effort}",
-        "-c",
-        "mcp_servers={}",
+        "--ignore-user-config",
         "--sandbox",
         "read-only",
         "--skip-git-repo-check",
