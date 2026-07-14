@@ -17,6 +17,10 @@ from dotenv import load_dotenv
 from llama_index.core import Settings
 from llama_index.llms.openai_like import OpenAILike
 
+# The subscription-backed CLI backends live in the generator. Reused rather than
+# copied: this repo already carries the same helper 7-15 times over.
+import generate_book_learning_materials as backends
+
 
 load_dotenv()
 
@@ -103,6 +107,59 @@ class ModelJSONError(BookClaimSupportAuditError):
     pass
 
 
+def resolve_audit_complete_fn(
+    args: argparse.Namespace,
+    injected: Callable[[str], str] | None = None,
+) -> Callable[[str], str] | None:
+    """Pick the judge's completer: injected > --backend.
+
+    Returning None keeps the caller's existing NVIDIA default path. The CLI
+    backends are reused from the generator rather than copied, and their errors
+    are translated into this module's exception types so the retry/repair
+    handling around them is unchanged.
+    """
+    if injected is not None:
+        return injected
+
+    backend = getattr(args, "backend", "nvidia") or "nvidia"
+    if backend not in backends.CLI_BACKENDS:
+        return None
+
+    timeout_seconds = resolve_audit_timeout_seconds(args)
+
+    def complete(prompt: str) -> str:
+        try:
+            if backend == "claude-cli":
+                return backends.complete_via_claude_cli(
+                    prompt,
+                    model=args.claude_model,
+                    timeout_seconds=timeout_seconds,
+                )
+            return backends.complete_via_codex_cli(
+                prompt,
+                model=args.codex_model,
+                reasoning_effort=args.codex_reasoning_effort,
+                timeout_seconds=timeout_seconds,
+            )
+        except backends.ModelJSONError as error:
+            raise ModelJSONError(str(error)) from error
+        except backends.ModelCallError as error:
+            raise ModelCallError(str(error)) from error
+
+    return complete
+
+
+def resolve_audit_timeout_seconds(args: argparse.Namespace) -> int:
+    """Per-call timeout, defaulting by backend family when not set explicitly."""
+    explicit = getattr(args, "model_timeout_seconds", None)
+    if explicit is not None:
+        return int(explicit)
+    backend = getattr(args, "backend", "nvidia") or "nvidia"
+    if backend in backends.CLI_BACKENDS:
+        return backends.DEFAULT_CLI_TIMEOUT_SECONDS
+    return backends.DEFAULT_API_TIMEOUT_SECONDS
+
+
 @dataclass(frozen=True)
 class PlannedBatch:
     batch_id: str
@@ -126,8 +183,36 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--report")
     parser.add_argument("--checkpoint")
     parser.add_argument("--model", default=DEFAULT_MODEL)
+    parser.add_argument(
+        "--backend",
+        choices=["nvidia", "claude-cli", "codex-cli"],
+        default=os.getenv("MODEL_BACKEND", "nvidia"),
+        help=(
+            "Backend for the grounding judge. 'nvidia' calls the metered "
+            "OpenAI-compatible endpoint with --model (default). 'claude-cli' and "
+            "'codex-cli' drive the local agent CLIs under your subscription with "
+            "no per-token cost. The judge decides whether generated claims are "
+            "supported, so it should not be the weakest available model."
+        ),
+    )
+    parser.add_argument(
+        "--claude-model",
+        default=backends.DEFAULT_CLAUDE_MODEL,
+        help="Model alias for --backend claude-cli.",
+    )
+    parser.add_argument(
+        "--codex-model",
+        default=backends.DEFAULT_CODEX_MODEL,
+        help="Model for --backend codex-cli.",
+    )
+    parser.add_argument(
+        "--codex-reasoning-effort",
+        default=backends.DEFAULT_CODEX_REASONING_EFFORT,
+        choices=["minimal", "low", "medium", "high", "xhigh"],
+        help="Reasoning effort for --backend codex-cli.",
+    )
     parser.add_argument("--batch-size", type=int, default=6)
-    parser.add_argument("--model-timeout-seconds", type=int, default=180)
+    parser.add_argument("--model-timeout-seconds", type=int, default=None)
     parser.add_argument("--model-max-retries", type=int, default=2)
     parser.add_argument("--model-retry-backoff-seconds", type=float, default=5)
     parser.add_argument("--claim-id", action="append", default=[])
@@ -1191,6 +1276,12 @@ def run_audit(
     report_path = Path(args.report) if args.report else None
     checkpoint_path = Path(args.checkpoint) if args.checkpoint else default_checkpoint_path(output_path)
     raw_dir = raw_dir_for_output(output_path)
+
+    # Materialize the backend-aware timeout and judge backend before validation,
+    # so every downstream reader sees what will actually be enforced.
+    args.model_timeout_seconds = resolve_audit_timeout_seconds(args)
+    complete_fn = resolve_audit_complete_fn(args, complete_fn)
+    repair_complete_fn = resolve_audit_complete_fn(args, repair_complete_fn)
 
     if args.batch_size < 1:
         raise BookClaimSupportAuditError("--batch-size must be at least 1.")
