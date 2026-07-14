@@ -722,6 +722,8 @@ def extract_chapter_claims(
             else {},
             citation_origin=origin,
             source_ids=ids,
+            grounded_origin=a_origin,
+            claim_kind=a_kind,
         )
 
     for index, item in enumerate(chapter.get("review_checklist") or []):
@@ -744,6 +746,8 @@ def extract_chapter_claims(
             claim_text=text,
             citation_origin=origin,
             source_ids=ids,
+            grounded_origin=c_origin,
+            claim_kind=c_kind,
         )
 
     if "estimated_study_time_minutes" in chapter:

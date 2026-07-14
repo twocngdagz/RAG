@@ -124,6 +124,98 @@ def test_partition_reports_what_was_exempted():
 
 
 # --------------------------------------------------------------------------- #
+# Every extracted v2 claim must carry its origin. Threading it through most call
+# sites but not all is silent: the missed fields simply get judged as source
+# claims again, which is the bug this whole file exists to prevent.
+# --------------------------------------------------------------------------- #
+
+def v2_chapter():
+    return {
+        "chapter_number": 1,
+        "chapter_title": "LESSON 1",
+        "source_chunk_ids": ["c1"],
+        "chapter_summary": grounded("Summary.", "source_grounded", "source_summary", ["c1"]),
+        "learning_objectives": [
+            grounded("Objective.", "source_grounded", "learning_objective", ["c1"])
+        ],
+        "key_terms": [
+            {"term": "T", "meaning": grounded("Meaning.", "source_grounded", "definition", ["c1"])}
+        ],
+        "core_lessons": [
+            {
+                "title": "L",
+                "explanation": grounded("Explain.", "source_grounded", "task_format", ["c1"]),
+            }
+        ],
+        "worked_examples": [
+            {
+                "title": "W",
+                "example": grounded("Example.", "pedagogical_generation", "pedagogical_example"),
+                "explanation": grounded("Why.", "source_grounded", "strategy", ["c1"]),
+            }
+        ],
+        "common_misconceptions": [
+            {
+                "misconception": grounded("Myth.", "source_grounded", "misconception_statement", ["c1"]),
+                "correction": grounded("Fix.", "source_grounded", "misconception_correction", ["c1"]),
+            }
+        ],
+        "practice_questions": [
+            {
+                "question": grounded("Q?", "pedagogical_generation", "practice_question"),
+                "answer": grounded("A.", "pedagogical_generation", "practice_answer"),
+            }
+        ],
+        "review_checklist": [
+            grounded("I can do it.", "pedagogical_generation", "self_assessment")
+        ],
+    }
+
+
+def v2_book():
+    return {
+        "book": {"slug": "pte", "source_pdf": "input/pdfs/pte.pdf"},
+        "generation": {"pipeline_version": "book_learning_materials.v2"},
+        "learning_materials": {"chapters": [v2_chapter()]},
+    }
+
+
+def test_every_v2_claim_carries_its_origin():
+    claims = extract.extract_claims(v2_book())
+
+    missing = [c["claim_id"] for c in claims if c.get("grounded_origin") is None]
+    assert not missing, f"claims extracted without an origin (they will be judged as source claims): {missing}"
+
+
+def test_generated_fields_are_exempted_end_to_end():
+    claims = extract.extract_claims(v2_book())
+    _judgeable, exempt = audit.partition_source_claims(claims)
+
+    exempt_types = sorted(c["claim_type"] for c in exempt)
+    # The invented ones: a practice answer, a worked example, a self-assessment.
+    assert "practice_answer" in exempt_types
+    assert "review_checklist_item" in exempt_types
+    assert "worked_example_content" in exempt_types
+
+
+def test_source_grounded_fields_are_still_judged_end_to_end():
+    claims = extract.extract_claims(v2_book())
+    judgeable, _exempt = audit.partition_source_claims(claims)
+
+    judged_types = sorted(c["claim_type"] for c in judgeable)
+    for expected in (
+        "chapter_summary",
+        "core_lesson_explanation",
+        "key_term_definition",
+        "learning_objective",
+        "misconception_correction",
+        "misconception_statement",
+        "worked_example_explanation",
+    ):
+        assert expected in judged_types
+
+
+# --------------------------------------------------------------------------- #
 # The audit must report the judge that actually ran
 # --------------------------------------------------------------------------- #
 
