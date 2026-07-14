@@ -38,6 +38,14 @@ DEFAULT_MODEL_MAX_TOKENS = int(os.getenv("MODEL_MAX_TOKENS", "8000"))
 DEFAULT_CLAUDE_MODEL = os.getenv("CLAUDE_MODEL", "sonnet")
 DEFAULT_CODEX_MODEL = os.getenv("CODEX_MODEL", "gpt-5.5")
 DEFAULT_CODEX_REASONING_EFFORT = os.getenv("CODEX_REASONING_EFFORT", "high")
+# Backends that shell out to a local agent CLI rather than calling an HTTP API.
+CLI_BACKENDS = {"claude-cli", "codex-cli"}
+# A hosted API answers a chapter in well under a minute, but a CLI backend boots
+# a whole agent and reasons locally: measured full-chapter calls ran 190-350s and
+# one exceeded 600s. The old flat 180s default killed every real CLI chapter call
+# mid-flight and then burned the retries, so each backend family gets its own.
+DEFAULT_API_TIMEOUT_SECONDS = 180
+DEFAULT_CLI_TIMEOUT_SECONDS = 900
 PIPELINE_VERSION = "book_learning_materials.v1"
 TEXT_PREVIEW_MAX_CHARS = 300
 STRUCTURE_FALLBACK_SOURCE = "lesson_header_fallback"
@@ -203,8 +211,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--model-timeout-seconds",
         type=int,
-        default=180,
-        help="Timeout in seconds for each model call. Defaults to 180.",
+        default=None,
+        help=(
+            "Timeout in seconds for each model call. When unset, defaults by "
+            f"backend: {DEFAULT_API_TIMEOUT_SECONDS}s for nvidia, "
+            f"{DEFAULT_CLI_TIMEOUT_SECONDS}s for the claude-cli/codex-cli "
+            "backends, whose full-chapter calls routinely run several minutes."
+        ),
     )
     parser.add_argument(
         "--model-max-retries",
@@ -818,6 +831,70 @@ def default_complete_direct_openai_like(
     return content
 
 
+def terminate_process_group(process: subprocess.Popen) -> None:
+    """Kill a CLI backend's whole process tree, not just the process we spawned.
+
+    The agent CLIs are thin wrappers that fork a long-lived node child. Signalling
+    only the direct child (what subprocess.run's timeout does) leaves that
+    grandchild orphaned onto init, where it keeps running and consuming the
+    subscription -- one such orphan was still alive 17 minutes after its parent
+    call timed out. The child is started in its own session, so its pid doubles as
+    a process-group id we can signal as a unit.
+    """
+    try:
+        pgid = os.getpgid(process.pid)
+    except (OSError, ProcessLookupError):
+        pgid = None
+
+    if pgid is not None:
+        with contextlib.suppress(OSError, ProcessLookupError):
+            os.killpg(pgid, signal.SIGTERM)
+        try:
+            process.wait(timeout=5)
+            return
+        except subprocess.TimeoutExpired:
+            with contextlib.suppress(OSError, ProcessLookupError):
+                os.killpg(pgid, signal.SIGKILL)
+
+    with contextlib.suppress(OSError, subprocess.TimeoutExpired):
+        process.kill()
+        process.wait(timeout=5)
+
+
+def run_cli_capture(
+    cmd: list[str],
+    *,
+    input_text: str,
+    timeout_seconds: int,
+) -> tuple[int, str, str]:
+    """Run a CLI backend to completion, reaping the whole tree if it times out.
+
+    Returns (returncode, stdout, stderr). Raises subprocess.TimeoutExpired (after
+    killing the process group) and FileNotFoundError, so callers map them to the
+    same ModelCallError reasons as before.
+    """
+    process = subprocess.Popen(
+        cmd,
+        stdin=subprocess.PIPE,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True,
+        start_new_session=True,
+    )
+    try:
+        stdout, stderr = process.communicate(
+            input=input_text, timeout=timeout_seconds
+        )
+    except subprocess.TimeoutExpired:
+        terminate_process_group(process)
+        raise
+    except BaseException:
+        # Ctrl-C or an unexpected failure must not leak the agent either.
+        terminate_process_group(process)
+        raise
+    return process.returncode, stdout or "", stderr or ""
+
+
 def complete_via_claude_cli(
     prompt: str,
     *,
@@ -853,12 +930,10 @@ def complete_via_claude_cli(
         ),
     ]
     try:
-        completed = subprocess.run(
+        returncode, raw_stdout, raw_stderr = run_cli_capture(
             cmd,
-            input=prompt,
-            text=True,
-            capture_output=True,
-            timeout=timeout_seconds,
+            input_text=prompt,
+            timeout_seconds=timeout_seconds,
         )
     except FileNotFoundError as error:
         raise ModelCallError(
@@ -872,14 +947,13 @@ def complete_via_claude_cli(
             reason="model_timeout",
         ) from error
 
-    if completed.returncode != 0:
+    if returncode != 0:
         raise ModelCallError(
-            f"claude CLI exited {completed.returncode}: "
-            f"{(completed.stderr or '').strip()[:500]}",
+            f"claude CLI exited {returncode}: {(raw_stderr or '').strip()[:500]}",
             reason="claude_cli_failed",
         )
 
-    stdout = (completed.stdout or "").strip()
+    stdout = (raw_stdout or "").strip()
     if not stdout:
         raise ModelJSONError("claude CLI returned an empty response.")
     # --output-format json wraps the run; the model text is the "result" field.
@@ -946,12 +1020,10 @@ def complete_via_codex_cli(
         out_path,
     ]
     try:
-        completed = subprocess.run(
+        returncode, _stdout, raw_stderr = run_cli_capture(
             cmd,
-            input=f"{system}\n\n{prompt}",
-            text=True,
-            capture_output=True,
-            timeout=timeout_seconds,
+            input_text=f"{system}\n\n{prompt}",
+            timeout_seconds=timeout_seconds,
         )
     except FileNotFoundError as error:
         with contextlib.suppress(OSError):
@@ -970,10 +1042,9 @@ def complete_via_codex_cli(
         ) from error
 
     try:
-        if completed.returncode != 0:
+        if returncode != 0:
             raise ModelCallError(
-                f"codex CLI exited {completed.returncode}: "
-                f"{(completed.stderr or '').strip()[:500]}",
+                f"codex CLI exited {returncode}: {(raw_stderr or '').strip()[:500]}",
                 reason="codex_cli_failed",
             )
         try:
@@ -988,6 +1059,36 @@ def complete_via_codex_cli(
             os.unlink(out_path)
 
 
+def active_backend(args: argparse.Namespace) -> str:
+    return getattr(args, "backend", "nvidia") or "nvidia"
+
+
+def active_model_name(args: argparse.Namespace) -> str:
+    """The model actually used for generation, per the selected backend.
+
+    Provenance previously always recorded --nvidia-model, so a chapter generated
+    by Claude or Codex was stamped with the Mistral model name. Generated
+    material is stored and reused, so a wrong model stamp is a durable lie about
+    where the content came from.
+    """
+    backend = active_backend(args)
+    if backend == "claude-cli":
+        return str(getattr(args, "claude_model", DEFAULT_CLAUDE_MODEL))
+    if backend == "codex-cli":
+        return str(getattr(args, "codex_model", DEFAULT_CODEX_MODEL))
+    return str(args.nvidia_model)
+
+
+def resolve_model_timeout_seconds(args: argparse.Namespace) -> int:
+    """Per-call timeout, defaulting by backend family when not set explicitly."""
+    explicit = getattr(args, "model_timeout_seconds", None)
+    if explicit is not None:
+        return int(explicit)
+    if active_backend(args) in CLI_BACKENDS:
+        return DEFAULT_CLI_TIMEOUT_SECONDS
+    return DEFAULT_API_TIMEOUT_SECONDS
+
+
 def resolve_complete_fn(
     args: argparse.Namespace,
     injected: Callable[[str], str] | None,
@@ -1000,8 +1101,8 @@ def resolve_complete_fn(
     if injected is not None:
         return injected
 
-    backend = getattr(args, "backend", "nvidia")
-    timeout_seconds = int(getattr(args, "model_timeout_seconds", 180) or 180)
+    backend = active_backend(args)
+    timeout_seconds = resolve_model_timeout_seconds(args)
 
     if backend == "claude-cli":
         claude_model = getattr(args, "claude_model", DEFAULT_CLAUDE_MODEL)
@@ -1555,7 +1656,8 @@ def build_generation_metadata(
 ) -> dict[str, Any]:
     return {
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "model": args.nvidia_model,
+        "backend": active_backend(args),
+        "model": active_model_name(args),
         "pipeline_version": PIPELINE_VERSION,
         "clean_index_id": plan["clean_index_id"],
         "clean_storage_dir": str(plan["clean_storage_dir"]),
@@ -2095,7 +2197,7 @@ def validate_v2_selected_chapter_candidate(
         slug=plan["slug"],
         title=book_title,
         source_pdf=str(plan["pdf_path"]),
-        model=args.nvidia_model,
+        model=active_model_name(args),
         selected_chapter_numbers=selected_chapter_numbers,
         clean_chunks_path=clean_chunks_path,
         chapter_packages=[candidate],
@@ -2277,7 +2379,7 @@ def generate_v2_targeted_book_learning_materials(
             source_pdf=str(plan["pdf_path"]),
             clean_chunks_path=clean_chunks_path,
             clean_chunks_hash=clean_hash,
-            model=args.nvidia_model,
+            model=active_model_name(args),
             selected_chapter_numbers=selected_numbers,
         )
         chapter_packages = list(checkpoint.get("chapter_packages") or [])
@@ -2303,7 +2405,7 @@ def generate_v2_targeted_book_learning_materials(
             source_pdf=str(plan["pdf_path"]),
             clean_chunks_path=clean_chunks_path,
             clean_chunks_hash=clean_hash,
-            model=args.nvidia_model,
+            model=active_model_name(args),
             selected_chapter_numbers=selected_numbers,
             chapter_packages=chapter_packages,
             failed_chapters=failed_chapters,
@@ -2333,7 +2435,7 @@ def generate_v2_targeted_book_learning_materials(
             chapter=chapter,
             context_json=context_json,
             allowed_ids=allowed_ids,
-            model=args.nvidia_model,
+            model=active_model_name(args),
         )
         raw_response: str | None = None
         parsed_candidate: dict[str, Any] | None = None
@@ -2401,7 +2503,7 @@ def generate_v2_targeted_book_learning_materials(
                         raw_response=raw_response,
                         invalid_candidate=parsed_candidate,
                         contract_errors=contract_errors,
-                        model=args.nvidia_model,
+                        model=active_model_name(args),
                     ),
                     args=args,
                     label=f"v2 chapter {chapter_number} repair",
@@ -2486,7 +2588,7 @@ def generate_v2_targeted_book_learning_materials(
         slug=plan["slug"],
         title=book_title,
         source_pdf=str(plan["pdf_path"]),
-        model=args.nvidia_model,
+        model=active_model_name(args),
         selected_chapter_numbers=selected_numbers,
         clean_chunks_path=clean_chunks_path,
         chapter_packages=chapter_packages,
@@ -2619,6 +2721,9 @@ def generate_book_learning_materials(
         raise BookLearningMaterialsError(
             "--resume-missing-chapters requires --resume-chapter-packages."
         )
+    # Materialize the backend-aware default so every downstream reader (and the
+    # printed plan) sees the timeout that will actually be enforced.
+    args.model_timeout_seconds = resolve_model_timeout_seconds(args)
     if args.model_timeout_seconds < 1:
         raise BookLearningMaterialsError("--model-timeout-seconds must be at least 1.")
     if args.model_max_retries < 0:
@@ -2683,7 +2788,7 @@ def generate_book_learning_materials(
         generation_metadata.update(
             {
                 "generated_at": datetime.now(timezone.utc).isoformat(),
-                "model": args.nvidia_model,
+                "model": active_model_name(args),
                 "book_synthesis_context_chars": args.book_synthesis_context_chars,
                 "resumed_from_chapter_packages": str(resume_path),
             }

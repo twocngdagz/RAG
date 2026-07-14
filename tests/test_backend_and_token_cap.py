@@ -116,16 +116,19 @@ def test_backend_nvidia_direct_passes_max_tokens(monkeypatch):
 # --------------------------------------------------------------------------- #
 
 def _patch_run(monkeypatch, *, returncode=0, stdout="", stderr="", capture=None, raises=None):
-    def fake_run(cmd, input=None, text=None, capture_output=None, timeout=None):
+    """Stub the CLI runner. The backends drive run_cli_capture (Popen-based, so a
+    timeout can reap the agent's whole process group), not subprocess.run."""
+
+    def fake_capture(cmd, *, input_text, timeout_seconds):
         if capture is not None:
             capture["cmd"] = cmd
-            capture["input"] = input
-            capture["timeout"] = timeout
+            capture["input"] = input_text
+            capture["timeout"] = timeout_seconds
         if raises is not None:
             raise raises
-        return subprocess.CompletedProcess(cmd, returncode, stdout=stdout, stderr=stderr)
+        return returncode, stdout, stderr
 
-    monkeypatch.setattr(book.subprocess, "run", fake_run)
+    monkeypatch.setattr(book, "run_cli_capture", fake_capture)
 
 
 def test_claude_cli_success_extracts_result_and_pipes_stdin(monkeypatch):
