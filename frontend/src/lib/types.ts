@@ -72,6 +72,56 @@ export interface ChapterIndexItem {
   backend?: string | null
   model?: string | null
   contract_status: string
+  has_enrichment?: boolean
+}
+
+// ---- Enrichment (teaching layer) — mirrors pte_lesson_enrichment.v1 ----------
+
+export interface FactPair { label: string; value: string }
+export interface ScoringFactor { name: string; what_it_measures: string }
+export interface MethodStep { step: string; detail: string }
+export interface Technique {
+  name: string; purpose: string; how_to: string[]
+  example: string; why_it_matters: string; common_error: string
+}
+export interface Annotation { part: string; comment: string }
+export interface WorkedExample {
+  title: string; input: string; decoding: string; plan: string
+  model_answer: string; annotations: Annotation[]
+}
+export interface LangItem { item: string; when_to_use: string }
+export interface LangCategory { category: string; items: LangItem[] }
+export interface CommonMistake { mistake: string; why_it_hurts: string; fix: string }
+export interface TimeBudgetPhase { phase: string; minutes: string; focus: string }
+export interface Drill { name: string; instructions: string }
+
+export interface LessonEnrichment {
+  schema_version: string
+  task_type: string
+  lesson_title: string
+  source_label: string
+  modality: string
+  overview: {
+    what_it_is: string
+    format_facts: FactPair[]
+    scoring_factors: ScoringFactor[]
+    critical_rules: string[]
+  }
+  learning_goals: string[]
+  core_method: { name: string; summary: string; steps: MethodStep[]; formula: string | null }
+  techniques: Technique[]
+  worked_examples: WorkedExample[]
+  useful_language: LangCategory[]
+  common_mistakes: CommonMistake[]
+  practice_plan: { time_budget: TimeBudgetPhase[]; drills: Drill[]; routine: string }
+  mastery_checklist: string[]
+  strategy_notes: string[]
+  metadata: {
+    difficulty: string
+    estimated_study_time: string
+    tags: string[]
+    provenance_note: string
+  }
 }
 
 export interface BookInfo {

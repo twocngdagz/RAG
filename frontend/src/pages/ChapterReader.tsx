@@ -13,21 +13,35 @@ import {
   ShieldCheck,
   Target,
 } from 'lucide-react'
+import { BookOpen, Sparkles } from 'lucide-react'
 import { api } from '../lib/api'
 import { useAsync } from '../lib/useAsync'
 import { textOf, type ChapterIndexItem } from '../lib/types'
 import { Section } from '../components/Section'
 import { GroundedText } from '../components/GroundedText'
+import { CoachView } from '../components/CoachView'
 
 export function ChapterReader({ chapters }: { chapters: ChapterIndexItem[] }) {
   const { slug = 'pte', n } = useParams()
   const number = Number(n)
   const { data, loading, error } = useAsync(() => api.chapter(slug, number), [slug, number])
 
+  // A lesson with a teaching layer gets a "Coach" view; default to it.
+  const idxItem = chapters.find((c) => c.chapter_number === number)
+  const hasCoach = !!idxItem?.has_enrichment
+  const enrich = useAsync(
+    () => (hasCoach ? api.enrichment(slug, number) : Promise.resolve(null)),
+    [slug, number, hasCoach],
+  )
+  const [view, setView] = useState<'lesson' | 'coach'>('lesson')
+  useEffect(() => {
+    setView(hasCoach ? 'coach' : 'lesson')
+  }, [number, hasCoach])
+
   // Scroll to top on lesson change (state-preservation / predictable nav).
   useEffect(() => {
     window.scrollTo({ top: 0 })
-  }, [slug, number])
+  }, [slug, number, view])
 
   if (loading) return <ReaderSkeleton />
   if (error || !data)
@@ -44,7 +58,27 @@ export function ChapterReader({ chapters }: { chapters: ChapterIndexItem[] }) {
   const next = idx >= 0 && idx < chapters.length - 1 ? chapters[idx + 1] : undefined
   const studyTime = textOf(chapter.estimated_study_time)
 
+  const tabs = hasCoach ? (
+    <div className="sticky top-0 z-10 border-b border-slate-200 bg-slate-50/90 backdrop-blur lg:top-0">
+      <div className="mx-auto flex max-w-3xl gap-1 px-5 py-2 sm:px-8">
+        <ViewTab active={view === 'coach'} onClick={() => setView('coach')} icon={Sparkles} label="Coach" />
+        <ViewTab active={view === 'lesson'} onClick={() => setView('lesson')} icon={BookOpen} label="From the book" />
+      </div>
+    </div>
+  ) : null
+
+  if (view === 'coach') {
+    return (
+      <>
+        {tabs}
+        {enrich.loading ? <ReaderSkeleton /> : enrich.data ? <CoachView e={enrich.data} /> : <ReaderSkeleton />}
+      </>
+    )
+  }
+
   return (
+    <>
+    {tabs}
     <article className="reading mx-auto max-w-3xl px-5 py-8 sm:px-8">
       {/* Lesson header */}
       <header className="animate-rise">
@@ -212,6 +246,32 @@ export function ChapterReader({ chapters }: { chapters: ChapterIndexItem[] }) {
         )}
       </nav>
     </article>
+    </>
+  )
+}
+
+function ViewTab({
+  active,
+  onClick,
+  icon: Icon,
+  label,
+}: {
+  active: boolean
+  onClick: () => void
+  icon: typeof Sparkles
+  label: string
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={`inline-flex cursor-pointer items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium transition-colors ${
+        active ? 'bg-brand-700 text-white' : 'text-slate-500 hover:bg-slate-200/60'
+      }`}
+    >
+      <Icon className="size-4" aria-hidden="true" />
+      {label}
+    </button>
   )
 }
 

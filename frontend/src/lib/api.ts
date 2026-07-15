@@ -1,4 +1,4 @@
-import type { BookInfo, ChapterDocument, ChapterIndexItem } from './types'
+import type { BookInfo, ChapterDocument, ChapterIndexItem, LessonEnrichment } from './types'
 
 // Same-origin /api in dev (Vite proxies to FastAPI:8000). Override for prod.
 const BASE = import.meta.env.VITE_API_BASE ?? '/api'
@@ -16,4 +16,6 @@ export const api = {
   chapterIndex: (slug: string) => get<ChapterIndexItem[]>(`/books/${slug}/chapters`),
   chapter: (slug: string, n: number) =>
     get<ChapterDocument>(`/books/${slug}/chapters/${n}`),
+  enrichment: (slug: string, n: number) =>
+    get<LessonEnrichment>(`/books/${slug}/chapters/${n}/enrichment`),
 }
