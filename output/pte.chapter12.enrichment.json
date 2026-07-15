@@ -1,0 +1,546 @@
+{
+  "schema_version": "pte_lesson_enrichment.v1",
+  "task_type": "Reading: Multiple-choice, choose single answer and Reading: Multiple-choice, choose multiple answers",
+  "lesson_title": "Lesson 11: Reading Multiple-Choice — Prompt Analysis, Inference, and Context Clues",
+  "source_label": "pte:ch12",
+  "modality": "reading",
+  "overview": {
+    "summary": "This lesson develops a systematic approach to PTE Academic reading multiple-choice tasks. It teaches learners to identify exactly what a prompt asks, read the passage with an appropriate purpose, understand the main idea and writer’s position, infer unstated meaning, work out unfamiliar vocabulary from context, and evaluate answer options accurately.",
+    "estimated_study_time": "About 2 hours, including reading-skill review, prompt analysis, unfamiliar-word strategies, guided practice, timed items, and self-checking.",
+    "item_types": [
+      "Reading: Multiple-choice, choose single answer",
+      "Reading: Multiple-choice, choose multiple answers"
+    ],
+    "skills_developed": [
+      "Identifying the main idea or gist",
+      "Recognizing the writer’s purpose, opinion, tone, or attitude",
+      "Understanding text organization and relationships between ideas",
+      "Distinguishing explicit information from implicit information",
+      "Making logical inferences and drawing conclusions",
+      "Classifying and categorizing information",
+      "Inferring unfamiliar vocabulary from context",
+      "Evaluating and eliminating multiple-choice options"
+    ],
+    "teaching_focus": [
+      "Choose a reading strategy based on the wording of the prompt.",
+      "Separate what the passage directly states from what it reasonably implies.",
+      "Paraphrase options before comparing them with the text.",
+      "Use evidence rather than memory, assumptions, or general knowledge."
+    ]
+  },
+  "learning_goals": [
+    "Identify whether a prompt asks for the main idea, writer’s purpose, inference, detail, organization, opinion, or contextual word meaning.",
+    "Read a passage for overall meaning and writer attitude before answering broad inference questions.",
+    "Locate relevant evidence efficiently when a prompt asks about a specific word, phrase, or detail.",
+    "Paraphrase complicated answer options into simpler language before judging them.",
+    "Distinguish options that are supported, contradicted, partly supported, exaggerated, or not mentioned.",
+    "Use surrounding words, examples, contrasts, and word parts to infer unfamiliar vocabulary.",
+    "Select one answer confidently in single-answer items and evaluate each option independently in multiple-answer items.",
+    "Review mistakes by identifying whether the problem came from prompt reading, passage comprehension, vocabulary, inference, or option evaluation."
+  ],
+  "core_method": {
+    "name": "The TRACE Method",
+    "purpose": "Use TRACE to move from the prompt to a text-supported answer without being distracted by plausible but unsupported options.",
+    "steps": [
+      {
+        "letter": "T",
+        "name": "Type the prompt",
+        "instruction": "Classify the question before reading deeply. Decide whether it asks for gist, purpose, inference, detail, organization, attitude, or word meaning.",
+        "self_question": "What kind of information must my answer provide?"
+      },
+      {
+        "letter": "R",
+        "name": "Read with a purpose",
+        "instruction": "Choose the correct reading route. Read the whole passage for gist or inference, but go directly to the target sentence and nearby context for a specific word or detail question.",
+        "self_question": "Do I need the whole argument or only a focused section?"
+      },
+      {
+        "letter": "A",
+        "name": "Anchor the meaning",
+        "instruction": "State the main idea, writer’s position, or relevant sentence meaning in your own words before studying the options closely.",
+        "self_question": "What is the passage really saying here?"
+      },
+      {
+        "letter": "C",
+        "name": "Compare paraphrases",
+        "instruction": "Rewrite each option mentally in simpler language, then compare its complete meaning with the passage rather than matching isolated keywords.",
+        "self_question": "Does the option express the same idea, or does it only repeat familiar words?"
+      },
+      {
+        "letter": "E",
+        "name": "Eliminate and ensure",
+        "instruction": "Reject contradicted, unsupported, exaggerated, incomplete, or irrelevant options. Recheck the remaining choice or choices against specific evidence.",
+        "self_question": "Can I point to evidence for every part of the option?"
+      }
+    ],
+    "decision_rules": [
+      "For a broad inference prompt, read the passage before the options so that the options do not shape or distort your understanding.",
+      "For a specific vocabulary prompt, inspect the target word, its sentence, and nearby sentences before reading the entire passage in detail.",
+      "For a single-answer item, choose the one option that best answers the exact prompt, not merely an option that contains a true statement.",
+      "For a multiple-answer item, judge each option separately and select only options that are fully supported.",
+      "When two options appear possible, compare their strength, scope, and wording against the passage.",
+      "Do not add information from personal knowledge, even when that information is factually correct."
+    ]
+  },
+  "techniques": [
+    {
+      "name": "Prompt-type detection",
+      "teaching_point": "The wording of the prompt determines the reading strategy.",
+      "prompt_signals": [
+        "What is the main idea of the passage?",
+        "Why does the writer mention...?",
+        "Which of the following can be inferred...?",
+        "According to the passage...?",
+        "What does the word ... mean in the passage?",
+        "How is the passage organized?"
+      ],
+      "application": "Underline the key instruction words and briefly label the prompt as gist, purpose, inference, detail, vocabulary, attitude, or organization."
+    },
+    {
+      "name": "Gist in one sentence",
+      "teaching_point": "A short summary prevents minor details from controlling the answer.",
+      "application": "After reading, complete the sentence: 'The passage mainly explains, argues, compares, or reports that...'. Keep the summary broad enough to include the whole passage.",
+      "warning": "An example, statistic, or single paragraph is usually supporting information rather than the main idea."
+    },
+    {
+      "name": "Writer-purpose analysis",
+      "teaching_point": "Purpose asks why information is included, not only what the information says.",
+      "application": "Identify the function of the relevant section: introduce a topic, define a term, provide evidence, illustrate an idea, contrast viewpoints, challenge a belief, or draw a conclusion.",
+      "check": "Complete the sentence: 'The writer mentions this in order to...'."
+    },
+    {
+      "name": "Evidence-based inference",
+      "teaching_point": "An inference is not directly stated, but it must be strongly supported by the text.",
+      "application": "Combine two or more textual clues and form the smallest conclusion that follows logically.",
+      "warning": "Reject conclusions that are merely possible, emotionally appealing, or based on outside knowledge."
+    },
+    {
+      "name": "Tone and connotation tracking",
+      "teaching_point": "Positive, negative, approving, doubtful, or critical attitudes are often revealed through word choice.",
+      "application": "Circle evaluative words such as extraordinary, peculiar, unfortunately, valuable, questionable, or merely, and decide what attitude they create.",
+      "comparison": "Words with similar dictionary meanings may create different impressions, such as 'sun-baked' suggesting warmth and attractiveness while 'sunburnt' suggests damage or discomfort."
+    },
+    {
+      "name": "Option paraphrasing",
+      "teaching_point": "Long options become easier to judge when reduced to their essential claim.",
+      "application": "Rewrite each option using simple subject–verb–object language. Preserve limiting words such as all, only, mainly, sometimes, likely, or never.",
+      "benefit": "This exposes hidden exaggeration, reversal, or partial truth."
+    },
+    {
+      "name": "Distractor classification",
+      "teaching_point": "Incorrect answers usually fail in recognizable ways.",
+      "categories": [
+        "Contradicted: the text states the opposite.",
+        "Not mentioned: the idea does not appear in the passage.",
+        "Partly correct: one part is supported but another part is not.",
+        "Too broad: the option makes a wider claim than the passage.",
+        "Too narrow: the option focuses on a minor detail instead of the required main idea.",
+        "Keyword trap: the option repeats passage words but changes their relationship or meaning."
+      ]
+    },
+    {
+      "name": "Context-clue vocabulary",
+      "teaching_point": "The passage meaning of a word may differ from its most familiar dictionary meaning.",
+      "clues": [
+        "Definitions or restatements",
+        "Examples",
+        "Contrasts introduced by but, however, although, or unlike",
+        "Cause-and-effect relationships",
+        "Nearby synonyms or antonyms",
+        "The emotional tone of surrounding words",
+        "Prefixes, roots, and suffixes"
+      ],
+      "application": "Replace the unfamiliar word with a simple temporary meaning and test whether the sentence remains logical."
+    },
+    {
+      "name": "Selective vocabulary effort",
+      "teaching_point": "Not every unfamiliar word must be solved.",
+      "application": "Read the prompt and options first when appropriate. Work out a word only when it affects the central meaning or helps distinguish between answer choices.",
+      "warning": "Spending too long defining irrelevant vocabulary reduces time for evidence checking."
+    }
+  ],
+  "worked_examples": [
+    {
+      "title": "Inferring tone from similar word choices",
+      "text": "Compare the descriptions 'sun-baked Andalucía' and 'sunburnt Andalucía.'",
+      "question": "Which expression creates the more positive impression?",
+      "thinking_process": [
+        "'Sun-baked' suggests a place warmed by strong sunlight.",
+        "'Sunburnt' is associated with damaged or painful skin.",
+        "The basic topic is similar, but the connotations are different.",
+        "The writer using 'sun-baked' is more likely to present the location attractively."
+      ],
+      "answer": "'Sun-baked Andalucía' creates the more positive impression.",
+      "lesson": "Tone can depend on connotation rather than basic dictionary meaning."
+    },
+    {
+      "title": "Using context to infer an unfamiliar word",
+      "text": "Special provision is made for inaccessible outback areas, with modern technologies bringing teaching to the bush.",
+      "question": "What does 'inaccessible' most nearly mean in this sentence?",
+      "thinking_process": [
+        "The sentence discusses outback areas and the bush.",
+        "Modern technology is needed to bring teaching to those places.",
+        "This suggests that reaching the areas physically is difficult.",
+        "The word therefore means difficult to reach or enter."
+      ],
+      "answer": "Difficult to reach.",
+      "lesson": "Surrounding location words and the solution described in the sentence reveal the meaning."
+    },
+    {
+      "title": "Matching a word to its passage meaning",
+      "text": "The passage refers to houses, temporary shelters, offices, and other buildings.",
+      "question": "Which words in the passage can mean 'residences'?",
+      "thinking_process": [
+        "The phrase 'in the passage' means the answer must match the contextual use.",
+        "Possible words should first be underlined.",
+        "Each candidate must then be tested in its sentence.",
+        "'Houses' can refer to places where people live, while 'offices' cannot.",
+        "'Temporary shelters' may qualify only when the context presents them as living places."
+      ],
+      "answer": "Select only the words that mean places where people live in that particular context.",
+      "lesson": "A general synonym is not automatically a contextual synonym."
+    },
+    {
+      "title": "Inferring meaning from repetition",
+      "text": "It was ubiquitous, with every category of crime falling in every part of the country.",
+      "question": "Which phrase best helps explain 'ubiquitous'?",
+      "thinking_process": [
+        "The phrase 'every part of the country' describes very wide distribution.",
+        "The word 'every' reinforces the idea that the phenomenon was not limited to one region.",
+        "'Ubiquitous' must therefore relate to being present everywhere or extremely widespread."
+      ],
+      "answer": "The phrase 'every part of the country.'",
+      "lesson": "A following phrase may restate an unfamiliar word in simpler language."
+    },
+    {
+      "title": "Answering a broad inference prompt",
+      "text": "A university introduced optional online lectures. Attendance at live sessions declined, but students replayed difficult sections more frequently and examination results improved slightly.",
+      "question": "Which of the following can be inferred from the text?",
+      "options": [
+        "Students no longer valued interaction with lecturers.",
+        "Recorded lectures may help students review challenging material.",
+        "All students preferred online learning.",
+        "The university planned to remove live lectures."
+      ],
+      "thinking_process": [
+        "The prompt asks for an inference, so the passage should be understood before judging the options.",
+        "The passage links replaying difficult sections with a small improvement in results.",
+        "The second option is a cautious conclusion supported by that relationship.",
+        "The other options add absolute preferences, intentions, or attitudes that are not stated."
+      ],
+      "answer": "Recorded lectures may help students review challenging material.",
+      "lesson": "The best inference is usually cautious and closely limited to the available evidence."
+    },
+    {
+      "title": "Paraphrasing before elimination",
+      "text": "The researcher argues that urban parks improve public health, although their benefits depend on accessibility, maintenance, and residents' sense of safety.",
+      "question": "Which option best represents the writer's view?",
+      "options": [
+        "Urban parks always improve the health of every resident.",
+        "Urban parks are valuable, but their effectiveness depends on several conditions.",
+        "Urban parks are mainly useful because they reduce maintenance costs.",
+        "Residents avoid parks whenever cities have safety problems."
+      ],
+      "thinking_process": [
+        "Option one simplifies to 'parks always help everyone,' which is too absolute.",
+        "Option two simplifies to 'parks help, but conditions matter,' which matches the passage.",
+        "Option three introduces a cost claim that is not mentioned.",
+        "Option four turns one relevant condition into an unsupported universal statement."
+      ],
+      "answer": "Urban parks are valuable, but their effectiveness depends on several conditions.",
+      "lesson": "Paraphrasing reveals exaggeration and unsupported additions."
+    }
+  ],
+  "useful_language": [
+    {
+      "category": "Main-idea signposts",
+      "expressions": [
+        "The central point is that...",
+        "The passage mainly argues that...",
+        "Overall, the writer explains...",
+        "The text is primarily concerned with..."
+      ],
+      "use": "Use these frames to summarize the passage before reading the answer options closely."
+    },
+    {
+      "category": "Contrast and qualification linkers",
+      "expressions": [
+        "however",
+        "although",
+        "despite",
+        "whereas",
+        "nevertheless",
+        "on the other hand",
+        "while",
+        "but"
+      ],
+      "use": "These words often introduce the writer's real position, an exception, or a limitation."
+    },
+    {
+      "category": "Cause-and-effect linkers",
+      "expressions": [
+        "because",
+        "therefore",
+        "consequently",
+        "as a result",
+        "leads to",
+        "results from",
+        "due to",
+        "thus"
+      ],
+      "use": "Track which event is the cause and which is the result; distractors often reverse them."
+    },
+    {
+      "category": "Example and support markers",
+      "expressions": [
+        "for example",
+        "for instance",
+        "such as",
+        "including",
+        "in particular",
+        "this is illustrated by"
+      ],
+      "use": "Information following these markers usually supports a broader point rather than expressing the main idea itself."
+    },
+    {
+      "category": "Inference language",
+      "expressions": [
+        "This suggests that...",
+        "This implies that...",
+        "It can reasonably be concluded that...",
+        "The evidence indicates that...",
+        "The writer appears to believe that..."
+      ],
+      "use": "Use cautious language because an inference should not be stronger than the evidence."
+    },
+    {
+      "category": "Option-elimination phrases",
+      "expressions": [
+        "This option is contradicted by...",
+        "This is not mentioned in the passage.",
+        "This is only partly supported.",
+        "This option is too broad.",
+        "This focuses on a minor detail.",
+        "This repeats keywords but changes the meaning.",
+        "This adds information not provided by the writer.",
+        "This uses an absolute claim that the text does not support."
+      ],
+      "use": "State a clear reason for rejecting each distractor during practice review."
+    },
+    {
+      "category": "Vocabulary-in-context language",
+      "expressions": [
+        "In this context, the word most nearly means...",
+        "The surrounding phrase suggests...",
+        "The contrast with ... indicates...",
+        "The example after the word shows...",
+        "The prefix or suffix suggests...",
+        "Replacing the word with ... keeps the sentence logical."
+      ],
+      "use": "Use these frames to explain how context supports a temporary meaning."
+    }
+  ],
+  "common_mistakes": [
+    {
+      "mistake": "Reading the answer options before understanding the prompt.",
+      "why_it_hurts": "The learner may search for information related to the options instead of answering the actual question.",
+      "correction": "Underline the instruction words and classify the prompt before evaluating any option."
+    },
+    {
+      "mistake": "Using the same reading method for every question.",
+      "why_it_hurts": "Reading the whole passage in detail for a local vocabulary question wastes time, while scanning only one sentence for a broad inference question misses essential context.",
+      "correction": "Match the reading route to the prompt type."
+    },
+    {
+      "mistake": "Choosing an option because it contains words copied from the passage.",
+      "why_it_hurts": "Distractors frequently reuse keywords while reversing a relationship or changing the writer's claim.",
+      "correction": "Paraphrase the complete option and compare meanings, not individual words."
+    },
+    {
+      "mistake": "Treating a reasonable possibility as a valid inference.",
+      "why_it_hurts": "An idea can be possible without being supported by the passage.",
+      "correction": "Require clear textual clues and choose the smallest conclusion justified by them."
+    },
+    {
+      "mistake": "Ignoring limiting words in an option.",
+      "why_it_hurts": "Words such as all, only, never, completely, or always can make an otherwise related option inaccurate.",
+      "correction": "Circle qualifiers and compare their strength with the language of the passage."
+    },
+    {
+      "mistake": "Selecting a true detail when the prompt asks for the main idea.",
+      "why_it_hurts": "The option may be factually correct but too narrow to represent the whole passage.",
+      "correction": "Check whether the answer covers the passage's central message rather than one example."
+    },
+    {
+      "mistake": "Trying to define every unfamiliar word.",
+      "why_it_hurts": "Some words are irrelevant to the question and consume valuable time.",
+      "correction": "First decide whether the word affects the main idea or the difference between options."
+    },
+    {
+      "mistake": "Using a familiar dictionary meaning without checking context.",
+      "why_it_hurts": "Words can carry specialized, figurative, or altered meanings in a passage.",
+      "correction": "Test the meaning against the target sentence and surrounding clues."
+    },
+    {
+      "mistake": "Adding personal knowledge to the answer.",
+      "why_it_hurts": "PTE reading questions assess comprehension of the given text, not outside expertise.",
+      "correction": "Ask whether every part of the option is supported within the passage."
+    },
+    {
+      "mistake": "Selecting multiple options as a group rather than checking each independently.",
+      "why_it_hurts": "One attractive option can make another weak option appear more credible.",
+      "correction": "Mark each option supported, contradicted, or not proven before making the final selection."
+    }
+  ],
+  "practice_plan": {
+    "total_time": "Approximately 120 minutes",
+    "stages": [
+      {
+        "stage": "1. Reading-skill activation",
+        "duration": "15 minutes",
+        "activities": [
+          "Review gist, purpose, inference, explicit information, implicit information, organization, and contextual vocabulary.",
+          "Match sample prompts to their reading-skill categories.",
+          "Explain how a gist question differs from a detail or vocabulary question.",
+          "Create a one-line definition for each prompt type."
+        ]
+      },
+      {
+        "stage": "2. Prompt analysis drills",
+        "duration": "15 minutes",
+        "activities": [
+          "Underline instruction words in ten sample prompts.",
+          "Label each prompt using the TRACE method.",
+          "Choose whether to read the whole passage first or locate a specific section.",
+          "Explain the decision before answering."
+        ]
+      },
+      {
+        "stage": "3. Gist, purpose, and tone practice",
+        "duration": "20 minutes",
+        "activities": [
+          "Read three short academic paragraphs.",
+          "Write a one-sentence gist for each.",
+          "Identify the purpose of one supporting example.",
+          "Circle words that reveal a positive, negative, doubtful, or neutral attitude.",
+          "Compare the summary with the available options."
+        ]
+      },
+      {
+        "stage": "4. Inference training",
+        "duration": "20 minutes",
+        "activities": [
+          "Read the passage before viewing the options.",
+          "List two textual clues.",
+          "Write one cautious inference using 'This suggests that...'.",
+          "Reject options that require assumptions beyond the text.",
+          "Check whether the chosen conclusion is stronger than the evidence."
+        ]
+      },
+      {
+        "stage": "5. Unfamiliar-word strategies",
+        "duration": "15 minutes",
+        "activities": [
+          "Identify definition, example, contrast, synonym, and cause-and-effect clues.",
+          "Break selected words into prefixes, roots, and suffixes.",
+          "Create a temporary simple meaning.",
+          "Substitute the meaning into the sentence.",
+          "Ignore words that are not relevant to the prompt or options."
+        ]
+      },
+      {
+        "stage": "6. Option-analysis workshop",
+        "duration": "15 minutes",
+        "activities": [
+          "Paraphrase every option.",
+          "Circle absolute or limiting words.",
+          "Classify distractors as contradicted, not mentioned, partly correct, too broad, too narrow, or keyword traps.",
+          "Point to evidence supporting the correct answer.",
+          "Explain why each rejected option fails."
+        ]
+      },
+      {
+        "stage": "7. Timed mixed practice",
+        "duration": "15 minutes",
+        "activities": [
+          "Complete a mixture of single-answer and multiple-answer items.",
+          "Apply TRACE without writing full explanations.",
+          "Avoid spending excessive time on one unfamiliar word.",
+          "Record confidence as high, medium, or low for each answer."
+        ]
+      },
+      {
+        "stage": "8. Error review and self-check",
+        "duration": "20 minutes",
+        "activities": [
+          "Check answers and locate the supporting evidence.",
+          "Classify every error by cause.",
+          "Rewrite one misunderstood prompt in simpler language.",
+          "Correct one faulty inference and one vocabulary decision.",
+          "Record the strategy that would prevent each error next time."
+        ]
+      }
+    ]
+  },
+  "mastery_checklist": [
+    "I can identify whether a prompt asks for gist, purpose, inference, detail, organization, attitude, or contextual word meaning.",
+    "I can choose whether to read the whole passage or focus on a specific section.",
+    "I can summarize a passage's main idea in one clear sentence.",
+    "I can distinguish the writer's central claim from examples and supporting details.",
+    "I can identify words that reveal the writer's opinion, tone, or attitude.",
+    "I can form an inference that is logical, cautious, and supported by textual clues.",
+    "I can paraphrase complex options without losing important qualifiers.",
+    "I can recognize contradicted, unsupported, partly correct, overly broad, overly narrow, and keyword-based distractors.",
+    "I can use nearby words, examples, contrasts, and word parts to infer vocabulary.",
+    "I can ignore unfamiliar vocabulary that does not affect the answer.",
+    "I can justify every selected option using evidence from the passage.",
+    "I can identify the cause of an incorrect answer and choose a specific improvement strategy."
+  ],
+  "strategy_notes": [
+    "The prompt is the control centre of the item. Do not begin solving until you know what kind of answer is required.",
+    "For 'Which of the following can be inferred from the text?', read and summarize the passage before allowing the options to influence your interpretation.",
+    "For a question about the meaning of a specific word or phrase, begin with the target sentence and nearby context; identifying the complete gist may not be necessary.",
+    "Words such as mainly, best, most likely, according to the passage, and in the passage narrow the task and should guide the final comparison.",
+    "An inference answer should usually be weaker and more cautious than a directly stated fact.",
+    "The presence of a passage keyword does not prove that an option is correct.",
+    "An option must be correct as a complete statement. One supported phrase cannot repair another unsupported phrase.",
+    "Examples support a central idea, but they do not normally replace it as the answer to a gist question.",
+    "The writer's opinion may appear after contrast words such as however, although, but, or nevertheless.",
+    "When two options seem close, compare their scope, certainty, cause-and-effect relationship, and treatment of exceptions.",
+    "In multiple-answer tasks, do not select an option merely because it is related to the topic; it must answer the prompt and be supported by the passage.",
+    "During review, explain both why the correct option works and why each distractor fails. This builds reusable judgment rather than answer memorization."
+  ],
+  "metadata": {
+    "chapter_number": 12,
+    "lesson_number": 11,
+    "estimated_study_time": "2 hours",
+    "difficulty": "intermediate-to-upper-intermediate",
+    "primary_learning_unit": "Reading multiple-choice prompt analysis and evidence-based option selection",
+    "recommended_supporting_units": [
+      "Academic vocabulary in context",
+      "Connotation and writer attitude",
+      "Paraphrasing",
+      "Logical inference",
+      "Timed reading"
+    ],
+    "assessment_modes": [
+      "Guided classification",
+      "Option-elimination explanation",
+      "Untimed reading practice",
+      "Timed mixed-item practice",
+      "Error-log reflection"
+    ],
+    "tags": [
+      "pte-academic",
+      "reading",
+      "multiple-choice",
+      "single-answer",
+      "multiple-answers",
+      "main-idea",
+      "writer-purpose",
+      "inference",
+      "context-clues",
+      "option-elimination"
+    ]
+  }
+}

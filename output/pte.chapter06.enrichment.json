@@ -1,0 +1,677 @@
+{
+  "schema_version": "pte_lesson_enrichment.v1",
+  "task_type": "summarize_written_text",
+  "lesson_title": "Lesson 6: Summarize Written Text",
+  "source_label": "pte:ch06",
+  "modality": [
+    "reading",
+    "writing"
+  ],
+  "overview": {
+    "lesson_purpose": "This lesson teaches a repeatable method for reading an academic passage, separating central ideas from supporting material, and producing one accurate, grammatically complete summary sentence under timed conditions.",
+    "task_snapshot": {
+      "input": "A reading passage of up to 300 words",
+      "response": "One written sentence summarizing the passage",
+      "time_limit": "10 minutes",
+      "scoring_focus": [
+        "Content",
+        "Form",
+        "Grammar",
+        "Vocabulary"
+      ]
+    },
+    "estimated_study_time": "Approximately 2 hours and 15 minutes",
+    "recommended_study_blocks": [
+      "25 minutes: understand the task, scoring areas, and response rules",
+      "35 minutes: practise identifying topics, claims, and supporting points",
+      "30 minutes: practise paraphrasing and combining notes",
+      "25 minutes: review sentence structure, dependent clauses, and punctuation",
+      "20 minutes: complete a timed response and self-check"
+    ],
+    "teaching_focus": [
+      "Read for meaning before trying to write",
+      "Reduce each paragraph to a short idea note",
+      "Combine only the most important ideas",
+      "Use one controlled sentence rather than an unnecessarily complicated sentence",
+      "Reserve time for a final form and grammar check"
+    ]
+  },
+  "learning_goals": [
+    "State the response format, time limit, passage length, and scoring areas without checking notes.",
+    "Identify the overall topic and the writer's central message before examining minor details.",
+    "Distinguish main points from explanations, examples, statistics, quotations, and repeated information.",
+    "Create short notes using key content words rather than copying complete sentences.",
+    "Paraphrase important ideas without changing the writer's meaning or level of certainty.",
+    "Synthesize two or three related ideas into one logically connected sentence.",
+    "Use relative clauses and other dependent clauses to add information accurately.",
+    "Maintain the simple present tense when reporting what a passage explains, argues, shows, or describes.",
+    "Produce a response that contains only one complete sentence.",
+    "Proofread grammar, punctuation, spelling, sentence count, and length before submitting."
+  ],
+  "core_method": {
+    "name": "TOPIC–POINTS–LINK–CHECK",
+    "purpose": "A four-stage method that reduces reading overload and protects the response from content and form errors.",
+    "steps": [
+      {
+        "stage": "1. TOPIC",
+        "time_guidance": "About 1 minute",
+        "actions": [
+          "Read the title, opening sentence, and final sentence if available.",
+          "Identify the broad subject in a short noun phrase.",
+          "Ask what the writer is mainly explaining, comparing, arguing, or reporting.",
+          "Do not begin writing the final summary yet."
+        ],
+        "output": "A topic label such as 'online education preferences' or 'the continuing social role of dowries'."
+      },
+      {
+        "stage": "2. POINTS",
+        "time_guidance": "About 3 minutes",
+        "actions": [
+          "Find the main idea of each paragraph.",
+          "Underline repeated concepts and important cause, contrast, result, or change relationships.",
+          "Record two or three short notes using nouns, verbs, percentages, or key phrases.",
+          "Exclude examples unless an example is essential to the writer's conclusion."
+        ],
+        "output": "A compact note set containing the passage's central claim and major supporting points."
+      },
+      {
+        "stage": "3. LINK",
+        "time_guidance": "About 4 minutes",
+        "actions": [
+          "Choose a sentence frame that matches the passage's logical structure.",
+          "Paraphrase the topic and main points.",
+          "Connect the ideas with precise linkers or dependent clauses.",
+          "Write one complete sentence with a clear main clause."
+        ],
+        "output": "A one-sentence draft that accurately represents the passage."
+      },
+      {
+        "stage": "4. CHECK",
+        "time_guidance": "About 2 minutes",
+        "actions": [
+          "Confirm that the response contains exactly one sentence.",
+          "Check that the central idea and all essential points are present.",
+          "Remove opinions, examples, repetition, and unnecessary detail.",
+          "Check subject–verb agreement, verb tense, articles, spelling, commas, and the final full stop."
+        ],
+        "output": "A concise, accurate, and grammatically controlled final response."
+      }
+    ],
+    "decision_rule": "Keep an idea when removing it would distort the writer's overall message; remove it when it only illustrates, repeats, or decorates a more important point."
+  },
+  "techniques": [
+    {
+      "name": "Topic-first reading",
+      "instruction": "Before taking detailed notes, state the passage topic in three to seven words.",
+      "example": "Passage focus: public figures and media scrutiny.",
+      "benefit": "A clear topic acts as a filter when deciding which details belong in the summary."
+    },
+    {
+      "name": "Paragraph reduction",
+      "instruction": "Reduce each paragraph to one short note containing a subject and a key action or relationship.",
+      "example": "Paragraph note: students prefer classrooms despite expecting more virtual education.",
+      "benefit": "This prevents the final response from becoming a collection of copied details."
+    },
+    {
+      "name": "Signal-word tracking",
+      "instruction": "Circle words that show contrast, cause, result, addition, concession, or conclusion.",
+      "example": "However signals contrast; therefore signals a result; despite signals concession.",
+      "benefit": "Signal words reveal how ideas are related, not just what facts appear."
+    },
+    {
+      "name": "Example removal test",
+      "instruction": "Delete an example mentally and ask whether the central argument remains clear.",
+      "example": "A specific study involving children may be omitted if the main point is that external rewards can unexpectedly reduce internal motivation.",
+      "benefit": "The summary becomes shorter without losing the writer's main message."
+    },
+    {
+      "name": "Key-word notes",
+      "instruction": "Record content words and short phrases rather than full grammatical sentences.",
+      "example": "online learning popular; students prefer traditional classrooms; virtual education expected to grow",
+      "benefit": "Short notes encourage synthesis and reduce accidental copying."
+    },
+    {
+      "name": "Controlled paraphrasing",
+      "instruction": "Change vocabulary or grammatical form while preserving the original relationship and strength of meaning.",
+      "example": "Original idea: students believe traditional classes are easier; paraphrase: learners generally find face-to-face classrooms more accessible.",
+      "benefit": "The response demonstrates vocabulary control without introducing a new claim."
+    },
+    {
+      "name": "Main-clause anchor",
+      "instruction": "Build the sentence around one clear main clause before adding dependent information.",
+      "example": "The passage explains that online education is expanding...",
+      "benefit": "A strong grammatical core reduces fragments and uncontrolled run-on sentences."
+    },
+    {
+      "name": "Relative-clause compression",
+      "instruction": "Use who, which, or that to attach important information to a person, concept, or institution.",
+      "example": "A dowry, which originally functioned as a parental gift, continues to be used in some traditional societies.",
+      "benefit": "Two related notes can be expressed efficiently in one sentence."
+    },
+    {
+      "name": "Relationship-based linking",
+      "instruction": "Select linkers according to meaning rather than using and repeatedly.",
+      "example": "Use although for contrast, because for cause, while for comparison, and therefore for result.",
+      "benefit": "The sentence shows the logical structure of the source passage."
+    },
+    {
+      "name": "Final-word scan",
+      "instruction": "Read only the subject, finite verbs, linkers, commas, and final punctuation during the final check.",
+      "example": "Subject: the passage; verbs: explains, remain; linker: although; punctuation: two commas and one full stop.",
+      "benefit": "This quick scan catches many grammar and form errors under time pressure."
+    }
+  ],
+  "worked_examples": [
+    {
+      "title": "Choosing the stronger summary",
+      "source_ideas": [
+        "The task requires a reading passage to be summarized.",
+        "The response must contain one sentence.",
+        "Correct form, grammar, and vocabulary are assessed."
+      ],
+      "weak_response": "The passage is about a test where people read and write.",
+      "strong_response": "The Summarize Written Text task requires test takers to condense a reading passage into one sentence while maintaining accurate content, form, grammar, and vocabulary.",
+      "teaching_analysis": [
+        "The weak response identifies only a broad topic.",
+        "It omits the defining response requirement.",
+        "The strong response includes the task, required output, and important scoring concerns.",
+        "The strong response remains objective and uses the simple present tense.",
+        "The sentence is specific without including unnecessary examples."
+      ]
+    },
+    {
+      "title": "Combining ideas with a relative clause",
+      "source_ideas": [
+        "Dowries began as gifts from parents.",
+        "They developed several social and economic functions.",
+        "They remain part of marriage customs in some traditional cultures."
+      ],
+      "planning_notes": [
+        "topic: dowry tradition",
+        "origin: parental gift",
+        "development: several functions",
+        "present status: continues in some cultures"
+      ],
+      "construction": {
+        "main_clause": "A dowry remains part of marriage in some traditional cultures.",
+        "added_clause": "which began as a parental gift and later acquired several functions",
+        "combined_response": "A dowry, which began as a parental gift and later acquired several social and economic functions, remains part of marriage in some traditional cultures."
+      },
+      "teaching_analysis": [
+        "The main clause carries the most important present-day point.",
+        "The non-defining relative clause compresses the historical development.",
+        "The commas correctly separate the additional information.",
+        "The response does not add a personal judgment about the custom.",
+        "The three notes are synthesized rather than listed mechanically."
+      ]
+    },
+    {
+      "title": "Summarizing contrast in online education",
+      "source_passage": "Online study is becoming increasingly common, and many students recognise that technology is necessary for education because it allows them to combine employment and study; however, surveys indicate that learners still find traditional classrooms easier and often consider them higher in quality, even though they expect education to become more virtual.",
+      "planning_notes": [
+        "online study growing",
+        "technology allows work plus study",
+        "traditional classroom still preferred",
+        "students expect more virtual future"
+      ],
+      "draft_response": "Although online education is expanding and offers flexibility for students who work, many learners continue to prefer traditional classrooms while expecting future education to become increasingly virtual.",
+      "teaching_analysis": [
+        "Although expresses the passage's central contrast.",
+        "The flexibility point is retained because it explains the appeal of online study.",
+        "Survey figures are omitted because the overall pattern matters more than exact percentages.",
+        "The response reports the passage without evaluating either learning format.",
+        "The sentence has one main structure supported by two dependent relationships."
+      ]
+    },
+    {
+      "title": "Summarizing an argument about public figures",
+      "source_ideas": [
+        "Public figures receive intense media attention.",
+        "Political leaders should be monitored because their decisions affect the public.",
+        "Other public figures depend on public interest for their careers and income.",
+        "The passage supports justified media scrutiny but not unrelated personal intrusion."
+      ],
+      "planning_notes": [
+        "claim: justified scrutiny can serve public interest",
+        "politicians: decisions affect society",
+        "celebrities: careers depend on public",
+        "limit: irrelevant private intrusion excluded"
+      ],
+      "model_response": "The passage supports responsible media scrutiny of public figures because political decisions affect society and many prominent individuals depend on public attention, while distinguishing legitimate public-interest reporting from irrelevant invasion of privacy.",
+      "teaching_analysis": [
+        "The response preserves the writer's qualified position rather than presenting an absolute claim.",
+        "Because introduces the two central reasons.",
+        "While adds the important limitation.",
+        "No personal opinion is added.",
+        "The response combines the claim, reasons, and qualification in one controlled sentence."
+      ]
+    },
+    {
+      "title": "Repairing an overloaded sentence",
+      "source_ideas": [
+        "Urban trees reduce heat.",
+        "They improve air quality.",
+        "They support mental wellbeing.",
+        "Poor maintenance can create safety problems."
+      ],
+      "weak_response": "Urban trees reduce heat, and they improve air quality, and they help mental health, and they are useful in cities, but sometimes they are dangerous when they are not maintained, and this is why maintenance is important.",
+      "improved_response": "Urban trees benefit cities by reducing heat, improving air quality, and supporting mental wellbeing, although regular maintenance is necessary to prevent potential safety problems.",
+      "teaching_analysis": [
+        "Repeated and clauses are replaced by a parallel list.",
+        "The vague phrase are useful is removed because the specific benefits already communicate usefulness.",
+        "Although accurately introduces the limitation.",
+        "The response contains one complete sentence.",
+        "The improved version is shorter, clearer, and more formal."
+      ]
+    }
+  ],
+  "useful_language": {
+    "reporting_the_passage": [
+      "The passage explains that...",
+      "The text argues that...",
+      "The writer suggests that...",
+      "The passage describes how...",
+      "The text compares...",
+      "The writer highlights the relationship between..."
+    ],
+    "addition_and_synthesis": [
+      "and",
+      "as well as",
+      "in addition to",
+      "which also",
+      "together with",
+      "while also"
+    ],
+    "cause_and_reason": [
+      "because",
+      "since",
+      "as",
+      "due to",
+      "which results from",
+      "by"
+    ],
+    "result_and_consequence": [
+      "therefore",
+      "consequently",
+      "as a result",
+      "thereby",
+      "which leads to",
+      "resulting in"
+    ],
+    "contrast_and_concession": [
+      "although",
+      "while",
+      "whereas",
+      "however",
+      "despite",
+      "even though"
+    ],
+    "relative_clause_frames": [
+      "X, which originally..., now...",
+      "X, which is caused by..., affects...",
+      "People who... are more likely to...",
+      "The process that... enables...",
+      "X, whose development depends on..., remains...",
+      "The policy, which aims to..., may also..."
+    ],
+    "paraphrase_substitutions": [
+      {
+        "source_expression": "is becoming more popular",
+        "possible_paraphrases": [
+          "is growing in popularity",
+          "is increasingly common",
+          "is being adopted more widely"
+        ]
+      },
+      {
+        "source_expression": "has an effect on",
+        "possible_paraphrases": [
+          "affects",
+          "influences",
+          "shapes"
+        ]
+      },
+      {
+        "source_expression": "is necessary for",
+        "possible_paraphrases": [
+          "is essential to",
+          "is required for",
+          "plays a necessary role in"
+        ]
+      },
+      {
+        "source_expression": "shows that",
+        "possible_paraphrases": [
+          "demonstrates that",
+          "indicates that",
+          "reveals that"
+        ]
+      },
+      {
+        "source_expression": "a large number of",
+        "possible_paraphrases": [
+          "many",
+          "a substantial proportion of",
+          "numerous"
+        ]
+      }
+    ],
+    "signal_words_to_notice_while_reading": [
+      {
+        "function": "main point or emphasis",
+        "signals": [
+          "most importantly",
+          "the central issue",
+          "the main reason",
+          "significantly"
+        ]
+      },
+      {
+        "function": "contrast",
+        "signals": [
+          "however",
+          "nevertheless",
+          "in contrast",
+          "although"
+        ]
+      },
+      {
+        "function": "cause or reason",
+        "signals": [
+          "because",
+          "since",
+          "owing to",
+          "as a result of"
+        ]
+      },
+      {
+        "function": "result",
+        "signals": [
+          "therefore",
+          "thus",
+          "consequently",
+          "as a result"
+        ]
+      },
+      {
+        "function": "example",
+        "signals": [
+          "for example",
+          "for instance",
+          "such as",
+          "including"
+        ]
+      },
+      {
+        "function": "conclusion",
+        "signals": [
+          "overall",
+          "in conclusion",
+          "ultimately",
+          "the evidence suggests"
+        ]
+      }
+    ]
+  },
+  "common_mistakes": [
+    {
+      "mistake": "Writing two or more sentences",
+      "why_it_hurts": "It breaks the required response form even when the ideas are accurate.",
+      "repair": "Use a dependent clause, relative clause, participle phrase, or carefully chosen linker to connect the essential ideas in one sentence.",
+      "self_question": "How many sentence-ending full stops have I used?"
+    },
+    {
+      "mistake": "Including a personal opinion",
+      "why_it_hurts": "The task assesses accurate representation of the source, not agreement or disagreement.",
+      "repair": "Use neutral reporting language such as the passage argues, explains, or suggests.",
+      "self_question": "Did I add any claim that the writer did not make?"
+    },
+    {
+      "mistake": "Copying long phrases directly",
+      "why_it_hurts": "The response may show weak synthesis and limited vocabulary control.",
+      "repair": "Change the word form, sentence structure, or key vocabulary while preserving meaning.",
+      "self_question": "Can I express this idea naturally in different words?"
+    },
+    {
+      "mistake": "Changing the writer's certainty",
+      "why_it_hurts": "Replacing may with will or some with all creates an inaccurate summary.",
+      "repair": "Preserve modal verbs, quantities, limitations, and cautious language.",
+      "self_question": "Is my claim stronger or more general than the source claim?"
+    },
+    {
+      "mistake": "Listing examples instead of main points",
+      "why_it_hurts": "Examples consume space and can hide the passage's central message.",
+      "repair": "Generalize from examples to the idea they demonstrate.",
+      "self_question": "What broader point does this example support?"
+    },
+    {
+      "mistake": "Writing one extremely long chain of and clauses",
+      "why_it_hurts": "The sentence becomes repetitive, difficult to control, and vulnerable to punctuation errors.",
+      "repair": "Group parallel ideas and use relationship-based linkers such as although, because, while, or which.",
+      "self_question": "Can any repeated clauses become a parallel list or dependent clause?"
+    },
+    {
+      "mistake": "Producing a fragment",
+      "why_it_hurts": "A dependent clause alone does not form a complete sentence.",
+      "repair": "Locate the main subject and finite verb, then ensure the sentence can stand independently.",
+      "self_question": "What is my main clause?"
+    },
+    {
+      "mistake": "Using unclear pronouns",
+      "why_it_hurts": "Words such as it, they, this, or which may refer to more than one possible noun.",
+      "repair": "Repeat or replace the key noun when the reference is uncertain.",
+      "self_question": "Can a reader identify exactly what each pronoun refers to?"
+    },
+    {
+      "mistake": "Using tense inconsistently",
+      "why_it_hurts": "Unnecessary movement between present and past can make the summary confusing.",
+      "repair": "Use the simple present for the writer's message and the past tense only for genuinely historical events or completed studies.",
+      "self_question": "Does each tense have a clear reason?"
+    },
+    {
+      "mistake": "Submitting without checking punctuation",
+      "why_it_hurts": "Misplaced commas can separate a subject from its verb or create an uncontrolled run-on sentence.",
+      "repair": "Check commas around non-defining relative clauses and avoid joining independent clauses with only a comma.",
+      "self_question": "Does every comma have a clear grammatical purpose?"
+    }
+  ],
+  "practice_plan": [
+    {
+      "phase": "1. Task awareness",
+      "duration": "15 minutes",
+      "activities": [
+        "Write the task requirements from memory.",
+        "Explain Content, Form, Grammar, and Vocabulary in your own words.",
+        "Compare one vague summary with one specific summary.",
+        "Identify why a two-sentence response fails the form requirement."
+      ],
+      "success_target": "Recall all core task requirements accurately."
+    },
+    {
+      "phase": "2. Main-idea identification",
+      "duration": "25 minutes",
+      "activities": [
+        "Read four short paragraphs and underline each topic sentence.",
+        "Mark examples with E and main points with M.",
+        "Circle contrast, cause, and result signals.",
+        "Write a five-word topic label for each passage."
+      ],
+      "success_target": "Identify the topic and central claim without relying on examples."
+    },
+    {
+      "phase": "3. Note reduction",
+      "duration": "20 minutes",
+      "activities": [
+        "Reduce each paragraph to one short note.",
+        "Remove articles and unnecessary grammar words from the notes.",
+        "Keep meaningful word groups rather than isolated words.",
+        "Compare notes with the source to confirm that no main idea is missing."
+      ],
+      "success_target": "Create two to four usable notes in less than three minutes."
+    },
+    {
+      "phase": "4. Paraphrasing practice",
+      "duration": "20 minutes",
+      "activities": [
+        "Replace common verbs with accurate academic alternatives.",
+        "Change a noun phrase into a verb phrase.",
+        "Change an active structure into a passive structure when natural.",
+        "Check that each paraphrase preserves the writer's certainty and meaning."
+      ],
+      "success_target": "Paraphrase key ideas without adding or weakening information."
+    },
+    {
+      "phase": "5. Sentence-combining practice",
+      "duration": "20 minutes",
+      "activities": [
+        "Combine two notes with a relative clause.",
+        "Combine a claim and reason with because or since.",
+        "Combine contrasting ideas with although or while.",
+        "Rewrite an and-heavy sentence using parallel structure."
+      ],
+      "success_target": "Produce one clear sentence with a stable main clause."
+    },
+    {
+      "phase": "6. Grammar and punctuation review",
+      "duration": "15 minutes",
+      "activities": [
+        "Check subject–verb agreement in five summary sentences.",
+        "Add commas around non-defining relative clauses.",
+        "Identify dependent-clause fragments.",
+        "Correct run-on sentences and unclear pronouns."
+      ],
+      "success_target": "Repair common sentence-level errors consistently."
+    },
+    {
+      "phase": "7. Timed practice",
+      "duration": "10 minutes",
+      "activities": [
+        "Use one minute to identify the topic.",
+        "Use three minutes to record main-point notes.",
+        "Use four minutes to write one sentence.",
+        "Use two minutes to apply the final checklist."
+      ],
+      "success_target": "Submit one accurate, complete sentence within the time limit."
+    },
+    {
+      "phase": "8. Error log and repetition",
+      "duration": "10 minutes",
+      "activities": [
+        "Record one content error, one grammar risk, and one vocabulary improvement.",
+        "Rewrite the timed response without looking at the original draft.",
+        "Compare the two versions.",
+        "Choose one priority skill for the next practice session."
+      ],
+      "success_target": "Turn feedback into one specific improvement goal."
+    }
+  ],
+  "mastery_checklist": [
+    "I can explain that the task requires one written sentence.",
+    "I can complete the response within the 10-minute limit.",
+    "I can identify the passage's topic before taking detailed notes.",
+    "I can locate the central claim and the most important supporting points.",
+    "I can distinguish essential ideas from examples, evidence, and repetition.",
+    "I can infer an unfamiliar word from context, grammatical class, related words, or word roots.",
+    "I can create short notes instead of copying complete source sentences.",
+    "I can paraphrase without changing meaning, certainty, or scope.",
+    "I can combine two or three main ideas with accurate logical linkers.",
+    "I can use a relative clause without losing control of the main clause.",
+    "I can maintain appropriate tense and subject–verb agreement.",
+    "I can avoid personal opinions and unsupported conclusions.",
+    "I can confirm that my response contains exactly one sentence.",
+    "I can check punctuation, spelling, grammar, and vocabulary before submitting.",
+    "I can explain why each idea in my final response is necessary."
+  ],
+  "strategy_notes": [
+    {
+      "principle": "Accuracy is more important than decorative vocabulary.",
+      "application": "Prefer a familiar, precise word over an advanced word whose meaning or grammar you cannot control."
+    },
+    {
+      "principle": "The final sentence should reflect the passage's structure.",
+      "application": "A cause-and-effect passage needs causal language, while a comparison passage needs contrast or comparison language."
+    },
+    {
+      "principle": "The first sentence is useful but not automatically the main idea.",
+      "application": "Check repeated concepts, paragraph development, and the conclusion before deciding the central message."
+    },
+    {
+      "principle": "Statistics are usually supporting evidence.",
+      "application": "Convert several percentages into a general trend unless a specific figure is essential to the writer's conclusion."
+    },
+    {
+      "principle": "One sentence does not mean one endless chain.",
+      "application": "Use one main clause supported by controlled dependent clauses and parallel phrases."
+    },
+    {
+      "principle": "Unknown vocabulary should not stop comprehension.",
+      "application": "Identify the word's grammatical role, examine nearby clues, recognise roots or affixes, and continue reading for the broader idea."
+    },
+    {
+      "principle": "Preserve qualification.",
+      "application": "Keep words such as may, can, often, generally, some, and most when they limit the writer's claim."
+    },
+    {
+      "principle": "Proofreading needs a fixed order.",
+      "application": "Check content first, then one-sentence form, grammar, punctuation, spelling, and finally length."
+    },
+    {
+      "principle": "Do not rewrite the whole response during the final minute.",
+      "application": "Make small, safe corrections unless the sentence is incomplete or the main meaning is wrong."
+    },
+    {
+      "principle": "A reusable structure is helpful, but a rigid template is risky.",
+      "application": "Choose a sentence frame that matches the passage instead of forcing every topic into the same memorized wording."
+    }
+  ],
+  "metadata": {
+    "chapter_number": 6,
+    "estimated_study_time_minutes": 135,
+    "difficulty": "intermediate_to_upper_intermediate",
+    "communicative_skills": [
+      "reading",
+      "writing"
+    ],
+    "enabling_skills": [
+      "grammar",
+      "vocabulary",
+      "spelling",
+      "written_discourse"
+    ],
+    "primary_learning_unit": "Identify, paraphrase, and synthesize the main ideas of a passage in one accurate sentence.",
+    "recommended_supporting_units": [
+      "Topic sentences and paragraph structure",
+      "Signal words and logical relationships",
+      "Relative and dependent clauses",
+      "Academic paraphrasing",
+      "Grammar and punctuation proofreading",
+      "Timed reading and writing"
+    ],
+    "assessment_focus": [
+      "Task compliance",
+      "Main-idea coverage",
+      "Accuracy of synthesis",
+      "Sentence control",
+      "Vocabulary appropriateness",
+      "Grammar and mechanics"
+    ],
+    "tags": [
+      "pte-academic",
+      "summarize-written-text",
+      "reading-to-write",
+      "main-idea",
+      "paraphrasing",
+      "synthesis",
+      "dependent-clauses",
+      "relative-clauses",
+      "timed-writing",
+      "proofreading"
+    ],
+    "source_basis": [
+      "Official Guide task requirements and summary-writing strategies",
+      "Teacher Notes Lesson 6 skills sequence",
+      "B1 coursebook note-taking and summary-writing practice",
+      "User-provided chapter summary, examples, corrections, and self-check items"
+    ]
+  }
+}

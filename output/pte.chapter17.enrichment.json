@@ -1,0 +1,688 @@
+{
+  "schema_version": "pte_lesson_enrichment.v1",
+  "task_type": "integrated_recap_and_progress_review",
+  "lesson_title": "RECAP LESSON 2",
+  "source_label": "pte:ch17",
+  "modality": [
+    "speaking",
+    "writing",
+    "reading",
+    "listening",
+    "self_assessment",
+    "peer_feedback"
+  ],
+  "overview": {
+    "summary": "This teaching-first recap helps learners review the PTE Academic item types from Lessons 8–15, identify the skills behind each task, compare current performance with earlier work, discuss recurring problems, and select focused practice instead of reviewing randomly.",
+    "estimated_study_time": "45–60 minutes",
+    "why_this_lesson_matters": [
+      "A recap converts separate lesson strategies into one connected test-preparation system.",
+      "Naming the skill behind an error makes it easier to choose the correct improvement activity.",
+      "Comparing earlier and current responses provides evidence of progress rather than relying only on feelings.",
+      "Discussing problems with a partner can reveal practical solutions that an individual learner may not notice.",
+      "Targeted practice saves time because learners repeat only the tasks and subskills that require attention."
+    ],
+    "item_types_reviewed": [
+      "Describe image",
+      "Re-order paragraphs",
+      "Listening: Fill in the blanks",
+      "Write from dictation",
+      "Reading: Multiple-choice, choose single answer",
+      "Reading: Multiple-choice, choose multiple answers",
+      "Listening: Multiple-choice, choose single answer",
+      "Listening: Multiple-choice, choose multiple answers",
+      "Re-tell lecture",
+      "Summarize spoken text",
+      "Highlight correct summary",
+      "Write essay"
+    ],
+    "recommended_outcome": "By the end of the recap, the learner should have a completed review log, evidence of progress in at least one skill, a clearly defined problem area, and a short targeted practice plan."
+  },
+  "learning_goals": [
+    {
+      "goal": "Recall the item types covered in Lessons 8–15.",
+      "success_evidence": "The learner can name the reviewed item types and group them by speaking, writing, reading, listening, or integrated skills."
+    },
+    {
+      "goal": "Explain the main skills required for each item type.",
+      "success_evidence": "The learner can connect each task to specific skills such as fluency, note-taking, recall, discourse analysis, spelling, or identifying main ideas."
+    },
+    {
+      "goal": "Distinguish confident skills from problem areas.",
+      "success_evidence": "The learner assigns a confidence level and identifies one precise difficulty for each selected item type."
+    },
+    {
+      "goal": "Turn practice problems into practical solutions.",
+      "success_evidence": "For every identified problem, the learner records one strategy, drill, or feedback action to try."
+    },
+    {
+      "goal": "Measure progress through self and peer assessment.",
+      "success_evidence": "The learner compares an earlier response or assessment with a current one and records improvement, remaining difficulty, and a next action."
+    },
+    {
+      "goal": "Choose extra practice based on evidence.",
+      "success_evidence": "The learner selects practice that directly matches the weakest skill rather than repeating tasks without a clear purpose."
+    }
+  ],
+  "core_method": {
+    "name": "Review, Diagnose, Solve, Practise, Recheck",
+    "purpose": "Use a repeatable five-stage cycle to transform a broad recap into a focused improvement plan.",
+    "steps": [
+      {
+        "stage": "1. Review",
+        "instruction": "List the item types from Lessons 8–15 and briefly state what the test taker must do in each one.",
+        "example": "Re-tell lecture: listen to a lecture, take useful notes, and deliver an organized spoken summary."
+      },
+      {
+        "stage": "2. Diagnose",
+        "instruction": "Identify the exact skill causing difficulty rather than saying only that the whole task is hard.",
+        "example": "Instead of writing 'Re-order paragraphs is difficult,' write 'I lose track of pronoun referents and contrast markers.'"
+      },
+      {
+        "stage": "3. Solve",
+        "instruction": "Match the problem to one practical strategy that can be repeated and measured.",
+        "example": "Underline every pronoun and identify the noun it refers to before deciding paragraph order."
+      },
+      {
+        "stage": "4. Practise",
+        "instruction": "Repeat one relevant item or drill while focusing only on the selected problem area.",
+        "example": "Complete one Re-tell lecture while concentrating on recording only the topic, three key points, and the conclusion."
+      },
+      {
+        "stage": "5. Recheck",
+        "instruction": "Compare the new performance with an earlier response and decide whether the strategy helped.",
+        "example": "Compare fluency, content coverage, and hesitation frequency in two Describe image recordings."
+      },
+      {
+        "stage": "6. Plan the next cycle",
+        "instruction": "Keep an effective strategy, modify a partly effective strategy, or replace an ineffective one.",
+        "example": "If full-sentence notes reduce listening accuracy, switch to keywords, arrows, abbreviations, and numbers."
+      }
+    ]
+  },
+  "techniques": [
+    {
+      "name": "Skill mapping",
+      "teaching_point": "Every item type depends on one or more underlying language skills. Improvement becomes easier when the learner names these skills.",
+      "how_to_apply": [
+        "Write the item type.",
+        "State the communicative skills tested.",
+        "Add the most important enabling skill.",
+        "Identify the skill currently limiting performance."
+      ],
+      "example": "Describe image → speaking → oral fluency and pronunciation → current limitation: long pauses while deciding what to describe."
+    },
+    {
+      "name": "Confidence traffic light",
+      "teaching_point": "Use a simple confidence rating to prioritize practice.",
+      "how_to_apply": [
+        "Green means the strategy is reliable under timed conditions.",
+        "Amber means performance is inconsistent.",
+        "Red means the learner is unsure how to approach the task.",
+        "Practise red items first, followed by amber items."
+      ],
+      "example": "Write from dictation: amber because the learner remembers content words but often misses articles and plural endings."
+    },
+    {
+      "name": "Problem-to-solution conversion",
+      "teaching_point": "A useful problem statement contains the task, the observable error, and the likely skill weakness.",
+      "how_to_apply": [
+        "Name the item type.",
+        "Describe what went wrong.",
+        "Identify why it happened.",
+        "Choose one action that directly targets the cause."
+      ],
+      "example": "Listening multiple-choice: selected an option containing familiar words; cause: keyword matching; solution: compare each option with the speaker's complete meaning."
+    },
+    {
+      "name": "Second-colour progress check",
+      "teaching_point": "Complete the same assessment form again using a different colour so changes are visible.",
+      "how_to_apply": [
+        "Review the earlier assessment.",
+        "Complete the current assessment independently.",
+        "Mark improved areas.",
+        "Circle skills that remain unchanged.",
+        "Write one next action beside each continuing problem."
+      ],
+      "example": "Earlier speaking assessment: frequent pauses. Current assessment: fewer pauses but weak sentence stress. Next focus: stress important nouns, verbs, adjectives, and numbers."
+    },
+    {
+      "name": "One-focus repetition",
+      "teaching_point": "Repeat a task with one narrow objective rather than trying to repair every weakness at once.",
+      "how_to_apply": [
+        "Choose one task.",
+        "Choose one target skill.",
+        "Complete the item under realistic conditions.",
+        "Review only the target skill first.",
+        "Record whether the target improved."
+      ],
+      "example": "Repeat a Describe image response while focusing only on continuous speech and avoiding silent pauses."
+    },
+    {
+      "name": "Evidence-based peer feedback",
+      "teaching_point": "Peer feedback should describe observable features rather than general impressions.",
+      "how_to_apply": [
+        "State one successful feature.",
+        "Identify one specific difficulty.",
+        "Refer to an exact part of the response.",
+        "Suggest one manageable improvement."
+      ],
+      "example": "Your Re-tell lecture included the topic and conclusion, but the second supporting point was unclear. Use numbered notes so you can present the points in sequence."
+    },
+    {
+      "name": "Cross-skill diagnosis",
+      "teaching_point": "Integrated tasks may be weakened by a different skill from the one used to produce the final response.",
+      "how_to_apply": [
+        "Separate input skills from output skills.",
+        "Check which stage first breaks down.",
+        "Practise the weaker stage separately.",
+        "Recombine the skills in a complete item."
+      ],
+      "example": "A weak Summarize spoken text response may result from poor listening notes rather than weak sentence writing."
+    },
+    {
+      "name": "Strategy retrieval",
+      "teaching_point": "Before extra practice, recall the strategy from the original lesson without immediately checking the guide.",
+      "how_to_apply": [
+        "Explain the strategy in your own words.",
+        "Demonstrate it on a small example.",
+        "Check the Official Guide or lesson notes.",
+        "Correct any missing or inaccurate steps."
+      ],
+      "example": "For Re-order paragraphs, first recall that articles, pronouns, repeated nouns, chronological markers, and discourse markers can create paragraph links."
+    }
+  ],
+  "worked_examples": [
+    {
+      "title": "Example 1: Complete review log",
+      "learning_point": "A review log connects an item type, its skills, a real problem, and an actionable solution.",
+      "example": [
+        {
+          "item_type": "Describe image",
+          "main_skills": "Organizing spoken information, oral fluency, pronunciation",
+          "confidence": "Amber",
+          "problem": "I spend too long listing minor details and then rush the conclusion.",
+          "solution": "Use a three-part plan: overview, two major features, concluding comparison."
+        },
+        {
+          "item_type": "Re-order paragraphs",
+          "main_skills": "Logical sequencing, referent tracking, discourse analysis",
+          "confidence": "Red",
+          "problem": "I arrange paragraphs by topic similarity but ignore grammatical links.",
+          "solution": "Find the independent opening paragraph, then build pairs using articles, pronouns, repeated terms, and linkers."
+        },
+        {
+          "item_type": "Write from dictation",
+          "main_skills": "Listening recall, spelling, grammar",
+          "confidence": "Amber",
+          "problem": "I remember key nouns but omit small grammar words.",
+          "solution": "Reconstruct the sentence grammar after recording content words and check articles, prepositions, auxiliaries, plurals, and verb endings."
+        }
+      ],
+      "why_it_works": "The entries are specific enough to guide the next practice session."
+    },
+    {
+      "title": "Example 2: Comparing two speaking assessments",
+      "learning_point": "Progress should be described with evidence.",
+      "earlier_observation": "The learner paused several times, restarted sentences, and spoke too quickly after each pause.",
+      "current_observation": "The learner maintained speech for longer sections and used a clearer structure, but pronunciation became unclear on longer academic words.",
+      "progress_notes": [
+        "Improved: fewer silent pauses.",
+        "Still difficult: pronunciation of multisyllabic academic vocabulary.",
+        "Next strategy: mark word stress before speaking and practise difficult words separately.",
+        "Peer action: ask a partner to note any word that is difficult to understand."
+      ],
+      "why_it_works": "The comparison identifies both improvement and the next limiting skill."
+    },
+    {
+      "title": "Example 3: Diagnosing a Re-tell lecture problem",
+      "learning_point": "The visible speaking problem may begin during listening and note-taking.",
+      "weak_response_pattern": "The response begins correctly but becomes vague after the first point and repeats the same idea.",
+      "diagnosis": [
+        "The learner wrote full sentences while listening.",
+        "Important later points were missed.",
+        "The notes did not show the lecture sequence.",
+        "The learner relied on memory instead of the note structure."
+      ],
+      "targeted_solution": [
+        "Record the topic at the top of the page.",
+        "Use numbers for the main points.",
+        "Use arrows for cause and effect.",
+        "Use abbreviations instead of full sentences.",
+        "Reserve the final line for the speaker's conclusion."
+      ],
+      "why_it_works": "The solution improves the input stage before requiring another complete spoken response."
+    },
+    {
+      "title": "Example 4: Eliminating a misleading summary option",
+      "learning_point": "The best summary must cover the main idea accurately without adding unsupported information.",
+      "scenario": "A recording explains that online learning offers flexibility but many students still prefer face-to-face classes for interaction and immediate support.",
+      "options_analysis": [
+        {
+          "option": "Online learning is always more effective because students can study whenever they choose.",
+          "decision": "Eliminate",
+          "reason": "It adds the unsupported absolute claim 'always more effective' and ignores the preference for face-to-face support."
+        },
+        {
+          "option": "Students reject online learning because technology makes communication impossible.",
+          "decision": "Eliminate",
+          "reason": "It contradicts the recording and exaggerates the communication problem."
+        },
+        {
+          "option": "Although online study provides flexibility, many students value classroom interaction and direct support.",
+          "decision": "Keep",
+          "reason": "It includes the central contrast and accurately represents both main points."
+        },
+        {
+          "option": "Technology is becoming cheaper for universities and students.",
+          "decision": "Eliminate",
+          "reason": "The information is not mentioned."
+        }
+      ],
+      "why_it_works": "The learner checks meaning, coverage, accuracy, and unsupported additions rather than matching isolated words."
+    },
+    {
+      "title": "Example 5: Selecting extra practice",
+      "learning_point": "Extra practice should match the diagnosed weakness.",
+      "diagnosed_problem": "In Summarize spoken text, the learner records many examples but misses the lecturer's main claim.",
+      "poor_practice_choice": "Write several complete summaries without changing the listening method.",
+      "better_practice_choice": [
+        "Listen to a short lecture.",
+        "Write only one sentence for the main idea.",
+        "Record no more than three supporting points.",
+        "Circle signposts such as 'the main issue,' 'however,' and 'in conclusion.'",
+        "Write the complete summary only after the notes consistently capture the main claim."
+      ],
+      "why_it_works": "The practice isolates main-idea recognition before adding the writing demand."
+    }
+  ],
+  "useful_language": [
+    {
+      "function": "Describing confidence",
+      "phrases": [
+        "I feel confident about...",
+        "I can usually complete this task when...",
+        "My performance is consistent in...",
+        "I understand the strategy, but I still need to improve...",
+        "I am least confident when..."
+      ]
+    },
+    {
+      "function": "Explaining a problem",
+      "phrases": [
+        "The main difficulty I experience is...",
+        "I usually lose marks because...",
+        "My performance becomes weaker when...",
+        "I understand the content, but I struggle to...",
+        "The problem appears during the listening, planning, speaking, or editing stage."
+      ]
+    },
+    {
+      "function": "Suggesting a solution",
+      "phrases": [
+        "A practical strategy would be to...",
+        "You could isolate this skill by...",
+        "Try focusing on one feature at a time.",
+        "It may help to compare...",
+        "The next practice item should concentrate on..."
+      ]
+    },
+    {
+      "function": "Giving peer feedback",
+      "phrases": [
+        "One part that worked well was...",
+        "Your response was clear when...",
+        "A specific area to improve is...",
+        "The response would be easier to follow if...",
+        "On your next attempt, try..."
+      ]
+    },
+    {
+      "function": "Sequencing and linking ideas",
+      "phrases": [
+        "First",
+        "Next",
+        "In addition",
+        "However",
+        "As a result",
+        "For example",
+        "In contrast",
+        "Finally",
+        "Overall",
+        "In conclusion"
+      ]
+    },
+    {
+      "function": "Recognizing lecture signposts",
+      "phrases": [
+        "The main point is...",
+        "There are three reasons...",
+        "For instance...",
+        "On the other hand...",
+        "This leads to...",
+        "The key difference is...",
+        "To summarize...",
+        "The speaker concludes that..."
+      ]
+    },
+    {
+      "function": "Eliminating reading or listening options",
+      "phrases": [
+        "This option is too broad.",
+        "This option focuses only on a minor detail.",
+        "This information was not mentioned.",
+        "This option contradicts the text or recording.",
+        "The wording is similar, but the meaning is different.",
+        "This option adds an unsupported cause, result, or opinion.",
+        "This option accurately covers both the main idea and the supporting point."
+      ]
+    },
+    {
+      "function": "Comparing progress",
+      "phrases": [
+        "Compared with my earlier response...",
+        "I have improved in...",
+        "This area has remained difficult because...",
+        "The strategy helped me to...",
+        "My next measurable target is..."
+      ]
+    }
+  ],
+  "common_mistakes": [
+    {
+      "mistake": "Treating the recap as a memory test only.",
+      "why_it_hurts": "Naming item types without diagnosing performance does not produce an improvement plan.",
+      "correction": "For every reviewed task, include the required skills, confidence level, problem, and next strategy."
+    },
+    {
+      "mistake": "Writing vague problem statements such as 'Listening is hard.'",
+      "why_it_hurts": "A broad statement does not identify what should be practised.",
+      "correction": "Describe an observable difficulty, such as missing contrast markers, forgetting grammar words, or confusing supporting details with the main idea."
+    },
+    {
+      "mistake": "Checking the Official Guide before trying to recall a strategy.",
+      "why_it_hurts": "The learner cannot tell whether the strategy is available from memory under test conditions.",
+      "correction": "Explain the method first in your own words, then use the guide to check and repair it."
+    },
+    {
+      "mistake": "Repeating complete tasks without isolating the weak subskill.",
+      "why_it_hurts": "The same error may be repeated without improvement.",
+      "correction": "Practise one narrow feature, such as note organization, pronoun reference, article use, spelling endings, or continuous speech."
+    },
+    {
+      "mistake": "Choosing extra practice based only on the lowest score.",
+      "why_it_hurts": "A low score may result from several different causes.",
+      "correction": "Identify the first stage where performance breaks down and select practice for that stage."
+    },
+    {
+      "mistake": "Giving peer feedback such as 'Good' or 'Practise more.'",
+      "why_it_hurts": "General comments do not tell the learner what to keep or change.",
+      "correction": "Give one evidence-based strength, one specific weakness, and one practical next action."
+    },
+    {
+      "mistake": "Focusing only on speaking during the recap.",
+      "why_it_hurts": "Lessons 8–15 include speaking, writing, reading, listening, and integrated tasks.",
+      "correction": "Review at least one task from each communicative skill and include integrated-skill problems."
+    },
+    {
+      "mistake": "Assuming that familiar words make an option correct.",
+      "why_it_hurts": "Incorrect options often repeat vocabulary while changing the meaning.",
+      "correction": "Compare the complete meaning, including cause, contrast, degree, time, and the speaker's or writer's position."
+    },
+    {
+      "mistake": "Trying to improve every skill in one practice attempt.",
+      "why_it_hurts": "Attention becomes divided and progress is difficult to measure.",
+      "correction": "Choose one primary focus and, at most, one secondary focus for each attempt."
+    }
+  ],
+  "practice_plan": [
+    {
+      "stage": "1. Rapid item-type recall",
+      "duration": "5 minutes",
+      "instructions": [
+        "List the item types from Lessons 8–15 without using notes.",
+        "Group them under speaking, writing, reading, listening, or integrated skills.",
+        "Check the list against the course overview.",
+        "Add any missing item types in a different colour."
+      ],
+      "output": "A complete item-type map."
+    },
+    {
+      "stage": "2. Skills and confidence audit",
+      "duration": "10 minutes",
+      "instructions": [
+        "Choose at least six item types.",
+        "Write the main skills required for each task.",
+        "Rate each item green, amber, or red.",
+        "Write one precise problem beside each amber or red item."
+      ],
+      "output": "A prioritized review log."
+    },
+    {
+      "stage": "3. Problem-solving discussion",
+      "duration": "10–15 minutes",
+      "instructions": [
+        "Share one speaking, one reading, one writing, and one listening problem.",
+        "Ask a partner to suggest a strategy.",
+        "Reject advice that is too general to apply.",
+        "Record one specific action for each problem.",
+        "Bring unresolved questions to the larger group or check the relevant lesson material."
+      ],
+      "output": "A problem-and-solution list covering all four skills."
+    },
+    {
+      "stage": "4. Progress comparison",
+      "duration": "10 minutes",
+      "instructions": [
+        "Choose an earlier assessment form or practice response.",
+        "Complete the assessment again using a second colour.",
+        "Record one improved area.",
+        "Record one area that remains difficult.",
+        "Choose one strategy to test in the next attempt."
+      ],
+      "output": "Three evidence-based progress notes."
+    },
+    {
+      "stage": "5. Targeted micro-practice",
+      "duration": "10–15 minutes",
+      "instructions": [
+        "Select the highest-priority problem.",
+        "Choose one previous activity or Official Guide practice item.",
+        "Complete it under realistic conditions.",
+        "Evaluate only the target skill first.",
+        "Decide whether the chosen strategy improved performance."
+      ],
+      "output": "One completed targeted practice attempt with a brief evaluation."
+    },
+    {
+      "stage": "6. Personal continuation plan",
+      "duration": "5 minutes",
+      "instructions": [
+        "Choose one speaking target.",
+        "Choose one writing or spelling target.",
+        "Choose one reading target.",
+        "Choose one listening target.",
+        "Set a measurable action and review date for each target."
+      ],
+      "output": "A short four-skill practice plan."
+    }
+  ],
+  "mastery_checklist": [
+    "I can name the item types covered in Lessons 8–15.",
+    "I can explain the main skill or skill combination required for each reviewed item type.",
+    "I can distinguish a task-level problem from a specific skill-level problem.",
+    "I can identify at least one speaking strength and one speaking problem area.",
+    "I can identify at least one writing strength and one writing problem area.",
+    "I can identify at least one reading strength and one reading problem area.",
+    "I can identify at least one listening strength and one listening problem area.",
+    "I can give a practical strategy for a problem instead of saying only that more practice is needed.",
+    "I can compare a current response with an earlier response using observable evidence.",
+    "I can give peer feedback containing a strength, a specific weakness, and a next action.",
+    "I can select extra practice that directly matches my diagnosed weakness.",
+    "I can explain whether a problem begins during input, planning, production, or checking.",
+    "I can use signposts, grammatical links, and option-elimination language when reviewing relevant tasks.",
+    "I have a realistic plan for continuing to improve all four communicative skills."
+  ],
+  "strategy_notes": [
+    {
+      "item_type": "Describe image",
+      "primary_focus": "Fluency, pronunciation, and logical spoken organization",
+      "review_questions": [
+        "Did I begin with an overview?",
+        "Did I select major features instead of listing everything?",
+        "Did I maintain continuous speech?",
+        "Were key words and numbers understandable?"
+      ],
+      "recommended_drill": "Record two responses to the same image: first for structure, then for smoother delivery."
+    },
+    {
+      "item_type": "Re-order paragraphs",
+      "primary_focus": "Articles, referents, repeated vocabulary, discourse markers, and logical sequence",
+      "review_questions": [
+        "Which paragraph can introduce the topic independently?",
+        "Which noun must appear before a pronoun or definite reference?",
+        "Which paragraphs form a clear pair?",
+        "Does the final order show cause, contrast, development, or chronology?"
+      ],
+      "recommended_drill": "Build paragraph pairs before attempting the complete order."
+    },
+    {
+      "item_type": "Listening: Fill in the blanks",
+      "primary_focus": "Following the transcript, predicting grammar, recognizing word forms, and spelling",
+      "review_questions": [
+        "What part of speech is required?",
+        "Does the word agree with the surrounding grammar?",
+        "Did I hear a plural, tense ending, or derived form?",
+        "Does the completed sentence make sense?"
+      ],
+      "recommended_drill": "Pause after practice and categorize errors as hearing, grammar, vocabulary, or spelling errors."
+    },
+    {
+      "item_type": "Write from dictation",
+      "primary_focus": "Listening, short-term recall, sentence reconstruction, and accurate spelling",
+      "review_questions": [
+        "Did I capture the content words?",
+        "Did I reconstruct the grammar words?",
+        "Did I check verb and noun endings?",
+        "Did I review capitalization and final punctuation?"
+      ],
+      "recommended_drill": "Repeat the sentence in meaningful chunks, write keywords, reconstruct, and perform a grammar check."
+    },
+    {
+      "item_type": "Reading multiple-choice",
+      "primary_focus": "Gist, purpose, inference, detail, and option elimination",
+      "review_questions": [
+        "What exactly does the prompt ask?",
+        "Which option is unsupported or too broad?",
+        "Which option reverses the writer's meaning?",
+        "For multiple answers, do I have evidence for every selected option?"
+      ],
+      "recommended_drill": "Explain why every incorrect option is wrong, not only why the chosen option is right."
+    },
+    {
+      "item_type": "Listening multiple-choice",
+      "primary_focus": "Main idea, supporting details, speaker purpose, attitude, and redundant information",
+      "review_questions": [
+        "Did I read the prompt before listening?",
+        "Did I identify the speaker's overall message?",
+        "Did an option mention only a minor example?",
+        "Did an option use familiar words but change the meaning?"
+      ],
+      "recommended_drill": "After listening, state the main idea orally before examining the options."
+    },
+    {
+      "item_type": "Re-tell lecture",
+      "primary_focus": "Note-taking, listening, recall, sequencing, fluency, and pronunciation",
+      "review_questions": [
+        "Did my notes show the topic and structure?",
+        "Did I include the most important supporting points?",
+        "Did I present ideas in a logical order?",
+        "Did I avoid long pauses while reading my notes?"
+      ],
+      "recommended_drill": "Use a note template containing topic, point 1, point 2, point 3, and conclusion."
+    },
+    {
+      "item_type": "Summarize spoken text",
+      "primary_focus": "Signpost vocabulary, main ideas, note selection, logical writing, grammar, and spelling",
+      "review_questions": [
+        "Did I capture the main claim?",
+        "Which notes are essential and which are examples?",
+        "Did I organize the points logically?",
+        "Did I check grammar, spelling, and sentence boundaries?"
+      ],
+      "recommended_drill": "Practise reducing a full page of notes to one main idea and three supporting points."
+    },
+    {
+      "item_type": "Highlight correct summary",
+      "primary_focus": "Main idea, supporting points, speaker attitude, and elimination of inaccurate or redundant summaries",
+      "review_questions": [
+        "Does the option include the recording's main idea?",
+        "Does it represent the important supporting points?",
+        "Does it add information not stated?",
+        "Does it focus too narrowly on one example?"
+      ],
+      "recommended_drill": "Label each rejected option as unsupported, contradictory, incomplete, or minor-detail focused."
+    },
+    {
+      "item_type": "Write essay",
+      "primary_focus": "Prompt analysis, planning, paragraph structure, support, cohesion, grammar, spelling, and editing",
+      "review_questions": [
+        "Did I answer every part of the prompt?",
+        "Does each body paragraph have a clear main idea?",
+        "Did I support claims with explanations or examples?",
+        "Did I reserve time for editing?"
+      ],
+      "recommended_drill": "Complete a five-minute planning and paragraph-outline exercise before writing another timed essay."
+    },
+    {
+      "item_type": "General PTE preparation",
+      "primary_focus": "Test format, self-evaluation, study planning, resources, and test-day readiness",
+      "review_questions": [
+        "Do I understand the test structure and item sequence?",
+        "Does my study plan prioritize weak skills?",
+        "Am I practising under realistic timing and playback conditions?",
+        "Do I know what to expect before and during the test session?"
+      ],
+      "recommended_drill": "Review the preparation guidance and convert it into a personal checklist for study sessions and test day."
+    }
+  ],
+  "metadata": {
+    "chapter_number": 17,
+    "estimated_study_time": "45–60 minutes",
+    "difficulty": "mixed-level consolidation",
+    "lesson_role": "second recap after Lessons 8–15",
+    "communicative_skills": [
+      "speaking",
+      "writing",
+      "reading",
+      "listening"
+    ],
+    "enabling_skills": [
+      "oral fluency",
+      "pronunciation",
+      "grammar",
+      "spelling",
+      "vocabulary",
+      "written discourse",
+      "note-taking",
+      "self-monitoring"
+    ],
+    "recommended_materials": [
+      "Previous practice responses from Lessons 8–15",
+      "Earlier self-assessment forms",
+      "A second-colour pen or digital highlighting method",
+      "Relevant Official Guide strategy and practice pages",
+      "A timer",
+      "A voice recorder for speaking comparison",
+      "A personal error log"
+    ],
+    "assessment_mode": [
+      "self-assessment",
+      "peer assessment",
+      "strategy explanation",
+      "targeted practice",
+      "response comparison"
+    ],
+    "teaching_principle": "The teacher or study partner acts as a facilitator, while the learner recalls strategies, identifies problems, proposes solutions, tests them, and evaluates the results.",
+    "source_scope": "Recap of item types, skills, assessment procedures, and preparation guidance associated with Lessons 8–15 and the Official Guide preparation section."
+  }
+}

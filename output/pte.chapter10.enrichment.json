@@ -1,0 +1,845 @@
+{
+  "schema_version": "pte_lesson_enrichment.v1",
+  "task_type": "lesson_enrichment",
+  "lesson_title": "LESSON 9: Re-order Paragraphs",
+  "source_label": "pte:ch10",
+  "modality": "reading",
+  "overview": {
+    "lesson_purpose": "Develop a reliable method for reconstructing the single correct order of jumbled academic text boxes by combining meaning, grammar, reference, and discourse clues.",
+    "estimated_study_time": "Plan for about 2 hours of focused study for this chapter.",
+    "item_type_summary": "In Re-order paragraphs, several text boxes from one academic passage appear in the wrong order. The test taker must arrange them so that the passage develops logically and cohesively.",
+    "main_skill_focus": "The task primarily tests understanding of text organization and cohesion rather than isolated vocabulary knowledge.",
+    "text_features_to_analyze": [
+      "The main topic and the most independent opening sentence",
+      "The movement from general ideas to supporting details",
+      "References created by articles, pronouns, demonstratives, and repeated nouns",
+      "Logical relationships signalled by discourse markers",
+      "Chronological, procedural, causal, comparative, and problem-solution structures",
+      "The consistency of tense, vocabulary, and topic across sentence boundaries"
+    ],
+    "success_principle": "Do not try to guess the complete order immediately. Build the passage by identifying a strong opening sentence, forming reliable sentence pairs, joining those pairs into a chain, and then checking the whole paragraph."
+  },
+  "learning_goals": [
+    "Identify a likely topic sentence that can introduce the passage without depending on earlier information.",
+    "Distinguish general statements from examples, explanations, evidence, consequences, and conclusions.",
+    "Use indefinite and definite articles to track first mention and later reference.",
+    "Resolve pronouns and reference expressions by locating their correct antecedents.",
+    "Recognize discourse markers for addition, contrast, similarity, examples, cause and effect, sequence, generalization, and conclusion.",
+    "Follow logical, chronological, procedural, and argumentative development across several text boxes.",
+    "Form strong adjacent sentence pairs before attempting to finalize the complete sequence.",
+    "Reject possible orders that create an unexplained pronoun, missing noun, broken timeline, repeated introduction, or illogical transition.",
+    "Complete practice items efficiently under shared Reading-section time pressure.",
+    "Explain why each sentence belongs in its selected position rather than relying only on intuition."
+  ],
+  "core_method": {
+    "name": "OPEN-PAIR-CHAIN-CHECK",
+    "purpose": "A repeatable method for solving Re-order paragraphs accurately and quickly.",
+    "steps": [
+      {
+        "step": 1,
+        "name": "Preview every box",
+        "instruction": "Read all text boxes once for the general subject. Do not begin dragging boxes after reading only the first one.",
+        "example": "Notice whether the passage is about a building, a historical event, a scientific process, a social issue, or a research finding."
+      },
+      {
+        "step": 2,
+        "name": "Find the opening candidate",
+        "instruction": "Choose the sentence that introduces the topic most independently and contains the fewest backward references.",
+        "example": "A sentence naming the Burj Dubai is a stronger opening than one beginning with 'The building' because the building must first be identified."
+      },
+      {
+        "step": 3,
+        "name": "Mark dependent beginnings",
+        "instruction": "Identify boxes beginning with pronouns, definite noun phrases, contrast markers, result markers, examples, or conclusions. These usually require earlier information.",
+        "example": "'They', 'this method', 'the study', 'however', 'therefore', and 'in conclusion' rarely function as independent openings."
+      },
+      {
+        "step": 4,
+        "name": "Build strong pairs",
+        "instruction": "Find two sentences with a clear grammatical or semantic connection. Prefer exact links over broad topic similarity.",
+        "example": "'A hotel occupies several floors' is likely to precede 'That accommodation offers panoramic views' because 'that accommodation' refers back to the hotel."
+      },
+      {
+        "step": 5,
+        "name": "Join pairs into a chain",
+        "instruction": "Combine reliable pairs by following the passage's development from introduction to explanation, evidence, consequence, and conclusion.",
+        "example": "General claim → explanation → example → result is usually more coherent than example → general claim → unrelated result."
+      },
+      {
+        "step": 6,
+        "name": "Check global logic",
+        "instruction": "Read the proposed order as one paragraph and test whether its topic, tense, references, and argument develop smoothly.",
+        "example": "A sentence describing the consequences of an experiment should not appear before the experiment itself has been introduced."
+      },
+      {
+        "step": 7,
+        "name": "Use elimination for uncertain gaps",
+        "instruction": "When two positions remain uncertain, compare which option creates fewer broken references or weaker transitions.",
+        "example": "Reject an order if 'this early Pope' appears before any Pope has been named."
+      },
+      {
+        "step": 8,
+        "name": "Finalize efficiently",
+        "instruction": "Once every adjacent link has a defensible reason, submit and move on rather than repeatedly rearranging a coherent answer.",
+        "example": "A complete chain supported by article, referent, and discourse clues is stronger than a late change based only on how one sentence sounds."
+      }
+    ]
+  },
+  "techniques": [
+    {
+      "name": "Topic-sentence test",
+      "teaching_point": "The opening sentence usually introduces the subject, provides necessary background, and does not rely heavily on earlier text.",
+      "how_to_apply": [
+        "Look for a named person, place, theory, event, problem, or phenomenon.",
+        "Prefer a general statement over a detailed example.",
+        "Avoid sentences beginning with unexplained pronouns or demonstratives.",
+        "Check whether the sentence would make sense to a reader seeing the topic for the first time."
+      ],
+      "example": "The sentence 'Valentine's Day has developed from several historical traditions' can open a paragraph more naturally than 'The holiday later became associated with romantic love.'"
+    },
+    {
+      "name": "General-to-specific development",
+      "teaching_point": "Academic paragraphs commonly move from a broad claim to explanation, evidence, examples, and implications.",
+      "how_to_apply": [
+        "Identify the broadest statement.",
+        "Place definitions after the term or concept they explain.",
+        "Place statistics or examples after the relevant claim.",
+        "Place interpretations or consequences after the evidence."
+      ],
+      "example": "Renewable energy is expanding rapidly → several governments have introduced incentives → solar installations increased by 30 percent → this growth has reduced dependence on imported fuel."
+    },
+    {
+      "name": "Article tracking",
+      "teaching_point": "Articles can distinguish new information from information already known to the reader.",
+      "how_to_apply": [
+        "Treat 'a' or 'an' as a possible first introduction.",
+        "Treat 'the' as a possible later reference to something already introduced.",
+        "Check whether a superlative such as 'the largest' depends on an established category.",
+        "Do not assume that every sentence with an indefinite article must come first; meaning still controls the order."
+      ],
+      "example": "'A hotel is located on the upper floors' normally comes before 'The hotel contains more than 150 rooms.'"
+    },
+    {
+      "name": "Pronoun and antecedent matching",
+      "teaching_point": "A pronoun must normally follow a compatible noun or noun phrase.",
+      "how_to_apply": [
+        "Match singular pronouns such as 'it' with a singular antecedent.",
+        "Match plural pronouns such as 'they' or 'these' with a plural antecedent.",
+        "Check whether human pronouns refer to people and non-human pronouns refer to objects or concepts.",
+        "Confirm that the nearest possible antecedent also makes logical sense."
+      ],
+      "example": "'Researchers interviewed 300 athletes' should precede 'They were asked about motivation and training habits.'"
+    },
+    {
+      "name": "Demonstrative-reference tracking",
+      "teaching_point": "Expressions such as 'this process', 'that result', 'these findings', and 'such behaviour' summarize or rename earlier information.",
+      "how_to_apply": [
+        "Identify the noun inside the reference phrase.",
+        "Ask what earlier idea could logically be described by that noun.",
+        "Place the reference immediately after or close to its source.",
+        "Reject distant or vague antecedents when a clearer connection exists."
+      ],
+      "example": "'The experiment produced an unexpected decline in performance' is a likely predecessor of 'This result challenged the original theory.'"
+    },
+    {
+      "name": "Lexical-chain recognition",
+      "teaching_point": "Writers maintain cohesion by repeating key words or replacing them with synonyms, categories, and related expressions.",
+      "how_to_apply": [
+        "Circle repeated content words.",
+        "Look for a specific noun followed by a broader category.",
+        "Look for synonyms or paraphrases that continue the same idea.",
+        "Distinguish a genuine lexical chain from sentences that merely share the same broad topic."
+      ],
+      "example": "Pope Gelasius I → this early Pope → the religious leader forms a stronger chain than three sentences that only contain the word 'history'."
+    },
+    {
+      "name": "Discourse-marker mapping",
+      "teaching_point": "Linking expressions reveal how a sentence relates to previous information.",
+      "how_to_apply": [
+        "Place example markers after a general claim.",
+        "Place contrast markers after an idea that can be opposed or qualified.",
+        "Place result markers after a cause or supporting evidence.",
+        "Place conclusion markers near the end of an argument."
+      ],
+      "example": "'The policy reduced short-term costs. However, it created several long-term problems.'"
+    },
+    {
+      "name": "Chronology and tense control",
+      "teaching_point": "Historical and procedural texts often contain time expressions and tense patterns that restrict the possible order.",
+      "how_to_apply": [
+        "Arrange explicit dates from earlier to later unless the writer deliberately uses a flashback.",
+        "Place 'initially', 'first', and 'at the beginning' before later stages.",
+        "Place 'subsequently', 'later', and 'eventually' after earlier developments.",
+        "Check whether past-perfect forms describe events that occurred before another past event."
+      ],
+      "example": "The festival existed in pagan society → Pope Gelasius later replaced it with a Christian celebration → the holiday eventually became associated with romantic love."
+    },
+    {
+      "name": "Cause-and-effect linking",
+      "teaching_point": "A result sentence requires an earlier cause, condition, action, or piece of evidence.",
+      "how_to_apply": [
+        "Identify result markers such as 'therefore', 'thus', and 'as a result'.",
+        "Ask what exact event produced the result.",
+        "Check whether the cause is sufficient and logically compatible.",
+        "Keep the result close to the cause unless another sentence explains the mechanism."
+      ],
+      "example": "Heavy rainfall continued for several days → the river exceeded its normal level → as a result, nearby roads were closed."
+    },
+    {
+      "name": "Contrast and concession linking",
+      "teaching_point": "Contrast markers connect ideas that differ, qualify each other, or create an unexpected relationship.",
+      "how_to_apply": [
+        "Find the statement being contradicted or limited.",
+        "Check whether the contrast is direct rather than merely a change of topic.",
+        "Place 'however' after a complete contrasting idea.",
+        "Recognize concession patterns such as 'although X, Y' and 'despite X, Y'."
+      ],
+      "example": "The new system is cheaper to operate. Nevertheless, many institutions have been slow to adopt it."
+    },
+    {
+      "name": "Paragraph-role labeling",
+      "teaching_point": "Assigning a function to each box reduces dependence on intuition.",
+      "how_to_apply": [
+        "Label each sentence as introduction, definition, explanation, example, evidence, contrast, result, or conclusion.",
+        "Compare the labels with common academic patterns.",
+        "Avoid placing a conclusion before the evidence it summarizes.",
+        "Use the labels to distinguish two sentences that appear equally possible."
+      ],
+      "example": "Introduction → definition → example → evaluation is more plausible than evaluation → example → introduction → definition."
+    },
+    {
+      "name": "Adjacent-pair prioritization",
+      "teaching_point": "A correct order is usually easier to construct from strong local links than from a single guess about the whole paragraph.",
+      "how_to_apply": [
+        "Search for exact noun-pronoun links.",
+        "Search for claim-example and cause-result links.",
+        "Lock only pairs supported by strong evidence.",
+        "Leave weakly connected sentences movable until the main chain is clear."
+      ],
+      "example": "If B introduces 'a scientific survey' and D begins 'the survey', treat B-D as a strong pair before deciding where that pair belongs globally."
+    }
+  ],
+  "worked_examples": [
+    {
+      "title": "Burj Dubai: articles and backward reference",
+      "jumbled_sentences": [
+        {
+          "id": "A",
+          "text": "A hotel is also located within the building."
+        },
+        {
+          "id": "B",
+          "text": "The Burj Dubai was designed to become one of the tallest structures in the world."
+        },
+        {
+          "id": "C",
+          "text": "That accommodation occupies several of its upper floors."
+        },
+        {
+          "id": "D",
+          "text": "The building's final height was initially estimated from published construction statistics."
+        },
+        {
+          "id": "E",
+          "text": "The use of the word 'estimated' reflected uncertainty about the completed structure."
+        }
+      ],
+      "correct_order": [
+        "B",
+        "D",
+        "E",
+        "A",
+        "C"
+      ],
+      "guided_reasoning": [
+        "B is the best opening because it names and introduces the Burj Dubai.",
+        "D follows because 'the building' refers back to the Burj Dubai.",
+        "E follows D because 'the word estimated' refers to the wording used in D.",
+        "A introduces new information with 'a hotel'.",
+        "C follows A because 'that accommodation' refers back to the hotel."
+      ],
+      "transfer_rule": "Track first mention, later reference, and renamed reference: proper name → the building → a hotel → that accommodation."
+    },
+    {
+      "title": "Valentine's Day: referents across historical stages",
+      "jumbled_sentences": [
+        {
+          "id": "A",
+          "text": "This pagan festival was connected with fertility and the arrival of spring."
+        },
+        {
+          "id": "B",
+          "text": "The holiday later became associated with expressions of romantic love."
+        },
+        {
+          "id": "C",
+          "text": "Pope Gelasius I eventually replaced the celebration with a Christian observance."
+        },
+        {
+          "id": "D",
+          "text": "Valentine's Day appears to have developed from an earlier Roman celebration."
+        },
+        {
+          "id": "E",
+          "text": "This early Pope helped reshape the meaning of the event."
+        }
+      ],
+      "correct_order": [
+        "D",
+        "A",
+        "C",
+        "E",
+        "B"
+      ],
+      "guided_reasoning": [
+        "D introduces Valentine's Day and the earlier Roman celebration.",
+        "A follows because 'this pagan festival' refers to that Roman celebration.",
+        "C introduces Pope Gelasius I and describes a later historical action.",
+        "E follows because 'this early Pope' refers directly to Pope Gelasius I.",
+        "B completes the development by explaining what the holiday later became."
+      ],
+      "transfer_rule": "A demonstrative phrase cannot be resolved until its source has appeared: celebration → this pagan festival; Pope Gelasius I → this early Pope."
+    },
+    {
+      "title": "Research study: claim, method, finding, interpretation",
+      "jumbled_sentences": [
+        {
+          "id": "A",
+          "text": "These findings suggest that regular movement may support concentration as well as physical health."
+        },
+        {
+          "id": "B",
+          "text": "Researchers have increasingly examined the relationship between exercise and academic performance."
+        },
+        {
+          "id": "C",
+          "text": "The students who exercised regularly completed the attention task more accurately."
+        },
+        {
+          "id": "D",
+          "text": "In one study, university students reported their weekly activity and then completed a computerized attention task."
+        },
+        {
+          "id": "E",
+          "text": "However, the researchers warned that the study did not prove that exercise directly caused the improvement."
+        }
+      ],
+      "correct_order": [
+        "B",
+        "D",
+        "C",
+        "A",
+        "E"
+      ],
+      "guided_reasoning": [
+        "B introduces the broad research topic.",
+        "D provides a specific example signalled by 'in one study'.",
+        "C reports the result of the study described in D.",
+        "A interprets the result through 'these findings'.",
+        "E qualifies the interpretation with a contrast marker and a methodological warning."
+      ],
+      "transfer_rule": "A common research pattern is topic → study method → result → interpretation → limitation."
+    },
+    {
+      "title": "Urban transport: problem and response",
+      "jumbled_sentences": [
+        {
+          "id": "A",
+          "text": "As a result, several city governments have expanded public transport and cycling infrastructure."
+        },
+        {
+          "id": "B",
+          "text": "Rapid urban growth has increased traffic congestion in many major cities."
+        },
+        {
+          "id": "C",
+          "text": "These alternatives can reduce the number of private vehicles entering crowded centres."
+        },
+        {
+          "id": "D",
+          "text": "The problem also contributes to air pollution, travel delays, and higher fuel consumption."
+        },
+        {
+          "id": "E",
+          "text": "Nevertheless, their success depends on affordability, reliability, and public acceptance."
+        }
+      ],
+      "correct_order": [
+        "B",
+        "D",
+        "A",
+        "C",
+        "E"
+      ],
+      "guided_reasoning": [
+        "B introduces the central urban problem.",
+        "D continues it through 'the problem' and adds consequences.",
+        "A presents a response through the result marker 'as a result'.",
+        "C explains the value of 'these alternatives', referring to public transport and cycling infrastructure.",
+        "E adds a final qualification through 'nevertheless' and 'their success'."
+      ],
+      "transfer_rule": "Problem → consequences → response → benefit → limitation is a frequent academic structure."
+    },
+    {
+      "title": "Scientific process: chronological sequence",
+      "jumbled_sentences": [
+        {
+          "id": "A",
+          "text": "Eventually, the water vapour cools and forms clouds."
+        },
+        {
+          "id": "B",
+          "text": "The cycle begins when heat from the sun causes surface water to evaporate."
+        },
+        {
+          "id": "C",
+          "text": "After condensation, water returns to the ground as precipitation."
+        },
+        {
+          "id": "D",
+          "text": "The resulting vapour rises into the atmosphere."
+        },
+        {
+          "id": "E",
+          "text": "Some of this water then flows into rivers, lakes, and oceans, allowing the process to begin again."
+        }
+      ],
+      "correct_order": [
+        "B",
+        "D",
+        "A",
+        "C",
+        "E"
+      ],
+      "guided_reasoning": [
+        "B explicitly marks the beginning of the process.",
+        "D follows because 'the resulting vapour' is created by evaporation.",
+        "A describes what eventually happens to the vapour.",
+        "C follows condensation and describes precipitation.",
+        "E completes the cycle and refers back to the water that has returned to the ground."
+      ],
+      "transfer_rule": "For processes, follow the physical transformation and use sequence markers as confirmation."
+    },
+    {
+      "title": "Opening-sentence elimination",
+      "jumbled_sentences": [
+        {
+          "id": "A",
+          "text": "However, this interpretation has been challenged by more recent evidence."
+        },
+        {
+          "id": "B",
+          "text": "The theory was first proposed to explain why the population declined."
+        },
+        {
+          "id": "C",
+          "text": "This evidence came from newly analyzed archaeological remains."
+        },
+        {
+          "id": "D",
+          "text": "For many years, researchers accepted a single explanation for the decline of the population."
+        }
+      ],
+      "correct_order": [
+        "D",
+        "B",
+        "A",
+        "C"
+      ],
+      "guided_reasoning": [
+        "A cannot open because 'however' contrasts with an earlier position and 'this interpretation' needs an antecedent.",
+        "B is possible grammatically, but 'the theory' sounds like a known theory and is more specific than D.",
+        "D independently establishes the topic and the accepted explanation.",
+        "B develops the explanation by identifying the purpose of the theory.",
+        "A introduces a challenge, and C identifies the evidence mentioned in A."
+      ],
+      "transfer_rule": "Eliminate opening candidates with unresolved contrast, definite reference, or demonstrative reference before comparing the remaining independent sentences."
+    }
+  ],
+  "useful_language": {
+    "opening_and_topic_signals": [
+      "A major issue in...",
+      "One explanation for...",
+      "Researchers have increasingly examined...",
+      "The process begins when...",
+      "Historically, ...",
+      "In recent years, ..."
+    ],
+    "addition_and_continuation": [
+      "and",
+      "also",
+      "in addition",
+      "furthermore",
+      "moreover",
+      "another",
+      "similarly"
+    ],
+    "example_and_specification": [
+      "for example",
+      "for instance",
+      "such as",
+      "in particular",
+      "specifically",
+      "one study",
+      "a clear example"
+    ],
+    "contrast_and_concession": [
+      "however",
+      "in contrast",
+      "on the other hand",
+      "although",
+      "though",
+      "nevertheless",
+      "despite this"
+    ],
+    "cause_and_effect": [
+      "because",
+      "therefore",
+      "thus",
+      "so",
+      "as a result",
+      "consequently",
+      "this led to"
+    ],
+    "sequence_and_time": [
+      "first",
+      "initially",
+      "then",
+      "subsequently",
+      "later",
+      "after this",
+      "eventually",
+      "finally"
+    ],
+    "generalization_and_summary": [
+      "in general",
+      "overall",
+      "in short",
+      "in conclusion",
+      "taken together",
+      "these findings suggest",
+      "the evidence therefore indicates"
+    ],
+    "reference_expressions": [
+      "it",
+      "they",
+      "this",
+      "that",
+      "these findings",
+      "this process",
+      "the study",
+      "such changes"
+    ],
+    "option_elimination_phrases": [
+      "This cannot be first because the reference has no antecedent.",
+      "This pair is weak because the repeated topic does not create a direct link.",
+      "This sentence requires an earlier cause, example, or contrasting idea.",
+      "This order introduces 'the' before the noun has been established.",
+      "This position breaks the chronological sequence.",
+      "This option repeats the introduction instead of developing it.",
+      "This transition is grammatically possible but logically unsupported.",
+      "The alternative creates a clearer adjacent connection."
+    ],
+    "reasoning_phrases": [
+      "Sentence B introduces the noun that sentence D refers to.",
+      "The pronoun in this sentence points back to the plural noun in the previous box.",
+      "The example marker shows that a general statement must come earlier.",
+      "The result marker requires the preceding sentence to provide a cause.",
+      "The final sentence summarizes rather than introduces the argument.",
+      "The tense and time expression place this event after the earlier stage."
+    ]
+  },
+  "common_mistakes": [
+    {
+      "mistake": "Choosing the first sentence only because it sounds broad.",
+      "why_it_fails": "A sentence may sound general but still contain a hidden backward reference such as 'the issue', 'this approach', or 'however'.",
+      "correction": "Apply both tests: the sentence should be broad enough to introduce the topic and independent enough to require no earlier information."
+    },
+    {
+      "mistake": "Assuming a sentence with 'the' can safely begin.",
+      "why_it_fails": "The definite article often marks information already introduced.",
+      "correction": "Search for an earlier sentence that names or introduces the noun with a proper name, 'a', or 'an'."
+    },
+    {
+      "mistake": "Assuming every sentence with 'a' or 'an' must appear first.",
+      "why_it_fails": "An indefinite article may introduce a new supporting example in the middle of a passage.",
+      "correction": "Use article clues together with paragraph role and overall meaning."
+    },
+    {
+      "mistake": "Interpreting pronouns without locating an exact antecedent.",
+      "why_it_fails": "A pronoun may match several nouns grammatically but only one logically.",
+      "correction": "Check number, meaning, distance, and whether the proposed antecedent produces a natural sentence pair."
+    },
+    {
+      "mistake": "Ordering sentences because they contain similar vocabulary.",
+      "why_it_fails": "Topic similarity does not prove direct adjacency.",
+      "correction": "Prefer a precise grammatical or logical link such as noun-pronoun, claim-example, cause-result, or event-consequence."
+    },
+    {
+      "mistake": "Starting with a sentence beginning 'however', 'therefore', or 'for example'.",
+      "why_it_fails": "These markers normally depend on an earlier idea.",
+      "correction": "Identify the statement being contrasted, the cause producing the result, or the generalization being illustrated."
+    },
+    {
+      "mistake": "Trying to solve the entire order in one mental step.",
+      "why_it_fails": "Several sentences may fit the general topic, creating unnecessary uncertainty.",
+      "correction": "Form strong adjacent pairs first and then connect those pairs."
+    },
+    {
+      "mistake": "Using only grammar and ignoring meaning.",
+      "why_it_fails": "Two sentences may be grammatically compatible but logically unrelated.",
+      "correction": "Require both grammatical cohesion and sensible development of ideas."
+    },
+    {
+      "mistake": "Using only meaning and ignoring reference words.",
+      "why_it_fails": "A broadly logical sequence can still contain an unresolved pronoun or definite noun phrase.",
+      "correction": "Perform a final reference audit for every pronoun, demonstrative, and definite noun phrase."
+    },
+    {
+      "mistake": "Placing a conclusion before the evidence.",
+      "why_it_fails": "Expressions such as 'overall', 'therefore', and 'these findings suggest' normally summarize earlier material.",
+      "correction": "Identify what evidence or discussion the conclusion depends on."
+    },
+    {
+      "mistake": "Ignoring tense and time expressions.",
+      "why_it_fails": "The resulting order may reverse a historical event or scientific process.",
+      "correction": "Create a simple timeline and check words such as 'initially', 'later', 'after', and 'eventually'."
+    },
+    {
+      "mistake": "Continuously rearranging a defensible answer.",
+      "why_it_fails": "Late changes based on intuition can destroy strong links and waste shared Reading time.",
+      "correction": "Stop once the opening, each adjacent pair, and the global flow all have clear evidence."
+    }
+  ],
+  "practice_plan": [
+    {
+      "stage": 1,
+      "name": "Concept and clue review",
+      "duration_minutes": 20,
+      "activities": [
+        "Review the difference between a topic sentence and a supporting sentence.",
+        "Classify sample sentences as introduction, explanation, example, result, contrast, or conclusion.",
+        "Underline all articles, pronouns, demonstratives, and discourse markers.",
+        "Explain whether each marked word points backward, forward, or simply adds information."
+      ],
+      "success_target": "Correctly identify the role and dependency of at least 8 out of 10 sample sentences."
+    },
+    {
+      "stage": 2,
+      "name": "Article and referent drills",
+      "duration_minutes": 20,
+      "activities": [
+        "Match sentences containing 'a' or a proper name with later sentences containing 'the'.",
+        "Match pronouns with singular or plural antecedents.",
+        "Match demonstrative phrases such as 'this result' and 'these findings' with the ideas they summarize.",
+        "Reject pairs containing an unresolved or illogical reference."
+      ],
+      "success_target": "Form at least 8 correct sentence pairs and explain the reference in each pair."
+    },
+    {
+      "stage": 3,
+      "name": "Discourse-marker drills",
+      "duration_minutes": 20,
+      "activities": [
+        "Sort linkers by addition, contrast, example, result, sequence, and conclusion.",
+        "Write the type of sentence that must normally precede each linker.",
+        "Reconstruct four mini-paragraphs containing one strong discourse marker.",
+        "Replace each marker with another expression serving the same function."
+      ],
+      "success_target": "Recognize the function of at least 90 percent of the target linkers."
+    },
+    {
+      "stage": 4,
+      "name": "Guided paragraph reconstruction",
+      "duration_minutes": 25,
+      "activities": [
+        "Complete three untimed Re-order paragraphs.",
+        "Label the opening candidate and every dependent sentence.",
+        "Record the strongest adjacent pairs before writing the final order.",
+        "Compare the final order with the answer and identify the clue missed in any incorrect link."
+      ],
+      "success_target": "Produce a fully justified sequence for at least two of the three items."
+    },
+    {
+      "stage": 5,
+      "name": "Timed practice set",
+      "duration_minutes": 20,
+      "activities": [
+        "Complete four Re-order paragraph items under self-imposed time limits.",
+        "Use the OPEN-PAIR-CHAIN-CHECK method without skipping the final audit.",
+        "Record time spent and confidence level for each item.",
+        "Avoid spending excessive time on one uncertain connection."
+      ],
+      "success_target": "Maintain accuracy while completing each item in approximately two to three minutes during practice."
+    },
+    {
+      "stage": 6,
+      "name": "Error analysis and repair",
+      "duration_minutes": 15,
+      "activities": [
+        "Compare each response with the correct sequence.",
+        "Classify every mistake as opening, article, referent, discourse, chronology, lexical chain, or global logic.",
+        "Rewrite the explanation for the correct adjacent pair.",
+        "Create one personal rule for the most frequent error category."
+      ],
+      "success_target": "Explain the exact reason for every incorrect placement rather than recording only the correct answer."
+    },
+    {
+      "stage": 7,
+      "name": "Mixed review",
+      "duration_minutes": 10,
+      "activities": [
+        "Complete one final item without notes.",
+        "State the opening clue, strongest pair, and final transition.",
+        "Read the completed paragraph aloud to test natural flow.",
+        "Update the mastery checklist."
+      ],
+      "success_target": "Complete the final item with a coherent order and at least three explicit supporting clues."
+    }
+  ],
+  "mastery_checklist": [
+    "I can identify a sentence that introduces the topic without relying on earlier information.",
+    "I can distinguish a topic sentence from examples, evidence, explanations, and conclusions.",
+    "I can use 'a' or 'an' as a possible first-mention clue and 'the' as a possible later-reference clue.",
+    "I do not rely on articles alone when the meaning suggests a different order.",
+    "I can match singular and plural pronouns with compatible antecedents.",
+    "I can explain what phrases such as 'this result', 'that approach', and 'these findings' refer to.",
+    "I can recognize addition, contrast, example, cause-effect, sequence, and conclusion markers.",
+    "I can identify chronological and procedural order from tense and time expressions.",
+    "I can recognize lexical chains formed by repetition, synonymy, and general-specific relationships.",
+    "I can form strong adjacent pairs before deciding the full sequence.",
+    "I can reject an order containing an unexplained pronoun or definite noun phrase.",
+    "I can reject an order that places an example before its general claim.",
+    "I can reject an order that places a result before its cause.",
+    "I can read the completed paragraph and confirm that the argument develops smoothly.",
+    "I can explain why my chosen order is correct using specific textual clues.",
+    "I can complete the task efficiently without allowing one item to consume too much Reading-section time."
+  ],
+  "strategy_notes": [
+    {
+      "title": "Use evidence strength",
+      "note": "Rank clues by reliability. Exact reference links and explicit sequence markers are usually stronger than broad topic similarity or what merely sounds natural."
+    },
+    {
+      "title": "Distinguish local and global cohesion",
+      "note": "A pair may connect grammatically but still sit in the wrong part of the paragraph. After forming pairs, confirm that the whole text develops logically."
+    },
+    {
+      "title": "Search for mandatory predecessors",
+      "note": "Sentences beginning with 'this', 'these', 'the', 'however', 'therefore', or 'for example' often reveal what kind of sentence must come before them."
+    },
+    {
+      "title": "Do not overvalue the first sentence",
+      "note": "Finding the opening is important, but the rest of the order still depends on sentence-to-sentence cohesion. A correct first box does not guarantee a correct chain."
+    },
+    {
+      "title": "Use paragraph architecture",
+      "note": "Common structures include general-to-specific, claim-evidence-interpretation, problem-solution-evaluation, cause-effect, comparison-contrast, and chronological sequence."
+    },
+    {
+      "title": "Treat definitions carefully",
+      "note": "A definition normally follows the first appearance of a technical term, while a later example or application follows the definition."
+    },
+    {
+      "title": "Check renamed information",
+      "note": "A noun may be repeated through a broader label: 'the Burj Dubai' can become 'the building', and 'a hotel' can become 'that accommodation'."
+    },
+    {
+      "title": "Use punctuation as supporting evidence",
+      "note": "Punctuation can reveal sentence function, but it should support rather than replace grammatical and logical analysis."
+    },
+    {
+      "title": "Protect shared Reading time",
+      "note": "Re-order paragraphs are not individually timed, so use a personal time limit and move on when the sequence has strong evidence."
+    },
+    {
+      "title": "Review adjacent links",
+      "note": "Before submitting, justify every boundary: why does sentence 2 follow sentence 1, why does sentence 3 follow sentence 2, and so on?"
+    },
+    {
+      "title": "Learn from partial structures",
+      "note": "Even when the whole order is uncertain, identifying strong adjacent pairs improves the quality of the attempt and builds the core skill tested by the task."
+    },
+    {
+      "title": "Keep a clue-error log",
+      "note": "After practice, record whether errors came from articles, pronouns, discourse markers, chronology, paragraph role, or overreliance on intuition."
+    }
+  ],
+  "metadata": {
+    "chapter_number": 10,
+    "source_lesson_number": 9,
+    "item_type": "Re-order paragraphs",
+    "estimated_study_time": "About 2 hours",
+    "primary_skill": "Reading",
+    "supporting_skills": [
+      "Grammar awareness",
+      "Academic vocabulary",
+      "Text organization",
+      "Cohesion recognition",
+      "Logical sequencing",
+      "Chronological sequencing"
+    ],
+    "key_terms": [
+      {
+        "term": "Re-order paragraphs",
+        "definition": "A reading item type in which jumbled text boxes must be arranged into the single coherent order intended by the writer."
+      },
+      {
+        "term": "Topic sentence",
+        "definition": "A sentence that introduces the paragraph's central topic or controlling idea."
+      },
+      {
+        "term": "Supporting sentence",
+        "definition": "A sentence that develops the main idea through explanation, evidence, examples, comparison, or consequences."
+      },
+      {
+        "term": "Discourse marker",
+        "definition": "A word or phrase that signals a relationship such as addition, contrast, result, example, sequence, or conclusion."
+      },
+      {
+        "term": "Referent",
+        "definition": "A word or phrase, such as a pronoun or demonstrative expression, that points to information mentioned elsewhere in the text."
+      },
+      {
+        "term": "Antecedent",
+        "definition": "The earlier noun, phrase, or idea to which a pronoun or other reference expression refers."
+      },
+      {
+        "term": "Cohesion",
+        "definition": "The grammatical and lexical connections that link sentences into a unified text."
+      },
+      {
+        "term": "Coherence",
+        "definition": "The overall logical and meaningful development of ideas in a text."
+      }
+    ],
+    "source_scope": {
+      "text_length_from_source": "Up to 150 words",
+      "items_from_source": "Two to three Re-order paragraphs items",
+      "timing_note": "Reading items are completed within a shared section time rather than being timed individually."
+    },
+    "recommended_sequence": [
+      "Understand the item type",
+      "Identify opening sentences",
+      "Practise article clues",
+      "Practise referent clues",
+      "Practise discourse markers",
+      "Build adjacent pairs",
+      "Complete timed items",
+      "Analyze errors"
+    ],
+    "difficulty": "intermediate_to_advanced",
+    "tags": [
+      "pte-academic",
+      "reading",
+      "re-order-paragraphs",
+      "cohesion",
+      "coherence",
+      "articles",
+      "referents",
+      "discourse-markers",
+      "logical-sequence",
+      "timed-practice"
+    ]
+  }
+}

@@ -1,0 +1,680 @@
+{
+  "schema_version": "pte_lesson_enrichment.v1",
+  "task_type": "Describe image",
+  "lesson_title": "Describe Image: Planning, Fluency, Pronunciation, and Timed Practice",
+  "source_label": "pte:ch09",
+  "modality": "speaking",
+  "overview": {
+    "lesson_purpose": "This lesson teaches a repeatable method for planning and delivering a clear, logically organized, and fluent description of an academic image. The learner practises selecting important information rather than mentioning every visible detail, converting brief notes into connected speech, and maintaining understandable pronunciation under strict time pressure.",
+    "estimated_study_time": "Plan for about 2 hours of focused study, plus extra time for recording and reviewing your own 40-second responses.",
+    "task_conditions": {
+      "preparation_time": "25 seconds",
+      "speaking_time": "40 seconds",
+      "primary_skill": "Speaking",
+      "supporting_skill": "Following an oral sequence of information during model-response and peer-feedback activities"
+    },
+    "scoring_dimensions": {
+      "content": "Accurately describe the image's main subject and its most significant features, relationships, figures, trends, contrasts, or locations.",
+      "oral_fluency": "Speak continuously at a natural rate with controlled phrasing and without excessive pauses, repetition, hesitation, or restarting.",
+      "pronunciation": "Produce understandable sounds, word stress, sentence stress, rhythm, and intonation so that the response can be followed easily."
+    },
+    "teaching_priorities": [
+      "Recognize the image type and speaking purpose before selecting details.",
+      "Open with the main topic instead of immediately listing isolated numbers or objects.",
+      "Organize details in a predictable sequence that the listener can follow.",
+      "Use figures selectively and accurately rather than trying to report every value.",
+      "Protect fluency by speaking from short notes instead of memorizing a long script.",
+      "Use stress and intonation to highlight the most important information."
+    ]
+  },
+  "learning_goals": [
+    "Explain the preparation and speaking stages of the Describe image item type.",
+    "Identify whether an image is a graph, chart, table, map, process, diagram, photograph, or mixed visual.",
+    "Use the 25-second preparation period to identify the topic, labels, units, major features, and an overall message.",
+    "Begin a response with a clear sentence that identifies the image and its main subject.",
+    "Select two or three high-value details that support the overall description.",
+    "Describe trends, comparisons, proportions, locations, stages, or contrasts using suitable language.",
+    "Choose the simple present or simple past according to the time information shown in the image.",
+    "Deliver a connected response for close to 40 seconds without excessive hesitation or repetition.",
+    "Use word stress, sentence stress, rhythm, and intonation to make key information clearer.",
+    "Evaluate a recorded response using content, organization, grammar, fluency, and pronunciation criteria."
+  ],
+  "core_method": {
+    "method_name": "TYPE-TOPIC-BIG-DETAIL-CLOSE",
+    "purpose": "A flexible planning and speaking framework that works across graphs, charts, tables, photographs, maps, processes, and diagrams.",
+    "steps": [
+      {
+        "step": 1,
+        "label": "TYPE",
+        "instruction": "Identify the image type immediately. Decide whether you are looking at a line graph, bar chart, pie chart, table, map, process, diagram, or photograph.",
+        "planning_note_examples": [
+          "line graph",
+          "pie chart",
+          "photo contrast",
+          "process diagram"
+        ]
+      },
+      {
+        "step": 2,
+        "label": "TOPIC",
+        "instruction": "Read the title, labels, legend, axes, captions, and units to determine the main subject. Prepare one opening sentence that tells the listener what the image presents.",
+        "planning_note_examples": [
+          "energy use by source",
+          "population from 2000 to 2020",
+          "old and modern buildings",
+          "stages of water treatment"
+        ]
+      },
+      {
+        "step": 3,
+        "label": "BIG",
+        "instruction": "Find the strongest overall feature, such as the highest value, lowest value, dominant category, general trend, main contrast, central object, or final stage.",
+        "planning_note_examples": [
+          "solar highest",
+          "overall upward trend",
+          "city centre most crowded",
+          "modern building taller"
+        ]
+      },
+      {
+        "step": 4,
+        "label": "DETAIL",
+        "instruction": "Choose two or three supporting details. Include useful figures, comparisons, locations, or stages, but ignore minor information that would overload the response.",
+        "planning_note_examples": [
+          "45 percent versus 20 percent",
+          "rose from 30 to 75",
+          "river in the east",
+          "three major stages"
+        ]
+      },
+      {
+        "step": 5,
+        "label": "CLOSE",
+        "instruction": "Finish with a short overall observation that restates the dominant message without introducing unrelated information.",
+        "planning_note_examples": [
+          "overall, renewable energy dominates",
+          "the general pattern is growth",
+          "the image mainly highlights contrast",
+          "the process moves from collection to distribution"
+        ]
+      }
+    ],
+    "twenty_five_second_plan": [
+      "Seconds 0-5: Identify the image type, title, and main topic.",
+      "Seconds 5-10: Read axes, labels, legend, units, dates, or captions.",
+      "Seconds 10-16: Mark the largest, smallest, beginning, end, or most visible contrast.",
+      "Seconds 16-21: Select two supporting details and decide their speaking order.",
+      "Seconds 21-25: Prepare the opening phrase and first transition, then get ready to speak immediately."
+    ],
+    "forty_second_response_shape": [
+      "Opening, about 5-7 seconds: Identify the image type and main topic.",
+      "Overview, about 7-10 seconds: State the dominant trend, contrast, category, or purpose.",
+      "Supporting details, about 18-22 seconds: Present two or three connected details with figures, labels, positions, or stages.",
+      "Closing, about 4-6 seconds: Give a concise overall observation."
+    ],
+    "emergency_fluency_rule": "When an exact label or number is unclear, describe a visible relationship accurately using cautious language such as approximately, appears to, the largest category, or the figure on the right. Do not stop speaking while trying to decode one minor detail."
+  },
+  "techniques": [
+    {
+      "name": "Use a one-line overview before details",
+      "teaching_point": "The listener should understand the image's main message before hearing individual figures or objects.",
+      "how_to_apply": [
+        "Name the image type.",
+        "State the topic.",
+        "Identify the dominant pattern or contrast.",
+        "Continue with supporting evidence."
+      ],
+      "weak_approach": "2010 was 25, 2011 was 30, 2012 was 38, and 2013 was 45.",
+      "improved_approach": "The line graph shows a steady increase in production over four years, rising from about 25 units in 2010 to roughly 45 in 2013."
+    },
+    {
+      "name": "Select rather than catalogue",
+      "teaching_point": "A strong response communicates the structure and meaning of the image; it does not attempt to mention every label or value.",
+      "how_to_apply": [
+        "Choose the highest or dominant feature.",
+        "Choose the lowest or contrasting feature.",
+        "Mention one meaningful comparison or change.",
+        "Leave out minor middle values unless they explain the pattern."
+      ],
+      "decision_rule": "A detail is worth mentioning when it helps explain the main trend, contrast, distribution, sequence, or exception."
+    },
+    {
+      "name": "Group information into speaking chunks",
+      "teaching_point": "Plan phrases rather than full written sentences so that speech remains natural and flexible.",
+      "how_to_apply": [
+        "Write topic keywords rather than complete sentences.",
+        "Group related labels or values together.",
+        "Use one transition between each information group.",
+        "Pause briefly at meaning boundaries, not after every word."
+      ],
+      "sample_notes": "bar chart | transport use | cars highest 55% | buses 25% | cycling lowest 8% | overall private transport dominant"
+    },
+    {
+      "name": "Choose tense from the image",
+      "teaching_point": "Time information determines whether the response normally uses the simple present or simple past.",
+      "how_to_apply": [
+        "Use the simple present for an image without a completed historical period.",
+        "Use the simple past when the image compares statistics from fixed past dates.",
+        "Use present language when explaining what the image currently shows.",
+        "Keep tense consistent when discussing the same time frame."
+      ],
+      "examples": [
+        "The chart shows the proportion of household spending.",
+        "Food accounts for the largest share.",
+        "Sales increased between 2010 and 2020.",
+        "The figure fell sharply in 2018."
+      ]
+    },
+    {
+      "name": "Describe graphs by pattern",
+      "teaching_point": "The organizational pattern should match the visual pattern.",
+      "how_to_apply": [
+        "For a clear trend, describe the beginning, direction, and ending point.",
+        "For a comparison, group similar categories and contrast them with others.",
+        "For no obvious trend, move consistently from left to right.",
+        "For a pie chart, normally begin with the largest segment and finish with the smallest."
+      ],
+      "useful_sequence": "topic, overview, strongest category, comparison, exception, conclusion"
+    },
+    {
+      "name": "Adapt the method for photographs",
+      "teaching_point": "Photographs require visual organization rather than statistical reporting.",
+      "how_to_apply": [
+        "Identify the main scene or contrast.",
+        "Describe the foreground before the background when useful.",
+        "Group people, objects, actions, or structures logically.",
+        "Mention visible evidence rather than inventing causes or personal stories."
+      ],
+      "safe_observation_rule": "Describe what is visible and use cautious language for uncertain interpretation."
+    },
+    {
+      "name": "Use content-word stress",
+      "teaching_point": "Important nouns, main verbs, adjectives, numbers, and contrast words usually receive stronger stress than articles, prepositions, and auxiliary words.",
+      "how_to_apply": [
+        "Stress the image topic.",
+        "Stress important categories and figures.",
+        "Stress comparison words such as highest, lower, and whereas.",
+        "Reduce small grammatical words so that the rhythm remains natural."
+      ],
+      "marked_example": "The BAR chart shows a SHARP INCREASE in ONLINE sales, while STORE purchases remain relatively STABLE."
+    },
+    {
+      "name": "Control intonation",
+      "teaching_point": "Intonation helps separate information groups and signals whether the speaker is continuing or concluding.",
+      "how_to_apply": [
+        "Use slight rising or continuing intonation when more information follows.",
+        "Use falling intonation at the end of a complete statement.",
+        "Avoid a flat delivery that gives every word equal weight.",
+        "Avoid rising intonation at the end of every sentence."
+      ],
+      "practice_method": "Record one response, underline the key words in the transcript, and repeat the response while making those words more prominent."
+    },
+    {
+      "name": "Protect fluency after a mistake",
+      "teaching_point": "A minor error is usually less damaging to communication than stopping, restarting, or repeatedly correcting yourself.",
+      "how_to_apply": [
+        "Continue after a small grammar or pronunciation error.",
+        "Correct only when the meaning would otherwise be wrong.",
+        "Use a connector to move to the next idea.",
+        "Do not restart the response from the beginning."
+      ],
+      "recovery_phrases": [
+        "More specifically,",
+        "In comparison,",
+        "Another notable feature is that",
+        "Overall,"
+      ]
+    }
+  ],
+  "worked_examples": [
+    {
+      "image_type": "Line graph",
+      "illustrative_prompt": "A line graph shows the number of commuters using a city train system from 2015 to 2020. Usage rises from 40,000 in 2015 to 85,000 in 2019, before falling slightly to 78,000 in 2020.",
+      "planning_notes": [
+        "type: line graph",
+        "topic: train commuters 2015-2020",
+        "unit: thousands of passengers",
+        "main trend: strong rise",
+        "peak: 85,000 in 2019",
+        "exception: slight fall in 2020"
+      ],
+      "model_response": "The line graph illustrates the number of commuters using a city train system between 2015 and 2020, measured in thousands of passengers. Overall, train use increased substantially during the period. It began at approximately 40,000 commuters in 2015 and then rose steadily, reaching a peak of about 85,000 in 2019. However, this upward trend did not continue in the final year, as the figure declined slightly to roughly 78,000 in 2020. In summary, the graph shows strong overall growth despite a modest fall at the end.",
+      "teaching_analysis": [
+        "The opening identifies the image, topic, dates, and unit.",
+        "The overview states the main upward trend before individual figures.",
+        "Only the starting point, peak, and final exception are selected.",
+        "The simple past is used because the graph contains fixed past years.",
+        "The closing summarizes the pattern without repeating every number."
+      ]
+    },
+    {
+      "image_type": "Pie chart",
+      "illustrative_prompt": "A pie chart presents household spending: housing 38 percent, food 24 percent, transport 18 percent, entertainment 12 percent, and other expenses 8 percent.",
+      "planning_notes": [
+        "type: pie chart",
+        "topic: household spending",
+        "largest: housing 38%",
+        "second: food 24%",
+        "transport 18%",
+        "smallest: other 8%"
+      ],
+      "model_response": "The pie chart presents the distribution of household spending across five categories. Housing represents the largest share at 38 percent, while food is the second biggest expense at 24 percent. Transport accounts for a further 18 percent, and entertainment makes up 12 percent. By contrast, other expenses form the smallest category, at only 8 percent. Overall, the chart indicates that essential costs dominate the budget, with housing and food together accounting for well over half of total household expenditure.",
+      "teaching_analysis": [
+        "The description begins with the largest segment.",
+        "Categories are presented in descending order, which is easy to follow.",
+        "The phrase by contrast clearly introduces the smallest category.",
+        "The final sentence synthesizes two categories instead of simply repeating figures.",
+        "The simple present is appropriate because no fixed historical period is shown."
+      ]
+    },
+    {
+      "image_type": "Photograph showing contrast",
+      "illustrative_prompt": "A photograph shows an old stone building on the left and a modern glass tower on the right.",
+      "planning_notes": [
+        "type: photograph",
+        "main contrast: old versus modern architecture",
+        "left: low stone building",
+        "right: tall glass tower",
+        "surface: rough versus smooth",
+        "overall: architectural change"
+      ],
+      "model_response": "The photograph contrasts two very different styles of architecture. On the left, there is an older, relatively low building made of stone, with a rough surface and a traditional design. On the right, a much taller modern tower is constructed mainly from glass and has a smooth, reflective exterior. The older structure appears heavier and more detailed, whereas the newer building has a simpler and more vertical shape. Overall, the image highlights the contrast between classical construction and modern urban development.",
+      "teaching_analysis": [
+        "The response begins with the central contrast rather than listing random objects.",
+        "Left-to-right organization matches the physical arrangement of the photograph.",
+        "Paired adjectives make the contrast clear: older and modern, low and tall, rough and smooth.",
+        "The speaker describes visible evidence without inventing the buildings' history.",
+        "Whereas creates a clear spoken comparison."
+      ]
+    },
+    {
+      "image_type": "Table",
+      "illustrative_prompt": "A table compares average weekly exercise among four age groups: ages 18-29 complete 5.2 hours, ages 30-44 complete 4.1 hours, ages 45-59 complete 3.4 hours, and ages 60 and above complete 2.8 hours.",
+      "planning_notes": [
+        "type: table",
+        "topic: weekly exercise by age",
+        "unit: hours",
+        "highest: 18-29 at 5.2",
+        "lowest: 60+ at 2.8",
+        "pattern: decreases with age"
+      ],
+      "model_response": "The table compares the average number of hours spent exercising each week across four age groups. The youngest group, aged 18 to 29, records the highest figure at 5.2 hours. This falls to 4.1 hours among people aged 30 to 44 and decreases further to 3.4 hours for the 45-to-59 group. People aged 60 and above exercise the least, at 2.8 hours per week. Overall, the table shows a clear negative relationship between age and the amount of weekly exercise.",
+      "teaching_analysis": [
+        "The unit of measurement is stated in the opening.",
+        "The response follows the age categories in a logical sequence.",
+        "The highest and lowest figures are clearly identified.",
+        "Verbs such as falls and decreases communicate the pattern efficiently.",
+        "The conclusion expresses the relationship shown by the complete table."
+      ]
+    },
+    {
+      "image_type": "Process diagram",
+      "illustrative_prompt": "A process diagram shows four stages in recycling plastic bottles: collection, sorting, cleaning and crushing, and manufacture of new products.",
+      "planning_notes": [
+        "type: process",
+        "topic: recycling plastic bottles",
+        "four stages",
+        "start: collection",
+        "middle: sorting and cleaning",
+        "end: new products"
+      ],
+      "model_response": "The diagram illustrates a four-stage process for recycling plastic bottles. First, used bottles are collected and transported to a recycling facility. Next, they are sorted so that suitable plastic can be separated from other waste. The selected bottles are then cleaned and crushed into smaller pieces. In the final stage, the processed material is used to manufacture new plastic products. Overall, the diagram presents a linear process that begins with waste collection and ends with the production of reusable goods.",
+      "teaching_analysis": [
+        "The response identifies the total number of stages.",
+        "Sequencing words guide the listener from beginning to end.",
+        "Passive forms are useful because the process is more important than the person performing it.",
+        "Each stage is described in one concise information unit.",
+        "The conclusion identifies the starting and ending points."
+      ]
+    },
+    {
+      "image_type": "Map",
+      "illustrative_prompt": "A map shows a university campus with a library in the centre, science buildings to the north, student accommodation in the west, sports fields in the east, and a bus station in the south.",
+      "planning_notes": [
+        "type: campus map",
+        "centre: library",
+        "north: science buildings",
+        "west: accommodation",
+        "east: sports fields",
+        "south: bus station"
+      ],
+      "model_response": "The map shows the layout of a university campus and the positions of its main facilities. The library is located in the centre and appears to act as the main reference point. To the north are the science buildings, while student accommodation is situated on the western side. The sports fields occupy the eastern area, and the bus station is positioned to the south of the library. Overall, the campus is organized around a central academic facility, with transport, housing, and recreational areas placed in different surrounding sections.",
+      "teaching_analysis": [
+        "The central feature is introduced first and used as a reference point.",
+        "Directional language organizes the description spatially.",
+        "The response moves systematically around the map.",
+        "Location verbs are varied: located, situated, occupy, and positioned.",
+        "The final sentence summarizes the overall layout."
+      ]
+    }
+  ],
+  "useful_language": {
+    "opening_the_response": [
+      "The image illustrates...",
+      "The graph presents information about...",
+      "The chart compares...",
+      "The table provides data on...",
+      "The photograph shows...",
+      "The diagram outlines the process of..."
+    ],
+    "giving_an_overview": [
+      "Overall, the most noticeable feature is...",
+      "In general, the image shows that...",
+      "The dominant pattern is...",
+      "A clear contrast can be seen between...",
+      "The main trend is an increase in...",
+      "The process begins with... and ends with..."
+    ],
+    "describing_increases_and_decreases": [
+      "The figure rises steadily from... to...",
+      "There is a sharp increase in...",
+      "The value reaches a peak of...",
+      "The number falls gradually to...",
+      "The figure declines slightly after...",
+      "The level remains relatively stable at..."
+    ],
+    "comparing_information": [
+      "X is considerably higher than Y.",
+      "X accounts for a larger proportion than Y.",
+      "In contrast, Y records the lowest figure.",
+      "Whereas X increases, Y remains stable.",
+      "The two categories are similar in size.",
+      "X is approximately twice as high as Y."
+    ],
+    "reporting_approximate_values": [
+      "approximately...",
+      "about...",
+      "roughly...",
+      "just over...",
+      "just under...",
+      "nearly..."
+    ],
+    "describing_proportions": [
+      "X represents the largest share.",
+      "Y accounts for approximately one quarter of the total.",
+      "Together, X and Y make up more than half.",
+      "The smallest segment is...",
+      "The remaining categories constitute...",
+      "A minority of the total is represented by..."
+    ],
+    "describing_photographs": [
+      "In the foreground, there is...",
+      "In the background, we can see...",
+      "On the left-hand side...",
+      "To the right of the image...",
+      "The image contrasts... with...",
+      "The central feature appears to be..."
+    ],
+    "describing_maps_and_locations": [
+      "X is located in the centre.",
+      "Y is situated to the north of X.",
+      "The facility lies on the eastern side.",
+      "A road runs between X and Y.",
+      "The area is surrounded by...",
+      "The main entrance is positioned near..."
+    ],
+    "describing_processes": [
+      "The process consists of several stages.",
+      "Initially,...",
+      "In the next stage,...",
+      "After this,...",
+      "The material is then...",
+      "Finally, the process ends with..."
+    ],
+    "introducing_additional_details": [
+      "More specifically,...",
+      "Another notable feature is...",
+      "In addition,...",
+      "The image also indicates that...",
+      "A further point is that...",
+      "It is also worth noting that..."
+    ],
+    "closing_the_response": [
+      "Overall, the image highlights...",
+      "In summary, the main pattern is...",
+      "Taken together, the figures show...",
+      "Overall, there is a clear relationship between...",
+      "The image therefore emphasizes...",
+      "In general, the visual presents a clear contrast between..."
+    ],
+    "fluency_bridges": [
+      "Turning to the next category,...",
+      "Looking more closely at the figures,...",
+      "By comparison,...",
+      "With regard to the final section,...",
+      "From a broader perspective,...",
+      "This is followed by..."
+    ]
+  },
+  "common_mistakes": [
+    {
+      "mistake": "Starting with isolated numbers or labels",
+      "why_it_hurts": "The listener does not know what the figures refer to, and the response sounds like an unorganized list.",
+      "repair": "Begin with the image type and main topic, then state the overall pattern before giving figures."
+    },
+    {
+      "mistake": "Trying to describe every detail",
+      "why_it_hurts": "The response becomes rushed, repetitive, and difficult to complete within 40 seconds.",
+      "repair": "Select the overall message and two or three details that best support it."
+    },
+    {
+      "mistake": "Using a memorized template without adapting it",
+      "why_it_hurts": "Generic language may consume speaking time without accurately describing the actual image.",
+      "repair": "Use a flexible framework, but insert image-specific categories, relationships, figures, and vocabulary."
+    },
+    {
+      "mistake": "Reporting figures inaccurately",
+      "why_it_hurts": "Incorrect values weaken content accuracy.",
+      "repair": "Use exact figures only when they are clear; otherwise use accurate approximations such as about, nearly, or just over."
+    },
+    {
+      "mistake": "Listing numbers without explaining relationships",
+      "why_it_hurts": "The response contains data but does not communicate the trend, contrast, or significance.",
+      "repair": "Connect figures with language such as higher than, rose to, accounts for, or remained stable."
+    },
+    {
+      "mistake": "Using the wrong tense",
+      "why_it_hurts": "Inconsistent tense can make the time frame unclear.",
+      "repair": "Use the simple past for completed historical periods and the simple present for images without fixed past dates."
+    },
+    {
+      "mistake": "Inventing information in a photograph",
+      "why_it_hurts": "Assumptions about identity, intention, cause, or history may not be supported by the image.",
+      "repair": "Describe visible evidence and use cautious expressions such as appears to or seems to when interpretation is necessary."
+    },
+    {
+      "mistake": "Pausing after nearly every word",
+      "why_it_hurts": "Broken rhythm reduces oral fluency and makes the response difficult to follow.",
+      "repair": "Speak in sense groups and pause briefly only between complete information units."
+    },
+    {
+      "mistake": "Restarting after a small error",
+      "why_it_hurts": "Restarting wastes time and creates repetition and hesitation.",
+      "repair": "Continue naturally unless the error changes the central meaning."
+    },
+    {
+      "mistake": "Giving every word equal stress",
+      "why_it_hurts": "The response sounds flat and the key information is difficult to identify.",
+      "repair": "Stress important nouns, verbs, adjectives, contrast words, and numbers while reducing small grammatical words."
+    },
+    {
+      "mistake": "Speaking too quickly",
+      "why_it_hurts": "Words may become unclear, endings may disappear, and the response can sound uncontrolled.",
+      "repair": "Use a steady natural rate and aim for clear phrasing rather than maximum speed."
+    },
+    {
+      "mistake": "Ending suddenly without an overall statement",
+      "why_it_hurts": "The response may sound unfinished even when useful details have been included.",
+      "repair": "Reserve several seconds for a short conclusion beginning with overall or in summary."
+    }
+  ],
+  "practice_plan": {
+    "session_structure": [
+      {
+        "phase": "1. Task orientation",
+        "duration": "10 minutes",
+        "activities": [
+          "Review the 25-second preparation and 40-second speaking stages.",
+          "Recall the three scoring dimensions: content, oral fluency, and pronunciation.",
+          "Identify common image types.",
+          "Listen to or read one model response and mark its opening, overview, details, and conclusion."
+        ]
+      },
+      {
+        "phase": "2. Planning without speaking",
+        "duration": "20 minutes",
+        "activities": [
+          "Study four different images.",
+          "Write no more than six notes for each image.",
+          "Identify the topic and strongest overall feature.",
+          "Choose two supporting details and place them in speaking order."
+        ]
+      },
+      {
+        "phase": "3. Guided graph practice",
+        "duration": "25 minutes",
+        "activities": [
+          "Describe a line graph using beginning, trend, peak, and ending point.",
+          "Describe a bar chart using highest, lowest, and one comparison.",
+          "Describe a pie chart from the largest segment to the smallest.",
+          "Review tense choice and approximate-number language."
+        ]
+      },
+      {
+        "phase": "4. Photograph, map, and process practice",
+        "duration": "20 minutes",
+        "activities": [
+          "Describe a photograph by foreground, background, or contrast.",
+          "Describe a map using a central reference point and directions.",
+          "Describe a process using sequencing expressions.",
+          "Check that no unsupported information has been invented."
+        ]
+      },
+      {
+        "phase": "5. Pronunciation and fluency workshop",
+        "duration": "20 minutes",
+        "activities": [
+          "Underline the key content words in a model response.",
+          "Read the response aloud with appropriate sentence stress.",
+          "Mark sense groups with slashes.",
+          "Repeat the response using natural intonation and controlled speed."
+        ]
+      },
+      {
+        "phase": "6. Timed recording cycle",
+        "duration": "25 minutes",
+        "activities": [
+          "Prepare for exactly 25 seconds.",
+          "Record one response for no more than 40 seconds.",
+          "Review the recording using the checklist.",
+          "Record a second version after making one targeted improvement."
+        ]
+      }
+    ],
+    "progressive_drills": [
+      {
+        "drill": "Six-note planning",
+        "instruction": "For each image, write only the image type, topic, unit or labels, biggest feature, supporting comparison, and closing idea."
+      },
+      {
+        "drill": "Ten-second overview",
+        "instruction": "State the image type, topic, and dominant feature in no more than ten seconds."
+      },
+      {
+        "drill": "Two-detail response",
+        "instruction": "Give an opening, exactly two supporting details, and a conclusion. Focus on logical organization."
+      },
+      {
+        "drill": "Stress shift",
+        "instruction": "Read one response twice: first with equal stress, then with stronger stress on content words. Compare clarity."
+      },
+      {
+        "drill": "No-restart challenge",
+        "instruction": "Complete the response without restarting, even after a small language error."
+      },
+      {
+        "drill": "Back-to-back images",
+        "instruction": "Describe three different image types consecutively to practise rapid adaptation rather than template dependence."
+      }
+    ],
+    "peer_feedback_checklist": [
+      "Did the speaker identify the image type or main topic?",
+      "Was there a clear overall trend, contrast, purpose, or central feature?",
+      "Were the selected details relevant rather than random?",
+      "Were figures, labels, locations, or stages reported accurately?",
+      "Was the information organized in a logical sequence?",
+      "Was the tense suitable for the time frame?",
+      "Did the speaker continue without excessive pauses, repetition, or restarting?",
+      "Were key words and numbers stressed clearly?",
+      "Was the pronunciation understandable?",
+      "Did the response finish with a clear overall observation?"
+    ],
+    "feedback_formula": [
+      "Strength: Your opening clearly identified the topic.",
+      "Evidence: I immediately understood what the graph was showing.",
+      "Improvement: Add one comparison between the highest and lowest categories.",
+      "Action: In your next recording, use whereas or by contrast to connect those figures."
+    ],
+    "recording_review_log": [
+      "Record the actual speaking duration.",
+      "Count pauses longer than approximately one second.",
+      "Note any repeated words, phrases, or restarts.",
+      "Identify one unclear word or stress pattern.",
+      "Check whether the response included an overview and conclusion.",
+      "Choose only one major improvement target for the next attempt."
+    ]
+  },
+  "mastery_checklist": [
+    "I can state that the source lesson allows 25 seconds for preparation and 40 seconds for speaking.",
+    "I can identify the image type, title, labels, units, and main subject quickly.",
+    "I can prepare a useful response using no more than six short notes.",
+    "I can begin with a clear topic sentence instead of an isolated number or object.",
+    "I can identify the strongest overall trend, contrast, category, relationship, or stage.",
+    "I can select two or three relevant supporting details.",
+    "I can describe figures using accurate exact or approximate language.",
+    "I can use the simple present or simple past according to the image's time information.",
+    "I can organize graphs, photographs, maps, tables, and processes using an appropriate sequence.",
+    "I can speak for close to 40 seconds without excessive hesitation, repetition, or restarting.",
+    "I can stress important content words and use natural intonation.",
+    "I can finish with a concise overall statement.",
+    "I can compare my recording with a model response without copying the model mechanically.",
+    "I can identify one content issue and one delivery issue in my own response.",
+    "I can give a partner one specific strength and one practical improvement."
+  ],
+  "strategy_notes": [
+    "Content selection is more important than mentioning every visible element. A coherent overview supported by accurate details is stronger than a rushed catalogue.",
+    "Use the title, axes, legend, labels, dates, captions, and units as your primary evidence. These features often reveal the response structure.",
+    "Your notes should trigger speech, not become a script. Full written sentences consume preparation time and may encourage unnatural reading.",
+    "Plan the first sentence carefully because a confident opening reduces hesitation and establishes the response direction.",
+    "For graphs, prioritize the overall pattern, beginning and ending values, peak or low point, and meaningful exception.",
+    "For pie charts, begin with the largest section and group minor categories when individual reporting adds little value.",
+    "For photographs, organize by contrast, foreground and background, left and right, or central and surrounding features.",
+    "For maps, choose a central landmark and describe other features relative to it.",
+    "For processes, state the number of stages when clear and move from the starting point to the final result.",
+    "Do not spend the entire preparation period decoding one unclear figure. Use an accurate approximation and protect the overall response.",
+    "Avoid decorative vocabulary that does not improve accuracy. Clear academic language is safer than complicated but incorrectly used expressions.",
+    "Fluency does not mean speaking as fast as possible. It means speaking continuously with controlled rhythm, logical phrasing, and limited hesitation.",
+    "Pronunciation does not require a particular accent. The practical goal is understandable production of sounds, syllables, stress, and intonation.",
+    "Brief natural pauses between sense groups can improve clarity; long silent pauses inside a phrase damage rhythm.",
+    "After recording, improve one feature at a time. For example, first repair organization, then fluency, and finally stress or pronunciation.",
+    "A flexible framework should support the image, not replace observation. Every response must contain image-specific content.",
+    "During peer review, comments should describe observable behaviour, such as an unclear opening or repeated pauses, rather than making general judgments.",
+    "When the response is running short, add a supported comparison or overall observation rather than repeating the introduction.",
+    "When time is nearly finished, complete the current idea and give a short conclusion instead of beginning a new detailed point.",
+    "Consistent timed repetition is essential because planning, language selection, and delivery must become automatic under test conditions."
+  ],
+  "metadata": {
+    "chapter_number": 9,
+    "estimated_study_time": "Approximately 2 hours, with additional independent recording and review.",
+    "lesson_level": "PTE Academic preparation",
+    "primary_communicative_skill": "Speaking",
+    "supporting_communicative_skill": "Listening",
+    "enabling_skills": "Oral fluency and pronunciation",
+    "source_item_type": "Describe image",
+    "source_timing_basis": "25 seconds to prepare and 40 seconds to speak",
+    "source_scoring_basis": "Content, oral fluency, and pronunciation",
+    "recommended_prerequisite": "Basic ability to read common chart labels, dates, percentages, quantities, and spatial descriptions",
+    "recommended_output": "A logically organized spoken description containing an opening, an overview, selected evidence, and a conclusion",
+    "teaching_orientation": "Teaching-first, scaffolded, example-rich, and suitable for independent or peer practice"
+  }
+}

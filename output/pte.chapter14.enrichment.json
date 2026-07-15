@@ -1,0 +1,616 @@
+{
+  "schema_version": "pte_lesson_enrichment.v1",
+  "task_type": "pte_academic_re_tell_lecture",
+  "lesson_title": "Lesson 13: Re-tell Lecture",
+  "source_label": "pte:ch14",
+  "modality": {
+    "primary_skills": [
+      "listening",
+      "speaking"
+    ],
+    "enabling_skills": [
+      "oral fluency",
+      "pronunciation",
+      "academic vocabulary",
+      "note taking"
+    ],
+    "response_mode": "Listen to an academic lecture once, prepare briefly, and deliver an organized spoken retell.",
+    "timing_pattern": {
+      "image_preview_seconds": 3,
+      "preparation_seconds": 10,
+      "response_seconds": 40
+    }
+  },
+  "overview": {
+    "summary": "Re-tell Lecture tests whether the learner can understand a short academic lecture, select its most important information, reconstruct that information from notes, and present it clearly in spoken English. The task combines listening comprehension, rapid note taking, organization, pronunciation, and oral fluency.",
+    "estimated_study_time": "Study this chapter in one focused session of about 2 hours, then add extra practice time for timed retell attempts and feedback review.",
+    "teaching_focus": [
+      "Understand exactly what happens before, during, and after the lecture recording.",
+      "Listen for the topic, main supporting ideas, relationships, examples, and conclusion rather than attempting to record every word.",
+      "Use brief notes, abbreviations, symbols, spacing, and arrows that can be reconstructed quickly.",
+      "Turn notes into a logical spoken response with a clear opening, connected supporting points, and a closing idea.",
+      "Balance content accuracy with smooth delivery and understandable pronunciation."
+    ],
+    "success_profile": [
+      "The response identifies the lecture topic immediately.",
+      "The response includes two or more important supporting points.",
+      "Relationships such as cause, contrast, sequence, or result are explained accurately.",
+      "The speaker maintains a natural pace without long pauses or repeated restarts.",
+      "Important words are pronounced clearly and stressed appropriately."
+    ]
+  },
+  "learning_goals": [
+    "Identify the topic or central message of a lecture after one listening.",
+    "Distinguish main ideas from examples, repetition, background information, and minor details.",
+    "Recognize relationships between ideas, including cause and effect, comparison, contrast, sequence, problem and solution, and claim and evidence.",
+    "Create compact notes using keywords, abbreviations, symbols, arrows, indentation, and numbering.",
+    "Reconstruct meaningful sentences from incomplete notes without reading the notes word for word.",
+    "Organize a spoken retell with a topic sentence, logically ordered supporting ideas, cohesive links, and a possible conclusion.",
+    "Continue listening calmly after missing a word, phrase, number, or unfamiliar expression.",
+    "Speak for up to 40 seconds at a steady, natural rate with clear pronunciation, phrase stress, and intonation.",
+    "Review a recorded response separately for content, oral fluency, and pronunciation."
+  ],
+  "core_method": {
+    "name": "TOPIC–POINTS–LINK–CLOSE",
+    "purpose": "A repeatable method for converting a lecture into a clear 40-second response.",
+    "steps": [
+      {
+        "stage": "Preview",
+        "instruction": "Use the brief image preview to predict the subject area, likely vocabulary, people, places, processes, or trends. Stop studying the image when the lecture begins."
+      },
+      {
+        "stage": "Topic",
+        "instruction": "Listen for the broad subject and the speaker's main message. Write one or two keywords that can become the opening sentence."
+      },
+      {
+        "stage": "Points",
+        "instruction": "Record two or three major supporting ideas. Prefer claims, findings, stages, reasons, effects, comparisons, or key examples."
+      },
+      {
+        "stage": "Link",
+        "instruction": "Mark how the ideas are connected by using arrows, numbers, contrast symbols, cause-and-effect symbols, or short labels such as cause, result, problem, or example."
+      },
+      {
+        "stage": "Close",
+        "instruction": "Note the speaker's conclusion, implication, recommendation, or overall significance when one is given."
+      },
+      {
+        "stage": "Prepare",
+        "instruction": "During the 10-second preparation period, choose the speaking order, expand unclear abbreviations, and silently rehearse the first sentence."
+      },
+      {
+        "stage": "Deliver",
+        "instruction": "Begin immediately with the topic, move through the main points in a logical order, and finish with the conclusion or significance."
+      },
+      {
+        "stage": "Recover",
+        "instruction": "When a detail is missing, continue with the information you know. Do not stop, apologize, invent precise facts, or repeatedly restart."
+      }
+    ],
+    "recommended_note_frame": [
+      "T: topic or central message",
+      "P1: first main point",
+      "P2: second main point",
+      "REL: relationship between ideas",
+      "EX: one useful example, name, number, or place",
+      "C: conclusion, implication, or significance"
+    ]
+  },
+  "techniques": [
+    {
+      "name": "Three-second image prediction",
+      "how_to_use": [
+        "Identify the general subject, not every visual detail.",
+        "Predict two or three words that may appear in the lecture.",
+        "Ask whether the image suggests a person, process, place, comparison, historical event, or scientific system.",
+        "Shift full attention to the audio as soon as the recording begins."
+      ],
+      "why_it_works": "Prediction activates relevant vocabulary and gives the listener a framework for understanding the lecture."
+    },
+    {
+      "name": "Main-idea filtering",
+      "how_to_use": [
+        "Listen for repeated concepts and emphasized words.",
+        "Notice definitions, claims, reasons, results, and concluding statements.",
+        "Treat stories, lists, and examples as supporting material unless the speaker makes them central.",
+        "Ask whether a detail would still matter in a 40-second summary."
+      ],
+      "why_it_works": "The response window is too short for every detail, so prioritization protects both content and fluency."
+    },
+    {
+      "name": "Relationship marking",
+      "how_to_use": [
+        "Use an arrow for cause and result.",
+        "Use versus or a two-column layout for contrast.",
+        "Use numbers for stages or chronological order.",
+        "Use an equals sign for definitions.",
+        "Use a plus sign to group related benefits or characteristics."
+      ],
+      "why_it_works": "A retell is stronger when it explains how ideas connect instead of presenting disconnected keywords."
+    },
+    {
+      "name": "Personal shorthand system",
+      "how_to_use": [
+        "Shorten common academic words consistently.",
+        "Remove articles, auxiliary verbs, and other grammar words from notes.",
+        "Write content words rather than complete sentences.",
+        "Use symbols only when their meaning is automatic for you.",
+        "Review and reuse the same shorthand across practice sessions."
+      ],
+      "why_it_works": "Consistent shorthand reduces writing time and leaves more attention available for listening."
+    },
+    {
+      "name": "Note-page zoning",
+      "how_to_use": [
+        "Reserve the top line for the topic.",
+        "Place each main point on a separate line.",
+        "Indent examples under the point they support.",
+        "Draw arrows between related ideas.",
+        "Reserve the final line for the conclusion."
+      ],
+      "why_it_works": "Visual organization makes the speaking order easier to reconstruct during the short preparation period."
+    },
+    {
+      "name": "Opening-sentence rehearsal",
+      "how_to_use": [
+        "Use the preparation time to create one dependable opening sentence.",
+        "Include the topic and the lecture's main focus.",
+        "Avoid beginning with fillers such as um, actually, or I think.",
+        "Start speaking as soon as recording begins."
+      ],
+      "why_it_works": "A confident opening reduces hesitation and establishes the structure for the rest of the response."
+    },
+    {
+      "name": "Controlled fluency",
+      "how_to_use": [
+        "Speak in meaningful phrases rather than word by word.",
+        "Pause briefly at idea boundaries, not in the middle of phrases.",
+        "Use a pace that is steady rather than unusually fast.",
+        "Continue after a small grammatical or pronunciation error.",
+        "Use simple sentences when complex grammar would increase hesitation."
+      ],
+      "why_it_works": "Smooth, understandable delivery is more effective than a highly complex response interrupted by long pauses and restarts."
+    },
+    {
+      "name": "Calm recovery",
+      "how_to_use": [
+        "Mark a missed detail with a blank, question mark, or dash and continue listening.",
+        "Use surrounding information to infer the general meaning.",
+        "Retell only details that can be stated safely.",
+        "Replace an unknown technical word with a broader accurate phrase when possible.",
+        "Never allow one missed phrase to cause the loss of the following main point."
+      ],
+      "why_it_works": "Lectures continue while the listener is thinking, so rapid recovery prevents one difficulty from damaging the whole response."
+    }
+  ],
+  "worked_examples": [
+    {
+      "title": "Human Development Index",
+      "lecture_focus": "A lecture explains how the Human Development Index ranks countries using measures beyond income.",
+      "raw_notes": [
+        "HDI = ranks nations",
+        "not just income",
+        "3 criteria",
+        "Norway / Iceland / Australia high"
+      ],
+      "organized_notes": [
+        "T: HDI ranks countries",
+        "P1: broader than income",
+        "P2: uses 3 quality-of-life criteria",
+        "EX: Norway, Iceland, Australia rank highly",
+        "C: compares human development across nations"
+      ],
+      "model_retell": "The lecture explains the Human Development Index and how it is used to rank countries. The speaker emphasizes that the index looks beyond income and applies three broader criteria to compare people's quality of life. The accompanying example places countries such as Norway, Iceland and Australia among the most livable nations. Overall, the HDI provides a wider measure of national development.",
+      "teaching_points": [
+        "The opening immediately identifies the topic.",
+        "The response groups several details under one main idea.",
+        "The named countries are used as supporting examples rather than the central message.",
+        "The closing sentence explains the significance of the index."
+      ]
+    },
+    {
+      "title": "Government Policy and Development",
+      "lecture_focus": "A lecture describes how government policy can increase development.",
+      "raw_notes": [
+        "gov't pol.",
+        "→",
+        "↑ dev."
+      ],
+      "expanded_meaning": "Government policies caused or contributed to an increase in development.",
+      "model_retell": "The lecture focuses on the relationship between government policy and development. The speaker explains that particular policies can create conditions that support economic or social progress. As a result, effective government action may lead to increased development. The key point is that policy decisions can have significant long-term effects.",
+      "teaching_points": [
+        "The notes preserve a relationship rather than a complete sentence.",
+        "The arrow is reconstructed as can lead to or as a result.",
+        "The speaker avoids claiming a specific policy that was not recorded.",
+        "Simple grammar keeps the delivery fluent."
+      ]
+    },
+    {
+      "title": "Sputnik and Soyuz",
+      "lecture_focus": "A lecture links Sputnik, the Soyuz rocket, the International Space Station, and the continuation of earlier space-age technology.",
+      "raw_notes": [
+        "Sputnik → space age",
+        "Soyuz rocket",
+        "crews → ISS",
+        "back view ≈ old rocket",
+        "design continued 50 yrs"
+      ],
+      "model_retell": "The lecture discusses Sputnik and the rocket technology associated with the beginning of the space age. The speaker explains that the Soyuz rocket is still used to carry crews to the International Space Station. Its rear view is almost indistinguishable from the rocket used at the start of the space age about half a century earlier. The main idea is that a successful Russian rocket design has continued for many years.",
+      "teaching_points": [
+        "The response follows a historical-to-present sequence.",
+        "The International Space Station is included as an important application.",
+        "The visual comparison supports the idea of technological continuity.",
+        "The conclusion states the broader message instead of ending with an isolated detail."
+      ]
+    },
+    {
+      "title": "Urban Trees and Heat",
+      "lecture_focus": "A practice lecture explains how urban trees reduce heat and improve city environments.",
+      "raw_notes": [
+        "cities hotter",
+        "concrete absorbs heat",
+        "trees shade + evap.",
+        "↓ temp",
+        "extra: air quality / wellbeing"
+      ],
+      "organized_notes": [
+        "T: trees reduce urban heat",
+        "P1: concrete stores heat",
+        "P2: shade and evaporation cool streets",
+        "P3: additional environmental and health benefits",
+        "C: urban planting supports livable cities"
+      ],
+      "model_retell": "The lecture explains how trees can reduce heat in urban areas. Cities often become hotter because concrete and other hard surfaces absorb and retain heat. Trees help by providing shade and releasing moisture, which can lower surrounding temperatures. They may also improve air quality and people's wellbeing. Therefore, urban tree planting is presented as an important way to make cities more comfortable and livable.",
+      "teaching_points": [
+        "The cause of the problem appears before the solution.",
+        "Two mechanisms are grouped into one supporting point.",
+        "Less important benefits are introduced with may also.",
+        "The final sentence expresses the practical implication."
+      ]
+    },
+    {
+      "title": "Online Learning",
+      "lecture_focus": "A practice lecture compares the flexibility of online learning with the interaction available in traditional classrooms.",
+      "raw_notes": [
+        "online ed.",
+        "+ flexible time / access",
+        "- less face contact",
+        "success → self-discipline",
+        "hybrid = balance"
+      ],
+      "model_retell": "The lecture compares online education with traditional classroom learning. Online courses offer greater flexibility and can improve access for students who cannot attend at fixed times. However, they may provide less direct interaction with teachers and classmates, and successful learners need strong self-discipline. The speaker suggests that a hybrid model can combine the convenience of online study with the social benefits of face-to-face teaching.",
+      "teaching_points": [
+        "The response uses contrast language to organize opposing points.",
+        "Advantages and limitations receive balanced treatment.",
+        "The arrow is expanded into a condition for success.",
+        "The recommendation is reserved for the conclusion."
+      ]
+    }
+  ],
+  "useful_language": {
+    "opening_the_retell": [
+      "The lecture focuses on...",
+      "The speaker discusses...",
+      "The main topic of the lecture is...",
+      "The lecture explains how...",
+      "The speaker examines the relationship between..."
+    ],
+    "introducing_main_points": [
+      "First, the speaker explains that...",
+      "One of the main points is that...",
+      "The lecture also highlights...",
+      "Another important idea is...",
+      "The speaker goes on to describe..."
+    ],
+    "showing_cause_and_result": [
+      "This leads to...",
+      "As a result,...",
+      "Because of this,...",
+      "The speaker argues that this can cause...",
+      "Consequently,..."
+    ],
+    "showing_contrast": [
+      "However,...",
+      "In contrast,...",
+      "On the other hand,...",
+      "While the first approach..., the second...",
+      "Although there are benefits, the speaker also notes..."
+    ],
+    "giving_examples": [
+      "For example,...",
+      "The speaker illustrates this with...",
+      "One example mentioned is...",
+      "This can be seen in...",
+      "The lecture refers to..."
+    ],
+    "showing_sequence": [
+      "Initially,...",
+      "The next stage involves...",
+      "Following this,...",
+      "Eventually,...",
+      "The process concludes with..."
+    ],
+    "reporting_uncertain_or_partial_information": [
+      "The speaker appears to suggest that...",
+      "The lecture indicates that...",
+      "One point concerns...",
+      "The speaker refers to a type of...",
+      "The general idea is that..."
+    ],
+    "closing_the_retell": [
+      "Overall, the lecture emphasizes that...",
+      "The main conclusion is that...",
+      "In summary, the speaker argues that...",
+      "The broader implication is that...",
+      "The lecture therefore shows that..."
+    ],
+    "abbreviations_and_symbols": [
+      "gov't = government",
+      "dev. = development",
+      "edu. = education",
+      "env. = environment",
+      "tech. = technology",
+      "pop. = population",
+      "↑ = increase or growth",
+      "↓ = decrease or reduction",
+      "→ = leads to, causes, or results in",
+      "≈ = similar to or approximately",
+      "vs = contrast or comparison",
+      "w/ = with",
+      "w/o = without",
+      "re: = regarding or about",
+      "no. = number"
+    ]
+  },
+  "common_mistakes": [
+    {
+      "mistake": "Continuing to study the image while the lecture is playing.",
+      "why_it_hurts": "Visual attention competes with listening and note taking, causing important spoken information to be missed.",
+      "correction": "Use the image only for rapid prediction, then concentrate on the recording and your notes."
+    },
+    {
+      "mistake": "Trying to write complete sentences during the lecture.",
+      "why_it_hurts": "Writing full grammar is too slow and may cause the learner to miss the next main point.",
+      "correction": "Record content words, relationships, names, numbers, and symbols only."
+    },
+    {
+      "mistake": "Recording many isolated details without identifying the topic.",
+      "why_it_hurts": "The response may sound like an unconnected list and fail to communicate the lecture's central message.",
+      "correction": "Reserve the first line of the notes for the topic and connect every major detail to it."
+    },
+    {
+      "mistake": "Stopping mentally after missing one phrase.",
+      "why_it_hurts": "While the learner tries to recover the missed phrase, more of the lecture is lost.",
+      "correction": "Mark the gap quickly, stay calm, and continue listening for the next important idea."
+    },
+    {
+      "mistake": "Attempting to explain every unfamiliar word.",
+      "why_it_hurts": "The unknown word may be unimportant, defined later, or understandable from context.",
+      "correction": "Continue listening and capture the surrounding idea instead of solving the word immediately."
+    },
+    {
+      "mistake": "Reading notes word for word.",
+      "why_it_hurts": "Keyword notes are usually grammatically incomplete, so literal reading creates broken and unnatural speech.",
+      "correction": "Use the notes as prompts and reconstruct complete, simple sentences."
+    },
+    {
+      "mistake": "Using a memorized template that contains little lecture content.",
+      "why_it_hurts": "A polished structure cannot replace accurate topic-specific information.",
+      "correction": "Use short organizational frames only, and fill most of the response with actual lecture ideas."
+    },
+    {
+      "mistake": "Speaking too quickly to include every note.",
+      "why_it_hurts": "Excessive speed reduces pronunciation clarity, natural phrasing, and listener comprehension.",
+      "correction": "Select the strongest points and deliver them at a steady, understandable pace."
+    },
+    {
+      "mistake": "Restarting the sentence after every small error.",
+      "why_it_hurts": "Frequent restarts damage rhythm and waste the limited response time.",
+      "correction": "Correct only when meaning has become seriously unclear; otherwise continue."
+    },
+    {
+      "mistake": "Focusing only on content and ignoring delivery.",
+      "why_it_hurts": "The task evaluates Content, Oral Fluency, and Pronunciation.",
+      "correction": "Review each recording using three separate criteria rather than judging only factual accuracy."
+    },
+    {
+      "mistake": "Inventing an exact number, name, or technical term that was not heard clearly.",
+      "why_it_hurts": "An invented detail can make the response inaccurate.",
+      "correction": "Use a broader but safe phrase, such as several countries, a scientific measure, or a particular policy."
+    },
+    {
+      "mistake": "Ending suddenly after a random supporting detail.",
+      "why_it_hurts": "The response sounds incomplete and the main message may remain unclear.",
+      "correction": "Reserve the final few seconds for a conclusion, implication, or summary of significance."
+    }
+  ],
+  "practice_plan": [
+    {
+      "stage": "1. Format and timing rehearsal",
+      "duration_minutes": 10,
+      "activities": [
+        "Review the sequence: brief preview, one recording, 10 seconds of preparation, and 40 seconds of speaking.",
+        "Practise beginning immediately when a timer starts.",
+        "Practise stopping naturally before or at the end of 40 seconds.",
+        "Repeat the timing sequence until it feels automatic."
+      ],
+      "success_measure": "The learner starts without hesitation and completes a structured response within the response window."
+    },
+    {
+      "stage": "2. Topic identification drills",
+      "duration_minutes": 15,
+      "activities": [
+        "Listen to several short academic extracts.",
+        "Write only a five-word topic label for each extract.",
+        "Add one sentence describing the speaker's main purpose.",
+        "Compare the topic with supporting details and remove labels that are too narrow."
+      ],
+      "success_measure": "The learner identifies the general topic and main focus without relying on minor examples."
+    },
+    {
+      "stage": "3. Main-point filtering",
+      "duration_minutes": 15,
+      "activities": [
+        "Read or listen to a short lecture.",
+        "Classify information as topic, main point, example, repetition, or minor detail.",
+        "Select only two or three points for the retell.",
+        "Explain why each selected point deserves inclusion."
+      ],
+      "success_measure": "The learner consistently prioritizes ideas that explain the lecture rather than collecting disconnected facts."
+    },
+    {
+      "stage": "4. Shorthand development",
+      "duration_minutes": 15,
+      "activities": [
+        "Create abbreviations for common academic words.",
+        "Practise symbols for increase, decrease, cause, contrast, similarity, and sequence.",
+        "Convert five complete sentences into compact notes.",
+        "Reconstruct the original meaning orally without seeing the complete sentences."
+      ],
+      "success_measure": "The learner can understand and expand the notes quickly after a short delay."
+    },
+    {
+      "stage": "5. Five-note challenge",
+      "duration_minutes": 15,
+      "activities": [
+        "Listen to a lecture once.",
+        "Write exactly five notes: topic, two supporting ideas, one relationship, and one conclusion or implication.",
+        "Use the five notes to speak for 30 to 40 seconds.",
+        "Repeat the retell with clearer links but without adding invented details."
+      ],
+      "success_measure": "The retell includes all five note functions and remains logically connected."
+    },
+    {
+      "stage": "6. Image-supported lecture practice",
+      "duration_minutes": 15,
+      "activities": [
+        "Preview an image for three seconds.",
+        "Predict the topic and two likely words.",
+        "Hide or ignore the image when the lecture begins.",
+        "After speaking, check whether the image supported the topic prediction or distracted attention."
+      ],
+      "success_measure": "The image improves prediction without reducing the quality of listening notes."
+    },
+    {
+      "stage": "7. Missed-detail recovery",
+      "duration_minutes": 10,
+      "activities": [
+        "Use a lecture containing one unfamiliar term or deliberately obscured phrase.",
+        "Mark the missing information and continue listening.",
+        "Retell the surrounding main ideas.",
+        "Replace the unknown term with a safe broader description when necessary."
+      ],
+      "success_measure": "One missed detail does not interrupt note taking or spoken delivery."
+    },
+    {
+      "stage": "8. Fluency and pronunciation workshop",
+      "duration_minutes": 10,
+      "activities": [
+        "Mark phrase boundaries in a model response.",
+        "Underline content words that should receive stress.",
+        "Record the response at a natural pace.",
+        "Repeat it with fewer pauses and clearer stressed words."
+      ],
+      "success_measure": "The second attempt sounds smoother and easier to understand without becoming unnaturally fast."
+    },
+    {
+      "stage": "9. Full timed attempts",
+      "duration_minutes": 20,
+      "activities": [
+        "Complete three full Re-tell Lecture attempts under test timing.",
+        "Use a different academic topic for each attempt.",
+        "Do not replay the lecture before the first response.",
+        "Record every response for review."
+      ],
+      "success_measure": "At least two responses contain a clear topic, two main points, logical linking, and a controlled ending."
+    },
+    {
+      "stage": "10. Feedback and targeted repetition",
+      "duration_minutes": 15,
+      "activities": [
+        "Score each response separately for Content, Oral Fluency, and Pronunciation.",
+        "Identify one strength and one priority problem.",
+        "Repeat the weakest response after reviewing the notes.",
+        "Compare the first and second recordings for measurable improvement."
+      ],
+      "success_measure": "The repeated response shows improvement in the selected priority area without losing content accuracy."
+    }
+  ],
+  "mastery_checklist": [
+    "I can identify the lecture topic and express it in a clear opening sentence.",
+    "I can select two or three main supporting ideas instead of attempting to repeat everything.",
+    "I can distinguish a central point from an example or minor detail.",
+    "I can identify relationships such as cause, result, contrast, comparison, sequence, and problem-solution.",
+    "I can use brief notes, abbreviations, arrows, symbols, indentation, and numbering.",
+    "I can reconstruct complete spoken sentences from incomplete notes.",
+    "I can use an image to predict the topic without allowing it to distract me during the lecture.",
+    "I can continue listening when I miss a word, number, phrase, or technical expression.",
+    "I can avoid inventing details when part of the lecture is unclear.",
+    "I can use cohesive language to connect my supporting points.",
+    "I can include a conclusion, implication, recommendation, or overall significance when appropriate.",
+    "I can begin speaking promptly after the preparation period.",
+    "I can speak for approximately 35 to 40 seconds without long silent pauses.",
+    "I can maintain a natural rate rather than speaking too slowly or rushing.",
+    "I can group words into meaningful phrases and pause mainly between ideas.",
+    "I can pronounce important topic words clearly enough to be understood.",
+    "I can use sentence stress to emphasize the main information.",
+    "I can continue after a minor mistake instead of repeatedly restarting.",
+    "I can review Content, Oral Fluency, and Pronunciation as separate performance areas.",
+    "I can complete the full preview, listening, preparation, and response sequence under timed conditions."
+  ],
+  "strategy_notes": [
+    "Content selection is more important than note quantity. A short set of meaningful notes is more useful than a page of disconnected words.",
+    "The opening sentence should name both the subject and the lecture's focus, such as what the lecture explains, compares, argues, or describes.",
+    "A reliable 40-second structure is opening topic sentence, first main point, second main point, useful example or relationship, and conclusion.",
+    "Use a conclusion only when it can be stated accurately. When no explicit conclusion is given, summarize the broader significance of the main points.",
+    "Names, dates, numbers, and technical terms are valuable when heard clearly, but they should not replace the main message.",
+    "Simple and accurate grammar is preferable to complex grammar that causes hesitation or incomplete sentences.",
+    "A brief natural pause between ideas can improve clarity; long silent pauses and repeated filler words weaken fluency.",
+    "Pronunciation does not require copying a particular accent. The practical goal is speech that regular English speakers can understand easily.",
+    "Stress content words such as key nouns, main verbs, adjectives, negatives, and important numbers while reducing less important grammar words.",
+    "During preparation, do not rewrite all notes. Decide the order, clarify symbols, select the conclusion, and rehearse the first phrase.",
+    "When notes contain too much information, cross out low-value details before speaking rather than trying to rush through everything.",
+    "When notes contain too little information, explain the relationship between the known points rather than repeating the same idea.",
+    "Do not evaluate the response while speaking. Complete the retell first and analyze errors afterward.",
+    "Use recordings to detect issues that are difficult to notice while speaking, including uneven speed, repeated fillers, weak endings, and unclear word stress.",
+    "For each practice response, choose only one main improvement target so that feedback remains manageable and measurable."
+  ],
+  "metadata": {
+    "chapter_number": 14,
+    "lesson_number": 13,
+    "difficulty": "intermediate_to_advanced",
+    "estimated_study_minutes": 120,
+    "recommended_follow_up": "Complete additional timed retell attempts using unfamiliar academic topics and review each recording for Content, Oral Fluency, and Pronunciation.",
+    "scoring_dimensions": [
+      {
+        "name": "Content",
+        "focus": "How accurately and thoroughly the response communicates the lecture's situation, ideas, aspects, actions, developments, examples, conclusions, or implications."
+      },
+      {
+        "name": "Oral Fluency",
+        "focus": "Whether rhythm, phrasing, stress, pace, and continuity sound smooth and natural."
+      },
+      {
+        "name": "Pronunciation",
+        "focus": "Whether vowels, consonants, word stress, and phrase stress make the response easily understandable."
+      }
+    ],
+    "source_scope": [
+      "PTE Academic Re-tell Lecture item format",
+      "listening and note-taking strategies",
+      "spoken reconstruction and organization",
+      "timed practice",
+      "content, oral fluency, and pronunciation review"
+    ],
+    "tags": [
+      "pte-academic",
+      "re-tell-lecture",
+      "listening",
+      "speaking",
+      "note-taking",
+      "oral-fluency",
+      "pronunciation",
+      "timed-practice"
+    ]
+  }
+}

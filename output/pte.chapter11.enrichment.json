@@ -1,0 +1,773 @@
+{
+  "schema_version": "pte_lesson_enrichment.v1",
+  "task_type": "Listening: Fill in the Blanks & Write from Dictation",
+  "lesson_title": "Lesson 10: Write from Dictation and Listening: Fill in the Blanks",
+  "source_label": "pte:ch11",
+  "modality": {
+    "primary_skills": [
+      "listening",
+      "writing"
+    ],
+    "supporting_skills": [
+      "speaking",
+      "academic vocabulary",
+      "grammar",
+      "spelling",
+      "pronunciation"
+    ],
+    "response_modes": [
+      "typing missing words into a transcript",
+      "reconstructing a complete sentence from memory",
+      "checking written language for grammatical and semantic accuracy",
+      "practising spoken sentences at a natural rate"
+    ]
+  },
+  "overview": {
+    "estimated_study_time": "Plan for about 2 hours of focused study.",
+    "lesson_purpose": "This lesson develops accurate listening-to-writing skills for two PTE Academic item types. In Listening: Fill in the Blanks, the learner follows a written transcript while listening and types the words missing from the text. In Write from Dictation, the learner hears one sentence and reconstructs it as accurately and completely as possible.",
+    "main_challenge": "The recording continues while the learner is listening, reading, remembering, typing, and predicting. A successful response therefore depends on maintaining attention, following the exact spoken sequence, recognizing reduced or connected speech, remembering meaningful word groups, and checking spelling through grammar and context.",
+    "teaching_focus": [
+      "Follow the spoken sequence instead of stopping mentally after one difficult word.",
+      "Use the visible transcript, surrounding grammar, collocations, and meaning to recover missing words.",
+      "Remember a dictated sentence in meaningful chunks rather than as isolated sounds.",
+      "Distinguish homophones by testing which spelling makes sense in the sentence.",
+      "Protect correct words by typing everything that can be recalled instead of abandoning an incomplete sentence.",
+      "Use the final checking stage to repair spelling, word forms, articles, plurals, and verb endings."
+    ],
+    "success_definition": "The learner can capture content words and grammar words accurately, maintain the original order, select spellings that fit the meaning, and submit a grammatically coherent response without replacing the original wording with a paraphrase."
+  },
+  "learning_goals": [
+    {
+      "goal": "Follow spoken information in sequence.",
+      "evidence_of_learning": "The learner continues tracking the recording even after missing one word and records later answers in the correct blanks or sentence positions."
+    },
+    {
+      "goal": "Understand the format and response requirements of both item types.",
+      "evidence_of_learning": "The learner can explain that Fill in the Blanks requires the missing words in a transcript, while Write from Dictation requires reconstruction of the sentence heard once."
+    },
+    {
+      "goal": "Use grammar and context to predict and confirm words.",
+      "evidence_of_learning": "The learner identifies whether a blank requires a noun, verb, adjective, adverb, article, preposition, or other grammatical form."
+    },
+    {
+      "goal": "Improve short-term memory for dictated sentences.",
+      "evidence_of_learning": "The learner remembers and writes sentences in meaningful chunks while preserving the original word order."
+    },
+    {
+      "goal": "Distinguish homophones through meaning.",
+      "evidence_of_learning": "The learner correctly chooses forms such as accept instead of except and whether instead of weather when the context demands them."
+    },
+    {
+      "goal": "Apply accurate spelling and mechanics under time pressure.",
+      "evidence_of_learning": "The learner checks capitalization, spacing, word endings, common academic vocabulary, and sentence punctuation before submitting."
+    },
+    {
+      "goal": "Recognize natural-rate academic speech.",
+      "evidence_of_learning": "The learner identifies words even when sounds are linked, unstressed, shortened, or delivered with unfamiliar rhythm or accent."
+    },
+    {
+      "goal": "Complete timed practice and learn from errors.",
+      "evidence_of_learning": "The learner classifies mistakes as listening, memory, grammar, spelling, sequencing, or typing problems and selects a targeted repair strategy."
+    }
+  ],
+  "core_method": {
+    "method_name": "Listen, Track, Capture, Reconstruct, Check",
+    "principle": "Do not rely on sound alone. Combine what you hear with sequence, grammar, meaning, collocation, and spelling knowledge.",
+    "steps": [
+      {
+        "step": 1,
+        "name": "Prepare",
+        "instruction": "Use the preparation time to place the cursor correctly, scan the visible transcript when available, notice the topic, and predict the types of words that may be missing.",
+        "teacher_example": "In the phrase 'the results were ___ significant', the blank is likely to require an adverb such as statistically or particularly."
+      },
+      {
+        "step": 2,
+        "name": "Track",
+        "instruction": "Follow the audio from left to right without looking ahead too far. Keep your attention aligned with the speaker's current position.",
+        "teacher_example": "If the speaker is reading the second sentence, do not continue staring at a blank in the first sentence."
+      },
+      {
+        "step": 3,
+        "name": "Capture",
+        "instruction": "Type or note the clearest version of each word immediately. For dictation, capture content words and short grammar words in ordered chunks.",
+        "teacher_example": "Hear 'Before submitting your report' as one chunk and 'check that the bibliography is complete' as the next."
+      },
+      {
+        "step": 4,
+        "name": "Continue",
+        "instruction": "If one word is missed, leave a mental or written placeholder and continue listening. One uncertain word should not cause the loss of the remaining sentence.",
+        "teacher_example": "Record 'The ___ of the policy were discussed in detail' and keep listening instead of replaying the unknown sound mentally."
+      },
+      {
+        "step": 5,
+        "name": "Reconstruct",
+        "instruction": "Use sentence meaning, grammar, collocation, and remembered sound patterns to restore uncertain words without changing the original message.",
+        "teacher_example": "After 'a number of', expect a plural countable noun, as in 'a number of discrete studies'."
+      },
+      {
+        "step": 6,
+        "name": "Check",
+        "instruction": "Read the response once for meaning, once for grammar, and once for spelling. Make only evidence-based corrections.",
+        "teacher_example": "In 'The effects of the financial crisis are still being felt', the plural verb are supports the plural noun effects."
+      }
+    ],
+    "fill_in_the_blanks_application": [
+      "Scan the transcript before the recording and predict each blank's likely part of speech.",
+      "Follow the speaker and the printed words simultaneously.",
+      "Type each missing word exactly where it belongs.",
+      "Use the surrounding transcript to confirm word form, number, tense, and spelling.",
+      "Return to uncertain blanks only after the recording has finished."
+    ],
+    "write_from_dictation_application": [
+      "Listen for the overall meaning and sentence structure.",
+      "Divide the sentence into two to four meaningful chunks.",
+      "Retain important content words, then attach articles, auxiliaries, prepositions, and endings.",
+      "Type the sentence in the original order rather than composing a similar sentence.",
+      "Submit all confidently remembered words even when one section remains uncertain."
+    ]
+  },
+  "techniques": [
+    {
+      "name": "Part-of-Speech Prediction",
+      "teaching_point": "The words around a blank reveal the grammatical category required.",
+      "how_to_apply": [
+        "After an article such as a, an, or the, expect a noun or an adjective followed by a noun.",
+        "After a modal such as can, may, or will, expect the base form of a verb.",
+        "After a linking verb such as is, seems, or becomes, expect an adjective or noun complement.",
+        "Before a noun, consider whether the blank is an adjective or determiner."
+      ],
+      "example": "The research produced ___ results. The blank probably requires an adjective such as significant, reliable, or unexpected."
+    },
+    {
+      "name": "Collocation Recovery",
+      "teaching_point": "Academic words frequently occur in predictable combinations, so the surrounding words can help recover an unclear sound.",
+      "how_to_apply": [
+        "Listen for verb-noun combinations such as conduct research or reach a conclusion.",
+        "Listen for adjective-noun combinations such as significant difference or economic growth.",
+        "Listen for prepositional patterns such as responsible for or related to.",
+        "Reject a word that sounds possible but does not form a natural phrase."
+      ],
+      "example": "In 'The researchers reached a final ___', conclusion is more likely than an unrelated word with a similar sound."
+    },
+    {
+      "name": "Chunked Memory",
+      "teaching_point": "Remembering meaning groups is more reliable than trying to store every sound separately.",
+      "how_to_apply": [
+        "Divide at natural grammatical boundaries.",
+        "Repeat each chunk silently while retaining its meaning.",
+        "Use stress words as anchors.",
+        "Rebuild small grammar words around those anchors."
+      ],
+      "example": "The project involved / a number of / discrete studies."
+    },
+    {
+      "name": "Content-Word Anchoring",
+      "teaching_point": "Nouns, main verbs, adjectives, adverbs, names, and numbers usually carry the strongest stress and provide the sentence framework.",
+      "how_to_apply": [
+        "Capture the clearest stressed words first.",
+        "Preserve their original order.",
+        "Infer function words only when grammar and sound support them.",
+        "Do not replace an unfamiliar content word with a more familiar synonym."
+      ],
+      "example": "From 'project – involved – number – discrete – studies', reconstruct 'The project involved a number of discrete studies.'"
+    },
+    {
+      "name": "Sound-to-Spelling Verification",
+      "teaching_point": "A sound is only the first clue; correct spelling must also fit the sentence's grammar and meaning.",
+      "how_to_apply": [
+        "List the possible spellings of the sound.",
+        "Identify each candidate's meaning and part of speech.",
+        "Insert each candidate into the sentence.",
+        "Keep the form that makes the complete sentence logical and grammatical."
+      ],
+      "example": "Many experts could not accept the hypothesis. Accept is a verb meaning agree with or believe; except does not fit."
+    },
+    {
+      "name": "Keep-Listening Recovery",
+      "teaching_point": "Fixating on one missed word often causes several additional errors.",
+      "how_to_apply": [
+        "Mark the uncertain position.",
+        "Immediately return attention to the current audio.",
+        "Capture all later words.",
+        "Use the completed sentence to infer the missed item."
+      ],
+      "example": "Missing one adjective should not prevent the learner from recording the following noun, verb, and final phrase."
+    },
+    {
+      "name": "Grammar Backtracking",
+      "teaching_point": "The words after a blank can be as useful as the words before it.",
+      "how_to_apply": [
+        "Check subject-verb agreement.",
+        "Check whether a following noun requires an adjective.",
+        "Check whether a following past participle requires an auxiliary.",
+        "Check whether the entire clause has a complete subject and predicate."
+      ],
+      "example": "In 'The effects of the crisis are still being felt', are indicates that effects must be plural."
+    },
+    {
+      "name": "Three-Pass Proofreading",
+      "teaching_point": "Separate checks reduce the chance that the learner reads what they intended rather than what they typed.",
+      "how_to_apply": [
+        "Pass 1: Does the sentence express a sensible idea?",
+        "Pass 2: Is the grammar complete and consistent?",
+        "Pass 3: Is every word spelled correctly and separated properly?",
+        "Avoid rewriting correct sections without a clear reason."
+      ],
+      "example": "Check first that the sentence is meaningful, then verify 'bibliography' letter by letter."
+    },
+    {
+      "name": "No-Visual-Clue Practice",
+      "teaching_point": "Practice should imitate test conditions by removing lip-reading, gestures, and facial expressions.",
+      "how_to_apply": [
+        "Partners sit back-to-back or face away from each other.",
+        "The reader says the sentence once at a natural rate.",
+        "The listener does not ask for repetition.",
+        "The response is checked only after writing is complete."
+      ],
+      "example": "One learner reads 'Before submitting your report, check that the bibliography is complete' once while the partner listens without watching."
+    },
+    {
+      "name": "Shadow-and-Write Training",
+      "teaching_point": "Speaking practice can strengthen recognition of stress, linking, and word boundaries.",
+      "how_to_apply": [
+        "Listen to a short academic sentence.",
+        "Repeat it at the same rhythm.",
+        "Notice which words are stressed or reduced.",
+        "Write the sentence from memory after repeating it."
+      ],
+      "example": "Practise how 'a number of' may sound like one connected unit rather than four isolated words."
+    }
+  ],
+  "worked_examples": [
+    {
+      "title": "Homophone Choice: Effects or Affects",
+      "task": "Complete the sentence: The ___ of the financial crisis are still being felt around the world.",
+      "reasoning_steps": [
+        "The blank follows the article the, so a noun is expected.",
+        "The verb are shows that the noun should be plural.",
+        "The sentence refers to the results or consequences of the crisis.",
+        "Effects is the plural noun that matches the grammar and meaning."
+      ],
+      "answer": "effects",
+      "completed_response": "The effects of the financial crisis are still being felt around the world.",
+      "lesson": "Do not choose spelling from sound alone; test grammar and meaning."
+    },
+    {
+      "title": "Homophone Choice: Accept or Except",
+      "task": "Many experts were initially skeptical and could not ___ the key hypothesis.",
+      "reasoning_steps": [
+        "Could not is followed by the base form of a verb.",
+        "The intended meaning is believe, agree with, or receive as valid.",
+        "Accept has the required meaning and grammatical function.",
+        "Except usually means excluding and does not complete this sentence logically."
+      ],
+      "answer": "accept",
+      "completed_response": "Many experts were initially skeptical and could not accept the key hypothesis.",
+      "lesson": "Identify the required part of speech before selecting a spelling."
+    },
+    {
+      "title": "Two Homophones in One Sentence",
+      "task": "It is unclear ___ the government will successfully ___ the current political storm.",
+      "reasoning_steps": [
+        "The first blank introduces an indirect yes-or-no question, so whether is required.",
+        "The second blank follows will successfully, so a base-form verb is required.",
+        "To weather a storm means to survive or manage a difficult situation.",
+        "Weather is therefore correct in the second blank even though it is commonly known as a noun."
+      ],
+      "answer": [
+        "whether",
+        "weather"
+      ],
+      "completed_response": "It is unclear whether the government will successfully weather the current political storm.",
+      "lesson": "A homophone's correct form depends on its function and meaning in the complete sentence."
+    },
+    {
+      "title": "Write from Dictation: Exact Reconstruction",
+      "audio_sentence": "Before submitting your report, check that the bibliography is complete.",
+      "chunking": [
+        "Before submitting your report",
+        "check that",
+        "the bibliography is complete"
+      ],
+      "memory_anchors": [
+        "submitting",
+        "report",
+        "check",
+        "bibliography",
+        "complete"
+      ],
+      "reconstruction_steps": [
+        "Recall the introductory time phrase.",
+        "Keep the comma boundary after report.",
+        "Recall the instruction beginning with check.",
+        "Restore the noun phrase the bibliography.",
+        "Finish with the linking verb and adjective is complete."
+      ],
+      "answer": "Before submitting your report, check that the bibliography is complete.",
+      "lesson": "Preserve wording and order; do not replace bibliography with references or another synonym."
+    },
+    {
+      "title": "Write from Dictation: Plural and Collocation Check",
+      "audio_sentence": "The project involved a number of discrete studies.",
+      "chunking": [
+        "The project involved",
+        "a number of",
+        "discrete studies"
+      ],
+      "reasoning_steps": [
+        "The main subject and verb are The project involved.",
+        "The fixed quantity phrase is a number of.",
+        "A number of is followed by a plural countable noun.",
+        "Discrete means separate or individually distinct; it is not the same spelling as discreet."
+      ],
+      "answer": "The project involved a number of discrete studies.",
+      "lesson": "Use collocation, plural grammar, and meaning to distinguish discrete from discreet."
+    },
+    {
+      "title": "Fill in the Blanks: Word Form Prediction",
+      "task": "The findings were considered statistically ___ by the research team.",
+      "reasoning_steps": [
+        "Statistically is an adverb modifying the missing word.",
+        "The structure were considered requires a complement.",
+        "An adjective is expected after statistically.",
+        "Significant forms the common academic collocation statistically significant."
+      ],
+      "answer": "significant",
+      "completed_response": "The findings were considered statistically significant by the research team.",
+      "lesson": "Grammar predicts the word class, and collocation confirms the lexical choice."
+    },
+    {
+      "title": "Fill in the Blanks: Continue After a Missed Word",
+      "task": "During the recording, the learner misses the first blank but clearly hears the remaining phrase 'was published in an international journal.'",
+      "recovery_steps": [
+        "Do not stop following the transcript.",
+        "Capture published, international, and journal.",
+        "Use the printed sentence structure to identify the missing subject.",
+        "Return to the first blank after the recording."
+      ],
+      "possible_completed_response": "The research was published in an international journal.",
+      "lesson": "Maintaining sequence protects later answers and may provide enough context to recover an earlier blank."
+    },
+    {
+      "title": "Dictation with Reduced Function Words",
+      "audio_sentence": "Students are expected to complete the assignment by Friday.",
+      "likely_difficulties": [
+        "The word are may be weakly stressed.",
+        "To may be reduced and linked to expected.",
+        "The may be unstressed before assignment.",
+        "By may be short and easy to confuse with the following word."
+      ],
+      "reconstruction_steps": [
+        "Anchor students, expected, complete, assignment, and Friday.",
+        "Use passive grammar to restore are expected.",
+        "Use the infinitive pattern expected to complete.",
+        "Restore the deadline phrase by Friday."
+      ],
+      "answer": "Students are expected to complete the assignment by Friday.",
+      "lesson": "Function words may be acoustically weak but remain essential to grammatical accuracy."
+    }
+  ],
+  "useful_language": [
+    {
+      "category": "Academic collocations to recognize",
+      "items": [
+        "conduct research",
+        "reach a conclusion",
+        "provide evidence",
+        "analyse the results",
+        "significant difference",
+        "economic effects",
+        "complete an assignment",
+        "submit a report"
+      ],
+      "use": "Recognizing familiar word partnerships reduces the number of possible answers when audio is unclear."
+    },
+    {
+      "category": "Grammar frames for prediction",
+      "items": [
+        "a number of + plural noun",
+        "modal verb + base verb",
+        "be + past participle",
+        "article + adjective + noun",
+        "preposition + noun phrase",
+        "have or has + past participle",
+        "adverb + adjective",
+        "subject + verb + object"
+      ],
+      "use": "Use the words around a blank to predict the missing word's grammatical form."
+    },
+    {
+      "category": "Sequence and lecture signposts",
+      "items": [
+        "first",
+        "initially",
+        "then",
+        "subsequently",
+        "however",
+        "therefore",
+        "as a result",
+        "finally"
+      ],
+      "use": "These words help the learner follow the progression of spoken academic information."
+    },
+    {
+      "category": "Cause-and-effect language",
+      "items": [
+        "because of",
+        "leads to",
+        "results in",
+        "is caused by",
+        "has an effect on",
+        "consequently",
+        "due to",
+        "as a result of"
+      ],
+      "use": "Meaning relationships can help reconstruct missing nouns, verbs, and connectors."
+    },
+    {
+      "category": "Common homophone sets",
+      "items": [
+        "accept and except",
+        "affect and effect",
+        "whether and weather",
+        "their, there, and they're",
+        "principle and principal",
+        "site, sight, and cite",
+        "complement and compliment",
+        "discrete and discreet"
+      ],
+      "use": "Create a word bank that includes meaning, part of speech, and an original example sentence for each form."
+    },
+    {
+      "category": "Self-check questions",
+      "items": [
+        "Does this word fit the meaning?",
+        "Is the required word a noun, verb, adjective, or adverb?",
+        "Does the subject agree with the verb?",
+        "Does the phrase form a natural collocation?",
+        "Have I preserved the original sequence?",
+        "Have I included small grammar words?",
+        "Is the spelling consistent with the intended meaning?",
+        "Did I type every word I confidently remember?"
+      ],
+      "use": "Use these questions during the final checking stage rather than making random changes."
+    },
+    {
+      "category": "Memory labels for dictated sentences",
+      "items": [
+        "who or what",
+        "main action",
+        "object or complement",
+        "time",
+        "place",
+        "reason",
+        "condition",
+        "result"
+      ],
+      "use": "Label the sentence structure mentally to support accurate reconstruction."
+    },
+    {
+      "category": "Pronunciation features to notice",
+      "items": [
+        "stressed content words",
+        "reduced function words",
+        "linked consonant and vowel sounds",
+        "contracted forms",
+        "plural endings",
+        "past-tense endings",
+        "sentence-level intonation",
+        "natural sense groups"
+      ],
+      "use": "Awareness of connected speech helps the learner identify words that may not sound like their isolated dictionary forms."
+    }
+  ],
+  "common_mistakes": [
+    {
+      "mistake": "Stopping mentally after missing one word.",
+      "why_it_hurts": "The recording continues, so fixation on one blank can cause several later words to be lost.",
+      "correction": "Leave a placeholder, return attention to the audio immediately, and repair the missing word afterward."
+    },
+    {
+      "mistake": "Choosing a homophone from sound alone.",
+      "why_it_hurts": "Homophones share pronunciation but differ in meaning, spelling, and grammatical function.",
+      "correction": "Test each candidate against the whole sentence's meaning and grammar."
+    },
+    {
+      "mistake": "Paraphrasing a dictated sentence.",
+      "why_it_hurts": "Write from Dictation rewards words from the original sentence, not a general summary of its meaning.",
+      "correction": "Preserve the speaker's vocabulary and order. Write as much of the original wording as possible."
+    },
+    {
+      "mistake": "Remembering only nouns and main verbs.",
+      "why_it_hurts": "Articles, auxiliaries, prepositions, pronouns, and endings are part of the sentence and affect grammatical completeness.",
+      "correction": "After capturing content-word anchors, reconstruct the function-word framework."
+    },
+    {
+      "mistake": "Changing a correct word because it looks unfamiliar.",
+      "why_it_hurts": "Academic vocabulary may be less familiar than a tempting but incorrect substitute.",
+      "correction": "Change a word only when sound, context, grammar, or collocation provides clear evidence."
+    },
+    {
+      "mistake": "Typing while no longer following the speaker.",
+      "why_it_hurts": "Focusing entirely on the keyboard breaks alignment with the recording.",
+      "correction": "Use short glances at the keyboard, type concise responses, and keep attention on the current spoken position."
+    },
+    {
+      "mistake": "Writing blanks in the wrong position.",
+      "why_it_hurts": "Correct words may not receive credit when placed in another blank or sequence position.",
+      "correction": "Track from left to right and confirm that the cursor is in the correct blank before typing."
+    },
+    {
+      "mistake": "Ignoring grammatical endings.",
+      "why_it_hurts": "Singular, plural, tense, and participle endings can change both meaning and scoring.",
+      "correction": "Listen specifically for final sounds such as -s, -ed, and -ing, then verify them through sentence grammar."
+    },
+    {
+      "mistake": "Practising with repeated playback every time.",
+      "why_it_hurts": "Repeated listening does not develop the one-listen attention and memory needed for test conditions.",
+      "correction": "Use one playback for scored practice; use repetition only later during diagnosis and skill repair."
+    },
+    {
+      "mistake": "Using visual clues during partner dictation.",
+      "why_it_hurts": "Lip movements and gestures make practice easier than the actual listening situation.",
+      "correction": "Sit back-to-back or face away from the reader."
+    },
+    {
+      "mistake": "Leaving the entire response empty because one section was missed.",
+      "why_it_hurts": "Correctly remembered words can still contribute to content performance.",
+      "correction": "Write every word and phrase that can be recalled confidently, preserving their likely order."
+    },
+    {
+      "mistake": "Proofreading only for spelling.",
+      "why_it_hurts": "A correctly spelled word may still be grammatically or semantically wrong.",
+      "correction": "Check meaning first, grammar second, and spelling third."
+    }
+  ],
+  "practice_plan": [
+    {
+      "stage": 1,
+      "name": "Orientation and Diagnostic",
+      "duration": "15 minutes",
+      "activities": [
+        "Explain the difference between the two item types.",
+        "Review the seven-second preparation countdown described for Fill in the Blanks.",
+        "Complete one untimed sample of each task.",
+        "Record whether each error came from listening, memory, grammar, spelling, or typing."
+      ],
+      "success_target": "The learner understands what must be typed and identifies their main source of error."
+    },
+    {
+      "stage": 2,
+      "name": "Spoken-Sequence Tracking",
+      "duration": "15 minutes",
+      "activities": [
+        "Read a short transcript while listening to it.",
+        "Move a finger or cursor under each word as it is heard.",
+        "Repeat with natural-rate audio and no pausing.",
+        "Practise continuing after deliberately hiding one word."
+      ],
+      "success_target": "The learner remains aligned with the recording and does not lose later information after one missed word."
+    },
+    {
+      "stage": 3,
+      "name": "Grammar and Context Prediction",
+      "duration": "20 minutes",
+      "activities": [
+        "Inspect ten incomplete sentences before hearing audio.",
+        "Predict the part of speech required in each blank.",
+        "List one or two possible collocations.",
+        "Listen once and compare the actual word with the prediction."
+      ],
+      "success_target": "At least eight of ten blanks have the correct predicted word class."
+    },
+    {
+      "stage": 4,
+      "name": "Homophone Word Bank",
+      "duration": "15 minutes",
+      "activities": [
+        "Create entries for accept or except, affect or effect, whether or weather, and discrete or discreet.",
+        "Write the meaning and part of speech of each word.",
+        "Add one original sentence for each form.",
+        "Complete a rapid context-choice quiz."
+      ],
+      "success_target": "The learner selects the correct homophone in at least eight of ten contextual sentences."
+    },
+    {
+      "stage": 5,
+      "name": "Chunked Dictation Training",
+      "duration": "20 minutes",
+      "activities": [
+        "Listen to six academic sentences once each.",
+        "Mark each sentence as two to four sense groups.",
+        "Write content-word anchors before reconstructing the full sentence.",
+        "Compare the response with the original and underline omitted function words."
+      ],
+      "success_target": "The learner preserves the correct order and writes most words from each sentence."
+    },
+    {
+      "stage": 6,
+      "name": "No-Visual-Clue Partner Relay",
+      "duration": "15 minutes",
+      "activities": [
+        "Partners sit back-to-back.",
+        "Partner A reads a sentence once at a natural rate.",
+        "Partner B writes the sentence without requesting repetition.",
+        "Partners switch roles and discuss where stress or linking caused difficulty."
+      ],
+      "success_target": "The listener reconstructs the main clause and most grammar words without visual assistance."
+    },
+    {
+      "stage": 7,
+      "name": "Timed Fill in the Blanks Set",
+      "duration": "15 minutes",
+      "activities": [
+        "Complete several items with one playback only.",
+        "Type answers while continuing to track the recording.",
+        "Use the final review to check word forms and spelling.",
+        "Calculate accuracy by blank and classify every incorrect response."
+      ],
+      "success_target": "The learner maintains sequence and achieves at least 80 percent correctly spelled missing words."
+    },
+    {
+      "stage": 8,
+      "name": "Timed Write from Dictation Set",
+      "duration": "15 minutes",
+      "activities": [
+        "Complete six sentences under one-listen conditions.",
+        "Write every confidently remembered word.",
+        "Use chunking and content-word anchors.",
+        "Perform a three-pass meaning, grammar, and spelling check."
+      ],
+      "success_target": "The learner records at least 85 percent of the words in the correct order across the set."
+    },
+    {
+      "stage": 9,
+      "name": "Error Repair and Repetition",
+      "duration": "10 minutes",
+      "activities": [
+        "Select the three most frequent error types.",
+        "Replay only the diagnostic items after scoring is complete.",
+        "Identify the exact sound, grammar rule, or spelling pattern that caused each error.",
+        "Repeat and rewrite the corrected sentence once from memory."
+      ],
+      "success_target": "The learner can explain why each original answer was wrong and state the strategy that prevents repetition."
+    }
+  ],
+  "mastery_checklist": [
+    "I can explain what I must do in Listening: Fill in the Blanks.",
+    "I can explain what I must do in Write from Dictation.",
+    "I can follow spoken information from beginning to end without losing the sequence.",
+    "I can continue listening after missing one word.",
+    "I can predict the likely part of speech for a missing word.",
+    "I can use collocations to confirm an unclear word.",
+    "I can divide a dictated sentence into meaningful chunks.",
+    "I can remember stressed content words as sentence anchors.",
+    "I can restore articles, auxiliaries, prepositions, and other small grammar words.",
+    "I can distinguish homophones through context and meaning.",
+    "I can preserve the original wording instead of paraphrasing.",
+    "I can detect singular, plural, tense, and participle endings.",
+    "I can recognize words in linked and reduced natural speech.",
+    "I can type all the words I confidently remember even when the sentence is incomplete.",
+    "I can check a response for meaning, grammar, and spelling.",
+    "I can complete practice items using only one playback.",
+    "I can practise without visual clues such as lip movements or gestures.",
+    "I can classify my mistakes and choose a specific repair strategy.",
+    "I can spell common academic vocabulary accurately.",
+    "I can complete both item types under realistic timed conditions."
+  ],
+  "strategy_notes": [
+    {
+      "situation": "A Fill in the Blanks recording is about to begin.",
+      "best_action": "Use the preparation countdown to scan the transcript, identify the topic, and predict the grammar of each blank. Do not try to invent exact answers before hearing the audio."
+    },
+    {
+      "situation": "The speaker says an unfamiliar academic word.",
+      "best_action": "Capture the sound pattern or probable spelling, continue listening, and use the completed sentence to verify the word afterward."
+    },
+    {
+      "situation": "The learner cannot decide between two homophones.",
+      "best_action": "Identify the required part of speech, test both meanings in the sentence, and choose the spelling that creates a logical grammatical statement."
+    },
+    {
+      "situation": "The beginning of a dictated sentence is forgotten.",
+      "best_action": "Write the remembered middle and ending in the correct order, then reconstruct the opening from sentence grammar and overall meaning."
+    },
+    {
+      "situation": "Only the main content words were remembered.",
+      "best_action": "Build the grammatical frame around them by asking who or what performed the action, what the tense was, and which articles or prepositions were heard."
+    },
+    {
+      "situation": "One word sounds like a familiar synonym.",
+      "best_action": "Do not substitute the synonym automatically. Write the actual word heard as closely as possible because exact content matters."
+    },
+    {
+      "situation": "The learner hears a possible plural or past-tense ending.",
+      "best_action": "Check the sentence grammar. A plural determiner, subject-verb agreement pattern, or time reference may confirm the ending."
+    },
+    {
+      "situation": "Typing causes the learner to fall behind the audio.",
+      "best_action": "Type the essential answer briefly, avoid correcting it during playback, and return to spelling or formatting after the recording."
+    },
+    {
+      "situation": "A completed response seems grammatically unusual.",
+      "best_action": "Check for a missing article, auxiliary, preposition, plural ending, or incorrect word form before replacing a content word."
+    },
+    {
+      "situation": "The learner wants to replay practice audio.",
+      "best_action": "Score the one-listen attempt first. Replay afterward only to diagnose pronunciation, linking, stress, or memory problems."
+    },
+    {
+      "situation": "The learner is practising with another person.",
+      "best_action": "Remove visual clues, use one natural-rate reading, allow a short writing period, and compare the exact wording only after the response is finished."
+    },
+    {
+      "situation": "There is limited time for final checking.",
+      "best_action": "Prioritize incomplete blanks, obvious spelling errors, missing grammar words, and word-form agreement. Avoid unnecessary rewriting."
+    }
+  ],
+  "metadata": {
+    "chapter_number": 11,
+    "lesson_number": 10,
+    "estimated_study_time_minutes": 120,
+    "difficulty": "intermediate-to-advanced",
+    "instructional_style": "teaching-first, strategy-led, example-supported, and practice-oriented",
+    "source_scope": [
+      "Listening: Fill in the Blanks format and strategy",
+      "Write from Dictation format and strategy",
+      "spoken-sequence tracking",
+      "academic vocabulary",
+      "grammar and spelling checks",
+      "homophone discrimination",
+      "natural-rate speech",
+      "pronunciation, stress, and intonation",
+      "timed and no-visual-clue practice"
+    ],
+    "scoring_focus": [
+      "For Listening: Fill in the Blanks, correctly identified words must also be spelled correctly.",
+      "For Write from Dictation, content performance depends on the correct words included in the response.",
+      "Exact reconstruction is more useful than paraphrasing.",
+      "Partial accurate recall is preferable to leaving the response empty."
+    ],
+    "recommended_error_tags": [
+      "sequence_loss",
+      "missed_content_word",
+      "missed_function_word",
+      "homophone_error",
+      "word_form_error",
+      "spelling_error",
+      "typing_error",
+      "memory_omission",
+      "word_order_error",
+      "unnecessary_paraphrase"
+    ],
+    "recommended_resources": [
+      "short academic recordings",
+      "one-sentence dictation sets",
+      "transcripts with selected words removed",
+      "homophone vocabulary cards",
+      "personal spelling-error log",
+      "voice recorder for natural-rate sentence practice"
+    ],
+    "completion_standard": "The lesson is complete when the learner can finish a one-playback practice set, maintain spoken sequence, recover words through context, reconstruct dictated sentences with high word-level accuracy, and explain the cause and correction of each major error."
+  }
+}

@@ -38,6 +38,7 @@ import sys
 from pathlib import Path
 from typing import Any
 
+from playwright.sync_api import Error as PWError
 from sqlalchemy.orm import Session
 
 import book_learning_materials_store as store
@@ -142,10 +143,18 @@ def build_payload(chapter_number: int) -> str:
     # its history) still returns machine-readable output instead of drifting to
     # prose/markdown tables.
     out.append(
-        "\n---\nOUTPUT CONTRACT (must follow): Reply with ONLY one fenced "
+        "\n---\nOUTPUT CONTRACT (must follow exactly): Reply with ONLY one fenced "
         "```json code block containing a single valid pte_lesson_enrichment.v1 "
         "object. No prose, no markdown tables, and no text before or after the "
-        "code block."
+        "code block. The object MUST use exactly these top-level keys and no "
+        "others: schema_version, task_type, lesson_title, source_label, modality, "
+        "overview, learning_goals, core_method, techniques, worked_examples, "
+        "useful_language, common_mistakes, practice_plan, mastery_checklist, "
+        "strategy_notes, metadata. Do NOT invent alternative field names or a "
+        "different structure; populate this exact schema. Fill every section with "
+        "substantive content (aim for 4+ items in each list). Adapt useful_language "
+        "to this task type — for reading/selection items include signpost words, "
+        "linkers, and option-elimination phrases rather than leaving it empty."
     )
 
     return "\n".join(out)
@@ -210,6 +219,36 @@ def extract_json_object(raw: str) -> dict[str, Any]:
     raise ValueError(f"No JSON object found in reply ({len(raw)} chars).")
 
 
+# The pte_lesson_enrichment.v1 shape the frontend CoachView renders. A fresh
+# project chat sometimes improvises its own structure; anything missing these
+# is off-schema and must be rejected before it reaches the DB/frontend.
+REQUIRED_TOP_LEVEL_KEYS = {
+    "task_type", "lesson_title", "modality", "overview", "learning_goals",
+    "core_method", "techniques", "worked_examples", "useful_language",
+    "common_mistakes", "practice_plan", "mastery_checklist", "strategy_notes",
+    "metadata",
+}
+# The teaching sections that make a Coach page substantive. Others (useful_language,
+# strategy_notes) are gracefully hidden by CoachView when empty, so they are
+# optional — don't reject an otherwise-complete lesson over them.
+REQUIRED_NONEMPTY_LISTS = (
+    "learning_goals", "techniques", "worked_examples",
+    "common_mistakes", "mastery_checklist",
+)
+
+
+def normalize_document(document: dict[str, Any]) -> dict[str, Any]:
+    """Coerce fields the model reports inconsistently but that need not fail a run.
+    task_type comes back as a string, a list, null, or the schema name; the UI only
+    displays it, so normalize to a non-empty string instead of rejecting the lesson."""
+    tt = document.get("task_type")
+    if isinstance(tt, list):
+        document["task_type"] = " & ".join(str(x).strip() for x in tt if str(x).strip())
+    elif not isinstance(tt, str) or not tt.strip():
+        document["task_type"] = str(document.get("lesson_title") or "lesson_enrichment")
+    return document
+
+
 def validate_enrichment(document: dict[str, Any], chapter_number: int) -> None:
     """Fail loudly before writing/storing if the reply is off-contract."""
     meta = store.extract_enrichment_metadata(document)  # checks schema + source_label
@@ -218,6 +257,20 @@ def validate_enrichment(document: dict[str, Any], chapter_number: int) -> None:
             f"Enrichment identifies as {meta['source_label']!r} but we asked for "
             f"{BOOK_SLUG}:ch{chapter_number:02d}. Refusing to store a mismatch."
         )
+    missing = REQUIRED_TOP_LEVEL_KEYS - set(document)
+    if missing:
+        raise ValueError(
+            f"Off-schema (not pte_lesson_enrichment.v1); missing keys: {sorted(missing)}. "
+            f"The model likely invented its own structure."
+        )
+    if not isinstance(document.get("task_type"), str) or not document["task_type"].strip():
+        raise ValueError("task_type must be a non-empty string.")
+    for key in REQUIRED_NONEMPTY_LISTS:
+        if not isinstance(document.get(key), list) or not document[key]:
+            raise ValueError(f"'{key}' must be a non-empty list.")
+    core = document.get("core_method")
+    if not isinstance(core, dict) or not core.get("steps"):
+        raise ValueError("core_method must be an object with non-empty 'steps'.")
 
 
 # --------------------------------------------------------------------------- #
@@ -268,35 +321,45 @@ def cmd_load(args) -> int:
 
 
 def cmd_run(args) -> int:
-    stored: list[Path] = []
+    stored: list[int] = []
+    failed: list[int] = []
+    engine = store.create_db(args.db_url)
     # headless is fine for send once you've logged in via the driver's `login`.
     with ChatGPTDriver(args.profile_dir, headless=args.headless) as d:
         for n in args.chapters:
             print(f"\n=== Lesson {n} ===")
             payload = build_payload(n)
             print(f"  payload: {len(payload)} chars -> sending to project (fresh chat)")
+            raw = ""  # reset per-iteration so a failure never saves the prior reply
             # Navigating to the project URL each time yields a fresh, prompt-primed chat.
-            reply = d.send_and_wait(args.project_url, payload, timeout_s=args.timeout)
-            raw = scrape_reply_json(d.page) or reply
             try:
-                document = strip_citation_artifacts(extract_json_object(raw))
+                reply = d.send_and_wait(args.project_url, payload, timeout_s=args.timeout)
+                raw = scrape_reply_json(d.page) or reply
+                document = normalize_document(strip_citation_artifacts(extract_json_object(raw)))
                 validate_enrichment(document, n)
-            except (ValueError, json.JSONDecodeError, store.StoreError) as exc:
+            except (ValueError, json.JSONDecodeError, store.StoreError, RuntimeError, PWError) as exc:
                 debug = Path(f"output/_lesson{n:02d}.reply.txt")
                 debug.write_text(raw or "", encoding="utf-8")
-                print(f"  ! chapter {n} failed: {exc}\n    raw reply saved to {debug}", file=sys.stderr)
+                print(f"  ! chapter {n} FAILED: {exc}\n    raw reply saved to {debug}", file=sys.stderr)
+                failed.append(n)
                 if args.stop_on_error:
-                    return 1
+                    break
                 continue
+            # Persist immediately so a long run is never all-or-nothing.
             path = write_enrichment_file(document, n)
-            print(f"  wrote {path}  (task_type={document.get('task_type')})")
-            stored.append(path)
+            with Session(engine) as s:
+                rec = store.load_enrichment_file(s, path)
+                s.commit()
+                rec_id = rec.id  # read inside the session; detaches on close
+            print(f"  OK  wrote {path.name} + DB <- {rec_id} (task_type={document.get('task_type')})")
+            stored.append(n)
 
+    print(f"\n{'='*48}\nDone: {len(stored)}/{len(args.chapters)} enriched and stored.")
     if stored:
-        print("\nLoading into DB…")
-        load_into_db(stored, db_url=args.db_url)
-        print(f"\nDone: {len(stored)}/{len(args.chapters)} lesson(s) enriched and stored.")
-    return 0 if len(stored) == len(args.chapters) else 1
+        print(f"  stored: {stored}")
+    if failed:
+        print(f"  FAILED: {failed}  (re-run just these: run … {' '.join(map(str, failed))})")
+    return 0 if not failed else 1
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:

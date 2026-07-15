@@ -40,6 +40,7 @@ COMPOSER = "#prompt-textarea, div[contenteditable='true'], textarea[data-testid=
 SEND_BTN = "[data-testid='send-button'], button[aria-label*='Send' i]"
 STOP_BTN = "[data-testid='stop-button'], button[aria-label*='Stop' i]"
 ASSISTANT = "[data-message-author-role='assistant']"
+USER = "[data-message-author-role='user']"
 
 
 class ChatGPTDriver:
@@ -86,25 +87,59 @@ class ChatGPTDriver:
         self.page.wait_for_selector(COMPOSER, timeout=timeout_s * 1000)
         print("Logged in. Session saved to the profile.")
 
+    def _wait_until(self, predicate, seconds: float) -> bool:
+        """Poll predicate() until true or the budget elapses. Swallows errors so a
+        transient DOM detach during navigation doesn't abort the wait."""
+        deadline = time.time() + seconds
+        while time.time() < deadline:
+            try:
+                if predicate():
+                    return True
+            except Exception:
+                pass
+            time.sleep(0.3)
+        return False
+
+    def _send_prompt(self, prompt: str) -> None:
+        """Type the prompt and actually submit it, verifying a new user turn
+        appears. ChatGPT's composer is a ProseMirror contenteditable: fill() often
+        fails to update React state (leaving the send button disabled and Enter a
+        no-op), so we use real key events and retry until the message registers."""
+        before_user = self.page.locator(USER).count()
+        for attempt in range(1, 4):
+            composer = self.page.wait_for_selector(COMPOSER, timeout=15000)
+            composer.click()
+            self.page.keyboard.press("Meta+A")
+            self.page.keyboard.press("Backspace")
+            self.page.keyboard.insert_text(prompt)  # dispatches input events
+
+            # Wait for the send control to enable (proof the state updated), click
+            # it, and fall back to Enter if it never enables.
+            clicked = False
+            if self._wait_until(
+                lambda: (b := self.page.query_selector(SEND_BTN)) is not None and b.is_enabled(),
+                6,
+            ):
+                self.page.query_selector(SEND_BTN).click()
+                clicked = True
+            if not clicked:
+                self.page.keyboard.press("Enter")
+
+            if self._wait_until(lambda: self.page.locator(USER).count() > before_user, 8):
+                return
+            print(f"  send attempt {attempt} did not register; retrying…")
+        raise RuntimeError("Could not submit the prompt (no user turn appeared after 3 attempts).")
+
     def send_and_wait(self, chat_url: str, prompt: str, *, timeout_s: int = 180) -> str:
         self.page.goto(chat_url, wait_until="domcontentloaded")
-        composer = self.page.wait_for_selector(COMPOSER, timeout=30000)
-
+        self.page.wait_for_selector(COMPOSER, timeout=30000)
         before = self.page.locator(ASSISTANT).count()
-
-        composer.click()
-        composer.fill(prompt)  # Playwright handles contenteditable
-        # Prefer the send button; fall back to Enter.
-        send = self.page.query_selector(SEND_BTN)
-        if send and send.is_enabled():
-            send.click()
-        else:
-            self.page.keyboard.press("Enter")
-
+        self._send_prompt(prompt)
         return self._await_reply(before_count=before, timeout_s=timeout_s)
 
     def _await_reply(self, *, before_count: int, timeout_s: int) -> str:
         deadline = time.time() + timeout_s
+        started = time.time()
         # 1. wait for a new assistant turn (or the stop button) to appear.
         while time.time() < deadline:
             if self.page.locator(ASSISTANT).count() > before_count or self.page.query_selector(STOP_BTN):
@@ -112,7 +147,7 @@ class ChatGPTDriver:
             time.sleep(0.4)
 
         # 2. wait for generation to finish: no stop button AND text stable.
-        last_text, stable = "", 0
+        last_text, stable, last_log = "", 0, 0.0
         while time.time() < deadline:
             generating = self.page.query_selector(STOP_BTN) is not None
             nodes = self.page.locator(ASSISTANT)
@@ -123,6 +158,12 @@ class ChatGPTDriver:
                     return text.strip()
             else:
                 stable = 0
+            # heartbeat so a long generation never looks like a hang.
+            now = time.time()
+            if now - last_log >= 15:
+                print(f"  …waiting for reply ({int(now - started)}s, {len(text)} chars, "
+                      f"{'generating' if generating else 'settling'})")
+                last_log = now
             last_text = text
             time.sleep(0.5)
 
