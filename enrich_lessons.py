@@ -138,6 +138,16 @@ def build_payload(chapter_number: int) -> str:
         out.append("\nSELF-CHECK (from source):")
         out += [f"- {_text(r)}" for r in ch["review_checklist"] if _text(r)]
 
+    # Reassert the output contract so a fresh project chat (no prior JSON turns in
+    # its history) still returns machine-readable output instead of drifting to
+    # prose/markdown tables.
+    out.append(
+        "\n---\nOUTPUT CONTRACT (must follow): Reply with ONLY one fenced "
+        "```json code block containing a single valid pte_lesson_enrichment.v1 "
+        "object. No prose, no markdown tables, and no text before or after the "
+        "code block."
+    )
+
     return "\n".join(out)
 
 
@@ -146,6 +156,19 @@ def build_payload(chapter_number: int) -> str:
 # --------------------------------------------------------------------------- #
 
 _FENCE_RE = re.compile(r"```(?:json)?\s*(\{.*?\})\s*```", re.DOTALL)
+_CITATION_RE = re.compile(r"\s*:contentReference\[[^\]]*\]\{[^}]*\}")
+
+
+def strip_citation_artifacts(obj: Any) -> Any:
+    """Remove ChatGPT ``:contentReference[...]{...}`` citation markers that leak
+    into string fields (e.g. provenance_note) and would render as garbage."""
+    if isinstance(obj, str):
+        return _CITATION_RE.sub("", obj).strip()
+    if isinstance(obj, list):
+        return [strip_citation_artifacts(x) for x in obj]
+    if isinstance(obj, dict):
+        return {k: strip_citation_artifacts(v) for k, v in obj.items()}
+    return obj
 
 
 def scrape_reply_json(page) -> str | None:
@@ -256,7 +279,7 @@ def cmd_run(args) -> int:
             reply = d.send_and_wait(args.project_url, payload, timeout_s=args.timeout)
             raw = scrape_reply_json(d.page) or reply
             try:
-                document = extract_json_object(raw)
+                document = strip_citation_artifacts(extract_json_object(raw))
                 validate_enrichment(document, n)
             except (ValueError, json.JSONDecodeError, store.StoreError) as exc:
                 debug = Path(f"output/_lesson{n:02d}.reply.txt")

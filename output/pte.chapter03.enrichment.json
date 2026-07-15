@@ -1,0 +1,678 @@
+{
+  "schema_version": "pte_lesson_enrichment.v1",
+  "task_type": "reading_fill_in_the_blanks",
+  "lesson_title": "Lesson 3: Reading Fill in the Blanks with Grammar, Context, and Collocation",
+  "source_label": "pte:ch03",
+  "modality": "integrated",
+  "overview": {
+    "what_it_is": "This lesson trains two related PTE item types: Reading: Fill in the blanks and Reading & writing: Fill in the blanks. In both tasks, you restore missing words by combining the meaning of the passage with grammar, word class, collocation, phrasal-verb knowledge, and logical sequence.",
+    "format_facts": [
+      {
+        "label": "Reading: Fill in the blanks",
+        "value": "A shared word bank is used to complete a short reading text."
+      },
+      {
+        "label": "Reading text length",
+        "value": "Up to 80 words."
+      },
+      {
+        "label": "Reading blanks",
+        "value": "Three to five blanks."
+      },
+      {
+        "label": "Reading word bank",
+        "value": "Six to eight words, including three more words than the number of blanks."
+      },
+      {
+        "label": "Reading & writing: Fill in the blanks",
+        "value": "Each blank has its own set of multiple-choice options."
+      },
+      {
+        "label": "Reading & writing text length",
+        "value": "Up to 300 words."
+      },
+      {
+        "label": "Reading & writing blanks",
+        "value": "Up to six blanks."
+      },
+      {
+        "label": "Choices per blank",
+        "value": "Up to five answer choices."
+      },
+      {
+        "label": "Answer rule",
+        "value": "Each blank has one correct answer."
+      }
+    ],
+    "scoring_factors": [
+      {
+        "name": "Per-blank accuracy",
+        "what_it_measures": "Whether the selected word is the single correct answer for that blank."
+      },
+      {
+        "name": "Grammatical fit",
+        "what_it_measures": "Whether the word has the correct part of speech, form, tense, agreement, and sentence function."
+      },
+      {
+        "name": "Lexical fit",
+        "what_it_measures": "Whether the word naturally combines with nearby words in a common collocation or idiomatic phrase."
+      },
+      {
+        "name": "Contextual fit",
+        "what_it_measures": "Whether the word supports the meaning, argument, and logical development of the passage."
+      },
+      {
+        "name": "Integrated reading and writing control",
+        "what_it_measures": "In Reading & writing: Fill in the blanks, accurate selection demonstrates control of both reading comprehension and written language."
+      }
+    ],
+    "critical_rules": [
+      "A word with a related general meaning is not automatically correct.",
+      "The answer must fit both the grammar and the meaning of the sentence.",
+      "Check the words before and after the blank, not only one side.",
+      "Use the whole passage to confirm the writer's intended meaning.",
+      "After filling all blanks, read the completed passage from beginning to end.",
+      "Use dictionaries and thesauruses during vocabulary training, not as a replacement for timed independent practice."
+    ]
+  },
+  "learning_goals": [
+    "Explain the format and main differences between the two fill-in-the-blanks item types.",
+    "Read a passage quickly to identify its topic, purpose, and main idea before solving individual blanks.",
+    "Identify whether a blank requires a noun, verb, adjective, adverb, preposition, connector, or another word class.",
+    "Use subject–verb agreement, verb patterns, articles, auxiliaries, and sentence structure to narrow the options.",
+    "Recognize common academic collocations such as conduct research, analyze data, reach a conclusion, and make a decision.",
+    "Recognize phrasal verbs such as look up, work out, carry out, and refer to.",
+    "Eliminate options that fail grammatically, lexically, or logically.",
+    "Build topic-based word banks containing word families, synonyms, antonyms, collocations, and phrasal verbs.",
+    "Complete practice items under timed conditions and explain the evidence for each answer."
+  ],
+  "core_method": {
+    "name": "Gist → Gap → Grammar → Group → Logic → Check",
+    "summary": "First understand the passage, then diagnose each blank. Use grammar to determine the required form, collocation to find natural word combinations, and passage logic to confirm the final answer.",
+    "steps": [
+      {
+        "step": "Gist",
+        "detail": "Read the complete passage quickly without choosing answers. Identify the topic, main point, tone, and direction of the text."
+      },
+      {
+        "step": "Gap",
+        "detail": "Read the full sentence containing the blank and examine the words immediately before and after it."
+      },
+      {
+        "step": "Grammar",
+        "detail": "Decide what grammatical form is required: noun, verb, adjective, adverb, base verb, past participle, singular form, plural form, or connector."
+      },
+      {
+        "step": "Group",
+        "detail": "Look for a natural collocation, fixed expression, prepositional pattern, or phrasal verb."
+      },
+      {
+        "step": "Logic",
+        "detail": "Check whether the option supports the sentence meaning and the relationship between ideas, such as contrast, cause, result, addition, or example."
+      },
+      {
+        "step": "Eliminate",
+        "detail": "Reject options that fail one or more tests. In a shared word bank, use high-confidence answers first because they reduce the remaining choices."
+      },
+      {
+        "step": "Check",
+        "detail": "Read the completed passage naturally from beginning to end and confirm grammar, meaning, cohesion, and logical sequence."
+      }
+    ],
+    "formula": "MEANING + GRAMMAR + COLLOCATION + COHESION = BEST FIT"
+  },
+  "techniques": [
+    {
+      "name": "Read for gist before touching the options",
+      "purpose": "Prevent a nearby word from misleading you when the wider passage has a different meaning.",
+      "how_to": [
+        "Read from the first sentence to the last without stopping at every blank.",
+        "State the topic in three to six words.",
+        "Identify whether the passage explains, compares, argues, describes a process, or reports findings.",
+        "Predict the type of information each blank may contain.",
+        "Only then examine the answer options."
+      ],
+      "example": "A passage repeatedly mentions student feedback, course changes, and teaching quality. The gist is 'using feedback to improve courses', so options related to analysis and improvement are more likely than unrelated words such as party.",
+      "why_it_matters": "Many distractors are grammatically possible in isolation but contradict the main idea of the passage.",
+      "common_error": "Starting with the word bank and trying to force each option into a blank before understanding the text."
+    },
+    {
+      "name": "Build a grammar frame around the blank",
+      "purpose": "Determine the exact word class and form required before comparing meanings.",
+      "how_to": [
+        "Underline the subject and main verb of the sentence.",
+        "Circle articles, auxiliaries, modal verbs, prepositions, infinitive markers, and linking verbs.",
+        "Replace the blank with a label such as noun, base verb, adjective, or past participle.",
+        "Remove every option that does not match that label.",
+        "Compare the meanings of the remaining options."
+      ],
+      "example": "In 'The responses are carefully _____ before publication', the structure 'are + adverb + blank' suggests a past participle in a passive construction. 'Analyzed' fits; 'analysis' does not.",
+      "why_it_matters": "Grammar can reduce five possible choices to one or two before difficult vocabulary is considered.",
+      "common_error": "Choosing a noun because its meaning is suitable when the sentence requires a verb."
+    },
+    {
+      "name": "Use word-class and word-family signals",
+      "purpose": "Distinguish related forms such as analyze, analysis, analytical, and analytically.",
+      "how_to": [
+        "Check whether an article such as a, an, or the introduces a noun phrase.",
+        "Check whether a modal verb such as can, may, or will requires a base verb.",
+        "Check whether a linking verb such as be, seem, or become is followed by an adjective or complement.",
+        "Check whether an adjective is needed before a noun.",
+        "Check whether an adverb is needed to modify a verb, adjective, or another adverb."
+      ],
+      "example": "In 'The findings are statistically _____', an adjective or past-participial adjective is needed after 'are statistically'. 'Significant' fits, while 'significance' and 'significantly' do not.",
+      "why_it_matters": "PTE distractors often belong to the correct word family but have the wrong grammatical form.",
+      "common_error": "Treating all forms from the same word family as interchangeable."
+    },
+    {
+      "name": "Test collocations as complete chunks",
+      "purpose": "Select combinations that sound natural and conventional in academic English.",
+      "how_to": [
+        "Join each option with the important noun, verb, adjective, or preposition beside the blank.",
+        "Read the resulting phrase as one chunk.",
+        "Ask whether you have seen that combination in reliable academic English.",
+        "Prefer established combinations over translations from your first language.",
+        "Record useful combinations in a collocation notebook after practice."
+      ],
+      "example": "English commonly uses 'conduct research', 'analyze data', 'reach a conclusion', and 'make a decision'. A phrase such as 'make research' may be understandable, but it is not the standard collocation.",
+      "why_it_matters": "Two options can be grammatically correct while only one forms a natural phrase.",
+      "common_error": "Selecting an option because the individual word meaning is related to the topic, although the combination is unnatural."
+    },
+    {
+      "name": "Recognize phrasal verbs and prepositional patterns",
+      "purpose": "Identify meanings created by a verb and particle together.",
+      "how_to": [
+        "Check whether the verb near the blank normally takes a particular preposition or particle.",
+        "Read the verb and particle as one unit.",
+        "Compare the complete phrasal-verb meanings, not the prepositions alone.",
+        "Check whether an object can appear after or between the verb and particle.",
+        "Record the whole pattern with an example sentence."
+      ],
+      "example": "In 'The student looked _____ the word in a dictionary', 'look up' means search for information. 'Look out' means be careful, so it does not fit.",
+      "why_it_matters": "The particle can completely change the meaning of a familiar verb.",
+      "common_error": "Choosing a preposition by its basic location meaning instead of recognizing the complete phrasal verb."
+    },
+    {
+      "name": "Follow logical and cohesive signals",
+      "purpose": "Choose words that correctly express the relationship between sentences and ideas.",
+      "how_to": [
+        "Identify whether the second idea adds, contrasts, explains, causes, results from, or gives an example of the first.",
+        "Look for punctuation around the blank.",
+        "Check pronouns and reference words such as this, these, they, and such.",
+        "Check whether the sentence continues the same topic or changes direction.",
+        "Select a connector or content word that preserves the passage's logical sequence."
+      ],
+      "example": "The sentence 'Earlier studies reported weak results. _____, newer experiments used more accurate equipment and reached different conclusions' requires contrast. 'However' fits better than 'Therefore'.",
+      "why_it_matters": "A grammatically correct connector can still reverse the writer's intended argument.",
+      "common_error": "Selecting a familiar linking word without identifying the relationship between the two ideas."
+    },
+    {
+      "name": "Use three-stage elimination",
+      "purpose": "Make difficult decisions systematically instead of guessing.",
+      "how_to": [
+        "Stage 1: remove options with the wrong grammatical form.",
+        "Stage 2: remove options that do not form a natural collocation or phrase.",
+        "Stage 3: remove options that contradict the sentence or passage meaning.",
+        "Compare the final candidates in the complete sentence.",
+        "Choose the option supported by the most evidence."
+      ],
+      "example": "For 'The team will _____ the data', 'party' fails meaning, 'concern' fails the verb–object relationship, and 'analysis' fails word class. 'Analyze' survives grammar, collocation, and meaning.",
+      "why_it_matters": "Elimination turns an uncertain vocabulary question into a series of smaller, evidence-based decisions.",
+      "common_error": "Rejecting a word only because it feels unfamiliar while keeping a familiar but incorrect option."
+    },
+    {
+      "name": "Build reusable vocabulary tables",
+      "purpose": "Convert mistakes from one practice item into vocabulary knowledge for future items.",
+      "how_to": [
+        "Choose one topic from the passage, such as research, education, technology, or health.",
+        "List the main noun, verb, adjective, and adverb forms.",
+        "Add two or three synonyms or closely related words.",
+        "Add antonyms where useful.",
+        "Add common verb–noun, adjective–noun, and noun–preposition collocations.",
+        "Add any related phrasal verbs.",
+        "Write one original example sentence using the strongest collocation."
+      ],
+      "example": "Research: noun 'research'; verb 'research'; researcher 'person noun'; collocations 'conduct research', 'research findings', 'research into'; related verbs 'analyze', 'investigate', and 'examine'.",
+      "why_it_matters": "PTE blanks repeatedly test word families and combinations, not isolated dictionary definitions.",
+      "common_error": "Writing long lists of translations without recording grammatical forms or natural combinations."
+    }
+  ],
+  "worked_examples": [
+    {
+      "title": "Reading: Fill in the blanks — shared word bank",
+      "input": "Complete the text using words from the shared bank.\n\nUniversities often collect feedback from students at the end of a course. The responses are carefully _____ before staff _____ decisions about future teaching. Although a single comment may not represent the whole class, repeated concerns can _____ areas that need attention. When departments act on this evidence, they can _____ the learning experience for later students.\n\nWord bank: analyzed, make, reveal, improve, conduct, party, analysis",
+      "decoding": "The passage is about using student feedback to improve teaching. There are four blanks and seven options, so three words are distractors. The likely sequence is processing feedback, making decisions, identifying problems, and improving courses.",
+      "plan": "Blank 1: 'are carefully' suggests a passive past participle. Blank 2: the noun 'decisions' needs a natural verb collocation. Blank 3: after modal 'can', use a base verb that means show or identify. Blank 4: after 'can', use a base verb that collocates with 'learning experience'.",
+      "model_answer": "Universities often collect feedback from students at the end of a course. The responses are carefully analyzed before staff make decisions about future teaching. Although a single comment may not represent the whole class, repeated concerns can reveal areas that need attention. When departments act on this evidence, they can improve the learning experience for later students.",
+      "annotations": [
+        {
+          "part": "Blank 1 — analyzed",
+          "comment": "'Are carefully analyzed' is a correct passive construction. 'Analysis' has a related meaning but is a noun, so it cannot complete the verb phrase."
+        },
+        {
+          "part": "Blank 2 — make",
+          "comment": "'Make decisions' is the standard collocation. 'Conduct decisions' is grammatically possible as two separate words but not a natural English phrase."
+        },
+        {
+          "part": "Blank 3 — reveal",
+          "comment": "The modal 'can' requires a base verb. 'Reveal areas that need attention' also matches the meaning of repeated concerns showing a problem."
+        },
+        {
+          "part": "Blank 4 — improve",
+          "comment": "'Improve the learning experience' is both grammatical and a natural collocation, and it completes the passage's cause-and-result sequence."
+        },
+        {
+          "part": "Distractors",
+          "comment": "'Conduct' does not collocate with decisions or the learning experience, 'party' is unrelated, and 'analysis' has the wrong word class for Blank 1."
+        }
+      ]
+    },
+    {
+      "title": "Reading & writing: Fill in the blanks — word-form decisions",
+      "input": "Choose one option for each blank.\n\nAlthough many students treat sleep as time taken away from study, research suggests the opposite. During sleep, the brain does not simply rest; it _____ information gathered during the day and links it with existing knowledge. This process is especially _____ when learners have studied complex material. Therefore, students who sleep adequately may _____ better than those who continue revising late into the night.\n\nBlank 1: process, processes, processed, processing\nBlank 2: importance, important, importantly, import\nBlank 3: perform, performance, performed, performing",
+      "decoding": "The passage explains how sleep supports learning. Each option set contains related word forms, so grammar is the fastest way to narrow the choices.",
+      "plan": "Blank 1 follows singular subject 'it', so a present-tense third-person singular verb is needed. Blank 2 follows 'is especially', so an adjective complement is needed. Blank 3 follows modal 'may', so a base verb is required.",
+      "model_answer": "Although many students treat sleep as time taken away from study, research suggests the opposite. During sleep, the brain does not simply rest; it processes information gathered during the day and links it with existing knowledge. This process is especially important when learners have studied complex material. Therefore, students who sleep adequately may perform better than those who continue revising late into the night.",
+      "annotations": [
+        {
+          "part": "Blank 1 — processes",
+          "comment": "The subject is singular 'it', and the sentence describes a general process in the present tense. Therefore, the verb needs the -es ending."
+        },
+        {
+          "part": "Blank 2 — important",
+          "comment": "After the linking verb 'is', the sentence requires an adjective describing 'this process'. 'Importance' is a noun and 'importantly' is an adverb."
+        },
+        {
+          "part": "Blank 3 — perform",
+          "comment": "A modal verb such as 'may' is followed by the base form. The phrase 'perform better in tests' is also a natural collocation."
+        },
+        {
+          "part": "Whole-text logic",
+          "comment": "'Therefore' signals a result: because sleep processes information and is important for complex learning, well-rested students may perform better."
+        }
+      ]
+    },
+    {
+      "title": "Phrasal verbs — choose the particle from meaning",
+      "input": "Complete the sentences.\n\nStudents should look _____ unfamiliar terms in a reliable dictionary, but they should first try to work _____ the meaning from context.\n\nOptions for each blank: up, out, on",
+      "decoding": "The basic verbs 'look' and 'work' are incomplete. The particles create two different phrasal verbs connected with vocabulary learning.",
+      "plan": "Find the phrasal verb meaning 'search for information' for the first blank. Find the phrasal verb meaning 'understand or calculate through reasoning' for the second blank.",
+      "model_answer": "Students should look up unfamiliar terms in a reliable dictionary, but they should first try to work out the meaning from context.",
+      "annotations": [
+        {
+          "part": "Look up",
+          "comment": "'Look up a word' means search for information about the word in a dictionary or reference source."
+        },
+        {
+          "part": "Work out",
+          "comment": "'Work out the meaning' means understand it by thinking about available clues."
+        },
+        {
+          "part": "Rejected option — on",
+          "comment": "'Look on' and 'work on' have other meanings and do not express the actions required in this context."
+        },
+        {
+          "part": "Learning point",
+          "comment": "The correct answer comes from the meaning of the complete phrasal verb, not from the independent meaning of the particle."
+        }
+      ]
+    },
+    {
+      "title": "Building a topic word bank — research",
+      "input": "Create a small word bank for the topic 'research'. Include grammatical forms, related words, and common collocations.",
+      "decoding": "A useful word bank should organize vocabulary by function. It should show how words change form and how they naturally combine with other words.",
+      "plan": "Start with the key word, add its word family, add related actions and people, then record common verb–noun and noun–preposition combinations.",
+      "model_answer": "Topic: research. Nouns: research, researcher, study, investigation, findings, evidence, data, result, conclusion. Verbs: research, investigate, examine, analyze, collect, conduct, publish, conclude. Adjectives: academic, scientific, empirical, reliable, preliminary, significant. Adverbs: scientifically, systematically, carefully. Related words: inquiry, examination, exploration. Contrasts: reliable versus unreliable; significant versus insignificant; supported versus unsupported. Collocations: conduct research, carry out a study, collect data, analyze data, examine evidence, publish findings, reach a conclusion, research into education, results of the study, evidence from research. Example sentence: The research team conducted a large study, analyzed the data carefully, and published its findings in an academic journal.",
+      "annotations": [
+        {
+          "part": "Word families",
+          "comment": "Recording noun, verb, adjective, and adverb forms prepares you for blanks that test grammar rather than only meaning."
+        },
+        {
+          "part": "Related vocabulary",
+          "comment": "Words such as evidence, findings, and conclusion help you understand the logical sequence of a research passage."
+        },
+        {
+          "part": "Collocations",
+          "comment": "The entries are saved as complete chunks, such as 'conduct research' and 'analyze data', because these combinations are commonly tested."
+        },
+        {
+          "part": "Example sentence",
+          "comment": "The sentence connects several stages of research and demonstrates how the collocations work in context."
+        }
+      ]
+    }
+  ],
+  "useful_language": [
+    {
+      "category": "Grammar frames",
+      "items": [
+        {
+          "item": "modal verb + base verb",
+          "when_to_use": "After can, could, may, might, must, should, will, or would: 'may improve', not 'may improved'."
+        },
+        {
+          "item": "to + base verb",
+          "when_to_use": "When 'to' marks an infinitive: 'to analyze the results'. Check carefully because 'to' can also be a preposition, as in 'committed to improving'."
+        },
+        {
+          "item": "be + past participle",
+          "when_to_use": "For passive forms such as 'was conducted' or 'are analyzed'."
+        },
+        {
+          "item": "article + adjective + noun",
+          "when_to_use": "For noun phrases such as 'a significant result' or 'the final decision'."
+        },
+        {
+          "item": "linking verb + adjective",
+          "when_to_use": "After be, seem, become, appear, or remain: 'the method is reliable'."
+        },
+        {
+          "item": "adverb + adjective or participle",
+          "when_to_use": "For combinations such as 'highly effective', 'carefully designed', or 'statistically significant'."
+        }
+      ]
+    },
+    {
+      "category": "Academic collocation patterns",
+      "items": [
+        {
+          "item": "conduct or carry out research",
+          "when_to_use": "To describe performing the complete research process."
+        },
+        {
+          "item": "collect and analyze data",
+          "when_to_use": "To describe obtaining information and examining it."
+        },
+        {
+          "item": "reach or draw a conclusion",
+          "when_to_use": "To describe the final judgment based on evidence."
+        },
+        {
+          "item": "make a decision",
+          "when_to_use": "To describe choosing an action or position."
+        },
+        {
+          "item": "provide evidence",
+          "when_to_use": "To introduce information that supports a claim."
+        },
+        {
+          "item": "have an effect on",
+          "when_to_use": "To describe influence: 'Sleep has an effect on memory.'"
+        },
+        {
+          "item": "play a role in",
+          "when_to_use": "To describe contribution or involvement in a process."
+        }
+      ]
+    },
+    {
+      "category": "Logic and cohesion signals",
+      "items": [
+        {
+          "item": "however / nevertheless",
+          "when_to_use": "To introduce contrast or an unexpected difference."
+        },
+        {
+          "item": "therefore / consequently / as a result",
+          "when_to_use": "To introduce a result or conclusion."
+        },
+        {
+          "item": "furthermore / in addition / moreover",
+          "when_to_use": "To add another supporting point."
+        },
+        {
+          "item": "for example / for instance",
+          "when_to_use": "To introduce an illustration."
+        },
+        {
+          "item": "because / since / due to",
+          "when_to_use": "To introduce a reason or cause while checking the grammar that follows each expression."
+        },
+        {
+          "item": "although / while / whereas",
+          "when_to_use": "To connect contrasting clauses."
+        }
+      ]
+    },
+    {
+      "category": "Phrasal-verb patterns",
+      "items": [
+        {
+          "item": "look up a word",
+          "when_to_use": "To search for information in a dictionary or reference source."
+        },
+        {
+          "item": "work out a meaning",
+          "when_to_use": "To understand something through reasoning and clues."
+        },
+        {
+          "item": "carry out a study",
+          "when_to_use": "To perform or conduct a study."
+        },
+        {
+          "item": "refer to evidence",
+          "when_to_use": "To mention or direct attention to evidence."
+        },
+        {
+          "item": "result in a change",
+          "when_to_use": "To express that one event causes another."
+        },
+        {
+          "item": "depend on a factor",
+          "when_to_use": "To show that an outcome is controlled or influenced by something."
+        }
+      ]
+    },
+    {
+      "category": "Questions to ask yourself",
+      "items": [
+        {
+          "item": "What word class must fit here?",
+          "when_to_use": "Before comparing the meanings of options."
+        },
+        {
+          "item": "What complete phrase does this option create?",
+          "when_to_use": "When testing collocations or phrasal verbs."
+        },
+        {
+          "item": "What relationship connects these ideas?",
+          "when_to_use": "When choosing connectors or words expressing cause, contrast, or result."
+        },
+        {
+          "item": "Does this answer fit both sides of the blank?",
+          "when_to_use": "To avoid choosing from only the word immediately before the gap."
+        },
+        {
+          "item": "Does the completed passage still express one clear message?",
+          "when_to_use": "During the final whole-text check."
+        }
+      ]
+    }
+  ],
+  "common_mistakes": [
+    {
+      "mistake": "Choosing an option only because it is related to the topic.",
+      "why_it_hurts": "The option may have the wrong grammatical form or may not combine naturally with nearby words.",
+      "fix": "Require every answer to pass three tests: grammar, collocation, and meaning."
+    },
+    {
+      "mistake": "Reading only the two words nearest the blank.",
+      "why_it_hurts": "Important clues may appear earlier in the sentence or in another part of the passage.",
+      "fix": "Read the full sentence and at least one sentence before and after it."
+    },
+    {
+      "mistake": "Ignoring subject–verb agreement.",
+      "why_it_hurts": "Related forms such as process and processes may have similar meanings but only one agrees with the subject.",
+      "fix": "Identify the subject and determine whether the verb must be singular, plural, or a non-finite form."
+    },
+    {
+      "mistake": "Treating related word forms as interchangeable.",
+      "why_it_hurts": "A noun, verb, adjective, and adverb perform different grammatical jobs.",
+      "fix": "Label the required word class before examining the word-family options."
+    },
+    {
+      "mistake": "Using a direct translation from the learner's first language.",
+      "why_it_hurts": "The translated combination may be understandable but not idiomatic English, such as 'make research'.",
+      "fix": "Learn and review complete English collocations such as 'conduct research'."
+    },
+    {
+      "mistake": "Choosing a phrasal-verb particle by its basic meaning.",
+      "why_it_hurts": "Particles such as up, out, and on create different meanings when combined with a verb.",
+      "fix": "Evaluate the entire phrasal verb, such as 'look up' or 'work out'."
+    },
+    {
+      "mistake": "Using one difficult blank for too long.",
+      "why_it_hurts": "It consumes reading-section time that could be used to answer easier blanks.",
+      "fix": "Solve high-confidence blanks first, eliminate options, and return to the difficult blank after gaining more context."
+    },
+    {
+      "mistake": "Changing an answer because another option looks more sophisticated.",
+      "why_it_hurts": "Longer or less familiar words are not automatically more academic or accurate.",
+      "fix": "Change an answer only when you find specific grammatical, lexical, or contextual evidence."
+    },
+    {
+      "mistake": "Finishing without rereading the passage.",
+      "why_it_hurts": "An answer may fit locally but create repetition, contradiction, or broken logic in the full text.",
+      "fix": "Reserve a final pass to read the completed passage naturally from beginning to end."
+    },
+    {
+      "mistake": "Recording isolated vocabulary without usage information.",
+      "why_it_hurts": "Knowing a definition does not show which form or combination belongs in a sentence.",
+      "fix": "Record word families, collocations, prepositions, and one example sentence."
+    }
+  ],
+  "practice_plan": {
+    "time_budget": [
+      {
+        "phase": "Item-type comparison",
+        "minutes": "10",
+        "focus": "Compare the shared word bank with the separate choices used for each blank."
+      },
+      {
+        "phase": "Gist reading",
+        "minutes": "10",
+        "focus": "Read short passages and state each main idea without solving the blanks."
+      },
+      {
+        "phase": "Grammar diagnosis",
+        "minutes": "20",
+        "focus": "Label blanks as noun, verb, adjective, adverb, connector, or preposition."
+      },
+      {
+        "phase": "Collocation training",
+        "minutes": "20",
+        "focus": "Build verb–noun, adjective–noun, and noun–preposition combinations."
+      },
+      {
+        "phase": "Phrasal-verb training",
+        "minutes": "10",
+        "focus": "Compare the meanings created by different particles."
+      },
+      {
+        "phase": "Guided Reading: Fill in the blanks",
+        "minutes": "15",
+        "focus": "Apply the full method while explaining every elimination."
+      },
+      {
+        "phase": "Guided Reading & writing: Fill in the blanks",
+        "minutes": "15",
+        "focus": "Compare related word forms and grammatical patterns."
+      },
+      {
+        "phase": "Timed mixed practice",
+        "minutes": "10",
+        "focus": "Complete both item types without dictionaries or notes."
+      },
+      {
+        "phase": "Review and vocabulary bank",
+        "minutes": "10",
+        "focus": "Classify mistakes and record useful word families and collocations."
+      }
+    ],
+    "drills": [
+      {
+        "name": "Five-second word-class drill",
+        "instructions": "Take ten incomplete sentences. Without choosing a word, label each blank as noun, verb, adjective, adverb, preposition, or connector within five seconds."
+      },
+      {
+        "name": "Collocation sorting",
+        "instructions": "Create columns headed conduct, make, analyze, reach, and provide. Sort nouns such as research, decision, data, conclusion, evidence, study, and results into natural combinations."
+      },
+      {
+        "name": "Word-family substitution",
+        "instructions": "Use one family such as analyze, analysis, analytical, and analytically. Write four sentence frames and place the correct form into each frame."
+      },
+      {
+        "name": "Two-sided context drill",
+        "instructions": "For every blank, underline three to five words before it and three to five words after it. Explain which side gives the strongest clue."
+      },
+      {
+        "name": "Distractor autopsy",
+        "instructions": "After checking an item, write one short reason for every rejected option: wrong grammar, wrong collocation, wrong meaning, or wrong logic."
+      },
+      {
+        "name": "Phrasal-verb grid",
+        "instructions": "Place verbs such as look, work, carry, find, and point on the left and particles such as up, out, on, and to across the top. Record only combinations that create a real, useful meaning."
+      },
+      {
+        "name": "Timed shared-bank practice",
+        "instructions": "Complete a short Reading: Fill in the blanks passage under a personal time cap. Solve high-confidence grammar and collocation blanks first, then use the reduced word bank for the remaining blanks."
+      },
+      {
+        "name": "Timed dropdown practice",
+        "instructions": "Complete a longer Reading & writing: Fill in the blanks passage. For each choice, silently state the required word class before selecting an answer."
+      },
+      {
+        "name": "Read-back check",
+        "instructions": "Read the completed passage aloud at a natural speed. Mark any place that sounds grammatically broken, repetitive, or logically surprising, then recheck that blank."
+      }
+    ],
+    "routine": "For each practice passage, complete four stages: first read for gist, then solve with grammar and collocation, then reread the completed passage, and finally record every mistake in a vocabulary table. Once a week, redo earlier incorrect items without looking at the answers."
+  },
+  "mastery_checklist": [
+    "I can explain the difference between Reading: Fill in the blanks and Reading & writing: Fill in the blanks.",
+    "I can identify the main idea before solving individual blanks.",
+    "I can decide what word class and grammatical form a blank requires.",
+    "I can use subject–verb agreement and verb patterns to eliminate options.",
+    "I can recognize common academic collocations.",
+    "I can identify the intended meaning of common phrasal verbs.",
+    "I can use connectors and reference words to follow the passage's logic.",
+    "I can explain why a rejected option fails grammatically, lexically, or contextually.",
+    "I can reread a completed passage and detect an unnatural answer.",
+    "I can build a topic word bank with word families, synonyms, antonyms, collocations, and example sentences.",
+    "I can complete mixed fill-in-the-blanks practice under timed conditions.",
+    "I can review my errors and identify whether my main weakness is grammar, vocabulary, collocation, or passage comprehension."
+  ],
+  "strategy_notes": [
+    "Do not begin by studying every option. First establish the passage topic and direction.",
+    "Solve blanks with strong grammatical evidence before blanks that depend mainly on difficult vocabulary.",
+    "In a shared word bank, every confident answer reduces the number of distractors remaining.",
+    "When two words have similar meanings, compare their grammatical forms and collocations.",
+    "Treat the words on both sides of a blank as one phrase rather than separate clues.",
+    "A familiar option is not safer than an unfamiliar option; select the one supported by evidence.",
+    "For connectors, name the logical relationship before choosing the word.",
+    "Do not replace an answer during review unless you can identify a clear problem with grammar, collocation, or meaning.",
+    "Keep timed practice separate from vocabulary-study practice so that you learn to perform without reference tools.",
+    "Create an error log with four labels: grammar, word form, collocation, and context. Use the pattern of errors to choose your next drill."
+  ],
+  "metadata": {
+    "difficulty": "intermediate",
+    "estimated_study_time": "Plan to spend about 2 hours on this chapter, with time for reading the item descriptions, practising fill-in-the-blanks strategies, building vocabulary tables, and reviewing answers.",
+    "tags": [
+      "PTE Academic",
+      "reading",
+      "reading and writing",
+      "fill in the blanks",
+      "grammar",
+      "word classes",
+      "academic vocabulary",
+      "collocations",
+      "phrasal verbs",
+      "context clues",
+      "elimination",
+      "word banks"
+    ],
+    "provenance_note": "The item formats, lesson scope, vocabulary-table activities, and core strategies preserve the supplied Lesson 3 material and are consistent with the related Pearson Official Guide and Teacher Notes sections. The grammatical-link approach is also supported by the supplied B1 coursebook. The worked passages, drills, formulas, and coaching explanations are original teaching additions rather than reproduced test items."
+  }
+}
