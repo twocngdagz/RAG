@@ -1,0 +1,936 @@
+{
+  "schema_version": "book_learning_materials.v2",
+  "book": {
+    "slug": "pte",
+    "title": "pte",
+    "source_pdf": "input/pdfs/pte.pdf"
+  },
+  "generation": {
+    "generated_at": "2026-07-15T03:34:31.093839+00:00",
+    "pipeline_version": "book_learning_materials.v2",
+    "prompt_version": "book_learning_materials_v2_chapter.v2",
+    "backend": "codex-cli",
+    "model": "gpt-5.5",
+    "selection_mode": "chapters",
+    "selected_chapter_numbers": [
+      16
+    ],
+    "book_synthesis_performed": false,
+    "clean_chunks_path": "extracted/pte.section_clean_chunks.json"
+  },
+  "learning_materials": {
+    "chapters": [
+      {
+        "chapter_number": 16,
+        "chapter_title": "Lesson 15: Write Essay Skills Practice",
+        "source_chunk_ids": [
+          "pte_chunk_234",
+          "pte_chunk_235",
+          "pte_chunk_236",
+          "pte_chunk_237",
+          "pte_chunk_238",
+          "pte_chunk_239",
+          "pte_chunk_240",
+          "pte_chunk_241",
+          "pte_chunk_242",
+          "pte_chunk_243",
+          "pte_chunk_244"
+        ],
+        "estimated_study_time": {
+          "text": "Plan to spend about 2 hours studying this chapter and completing the writing practice.",
+          "claim_kind": "study_plan",
+          "origin": "pedagogical_generation",
+          "source_chunk_ids": [],
+          "grounded_in_source_chunk_ids": [],
+          "evidence_spans": [],
+          "reason": null
+        },
+        "chapter_summary": {
+          "text": "This lesson provides skills practice for the PTE Academic Write essay item type. It includes planning, writing, editing, timed practice, and reviewing feedback to practice items.",
+          "claim_kind": "source_summary",
+          "origin": "source_grounded",
+          "source_chunk_ids": [
+            "pte_chunk_234",
+            "pte_chunk_237",
+            "pte_chunk_238"
+          ],
+          "grounded_in_source_chunk_ids": [],
+          "evidence_spans": [
+            {
+              "node_id": "pte_chunk_234",
+              "quote": "This lesson provides skills practice for the PTE Academic item type Write essay"
+            },
+            {
+              "node_id": "pte_chunk_237",
+              "quote": "Aims:  Practice planning, writing and editing an essay"
+            },
+            {
+              "node_id": "pte_chunk_238",
+              "quote": "Aim:  Practice an item under timed conditions"
+            },
+            {
+              "node_id": "pte_chunk_234",
+              "quote": "Reviewed feedback to practice items"
+            }
+          ],
+          "reason": null
+        },
+        "learning_objectives": [
+          {
+            "text": "Practice writing and reading skills for the Write essay item type.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_234"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_234",
+                "quote": "Practiced the writing and reading skills listed above"
+              },
+              {
+                "node_id": "pte_chunk_234",
+                "quote": "This lesson provides skills practice for the PTE Academic item type Write essay"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Practice writing strategies for the Write essay item type.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_234"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_234",
+                "quote": "Practiced writing strategies for this item type"
+              },
+              {
+                "node_id": "pte_chunk_234",
+                "quote": "This lesson provides skills practice for the PTE Academic item type Write essay"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Complete practice items under timed conditions and review feedback.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_234"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_234",
+                "quote": "Completed practice items under timed conditions"
+              },
+              {
+                "node_id": "pte_chunk_234",
+                "quote": "Reviewed feedback to practice items"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Practice written discourse skills related to successful completion of the Write essay item type.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_234"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_234",
+                "quote": "Practiced written discourse skills related to the successful completion of this item type"
+              },
+              {
+                "node_id": "pte_chunk_234",
+                "quote": "This lesson provides skills practice for the PTE Academic item type Write essay"
+              }
+            ],
+            "reason": null
+          }
+        ],
+        "key_terms": [
+          {
+            "term": "Write essay",
+            "meaning": {
+              "text": "Write essay is the PTE Academic item type practiced in this lesson.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_234"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_234",
+                  "quote": "This lesson provides skills practice for the PTE Academic item type Write essay"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Topic sentence",
+            "meaning": {
+              "text": "A topic sentence states the paragraph’s main idea.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_241"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_241",
+                  "quote": "a clear topic sentence that states the paragraph’s main idea"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Supporting sentences",
+            "meaning": {
+              "text": "Supporting sentences explain and extend the main idea in the topic sentence.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_240"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_240",
+                  "quote": "supporting sentences need to explain and extend the main idea in the topic sentence"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Introduction",
+            "meaning": {
+              "text": "The introduction of an essay contains background information to the topic and the main opinion.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_236"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_236",
+                  "quote": "the introduction of the essay (i.e. background information to the topic and the main opinion)"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Body",
+            "meaning": {
+              "text": "The body of an essay contains reasons supporting the main opinion stated in the introduction.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_236"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_236",
+                  "quote": "the middle four paragraphs or body (i.e. reasons supporting the main opinion stated in the introduction)"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Conclusion",
+            "meaning": {
+              "text": "The conclusion reiterates the main opinion.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_236"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_236",
+                  "quote": "the conclusion (i.e. reiteration of main opinion)"
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "core_lessons": [
+          {
+            "title": "Analyze The Prompt Before Writing",
+            "explanation": {
+              "text": "The process for answering an essay prompt includes analyzing the question for content and task requirements, making an essay plan, drafting logically organized paragraphs, and editing the essay.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_235"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_235",
+                  "quote": "analyze the question for content and task requirements; make an essay plan with a main argument or opinion and supporting reasons; draft an essay which has logically organized paragraphs; edit the essay"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Build Paragraphs Around A Clear Main Idea",
+            "explanation": {
+              "text": "A successful paragraph needs a clear topic sentence, supporting sentences that extend or explain the main idea, logical sequencing, linking words, and editing for grammar, punctuation, and spelling.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_241"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_241",
+                  "quote": "a paragraph needs to be carefully planned so that it has a clear topic sentence that states the paragraph’s main idea"
+                },
+                {
+                  "node_id": "pte_chunk_241",
+                  "quote": "This topic sentence should be supported by other sentences that extend or explain the main idea, and give examples"
+                },
+                {
+                  "node_id": "pte_chunk_241",
+                  "quote": "all sentences should relate to the same idea as the one expressed in the topic sentence, and they should be logically sequenced"
+                },
+                {
+                  "node_id": "pte_chunk_241",
+                  "quote": "linking words should be used to join sentences together and clearly show the relationship of ideas"
+                },
+                {
+                  "node_id": "pte_chunk_241",
+                  "quote": "carefully edited for grammar, punctuation and spelling"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Use A Complete Essay Structure",
+            "explanation": {
+              "text": "A good essay response contains relevant background information, a clearly stated opinion that addresses the prompt, and relevant reasons that support the main opinion and are developed in the body.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_237"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_237",
+                  "quote": "Some relevant background information to orientate the reader to the topic"
+                },
+                {
+                  "node_id": "pte_chunk_237",
+                  "quote": "A clearly stated opinion that addresses the prompt"
+                },
+                {
+                  "node_id": "pte_chunk_237",
+                  "quote": "Some relevant reasons in support of the main opinion which are extended and developed in the body of the essay"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Take A Clear Stance",
+            "explanation": {
+              "text": "After brainstorming, take a stance so you can state a clear opinion rather than remaining neutral.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_237"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_237",
+                  "quote": "take a stance on the topic so that they can state a clear opinion (rather than stating arguments for and against and remaining neutral)"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Plan Ideas Into Introduction, Body, And Conclusion",
+            "explanation": {
+              "text": "Sort ideas into introduction ideas, body ideas, and conclusion ideas.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_237"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_237",
+                  "quote": "sorting the ideas they have jotted down into 3 groups: ideas for the introduction (that introduce topic and or argument), ideas for the body (that provide supporting reasons for the argument), and ideas for the conclusion (to sum up the reasons and argument)"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Edit With Checklists",
+            "explanation": {
+              "text": "Use the Essay editing checklist with the Paragraph editing checklist and Official Guide strategies to check essay structure and information, then decide whether features are missing or inadequate and how the essay should be improved.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_238"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_238",
+                  "quote": "use this checklist in combination with the ‘Paragraph editing checklist’ and the strategies listed on pages 81 and 82 in the Official Guide to check the structure and information of the essays"
+                },
+                {
+                  "node_id": "pte_chunk_238",
+                  "quote": "decide whether any of the features from the checklists are missing or inadequate and whether and/or how their essay should be improved"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Practice Under Timed Conditions",
+            "explanation": {
+              "text": "In the timed practice activity, learners have 20 minutes to plan, write, and edit their essay.",
+              "claim_kind": "official_rule",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_238"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_238",
+                  "quote": "they will have 20 minutes to plan, write and edit their essay"
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "worked_examples": [
+          {
+            "title": "Planning A Zoo Essay",
+            "example": {
+              "text": "Prompt focus: Should zoos be banned? Stance: I disagree because well-run zoos can support animal welfare. Introduction idea: introduce the debate about animal rights and zoos, then state the opinion. Body idea 1: good zoos can educate visitors about nature and conservation. Body idea 2: breeding programs can help endangered animals survive. Conclusion idea: restate that zoos should be supported when animals are treated well.",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "The source sample gives the main opinion in the introduction and conclusion and supports it with educational, conservational, and breeding reasons.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_238"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_238",
+                  "quote": "The author’s main opinion (zoos are good for the welfare of animals)"
+                },
+                {
+                  "node_id": "pte_chunk_238",
+                  "quote": "Where the author’s main opinion is given (in the introduction and the conclusion)"
+                },
+                {
+                  "node_id": "pte_chunk_238",
+                  "quote": "The reasons given to support the main opinion (zoos provide important educational and conservational information; they allow endangered species to be bred)"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Improving A Paragraph",
+            "example": {
+              "text": "Topic sentence: A well written paragraph needs good planning, logical organization and careful editing. Supporting sentence 1: First, planning helps the writer choose a clear main idea. Supporting sentence 2: Next, logical organization helps each sentence connect to that idea. Supporting sentence 3: Finally, editing helps remove problems in grammar, punctuation, and spelling.",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "The paragraph task asks learners to write up to six supporting sentences. Supporting sentences need to explain and extend the main idea, be logically organized, and use linking words and phrases.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_240"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_240",
+                  "quote": "Write up to six supporting sentences for the topic sentence in the box below."
+                },
+                {
+                  "node_id": "pte_chunk_240",
+                  "quote": "supporting sentences need to explain and extend the main idea in the topic sentence"
+                },
+                {
+                  "node_id": "pte_chunk_240",
+                  "quote": "They should be logically organized and they should use linking words and phrases."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Checking An Essay Draft",
+            "example": {
+              "text": "Draft check: The introduction names the topic and states a direct opinion. Each body paragraph gives one reason and explains it. The conclusion restates the opinion. If one body paragraph discusses an unrelated idea, revise it so every reason directly relates to the topic.",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "The checklist asks whether the opening paragraph introduces the topic clearly, whether the essay has a clearly stated main opinion, whether body reasons support the main opinion, whether reasons are explained in separate paragraphs, whether reasons relate to the topic, and whether the conclusion restates the main opinion or argument.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_243"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_243",
+                  "quote": "Does the opening paragraph introduce the topic clearly?"
+                },
+                {
+                  "node_id": "pte_chunk_243",
+                  "quote": "Does the essay have a clearly stated main opinion?"
+                },
+                {
+                  "node_id": "pte_chunk_243",
+                  "quote": "Does the body of the essay contain reasons that help to support or explain the main opinion?"
+                },
+                {
+                  "node_id": "pte_chunk_243",
+                  "quote": "Are these reasons clearly explained in separate paragraphs?"
+                },
+                {
+                  "node_id": "pte_chunk_243",
+                  "quote": "Do all the reasons directly relate to the topic of the essay?"
+                },
+                {
+                  "node_id": "pte_chunk_243",
+                  "quote": "Does the conclusion clearly (re)state the essay’s main opinion or argument?"
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "common_misconceptions": [
+          {
+            "misconception": {
+              "text": "A strong essay can simply list arguments for and against the topic while staying neutral.",
+              "claim_kind": "misconception_statement",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "Learners should take a stance so they can state a clear opinion, rather than stating arguments for and against and remaining neutral.",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_237"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_237",
+                  "quote": "take a stance on the topic so that they can state a clear opinion (rather than stating arguments for and against and remaining neutral)"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "misconception": {
+              "text": "A paragraph only needs several sentences; the sentences do not all need to connect to the topic sentence.",
+              "claim_kind": "misconception_statement",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "In a successful paragraph, all sentences should relate to the same idea as the topic sentence and should be logically sequenced.",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_241"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_241",
+                  "quote": "all sentences should relate to the same idea as the one expressed in the topic sentence, and they should be logically sequenced"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "misconception": {
+              "text": "If the body paragraphs are clear, the conclusion does not need to restate the essay’s opinion or argument.",
+              "claim_kind": "misconception_statement",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "The conclusion should clearly restate the essay’s main opinion or argument.",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_243"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_243",
+                  "quote": "Does the conclusion clearly (re)state the essay’s main opinion or argument?"
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "practice_questions": [
+          {
+            "question": {
+              "text": "Use this prompt: “Are zoos helping or hurting our animals? Should zoos be banned? Do you agree or disagree?” Write a one-sentence main opinion that directly answers the prompt.",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Example answer: I disagree that zoos should be banned because well-run zoos can support animal welfare through education, conservation, and breeding programs.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "For the topic sentence “A well written paragraph needs good planning, logical organization and careful editing,” write three supporting sentences that explain or extend the main idea.",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Example answer: First, good planning helps the writer decide the paragraph’s main idea. Next, logical organization makes each sentence follow clearly from the previous one. Finally, careful editing improves grammar, punctuation, and spelling.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Plan an essay on Prompt 1 from the chapter. List one introduction idea, two body reasons, and one conclusion idea.",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Example answer: Introduction idea: introduce the problem of animals becoming extinct because of habitat loss. Body reason 1: captivity may protect animals that cannot survive in the wild. Body reason 2: extinction removes a species permanently. Conclusion idea: restate the opinion that ethical captivity is better than extinction when animals are treated well.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Edit this weak essay plan: “Introduction: zoos are interesting. Body: animals, tickets, children, nature. Conclusion: zoos exist.” What is missing or inadequate?",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Example answer: The plan needs a clearly stated main opinion, reasons that directly support or explain that opinion, separate body paragraphs, logical ordering, and a conclusion that restates the main opinion or argument.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "review_checklist": [
+          {
+            "text": "I can analyze an essay prompt for its topic and task requirements before writing.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can write an introduction that introduces the topic and states a clear main opinion.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can organize body paragraphs so each reason supports the main opinion and relates directly to the essay topic.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can use linking words and logical sequencing to connect sentences and ideas.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can revise an essay using checks for organization, grammar, punctuation, vocabulary, and spelling.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can plan, write, and edit a practice essay within a 20-minute timed practice period.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          }
+        ]
+      }
+    ]
+  },
+  "source_chunks": [
+    {
+      "node_id": "pte_chunk_234",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 15",
+      "chapter_number": 16,
+      "section": "LESSON 15",
+      "topic": "LESSON 15",
+      "content_type": "unknown",
+      "page_start": 234,
+      "page_end": 234,
+      "is_front_matter": false,
+      "text_preview": "Lesson 15© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 105 The Official Guide to PTE Academic Teacher Notes Overview Time allocated: 2 hours This lesson focuses on the following skills: Writing • Writing for a purpose (to learn, to inform, to persuade) • Supporting an opinion..."
+    },
+    {
+      "node_id": "pte_chunk_235",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 15",
+      "chapter_number": 16,
+      "section": "LESSON 15",
+      "topic": "LESSON 15",
+      "content_type": "unknown",
+      "page_start": 235,
+      "page_end": 235,
+      "is_front_matter": false,
+      "text_preview": "Lesson 15© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 106 The Official Guide to PTE Academic Teacher Notes Lesson Plan Introduction (5 mins) Materials: Copies of ‘Paragraph editing checklist’ (from Lesson 7) • Explain that in this lesson test takers will look again at the Wr..."
+    },
+    {
+      "node_id": "pte_chunk_236",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 15",
+      "chapter_number": 16,
+      "section": "LESSON 15",
+      "topic": "LESSON 15",
+      "content_type": "unknown",
+      "page_start": 236,
+      "page_end": 236,
+      "is_front_matter": false,
+      "text_preview": "Lesson 15© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 107 The Official Guide to PTE Academic Teacher Notes Steps: • Remind test takers that in Lesson 7 they practiced writing sentences to state their opinions and structuring paragraphs. Explain that in this lesson they will..."
+    },
+    {
+      "node_id": "pte_chunk_237",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 15",
+      "chapter_number": 16,
+      "section": "LESSON 15",
+      "topic": "LESSON 15",
+      "content_type": "unknown",
+      "page_start": 237,
+      "page_end": 237,
+      "is_front_matter": false,
+      "text_preview": "Lesson 15© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 108 The Official Guide to PTE Academic Teacher Notes • Conclude the activity by eliciting from test takers the type of information a good essay response must contain, namely: – Some relevant background information to orie..."
+    },
+    {
+      "node_id": "pte_chunk_238",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 15",
+      "chapter_number": 16,
+      "section": "LESSON 15",
+      "topic": "LESSON 15",
+      "content_type": "unknown",
+      "page_start": 238,
+      "page_end": 238,
+      "is_front_matter": false,
+      "text_preview": "Lesson 15© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 109 The Official Guide to PTE Academic Teacher Notes Main activity 2: part 2 pair work (10 mins) Editing the essay Materials: • Official Guide pp. 81–82 • Copies of ‘Essay editing checklist’ • Copies of ‘Paragraph editing..."
+    },
+    {
+      "node_id": "pte_chunk_239",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 15",
+      "chapter_number": 16,
+      "section": "LESSON 15",
+      "topic": "LESSON 15",
+      "content_type": "unknown",
+      "page_start": 239,
+      "page_end": 239,
+      "is_front_matter": false,
+      "text_preview": "Lesson 15© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 110 The Official Guide to PTE Academic Teacher Notes Round up whole class (5 mins) Materials: Official Guide pp. 84–88 Aim: Review test problems and strategies Steps: • Ask test takers to reflect on their attempt at the W..."
+    },
+    {
+      "node_id": "pte_chunk_240",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 15",
+      "chapter_number": 16,
+      "section": "LESSON 15",
+      "topic": "LESSON 15",
+      "content_type": "unknown",
+      "page_start": 240,
+      "page_end": 240,
+      "is_front_matter": false,
+      "text_preview": "Lesson 15Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Paragraph writing skills Write up to six supporting sentences for the topic sentence in the box below. Remember that supporting sentences need to explain and extend the main idea in the topic sentence. They..."
+    },
+    {
+      "node_id": "pte_chunk_241",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 15",
+      "chapter_number": 16,
+      "section": "LESSON 15",
+      "topic": "LESSON 15",
+      "content_type": "unknown",
+      "page_start": 241,
+      "page_end": 241,
+      "is_front_matter": false,
+      "text_preview": "Lesson 15Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Paragraph writing skills: Sample response A well written paragraph needs good planning, logical organization and careful editing. Firstly, a paragraph needs to be carefully planned so that it has a clear top..."
+    },
+    {
+      "node_id": "pte_chunk_242",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 15",
+      "chapter_number": 16,
+      "section": "LESSON 15",
+      "topic": "LESSON 15",
+      "content_type": "unknown",
+      "page_start": 242,
+      "page_end": 242,
+      "is_front_matter": false,
+      "text_preview": "Lesson 15Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Sample essay prompts Prompt 1 Many animals around the world are in danger of becoming extinct in the wild due to loss of natural habitat. Some of these animals may soon exist only in zoos. Is it ethical to k..."
+    },
+    {
+      "node_id": "pte_chunk_243",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 15",
+      "chapter_number": 16,
+      "section": "LESSON 15",
+      "topic": "LESSON 15",
+      "content_type": "unknown",
+      "page_start": 243,
+      "page_end": 243,
+      "is_front_matter": false,
+      "text_preview": "Lesson 15Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Essay editing checklist Introduction Yes No Does the opening paragraph introduce the topic clearly? Does the essay have a clearly stated main opinion? (This could be given in the introduction, in the conclus..."
+    },
+    {
+      "node_id": "pte_chunk_244",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 15",
+      "chapter_number": 16,
+      "section": "LESSON 15",
+      "topic": "LESSON 15",
+      "content_type": "unknown",
+      "page_start": 244,
+      "page_end": 244,
+      "is_front_matter": false,
+      "text_preview": "Lesson 15Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Prompt 2: Sample essay Good zoos serve the welfare of animals. They generate in people a commitment to the value of nature and the environment. In the past, there have been questionable zoos employing cruel..."
+    }
+  ],
+  "audit": {
+    "status": "PASS",
+    "contract_status": "PASS",
+    "contract_audit_path": "output/pte.ch16.gen.contract.audit.json",
+    "contract_report_path": "output/pte.ch16.gen.contract.audit.txt"
+  }
+}
