@@ -1,0 +1,65 @@
+@import 'tailwindcss';
+
+/* Design tokens (Tailwind v4 CSS-first @theme). Calm, content-first education
+   palette: teal for trust/structure, emerald for source-backed content, amber
+   for guided/practice content. Two typefaces only: Lexend (display) + Inter. */
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Lexend', ui-sans-serif, system-ui, sans-serif;
+
+  --color-brand-50: #ecfeff;
+  --color-brand-100: #cffafe;
+  --color-brand-200: #a5f3fc;
+  --color-brand-500: #06b6d4;
+  --color-brand-600: #0891b2;
+  --color-brand-700: #0e7490;
+  --color-brand-800: #155e75;
+  --color-brand-900: #164e63;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-slate-50 font-sans text-slate-700 antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-display text-slate-900;
+    text-wrap: balance;
+  }
+  /* Readable measure + rhythm for long-form learning content. */
+  .reading p {
+    @apply leading-[1.75];
+  }
+
+  /* Honour reduced-motion (a11y priority in the ui-ux-pro-max checklist). */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Gentle entrance for sections; disabled under reduced-motion above. */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.animate-rise {
+  animation: rise 0.4s ease-out both;
+}
