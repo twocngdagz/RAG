@@ -1,0 +1,943 @@
+{
+  "schema_version": "book_learning_materials.v2",
+  "book": {
+    "slug": "pte",
+    "title": "pte",
+    "source_pdf": "input/pdfs/pte.pdf"
+  },
+  "generation": {
+    "generated_at": "2026-07-15T02:33:01.241935+00:00",
+    "pipeline_version": "book_learning_materials.v2",
+    "prompt_version": "book_learning_materials_v2_chapter.v2",
+    "backend": "codex-cli",
+    "model": "gpt-5.5",
+    "selection_mode": "chapters",
+    "selected_chapter_numbers": [
+      6
+    ],
+    "book_synthesis_performed": false,
+    "clean_chunks_path": "extracted/pte.section_clean_chunks.json"
+  },
+  "learning_materials": {
+    "chapters": [
+      {
+        "chapter_number": 6,
+        "chapter_title": "Lesson 6: Summarize Written Text",
+        "source_chunk_ids": [
+          "pte_chunk_087",
+          "pte_chunk_088",
+          "pte_chunk_089",
+          "pte_chunk_090",
+          "pte_chunk_091",
+          "pte_chunk_092",
+          "pte_chunk_093",
+          "pte_chunk_094",
+          "pte_chunk_095",
+          "pte_chunk_096",
+          "pte_chunk_097",
+          "pte_chunk_098",
+          "pte_chunk_099",
+          "pte_chunk_100",
+          "pte_chunk_101",
+          "pte_chunk_102",
+          "pte_chunk_103",
+          "pte_chunk_104"
+        ],
+        "estimated_study_time": {
+          "text": "Plan to spend about 2 hours and 15 minutes on this chapter, including reading strategy work, summary-writing practice, grammar review, timed practice, and self-checking.",
+          "claim_kind": "study_plan",
+          "origin": "pedagogical_generation",
+          "source_chunk_ids": [],
+          "grounded_in_source_chunk_ids": [],
+          "evidence_spans": [],
+          "reason": null
+        },
+        "chapter_summary": {
+          "text": "This lesson provides skills practice for the PTE Academic Summarize written text item type. It focuses on reading a passage under timed conditions, identifying main ideas and supporting points, inferring unknown words, writing a summary, synthesizing information, meeting strict length requirements, and proofreading grammar and punctuation.",
+          "claim_kind": "source_summary",
+          "origin": "source_grounded",
+          "source_chunk_ids": [
+            "pte_chunk_087"
+          ],
+          "grounded_in_source_chunk_ids": [],
+          "evidence_spans": [
+            {
+              "node_id": "pte_chunk_087",
+              "quote": "This lesson provides skills practice for the PTE Academic item type Summarize written text."
+            },
+            {
+              "node_id": "pte_chunk_087",
+              "quote": "Reading a passage under timed conditions\n• Identifying a writer’s purpose, style, tone or attitude\n• Comprehending explicit and implicit information"
+            },
+            {
+              "node_id": "pte_chunk_087",
+              "quote": "Identifying the topic, theme or main ideas\n• Identifying supporting points or examples\n• Inferring the meaning of unknown words"
+            },
+            {
+              "node_id": "pte_chunk_087",
+              "quote": "Writing a summary \n• Writing under timed conditions\n• Taking notes while reading a text\n• Synthesizing information\n• Writing to meet strict length requirements"
+            },
+            {
+              "node_id": "pte_chunk_087",
+              "quote": "Proofread own writing for grammar and punctuation"
+            }
+          ],
+          "reason": null
+        },
+        "learning_objectives": [
+          {
+            "text": "Analyze the rubric, format, and scoring of the Summarize written text item type.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_087"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_087",
+                "quote": "Analyzed the rubric, format and scoring of this item type"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Practice writing strategies for Summarize written text.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_087"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_087",
+                "quote": "Practiced writing strategies for this item type"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Complete a practice item under timed conditions and review feedback to the practice item.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_087"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_087",
+                "quote": "Completed a practice item under timed conditions\n➤\t Reviewed feedback to the practice item"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Practice grammar skills related to successful completion of this item type and proofread your own writing for grammar and punctuation.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_087"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_087",
+                "quote": "Practiced a range of grammar skills related to the successful completion of this item type\n➤\t Proofread own writing for grammar and punctuation"
+              }
+            ],
+            "reason": null
+          }
+        ],
+        "key_terms": [
+          {
+            "term": "Summarize written text",
+            "meaning": {
+              "text": "A PTE Academic item type that requires test takers to summarize a reading of up to 300 words in one sentence, using correct form, grammar, and vocabulary.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_095"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_095",
+                  "quote": "The Summarize Written Text test item requires test takers to accurately summarize a reading of up to 300 words \nin one sentence, using correct form, grammar and vocabulary."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Written summary",
+            "meaning": {
+              "text": "A written summary is a brief written statement of the main points of a reading or discussion.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_089"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_089",
+                  "quote": "A brief written statement of the main points of a reading or discussion."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Dependent clause",
+            "meaning": {
+              "text": "A dependent clause contains a verb but does not make sense on its own.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_092"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_092",
+                  "quote": "a dependent clause is a clause that contains a verb but which does not make sense on its \nown."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Synthesize",
+            "meaning": {
+              "text": "To synthesize ideas in this lesson means to combine ideas in a summary sentence.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_091"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_091",
+                  "quote": "they need to eliminate and/or condense  \nsome of the information that they paraphrased and write one grammatically accurate summary  \nsentence."
+                },
+                {
+                  "node_id": "pte_chunk_091",
+                  "quote": "one way of doing this is to use noun phrases that combine information from  \ntwo or three paraphrased notes."
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "core_lessons": [
+          {
+            "title": "Know the Task Requirements",
+            "explanation": {
+              "text": "For this item type, test takers write one sentence, have 10 minutes, summarize a reading passage of up to 300 words, and are scored on Content, Form, Grammar, and Vocabulary.",
+              "claim_kind": "task_format",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_088"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_088",
+                  "quote": "‘One sentence’(p. 73)\n– ‘10 minutes’ (p. 73)\n– ‘up to 300 words’ (p. 74)\n– ‘Content, Form, Grammar, Vocabulary’"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Write a Good Summary",
+            "explanation": {
+              "text": "A good summary gives all main points, accurately represents the topic and content of the reading, and usually omits examples.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_089"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_089",
+                  "quote": "All main points need \nto be given, the topic and content of the reading needs to be accurately represented, but examples \nare usually omitted."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Use the Simple Present Tense",
+            "explanation": {
+              "text": "The simple present tense is usually used in a summary because the writer is giving a factual statement of the reading’s main points.",
+              "claim_kind": "grammar_rule",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_089"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_089",
+                  "quote": "The simple present tense because the writer \nis giving a factual statement of the reading’s main points."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Find the Main Topic Before Writing",
+            "explanation": {
+              "text": "Before summarizing a text, first identify the main topic and think about what you already know about it. This helps you predict what follows, identify main ideas, and guess word meanings.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_090"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_090",
+                  "quote": "whenever they read a text that they need to summarize they should first identify \nthe main topic and think about what they already know about it."
+                },
+                {
+                  "node_id": "pte_chunk_090",
+                  "quote": "using their knowledge \nof a topic helps them to predict what will follow, and to identify main ideas and guess the meaning of \nwords."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Use Topic Sentences, Key Words, and Signal Words",
+            "explanation": {
+              "text": "Main ideas are often found in a paragraph’s topic sentence, usually the first sentence, but short paragraphs require attention to key words or phrases. Signal words can help distinguish main ideas from supporting ideas, opposing ideas, and examples.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_090",
+                "pte_chunk_099"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_090",
+                  "quote": "the main idea can often be found in a paragraph’s topic sentence, which is usually the first sentence \nof a paragraph."
+                },
+                {
+                  "node_id": "pte_chunk_090",
+                  "quote": "in short paragraphs, readers need to focus on key words or phrases."
+                },
+                {
+                  "node_id": "pte_chunk_099",
+                  "quote": "A key skill for recognizing the main point in a paragraph is the ability to use signal words to distinguish main ideas from \nsupporting ideas, opposing ideas, and examples."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Paraphrase Without Changing Meaning",
+            "explanation": {
+              "text": "Writing a summary requires more than copying phrases from the reading. Test takers need to use alternative words and phrases for what they have noted without changing the meaning.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_091"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_091",
+                  "quote": "writing a summary requires more than just copying phrases from the reading. They \nneed to be able to use alternative words and phrases for what they have noted, without changing the \nmeaning."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Use Dependent Clauses to Add Information",
+            "explanation": {
+              "text": "In summaries, dependent clauses are often used to add extra meaning or detail to a noun or noun phrase, and they often follow a key noun and a comma and begin with relative pronouns.",
+              "claim_kind": "grammar_rule",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_092"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_092",
+                  "quote": "In a summary, dependent clauses are often used to add extra meaning or detail to a noun or \nnoun phrase."
+                },
+                {
+                  "node_id": "pte_chunk_092",
+                  "quote": "dependent clauses often follow a key noun and a comma (e.g. ‘a dowry, …’) \nand begin with relative pronouns."
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "worked_examples": [
+          {
+            "title": "Choosing the Stronger Summary",
+            "example": {
+              "text": "Compare two summaries of the same passage. Summary A says: \"The passage was about a test where people read and write.\" Summary B says: \"The Summarize Written Text item requires test takers to summarize a reading of up to 300 words in one sentence using correct form, grammar, and vocabulary.\" Summary B is stronger because it is more specific, includes key task requirements, and stays formal.",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "The source identifies Summary 3 as the best because it presents the main points accurately, omits examples, uses vocabulary, spelling, and grammar accurately, uses the simple present tense, and is within the word limit.",
+              "claim_kind": "factual_explanation",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_089"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_089",
+                  "quote": "Summary 3 presents the main points accurately, omits examples, and accurately uses vocabulary, \nspelling and grammar (including the simple present tense). It is also within the word limit for this \nitem."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Combining Ideas with a Dependent Clause",
+            "example": {
+              "text": "Notes: dowries began as gifts from parents; dowries had several functions; dowries are still used in some traditional cultures. One-sentence summary: \"A dowry, which began as a family gift and developed several functions, remains part of marriage in some traditional cultures.\"",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "The source explains that dependent relative clauses beginning with which, who, or that can add more information to a noun phrase, and that noun phrases can combine information from two or three paraphrased notes.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_091"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_091",
+                  "quote": "one way of doing this is to use noun phrases that combine information from  \ntwo or three paraphrased notes."
+                },
+                {
+                  "node_id": "pte_chunk_091",
+                  "quote": "dependent relative clauses (beginning with  \n‘which’, ‘who’ or ‘that’) are a good tool for adding more information to a noun phrase."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Timed Practice Sample",
+            "example": {
+              "text": "Read a short passage about public figures and privacy. Identify the central claim, note the main reasons, and write one sentence that combines them without adding personal opinion.",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "The sample summary says that media scrutiny of public figures should be supported because politicians need to be monitored for policy concerns and other public figures depend on the general public for their income.",
+              "claim_kind": "factual_explanation",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_104"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_104",
+                  "quote": "Media scrutiny of public figures should be supported because politicians need to be monitored for policy concerns \nand other public figures depend on the general public for their income."
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "common_misconceptions": [
+          {
+            "misconception": {
+              "text": "A summary should include the writer’s personal opinions and examples from the passage.",
+              "claim_kind": "misconception_statement",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "A summary should accurately represent the topic and content, include all main points, and usually omit examples.",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_089"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_089",
+                  "quote": "All main points need \nto be given, the topic and content of the reading needs to be accurately represented, but examples \nare usually omitted."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "misconception": {
+              "text": "Copying phrases from the reading is enough to write a successful summary.",
+              "claim_kind": "misconception_statement",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "Writing a summary requires more than copying phrases; test takers need to use alternative words and phrases without changing the meaning.",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_091"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_091",
+                  "quote": "writing a summary requires more than just copying phrases from the reading. They \nneed to be able to use alternative words and phrases for what they have noted, without changing the \nmeaning."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "misconception": {
+              "text": "A response can be written in two sentences as long as the content is accurate.",
+              "claim_kind": "misconception_statement",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "The Summarize Written Text item requires one sentence.",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_095"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_095",
+                  "quote": "The Summarize Written Text test item requires test takers to accurately summarize a reading of up to 300 words \nin one sentence"
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "practice_questions": [
+          {
+            "question": {
+              "text": "List four requirements or scoring factors for the Summarize written text item type that you should check before submitting your response.",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Check that the response is one sentence, completed within 10 minutes, based on a reading of up to 300 words, and written with attention to Content, Form, Grammar, and Vocabulary.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Rewrite this note pair as one summary sentence using a dependent clause: dowries originated as gifts from parents; dowries are still part of marriage in some traditional cultures.",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "A possible answer is: \"A dowry, which originated as a gift from parents, is still part of marriage in some traditional cultures.\"",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "When reading a paragraph for summary writing, what should you look for if the main idea is not obvious from the first sentence?",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Look for key words or phrases, and use signal words to separate main ideas from supporting ideas, opposing ideas, and examples.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Give two ways to guess the meaning of an unfamiliar word while reading under test conditions.",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Use the meaning of related words, identify the word’s grammatical class, or use the root or main part of the word to help guess its meaning.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "review_checklist": [
+          {
+            "text": "I can state the task requirements: one sentence, 10 minutes, up to 300 words in the reading passage, and scoring for Content, Form, Grammar, and Vocabulary.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can identify the main points of a passage and leave out unnecessary examples.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can paraphrase key phrases without changing the meaning.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can combine two or three notes into one grammatically accurate summary sentence.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can use dependent clauses to add detail to a noun or noun phrase.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can leave time to check grammar, punctuation, spelling, sentence count, and word limit.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          }
+        ]
+      }
+    ]
+  },
+  "source_chunks": [
+    {
+      "node_id": "pte_chunk_087",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 6",
+      "chapter_number": 6,
+      "section": "LESSON 6",
+      "topic": "LESSON 6",
+      "content_type": "unknown",
+      "page_start": 87,
+      "page_end": 87,
+      "is_front_matter": false,
+      "text_preview": "Lesson 6© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 41 The Official Guide to PTE Academic Teacher Notes Overview Time allocated: 2 hours 15 minutes This lesson focuses on the following skills: Reading • Reading a passage under timed conditions • Identifying a writer’s purpo..."
+    },
+    {
+      "node_id": "pte_chunk_088",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 6",
+      "chapter_number": 6,
+      "section": "LESSON 6",
+      "topic": "LESSON 6",
+      "content_type": "unknown",
+      "page_start": 88,
+      "page_end": 88,
+      "is_front_matter": false,
+      "text_preview": "Lesson 6© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 42 The Official Guide to PTE Academic Teacher Notes Preparation The following materials should be prepared before the lesson: • Official Guide pages 73–77 • Image of ‘Questions about the Summarize written text item type’ f..."
+    },
+    {
+      "node_id": "pte_chunk_089",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 6",
+      "chapter_number": 6,
+      "section": "LESSON 6",
+      "topic": "LESSON 6",
+      "content_type": "unknown",
+      "page_start": 89,
+      "page_end": 89,
+      "is_front_matter": false,
+      "text_preview": "Lesson 6© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 43 The Official Guide to PTE Academic Teacher Notes • Discuss any queries/problems that test takers may have about the material on these pages. Main activity 1: part 1 whole class (5 mins) What is a ‘good’ summary? Materia..."
+    },
+    {
+      "node_id": "pte_chunk_090",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 6",
+      "chapter_number": 6,
+      "section": "LESSON 6",
+      "topic": "LESSON 6",
+      "content_type": "unknown",
+      "page_start": 90,
+      "page_end": 90,
+      "is_front_matter": false,
+      "text_preview": "Lesson 6© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 44 The Official Guide to PTE Academic Teacher Notes Main activity 2: part 1 whole class and pair work/group work (15 mins) Summary reading strategies: identifying the topic, theme or main ideas Materials: • Official Guide..."
+    },
+    {
+      "node_id": "pte_chunk_091",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 6",
+      "chapter_number": 6,
+      "section": "LESSON 6",
+      "topic": "LESSON 6",
+      "content_type": "unknown",
+      "page_start": 91,
+      "page_end": 91,
+      "is_front_matter": false,
+      "text_preview": "Lesson 6© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 45 The Official Guide to PTE Academic Teacher Notes • To feedback, elicit answers from groups for Tasks 1 and 2 and distribute a copy of the ‘Summary reading strategies: Task 1: Answer key’ and ‘Summary reading strategies:..."
+    },
+    {
+      "node_id": "pte_chunk_092",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 6",
+      "chapter_number": 6,
+      "section": "LESSON 6",
+      "topic": "LESSON 6",
+      "content_type": "unknown",
+      "page_start": 92,
+      "page_end": 92,
+      "is_front_matter": false,
+      "text_preview": "Lesson 6© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 46 The Official Guide to PTE Academic Teacher Notes • Project a copy of the ‘Example summaries of the Dowries text’ worksheet on the board. • To illustrate how dependent clauses are used in a noun phrase, refer test takers..."
+    },
+    {
+      "node_id": "pte_chunk_093",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 6",
+      "chapter_number": 6,
+      "section": "LESSON 6",
+      "topic": "LESSON 6",
+      "content_type": "unknown",
+      "page_start": 93,
+      "page_end": 93,
+      "is_front_matter": false,
+      "text_preview": "Lesson 6© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 47 The Official Guide to PTE Academic Teacher Notes Round up whole class (10 mins) Materials: Copy of ‘Summary writing: Timed practice: Sample summary’ for projection Aim: Review test problems and strategies Steps: • Ask t..."
+    },
+    {
+      "node_id": "pte_chunk_094",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 6",
+      "chapter_number": 6,
+      "section": "LESSON 6",
+      "topic": "LESSON 6",
+      "content_type": "unknown",
+      "page_start": 94,
+      "page_end": 94,
+      "is_front_matter": false,
+      "text_preview": "Lesson 6Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Read pages 73–75 in the Official Guide and then answer these questions about the Summarize written text item type. • What ability does this item type test? • What Communicative Skills does it test? • What mus..."
+    },
+    {
+      "node_id": "pte_chunk_095",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 6",
+      "chapter_number": 6,
+      "section": "LESSON 6",
+      "topic": "LESSON 6",
+      "content_type": "unknown",
+      "page_start": 95,
+      "page_end": 95,
+      "is_front_matter": false,
+      "text_preview": "Lesson 6Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 The following four paragraphs each give a summary of the text on pages 73–75 in the Official Guide. Work in small groups to select the ‘best’ one sentence summary of this text. Give reasons for your choice. S..."
+    },
+    {
+      "node_id": "pte_chunk_096",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 6",
+      "chapter_number": 6,
+      "section": "LESSON 6",
+      "topic": "LESSON 6",
+      "content_type": "unknown",
+      "page_start": 96,
+      "page_end": 96,
+      "is_front_matter": false,
+      "text_preview": "Lesson 6Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 The text that you are going to read and summarize is about dowries – money or property that a bride brings to her husband when she marries. Before reading the text discuss the following questions with other t..."
+    },
+    {
+      "node_id": "pte_chunk_097",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 6",
+      "chapter_number": 6,
+      "section": "LESSON 6",
+      "topic": "LESSON 6",
+      "content_type": "unknown",
+      "page_start": 97,
+      "page_end": 97,
+      "is_front_matter": false,
+      "text_preview": "Lesson 6Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 This activity practices strategies which help you to find and note the main points in a reading text and to guess the meaning of unfamiliar words. Finding the main idea in each paragraph Look at the reading p..."
+    },
+    {
+      "node_id": "pte_chunk_098",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 6",
+      "chapter_number": 6,
+      "section": "LESSON 6",
+      "topic": "LESSON 6",
+      "content_type": "unknown",
+      "page_start": 98,
+      "page_end": 98,
+      "is_front_matter": false,
+      "text_preview": "Lesson 6Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Using word classes to guess the meaning of unfamiliar words Look at the underlined words in the text below. Try to guess the meaning of each word by looking at its word class, the meaning of other words in th..."
+    },
+    {
+      "node_id": "pte_chunk_099",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 6",
+      "chapter_number": 6,
+      "section": "LESSON 6",
+      "topic": "LESSON 6",
+      "content_type": "unknown",
+      "page_start": 99,
+      "page_end": 99,
+      "is_front_matter": false,
+      "text_preview": "Lesson 6Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Finding the main idea in each paragraph The main idea in each paragraph is generally given in the topic sentences. 1. A dowry—the money or property a bride brings to her husband at marriage—was common in the..."
+    },
+    {
+      "node_id": "pte_chunk_100",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 6",
+      "chapter_number": 6,
+      "section": "LESSON 6",
+      "topic": "LESSON 6",
+      "content_type": "unknown",
+      "page_start": 100,
+      "page_end": 100,
+      "is_front_matter": false,
+      "text_preview": "Lesson 6Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Using word classes to guess the meaning of unfamiliar words 1. A dowry—the money or property a bride brings to her husband at marriage—was common in the past. It flourished throughout much of the ancient worl..."
+    },
+    {
+      "node_id": "pte_chunk_101",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 6",
+      "chapter_number": 6,
+      "section": "LESSON 6",
+      "topic": "LESSON 6",
+      "content_type": "unknown",
+      "page_start": 101,
+      "page_end": 101,
+      "is_front_matter": false,
+      "text_preview": "Lesson 6Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Summary 1 A dowry, which originated as a gift from parents to their daughter, served many different functions, and although it is not very common in many societies, it is still an important aspect of traditio..."
+    },
+    {
+      "node_id": "pte_chunk_102",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 6",
+      "chapter_number": 6,
+      "section": "LESSON 6",
+      "topic": "LESSON 6",
+      "content_type": "unknown",
+      "page_start": 102,
+      "page_end": 102,
+      "is_front_matter": false,
+      "text_preview": "Lesson 6Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Summary 1 A dowry, which originated as a gift from parents to their daughter, served many different functions, and although it is not very common in many societies, it is still an important aspect of traditio..."
+    },
+    {
+      "node_id": "pte_chunk_103",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 6",
+      "chapter_number": 6,
+      "section": "LESSON 6",
+      "topic": "LESSON 6",
+      "content_type": "unknown",
+      "page_start": 103,
+      "page_end": 103,
+      "is_front_matter": false,
+      "text_preview": "Lesson 6Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Read the passage below and summarize it using one sentence. You have 10 minutes to finish this task. Your response will be judged on the quality of your writing and on how well your response presents the key..."
+    },
+    {
+      "node_id": "pte_chunk_104",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 6",
+      "chapter_number": 6,
+      "section": "LESSON 6",
+      "topic": "LESSON 6",
+      "content_type": "unknown",
+      "page_start": 104,
+      "page_end": 104,
+      "is_front_matter": false,
+      "text_preview": "Lesson 6Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Media scrutiny of public figures should be supported because politicians need to be monitored for policy concerns and other public figures depend on the general public for their income. Commentary: This summa..."
+    }
+  ],
+  "audit": {
+    "status": "PASS",
+    "contract_status": "PASS",
+    "contract_audit_path": "output/pte.ch6.gen.contract.audit.json",
+    "contract_report_path": "output/pte.ch6.gen.contract.audit.txt"
+  }
+}
