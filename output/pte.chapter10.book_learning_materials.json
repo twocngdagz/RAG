@@ -1,0 +1,844 @@
+{
+  "schema_version": "book_learning_materials.v2",
+  "book": {
+    "slug": "pte",
+    "title": "pte",
+    "source_pdf": "input/pdfs/pte.pdf"
+  },
+  "generation": {
+    "generated_at": "2026-07-15T03:00:36.581355+00:00",
+    "pipeline_version": "book_learning_materials.v2",
+    "prompt_version": "book_learning_materials_v2_chapter.v2",
+    "backend": "codex-cli",
+    "model": "gpt-5.5",
+    "selection_mode": "chapters",
+    "selected_chapter_numbers": [
+      10
+    ],
+    "book_synthesis_performed": false,
+    "clean_chunks_path": "extracted/pte.section_clean_chunks.json"
+  },
+  "learning_materials": {
+    "chapters": [
+      {
+        "chapter_number": 10,
+        "chapter_title": "LESSON 9: Re-order Paragraphs",
+        "source_chunk_ids": [
+          "pte_chunk_146",
+          "pte_chunk_147",
+          "pte_chunk_148",
+          "pte_chunk_149",
+          "pte_chunk_150",
+          "pte_chunk_151",
+          "pte_chunk_152",
+          "pte_chunk_153",
+          "pte_chunk_154",
+          "pte_chunk_155",
+          "pte_chunk_156",
+          "pte_chunk_157",
+          "pte_chunk_158"
+        ],
+        "estimated_study_time": {
+          "text": "Plan for about 2 hours of focused study for this chapter.",
+          "claim_kind": "study_plan",
+          "origin": "pedagogical_generation",
+          "source_chunk_ids": [],
+          "grounded_in_source_chunk_ids": [],
+          "evidence_spans": [],
+          "reason": null
+        },
+        "chapter_summary": {
+          "text": "This lesson focuses on reading skills and grammar strategies for the PTE Academic Re-order paragraphs item type. It covers identifying main ideas, supporting points, relationships between sentences and paragraphs, academic vocabulary, connotation and denotation, explicit and implicit information, concrete and abstract information, classifying and categorizing information, and following logical or chronological sequence.",
+          "claim_kind": "source_summary",
+          "origin": "source_grounded",
+          "source_chunk_ids": [
+            "pte_chunk_146"
+          ],
+          "grounded_in_source_chunk_ids": [],
+          "evidence_spans": [
+            {
+              "node_id": "pte_chunk_146",
+              "quote": "This lesson focuses on the following reading skills: \n• Identifying the topic, theme or main ideas\n• Identifying supporting points or examples\n• Identifying the relationship between sentences and paragraphs\n• Understanding academic vocabulary\n• Understanding the difference between connotation and denotation"
+            },
+            {
+              "node_id": "pte_chunk_146",
+              "quote": "• Comprehending explicit and implicit information \n• Comprehending concrete and abstract information\n• Classifying and categorizing information\n• Following a logical or chronological sequence of events\nThis lesson provides skills practice for the PTE Academic item type Re-order paragraphs."
+            }
+          ],
+          "reason": null
+        },
+        "learning_objectives": [
+          {
+            "text": "Practice the reading skills listed for this lesson.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_146"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_146",
+                "quote": "By the end of this lesson, test takers will have: \n➤ Practiced the reading skills listed above"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Analyze the rubric, format, and scoring of the Re-order paragraphs item type.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_146"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_146",
+                "quote": "➤ Analyzed the rubric, format and scoring of this item type"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Practice reading strategies for the Re-order paragraphs item type.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_146"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_146",
+                "quote": "➤ Practiced reading strategies for this item type"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Complete practice items under timed conditions and review feedback to practice items.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_146"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_146",
+                "quote": "➤ Completed practice items under timed conditions\n➤ Reviewed feedback to practice items"
+              }
+            ],
+            "reason": null
+          }
+        ],
+        "key_terms": [
+          {
+            "term": "Re-order paragraphs",
+            "meaning": {
+              "text": "Re-order paragraphs is a reading item type with a single correct order for the text boxes in a reading test.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_151"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_151",
+                  "quote": "Re-order paragraphs is a reading item type with a single correct order for the text boxes in a reading \ntest."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Topic sentence",
+            "meaning": {
+              "text": "The topic sentence introduces the main idea.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_147"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_147",
+                  "quote": "the topic sentence introduces \nthe main idea"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Supporting sentences",
+            "meaning": {
+              "text": "Supporting sentences add more detail by giving examples, developing the argument, or giving supporting evidence.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_147"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_147",
+                  "quote": "supporting sentences add more detail by giving examples, developing the argument, \ngiving supporting evidence, etc"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Discourse markers",
+            "meaning": {
+              "text": "Discourse markers are signal words such as 'so', 'but', and 'and' that signpost relationships between ideas in a paragraph.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_148"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_148",
+                  "quote": "discourse markers (or signal words such as ‘so’, ‘but’, ‘and’, etc) signpost relationships between ideas \nin a paragraph"
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "core_lessons": [
+          {
+            "title": "Know What The Item Type Tests",
+            "explanation": {
+              "text": "The Re-order paragraphs item type tests your ability to understand the organization and cohesion of an academic text. The reading texts for this item are up to 150 words in length, and there are two to three items with such reading texts in PTE Academic.",
+              "claim_kind": "task_format",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_151"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_151",
+                  "quote": "The item type tests your ability to understand the organization and cohesion of an academic text. \nThe reading texts for this item are up to 150 words in length."
+                },
+                {
+                  "node_id": "pte_chunk_151",
+                  "quote": "There are two to three items with such reading texts in PTE Academic."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Start With The Topic Sentence",
+            "explanation": {
+              "text": "A useful first step is to identify the topic sentence because it introduces the paragraph's main topic or main idea.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_147",
+                "pte_chunk_154"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_147",
+                  "quote": "Ask them to \nwork together to identify which strip is the topic sentence."
+                },
+                {
+                  "node_id": "pte_chunk_147",
+                  "quote": "the topic sentence introduces \nthe main idea"
+                },
+                {
+                  "node_id": "pte_chunk_154",
+                  "quote": "This is the topic sentence because it introduces the \nparagraph’s main topic: The Burj Dubai."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Use Articles To Track New And Known Information",
+            "explanation": {
+              "text": "Indefinite articles are generally used when something is first introduced, while definite articles are used for later references to that thing, with superlatives, and when distinguishing one particular noun from similar nouns in the same class.",
+              "claim_kind": "grammar_rule",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_147",
+                "pte_chunk_148"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_147",
+                  "quote": "Indefinite articles are generally used when something is first introduced, with"
+                },
+                {
+                  "node_id": "pte_chunk_148",
+                  "quote": "definite articles used for subsequent references to that thing. Definite articles are also used when \na specific noun is mentioned"
+                },
+                {
+                  "node_id": "pte_chunk_148",
+                  "quote": "Definite articles are also used with superlatives, e.g. ‘the tallest’, and when distinguishing \none particular noun from other similar nouns in the same class"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Use Referents To Link Sentences",
+            "explanation": {
+              "text": "Pronouns and other referents help sequence sentences because they substitute for or refer to previously mentioned nouns. Singular countable nouns can be substituted with singular pronouns such as 'it', plural countable nouns with plural pronouns such as 'they', and specific or proper nouns with forms such as 'this' or 'that' plus a generic noun.",
+              "claim_kind": "grammar_rule",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_148"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_148",
+                  "quote": "another key skill for completing this item type is the ability to use referents \nsuch as pronouns to correctly sequence sentences."
+                },
+                {
+                  "node_id": "pte_chunk_148",
+                  "quote": "using pronouns to substitute for or refer to a previously mentioned \nnoun in a paragraph."
+                },
+                {
+                  "node_id": "pte_chunk_148",
+                  "quote": "Singular countable nouns are substituted with singular pronouns such as \n‘it’; plural countable nouns are substituted with plural pronouns such as ‘they’"
+                },
+                {
+                  "node_id": "pte_chunk_148",
+                  "quote": "a specific or proper \nnoun, e.g. ‘the Sydney Opera House’ or ‘Global Warming’, can be substituted with a pronoun such as \n‘this’ or ‘that’ plus a generic noun"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Use Discourse Markers To Recognize Relationships",
+            "explanation": {
+              "text": "Discourse markers signal relationships between ideas, including exemplifying, generalizing, joining or adding ideas, noting similarity, noting difference, cause and effect, sequencing stages or procedures, and summing up.",
+              "claim_kind": "factual_explanation",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_157",
+                "pte_chunk_158"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_157",
+                  "quote": "Work in groups to match the language functions in the left hand column with the discourse markers \nin the right hand column."
+                },
+                {
+                  "node_id": "pte_chunk_158",
+                  "quote": "Function Discourse markers\n1. Exemplifying ‘for example’, ‘for instance’, ‘such as’\n2. Generalizing ‘on the whole’, ‘by and large’, ‘basically’, ‘in general’"
+                },
+                {
+                  "node_id": "pte_chunk_158",
+                  "quote": "3. Joining or adding ideas ‘and’, ‘also’, ‘additionally’, ‘furthermore’, ‘moreover’, ‘as well’\n4. Noting similarity ‘similarly’, ‘in the same way’, ‘likewise’"
+                },
+                {
+                  "node_id": "pte_chunk_158",
+                  "quote": "5. Noting difference ‘however’, ‘in contrast’, ‘on the other hand’, ‘though’, ‘nevertheless’\n6. Signaling cause and effect ‘therefore’, ‘so’, ‘as a consequence’, ‘consequently’, ‘as a result’, ‘thus’"
+                },
+                {
+                  "node_id": "pte_chunk_158",
+                  "quote": "7. Sequencing stages or \nprocedures ‘first’, ‘secondly’, ‘finally’, ‘lastly’, ‘after this’, ‘then’\n8. Summing up ‘in short’, ‘in conclusion’"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Practice Under Timed Conditions",
+            "explanation": {
+              "text": "The lesson includes individual timed practice of Re-order paragraph items. Although the Reading items in PTE Academic are not timed individually, test takers should try to complete them as quickly as possible.",
+              "claim_kind": "official_rule",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_149"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_149",
+                  "quote": "Main activity 4 individual work  (20 mins)\nTimed practice of item"
+                },
+                {
+                  "node_id": "pte_chunk_149",
+                  "quote": "although the Reading \nitems in PTE Academic are not timed individually, test takers should try to complete them as quickly \nas possible."
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "worked_examples": [
+          {
+            "title": "Article Clues In A Burj Dubai Paragraph",
+            "example": {
+              "text": "Try ordering these sentence ideas: first introduce the Burj Dubai, then describe the height of the building, then explain the word 'estimated', then introduce a hotel in the building, and finally use 'that' to refer back to the hotel.",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "The source answer key orders the Burj Dubai paragraph by first identifying the topic sentence, then using 'the building' to refer to the Burj Dubai, 'the use of the ...' to refer to statistics in the previous sentence, 'A hotel' to introduce new information, and 'that' to refer to the hotel.",
+              "claim_kind": "factual_explanation",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_154"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_154",
+                  "quote": "One of the world’s tallest structures is the Burj Dubai. (This is the topic sentence because it introduces the \nparagraph’s main topic: The Burj Dubai.)"
+                },
+                {
+                  "node_id": "pte_chunk_154",
+                  "quote": "Standing at 167 floors, the height of the building is widely estimated to be 707 metres. (The words ‘the \nbuilding’ refer to the Burj Dubai.)"
+                },
+                {
+                  "node_id": "pte_chunk_154",
+                  "quote": "Note the use of the qualifier “estimated”; the building’s exact height is a tightly guarded secret. (The phrase \n‘the use of the …’ refers to the statistics in the previous sentence"
+                },
+                {
+                  "node_id": "pte_chunk_154",
+                  "quote": "A hotel occupies the bottom 37 floors of the building. (‘A hotel’ introduces new information"
+                },
+                {
+                  "node_id": "pte_chunk_154",
+                  "quote": "Above that, on floors 45 through 108 are apartments and corporate offices. (The word ‘that’ refers to the \nhotel.)"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Referent Clues In A Valentine's Day Paragraph",
+            "example": {
+              "text": "When a sentence says 'The holiday', look backward for the named holiday. When a sentence says 'this pagan festival', look backward for the festival just introduced. When a sentence says 'this early Pope', look backward for the Pope just named.",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "The source answer key shows that 'The holiday' refers to Valentine's Day, 'This pagan festival' refers to the fertility celebration in the previous sentence, and 'this early Pope' refers to Pope Gelasius I.",
+              "claim_kind": "factual_explanation",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_156"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_156",
+                  "quote": "The holiday’s roots are in the ancient Roman festival of Lupercalia, a fertility celebration commemorated annually \non February 15. (‘The holiday’ refers to Valentine’s Day.)"
+                },
+                {
+                  "node_id": "pte_chunk_156",
+                  "quote": "Pope Gelasius I recast this pagan festival as a Christian feast day circa 496, declaring February 14 to be St. \nValentine’s Day. (‘This pagan festival’ refers to ‘a fertility celebration commemorated annually on \nFebruary 15’"
+                },
+                {
+                  "node_id": "pte_chunk_156",
+                  "quote": "Which St. Valentine this early Pope intended to honor remains a mystery: according to the Catholic Encyclopedia, \nthere were at least three early Christian saints by that name. (The phrase ‘this early Pope’ refers to Pope \nGelasius I"
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "common_misconceptions": [
+          {
+            "misconception": {
+              "text": "Any sentence that contains a definite article can safely begin a Re-order paragraphs item.",
+              "claim_kind": "misconception_statement",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "A definite article can depend on information in a previous sentence, while an indefinite article can mark the first reference to the item type.",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_152"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_152",
+                  "quote": "The indefinite article (‘a reading item \ntype’) is used in this sentence because it is the first reference to the item type."
+                },
+                {
+                  "node_id": "pte_chunk_152",
+                  "quote": "The definite article in the second sentence (‘The item type’) depends on the information in the previous sentence to make \nsense."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "misconception": {
+              "text": "Pronouns can be interpreted without checking earlier sentences.",
+              "claim_kind": "misconception_statement",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "Pronouns and reference phrases can depend on backward reference to nouns or noun phrases in previous sentences.",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_152"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_152",
+                  "quote": "The use of the reference pronoun (‘for this item’) depends on the information in the previous sentence to make sense."
+                },
+                {
+                  "node_id": "pte_chunk_152",
+                  "quote": "The use of the pronoun (‘such reading texts’) depends on the backwards reference to the noun phrase ‘reading texts’ in the \nprevious sentence to make sense."
+                },
+                {
+                  "node_id": "pte_chunk_152",
+                  "quote": "The use of the pronoun (‘They’) depends on the backwards reference to the noun phrase ‘two to three items with such \nreading texts’ in the previous sentence to make sense."
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "practice_questions": [
+          {
+            "question": {
+              "text": "You see five jumbled sentences. What should you identify first before ordering the remaining supporting sentences?",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Identify the topic sentence first, then use clues such as articles, referents, and discourse markers to order the supporting sentences.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "In a paragraph, why might 'the building' be unlikely to appear before the building has been introduced?",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Because a definite article often points back to something already introduced. A first mention is more likely to use an indefinite article or name the noun directly.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Match the discourse marker function to an example: cause and effect; contrast; summing up. Use examples from this chapter.",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Cause and effect: 'therefore', 'so', 'as a result', or 'thus'. Contrast: 'however', 'in contrast', 'on the other hand', 'though', or 'nevertheless'. Summing up: 'in short' or 'in conclusion'.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "If a sentence begins with 'They', what should you look for in earlier sentences?",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Look for a previous plural noun or noun phrase that 'They' can refer back to.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "review_checklist": [
+          {
+            "text": "I can identify a topic sentence before ordering supporting sentences.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can use definite and indefinite articles to track first mention and later reference.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can use pronouns and other referents to connect a sentence to information in a previous sentence.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can recognize discourse markers for addition, contrast, similarity, cause and effect, sequencing, examples, generalization, and conclusion.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can practise Re-order paragraphs quickly while remembering that the Reading items are not timed individually.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          }
+        ]
+      }
+    ]
+  },
+  "source_chunks": [
+    {
+      "node_id": "pte_chunk_146",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 9",
+      "chapter_number": 10,
+      "section": "LESSON 9",
+      "topic": "LESSON 9",
+      "content_type": "unknown",
+      "page_start": 146,
+      "page_end": 146,
+      "is_front_matter": false,
+      "text_preview": "Lesson 9© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 65 The Official Guide to PTE Academic Teacher Notes Overview Time allocated: 2 hours This lesson focuses on the following reading skills: • Identifying the topic, theme or main ideas • Identifying supporting points or exam..."
+    },
+    {
+      "node_id": "pte_chunk_147",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 9",
+      "chapter_number": 10,
+      "section": "LESSON 9",
+      "topic": "LESSON 9",
+      "content_type": "unknown",
+      "page_start": 147,
+      "page_end": 147,
+      "is_front_matter": false,
+      "text_preview": "Lesson 9© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 66 The Official Guide to PTE Academic Teacher Notes Lesson Plan Introduction (5 mins) Materials: Official Guide p. 103 • Explain that in this lesson test takers will look at the Re-order paragraphs item type and some of th..."
+    },
+    {
+      "node_id": "pte_chunk_148",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 9",
+      "chapter_number": 10,
+      "section": "LESSON 9",
+      "topic": "LESSON 9",
+      "content_type": "unknown",
+      "page_start": 148,
+      "page_end": 148,
+      "is_front_matter": false,
+      "text_preview": "Lesson 9© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 67 The Official Guide to PTE Academic Teacher Notes definite articles used for subsequent references to that thing. Definite articles are also used when a specific noun is mentioned, e.g. ‘I have a pet. The pet is a dog. I..."
+    },
+    {
+      "node_id": "pte_chunk_149",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 9",
+      "chapter_number": 10,
+      "section": "LESSON 9",
+      "topic": "LESSON 9",
+      "content_type": "unknown",
+      "page_start": 149,
+      "page_end": 149,
+      "is_front_matter": false,
+      "text_preview": "Lesson 9© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 68 The Official Guide to PTE Academic Teacher Notes • Divide the board into five columns. At the top of each column, write one of the following signal words: ‘in general’ (signaling generalization), ‘and’ (signaling additi..."
+    },
+    {
+      "node_id": "pte_chunk_150",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 9",
+      "chapter_number": 10,
+      "section": "LESSON 9",
+      "topic": "LESSON 9",
+      "content_type": "unknown",
+      "page_start": 150,
+      "page_end": 150,
+      "is_front_matter": false,
+      "text_preview": "Lesson 9© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 69 The Official Guide to PTE Academic Teacher Notes / The women were asked to fill in a questionnaire about their diet and about their suffering from acne. / No link was found between acne and traditionally suspect food su..."
+    },
+    {
+      "node_id": "pte_chunk_151",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 9",
+      "chapter_number": 10,
+      "section": "LESSON 9",
+      "topic": "LESSON 9",
+      "content_type": "unknown",
+      "page_start": 151,
+      "page_end": 151,
+      "is_front_matter": false,
+      "text_preview": "Lesson 9Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Cut up paragraph The following sentences are jumbled sentences from a paragraph about the Re-order paragraphs item type. They need to be cut into strips, and then given to test takers to use in order to assem..."
+    },
+    {
+      "node_id": "pte_chunk_152",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 9",
+      "chapter_number": 10,
+      "section": "LESSON 9",
+      "topic": "LESSON 9",
+      "content_type": "unknown",
+      "page_start": 152,
+      "page_end": 152,
+      "is_front_matter": false,
+      "text_preview": "Lesson 9Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Cut up paragraph: Answer key The following sentences are in the correct order. Look at the underlined grammatical clues that help the reader to correctly sequence the sentences. The notes below the paragraph..."
+    },
+    {
+      "node_id": "pte_chunk_153",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 9",
+      "chapter_number": 10,
+      "section": "LESSON 9",
+      "topic": "LESSON 9",
+      "content_type": "unknown",
+      "page_start": 153,
+      "page_end": 153,
+      "is_front_matter": false,
+      "text_preview": "Lesson 9Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Using articles to organize ideas The following 5 sentences form a paragraph but they are not in the correct sequence. Put them into the correct sequence by first identifying the topic sentence and then using..."
+    },
+    {
+      "node_id": "pte_chunk_154",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 9",
+      "chapter_number": 10,
+      "section": "LESSON 9",
+      "topic": "LESSON 9",
+      "content_type": "unknown",
+      "page_start": 154,
+      "page_end": 154,
+      "is_front_matter": false,
+      "text_preview": "Lesson 9Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Using articles to organize ideas: Answer key The correct order of the sentences is as follows. One of the world’s tallest structures is the Burj Dubai. (This is the topic sentence because it introduces the pa..."
+    },
+    {
+      "node_id": "pte_chunk_155",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 9",
+      "chapter_number": 10,
+      "section": "LESSON 9",
+      "topic": "LESSON 9",
+      "content_type": "unknown",
+      "page_start": 155,
+      "page_end": 155,
+      "is_front_matter": false,
+      "text_preview": "Lesson 9Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Using referents to organize ideas The following 5 sentences form a paragraph but they are not in the correct sequence. Put them into the correct sequence by first identifying the topic sentence and then using..."
+    },
+    {
+      "node_id": "pte_chunk_156",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 9",
+      "chapter_number": 10,
+      "section": "LESSON 9",
+      "topic": "LESSON 9",
+      "content_type": "unknown",
+      "page_start": 156,
+      "page_end": 156,
+      "is_front_matter": false,
+      "text_preview": "Lesson 9Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Using referents to organize ideas: Answer key The history of Valentine’s Day is obscure, and further clouded by various fanciful legends. (This is the topic sentence because it introduces the paragraph’s main..."
+    },
+    {
+      "node_id": "pte_chunk_157",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 9",
+      "chapter_number": 10,
+      "section": "LESSON 9",
+      "topic": "LESSON 9",
+      "content_type": "unknown",
+      "page_start": 157,
+      "page_end": 157,
+      "is_front_matter": false,
+      "text_preview": "Lesson 9Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Discourse markers Task 1 Work in groups to match the language functions in the left hand column with the discourse markers in the right hand column. Function Discourse markers 1. Exemplifying ‘therefore’, ‘so..."
+    },
+    {
+      "node_id": "pte_chunk_158",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 9",
+      "chapter_number": 10,
+      "section": "LESSON 9",
+      "topic": "LESSON 9",
+      "content_type": "unknown",
+      "page_start": 158,
+      "page_end": 158,
+      "is_front_matter": false,
+      "text_preview": "Lesson 9Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Discourse markers: Answer key Task 1 Function Discourse markers 1. Exemplifying ‘for example’, ‘for instance’, ‘such as’ 2. Generalizing ‘on the whole’, ‘by and large’, ‘basically’, ‘in general’ 3. Joining or..."
+    }
+  ],
+  "audit": {
+    "status": "PASS",
+    "contract_status": "PASS",
+    "contract_audit_path": "output/pte.ch10.gen.contract.audit.json",
+    "contract_report_path": "output/pte.ch10.gen.contract.audit.txt"
+  }
+}
