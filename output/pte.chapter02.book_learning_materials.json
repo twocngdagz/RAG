@@ -1,0 +1,996 @@
+{
+  "schema_version": "book_learning_materials.v2",
+  "book": {
+    "slug": "pte",
+    "title": "pte",
+    "source_pdf": "input/pdfs/pte.pdf"
+  },
+  "generation": {
+    "generated_at": "2026-07-14T13:20:34.384016+00:00",
+    "pipeline_version": "book_learning_materials.v2",
+    "prompt_version": "book_learning_materials_v2_chapter.v2",
+    "backend": "codex-cli",
+    "model": "gpt-5.5",
+    "selection_mode": "chapters",
+    "selected_chapter_numbers": [
+      2
+    ],
+    "book_synthesis_performed": false,
+    "clean_chunks_path": "extracted/pte.section_clean_chunks.json"
+  },
+  "learning_materials": {
+    "chapters": [
+      {
+        "chapter_number": 2,
+        "chapter_title": "Lesson 2: Read Aloud and Repeat Sentence",
+        "source_chunk_ids": [
+          "pte_chunk_029",
+          "pte_chunk_030",
+          "pte_chunk_031",
+          "pte_chunk_032",
+          "pte_chunk_033",
+          "pte_chunk_034",
+          "pte_chunk_035",
+          "pte_chunk_036",
+          "pte_chunk_037",
+          "pte_chunk_038",
+          "pte_chunk_039",
+          "pte_chunk_040",
+          "pte_chunk_041",
+          "pte_chunk_042",
+          "pte_chunk_043",
+          "pte_chunk_044",
+          "pte_chunk_045",
+          "pte_chunk_046"
+        ],
+        "estimated_study_time": {
+          "text": "Plan to spend about 2 hours studying this chapter, with extra time if you repeat the timed practice items.",
+          "claim_kind": "study_plan",
+          "origin": "pedagogical_generation",
+          "source_chunk_ids": [],
+          "grounded_in_source_chunk_ids": [],
+          "evidence_spans": [],
+          "reason": null
+        },
+        "chapter_summary": {
+          "text": "This lesson focuses on Read aloud and Repeat sentence item types. It practices speaking, reading, and listening skills, including reading aloud, speaking at a natural rate, fluent speech, correct intonation, correct pronunciation, correct stress, timed speaking, academic vocabulary, and listening to variations in tone, speed, and accent.",
+          "claim_kind": "source_summary",
+          "origin": "source_grounded",
+          "source_chunk_ids": [
+            "pte_chunk_029"
+          ],
+          "grounded_in_source_chunk_ids": [],
+          "evidence_spans": [
+            {
+              "node_id": "pte_chunk_029",
+              "quote": "This lesson focuses on the following skills: \nSpeaking\n• Speaking for a purpose (to repeat, to inform, to explain)\n• Reading a text aloud\n• Speaking at a natural rate\n• Producing fluent speech\n• Using correct intonation\n• Using correct pronunciation\n• Using correct stress\n• Speaking under timed conditions"
+            },
+            {
+              "node_id": "pte_chunk_029",
+              "quote": "Reading\n• Identifying a writer’s purpose, style, tone or attitude\n• Understanding academic vocabulary\n• Reading a text under timed conditions\nListening\n• Understanding academic vocabulary\n• Inferring the meaning of unfamiliar words\n• Comprehending variations in tone, speed, accent"
+            },
+            {
+              "node_id": "pte_chunk_029",
+              "quote": "This lesson provides skills practice for the PTE Academic item types Read aloud and Repeat Sentence"
+            }
+          ],
+          "reason": null
+        },
+        "learning_objectives": [
+          {
+            "text": "Analyze the rubric, format, and scoring of the Read aloud and Repeat sentence item types.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_029"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_029",
+                "quote": "Analyzed the rubric, format and scoring of these item types"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Practice speaking, reading, and listening strategies for these item types.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_029"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_029",
+                "quote": "Practiced speaking, reading and listening strategies for these item types"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Complete practice items under timed conditions and review feedback to practice items.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_029"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_029",
+                "quote": "Completed practice items under timed conditions\n➤\t Reviewed feedback to practice items"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Practice pronunciation and oral fluency skills related to successful completion of these item types.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_029"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_029",
+                "quote": "Practiced pronunciation and oral fluency skills related to the successful completion of these item types"
+              }
+            ],
+            "reason": null
+          }
+        ],
+        "key_terms": [
+          {
+            "term": "Read aloud",
+            "meaning": {
+              "text": "A Read aloud item tests the ability to read a short text aloud using correct pronunciation and intonation, and it assesses both reading and speaking skills.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_036"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_036",
+                  "quote": "The Read aloud item type tests your ability to read a short text aloud using correct pronunciation and intonation. \nIt assesses both reading and speaking skills."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Repeat sentence",
+            "meaning": {
+              "text": "A Repeat sentence item tests the ability to understand and remember a sentence exactly as it is heard, using correct pronunciation, and it assesses speaking and listening skills.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_037"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_037",
+                  "quote": "The Repeat sentence item type tests your ability to understand and remember a sentence exactly as you hear \nit, using correct pronunciation. It assesses both speaking and listening skills."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Chunking",
+            "meaning": {
+              "text": "Chunking means grouping words when speaking and pausing after each group.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_031"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_031",
+                  "quote": "Explain that we chunk words into groups when we say them and that we pause after \neach group."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Sentence stress",
+            "meaning": {
+              "text": "Sentence stress is used for emphasis and to clarify meaning.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_032"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_032",
+                  "quote": "Explain that sentence stress is used for emphasis as well as to clarify meaning."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Intonation",
+            "meaning": {
+              "text": "Intonation refers to when the voice rises and falls.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_033"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_033",
+                  "quote": "the ability to use intonation correctly (i.e. when your voice rises and falls)."
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "core_lessons": [
+          {
+            "title": "Read aloud item focus and scoring",
+            "explanation": {
+              "text": "Read aloud tests reading a short text aloud with correct pronunciation and intonation, assesses reading and speaking skills, and is scored on accurate content, oral fluency, and correct pronunciation.",
+              "claim_kind": "official_rule",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_036"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_036",
+                  "quote": "The Read aloud item type tests your ability to read a short text aloud using correct pronunciation and intonation. \nIt assesses both reading and speaking skills."
+                },
+                {
+                  "node_id": "pte_chunk_036",
+                  "quote": "Scoring is based on three factors:\n• Accurate content\n• Oral fluency\n• Correct pronunciation"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Repeat sentence item focus and scoring",
+            "explanation": {
+              "text": "Repeat sentence tests understanding and remembering a sentence exactly as heard, using correct pronunciation, assesses speaking and listening skills, and is scored on accurate content, oral fluency, and correct pronunciation.",
+              "claim_kind": "official_rule",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_037"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_037",
+                  "quote": "The Repeat sentence item type tests your ability to understand and remember a sentence exactly as you hear \nit, using correct pronunciation. It assesses both speaking and listening skills."
+                },
+                {
+                  "node_id": "pte_chunk_037",
+                  "quote": "Scoring is based on three factors:\n• Accurate content\n• Oral fluency\n• Correct pronunciation"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Pronounce word beginnings, endings, and suffixes carefully",
+            "explanation": {
+              "text": "For Read aloud and Repeat sentence, correctly pronouncing individual sounds in words is a key skill. The lesson emphasizes consonants at the beginning and end of words and common suffixes such as ous and tion.",
+              "claim_kind": "pronunciation_rule",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_031"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_031",
+                  "quote": "one of the key skills for the Read aloud and Repeat sentence item types is \nthe ability to correctly pronounce individual sounds in words."
+                },
+                {
+                  "node_id": "pte_chunk_031",
+                  "quote": "many non-native speakers of English have difficulty with pronouncing consonants \nat the beginning and the end of words."
+                },
+                {
+                  "node_id": "pte_chunk_031",
+                  "quote": "Emphasize the pronunciation of common suffixes such as ‘ous’ and ‘tion’."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Use sound, not spelling, to guide pronunciation",
+            "explanation": {
+              "text": "The lesson states that the important point in pronunciation is the sound, not the letter or spelling.",
+              "claim_kind": "pronunciation_rule",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_031"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_031",
+                  "quote": "Remind test takers that it is the sound that is important, not the letter or spelling."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Chunk words into meaningful groups",
+            "explanation": {
+              "text": "When speaking, words are chunked into groups and pauses come after each group. As a general rule, words tend to be grouped into phrases such as noun phrases, prepositional phrases, and verbal phrases.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_031",
+                "pte_chunk_032"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_031",
+                  "quote": "Explain that we chunk words into groups when we say them and that we pause after \neach group."
+                },
+                {
+                  "node_id": "pte_chunk_032",
+                  "quote": "as a general rule, we tend to group words together into phrases (e.g. noun \nphrases, prepositional phrases, verbal phrases) when we say them."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Use punctuation to support chunking",
+            "explanation": {
+              "text": "Punctuation can help group words when reading aloud: words between commas are often said together, and words on either side of a full stop are never grouped together.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_032"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_032",
+                  "quote": "they can also use punctuation to help them group words together when they \nread aloud."
+                },
+                {
+                  "node_id": "pte_chunk_032",
+                  "quote": "words that appear between commas are often said together, and words on \neither side of a full stop are never grouped together."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Use sentence stress to highlight meaning",
+            "explanation": {
+              "text": "In sentence stress, key words such as nouns, adjectives, or verbs tend to receive stress rather than small words such as articles or prepositions. New information is usually stressed, while old or repeated information is not.",
+              "claim_kind": "pronunciation_rule",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_032"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_032",
+                  "quote": "the stress within a sentence, phrase or chunk of words tends to fall on key words \nsuch as nouns, adjectives or verbs, rather than on small words such as articles or prepositions."
+                },
+                {
+                  "node_id": "pte_chunk_032",
+                  "quote": "new information in a sentence is usually stressed, whereas old or repeated information is \nnot."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Use rising and falling intonation",
+            "explanation": {
+              "text": "In English, rising and falling intonation is used to express meaning and attitude. Falling intonation is generally used toward the end of statements, commands, and wh- questions; rising intonation is used within lists and for yes/no questions or requests.",
+              "claim_kind": "pronunciation_rule",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_033"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_033",
+                  "quote": "in English we use rising and \nfalling intonation to express meaning as well as attitude."
+                },
+                {
+                  "node_id": "pte_chunk_033",
+                  "quote": "in general, we use falling intonation towards the end of a sentence when it is a statement, \ncommand or ‘wh’- question."
+                },
+                {
+                  "node_id": "pte_chunk_033",
+                  "quote": "we use rising intonation within sentences that list items (with commas or semi-\ncolons separating them), and for yes/no questions or requests."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Timed practice procedure",
+            "explanation": {
+              "text": "In the timed practice, Read aloud items are practiced first, then Repeat sentence items. Pairs simulate test conditions by timing each other as indicated on the worksheets.",
+              "claim_kind": "task_format",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_034"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_034",
+                  "quote": "test takers should first take it in turns to read aloud the passages in the Read aloud \nsection one by one."
+                },
+                {
+                  "node_id": "pte_chunk_034",
+                  "quote": "After test takers have completed all three items in the Read aloud section, they should move on to \nthe Repeat sentence items."
+                },
+                {
+                  "node_id": "pte_chunk_034",
+                  "quote": "Remind pairs to simulate test conditions by timing each other as indicated on the worksheets."
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "worked_examples": [
+          {
+            "title": "Chunking a Read aloud sentence",
+            "example": {
+              "text": "Practice sentence: Words which form a phrase are usually grouped together when we say them.\nPossible chunking: Words which form a phrase / are usually grouped together / when we say them.",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "The lesson gives this sentence as an example and explains that it would be spoken in three chunks: a noun phrase, then a verb phrase, then an adverbial phrase.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_032"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_032",
+                  "quote": "Write the following sentence on the board: \n– Words which form a phrase are usually grouped together when we say them."
+                },
+                {
+                  "node_id": "pte_chunk_032",
+                  "quote": "this sentence would be spoken as ‘Words which form a phrase/ are usually grouped \ntogether/ when we say them.’"
+                },
+                {
+                  "node_id": "pte_chunk_032",
+                  "quote": "the first chunk of words is a noun phrase, \nthe next a verb phrase, and the last an adverbial phrase."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Checking a Read aloud response",
+            "example": {
+              "text": "After your partner reads a passage, check three things: whether all and only the written words were included, whether the response was smooth and natural in speed, and whether words were pronounced correctly.",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "The timed practice asks listening partners to make notes on accurate wording, smooth natural-rate reading, and correct pronunciation.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_034"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_034",
+                  "quote": "Does your partner’s response include all the words in the reading text and only these words?\n– Does your partner read smoothly and at a natural rate of speed?\n– Does your partner pronounce words correctly?"
+                },
+                {
+                  "node_id": "pte_chunk_034",
+                  "quote": "listening partners should make notes on these three aspects of the reading \npartner’s performance."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Repeat sentence timing drill",
+            "example": {
+              "text": "Speaker: We will divide the class into three discussion groups.\nListener: Repeat the sentence exactly once, keeping the same content as closely as possible.",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "Worksheet A instructs one partner to read each Repeat sentence item aloud once, and the other partner repeats it back exactly as it is said.",
+              "claim_kind": "task_format",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_045"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_045",
+                  "quote": "Read each sentence aloud once to your partner. Your partner should repeat the sentence back to \nyou exactly as you say it."
+                },
+                {
+                  "node_id": "pte_chunk_045",
+                  "quote": "We will divide the class into three discussion groups."
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "common_misconceptions": [
+          {
+            "misconception": {
+              "text": null,
+              "claim_kind": "misconception_statement",
+              "origin": "insufficient_source_evidence",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": "The supplied source discusses practice problems and feedback, but it does not explicitly state a learner misconception."
+            },
+            "correction": {
+              "text": null,
+              "claim_kind": "misconception_correction",
+              "origin": "insufficient_source_evidence",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": "Because no explicit misconception is stated in the supplied source, a correction to that misconception cannot be safely grounded."
+            }
+          }
+        ],
+        "practice_questions": [
+          {
+            "question": {
+              "text": "For a Read aloud item, what three scoring factors should you keep in mind while practicing?",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Accurate content, oral fluency, and correct pronunciation.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Read this sentence aloud in meaningful chunks: Words which form a phrase are usually grouped together when we say them.",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "One possible chunking is: Words which form a phrase / are usually grouped together / when we say them.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "When predicting sentence stress, which kinds of words should you check first?",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Check key words such as nouns, adjectives, and verbs, and also consider whether the information is new or repeated.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Repeat this sentence exactly: The circulation desk is located on the ground floor.",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "The circulation desk is located on the ground floor.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Before a timed Read aloud response, what pronunciation features from this lesson should you quickly review?",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Review consonants at the beginning and end of words, chunking words into phrase groups, stressing key words, and using rising and falling intonation.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "review_checklist": [
+          {
+            "text": "I can explain what the Read aloud item type tests and name its three scoring factors.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can explain what the Repeat sentence item type tests and name its three scoring factors.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can read a short passage aloud in meaningful word groups instead of pausing after every word.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can use punctuation to help decide where spoken word groups begin and end.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can predict likely stressed words by looking for key nouns, adjectives, and verbs, and by noticing new information.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can practice rising and falling intonation while reading aloud at a natural pace.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can complete Read aloud and Repeat sentence practice under timed conditions.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          }
+        ]
+      }
+    ]
+  },
+  "source_chunks": [
+    {
+      "node_id": "pte_chunk_029",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 2",
+      "chapter_number": 2,
+      "section": "LESSON 2",
+      "topic": "LESSON 2",
+      "content_type": "unknown",
+      "page_start": 29,
+      "page_end": 29,
+      "is_front_matter": false,
+      "text_preview": "Lesson 2© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 17 The Official Guide to PTE Academic Teacher Notes Overview Time allocated: 2 hours This lesson focuses on the following skills: Speaking • Speaking for a purpose (to repeat, to inform, to explain) • Reading a text aloud..."
+    },
+    {
+      "node_id": "pte_chunk_030",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 2",
+      "chapter_number": 2,
+      "section": "LESSON 2",
+      "topic": "LESSON 2",
+      "content_type": "unknown",
+      "page_start": 30,
+      "page_end": 30,
+      "is_front_matter": false,
+      "text_preview": "Lesson 2© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 18 The Official Guide to PTE Academic Teacher Notes • Image of ‘Chunking words into groups: Suggested answers’ for projection on board/visualizer • Copies of ‘Sentence stress worksheet’ (individual handouts) • Image of ‘Se..."
+    },
+    {
+      "node_id": "pte_chunk_031",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 2",
+      "chapter_number": 2,
+      "section": "LESSON 2",
+      "topic": "LESSON 2",
+      "content_type": "unknown",
+      "page_start": 31,
+      "page_end": 31,
+      "is_front_matter": false,
+      "text_preview": "Lesson 2© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 19 The Official Guide to PTE Academic Teacher Notes • Ask test takers to share any problems or issues with the rest of the class. Explain that this lesson will focus on developing pronunciation skills such as chunking, usi..."
+    },
+    {
+      "node_id": "pte_chunk_032",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 2",
+      "chapter_number": 2,
+      "section": "LESSON 2",
+      "topic": "LESSON 2",
+      "content_type": "unknown",
+      "page_start": 32,
+      "page_end": 32,
+      "is_front_matter": false,
+      "text_preview": "Lesson 2© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 20 The Official Guide to PTE Academic Teacher Notes • Tell test takers that, as a general rule, we tend to group words together into phrases (e.g. noun phrases, prepositional phrases, verbal phrases) when we say them. • Wr..."
+    },
+    {
+      "node_id": "pte_chunk_033",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 2",
+      "chapter_number": 2,
+      "section": "LESSON 2",
+      "topic": "LESSON 2",
+      "content_type": "unknown",
+      "page_start": 33,
+      "page_end": 33,
+      "is_front_matter": false,
+      "text_preview": "Lesson 2© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 21 The Official Guide to PTE Academic Teacher Notes • Tell test takers to compare their underlined words with others in their group. They should then take turns to read the paragraph aloud, stressing the words that they un..."
+    },
+    {
+      "node_id": "pte_chunk_034",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 2",
+      "chapter_number": 2,
+      "section": "LESSON 2",
+      "topic": "LESSON 2",
+      "content_type": "unknown",
+      "page_start": 34,
+      "page_end": 34,
+      "is_front_matter": false,
+      "text_preview": "Lesson 2© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 22 The Official Guide to PTE Academic Teacher Notes Main activity 4 pair work and whole class (15 mins) Timed practice of test items Materials: Copies of ‘Timed practice: Worksheet A’ and ‘Timed practice: Worksheet B’ Skil..."
+    },
+    {
+      "node_id": "pte_chunk_035",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 2",
+      "chapter_number": 2,
+      "section": "LESSON 2",
+      "topic": "LESSON 2",
+      "content_type": "unknown",
+      "page_start": 35,
+      "page_end": 35,
+      "is_front_matter": false,
+      "text_preview": "Lesson 2© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 23 The Official Guide to PTE Academic Teacher Notes Homework activities • For homework, ask test takers to complete the Read aloud and Repeat sentence practice items on pages 44 and 49 of the Official Guide and the accompa..."
+    },
+    {
+      "node_id": "pte_chunk_036",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 2",
+      "chapter_number": 2,
+      "section": "LESSON 2",
+      "topic": "LESSON 2",
+      "content_type": "unknown",
+      "page_start": 36,
+      "page_end": 36,
+      "is_front_matter": false,
+      "text_preview": "Lesson 2Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Reading aloud practice: Worksheet A Read the following text aloud to your partner. Think carefully about your pronunciation and intonation, and remember to chunk words into meaningful groups. Do not show this..."
+    },
+    {
+      "node_id": "pte_chunk_037",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 2",
+      "chapter_number": 2,
+      "section": "LESSON 2",
+      "topic": "LESSON 2",
+      "content_type": "unknown",
+      "page_start": 37,
+      "page_end": 37,
+      "is_front_matter": false,
+      "text_preview": "Lesson 2Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Reading aloud practice: Worksheet B Read the following text aloud to your partner. Think carefully about your pronunciation and intonation, and remember to chunk words into meaningful groups. Do not show this..."
+    },
+    {
+      "node_id": "pte_chunk_038",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 2",
+      "chapter_number": 2,
+      "section": "LESSON 2",
+      "topic": "LESSON 2",
+      "content_type": "unknown",
+      "page_start": 38,
+      "page_end": 38,
+      "is_front_matter": false,
+      "text_preview": "Lesson 2Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Pronouncing beginnings and endings these development three statistics bin services pin variables graph analyze graduate analysis glad analyses liberate arduous river distribution nibble wanted thought changed..."
+    },
+    {
+      "node_id": "pte_chunk_039",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 2",
+      "chapter_number": 2,
+      "section": "LESSON 2",
+      "topic": "LESSON 2",
+      "content_type": "unknown",
+      "page_start": 39,
+      "page_end": 39,
+      "is_front_matter": false,
+      "text_preview": "Lesson 2Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Pronouncing sounds and words Take turns to read aloud the following text. Pay attention to the underlined words or sounds but do not read the punctuation marks. Take a few seconds to read through the text sil..."
+    },
+    {
+      "node_id": "pte_chunk_040",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 2",
+      "chapter_number": 2,
+      "section": "LESSON 2",
+      "topic": "LESSON 2",
+      "content_type": "unknown",
+      "page_start": 40,
+      "page_end": 40,
+      "is_front_matter": false,
+      "text_preview": "Lesson 2Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Chunking words into groups: Suggested answers The development of easy-to-use statistical software has changed the way statistics is being taught and learned. Students can make transformations of variables, cr..."
+    },
+    {
+      "node_id": "pte_chunk_041",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 2",
+      "chapter_number": 2,
+      "section": "LESSON 2",
+      "topic": "LESSON 2",
+      "content_type": "unknown",
+      "page_start": 41,
+      "page_end": 41,
+      "is_front_matter": false,
+      "text_preview": "Lesson 2Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Sentence stress worksheet Read the following text quietly to yourself and try to predict which words will be stressed. When the text is read aloud, listen carefully and underline the stressed words. The devel..."
+    },
+    {
+      "node_id": "pte_chunk_042",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 2",
+      "chapter_number": 2,
+      "section": "LESSON 2",
+      "topic": "LESSON 2",
+      "content_type": "unknown",
+      "page_start": 42,
+      "page_end": 42,
+      "is_front_matter": false,
+      "text_preview": "Lesson 2Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 The development of easy-to-use statistical software has changed the way statistics is being taught and learned. Students can make transformations of variables, create graphs of distributions of variables, and..."
+    },
+    {
+      "node_id": "pte_chunk_043",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 2",
+      "chapter_number": 2,
+      "section": "LESSON 2",
+      "topic": "LESSON 2",
+      "content_type": "unknown",
+      "page_start": 43,
+      "page_end": 43,
+      "is_front_matter": false,
+      "text_preview": "Lesson 2Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Intonation worksheet Read the following text quietly to yourself and try to predict the intonation that will be used. When the text is read aloud, listen carefully. Draw an upward arrow ( ➔) whenever you hear..."
+    },
+    {
+      "node_id": "pte_chunk_044",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 2",
+      "chapter_number": 2,
+      "section": "LESSON 2",
+      "topic": "LESSON 2",
+      "content_type": "unknown",
+      "page_start": 44,
+      "page_end": 44,
+      "is_front_matter": false,
+      "text_preview": "Lesson 2Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 The development of easy-to-use statistical software ➔has changed the way statistics is being taught and learned ➔. Students can make transformations of variables ➔, create graphs of distributions of variables..."
+    },
+    {
+      "node_id": "pte_chunk_045",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 2",
+      "chapter_number": 2,
+      "section": "LESSON 2",
+      "topic": "LESSON 2",
+      "content_type": "unknown",
+      "page_start": 45,
+      "page_end": 45,
+      "is_front_matter": false,
+      "text_preview": "Lesson 2Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Timed practice: Worksheet A Read aloud Read each text aloud as naturally and clearly as possible. To simulate the test conditions, give yourself 35 seconds to prepare and 35 seconds to respond to each item. 1..."
+    },
+    {
+      "node_id": "pte_chunk_046",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 2",
+      "chapter_number": 2,
+      "section": "LESSON 2",
+      "topic": "LESSON 2",
+      "content_type": "unknown",
+      "page_start": 46,
+      "page_end": 46,
+      "is_front_matter": false,
+      "text_preview": "Lesson 2Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Timed practice: Worksheet B Read aloud Read each text aloud as naturally and clearly as possible. To simulate the test conditions, give yourself 35 seconds to prepare and 35 seconds to respond to each item. 1..."
+    }
+  ],
+  "audit": {
+    "status": "PASS",
+    "contract_status": "PASS",
+    "contract_audit_path": "output/pte.ch2v2.book_learning_materials.contract.audit.json",
+    "contract_report_path": "output/pte.ch2v2.book_learning_materials.contract.audit.txt"
+  }
+}

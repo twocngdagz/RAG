@@ -1,0 +1,996 @@
+{
+  "schema_version": "book_learning_materials.v2",
+  "book": {
+    "slug": "pte",
+    "title": "pte",
+    "source_pdf": "input/pdfs/pte.pdf"
+  },
+  "generation": {
+    "generated_at": "2026-07-15T00:59:36.757586+00:00",
+    "pipeline_version": "book_learning_materials.v2",
+    "prompt_version": "book_learning_materials_v2_chapter.v2",
+    "backend": "codex-cli",
+    "model": "gpt-5.5",
+    "selection_mode": "chapters",
+    "selected_chapter_numbers": [
+      3
+    ],
+    "book_synthesis_performed": false,
+    "clean_chunks_path": "extracted/pte.section_clean_chunks.json"
+  },
+  "learning_materials": {
+    "chapters": [
+      {
+        "chapter_number": 3,
+        "chapter_title": "LESSON 3",
+        "source_chunk_ids": [
+          "pte_chunk_047",
+          "pte_chunk_048",
+          "pte_chunk_049",
+          "pte_chunk_050",
+          "pte_chunk_051",
+          "pte_chunk_052",
+          "pte_chunk_053",
+          "pte_chunk_054",
+          "pte_chunk_055",
+          "pte_chunk_056",
+          "pte_chunk_057",
+          "pte_chunk_058",
+          "pte_chunk_059",
+          "pte_chunk_060",
+          "pte_chunk_061",
+          "pte_chunk_062"
+        ],
+        "estimated_study_time": {
+          "text": "Plan to spend about 2 hours on this chapter, with time for reading the item descriptions, practising fill-in-the-blanks strategies, building vocabulary tables, and reviewing answers.",
+          "claim_kind": "study_plan",
+          "origin": "pedagogical_generation",
+          "source_chunk_ids": [],
+          "grounded_in_source_chunk_ids": [],
+          "evidence_spans": [],
+          "reason": null
+        },
+        "chapter_summary": {
+          "text": "This lesson focuses on Reading: Fill in the blanks and Reading & writing: Fill in the blanks. It develops reading skills such as identifying main ideas, using context, understanding academic vocabulary, inferring unfamiliar words, and following logical sequence, alongside writing skills such as using appropriate words, correct grammar, and correct spelling. Learners analyze the rubric, format, scoring, and strategies for these item types, complete timed practice items, review feedback, and practise vocabulary skills.",
+          "claim_kind": "source_summary",
+          "origin": "source_grounded",
+          "source_chunk_ids": [
+            "pte_chunk_047"
+          ],
+          "grounded_in_source_chunk_ids": [],
+          "evidence_spans": [
+            {
+              "node_id": "pte_chunk_047",
+              "quote": "This lesson provides skills practice for the PTE Academic item types Reading: Fill in the blanks and Reading & \nwriting: Fill in the blanks"
+            },
+            {
+              "node_id": "pte_chunk_047",
+              "quote": "Reading\n• Identifying the topic, theme or main ideas\n• Identifying words and phrases appropriate to the context\n• Understanding academic vocabulary\n• Understanding the difference between connotation and denotation\n• Inferring the meaning of unfamiliar words"
+            },
+            {
+              "node_id": "pte_chunk_047",
+              "quote": "• Following a logical or chronological sequence of events\n• Classifying and categorizing information\nWriting\n• Using words and phrases appropriate to the context\n• Using correct grammar\n• Using correct spelling"
+            },
+            {
+              "node_id": "pte_chunk_047",
+              "quote": "➤ Analyzed the rubric, format and scoring of these item types\n➤ Practiced reading strategies for these item types\n➤ Completed practice items under timed conditions\n➤ Reviewed feedback to practice items\n➤ Practiced vocabulary skills related to the successful completion of these item types"
+            }
+          ],
+          "reason": null
+        },
+        "learning_objectives": [
+          {
+            "text": "Practise the reading and writing skills listed for this lesson.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_047"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_047",
+                "quote": "By the end of this lesson, test takers will have: \n➤ Practiced the reading and writing skills listed above"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Analyze the rubric, format, and scoring of Reading: Fill in the blanks and Reading & writing: Fill in the blanks.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_047"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_047",
+                "quote": "➤ Analyzed the rubric, format and scoring of these item types"
+              },
+              {
+                "node_id": "pte_chunk_047",
+                "quote": "This lesson provides skills practice for the PTE Academic item types Reading: Fill in the blanks and Reading & \nwriting: Fill in the blanks"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Practise reading strategies for these fill-in-the-blanks item types.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_047"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_047",
+                "quote": "➤ Practiced reading strategies for these item types"
+              },
+              {
+                "node_id": "pte_chunk_047",
+                "quote": "This lesson provides skills practice for the PTE Academic item types Reading: Fill in the blanks and Reading & \nwriting: Fill in the blanks"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Complete practice items under timed conditions and review feedback to those practice items.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_047"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_047",
+                "quote": "➤ Completed practice items under timed conditions\n➤ Reviewed feedback to practice items"
+              }
+            ],
+            "reason": null
+          }
+        ],
+        "key_terms": [
+          {
+            "term": "Reading: Fill in the blanks",
+            "meaning": {
+              "text": "This item type requires a single correct answer for each blank, tests the ability to use context and grammatical cues to identify words that complete a reading text, has three to five blanks, provides a box containing six to eight words, includes three more words than blanks, and uses reading texts up to 80 words long.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_053"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_053",
+                  "quote": "The Reading: Fill in the blanks item requires a  correct answer for each blank. This item \n your ability to use context and grammatical cues to identify words that complete a reading text."
+                },
+                {
+                  "node_id": "pte_chunk_053",
+                  "quote": "This item type has a reading text with  to five blanks in it. Below the reading text, there is \na box which  six to eight words."
+                },
+                {
+                  "node_id": "pte_chunk_053",
+                  "quote": "There are three more words in the box than the number \nof blanks so you do not have to  all the words. The reading texts for this item type are up \nto 80 words in length."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Reading & writing: Fill in the blanks",
+            "meaning": {
+              "text": "This item type is a multiple-choice reading item type. It requires a single correct answer for each blank, tests the ability to use contextual and grammatical cues to identify words that complete a reading text, assesses reading and writing skills, has up to six blanks, gives each blank up to five answer choices, and uses reading texts up to 300 words long.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_053",
+                "pte_chunk_054"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_053",
+                  "quote": "The Reading & writing: Fill in the blanks item is a  reading item type. It requires a \nsingle correct answer for each blank."
+                },
+                {
+                  "node_id": "pte_chunk_053",
+                  "quote": "This item tests your ability to use contextual and grammatical cues to \n words that complete a reading text. It assesses reading and  skills."
+                },
+                {
+                  "node_id": "pte_chunk_053",
+                  "quote": "This item type has a reading text with up to six blanks in it. Each blank has up to five answer .  \nThe reading texts for this item type are up to 300 words in length."
+                },
+                {
+                  "node_id": "pte_chunk_054",
+                  "quote": "Understanding Fill in the blanks item types: Answer key\nsingle\nmultiple-choice\nwriting\nchoices\nidentify"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Collocations",
+            "meaning": {
+              "text": "Collocations are words which naturally combine with other words to make common, logical and idiomatic phrases.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_050"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_050",
+                  "quote": "collocations (i.e. \nwords which naturally combine with brainstormed words to make common, logical and idiomatic \nphrases)."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Phrasal verbs",
+            "meaning": {
+              "text": "Phrasal verbs are combinations of verbs and prepositions.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_051"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_051",
+                  "quote": "phrasal verbs (i.e. combinations of verbs and prepositions)."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Word bank",
+            "meaning": {
+              "text": "A word bank is a group of words related to a topic or theme.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_049"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_049",
+                  "quote": "One good tool for \ndeveloping vocabulary is to build word banks (groups of words related to a topic or theme)."
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "core_lessons": [
+          {
+            "title": "Know The Two Item Types",
+            "explanation": {
+              "text": "The lesson covers Reading: Fill in the blanks and Reading & writing: Fill in the blanks. The reading and vocabulary skills needed for both item types are similar, and learners look closely at the format, rubrics, and scoring, analyze strategies, and complete practice items under test conditions.",
+              "claim_kind": "task_format",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_048"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_048",
+                  "quote": "Explain that in this lesson test takers will look at the Reading: Fill in the blanks and Reading & writing: Fill in \nthe blanks item types. The reading and vocabulary skills needed for both item types are similar."
+                },
+                {
+                  "node_id": "pte_chunk_048",
+                  "quote": "Test takers will look closely at the format, rubrics and scoring of these item types; analyze strategies for \napproaching them successfully, and complete practice items under test conditions."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Use Grammar And Context To Choose Missing Words",
+            "explanation": {
+              "text": "To choose the correct words in fill-in-the-blanks texts, use the grammatical context of a word, combine words into logical phrases, and eliminate words that do not make grammatical or lexical sense.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_049"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_049",
+                  "quote": "Using the grammatical context of a word (e.g. ‘tests’ is a verb that follows and agrees with the \nsubject ‘item’)."
+                },
+                {
+                  "node_id": "pte_chunk_049",
+                  "quote": "Combining words so that they make logical phrases (e.g. the phrase ‘  to five blanks’ needs \nanother number at its beginning)."
+                },
+                {
+                  "node_id": "pte_chunk_049",
+                  "quote": "Some words, such as ‘question’, make neither grammatical nor lexical sense"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Use Word Classes To Narrow The Options",
+            "explanation": {
+              "text": "The grammatical context of a word or phrase can show which word classes are needed. For example, a phrase may require a modifying adjective, while the infinitive “to” may require a verb in its base form.",
+              "claim_kind": "grammar_rule",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_049"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_049",
+                  "quote": "The grammatical context of a word or phrase tells us that certain kinds of word classes need to be \nused"
+                },
+                {
+                  "node_id": "pte_chunk_049",
+                  "quote": "the phrase ‘  reading item type’ requires another modifying adjective, which rules \nout the nouns and verbs in the box, while the infinitive ‘to’ after ‘grammatical cues’ needs a verb \nin its base form"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Build Word Banks By Topic",
+            "explanation": {
+              "text": "A word bank helps learners build vocabulary by grouping words around a topic or theme, organizing words into grammatical and vocabulary categories, noting synonyms and antonyms, and noting collocations.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_049",
+                "pte_chunk_050"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_049",
+                  "quote": "One good tool for \ndeveloping vocabulary is to build word banks (groups of words related to a topic or theme)."
+                },
+                {
+                  "node_id": "pte_chunk_049",
+                  "quote": "organize these \nwords into grammatical and vocabulary categories."
+                },
+                {
+                  "node_id": "pte_chunk_050",
+                  "quote": "note related vocabulary (e.g. synonyms or antonyms). It will also help them note collocations"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Use Dictionaries And Thesauruses For Vocabulary Work",
+            "explanation": {
+              "text": "Use a dictionary to check grammatical forms, word endings, and collocations. Use a thesaurus to check synonyms and antonyms.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_050"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_050",
+                  "quote": "Encourage them to use a dictionary for checking the grammatical forms and endings of words, as well \nas for collocations. Tell them to use a thesaurus to check synonyms and antonyms."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Use Collocation Tables",
+            "explanation": {
+              "text": "Collocation tables can be used to learn and note which verbs combine with which nouns. In the research table, learners mark whether a verb collocates with a noun.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_050"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_050",
+                  "quote": "another good tool for developing vocabulary is to use tables to learn and note \ncollocations."
+                },
+                {
+                  "node_id": "pte_chunk_050",
+                  "quote": "The aim of the table is to note which verbs describing \nresearch collocate (can be combined) with which nouns."
+                },
+                {
+                  "node_id": "pte_chunk_050",
+                  "quote": "Tell test takers that if a noun collocates with \na verb, they should put a ‘√’ under the noun. If it doesn’t collocate, they should write ‘X’."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Use Phrasal Verb Tables",
+            "explanation": {
+              "text": "Tables can also be used to learn and note phrasal verbs. A phrasal verb table shows verbs on the left and prepositions along the top, so learners can note which verbs combine with which prepositions to create idiomatic phrasal verbs.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_051"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_051",
+                  "quote": "tables can also be used to learn and note \nphrasal verbs (i.e. combinations of verbs and prepositions)."
+                },
+                {
+                  "node_id": "pte_chunk_051",
+                  "quote": "on the \nleft side of the table there are verbs and along the top there are prepositions."
+                },
+                {
+                  "node_id": "pte_chunk_051",
+                  "quote": "The aim of this table is \nto note which verbs can combine with which prepositions to create idiomatic phrasal verbs."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Review Your Strategy Use After Practice",
+            "explanation": {
+              "text": "After attempting the two fill-in-the-blanks item types, reflect on how you used grammatical context, logical or idiomatic phrases, elimination, word collocations, and phrasal verbs.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_052"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_052",
+                  "quote": "Ask test takers to reflect on their attempt of the Reading: Fill in the blanks  item and the Reading & \nwriting: Fill in the blanks  item."
+                },
+                {
+                  "node_id": "pte_chunk_052",
+                  "quote": "How did they use the grammatical context of missing words?\n– How did they combine words with missing words to make logical or idiomatic phrases?\n– How did they eliminate possible missing words?"
+                },
+                {
+                  "node_id": "pte_chunk_052",
+                  "quote": "How did they use their knowledge of word collocations?\n– How did they use their knowledge of phrasal verbs?"
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "worked_examples": [
+          {
+            "title": "Choosing By Grammar And Collocation",
+            "example": {
+              "text": "Blank: “The guide _____ the answers with the whole group.” Options: review, reviews, reviewing, reviewed. A learner chooses “reviews” because the singular subject “The guide” needs a present-tense verb form that agrees with it.",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "This example applies the lesson strategy of using grammatical context. The source gives the example that “tests” is a verb that follows and agrees with the subject “item.”",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_049"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_049",
+                  "quote": "Using the grammatical context of a word (e.g. ‘tests’ is a verb that follows and agrees with the \nsubject ‘item’)."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Eliminating Words That Do Not Fit",
+            "example": {
+              "text": "Blank: “The research team will _____ the data after collection.” Options: analyze, make, concern, party. A learner eliminates “party” and “concern” because they do not fit the grammatical or lexical context, and chooses “analyze” because it combines logically with “data.”",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "This example applies two lesson strategies: eliminating words that do not make grammatical or lexical sense, and using logical collocation. The lesson also states that documentation, data, and results can be analyzed and read.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_049",
+                "pte_chunk_060"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_049",
+                  "quote": "Some words, such as ‘question’, make neither grammatical nor lexical sense"
+                },
+                {
+                  "node_id": "pte_chunk_049",
+                  "quote": "logical or common phrases can be made by collocating (i.e. combining) words"
+                },
+                {
+                  "node_id": "pte_chunk_060",
+                  "quote": "The nouns ‘documentation’, ‘data’ and ‘results’ refer to completed aspects of the research process which are then further \nacted upon by the researcher. So, they can be ‘analyzed’ and ‘read’"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Building A Word Bank Entry",
+            "example": {
+              "text": "Word bank entry: renewal. Noun form: renewal. Adjective form: renewed. Verb form: to renew. Synonyms: a fresh start, a new beginning. Antonyms: an end, a final completion. Collocations: renewal celebrations, renewal rituals, renewal rites.",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "The example follows the lesson’s word bank categories: words, noun forms, adjective forms, verb forms, adverb forms, synonyms, antonyms, and collocations.",
+              "claim_kind": "factual_explanation",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_055"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_055",
+                  "quote": "Words Noun forms Adjective forms Verb forms Adverb forms Synonyms Antonyms Collocations"
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "common_misconceptions": [
+          {
+            "misconception": {
+              "text": "The verb “make” collocates with the research nouns in the research collocation table.",
+              "claim_kind": "misconception_statement",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "The research nouns do not all combine with every verb. Documentation, data, and results can be analyzed and read, but not conducted or done. Research and studies refer to the whole research process rather than individual aspects.",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_060"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_060",
+                  "quote": "The nouns ‘documentation’, ‘data’ and ‘results’ refer to completed aspects of the research process which are then further \nacted upon by the researcher. So, they can be ‘analyzed’ and ‘read’, but not ‘conducted’ or ‘done’."
+                },
+                {
+                  "node_id": "pte_chunk_060",
+                  "quote": "‘Research’ and ‘studies’ \nare general nouns which refer to the whole research process, rather than just individual aspects."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "misconception": {
+              "text": "Any word from the box can be used if it has a related meaning.",
+              "claim_kind": "misconception_statement",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "Correct answers must fit the grammatical context, make logical phrases, and avoid words that make neither grammatical nor lexical sense.",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_049"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_049",
+                  "quote": "Using the grammatical context of a word"
+                },
+                {
+                  "node_id": "pte_chunk_049",
+                  "quote": "Combining words so that they make logical phrases"
+                },
+                {
+                  "node_id": "pte_chunk_049",
+                  "quote": "Some words, such as ‘question’, make neither grammatical nor lexical sense"
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "practice_questions": [
+          {
+            "question": {
+              "text": "In a Reading: Fill in the blanks task, what three checks should you make before choosing a word for a blank?",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Check the grammatical context, check whether the word combines with nearby words to make a logical phrase, and eliminate words that do not make grammatical or lexical sense.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Create a small word bank for the topic “research.” Include at least one noun form, one verb form, one synonym or related word, and one collocation.",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "A useful answer should organize vocabulary into categories such as noun forms, verb forms, synonyms, antonyms, and collocations. For example, a learner might include “research” as a noun, “to research” as a verb, and a collocation such as “conduct research.”",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Choose the better answer: “The student looked _____ the word in a dictionary.” Options: on, out, up. Explain your choice.",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "The better answer is “up”: “look up” can mean to look up a word in a dictionary.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "After completing a fill-in-the-blanks practice item, write two sentences explaining how you used collocation or phrasal verb knowledge to choose or eliminate an answer.",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "A strong answer names the nearby words, explains why one option forms a logical or idiomatic phrase, and explains why another option was eliminated.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "review_checklist": [
+          {
+            "text": "I can explain the difference between the two fill-in-the-blanks item types covered in this lesson.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can use grammatical context to decide what kind of word is needed in a blank.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can identify logical, common, or idiomatic phrases by checking collocations.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can eliminate options that do not make grammatical or lexical sense.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can build a word bank with grammatical forms, synonyms, antonyms, and collocations.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can use a phrasal verb table to check whether a verb and preposition form an idiomatic phrasal verb.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          }
+        ]
+      }
+    ]
+  },
+  "source_chunks": [
+    {
+      "node_id": "pte_chunk_047",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 3",
+      "chapter_number": 3,
+      "section": "LESSON 3",
+      "topic": "LESSON 3",
+      "content_type": "unknown",
+      "page_start": 47,
+      "page_end": 47,
+      "is_front_matter": false,
+      "text_preview": "Lesson 3© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 24 The Official Guide to PTE Academic Teacher Notes Overview Time allocated: 2 hours This lesson focuses on the following skills: Reading • Identifying the topic, theme or main ideas • Identifying words and phrases appropr..."
+    },
+    {
+      "node_id": "pte_chunk_048",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 3",
+      "chapter_number": 3,
+      "section": "LESSON 3",
+      "topic": "LESSON 3",
+      "content_type": "unknown",
+      "page_start": 48,
+      "page_end": 48,
+      "is_front_matter": false,
+      "text_preview": "Lesson 3© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 25 The Official Guide to PTE Academic Teacher Notes • Image of ‘‘Research’ collocation table 1’ for projection on board/visualizer • Image of ‘‘Research’ collocation table 2’ for projection on board/visualizer • Copies of..."
+    },
+    {
+      "node_id": "pte_chunk_049",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 3",
+      "chapter_number": 3,
+      "section": "LESSON 3",
+      "topic": "LESSON 3",
+      "content_type": "unknown",
+      "page_start": 49,
+      "page_end": 49,
+      "is_front_matter": false,
+      "text_preview": "Lesson 3© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 26 The Official Guide to PTE Academic Teacher Notes • Ask test takers how they were able to recognize (without looking back at the item description on pages 106–107 of the Official Guide) which words correctly filled each..."
+    },
+    {
+      "node_id": "pte_chunk_050",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 3",
+      "chapter_number": 3,
+      "section": "LESSON 3",
+      "topic": "LESSON 3",
+      "content_type": "unknown",
+      "page_start": 50,
+      "page_end": 50,
+      "is_front_matter": false,
+      "text_preview": "Lesson 3© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 27 The Official Guide to PTE Academic Teacher Notes note related vocabulary (e.g. synonyms or antonyms). It will also help them note collocations (i.e. words which naturally combine with brainstormed words to make common,..."
+    },
+    {
+      "node_id": "pte_chunk_051",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 3",
+      "chapter_number": 3,
+      "section": "LESSON 3",
+      "topic": "LESSON 3",
+      "content_type": "unknown",
+      "page_start": 51,
+      "page_end": 51,
+      "is_front_matter": false,
+      "text_preview": "Lesson 3© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 28 The Official Guide to PTE Academic Teacher Notes • To demonstrate how to complete the table, elicit from test takers which nouns in the table collocate with the verb ‘to do’. Project the ‘‘Research’ collocation table 2’..."
+    },
+    {
+      "node_id": "pte_chunk_052",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 3",
+      "chapter_number": 3,
+      "section": "LESSON 3",
+      "topic": "LESSON 3",
+      "content_type": "unknown",
+      "page_start": 52,
+      "page_end": 52,
+      "is_front_matter": false,
+      "text_preview": "Lesson 3© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 29 The Official Guide to PTE Academic Teacher Notes • After 5 minutes, put test takers into pairs. Ask them to compare answers and explain to each other which strategies or word bank skills they used to help them guess whi..."
+    },
+    {
+      "node_id": "pte_chunk_053",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 3",
+      "chapter_number": 3,
+      "section": "LESSON 3",
+      "topic": "LESSON 3",
+      "content_type": "unknown",
+      "page_start": 53,
+      "page_end": 53,
+      "is_front_matter": false,
+      "text_preview": "Lesson 3Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 In the text below some words are missing. Use words from the box to complete the text. The Reading: Fill in the blanks item requires a correct answer for each blank. This item your ability to use context and..."
+    },
+    {
+      "node_id": "pte_chunk_054",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 3",
+      "chapter_number": 3,
+      "section": "LESSON 3",
+      "topic": "LESSON 3",
+      "content_type": "unknown",
+      "page_start": 54,
+      "page_end": 54,
+      "is_front_matter": false,
+      "text_preview": "Lesson 3Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 In the text below some words are missing. Use words from the box to complete the text. The Reading: Fill in the blanks item requires a correct answer for each blank. This item your ability to use context and..."
+    },
+    {
+      "node_id": "pte_chunk_055",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 3",
+      "chapter_number": 3,
+      "section": "LESSON 3",
+      "topic": "LESSON 3",
+      "content_type": "unknown",
+      "page_start": 55,
+      "page_end": 55,
+      "is_front_matter": false,
+      "text_preview": "Lesson 3Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Words Noun forms Adjective forms Verb forms Adverb forms Synonyms Antonyms Collocations ‘New Year Festivals’ word bank"
+    },
+    {
+      "node_id": "pte_chunk_056",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 3",
+      "chapter_number": 3,
+      "section": "LESSON 3",
+      "topic": "LESSON 3",
+      "content_type": "unknown",
+      "page_start": 56,
+      "page_end": 56,
+      "is_front_matter": false,
+      "text_preview": "Lesson 3Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Words Noun forms Adjective forms Verb forms Adverb forms Synonyms Antonyms Collocations ‘New Year Festivals’ example word bank Party (n) party — to party — celebration (n) fiesta (n) social event (n) — Party..."
+    },
+    {
+      "node_id": "pte_chunk_057",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 3",
+      "chapter_number": 3,
+      "section": "LESSON 3",
+      "topic": "LESSON 3",
+      "content_type": "unknown",
+      "page_start": 57,
+      "page_end": 57,
+      "is_front_matter": false,
+      "text_preview": "Lesson 3Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 In the text below some words are missing. Put words from the box in the appropriate places in the text. The New Year is the most important holiday in Japan, and is a symbol of renewal. In December, various Bo..."
+    },
+    {
+      "node_id": "pte_chunk_058",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 3",
+      "chapter_number": 3,
+      "section": "LESSON 3",
+      "topic": "LESSON 3",
+      "content_type": "unknown",
+      "page_start": 58,
+      "page_end": 58,
+      "is_front_matter": false,
+      "text_preview": "Lesson 3Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 In the text below some words are missing. Put words from the box in the appropriate places in the text. The New Year is the most important holiday in Japan, and is a symbol of renewal. In December, various Bo..."
+    },
+    {
+      "node_id": "pte_chunk_059",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 3",
+      "chapter_number": 3,
+      "section": "LESSON 3",
+      "topic": "LESSON 3",
+      "content_type": "unknown",
+      "page_start": 59,
+      "page_end": 59,
+      "is_front_matter": false,
+      "text_preview": "Lesson 3Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 research documentation data studies results Do Make Conduct Pursue Analyze Read Nouns Verbs research documentation data studies results Do 3 7 7 3 7 Make Conduct Pursue Analyze Read Nouns Verbs ‘Research’ col..."
+    },
+    {
+      "node_id": "pte_chunk_060",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 3",
+      "chapter_number": 3,
+      "section": "LESSON 3",
+      "topic": "LESSON 3",
+      "content_type": "unknown",
+      "page_start": 60,
+      "page_end": 60,
+      "is_front_matter": false,
+      "text_preview": "Lesson 3Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 research documentation data studies results Do 3 7 7 3 7 Make Conduct Pursue Analyze Read Nouns Verbs Notes: • Many learners often mistakenly collocate the verb ‘make’ with the nouns in this table. • Apart fr..."
+    },
+    {
+      "node_id": "pte_chunk_061",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 3",
+      "chapter_number": 3,
+      "section": "LESSON 3",
+      "topic": "LESSON 3",
+      "content_type": "unknown",
+      "page_start": 61,
+      "page_end": 61,
+      "is_front_matter": false,
+      "text_preview": "Lesson 3Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 on out up To speak To put To count To rely To look Prepositions Verbs Phrasal verbs"
+    },
+    {
+      "node_id": "pte_chunk_062",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 3",
+      "chapter_number": 3,
+      "section": "LESSON 3",
+      "topic": "LESSON 3",
+      "content_type": "unknown",
+      "page_start": 62,
+      "page_end": 62,
+      "is_front_matter": false,
+      "text_preview": "Lesson 3Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 On Out Up To speak To put To count To rely To look Prepositions Verbs on out up To speak To put To count To rely To look Prepositions Verbs Notes: • We can ‘speak on a topic’ (i.e. speak about something) but..."
+    }
+  ],
+  "audit": {
+    "status": "PASS",
+    "contract_status": "PASS",
+    "contract_audit_path": "output/pte.ch3.book_learning_materials.contract.audit.json",
+    "contract_report_path": "output/pte.ch3.book_learning_materials.contract.audit.txt"
+  }
+}

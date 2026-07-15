@@ -1,0 +1,930 @@
+{
+  "schema_version": "book_learning_materials.v2",
+  "book": {
+    "slug": "pte",
+    "title": "pte",
+    "source_pdf": "input/pdfs/pte.pdf"
+  },
+  "generation": {
+    "generated_at": "2026-07-14T13:35:42.240951+00:00",
+    "pipeline_version": "book_learning_materials.v2",
+    "prompt_version": "book_learning_materials_v2_chapter.v2",
+    "backend": "codex-cli",
+    "model": "gpt-5.5",
+    "selection_mode": "chapters",
+    "selected_chapter_numbers": [
+      1
+    ],
+    "book_synthesis_performed": false,
+    "clean_chunks_path": "extracted/pte.section_clean_chunks.json"
+  },
+  "learning_materials": {
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "chapter_title": "Lesson 1: Answer Short Question",
+        "source_chunk_ids": [
+          "pte_chunk_013",
+          "pte_chunk_014",
+          "pte_chunk_015",
+          "pte_chunk_016",
+          "pte_chunk_017",
+          "pte_chunk_018",
+          "pte_chunk_019",
+          "pte_chunk_020",
+          "pte_chunk_021",
+          "pte_chunk_022",
+          "pte_chunk_023",
+          "pte_chunk_024",
+          "pte_chunk_025",
+          "pte_chunk_026",
+          "pte_chunk_027",
+          "pte_chunk_028"
+        ],
+        "estimated_study_time": {
+          "text": "Plan for about 2 hours of study and practice for this lesson.",
+          "claim_kind": "study_plan",
+          "origin": "pedagogical_generation",
+          "source_chunk_ids": [],
+          "grounded_in_source_chunk_ids": [],
+          "evidence_spans": [],
+          "reason": null
+        },
+        "chapter_summary": {
+          "text": "This lesson focuses on the PTE Academic Answer short question item type. It builds listening skills such as identifying main ideas, understanding academic vocabulary, and inferring unfamiliar words, and speaking skills such as speaking for a purpose, choosing context-appropriate language, speaking under timed conditions, using correct grammar, and using correct pronunciation. Learners analyze the rubric, format, and scoring, practise strategies, complete timed practice items, and review feedback.",
+          "claim_kind": "source_summary",
+          "origin": "source_grounded",
+          "source_chunk_ids": [
+            "pte_chunk_013"
+          ],
+          "grounded_in_source_chunk_ids": [],
+          "evidence_spans": [
+            {
+              "node_id": "pte_chunk_013",
+              "quote": "This lesson focuses on the following skills: \nListening\n• Identifying the topic, theme or main ideas\n• Understanding academic vocabulary\n• Inferring the meaning of unfamiliar words\nSpeaking\n• Speaking for a purpose (to repeat, to inform, to explain)\n• Using words and phrases appropriate to the context\n• Speaking under timed conditions\n• Using correct grammar\n• Using correct pronunciation"
+            },
+            {
+              "node_id": "pte_chunk_013",
+              "quote": "This lesson provides skills practice for the PTE Academic Answer short question item type"
+            },
+            {
+              "node_id": "pte_chunk_013",
+              "quote": "By the end of this lesson, test takers will have: \n➤ Practiced the listening and speaking skills listed above\n➤ Analyzed the rubric, format and scoring of this item type\n➤ Practiced listening and speaking strategies for this item type\n➤ Completed practice items under timed conditions\n➤ Reviewed feedback to practice items"
+            }
+          ],
+          "reason": null
+        },
+        "learning_objectives": [
+          {
+            "text": "Practise listening and speaking skills used in the Answer short question item type.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_013"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_013",
+                "quote": "By the end of this lesson, test takers will have: \n➤ Practiced the listening and speaking skills listed above"
+              },
+              {
+                "node_id": "pte_chunk_013",
+                "quote": "This lesson provides skills practice for the PTE Academic Answer short question item type"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Analyze the rubric, format, and scoring of the Answer short question item type.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_013"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_013",
+                "quote": "➤ Analyzed the rubric, format and scoring of this item type"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Practise listening and speaking strategies for Answer short question.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_013"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_013",
+                "quote": "➤ Practiced listening and speaking strategies for this item type"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Complete practice items under timed conditions and review feedback.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_013"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_013",
+                "quote": "➤ Completed practice items under timed conditions\n➤ Reviewed feedback to practice items"
+              }
+            ],
+            "reason": null
+          }
+        ],
+        "key_terms": [
+          {
+            "term": "Answer short question",
+            "meaning": {
+              "text": "An item type that assesses the ability to provide a brief and accurate response to a short question from a recording.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_014"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_014",
+                  "quote": "the Answer short question item type, which assesses their ability to \nprovide a brief and accurate response to a short question from a recording"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Question cues",
+            "meaning": {
+              "text": "Question cues include key question words, the information those words predict, and key content words that guide the answer.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_015"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_015",
+                  "quote": "1. Recognizing key question words (e.g. what, who, when, where)\n2. Using key question words to predict the sort of information required, (e.g. an amount, a person’s \nname, a place, a time)\n3. Identifying key content words in the question which guide your answer"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Chunking",
+            "meaning": {
+              "text": "Chunking means combining words into small word groups so that speech makes sense for the listener.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_016"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_016",
+                  "quote": "individual words are usually combined into small groups"
+                },
+                {
+                  "node_id": "pte_chunk_016",
+                  "quote": "The \naim of this activity is to give test takers practice in correctly chunking (or combining) words into word \ngroups so that they make sense for the listener."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Key content words",
+            "meaning": {
+              "text": "Key content words in a question help guide the answer.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_015"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_015",
+                  "quote": "Identifying key content words in the question which guide your answer"
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "core_lessons": [
+          {
+            "title": "What the Item Type Requires",
+            "explanation": {
+              "text": "Answer short question requires a brief and accurate response to a short question from a recording, and it assesses listening and speaking skills.",
+              "claim_kind": "task_format",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_014"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_014",
+                  "quote": "the Answer short question item type, which assesses their ability to \nprovide a brief and accurate response to a short question from a recording (i.e. their listening and speaking \nskills)."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Listen for the Type of Information Needed",
+            "explanation": {
+              "text": "When answering, listen carefully to the question and decide what information is needed. For example, what questions call for specific information, how many questions call for a number or amount, and when questions call for a time.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_015"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_015",
+                  "quote": "They \nshould also listen very carefully to the question and determine what information is needed in the \nanswer."
+                },
+                {
+                  "node_id": "pte_chunk_015",
+                  "quote": "For example, ‘what …?’ questions call for specific information; ‘how many …?’ questions call \nfor a number or amount; ‘when …?’ questions call for a time."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Use Question Words and Content Words",
+            "explanation": {
+              "text": "Use three strategies: recognize key question words, use them to predict the type of information required, and identify key content words that guide the answer.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_015"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_015",
+                  "quote": "1. Recognizing key question words (e.g. what, who, when, where)\n2. Using key question words to predict the sort of information required, (e.g. an amount, a person’s \nname, a place, a time)\n3. Identifying key content words in the question which guide your answer"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Notice Choices Inside Questions",
+            "explanation": {
+              "text": "Questions with choices can provide the answer, so be alert to that structure.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_016"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_016",
+                  "quote": "Tell test takers to be alert to questions which include this kind of choice, because they often provide \nthe answer."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Chunk Words for Clear Speech",
+            "explanation": {
+              "text": "In spoken English, words are usually combined into small groups. Pausing between each word can create confusion, so chunk words into groups that make sense for the listener.",
+              "claim_kind": "pronunciation_rule",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_016"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_016",
+                  "quote": "in spoken English individual words are usually combined into small groups."
+                },
+                {
+                  "node_id": "pte_chunk_016",
+                  "quote": "Failing to do this and pausing between each word can create confusion"
+                },
+                {
+                  "node_id": "pte_chunk_016",
+                  "quote": "correctly chunking (or combining) words into word \ngroups so that they make sense for the listener."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Common Chunking Patterns",
+            "explanation": {
+              "text": "Question phrases, phrasal verbs, and noun phrases are often or generally chunked together, while lists or options are usually chunked separately.",
+              "claim_kind": "pronunciation_rule",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_016"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_016",
+                  "quote": "Words in question phrases are often chunked together (e.g. ‘which of these’),"
+                },
+                {
+                  "node_id": "pte_chunk_016",
+                  "quote": "Phrasal verbs (‘deals with’) are generally chunked together,"
+                },
+                {
+                  "node_id": "pte_chunk_016",
+                  "quote": "Noun phrases are often chunked together (the classification of living things’, ‘two ways of being \nassessed’),"
+                },
+                {
+                  "node_id": "pte_chunk_016",
+                  "quote": "Lists or options are usually chunked separately (e.g. ‘a computer/, a bed/, or a television’)."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Timed Practice",
+            "explanation": {
+              "text": "In the lesson’s timed practice, learners take turns asking questions or listening and giving a short answer. The answering learner tries to answer each question in 10 seconds or less.",
+              "claim_kind": "task_format",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_017"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_017",
+                  "quote": "they will take turns to ask the questions or listen and provide a short answer."
+                },
+                {
+                  "node_id": "pte_chunk_017",
+                  "quote": "Ask As to begin asking questions and Bs to try to answer each question in 10 seconds or less."
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "worked_examples": [
+          {
+            "title": "Using Question Cues",
+            "example": {
+              "text": "Question: Who would you consult to treat a fear of crowded places, a philosopher or a psychologist? Reasoning: The question word is who, so the answer should refer to a person or profession. The content words include consult, treat a fear of crowded places, and the choice a philosopher or a psychologist. Answer: a psychologist.",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "For the example question about consulting someone to treat a fear of crowded places, the question word is Who, the information needed is a person or profession, the key content words are “Consult, treat a fear of crowded places, a philosopher or a psychologist?”, and the predicted answer is a psychologist.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_021"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_021",
+                  "quote": "“Who would you \nconsult to treat a fear \nof crowded places, \na philosopher or a \npsychologist?”\nWho Reference to a person \nor profession\nConsult, treat a fear \nof crowded places, \na philosopher or a \npsychologist?\na psychologist"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Chunking a Question",
+            "example": {
+              "text": "Question: Who would you consult to treat a fear of crowded places, a philosopher or a psychologist? Possible chunking: Who would you consult / to treat a fear of crowded places / a philosopher / or a psychologist?",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "A likely chunking groups the question into its main parts and pauses between the two options at the end.",
+              "claim_kind": "pronunciation_rule",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_016"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_016",
+                  "quote": "A likely answer \nmight be the following, which groups the question into its main parts but pauses between the two \noptions in the choice at the end of the question"
+                },
+                {
+                  "node_id": "pte_chunk_016",
+                  "quote": "Who would you consult/ to treat a fear of crowded \nplaces/, a philosopher/ or a psychologist?”"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Timed Short Answer Practice",
+            "example": {
+              "text": "Question: Which country is in the southern hemisphere, Australia or Canada? Short answer: Australia.",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "The practice worksheet asks the question Which country is in the southern hemisphere, Australia or Canada, and the answer key gives Australia as the sample response.",
+              "claim_kind": "factual_explanation",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_025",
+                "pte_chunk_026"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_025",
+                  "quote": "Which country is in the southern hemisphere, Australia or Canada?"
+                },
+                {
+                  "node_id": "pte_chunk_026",
+                  "quote": "(sample responses) \nIn the early morning\nThe 20th century\nMexico \nMonday\nA museum\nAustralia"
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "common_misconceptions": [
+          {
+            "misconception": {
+              "text": null,
+              "claim_kind": "misconception_statement",
+              "origin": "insufficient_source_evidence",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": "The supplied source says learners do not need to write anything for this item type, but it does not explicitly state the false belief as a misconception."
+            },
+            "correction": {
+              "text": "For this item type, learners do not need to write anything in PTE Academic.",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_015"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_015",
+                  "quote": "they do not need to write anything for this \nitem type in PTE Academic."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "misconception": {
+              "text": null,
+              "claim_kind": "misconception_statement",
+              "origin": "insufficient_source_evidence",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": "The supplied source warns not to confuse would with will, but it does not explicitly state a false belief about would as a misconception."
+            },
+            "correction": {
+              "text": "Would is used in conditional questions and when learners are asked to guess or speculate because they cannot be sure of the precise answer; learners should not confuse would with will.",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_016"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_016",
+                  "quote": "Remind test takers that ‘would’ is used in conditional \nquestions"
+                },
+                {
+                  "node_id": "pte_chunk_016",
+                  "quote": "when we are asked to guess or speculate \nbecause we cannot be sure of the precise answer"
+                },
+                {
+                  "node_id": "pte_chunk_016",
+                  "quote": "Remind them \nnot to confuse ‘would’ with ‘will’."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "misconception": {
+              "text": null,
+              "claim_kind": "misconception_statement",
+              "origin": "insufficient_source_evidence",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": "The supplied source states that pausing between each word can create confusion, but it does not explicitly state the false belief as a misconception."
+            },
+            "correction": {
+              "text": "In spoken English, individual words are usually combined into small groups, and pausing between each word can create confusion.",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_016"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_016",
+                  "quote": "in spoken English individual words are usually combined into small groups."
+                },
+                {
+                  "node_id": "pte_chunk_016",
+                  "quote": "Failing to do this and pausing between each word can create confusion"
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "practice_questions": [
+          {
+            "question": {
+              "text": "Use question cues to answer: Would a supermarket, a café, or a book store probably have the widest range of products available?",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "A supermarket.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Chunk this question into meaningful word groups before saying it aloud: Which major branch of science deals with the classification of living things?",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "One useful answer is biology. A possible chunking is: Which major branch of science / deals with / the classification of living things?",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Answer in 10 seconds or less: Where would you go to see exhibits of dinosaurs?",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "A museum.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Answer in 10 seconds or less: In which season would people be least likely to go snow skiing?",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "In summer.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "review_checklist": [
+          {
+            "text": "I can identify the question word and use it to predict the kind of information needed in my answer.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can listen for key content words that guide my short answer.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can notice when a question gives me a choice of possible answers.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can chunk question phrases, phrasal verbs, noun phrases, and lists in a way that sounds clear.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can give a short answer under timed conditions.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          }
+        ]
+      }
+    ]
+  },
+  "source_chunks": [
+    {
+      "node_id": "pte_chunk_013",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 1",
+      "chapter_number": 1,
+      "section": "LESSON 1",
+      "topic": "LESSON 1",
+      "content_type": "unknown",
+      "page_start": 13,
+      "page_end": 13,
+      "is_front_matter": false,
+      "text_preview": "Lesson 1© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 12 The Official Guide to PTE Academic Teacher Notes Overview Time allocated: 2 hours This lesson focuses on the following skills: Listening • Identifying the topic, theme or main ideas • Understanding academic vocabulary •..."
+    },
+    {
+      "node_id": "pte_chunk_014",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 1",
+      "chapter_number": 1,
+      "section": "LESSON 1",
+      "topic": "LESSON 1",
+      "content_type": "unknown",
+      "page_start": 14,
+      "page_end": 14,
+      "is_front_matter": false,
+      "text_preview": "Lesson 1© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 13 The Official Guide to PTE Academic Teacher Notes Lesson Plan Introduction whole class (5 mins) Materials: Official Guide • Introduce yourself. • Explain to test takers that the purpose of this course is to give them pra..."
+    },
+    {
+      "node_id": "pte_chunk_015",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 1",
+      "chapter_number": 1,
+      "section": "LESSON 1",
+      "topic": "LESSON 1",
+      "content_type": "unknown",
+      "page_start": 15,
+      "page_end": 15,
+      "is_front_matter": false,
+      "text_preview": "Lesson 1© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 14 The Official Guide to PTE Academic Teacher Notes Skills: Identifying the topic, theme or main ideas; Understanding academic vocabulary; Inferring the meaning of unfamiliar words Aims: Familiarize test takers with the An..."
+    },
+    {
+      "node_id": "pte_chunk_016",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 1",
+      "chapter_number": 1,
+      "section": "LESSON 1",
+      "topic": "LESSON 1",
+      "content_type": "unknown",
+      "page_start": 16,
+      "page_end": 16,
+      "is_front_matter": false,
+      "text_preview": "Lesson 1© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 15 The Official Guide to PTE Academic Teacher Notes Tell test takers to be alert to questions which include this kind of choice, because they often provide the answer. • Organize test takers into small groups and distribut..."
+    },
+    {
+      "node_id": "pte_chunk_017",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 1",
+      "chapter_number": 1,
+      "section": "LESSON 1",
+      "topic": "LESSON 1",
+      "content_type": "unknown",
+      "page_start": 17,
+      "page_end": 17,
+      "is_front_matter": false,
+      "text_preview": "Lesson 1© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 16 The Official Guide to PTE Academic Teacher Notes Main activity 4 whole class and pair work (10 mins) Timed practice of item Materials: • Copies of ‘Practice item worksheet A’ and ‘Practice item worksheet B’ • Image of ‘..."
+    },
+    {
+      "node_id": "pte_chunk_018",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 1",
+      "chapter_number": 1,
+      "section": "LESSON 1",
+      "topic": "LESSON 1",
+      "content_type": "unknown",
+      "page_start": 18,
+      "page_end": 18,
+      "is_front_matter": false,
+      "text_preview": "Lesson 1Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Interview four people in your class. Ask appropriate questions to elicit the information you need. Introducing ourselves Name Nickname Address Favorite pastimes Future plans"
+    },
+    {
+      "node_id": "pte_chunk_019",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 1",
+      "chapter_number": 1,
+      "section": "LESSON 1",
+      "topic": "LESSON 1",
+      "content_type": "unknown",
+      "page_start": 19,
+      "page_end": 19,
+      "is_front_matter": false,
+      "text_preview": "Lesson 1Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Ask your partner to read pages 61 and 62 of the Official Guide. When he or she has finished reading, ask the following questions. Try to stress (say more clearly and loudly) the underlined word(s) in each que..."
+    },
+    {
+      "node_id": "pte_chunk_020",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 1",
+      "chapter_number": 1,
+      "section": "LESSON 1",
+      "topic": "LESSON 1",
+      "content_type": "unknown",
+      "page_start": 20,
+      "page_end": 20,
+      "is_front_matter": false,
+      "text_preview": "Lesson 1Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Ask your partner to read pages 63 and 64 of the Official Guide. When he or she has finished reading, ask the following questions. Try to stress (say more clearly and loudly) the underlined word(s) in each que..."
+    },
+    {
+      "node_id": "pte_chunk_021",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 1",
+      "chapter_number": 1,
+      "section": "LESSON 1",
+      "topic": "LESSON 1",
+      "content_type": "unknown",
+      "page_start": 21,
+      "page_end": 21,
+      "is_front_matter": false,
+      "text_preview": "Lesson 1Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Understanding question cues Question Question word Information needed in answer Key content words Predicted answer “Who would you consult to treat a fear of crowded places, a philosopher or a psychologist?” W..."
+    },
+    {
+      "node_id": "pte_chunk_022",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 1",
+      "chapter_number": 1,
+      "section": "LESSON 1",
+      "topic": "LESSON 1",
+      "content_type": "unknown",
+      "page_start": 22,
+      "page_end": 22,
+      "is_front_matter": false,
+      "text_preview": "Lesson 1Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Complete the following table. The first row has been done as an example. [Source: CD-ROM Practice set 1] Question Question word Information needed in answer Key content words Predicted answer “Who would you c..."
+    },
+    {
+      "node_id": "pte_chunk_023",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 1",
+      "chapter_number": 1,
+      "section": "LESSON 1",
+      "topic": "LESSON 1",
+      "content_type": "unknown",
+      "page_start": 23,
+      "page_end": 23,
+      "is_front_matter": false,
+      "text_preview": "Lesson 1Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 With your partner, decide how to chunk the following questions into word groups. Practice saying the chunked questions out loud to see if they sound correct. 1. Which major branch of science deals with the cl..."
+    },
+    {
+      "node_id": "pte_chunk_024",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 1",
+      "chapter_number": 1,
+      "section": "LESSON 1",
+      "topic": "LESSON 1",
+      "content_type": "unknown",
+      "page_start": 24,
+      "page_end": 24,
+      "is_front_matter": false,
+      "text_preview": "Lesson 1Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 With your partner, decide how to chunk the following questions into word groups. Practice saying the chunked questions out loud to see if they sound correct. 1. Which major branch of science deals with the cl..."
+    },
+    {
+      "node_id": "pte_chunk_025",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 1",
+      "chapter_number": 1,
+      "section": "LESSON 1",
+      "topic": "LESSON 1",
+      "content_type": "unknown",
+      "page_start": 25,
+      "page_end": 25,
+      "is_front_matter": false,
+      "text_preview": "Lesson 1Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Ask your partner the following questions. Chunk the words into word groups and stress key words to make the questions easier to understand. Give your partner 10 seconds (or less) to answer each question. 1. W..."
+    },
+    {
+      "node_id": "pte_chunk_026",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 1",
+      "chapter_number": 1,
+      "section": "LESSON 1",
+      "topic": "LESSON 1",
+      "content_type": "unknown",
+      "page_start": 26,
+      "page_end": 26,
+      "is_front_matter": false,
+      "text_preview": "Lesson 1Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Ask your partner the following questions. Chunk the words into word groups and stress key words to make the questions easier to understand. Give your partner 10 seconds (or less) to answer each question. 1. W..."
+    },
+    {
+      "node_id": "pte_chunk_027",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 1",
+      "chapter_number": 1,
+      "section": "LESSON 1",
+      "topic": "LESSON 1",
+      "content_type": "unknown",
+      "page_start": 27,
+      "page_end": 27,
+      "is_front_matter": false,
+      "text_preview": "Lesson 1Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Ask your partner the following questions. Chunk the words into word groups and stress key words to make the questions easier to understand. Give your partner 10 seconds (or less) to answer each question. 1. I..."
+    },
+    {
+      "node_id": "pte_chunk_028",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 1",
+      "chapter_number": 1,
+      "section": "LESSON 1",
+      "topic": "LESSON 1",
+      "content_type": "unknown",
+      "page_start": 28,
+      "page_end": 28,
+      "is_front_matter": false,
+      "text_preview": "Lesson 1Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Ask your partner the following questions. Chunk the words into word groups and stress key words to make the questions easier to understand. Give your partner 10 seconds (or less) to answer each question. 1. I..."
+    }
+  ],
+  "audit": {
+    "status": "PASS",
+    "contract_status": "PASS",
+    "contract_audit_path": "output/pte.ch1v3.book_learning_materials.contract.audit.json",
+    "contract_report_path": "output/pte.ch1v3.book_learning_materials.contract.audit.txt"
+  }
+}

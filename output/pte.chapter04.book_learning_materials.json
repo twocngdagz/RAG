@@ -1,0 +1,845 @@
+{
+  "schema_version": "book_learning_materials.v2",
+  "book": {
+    "slug": "pte",
+    "title": "pte",
+    "source_pdf": "input/pdfs/pte.pdf"
+  },
+  "generation": {
+    "generated_at": "2026-07-15T01:53:06.775354+00:00",
+    "pipeline_version": "book_learning_materials.v2",
+    "prompt_version": "book_learning_materials_v2_chapter.v2",
+    "backend": "codex-cli",
+    "model": "gpt-5.5",
+    "selection_mode": "chapters",
+    "selected_chapter_numbers": [
+      4
+    ],
+    "book_synthesis_performed": false,
+    "clean_chunks_path": "extracted/pte.section_clean_chunks.json"
+  },
+  "learning_materials": {
+    "chapters": [
+      {
+        "chapter_number": 4,
+        "chapter_title": "Lesson 4: Reading Multiple-choice Items",
+        "source_chunk_ids": [
+          "pte_chunk_063",
+          "pte_chunk_064",
+          "pte_chunk_065",
+          "pte_chunk_066",
+          "pte_chunk_067",
+          "pte_chunk_068",
+          "pte_chunk_069",
+          "pte_chunk_070",
+          "pte_chunk_071"
+        ],
+        "estimated_study_time": {
+          "text": "Study this chapter in one focused session of about 2 hours, then add extra practice time for the worksheet and CD-ROM practice items if available.",
+          "claim_kind": "study_plan",
+          "origin": "pedagogical_generation",
+          "source_chunk_ids": [],
+          "grounded_in_source_chunk_ids": [],
+          "evidence_spans": [],
+          "reason": null
+        },
+        "chapter_summary": {
+          "text": "This lesson focuses on reading skills for PTE Academic multiple-choice reading item types: choosing a single answer and choosing multiple answers. It covers reading for gist, details, organization, discourse connections, context-appropriate words and phrases, classification, unfamiliar-word meaning, writer purpose, tone, attitude, and supporting points or examples. Learners also practice rubrics and format, analyze prompts and options, and analyze strategies for multiple-choice items.",
+          "claim_kind": "source_summary",
+          "origin": "source_grounded",
+          "source_chunk_ids": [
+            "pte_chunk_063"
+          ],
+          "grounded_in_source_chunk_ids": [],
+          "evidence_spans": [
+            {
+              "node_id": "pte_chunk_063",
+              "quote": "This lesson focuses on the following reading skills:"
+            },
+            {
+              "node_id": "pte_chunk_063",
+              "quote": "Main idea or gist: Read for and identify the main idea or theme of the text"
+            },
+            {
+              "node_id": "pte_chunk_063",
+              "quote": "Detailed information: Read for and identify specific details, facts, opinions, definitions or sequences of events"
+            },
+            {
+              "node_id": "pte_chunk_063",
+              "quote": "Analysis of discourse: Read for and identify the overall organization and connections between pieces of information"
+            },
+            {
+              "node_id": "pte_chunk_063",
+              "quote": "Identifying words and phrases appropriate to the context"
+            },
+            {
+              "node_id": "pte_chunk_063",
+              "quote": "Classifying and categorizing information"
+            },
+            {
+              "node_id": "pte_chunk_063",
+              "quote": "Inferring the meaning of unfamiliar words"
+            },
+            {
+              "node_id": "pte_chunk_063",
+              "quote": "Identifying a writer’s purpose, style, tone or attitude"
+            },
+            {
+              "node_id": "pte_chunk_063",
+              "quote": "Identifying the supporting points or examples"
+            },
+            {
+              "node_id": "pte_chunk_063",
+              "quote": "This lesson practices some of the skills tested by the PTE Academic item types Reading: Multiple-choice, choose single answer and Reading: Multiple-choice, choose multiple answers"
+            },
+            {
+              "node_id": "pte_chunk_063",
+              "quote": "Practiced the rubrics and format of multiple-choice items"
+            },
+            {
+              "node_id": "pte_chunk_063",
+              "quote": "Analyzed the nature of multiple-choice items as well as selected prompts and options"
+            },
+            {
+              "node_id": "pte_chunk_063",
+              "quote": "Analyzed test-taking strategies for multiple-choice items"
+            }
+          ],
+          "reason": null
+        },
+        "learning_objectives": [
+          {
+            "text": "Identify the main idea or theme of a reading text.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_063"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_063",
+                "quote": "Main idea or gist: Read for and identify the main idea or theme of the text"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Identify specific details, facts, opinions, definitions, or sequences of events in a reading text.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_063"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_063",
+                "quote": "Detailed information: Read for and identify specific details, facts, opinions, definitions or sequences of events"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Recognize the rubrics and format of multiple-choice reading items.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_063"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_063",
+                "quote": "Practiced the rubrics and format of multiple-choice items"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Analyze selected prompts, options, and test-taking strategies for multiple-choice items.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_063"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_063",
+                "quote": "Analyzed the nature of multiple-choice items as well as selected prompts and options"
+              },
+              {
+                "node_id": "pte_chunk_063",
+                "quote": "Analyzed test-taking strategies for multiple-choice items"
+              }
+            ],
+            "reason": null
+          }
+        ],
+        "key_terms": [
+          {
+            "term": "Distractor",
+            "meaning": {
+              "text": "A distractor is a wrong option.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_066"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_066",
+                  "quote": "Explain that wrong options are known as distractors."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Indicator",
+            "meaning": {
+              "text": "An indicator means a sign.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_065"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_065",
+                  "quote": "Ask test takers the meaning of ‘indicator’ and get them to guess if they do not know (e.g. a sign)."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Prompt",
+            "meaning": {
+              "text": "A prompt is one part of a multiple-choice item, alongside instructions, passage, and option.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_064"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_064",
+                  "quote": "Write ‘instructions’, ‘passage’, ‘prompt’ and ‘option’ on board and, with the whole class, ask test takers to help you label the parts of the item."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Topic sentence",
+            "meaning": {
+              "text": "Topic sentences can help identify the main theme or themes of paragraphs and the whole passage.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_066"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_066",
+                  "quote": "Remind them to look for topic sentences, which will help them identify the main theme(s) of paragraphs and/or the whole passage"
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "core_lessons": [
+          {
+            "title": "Know the Two Reading Multiple-choice Item Types",
+            "explanation": {
+              "text": "This lesson practices Reading: Multiple-choice, choose single answer and Reading: Multiple-choice, choose multiple answers. One difference between these two reading item types is the number of options test takers must choose.",
+              "claim_kind": "task_format",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_063",
+                "pte_chunk_064"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_063",
+                  "quote": "This lesson practices some of the skills tested by the PTE Academic item types Reading: Multiple-choice, choose single answer and Reading: Multiple-choice, choose multiple answers"
+                },
+                {
+                  "node_id": "pte_chunk_064",
+                  "quote": "one of the differences between single answer multiple-choice and multiple answer multiple-choice reading items is the number of options test takers must choose."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Use Prompt Wording to Predict Needed Information",
+            "explanation": {
+              "text": "Prompt work includes identifying ‘wh’ words and the type of answer or information each one indicates. The lesson also uses two prompt types: ‘wh’-questions and ‘complete the sentence’.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_064"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_064",
+                  "quote": "get test takers to identify ‘wh’ words and the type of answer/information each of these words indicates"
+                },
+                {
+                  "node_id": "pte_chunk_064",
+                  "quote": "test takers are going to look at two types of prompts: ‘wh’-questions and ‘complete the sentence’."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Predict Vocabulary Groups Before Reading Closely",
+            "explanation": {
+              "text": "The lesson uses prediction of possible answers and related vocabulary groups as a strategy before working with the passage.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_065"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_065",
+                  "quote": "test takers are now going to look at strategies for predicting possible answers and identifying relevant vocabulary groups."
+                },
+                {
+                  "node_id": "pte_chunk_065",
+                  "quote": "get test takers to brainstorm the types of words or vocabulary groups they might expect to read in the related passage"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Skim for Gist and Scan for Details",
+            "explanation": {
+              "text": "The lesson practices skimming for gist and scanning for details. Learners read a passage, identify the main gist or topic, and highlight key words.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_066"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_066",
+                  "quote": "Familiarize test takers with the process of skimming for gist and scanning for details"
+                },
+                {
+                  "node_id": "pte_chunk_066",
+                  "quote": "Ask pairs to work together to read the passage, identify the main gist/topic and highlight the key words."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Analyze Why Options Are Correct or Incorrect",
+            "explanation": {
+              "text": "After choosing answers, learners analyze all options and discuss why each option is correct or incorrect. The lesson also asks learners to consider possible pitfalls.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_066",
+                "pte_chunk_067"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_067",
+                  "quote": "Analyze why each option is correct or incorrect"
+                },
+                {
+                  "node_id": "pte_chunk_067",
+                  "quote": "consider the possible pitfalls"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Use Context and Word Parts for Unfamiliar Words",
+            "explanation": {
+              "text": "For unfamiliar words, the lesson asks learners to model strategies such as looking at word stems, prefixes, suffixes, similar familiar words, and context.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_066"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_066",
+                  "quote": "Ask them to model their strategies for guessing meaning (looking at word stem/prefixes/suffixes, etc and thinking about similar looking familiar words; looking at context, etc)."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Prepare With Theme-related Word Groups",
+            "explanation": {
+              "text": "The worksheet asks learners to organize listed words into theme-related groups, choose a suitable heading for each group, brainstorm other academic words, and brainstorm common text types for those topics.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_070"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_070",
+                  "quote": "Look at the words above and organize them into various theme-related groups:"
+                },
+                {
+                  "node_id": "pte_chunk_070",
+                  "quote": "Think of a suitable heading for each of the groups that you have identified."
+                },
+                {
+                  "node_id": "pte_chunk_070",
+                  "quote": "Brainstorm other academic words related to the topics that you have identified."
+                },
+                {
+                  "node_id": "pte_chunk_070",
+                  "quote": "Brainstorm the text types that are most often used for writing about such topics."
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "worked_examples": [
+          {
+            "title": "Predicting an Answer Type from a ‘Wh’ Prompt",
+            "example": {
+              "text": "Prompt: “Why was the museum closed during the summer?” First, identify the key word “Why”. Then predict that the answer should give a reason, likely introduced by wording such as “because”, “due to”, or “as a result of”.",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "The lesson connects ‘why’ prompts with reason or because-type answers.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_064",
+                "pte_chunk_065"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_065",
+                  "quote": "Why was the fall in the crime rate particularly surprising? (e.g. reason/because)"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Separating a Correct Option from Distractors",
+            "example": {
+              "text": "Suppose a passage says that “long droughts have reduced river levels,” and the prompt asks for a present indicator of environmental change. If the options are “campaigners,” “industrial gases,” “carbon dioxide,” and “drought,” choose “drought” because it is presented as the sign, while the other options are people or causes rather than the requested indicator.",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "In the lesson’s climate-change item, drought is correct because it is presented as an indicator, while environmental activists, gas emissions, and carbon dioxide are treated as incorrect options for stated reasons.",
+              "claim_kind": "factual_explanation",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_066"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_066",
+                  "quote": "‘environmental activists’ is incorrect because these are the people seeking to prevent climate change"
+                },
+                {
+                  "node_id": "pte_chunk_066",
+                  "quote": "‘gas emissions’ is incorrect because these are one of the causes of climate change"
+                },
+                {
+                  "node_id": "pte_chunk_066",
+                  "quote": "‘carbon dioxide’ is incorrect because it is one of the causes of climate change"
+                },
+                {
+                  "node_id": "pte_chunk_066",
+                  "quote": "‘drought’ is correct as it is presented in the text as one of the indicators of climate change."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Using Topic Vocabulary Groups",
+            "example": {
+              "text": "Words: “constitution,” “democracy,” “self-government,” and “political landscape.” A useful heading is “Politics / Government.” Add related academic words such as “policy,” “representation,” and “legislation,” then predict that a report or chart might use this vocabulary.",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "The answer key groups constitution, democracy, political landscape, and self-government under Politics / Government, and it lists charts, graphs, and reports as text types.",
+              "claim_kind": "factual_explanation",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_071"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_071",
+                  "quote": "constitution, democracy, equality, nationalism, political landscape, self-government"
+                },
+                {
+                  "node_id": "pte_chunk_071",
+                  "quote": "Charts, graphs, reports, etc"
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "common_misconceptions": [
+          {
+            "misconception": {
+              "text": "In a multiple-choice reading item, every option that contains words from the passage is likely to be correct.",
+              "claim_kind": "misconception_statement",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "Learners should analyze all options, discuss why each option is correct or incorrect, and notice that wrong options are called distractors.",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_066"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_066",
+                  "quote": "Explain that wrong options are known as distractors."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "misconception": {
+              "text": "For multiple-choice reading, there is only one useful order: always read the passage before the prompt and options.",
+              "claim_kind": "misconception_statement",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": null,
+              "claim_kind": "misconception_correction",
+              "origin": "insufficient_source_evidence",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": "The model did not provide a valid exact evidence span for this source_grounded claim."
+            }
+          }
+        ],
+        "practice_questions": [
+          {
+            "question": {
+              "text": "A prompt begins with “According to this text, how...?” What type of information should you predict before reading closely?",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Predict that the answer will describe a way, process, or difference, then scan for wording that explains how something happens or how two things differ.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "You see the words “population,” “birth rate,” “life expectancy,” and “infant mortality rate.” Give a suitable theme heading for this group.",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "A suitable heading is “Population.”",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "After selecting an answer, what should you do with the remaining options?",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Check each remaining option against the passage and decide why it is correct or incorrect. Treat wrong options as distractors.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Name two strategies you can use when you meet an unfamiliar word in a reading passage.",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "You can look at the word stem, prefixes, or suffixes, compare it with similar familiar words, and use the surrounding context.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "review_checklist": [
+          {
+            "text": "I can label the instructions, passage, prompt, and options in a multiple-choice reading item.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can use ‘wh’ words and sentence-completion prompts to predict the type of answer needed.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can skim a passage for its gist and scan it for details and key words.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can explain why each answer option is correct or incorrect instead of choosing by word matching alone.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can group academic vocabulary by theme and use the groups to predict likely passage content.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can use context and word parts to make a careful guess about unfamiliar vocabulary.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          }
+        ]
+      }
+    ]
+  },
+  "source_chunks": [
+    {
+      "node_id": "pte_chunk_063",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 4",
+      "chapter_number": 4,
+      "section": "LESSON 4",
+      "topic": "LESSON 4",
+      "content_type": "unknown",
+      "page_start": 63,
+      "page_end": 63,
+      "is_front_matter": false,
+      "text_preview": "Lesson 4© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 30 The Official Guide to PTE Academic Teacher Notes Overview Time allocated: 2 hours This lesson focuses on the following reading skills: ➤ Main idea or gist: Read for and identify the main idea or theme of the text ➤ Deta..."
+    },
+    {
+      "node_id": "pte_chunk_064",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 4",
+      "chapter_number": 4,
+      "section": "LESSON 4",
+      "topic": "LESSON 4",
+      "content_type": "unknown",
+      "page_start": 64,
+      "page_end": 64,
+      "is_front_matter": false,
+      "text_preview": "Lesson 4© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 31 The Official Guide to PTE Academic Teacher Notes Lesson Plan Introduction whole class (5 mins) • Explain that in this lesson test takers will look at the item types Reading: Multiple-choice, choose single answer and Rea..."
+    },
+    {
+      "node_id": "pte_chunk_065",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 4",
+      "chapter_number": 4,
+      "section": "LESSON 4",
+      "topic": "LESSON 4",
+      "content_type": "unknown",
+      "page_start": 65,
+      "page_end": 65,
+      "is_front_matter": false,
+      "text_preview": "Lesson 4© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 32 The Official Guide to PTE Academic Teacher Notes Which of the following are facts specifically concerning the ethnicity of the citizens of Botswana? (e.g. descriptions of facts) Why was the fall in the crime rate partic..."
+    },
+    {
+      "node_id": "pte_chunk_066",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 4",
+      "chapter_number": 4,
+      "section": "LESSON 4",
+      "topic": "LESSON 4",
+      "content_type": "unknown",
+      "page_start": 66,
+      "page_end": 66,
+      "is_front_matter": false,
+      "text_preview": "Lesson 4© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 33 The Official Guide to PTE Academic Teacher Notes Aim: Get test takers to consider the strategies they have used, to think about why certain options are correct/ incorrect and to consider the possible pitfalls Steps: • F..."
+    },
+    {
+      "node_id": "pte_chunk_067",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 4",
+      "chapter_number": 4,
+      "section": "LESSON 4",
+      "topic": "LESSON 4",
+      "content_type": "unknown",
+      "page_start": 67,
+      "page_end": 67,
+      "is_front_matter": false,
+      "text_preview": "Lesson 4© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 34 The Official Guide to PTE Academic Teacher Notes • Ask test takers in their pairs to reread the passage and highlight phrases that identify or support the writer’s purpose/opinion (e.g. to show that primary schooling is..."
+    },
+    {
+      "node_id": "pte_chunk_068",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 4",
+      "chapter_number": 4,
+      "section": "LESSON 4",
+      "topic": "LESSON 4",
+      "content_type": "unknown",
+      "page_start": 68,
+      "page_end": 68,
+      "is_front_matter": false,
+      "text_preview": "Lesson 4© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 35 The Official Guide to PTE Academic Teacher Notes Round up whole class (5 mins) Materials: Official Guide p. 94 Aim: Review strategies and problems Steps: • Get test takers to look at page 94 in the Official Guide. Revie..."
+    },
+    {
+      "node_id": "pte_chunk_069",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 4",
+      "chapter_number": 4,
+      "section": "LESSON 4",
+      "topic": "LESSON 4",
+      "content_type": "unknown",
+      "page_start": 69,
+      "page_end": 69,
+      "is_front_matter": false,
+      "text_preview": "Lesson 4Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 ‘Wh’-questions • According to this text, how do excise taxes usually differ from tariffs? • What factors were involved in the disparity between the calendars of Britain and Europe in the 17th Century? • Which..."
+    },
+    {
+      "node_id": "pte_chunk_070",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 4",
+      "chapter_number": 4,
+      "section": "LESSON 4",
+      "topic": "LESSON 4",
+      "content_type": "unknown",
+      "page_start": 70,
+      "page_end": 70,
+      "is_front_matter": false,
+      "text_preview": "Lesson 4Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Complete this worksheet as preparation for looking at the multiple-choice items on CD-ROM Practice set 1 birth rate Catholic Christian citizens colonizers constitution democracy ethnicity equality infant mort..."
+    },
+    {
+      "node_id": "pte_chunk_071",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 4",
+      "chapter_number": 4,
+      "section": "LESSON 4",
+      "topic": "LESSON 4",
+      "content_type": "unknown",
+      "page_start": 71,
+      "page_end": 71,
+      "is_front_matter": false,
+      "text_preview": "Lesson 4Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Complete this worksheet as preparation for looking at the multiple-choice items on CD-ROM Practice set 1 birth rate Catholic Christian citizens colonizers constitution democracy ethnicity equality infant mort..."
+    }
+  ],
+  "audit": {
+    "status": "PASS",
+    "contract_status": "PASS",
+    "contract_audit_path": "output/pte.ch4.book_learning_materials.contract.audit.json",
+    "contract_report_path": "output/pte.ch4.book_learning_materials.contract.audit.txt"
+  }
+}
