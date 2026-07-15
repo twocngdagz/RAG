@@ -1,0 +1,1042 @@
+{
+  "schema_version": "book_learning_materials.v2",
+  "book": {
+    "slug": "pte",
+    "title": "pte",
+    "source_pdf": "input/pdfs/pte.pdf"
+  },
+  "generation": {
+    "generated_at": "2026-07-15T02:57:26.921068+00:00",
+    "pipeline_version": "book_learning_materials.v2",
+    "prompt_version": "book_learning_materials_v2_chapter.v2",
+    "backend": "codex-cli",
+    "model": "gpt-5.5",
+    "selection_mode": "chapters",
+    "selected_chapter_numbers": [
+      9
+    ],
+    "book_synthesis_performed": false,
+    "clean_chunks_path": "extracted/pte.section_clean_chunks.json"
+  },
+  "learning_materials": {
+    "chapters": [
+      {
+        "chapter_number": 9,
+        "chapter_title": "Describe Image: Planning, Fluency, Pronunciation, and Timed Practice",
+        "source_chunk_ids": [
+          "pte_chunk_124",
+          "pte_chunk_125",
+          "pte_chunk_126",
+          "pte_chunk_127",
+          "pte_chunk_128",
+          "pte_chunk_129",
+          "pte_chunk_130",
+          "pte_chunk_131",
+          "pte_chunk_132",
+          "pte_chunk_133",
+          "pte_chunk_134",
+          "pte_chunk_135",
+          "pte_chunk_136",
+          "pte_chunk_137",
+          "pte_chunk_138",
+          "pte_chunk_139",
+          "pte_chunk_140",
+          "pte_chunk_141",
+          "pte_chunk_142",
+          "pte_chunk_143",
+          "pte_chunk_144",
+          "pte_chunk_145"
+        ],
+        "estimated_study_time": {
+          "text": "Plan for about 2 hours of focused study, plus extra time for recording and reviewing your own 40-second responses.",
+          "claim_kind": "study_plan",
+          "origin": "pedagogical_generation",
+          "source_chunk_ids": [],
+          "grounded_in_source_chunk_ids": [],
+          "evidence_spans": [],
+          "reason": null
+        },
+        "chapter_summary": {
+          "text": "This lesson provides skills practice for the PTE Academic Describe image item type. It focuses on speaking for a purpose, organizing oral presentations logically, developing complex spoken ideas, using appropriate words and correct grammar, speaking naturally, and using correct intonation, pronunciation, and stress. It also includes listening practice in following an oral sequence of information.",
+          "claim_kind": "source_summary",
+          "origin": "source_grounded",
+          "source_chunk_ids": [
+            "pte_chunk_124"
+          ],
+          "grounded_in_source_chunk_ids": [],
+          "evidence_spans": [
+            {
+              "node_id": "pte_chunk_124",
+              "quote": "This lesson provides skills practice for the PTE Academic item type Describe image."
+            },
+            {
+              "node_id": "pte_chunk_124",
+              "quote": "Speaking\n• Speaking for a purpose (to repeat, to inform, to explain)\n• Supporting an opinion with details, examples and explanations\n• Organizing an oral presentation in a logical way\n• Developing complex ideas within a spoken discourse"
+            },
+            {
+              "node_id": "pte_chunk_124",
+              "quote": "Using words and phrases appropriate to the context\n• Using correct grammar\n• Speaking at a natural rate\n• Using correct intonation\n• Using correct pronunciation\n• Using correct stress"
+            },
+            {
+              "node_id": "pte_chunk_124",
+              "quote": "Listening\n• Following an oral sequencing of information"
+            }
+          ],
+          "reason": null
+        },
+        "learning_objectives": [
+          {
+            "text": "Practice speaking and listening skills used in Describe image.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_124"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_124",
+                "quote": "By the end of this lesson, test takers will have: \n➤\t Practiced the speaking and listening skills listed above"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Practice speaking strategies for the Describe image item type.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_124"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_124",
+                "quote": "➤\t Practiced speaking strategies for this item type"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Complete practice items under timed conditions and review feedback on those practice items.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_124"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_124",
+                "quote": "➤\t Completed practice items under timed conditions\n➤\t Reviewed feedback to practice items"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Practice pronunciation and oral fluency skills related to successful completion of Describe image.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_124"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_124",
+                "quote": "➤\t Practiced pronunciation and oral fluency skills related to the successful completion of this item type"
+              }
+            ],
+            "reason": null
+          }
+        ],
+        "key_terms": [
+          {
+            "term": "Describe image",
+            "meaning": {
+              "text": "Describe image assesses the ability to orally describe an image from an academic source, such as a graph, picture, map, chart, or table.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_125"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_125",
+                  "quote": "Describe image item type which assesses their ability to \norally describe an image from an academic source (such as a graph, picture, map, chart or table)."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Content",
+            "meaning": {
+              "text": "Content is scored according to the ability to accurately and thoroughly describe all aspects and elements of the image.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_131"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_131",
+                  "quote": "The score for content is based on your ability to accurately \nand thoroughly describe the image. In other words, \nyou need to describe all aspects and elements of the \nimage."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Oral fluency",
+            "meaning": {
+              "text": "Oral fluency is the ability to speak smoothly, effortlessly, and naturally, with smooth and accurate rhythm, phrasing, and stress, and without too many pauses, repetitions, false starts, or hesitations.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_131"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_131",
+                  "quote": "The score for oral fluency is based on your ability to \nspeak smoothly, effortlessly and naturally. You need to \nmake sure that your rhythm, phrasing and stress are \nsmooth and accurate"
+                },
+                {
+                  "node_id": "pte_chunk_131",
+                  "quote": "you can keep speaking \nwithout too many pauses, repetitions, false starts or \nhesitations."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Pronunciation",
+            "meaning": {
+              "text": "Pronunciation is the ability to accurately produce sounds and words, including vowels and consonants, word stress, sentence stress, and intonation.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_131"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_131",
+                  "quote": "The score for pronunciation is based on your ability to \naccurately produce sounds and words. You need to be \nable to correctly pronounce vowels and consonants, \nand to have correct word stress, sentence stress and \nintonation."
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "core_lessons": [
+          {
+            "title": "Know the format and timing",
+            "explanation": {
+              "text": "For Describe image, test takers have 25 seconds to prepare their description and 40 seconds to give their description.",
+              "claim_kind": "task_format",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_125"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_125",
+                  "quote": "for this item type, they have 25 seconds to prepare for their description and 40 seconds \nto give their description."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Plan a graph response before speaking",
+            "explanation": {
+              "text": "A graph response can be planned by identifying the speaking purpose, general topic, axis information, unit of measurement, significant information, and remarkable facts in the image.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_126"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_126",
+                  "quote": "What is your speaking purpose for this task?  (To describe a graph and recount its statistical \ninformation.)"
+                },
+                {
+                  "node_id": "pte_chunk_126",
+                  "quote": "What is the general topic conveyed by this image? (The populations of Spanish speaking people in \nvarious countries)"
+                },
+                {
+                  "node_id": "pte_chunk_126",
+                  "quote": "What information is given on the x and y axes? (x axis = the countries, y axis = populations)\n– What unit of measurement is used? (millions)"
+                },
+                {
+                  "node_id": "pte_chunk_126",
+                  "quote": "What significant information is conveyed by the image? (Most Spanish speaking countries are in \nLatin America, and Mexico has the greatest number of speakers.)"
+                },
+                {
+                  "node_id": "pte_chunk_126",
+                  "quote": "Are there any remarkable facts given in the graph’s information?"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Organize graph descriptions logically",
+            "explanation": {
+              "text": "Graph descriptions usually begin with the main topic, then present facts from the x or y axis supported by statistics. If there is a trend or exception, comment on it and support it with data; if there is no obvious trend, describe the graph from left to right, and for pie charts start with the largest piece.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_126"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_126",
+                  "quote": "Descriptions of graphical \nimages usually begin with a sentence that states the main topic, often paraphrased from the title, \nfollowed by facts from the x or y axis supported by statistics."
+                },
+                {
+                  "node_id": "pte_chunk_126",
+                  "quote": "If test takers can see a trend or an \nexception, they should comment on it and support what they say with some data."
+                },
+                {
+                  "node_id": "pte_chunk_126",
+                  "quote": "If test takers \nare describing data that does not have an obvious trend, they should describe a graph from left to \nright, and start with the largest piece of the pie for pie charts."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Choose tense from the time information in the image",
+            "explanation": {
+              "text": "Use the simple present tense when a graph has no fixed time periods. If fixed time periods are used, such as a comparison of statistics over different specific times, use the simple past tense.",
+              "claim_kind": "grammar_rule",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_126"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_126",
+                  "quote": "The simple present tense \nbecause the graph has no fixed time periods."
+                },
+                {
+                  "node_id": "pte_chunk_126",
+                  "quote": "If fixed time periods were used, for example in a \ncomparison of statistics over different specific times, the simple past tense would be used."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Adapt planning for photographs",
+            "explanation": {
+              "text": "A photograph description cannot be planned or presented exactly like a graph or pie chart, but some of the same planning questions can still be used. Images that emphasize contrast usually begin with the main topic of contrast and then give examples of differences.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_128"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_128",
+                  "quote": "since this image is a photo, rather than a graph or pie chart, its \ndescription cannot be planned or presented in quite the same way as the previous examples."
+                },
+                {
+                  "node_id": "pte_chunk_128",
+                  "quote": "However, \nsome of the same planning questions asked earlier can still be used."
+                },
+                {
+                  "node_id": "pte_chunk_128",
+                  "quote": "Descriptions of images that \nemphasize contrast usually begin with a sentence that states the main topic of contrast, and then \ngive examples of differences."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Use stress and intonation to support meaning",
+            "explanation": {
+              "text": "In English, meaning is expressed by stressing certain words, generally key words or new information. Word stress matters because stressing an incorrect syllable can create confusion. Intonation also gives meaning and tells the listener the speaker’s intention.",
+              "claim_kind": "pronunciation_rule",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_128"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_128",
+                  "quote": "in English a lot of meaning is expressed by stressing certain words (i.e. saying them with \nmore emphasis and loudly). These are generally key words or new information."
+                },
+                {
+                  "node_id": "pte_chunk_128",
+                  "quote": "word stress is important as stressing an incorrect syllable in a word can create \nconfusion"
+                },
+                {
+                  "node_id": "pte_chunk_128",
+                  "quote": "intonation (i.e. whether the speaker’s voice rises or falls) gives a lot of meaning \nand also tells the listener the speaker’s intention."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Use checklist-based peer feedback",
+            "explanation": {
+              "text": "During timed practice, one partner speaks while the other listens, assesses the performance with a brief checklist, and gives feedback based on notes made on the checklist.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_129"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_129",
+                  "quote": "As one \npartner speaks, the other must listen and assess his/her performance by completing a brief checklist."
+                },
+                {
+                  "node_id": "pte_chunk_129",
+                  "quote": "the \nlistening partner listens and assesses, then gives his/her partner feedback based on notes made on \nthe checklist."
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "worked_examples": [
+          {
+            "title": "Planning a graph response",
+            "example": {
+              "text": "Prompt yourself in this order: What is the image type? What is the main topic? What data categories are shown? What numbers or units are important? What is the biggest value? Is there an exception or trend? Then turn those notes into a 40-second description.",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "The lesson models planning through questions about speaking purpose, topic, axes, units, significant information, and remarkable facts, and states that addressing these questions in order can generate enough language for 40 seconds.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_126"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_126",
+                  "quote": "What is your speaking purpose for this task?  (To describe a graph and recount its statistical \ninformation.)"
+                },
+                {
+                  "node_id": "pte_chunk_126",
+                  "quote": "What is the general topic conveyed by this image?"
+                },
+                {
+                  "node_id": "pte_chunk_126",
+                  "quote": "What information is given on the x and y axes? (x axis = the countries, y axis = populations)\n– What unit of measurement is used? (millions)"
+                },
+                {
+                  "node_id": "pte_chunk_126",
+                  "quote": "What significant information is conveyed by the image?"
+                },
+                {
+                  "node_id": "pte_chunk_126",
+                  "quote": "by addressing each of these questions in order, they can successfully generate \nenough language for the 40 seconds required."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Describing a photograph with contrast",
+            "example": {
+              "text": "Start with the contrast: “The image contrasts an older building with a newer building.” Then describe visible differences such as height, materials, style, surface, and position.",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "For photographs that emphasize contrast, the lesson recommends beginning with the main topic of contrast and then giving examples of differences; it also gives possible contrasting adjectives such as old/new, high/low, smooth/rough, and modern/classical.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_128"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_128",
+                  "quote": "Descriptions of images that \nemphasize contrast usually begin with a sentence that states the main topic of contrast, and then \ngive examples of differences."
+                },
+                {
+                  "node_id": "pte_chunk_128",
+                  "quote": "What are some contrasting adjectives that might be used to refer to both buildings? (‘old/new’, \n‘high/low’, ‘smooth/rough’, ‘modern/classical’)"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Using a model response to notice organization",
+            "example": {
+              "text": "After recording your answer, compare it with a sample response. Check whether both answers begin with the main topic, select relevant details, use figures accurately, and use appropriate grammar and vocabulary.",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "The lesson asks test takers to compare their descriptions with models and reflect on introductions, information, organization, vocabulary, and grammar.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_129"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_129",
+                  "quote": "Ask test takers to \ncompare their descriptions with the models and to reflect on whether they used similar introductions, \ninformation, organization, vocabulary and grammar."
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "common_misconceptions": [
+          {
+            "misconception": {
+              "text": "Describe image is scored only on content, so pronunciation and fluency do not matter.",
+              "claim_kind": "misconception_statement",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "Describe image is scored according to three factors: content, oral fluency, and pronunciation.",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_131"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_131",
+                  "quote": "The Describe image item type is scored according to \nthree factors:\n• Content\n• Oral fluency\n• Pronunciation"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "misconception": {
+              "text": "A good graph response can list numbers in any order without an opening topic sentence.",
+              "claim_kind": "misconception_statement",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "Descriptions usually begin with a sentence stating the main topic and then give image details supported by figures.",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_127"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_127",
+                  "quote": "descriptions usually begin with a sentence \nthat states the main topic (often from the title), then give details about the image which are supported \nby figures."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "misconception": {
+              "text": "Word stress and sentence stress are optional because the listener can still understand the words.",
+              "claim_kind": "misconception_statement",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "Pronunciation includes producing sounds and words accurately, pronouncing vowels and consonants correctly, and using correct word stress, sentence stress, and intonation.",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_131"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_131",
+                  "quote": "The score for pronunciation is based on your ability to \naccurately produce sounds and words. You need to be \nable to correctly pronounce vowels and consonants, \nand to have correct word stress, sentence stress and \nintonation."
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "practice_questions": [
+          {
+            "question": {
+              "text": "You have 25 seconds to prepare. Look at a graph or chart and write six planning notes: image type, main topic, important labels, unit of measurement, highest or lowest value, and one trend or exception. Then give a 40-second spoken description.",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "A strong answer begins with the main topic, includes relevant figures or labels, comments on a trend or exception if visible, uses an appropriate tense, and continues fluently for close to 40 seconds.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Record yourself describing a photograph that shows contrast. Start with the main contrast, then give at least three examples of differences you can see.",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "A strong answer states the contrast clearly, then describes visible differences using relevant vocabulary such as old/new, high/low, smooth/rough, or modern/classical where appropriate.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Listen to a partner’s 40-second response and complete a checklist: main topic sentence, relevant content, logical organization, grammar, range of vocabulary, correct tense, fluency, word and sentence stress, and intonation.",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Useful feedback names one strength and one specific improvement, such as adding a clearer main-topic sentence, using more precise figures, reducing pauses, or improving sentence stress on key words.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Read a short Describe image response aloud twice: once stressing nouns and adjectives that carry key information, and once stressing small words such as articles and prepositions. Notice which version is clearer.",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "The clearer version should stress key words and new information rather than small grammatical words.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "review_checklist": [
+          {
+            "text": "I can explain that Describe image requires 25 seconds of preparation and 40 seconds of speaking.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can begin a graph description with the main topic and then support details with figures.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can choose simple present or simple past tense based on whether the image has fixed time periods.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can describe a photograph by identifying the main topic or contrast and giving specific examples.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can monitor whether I keep speaking without too many pauses, repetitions, false starts, or hesitations.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can use word stress, sentence stress, and intonation to make my spoken response clearer.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          }
+        ]
+      }
+    ]
+  },
+  "source_chunks": [
+    {
+      "node_id": "pte_chunk_124",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 8",
+      "chapter_number": 9,
+      "section": "LESSON 8",
+      "topic": "LESSON 8",
+      "content_type": "unknown",
+      "page_start": 124,
+      "page_end": 124,
+      "is_front_matter": false,
+      "text_preview": "Lesson 8© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 58 The Official Guide to PTE Academic Teacher Notes Overview Time allocated: 2 hours This lesson focuses on the following skills: Speaking • Speaking for a purpose (to repeat, to inform, to explain) • Supporting an opinion..."
+    },
+    {
+      "node_id": "pte_chunk_125",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 8",
+      "chapter_number": 9,
+      "section": "LESSON 8",
+      "topic": "LESSON 8",
+      "content_type": "unknown",
+      "page_start": 125,
+      "page_end": 125,
+      "is_front_matter": false,
+      "text_preview": "Lesson 8© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 59 The Official Guide to PTE Academic Teacher Notes • Image of ‘Describing a photograph’ for projection on board/visualizer • Copies of ‘Pronunciation strategies’ (1 handout per pair) • Copies of ‘Pronunciation strategies:..."
+    },
+    {
+      "node_id": "pte_chunk_126",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 8",
+      "chapter_number": 9,
+      "section": "LESSON 8",
+      "topic": "LESSON 8",
+      "content_type": "unknown",
+      "page_start": 126,
+      "page_end": 126,
+      "is_front_matter": false,
+      "text_preview": "Lesson 8© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 60 The Official Guide to PTE Academic Teacher Notes • Elicit any problems runners had when reporting and writers had when listening. This will help test takers to see how pronunciation skills such as articulating word endi..."
+    },
+    {
+      "node_id": "pte_chunk_127",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 8",
+      "chapter_number": 9,
+      "section": "LESSON 8",
+      "topic": "LESSON 8",
+      "content_type": "unknown",
+      "page_start": 127,
+      "page_end": 127,
+      "is_front_matter": false,
+      "text_preview": "Lesson 8© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 61 The Official Guide to PTE Academic Teacher Notes Main activity 1: part 2 group work (10 mins) Describing graphs: guided planning practice Materials: • Copies of Worksheet 1 • Image of ‘Worksheet 1: Answer key’ for proje..."
+    },
+    {
+      "node_id": "pte_chunk_128",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 8",
+      "chapter_number": 9,
+      "section": "LESSON 8",
+      "topic": "LESSON 8",
+      "content_type": "unknown",
+      "page_start": 128,
+      "page_end": 128,
+      "is_front_matter": false,
+      "text_preview": "Lesson 8© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 62 The Official Guide to PTE Academic Teacher Notes Skills: Speaking for a purpose (to repeat, to inform, to explain); Supporting an opinion with details, examples and explanations; Organizing an oral presentation in a log..."
+    },
+    {
+      "node_id": "pte_chunk_129",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 8",
+      "chapter_number": 9,
+      "section": "LESSON 8",
+      "topic": "LESSON 8",
+      "content_type": "unknown",
+      "page_start": 129,
+      "page_end": 129,
+      "is_front_matter": false,
+      "text_preview": "Lesson 8© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 63 The Official Guide to PTE Academic Teacher Notes • Ask test takers to work together to complete the tasks at their own pace. Remind test takers that there may be different possible ways of using stress or intonation in..."
+    },
+    {
+      "node_id": "pte_chunk_130",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 8",
+      "chapter_number": 9,
+      "section": "LESSON 8",
+      "topic": "LESSON 8",
+      "content_type": "unknown",
+      "page_start": 130,
+      "page_end": 130,
+      "is_front_matter": false,
+      "text_preview": "Lesson 8© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 64 The Official Guide to PTE Academic Teacher Notes Homework activities Materials: • Official Guide pp. 54, 175–176 • Audio CD • For homework, ask test takers to take another look at the practice item task on page 54 of th..."
+    },
+    {
+      "node_id": "pte_chunk_131",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 8",
+      "chapter_number": 9,
+      "section": "LESSON 8",
+      "topic": "LESSON 8",
+      "content_type": "unknown",
+      "page_start": 131,
+      "page_end": 131,
+      "is_front_matter": false,
+      "text_preview": "Lesson 8Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 The Describe image item type is scored according to three factors: • Content • Oral fluency • Pronunciation The score for content is based on your ability to accurately and thoroughly describe the image. In o..."
+    },
+    {
+      "node_id": "pte_chunk_132",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 8",
+      "chapter_number": 9,
+      "section": "LESSON 8",
+      "topic": "LESSON 8",
+      "content_type": "unknown",
+      "page_start": 132,
+      "page_end": 132,
+      "is_front_matter": false,
+      "text_preview": "Lesson 8Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Worksheet 1 Look at the graph below. In 25 seconds, please describe in detail what the graph is showing. You will have 40 seconds to give your response. This graph the number, in , of the people who . Mexico..."
+    },
+    {
+      "node_id": "pte_chunk_133",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 8",
+      "chapter_number": 9,
+      "section": "LESSON 8",
+      "topic": "LESSON 8",
+      "content_type": "unknown",
+      "page_start": 133,
+      "page_end": 133,
+      "is_front_matter": false,
+      "text_preview": "Lesson 8Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 This graph the number, in , of the people who . Mexico has over double the number of of any other country including Spain. Colombia and Argentina each over 30 million Spanish speakers. The United States has m..."
+    },
+    {
+      "node_id": "pte_chunk_134",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 8",
+      "chapter_number": 9,
+      "section": "LESSON 8",
+      "topic": "LESSON 8",
+      "content_type": "unknown",
+      "page_start": 134,
+      "page_end": 134,
+      "is_front_matter": false,
+      "text_preview": "Lesson 8Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Describing graphs Look at the images below and describe in detail to your partner what each image shows. Image 1: New Zealand exports Image 2: Daily Processor Chip Output [Source: CD-ROM Practice Sets 1 (2) a..."
+    },
+    {
+      "node_id": "pte_chunk_135",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 8",
+      "chapter_number": 9,
+      "section": "LESSON 8",
+      "topic": "LESSON 8",
+      "content_type": "unknown",
+      "page_start": 135,
+      "page_end": 135,
+      "is_front_matter": false,
+      "text_preview": "Lesson 8Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Describing graphs: Possible responses As you look at the possible responses, think about alternative words that could be used to replace the underlined words. Image 1: New Zealand exports This pie chart illus..."
+    },
+    {
+      "node_id": "pte_chunk_136",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 8",
+      "chapter_number": 9,
+      "section": "LESSON 8",
+      "topic": "LESSON 8",
+      "content_type": "unknown",
+      "page_start": 136,
+      "page_end": 136,
+      "is_front_matter": false,
+      "text_preview": "Lesson 8Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Describing a photograph Look at the images below and describe in detail to your partner what each image shows. Image 3: New and old Possible response As you look at the possible response, think about alternat..."
+    },
+    {
+      "node_id": "pte_chunk_137",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 8",
+      "chapter_number": 9,
+      "section": "LESSON 8",
+      "topic": "LESSON 8",
+      "content_type": "unknown",
+      "page_start": 137,
+      "page_end": 137,
+      "is_front_matter": false,
+      "text_preview": "Lesson 8Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 1. Word stress The words in the table below have been separated into syllables. Practice saying each word and underline the stressed syllable in each one. What general patterns do you see? 2 syllable nouns 2..."
+    },
+    {
+      "node_id": "pte_chunk_138",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 8",
+      "chapter_number": 9,
+      "section": "LESSON 8",
+      "topic": "LESSON 8",
+      "content_type": "unknown",
+      "page_start": 138,
+      "page_end": 138,
+      "is_front_matter": false,
+      "text_preview": "Lesson 8Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 1. Word stress 2 syllable nouns 2 syllable verbs 3 syllable verbs 3 syllable nouns & adjectives im/age de/scribes il/lu/strates flu/en/cy out/put ac/counts for in/di/cates var/i/ous speak/ers pre/sents fluc/t..."
+    },
+    {
+      "node_id": "pte_chunk_139",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 8",
+      "chapter_number": 9,
+      "section": "LESSON 8",
+      "topic": "LESSON 8",
+      "content_type": "unknown",
+      "page_start": 139,
+      "page_end": 139,
+      "is_front_matter": false,
+      "text_preview": "Lesson 8Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 2. Sentence stress Your partner should stress key words and words which give new information. Key words in this passage are generally nouns and adjectives, not small words such as articles, conjunctions and p..."
+    },
+    {
+      "node_id": "pte_chunk_140",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 8",
+      "chapter_number": 9,
+      "section": "LESSON 8",
+      "topic": "LESSON 8",
+      "content_type": "unknown",
+      "page_start": 140,
+      "page_end": 140,
+      "is_front_matter": false,
+      "text_preview": "Lesson 8Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 3. Intonation The Describe image item type is scored according to three factors ➔: • Content ➔ • Oral fluency ➔, and • Pronunciation ➔ The score for content is based on your ability to accurately and thorough..."
+    },
+    {
+      "node_id": "pte_chunk_141",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 8",
+      "chapter_number": 9,
+      "section": "LESSON 8",
+      "topic": "LESSON 8",
+      "content_type": "unknown",
+      "page_start": 141,
+      "page_end": 141,
+      "is_front_matter": false,
+      "text_preview": "Lesson 8Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Describe Image Checklist Questions Image 1 Image 2 Did your partner use the title, key words and information from the image to help him/her? Did your partner begin by giving a sentence that described the main..."
+    },
+    {
+      "node_id": "pte_chunk_142",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 8",
+      "chapter_number": 9,
+      "section": "LESSON 8",
+      "topic": "LESSON 8",
+      "content_type": "unknown",
+      "page_start": 142,
+      "page_end": 142,
+      "is_front_matter": false,
+      "text_preview": "Lesson 8Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Practice Items A Item 1 Look at the table below. In 25 seconds, please describe in detail what the table is showing. You will have 40 seconds to give your response. Timetable: Monday (Semester 1) 9 a.m. Intro..."
+    },
+    {
+      "node_id": "pte_chunk_143",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 8",
+      "chapter_number": 9,
+      "section": "LESSON 8",
+      "topic": "LESSON 8",
+      "content_type": "unknown",
+      "page_start": 143,
+      "page_end": 143,
+      "is_front_matter": false,
+      "text_preview": "Lesson 8Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Practice Items A: Sample responses Item 1 The image shows a school timetable for Monday in Semester 1. Lectures start at 9 a.m. and conclude at 4 p.m. The first lecture is Introductory Statistics at 9 a.m. Th..."
+    },
+    {
+      "node_id": "pte_chunk_144",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 8",
+      "chapter_number": 9,
+      "section": "LESSON 8",
+      "topic": "LESSON 8",
+      "content_type": "unknown",
+      "page_start": 144,
+      "page_end": 144,
+      "is_front_matter": false,
+      "text_preview": "Lesson 8Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Practice Items B Item 1 Look at the graph below. In 25 seconds, please describe in detail what the graph is showing. You will have 40 seconds to give your response. Mode of Travel to University for Second-yea..."
+    },
+    {
+      "node_id": "pte_chunk_145",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 8",
+      "chapter_number": 9,
+      "section": "LESSON 8",
+      "topic": "LESSON 8",
+      "content_type": "unknown",
+      "page_start": 145,
+      "page_end": 145,
+      "is_front_matter": false,
+      "text_preview": "Lesson 8Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Practice Items B: Sample responses Item 1 This diagram shows how a selection of 100 second-year university students travel to university. 60 students said that they travel by train, 30 stated that they travel..."
+    }
+  ],
+  "audit": {
+    "status": "PASS",
+    "contract_status": "PASS",
+    "contract_audit_path": "output/pte.ch9.gen.contract.audit.json",
+    "contract_report_path": "output/pte.ch9.gen.contract.audit.txt"
+  }
+}
