@@ -279,19 +279,32 @@ class ContractValidator:
                 f"Expected pipeline_version {BOOK_LEARNING_MATERIALS_SCHEMA_VERSION}, got {pipeline_version!r}.",
             )
 
-        for key in ["book", "generation", "learning_materials", "source_chunks", "audit"]:
+        # Every required top-level field is checked for TYPE, not just presence.
+        # A wrong type here used to slip through: learning_materials arriving as a
+        # string (or anything but an object) meant validate_learning_materials was
+        # never called -- so a malformed book skipped all content validation and
+        # still returned PASS. The contract is the deterministic grounding gate, so
+        # a top-level shape it cannot validate must FAIL, not pass silently.
+        required_top_level = {
+            "book": (dict, "an object"),
+            "generation": (dict, "an object"),
+            "learning_materials": (dict, "an object"),
+            "source_chunks": (list, "an array"),
+            "audit": (dict, "an object"),
+        }
+        for key, (expected_type, label) in required_top_level.items():
             if key not in self.book:
                 self.add_error(
                     "INVALID_TOP_LEVEL_SHAPE",
                     f"$.{key}",
                     f"Missing required top-level field: {key}",
                 )
-        if "source_chunks" in self.book and not isinstance(self.book.get("source_chunks"), list):
-            self.add_error(
-                "INVALID_TOP_LEVEL_SHAPE",
-                "$.source_chunks",
-                "source_chunks must be an array.",
-            )
+            elif not isinstance(self.book.get(key), expected_type):
+                self.add_error(
+                    "INVALID_TOP_LEVEL_SHAPE",
+                    f"$.{key}",
+                    f"{key} must be {label}.",
+                )
 
     def validate_learning_materials(self, materials: dict[str, Any]) -> None:
         if "book_overview" in materials:

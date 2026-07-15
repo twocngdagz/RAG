@@ -70,6 +70,36 @@ def test_accepts_valid_v2_artifact_and_counts_contract_features(tmp_path):
     assert summary["claims_by_origin"]["pedagogical_generation"] == 9
 
 
+def test_wrong_typed_learning_materials_fails_instead_of_skipping_validation(tmp_path):
+    # Audit finding H-3: content validation ran only when learning_materials was a
+    # dict, so a string (or any non-object) skipped every content check and the
+    # book still returned PASS. The contract is the grounding gate; a shape it
+    # cannot validate must FAIL.
+    for bad_value in ["a string, not an object", [], 42, None]:
+        book = load_valid_book()
+        book["learning_materials"] = bad_value
+        audit = validate_data(tmp_path, book=book)
+        assert audit["status"] == "FAIL", f"passed with learning_materials={bad_value!r}"
+        assert "INVALID_TOP_LEVEL_SHAPE" in error_codes(audit)
+
+
+def test_wrong_typed_top_level_fields_are_all_rejected(tmp_path):
+    for key, bad_value in [
+        ("book", "str"),
+        ("generation", []),
+        ("source_chunks", {}),
+        ("audit", "str"),
+    ]:
+        book = load_valid_book()
+        book[key] = bad_value
+        audit = validate_data(tmp_path, book=book)
+        assert audit["status"] == "FAIL", f"{key}={bad_value!r} passed"
+        assert any(
+            e["json_path"] == f"$.{key}" and e["code"] == "INVALID_TOP_LEVEL_SHAPE"
+            for e in audit["errors"]
+        ), f"no top-level type error for {key}"
+
+
 def test_rejects_schema_and_pipeline_version_problems(tmp_path):
     book = load_valid_book()
     book["schema_version"] = "book_learning_materials.v1"
