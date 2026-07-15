@@ -187,6 +187,17 @@ def get_chapter(session: Session, book_slug: str, chapter_number: int) -> Chapte
     return session.get(ChapterRecord, stable_chapter_id(book_slug, chapter_number))
 
 
+def list_books(session: Session) -> list[dict[str, Any]]:
+    from sqlalchemy import func
+
+    stmt = (
+        select(ChapterRecord.book_slug, func.count())
+        .group_by(ChapterRecord.book_slug)
+        .order_by(ChapterRecord.book_slug)
+    )
+    return [{"slug": slug, "chapter_count": count} for slug, count in session.execute(stmt)]
+
+
 # --------------------------------------------------------------------------- #
 # CLI
 # --------------------------------------------------------------------------- #
