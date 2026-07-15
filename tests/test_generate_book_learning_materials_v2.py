@@ -243,10 +243,12 @@ def valid_v2_chapter(chapter_number: int, node_id: str | list[str]) -> dict:
         ],
         "common_misconceptions": [
             {
-                "misconception": source_grounded(
+                # A misconception names a false belief, so it is generated, not
+                # grounded; the paired correction carries the source evidence.
+                "misconception": grounded(
                     text="Learners may think they should give a long answer.",
                     claim_kind="misconception_statement",
-                    index=0,
+                    origin="pedagogical_generation",
                 ),
                 "correction": source_grounded(
                     text="The source describes the answer as brief and spoken.",

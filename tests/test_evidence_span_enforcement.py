@@ -173,9 +173,12 @@ def test_misconception_correction_still_requires_covering_evidence():
     assert result["text"] is None
 
 
-def test_misconception_may_still_be_source_grounded_when_the_source_names_it():
+def test_misconception_is_never_source_grounded_even_when_the_model_grounds_it():
+    # The model quoted a source line to "ground" a misconception, but the source
+    # states the truth, so the quote refutes the misconception and the judge
+    # called it CONTRADICTED. A named false belief is always treated as generated.
     obj = grounded(
-        text="Candidates must answer briefly.",
+        text="Speak on is a phrasal verb with an idiomatic meaning different from speak.",
         claim_kind="misconception_statement",
         origin="source_grounded",
         source_chunk_ids=["c1"],
@@ -183,8 +186,10 @@ def test_misconception_may_still_be_source_grounded_when_the_source_names_it():
     )
     result = normalize(obj)
 
-    assert result["origin"] == "source_grounded"
-    assert len(result["evidence_spans"]) == 1
+    assert result["origin"] == "pedagogical_generation"
+    assert result["evidence_spans"] == []
+    assert result["source_chunk_ids"] == []
+    assert result["text"] is not None
 
 
 def test_schema_rules_explain_that_a_misconception_states_the_false_belief():
@@ -202,3 +207,16 @@ def test_schema_rules_demand_evidence_for_the_whole_text_not_just_part():
 
     assert "EVIDENCE MUST COVER THE WHOLE TEXT" in rules
     assert "Only assert what you can quote" in rules
+
+
+def test_generator_and_contract_agree_on_generated_claim_kinds():
+    # The two modules each keep their own copy of the allowed-generated-kinds set.
+    # They drifted once -- the generator coerced misconception_statement to
+    # pedagogical_generation while the contract still rejected it -- so pin them
+    # equal to catch the next divergence at test time, not in a failed run.
+    import book_learning_materials_contract as contract
+
+    assert (
+        v2.PEDAGOGICAL_GENERATION_CLAIM_KINDS
+        == contract.PEDAGOGICAL_GENERATION_ALLOWED_KINDS
+    )

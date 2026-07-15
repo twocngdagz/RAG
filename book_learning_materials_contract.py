@@ -50,6 +50,10 @@ PEDAGOGICAL_GENERATION_ALLOWED_KINDS = {
     "learner_instruction",
     "self_assessment",
     "study_plan",
+    # A misconception names a false belief, so it is generated, not grounded: the
+    # source states the truth and never the error. Kept in sync with the
+    # generator, which coerces every misconception_statement to this origin.
+    "misconception_statement",
 }
 
 GROUNDED_CONTENT_FIELDS = {

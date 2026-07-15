@@ -491,6 +491,17 @@ def normalize_grounded_content_object(
     }
     claim_kind = normalized["claim_kind"]
     origin = normalized["origin"]
+    # A misconception names a false belief; the source states the truth, not the
+    # error. When the model grounds a misconception, it can only cite text that
+    # refutes it -- "speak on IS a phrasal verb" cited against the source line
+    # "speak on is NOT a phrasal verb" -- and the judge then reads the
+    # misconception as CONTRADICTED by its own evidence. Allowing it to be
+    # generated was not enough while the model could still choose source_grounded,
+    # so a named misconception is always treated as generated. The paired
+    # correction stays source_grounded and carries the grounding.
+    if claim_kind == "misconception_statement" and origin == "source_grounded":
+        origin = "pedagogical_generation"
+        normalized["origin"] = "pedagogical_generation"
     source_ids = [
         str(node_id).strip()
         for node_id in value.get("source_chunk_ids", [])
