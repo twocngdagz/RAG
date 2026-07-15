@@ -1,0 +1,1035 @@
+{
+  "schema_version": "book_learning_materials.v2",
+  "book": {
+    "slug": "pte",
+    "title": "pte",
+    "source_pdf": "input/pdfs/pte.pdf"
+  },
+  "generation": {
+    "generated_at": "2026-07-15T03:22:28.144820+00:00",
+    "pipeline_version": "book_learning_materials.v2",
+    "prompt_version": "book_learning_materials_v2_chapter.v2",
+    "backend": "codex-cli",
+    "model": "gpt-5.5",
+    "selection_mode": "chapters",
+    "selected_chapter_numbers": [
+      14
+    ],
+    "book_synthesis_performed": false,
+    "clean_chunks_path": "extracted/pte.section_clean_chunks.json"
+  },
+  "learning_materials": {
+    "chapters": [
+      {
+        "chapter_number": 14,
+        "chapter_title": "Lesson 13: Re-tell lecture",
+        "source_chunk_ids": [
+          "pte_chunk_202",
+          "pte_chunk_203",
+          "pte_chunk_204",
+          "pte_chunk_205",
+          "pte_chunk_206",
+          "pte_chunk_207",
+          "pte_chunk_208",
+          "pte_chunk_209",
+          "pte_chunk_210",
+          "pte_chunk_211",
+          "pte_chunk_212",
+          "pte_chunk_213",
+          "pte_chunk_214",
+          "pte_chunk_215",
+          "pte_chunk_216",
+          "pte_chunk_217"
+        ],
+        "estimated_study_time": {
+          "text": "Study this chapter in one focused session of about 2 hours, then add extra practice time for timed retell attempts and feedback review.",
+          "claim_kind": "study_plan",
+          "origin": "pedagogical_generation",
+          "source_chunk_ids": [],
+          "grounded_in_source_chunk_ids": [],
+          "evidence_spans": [],
+          "reason": null
+        },
+        "chapter_summary": {
+          "text": "This chapter practises the PTE Academic Re-tell lecture item type. It focuses on listening for main ideas, supporting points, speaker purpose, vocabulary, explicit and implicit information, sequencing, and variations in tone, speed and accent. It also develops speaking skills for repeating, informing, explaining, organizing an oral presentation, using appropriate language and grammar, speaking fluently at a natural rate, and using correct intonation, pronunciation and stress under timed conditions.",
+          "claim_kind": "source_summary",
+          "origin": "source_grounded",
+          "source_chunk_ids": [
+            "pte_chunk_202"
+          ],
+          "grounded_in_source_chunk_ids": [],
+          "evidence_spans": [
+            {
+              "node_id": "pte_chunk_202",
+              "quote": "This lesson provides skills practice for the PTE Academic item type Re-tell lecture."
+            },
+            {
+              "node_id": "pte_chunk_202",
+              "quote": "This lesson focuses on the following skills:  \nListening\n• Identifying the topic, theme or main ideas\n• Identifying supporting points or examples\n• Identifying a speaker’s purpose, style, tone or attitude"
+            },
+            {
+              "node_id": "pte_chunk_202",
+              "quote": "• Understanding academic vocabulary\n• Inferring the meaning of unfamiliar words\n• Comprehending explicit and implicit information\n• Comprehending concrete and abstract information\n• Classifying and categorizing information"
+            },
+            {
+              "node_id": "pte_chunk_202",
+              "quote": "• Following an oral sequencing of information\n• Comprehending variations in tone, speed, accent"
+            },
+            {
+              "node_id": "pte_chunk_202",
+              "quote": "Speaking\n• Speaking for a purpose (to repeat, to inform, to explain)\n• Supporting an opinion with details, examples and explanations\n• Organizing an oral presentation in a logical way"
+            },
+            {
+              "node_id": "pte_chunk_202",
+              "quote": "• Using correct grammar\n• Speaking at a natural rate\n• Producing fluent speech\n• Using correct intonation\n• Using correct pronunciation\n• Using correct stress\n• Speaking under timed conditions"
+            }
+          ],
+          "reason": null
+        },
+        "learning_objectives": [
+          {
+            "text": "Practise the listening and speaking skills needed for Re-tell lecture.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_202"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_202",
+                "quote": "By the end of this lesson, test takers will have: \n➤\t Practiced the listening and speaking skills listed above"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Analyze the rubrics and format of the Re-tell lecture item.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_202"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_202",
+                "quote": "➤\t Analyzed the rubrics and format of this item"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Analyze test-taking strategies for Re-tell lecture.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_202"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_202",
+                "quote": "➤\t Analyzed test-taking strategies for this item"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Complete practice items under timed conditions and review feedback.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_202"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_202",
+                "quote": "➤\t Completed practice items under timed conditions\n➤\t Reviewed feedback to practice items"
+              }
+            ],
+            "reason": null
+          }
+        ],
+        "key_terms": [
+          {
+            "term": "Re-tell lecture",
+            "meaning": {
+              "text": "Re-tell lecture is a long-answer speaking item type.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_210"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_210",
+                  "quote": "Re-tell lecture is a long-answer speaking item type."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Content",
+            "meaning": {
+              "text": "Content is scored by how accurately and thoroughly the response conveys the situation, characters, aspects, actions and developments in the lecture.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_210"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_210",
+                  "quote": "Content is scored by determining how accurately and thoroughly you convey the \nsituation, characters, aspects, actions and developments presented in the lecture."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Oral Fluency",
+            "meaning": {
+              "text": "Oral Fluency is scored by whether rhythm, phrasing and stress are smooth.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_210"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_210",
+                  "quote": "Oral Fluency: Oral Fluency is scored by determining if your rhythm, phrasing and stress \nare smooth."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Pronunciation",
+            "meaning": {
+              "text": "Pronunciation is scored by whether speech is easily understandable to most regular speakers of the language.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_210"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_210",
+                  "quote": "Pronunciation is scored by determining if your speech is easily understandable \nto most regular speakers of the language."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Note taking",
+            "meaning": {
+              "text": "Note taking acts as a reminder or memory aid, focuses on key ideas or words, and may be brief, abbreviated, or use points, diagrams or mind maps.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_205"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_205",
+                  "quote": "the purpose and key features of note taking (to act as \na reminder/memory aid; focus on key ideas/words; brief, abbreviated, may involve points/diagrams/\nmind maps, etc)"
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "core_lessons": [
+          {
+            "title": "Know The Item Format",
+            "explanation": {
+              "text": "In Re-tell lecture, instructions are shown at the top of the computer screen. The test taker hears a lecture, then has 10 seconds to prepare and 40 seconds to retell the lecture in their own words.",
+              "claim_kind": "task_format",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_210"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_210",
+                  "quote": "Instructions are presented at the top of the computer screen. The instructions are:\nYou will hear a lecture."
+                },
+                {
+                  "node_id": "pte_chunk_210",
+                  "quote": "After listening to the lecture, in 10 seconds, please speak into the microphone \nand retell what you have just heard from the lecture in your own words."
+                },
+                {
+                  "node_id": "pte_chunk_210",
+                  "quote": "You will have 40 seconds to \ngive your response."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Expect One Recording And A Short Response Window",
+            "explanation": {
+              "text": "The recording plays automatically after three seconds. When it finishes, a 10-second timer counts down before the response. After 10 seconds, the microphone opens and recording starts. The response time is 40 seconds.",
+              "claim_kind": "official_rule",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_210"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_210",
+                  "quote": "After three seconds a recording will play automatically. When the recording finishes, a timer will \ncount down 10 seconds—the time you have before you respond."
+                },
+                {
+                  "node_id": "pte_chunk_210",
+                  "quote": "After 10 seconds, the microphone will open and start recording. You have 40 seconds to give \nyour response."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Use Images Without Letting Them Distract You",
+            "explanation": {
+              "text": "Some Re-tell lecture items have an accompanying image. In a test situation, the learner would have 3 seconds to look at the image before the lecture starts. The image can help predict the topic and focus listening, but once the lecture starts the learner should concentrate on listening and taking notes rather than looking at the image.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_204"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_204",
+                  "quote": "Remind test takers that some Re-tell lecture items are accompanied by an image."
+                },
+                {
+                  "node_id": "pte_chunk_204",
+                  "quote": "Tell test \ntakers that in a test situation they would have 3 seconds to look at this image before the lecture starts."
+                },
+                {
+                  "node_id": "pte_chunk_204",
+                  "quote": "it can help them predict the \ntopic/what the lecture will be about and focus their listening"
+                },
+                {
+                  "node_id": "pte_chunk_204",
+                  "quote": "once the lecture \nstarts they should concentrate on listening and taking notes, and not look at the image"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Build The Retell Around Main Ideas",
+            "explanation": {
+              "text": "While listening and taking notes, focus on recognizing and noting the topic, the main supporting ideas and their relationship to the main topic, and the conclusion if applicable.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_206"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_206",
+                  "quote": "their main focus while listening and taking notes during this item type is:\n– to recognize and note the topic\n– to note the main supporting ideas and their relationship to the main topic\n– to note the conclusion (if applicable)"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Take Notes That You Can Quickly Reconstruct",
+            "explanation": {
+              "text": "Effective lecture notes require focused listening, quick recognition of key ideas, supporting points and important relationships, quick distinction between relevant and irrelevant information, fast writing while listening, and a personal abbreviation or shorthand system that can be converted back into meaningful information.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_206"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_206",
+                  "quote": "to take effective notes from a lecture they must be able to listen in \na focused manner, quickly recognize key ideas, supporting points and important relationships"
+                },
+                {
+                  "node_id": "pte_chunk_206",
+                  "quote": "quickly distinguish between relevant and irrelevant information."
+                },
+                {
+                  "node_id": "pte_chunk_206",
+                  "quote": "writing quickly while listening and develop their own system of abbreviations or short hand that they \ncan convert easily back into meaningful information."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Respond Calmly To Missed Or Unfamiliar Words",
+            "explanation": {
+              "text": "If a learner misses or does not clearly hear part of the lecture, they should remain calm and continue listening rather than spend time worrying about the missed part. If they hear words they do not understand, they should remain calm and continue listening because the meaning may not be important or may be explained later.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_206",
+                "pte_chunk_207"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_206",
+                  "quote": "What should you do if you miss or do not clearly hear part of what is said? (Remain calm and \ncontinue listening."
+                },
+                {
+                  "node_id": "pte_chunk_206",
+                  "quote": "Do not spend time reflecting or worrying about what was missed as this will \ndistract you from the rest of the lecture.)"
+                },
+                {
+                  "node_id": "pte_chunk_207",
+                  "quote": "What should you do if you hear words you do not understand? (Remain calm and continue \nlistening."
+                },
+                {
+                  "node_id": "pte_chunk_207",
+                  "quote": "The meaning of the unfamiliar word may not be important, or it may be explained by \nwhat follows.)"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Organize The Spoken Retell",
+            "explanation": {
+              "text": "The speaking part reconstructs the topic, main ideas and possible conclusion of the lecture. The response should start with a topic sentence, present main supporting ideas logically using relevant cohesive devices, and be clear and fluent.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_207"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_207",
+                  "quote": "the main purpose of the speaking part of this item, type (i.e. to reconstruct the \ntopic, main ideas and possible conclusion of the lecture they have just heard)."
+                },
+                {
+                  "node_id": "pte_chunk_207",
+                  "quote": "they \nshould remember to start with a topic sentence, present the main supporting ideas in a logical fashion \nusing relevant cohesive devices, and speak clearly and fluently."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Understand The Scoring Focus",
+            "explanation": {
+              "text": "The Re-tell lecture score is based on Content, Oral Fluency and Pronunciation. The best content responses retell all main points and include possible developments, conclusions or implications. The best fluency responses use a constant and natural rate with appropriate phrasing. The best pronunciation responses contain native-like vowels and consonants and correct word and phrase stress.",
+              "claim_kind": "official_rule",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_210"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_210",
+                  "quote": "Your score on \nRe-tell lecture is based on three factors:"
+                },
+                {
+                  "node_id": "pte_chunk_210",
+                  "quote": "The best responses retell all the main points of the lecture and include possible \ndevelopments, conclusions or implications."
+                },
+                {
+                  "node_id": "pte_chunk_210",
+                  "quote": "The best responses are spoken at a constant and natural rate of speech with \nappropriate phrasing."
+                },
+                {
+                  "node_id": "pte_chunk_210",
+                  "quote": "The best responses contain vowels and consonants \npronounced in a native-like way, and stress words and phrases correctly."
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "worked_examples": [
+          {
+            "title": "Turning Notes Into A Retell",
+            "example": {
+              "text": "Suppose your notes say: “HDI = ranks nations; not just income; 3 criteria; Norway/Iceland/Australia high.” A concise retell could begin: “The lecture explains the Human Development Index and how it ranks countries. It says the HDI looks beyond income and uses three criteria to compare quality of life. The example image shows Norway, Iceland and Australia among the most livable countries.”",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "The guided listening sheet asks learners to use questions to guide listening and note taking, and it includes prompts about what HDI is, who publishes it, how it ranks nations, and three criteria for calculating ranking.",
+              "claim_kind": "factual_explanation",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_212"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_212",
+                  "quote": "Use the  questions below to guide your listening and note taking."
+                },
+                {
+                  "node_id": "pte_chunk_212",
+                  "quote": "What is HDI? \nWho is it published by? \nThe HDI ranks nations according to \nrather than"
+                },
+                {
+                  "node_id": "pte_chunk_212",
+                  "quote": "The HDI has three criteria for calculating ranking:"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Using Abbreviations Efficiently",
+            "example": {
+              "text": "Instead of writing “government policies caused an increase in development,” a learner might note “gov’t pol. → ↑ dev.” The note is not a full sentence, but it preserves the relationship and can be expanded while speaking.",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "The abbreviation list gives examples for government, leads to or causes, and increasing or leading to an increase.",
+              "claim_kind": "factual_explanation",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_213"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_213",
+                  "quote": "etc and so on → leads to, causes\nasap / ASAP as soon as possible ↓ decreasing, leads to a \ndecrease"
+                },
+                {
+                  "node_id": "pte_chunk_213",
+                  "quote": "diff difference ↑ increasing, leads to an \nincrease\ngov’t. government = equals, is the same as"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Retelling A Lecture About Sputnik",
+            "example": {
+              "text": "A useful retell could open with the topic, then connect the details: “The lecture discusses Sputnik and the rocket technology connected with the beginning of the space age. The speaker explains that the Soyuz rocket is still used to take crews to the International Space Station, and its back view is almost indistinguishable from the rocket used half a century ago.”",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "The transcript mentions Sputnik, identifies the machine as a Soyuz rocket, says it takes crews to the International Space Station, and says the back view is indistinguishable in almost every regard from the rocket that began the space age half a century ago.",
+              "claim_kind": "factual_explanation",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_216"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_216",
+                  "quote": "you can’t have escaped hearing about Sputnik over the last few days"
+                },
+                {
+                  "node_id": "pte_chunk_216",
+                  "quote": "this is called a Soyuz rocket, and it’s what takes the crews up to the International \nSpace Station."
+                },
+                {
+                  "node_id": "pte_chunk_216",
+                  "quote": "the back view of this rocket is indistinguishable in almost every regard \nfrom the rocket that began the space age half a century ago."
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "common_misconceptions": [
+          {
+            "misconception": {
+              "text": "If an image appears with the lecture, you should keep looking at it during the lecture.",
+              "claim_kind": "misconception_statement",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "An image may help predict the topic and focus listening, but once the lecture starts the learner should concentrate on listening and taking notes, not keep looking at the image.",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_204"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_204",
+                  "quote": "it can help them predict the \ntopic/what the lecture will be about and focus their listening"
+                },
+                {
+                  "node_id": "pte_chunk_204",
+                  "quote": "once the lecture \nstarts they should concentrate on listening and taking notes, and not look at the image"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "misconception": {
+              "text": "If you miss a phrase or hear an unfamiliar word, you should pause mentally and try to work it out before listening further.",
+              "claim_kind": "misconception_statement",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "If part of the lecture is missed or unclear, remain calm and continue listening. If a word is unfamiliar, continue listening because its meaning may not be important or may be explained by what follows.",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_206",
+                "pte_chunk_207"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_206",
+                  "quote": "What should you do if you miss or do not clearly hear part of what is said? (Remain calm and \ncontinue listening."
+                },
+                {
+                  "node_id": "pte_chunk_207",
+                  "quote": "What should you do if you hear words you do not understand? (Remain calm and continue \nlistening."
+                },
+                {
+                  "node_id": "pte_chunk_207",
+                  "quote": "The meaning of the unfamiliar word may not be important, or it may be explained by \nwhat follows.)"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "misconception": {
+              "text": "A strong response only needs accurate content; fluency and pronunciation are secondary extras.",
+              "claim_kind": "misconception_statement",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "The focus of the item type is on content, fluency and pronunciation.",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_205"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_205",
+                  "quote": "Remind them that the focus of this item type is on content, fluency and pronunciation."
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "practice_questions": [
+          {
+            "question": {
+              "text": "After listening to a short academic lecture, write five notes only: the topic, two main supporting ideas, one relationship between ideas, and a possible conclusion. Then turn those notes into a 40-second spoken retell.",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "A strong answer starts with a topic sentence, includes the main supporting ideas in a logical order, uses cohesive devices, and is spoken clearly and fluently.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Create your own abbreviations for these ideas: government, increasing, decreasing, with, without, therefore, about, and number. Then use at least four of them in one set of lecture notes.",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "One possible answer is: gov’t = government; ↑ = increasing; ↓ = decreasing; w/ = with; w/o = without; therefore = therefore; re: = regarding or about; no. = number. A useful note might be: “gov’t policy leads to increasing access without increasing cost; therefore, more participation.”",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Listen to or read a practice passage once. If you miss one detail, continue without stopping. Afterward, retell the topic, main points and any conclusion you can remember.",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "A strong answer does not dwell on the missed detail. It keeps the response organized around the topic, main ideas and conclusion, using remembered information and notes.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Using the Sputnik transcript topic, prepare a brief retell that mentions Sputnik, the Soyuz rocket, the International Space Station, and the idea that the rocket design has continued from earlier space-age technology.",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "A possible answer: “The lecture is about Sputnik and the rocket technology linked to the beginning of the space age. The speaker explains that the Soyuz rocket takes crews to the International Space Station and that its back view is almost the same as the rocket that began the space age. The main point is that the Russians found a rocket that worked and continued using it.”",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "review_checklist": [
+          {
+            "text": "I can state the topic of a lecture in a clear topic sentence before adding details.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can identify main supporting ideas and explain how they relate to the main topic.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can use brief notes, symbols and abbreviations without writing full sentences.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can keep listening calmly when I miss a word or hear an unfamiliar expression.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can organize a retell with a topic sentence, supporting ideas, cohesive links and a possible conclusion.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can practise under the 3-second image preview, 10-second preparation and 40-second response pattern described in this lesson.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can review my performance for content, oral fluency and pronunciation after a timed retell.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          }
+        ]
+      }
+    ]
+  },
+  "source_chunks": [
+    {
+      "node_id": "pte_chunk_202",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 13",
+      "chapter_number": 14,
+      "section": "LESSON 13",
+      "topic": "LESSON 13",
+      "content_type": "unknown",
+      "page_start": 202,
+      "page_end": 202,
+      "is_front_matter": false,
+      "text_preview": "Lesson 13© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 90 The Official Guide to PTE Academic Teacher Notes Overview Time allocated: 2 hours This lesson focuses on the following skills: Listening • Identifying the topic, theme or main ideas • Identifying supporting points or e..."
+    },
+    {
+      "node_id": "pte_chunk_203",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 13",
+      "chapter_number": 14,
+      "section": "LESSON 13",
+      "topic": "LESSON 13",
+      "content_type": "unknown",
+      "page_start": 203,
+      "page_end": 203,
+      "is_front_matter": false,
+      "text_preview": "Lesson 13© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 91 The Official Guide to PTE Academic Teacher Notes Preparation The following materials should be prepared before the lesson: • Official Guide pages 55–60, 176–177 • Copy of ‘Item type: reading text, questions and notes’..."
+    },
+    {
+      "node_id": "pte_chunk_204",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 13",
+      "chapter_number": 14,
+      "section": "LESSON 13",
+      "topic": "LESSON 13",
+      "content_type": "unknown",
+      "page_start": 204,
+      "page_end": 204,
+      "is_front_matter": false,
+      "text_preview": "Lesson 13© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 92 The Official Guide to PTE Academic Teacher Notes Skills: Speaking for a purpose (to repeat, to inform, to explain); Supporting an opinion with details, examples and explanations; Organizing an oral presentation in a lo..."
+    },
+    {
+      "node_id": "pte_chunk_205",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 13",
+      "chapter_number": 14,
+      "section": "LESSON 13",
+      "topic": "LESSON 13",
+      "content_type": "unknown",
+      "page_start": 205,
+      "page_end": 205,
+      "is_front_matter": false,
+      "text_preview": "Lesson 13© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 93 The Official Guide to PTE Academic Teacher Notes • Distribute copies of ‘Lecture with image: guided listening’ to each test taker. Ask them to look at the guided note taking section at the bottom of the sheet and check..."
+    },
+    {
+      "node_id": "pte_chunk_206",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 13",
+      "chapter_number": 14,
+      "section": "LESSON 13",
+      "topic": "LESSON 13",
+      "content_type": "unknown",
+      "page_start": 206,
+      "page_end": 206,
+      "is_front_matter": false,
+      "text_preview": "Lesson 13© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 94 The Official Guide to PTE Academic Teacher Notes • Remind them of the notes you wrote on the board in the previous activity. Elicit some of the abbreviations that were used (symbols, such as –, =, →; short forms such a..."
+    },
+    {
+      "node_id": "pte_chunk_207",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 13",
+      "chapter_number": 14,
+      "section": "LESSON 13",
+      "topic": "LESSON 13",
+      "content_type": "unknown",
+      "page_start": 207,
+      "page_end": 207,
+      "is_front_matter": false,
+      "text_preview": "Lesson 13© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 95 The Official Guide to PTE Academic Teacher Notes – What should you do if you hear words you do not understand? (Remain calm and continue listening. The meaning of the unfamiliar word may not be important, or it may be..."
+    },
+    {
+      "node_id": "pte_chunk_208",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 13",
+      "chapter_number": 14,
+      "section": "LESSON 13",
+      "topic": "LESSON 13",
+      "content_type": "unknown",
+      "page_start": 208,
+      "page_end": 208,
+      "is_front_matter": false,
+      "text_preview": "Lesson 13© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 96 The Official Guide to PTE Academic Teacher Notes Main activity 3 individual and pair work (15 mins) Timed practice of item Materials: • Copies of ‘Timed practice: Transcripts’ A and B • Audio CD tracks 4 and 5 • Copies..."
+    },
+    {
+      "node_id": "pte_chunk_209",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 13",
+      "chapter_number": 14,
+      "section": "LESSON 13",
+      "topic": "LESSON 13",
+      "content_type": "unknown",
+      "page_start": 209,
+      "page_end": 209,
+      "is_front_matter": false,
+      "text_preview": "Lesson 13© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 97 The Official Guide to PTE Academic Teacher Notes • Ask them to sum up the best strategies for dealing with these problem areas and to suggest how they can improve their listening, note-taking and presenting skills. • R..."
+    },
+    {
+      "node_id": "pte_chunk_210",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 13",
+      "chapter_number": 14,
+      "section": "LESSON 13",
+      "topic": "LESSON 13",
+      "content_type": "unknown",
+      "page_start": 210,
+      "page_end": 210,
+      "is_front_matter": false,
+      "text_preview": "Lesson 13Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Item type: reading text, questions and notes Read aloud Ask after reading Write on board A Re-tell lecture is a long-answer speaking item type. What is this lecture going to be about? What type of text do yo..."
+    },
+    {
+      "node_id": "pte_chunk_211",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 13",
+      "chapter_number": 14,
+      "section": "LESSON 13",
+      "topic": "LESSON 13",
+      "content_type": "unknown",
+      "page_start": 211,
+      "page_end": 211,
+      "is_front_matter": false,
+      "text_preview": "Lesson 13Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Presentation assessment Content Yes No Could improve ... My partner ... started the presentation with a topic sentence added supporting information conveyed the information accurately and thoroughly covered..."
+    },
+    {
+      "node_id": "pte_chunk_212",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 13",
+      "chapter_number": 14,
+      "section": "LESSON 13",
+      "topic": "LESSON 13",
+      "content_type": "unknown",
+      "page_start": 212,
+      "page_end": 212,
+      "is_front_matter": false,
+      "text_preview": "Lesson 13Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Lecture with image: guided listening This is an image accompanying a practice item lecture. You have 3 seconds to look at this image before the lecture starts. [Source: CD-ROM Practice set 1; © United Nation..."
+    },
+    {
+      "node_id": "pte_chunk_213",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 13",
+      "chapter_number": 14,
+      "section": "LESSON 13",
+      "topic": "LESSON 13",
+      "content_type": "unknown",
+      "page_start": 213,
+      "page_end": 213,
+      "is_front_matter": false,
+      "text_preview": "Lesson 13Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Abbreviations for note taking abbreviation meaning example abbreviation meaning example e.g. for example & and i.e. that is / namely @ at etc and so on → leads to, causes asap / ASAP as soon as possible ↓ de..."
+    },
+    {
+      "node_id": "pte_chunk_214",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 13",
+      "chapter_number": 14,
+      "section": "LESSON 13",
+      "topic": "LESSON 13",
+      "content_type": "unknown",
+      "page_start": 214,
+      "page_end": 214,
+      "is_front_matter": false,
+      "text_preview": "Lesson 13Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Reading text A Read the following text aloud for your partner clearly and at a natural rate. Listen carefully as your partner reads. Write your notes in the box below Registering for PTE Academic When enteri..."
+    },
+    {
+      "node_id": "pte_chunk_215",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 13",
+      "chapter_number": 14,
+      "section": "LESSON 13",
+      "topic": "LESSON 13",
+      "content_type": "unknown",
+      "page_start": 215,
+      "page_end": 215,
+      "is_front_matter": false,
+      "text_preview": "Lesson 13Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Reading text B Read the following text aloud for your partner clearly and at a natural rate. Listen carefully as your partner reads. Write your notes in the box below Rules and regulations Before entering th..."
+    },
+    {
+      "node_id": "pte_chunk_216",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 13",
+      "chapter_number": 14,
+      "section": "LESSON 13",
+      "topic": "LESSON 13",
+      "content_type": "unknown",
+      "page_start": 216,
+      "page_end": 216,
+      "is_front_matter": false,
+      "text_preview": "Lesson 13Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 [Source: Official Guide p. 177; © 50 years Since Sputnik by Piers Bizony, University of bath Lecture Podcast. Courtesy of Piers Bizony] Timed practice: Transcript A This is the transcript of the lecture that..."
+    },
+    {
+      "node_id": "pte_chunk_217",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 13",
+      "chapter_number": 14,
+      "section": "LESSON 13",
+      "topic": "LESSON 13",
+      "content_type": "unknown",
+      "page_start": 217,
+      "page_end": 217,
+      "is_front_matter": false,
+      "text_preview": "Lesson 13Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 [Source: Official Guide p. 167; The Big Issues Women’s Rights in Development: Building Women’s Rights to achieve sustainable economies and livelihoods by Ann Killen, © 2009 the University of South Australia..."
+    }
+  ],
+  "audit": {
+    "status": "PASS",
+    "contract_status": "PASS",
+    "contract_audit_path": "output/pte.ch14.gen.contract.audit.json",
+    "contract_report_path": "output/pte.ch14.gen.contract.audit.txt"
+  }
+}
