@@ -1,0 +1,851 @@
+{
+  "schema_version": "book_learning_materials.v2",
+  "book": {
+    "slug": "pte",
+    "title": "pte",
+    "source_pdf": "input/pdfs/pte.pdf"
+  },
+  "generation": {
+    "generated_at": "2026-07-15T02:26:16.572635+00:00",
+    "pipeline_version": "book_learning_materials.v2",
+    "prompt_version": "book_learning_materials_v2_chapter.v2",
+    "backend": "codex-cli",
+    "model": "gpt-5.5",
+    "selection_mode": "chapters",
+    "selected_chapter_numbers": [
+      5
+    ],
+    "book_synthesis_performed": false,
+    "clean_chunks_path": "extracted/pte.section_clean_chunks.json"
+  },
+  "learning_materials": {
+    "chapters": [
+      {
+        "chapter_number": 5,
+        "chapter_title": "Select Missing Word and Highlight Incorrect Words",
+        "source_chunk_ids": [
+          "pte_chunk_072",
+          "pte_chunk_073",
+          "pte_chunk_074",
+          "pte_chunk_075",
+          "pte_chunk_076",
+          "pte_chunk_077",
+          "pte_chunk_078",
+          "pte_chunk_079",
+          "pte_chunk_080",
+          "pte_chunk_081",
+          "pte_chunk_082",
+          "pte_chunk_083",
+          "pte_chunk_084",
+          "pte_chunk_085",
+          "pte_chunk_086"
+        ],
+        "estimated_study_time": {
+          "text": "Plan for about 2 hours of focused study.",
+          "claim_kind": "study_plan",
+          "origin": "pedagogical_generation",
+          "source_chunk_ids": [],
+          "grounded_in_source_chunk_ids": [],
+          "evidence_spans": [],
+          "reason": null
+        },
+        "chapter_summary": {
+          "text": "This lesson develops skills for the Select missing word and Highlight incorrect words item types. It focuses on listening, reading, and speaking skills, including prediction, identifying transcription errors, matching written text to speech, reading aloud, pronunciation, stress, and intonation.",
+          "claim_kind": "source_summary",
+          "origin": "source_grounded",
+          "source_chunk_ids": [
+            "pte_chunk_072"
+          ],
+          "grounded_in_source_chunk_ids": [],
+          "evidence_spans": [
+            {
+              "node_id": "pte_chunk_072",
+              "quote": "Listening\n• Identifying the topic, theme or main ideas\n• Identifying words and phrases appropriate to the context\n• Understanding academic vocabulary\n• Inferring the meaning of unfamiliar words\n• Comprehending explicit and implicit information\n• Comprehending concrete and abstract information\n• Following an oral sequencing of information \n• Predicting how a speaker may continue\n• Forming a conclusion from what a speaker says\n• Comprehending variations in tone, speed, accent\n• Identifying errors in a transcription"
+            },
+            {
+              "node_id": "pte_chunk_072",
+              "quote": "Reading\n• Understanding academic vocabulary\n• Following a logical or chronological sequence of events\n• Reading a text under timed conditions\n• Matching written text to speech"
+            },
+            {
+              "node_id": "pte_chunk_072",
+              "quote": "Speaking\n• Reading a text aloud\n• Using correct intonation\n• Using correct pronunciation\n• Using correct stress"
+            },
+            {
+              "node_id": "pte_chunk_072",
+              "quote": "This lesson provides skills practice for the PTE Academic item types Select missing word and Highlight incorrect words"
+            }
+          ],
+          "reason": null
+        },
+        "learning_objectives": [
+          {
+            "text": "Practice the listening, reading, and speaking skills covered in the lesson.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_072"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_072",
+                "quote": "By the end of this lesson, test takers will have: \n➤\t Practiced the listening, reading and speaking skills listed above"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Analyze the rubric, format, and scoring of Select missing word and Highlight incorrect words.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_072"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_072",
+                "quote": "➤\t Analyzed the rubric, format and scoring of these item types"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Practice listening and reading strategies for these item types.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_072"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_072",
+                "quote": "➤\t Practiced listening and reading strategies for these item types"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Practice prediction and word stress skills related to successful completion of these item types.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_072"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_072",
+                "quote": "➤\t Practiced prediction and word stress skills related to the successful completion of these item types"
+              }
+            ],
+            "reason": null
+          }
+        ],
+        "key_terms": [
+          {
+            "term": "Select missing word",
+            "meaning": {
+              "text": "An item type that tests the ability to guess what a speaker will say and uses listening skills.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_077"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_077",
+                  "quote": "The Select missing word item type tests your ability to guess what a speaker will say."
+                },
+                {
+                  "node_id": "pte_chunk_077",
+                  "quote": "It tests listening skills."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Highlight incorrect words",
+            "meaning": {
+              "text": "An item type that tests the ability to listen for and find differences between a recording and a transcription, using both listening and reading skills.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_078"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_078",
+                  "quote": "The Highlight incorrect words item type tests your ability to listen for and find the differences \nbetween a recording and a transcription."
+                },
+                {
+                  "node_id": "pte_chunk_078",
+                  "quote": "It tests both your listening and reading skills."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Contextual clues",
+            "meaning": {
+              "text": "Contextual clues are other words in a phrase or sentence that can help a test taker infer word meaning and identify or predict incorrect or missing words in spoken text.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_074"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_074",
+                  "quote": "use contextual clues (i.e. other words in a phrase or sentence) to infer the meaning of words \nin a spoken text"
+                },
+                {
+                  "node_id": "pte_chunk_074",
+                  "quote": "identify or predict words which are incorrect within or missing from a spoken text."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Sentence stress",
+            "meaning": {
+              "text": "Sentence stress is emphasis used by a speaker that can help listeners determine which words are important in a spoken utterance.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_075"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_075",
+                  "quote": "a speaker’s tone and use of sentence stress (or emphasis) often help a \nlistener to determine which words are important in a spoken utterance."
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "core_lessons": [
+          {
+            "title": "Use topic, vocabulary, and grammar clues to predict missing language",
+            "explanation": {
+              "text": "Prediction can use knowledge of the topic, grammar, and nearby words. These clues help learners make confident guesses about missing information.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_074"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_074",
+                  "quote": "we can use our knowledge of a \ntopic, our knowledge of the grammar of a sentence with a missing word, and our knowledge of other \nwords close to the missing word to make confident guesses."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Select missing word requires listening and contextual prediction",
+            "explanation": {
+              "text": "In Select missing word, the test taker listens to a recording and uses contextual clues to guess a missing word. Recordings in this item last for 20-70 seconds, the item is multiple-choice, and the response is scored as correct or incorrect.",
+              "claim_kind": "task_format",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_077"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_077",
+                  "quote": "In this test item, you listen to a recording and use contextual clues to try to guess a missing \nword."
+                },
+                {
+                  "node_id": "pte_chunk_077",
+                  "quote": "Recordings in this item last for 20–70 seconds."
+                },
+                {
+                  "node_id": "pte_chunk_077",
+                  "quote": "This test item is multiple-choice."
+                },
+                {
+                  "node_id": "pte_chunk_077",
+                  "quote": "Your response is scored as either correct or incorrect."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Highlight incorrect words requires comparing speech and transcript",
+            "explanation": {
+              "text": "In Highlight incorrect words, the test taker reads a transcription while listening to a recording and checks whether the transcription contains incorrect words.",
+              "claim_kind": "task_format",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_078"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_078",
+                  "quote": "In this test item, you will read a transcription and listen to a recording. As you listen to the \nrecording you need to see if the transcription has any incorrect words."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Stress can guide attention to important words",
+            "explanation": {
+              "text": "For Highlight incorrect words, important information words are likely to be stressed more strongly, so learners should pay special attention to stressed words and check that they match the transcript. Prefixes and suffixes may also be stressed to emphasize contrast or difference.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_075"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_075",
+                  "quote": "important information \nwords (often nouns, adjectives and verbs) will be stressed more strongly by the speaker than other \nwords"
+                },
+                {
+                  "node_id": "pte_chunk_075",
+                  "quote": "test takers should pay special attention to stressed words and make sure that they are \nthe same as those in the accompanying transcript."
+                },
+                {
+                  "node_id": "pte_chunk_075",
+                  "quote": "prefixes and suffixes may be stressed (e.g. \n‘unhealthy’, ‘non taxable’) to emphasize contrast or difference"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Read aloud naturally during group practice",
+            "explanation": {
+              "text": "When reading a transcript aloud in practice, read in a loud, clear voice at a natural speed, continue through the whole transcript, and pause according to punctuation.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_075"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_075",
+                  "quote": "read aloud the transcript on their worksheet in a \nloud, clear voice and at a natural speed."
+                },
+                {
+                  "node_id": "pte_chunk_075",
+                  "quote": "read the whole transcript through at once, pausing only according to punctuation."
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "worked_examples": [
+          {
+            "title": "Predicting a missing final word",
+            "example": {
+              "text": "Sentence: \"Can you guess the missing ___?\" Answer: \"word.\" Reason: the topic is a guessing activity, \"missing\" often appears with \"word,\" and the sentence needs a noun after the adjective.",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "The source uses the sentence \"Can you guess the missing ?\" and explains that topic knowledge, vocabulary collocation, and grammar all help fill the gap.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_074"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_074",
+                  "quote": "write the following sentence on the board:  \n‘Can you guess the missing ?’"
+                },
+                {
+                  "node_id": "pte_chunk_074",
+                  "quote": "our knowledge of the topic \n(here, a guessing game) tells us that we may need to guess a missing word."
+                },
+                {
+                  "node_id": "pte_chunk_074",
+                  "quote": "our knowledge of vocabulary might tell us that in the context of a language lesson, the words ‘missing’ and ‘word’ \noften collocate"
+                },
+                {
+                  "node_id": "pte_chunk_074",
+                  "quote": "our knowledge of grammar tells us that the sentence needs \na noun"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Using answer choices after listening",
+            "example": {
+              "text": "After hearing a transcript about an island story with no proof, compare the choices and select the option that best completes the speaker's final idea. Then explain which topic, vocabulary, or grammar clues support your choice.",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "In the practice activity, test takers read a transcript, then read five options and ask others to choose the correct one. For the Atlantis transcript, the correct answer is option 2.",
+              "claim_kind": "task_format",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_081",
+                "pte_chunk_075"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_081",
+                  "quote": "Take it in turns to read a transcript aloud to your group. When you have finished reading the  \ntranscript, read out the five possible options for completing the transcript and ask other test takers \nfrom your group to choose the correct one."
+                },
+                {
+                  "node_id": "pte_chunk_075",
+                  "quote": "Transcript 1, option 4; Transcript 2, option 2; Transcript \n3, option 5."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Finding differences in spoken and written versions",
+            "example": {
+              "text": "Listen while reading the transcript. If you hear \"friends\" but see \"colleagues,\" underline the word in the written version and keep following the text.",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "The activity asks learners to listen to a transcript being read, read the transcript at the same time, decide which words are different from what they hear, and underline any differences.",
+              "claim_kind": "task_format",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_083"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_083",
+                  "quote": "Listen to the following transcript being read by another member of your group. As you listen, read \nthe transcript and decide which words are different to those you hear. Underline any differences."
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "common_misconceptions": [
+          {
+            "misconception": {
+              "text": "In Select missing word, you should avoid guessing if you are unsure.",
+              "claim_kind": "misconception_statement",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "For Select missing word, if you do not know the answer, you should at least try to make a guess.",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_077"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_077",
+                  "quote": "If you do not know the answer, you should at least try to make a guess."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "misconception": {
+              "text": "In Highlight incorrect words, it is useful to click any word that might be different.",
+              "claim_kind": "misconception_statement",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "For Highlight incorrect words, only click on a word if you are sure it is different from a word in a recording, and do not make guesses.",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_078"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_078",
+                  "quote": "Only click on a word if you are sure it is different from a word in a recording. Do not make any guesses."
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "practice_questions": [
+          {
+            "question": {
+              "text": "When predicting a missing word in a listening text, name three types of clues you should check.",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Check topic clues, vocabulary clues, and grammar clues.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "In Select missing word, what should you do if you do not know the answer?",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "You should still try to make a guess.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "In Highlight incorrect words, why should you pay attention to stressed words?",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Stressed words are often important information words, so checking them helps you notice whether the spoken version and written transcript match.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Before listening in Highlight incorrect words, what reading action does the source recommend?",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Skim the reading passage quickly before listening.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "review_checklist": [
+          {
+            "text": "I can use topic clues to predict missing words.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can use vocabulary clues and collocations to predict missing words.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can use grammar clues to decide what kind of word or phrase is missing.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can compare a spoken recording with a written transcript and identify different words.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can pay attention to sentence stress when checking important words in a transcript.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          }
+        ]
+      }
+    ]
+  },
+  "source_chunks": [
+    {
+      "node_id": "pte_chunk_072",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 5",
+      "chapter_number": 5,
+      "section": "LESSON 5",
+      "topic": "LESSON 5",
+      "content_type": "unknown",
+      "page_start": 72,
+      "page_end": 72,
+      "is_front_matter": false,
+      "text_preview": "Lesson 5© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 36 The Official Guide to PTE Academic Teacher Notes Overview Time allocated: 2 hours This lesson focuses on the following skills: Listening • Identifying the topic, theme or main ideas • Identifying words and phrases appro..."
+    },
+    {
+      "node_id": "pte_chunk_073",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 5",
+      "chapter_number": 5,
+      "section": "LESSON 5",
+      "topic": "LESSON 5",
+      "content_type": "unknown",
+      "page_start": 73,
+      "page_end": 73,
+      "is_front_matter": false,
+      "text_preview": "Lesson 5© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 37 The Official Guide to PTE Academic Teacher Notes Preparation The following materials should be prepared before the lesson: • Official Guide pages 150–153, 154–158, 191–192 • Copies of ‘Select missing word worksheet’ and..."
+    },
+    {
+      "node_id": "pte_chunk_074",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 5",
+      "chapter_number": 5,
+      "section": "LESSON 5",
+      "topic": "LESSON 5",
+      "content_type": "unknown",
+      "page_start": 74,
+      "page_end": 74,
+      "is_front_matter": false,
+      "text_preview": "Lesson 5© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 38 The Official Guide to PTE Academic Teacher Notes Main activity 1 whole class and group work (35 mins) Identifying listening prediction skills Materials: • Copies of ‘Select missing word worksheet’ and ‘Highlight incorre..."
+    },
+    {
+      "node_id": "pte_chunk_075",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 5",
+      "chapter_number": 5,
+      "section": "LESSON 5",
+      "topic": "LESSON 5",
+      "content_type": "unknown",
+      "page_start": 75,
+      "page_end": 75,
+      "is_front_matter": false,
+      "text_preview": "Lesson 5© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 39 The Official Guide to PTE Academic Teacher Notes • Explain that test takers should take it in turns to read aloud the transcript on their worksheet in a loud, clear voice and at a natural speed. Remind test takers that..."
+    },
+    {
+      "node_id": "pte_chunk_076",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 5",
+      "chapter_number": 5,
+      "section": "LESSON 5",
+      "topic": "LESSON 5",
+      "content_type": "unknown",
+      "page_start": 76,
+      "page_end": 76,
+      "is_front_matter": false,
+      "text_preview": "Lesson 5© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 40 The Official Guide to PTE Academic Teacher Notes • When the reading test taker has finished, the listening test takers should compare and discuss their answers. If necessary, the reading test taker can read the transcri..."
+    },
+    {
+      "node_id": "pte_chunk_077",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 5",
+      "chapter_number": 5,
+      "section": "LESSON 5",
+      "topic": "LESSON 5",
+      "content_type": "unknown",
+      "page_start": 77,
+      "page_end": 77,
+      "is_front_matter": false,
+      "text_preview": "Lesson 5Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Take it in turns to read one sentence aloud to your group. Do not read the final underlined word in each sentence. The other members of your group should try to guess these words. 1. The Select missing word i..."
+    },
+    {
+      "node_id": "pte_chunk_078",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 5",
+      "chapter_number": 5,
+      "section": "LESSON 5",
+      "topic": "LESSON 5",
+      "content_type": "unknown",
+      "page_start": 78,
+      "page_end": 78,
+      "is_front_matter": false,
+      "text_preview": "Lesson 5Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Highlight incorrect words worksheet Take it in turns to read one sentence aloud to your group. Do not read the final underlined word in each sentence. The other members of your group should try to guess these..."
+    },
+    {
+      "node_id": "pte_chunk_079",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 5",
+      "chapter_number": 5,
+      "section": "LESSON 5",
+      "topic": "LESSON 5",
+      "content_type": "unknown",
+      "page_start": 79,
+      "page_end": 79,
+      "is_front_matter": false,
+      "text_preview": "Lesson 5Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 1. The Select missing word item type tests your ability to guess what a speaker will say. (Our knowledge of the topic (the test item) tells us that we need to guess a word related to the recording and the que..."
+    },
+    {
+      "node_id": "pte_chunk_080",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 5",
+      "chapter_number": 5,
+      "section": "LESSON 5",
+      "topic": "LESSON 5",
+      "content_type": "unknown",
+      "page_start": 80,
+      "page_end": 80,
+      "is_front_matter": false,
+      "text_preview": "Lesson 5Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Take it in turns to read a transcript aloud to your group. When you have finished reading the transcript, read out the five possible options for completing the transcript and ask other test takers from your g..."
+    },
+    {
+      "node_id": "pte_chunk_081",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 5",
+      "chapter_number": 5,
+      "section": "LESSON 5",
+      "topic": "LESSON 5",
+      "content_type": "unknown",
+      "page_start": 81,
+      "page_end": 81,
+      "is_front_matter": false,
+      "text_preview": "Lesson 5Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Practicing prediction 2 Take it in turns to read a transcript aloud to your group. When you have finished reading the transcript, read out the five possible options for completing the transcript and ask other..."
+    },
+    {
+      "node_id": "pte_chunk_082",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 5",
+      "chapter_number": 5,
+      "section": "LESSON 5",
+      "topic": "LESSON 5",
+      "content_type": "unknown",
+      "page_start": 82,
+      "page_end": 82,
+      "is_front_matter": false,
+      "text_preview": "Lesson 5Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Practicing prediction 3 Take it in turns to read a transcript aloud to your group. When you have finished reading the transcript, read out the five possible options for completing the transcript and ask other..."
+    },
+    {
+      "node_id": "pte_chunk_083",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 5",
+      "chapter_number": 5,
+      "section": "LESSON 5",
+      "topic": "LESSON 5",
+      "content_type": "unknown",
+      "page_start": 83,
+      "page_end": 83,
+      "is_front_matter": false,
+      "text_preview": "Lesson 5Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Finding differences between spoken and written versions of a text: 1 Listen to the following transcript being read by another member of your group. As you listen, read the transcript and decide which words ar..."
+    },
+    {
+      "node_id": "pte_chunk_084",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 5",
+      "chapter_number": 5,
+      "section": "LESSON 5",
+      "topic": "LESSON 5",
+      "content_type": "unknown",
+      "page_start": 84,
+      "page_end": 84,
+      "is_front_matter": false,
+      "text_preview": "Lesson 5Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Finding differences between spoken and written versions of a text: 2 Listen to the following transcript being read by another member of your group. As you listen, read the transcript and decide which words ar..."
+    },
+    {
+      "node_id": "pte_chunk_085",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 5",
+      "chapter_number": 5,
+      "section": "LESSON 5",
+      "topic": "LESSON 5",
+      "content_type": "unknown",
+      "page_start": 85,
+      "page_end": 85,
+      "is_front_matter": false,
+      "text_preview": "Lesson 5Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Finding differences between spoken and written versions of a text: 3 Listen to the following transcript being read by another member of your group. As you listen, read the transcript and decide which words ar..."
+    },
+    {
+      "node_id": "pte_chunk_086",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 5",
+      "chapter_number": 5,
+      "section": "LESSON 5",
+      "topic": "LESSON 5",
+      "content_type": "unknown",
+      "page_start": 86,
+      "page_end": 86,
+      "is_front_matter": false,
+      "text_preview": "Lesson 5Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Transcript 1 As Asian culture becomes more popular in Europe, the ancient Chinese method of creating a harmonious environment, feng shui, is also gaining popularity. Feng shui literally means “wind and water...."
+    }
+  ],
+  "audit": {
+    "status": "PASS",
+    "contract_status": "PASS",
+    "contract_audit_path": "output/pte.ch5.book_learning_materials.contract.audit.json",
+    "contract_report_path": "output/pte.ch5.book_learning_materials.contract.audit.txt"
+  }
+}
