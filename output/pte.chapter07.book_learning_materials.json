@@ -1,0 +1,1134 @@
+{
+  "schema_version": "book_learning_materials.v2",
+  "book": {
+    "slug": "pte",
+    "title": "pte",
+    "source_pdf": "input/pdfs/pte.pdf"
+  },
+  "generation": {
+    "generated_at": "2026-07-15T02:46:56.153231+00:00",
+    "pipeline_version": "book_learning_materials.v2",
+    "prompt_version": "book_learning_materials_v2_chapter.v2",
+    "backend": "codex-cli",
+    "model": "gpt-5.5",
+    "selection_mode": "chapters",
+    "selected_chapter_numbers": [
+      7
+    ],
+    "book_synthesis_performed": false,
+    "clean_chunks_path": "extracted/pte.section_clean_chunks.json"
+  },
+  "learning_materials": {
+    "chapters": [
+      {
+        "chapter_number": 7,
+        "chapter_title": "Write Essay: Planning, Paragraphing, and Editing",
+        "source_chunk_ids": [
+          "pte_chunk_105",
+          "pte_chunk_106",
+          "pte_chunk_107",
+          "pte_chunk_108",
+          "pte_chunk_109",
+          "pte_chunk_110",
+          "pte_chunk_111",
+          "pte_chunk_112",
+          "pte_chunk_113",
+          "pte_chunk_114",
+          "pte_chunk_115",
+          "pte_chunk_116",
+          "pte_chunk_117",
+          "pte_chunk_118",
+          "pte_chunk_119",
+          "pte_chunk_120"
+        ],
+        "estimated_study_time": {
+          "text": "Plan for about 2 hours of study for this chapter, with extra time if you want to complete the homework essay and review it carefully.",
+          "claim_kind": "study_plan",
+          "origin": "pedagogical_generation",
+          "source_chunk_ids": [],
+          "grounded_in_source_chunk_ids": [],
+          "evidence_spans": [],
+          "reason": null
+        },
+        "chapter_summary": {
+          "text": "This lesson focuses on the PTE Academic Write essay item type. It develops writing skills such as writing for a purpose, supporting an opinion, organizing sentences and paragraphs logically, developing complex ideas, using appropriate words, grammar, spelling, mechanics, and writing under timed conditions. It also includes reading skills for identifying topic, theme, main ideas, writer purpose, style, tone, or attitude.",
+          "claim_kind": "source_summary",
+          "origin": "source_grounded",
+          "source_chunk_ids": [
+            "pte_chunk_105"
+          ],
+          "grounded_in_source_chunk_ids": [],
+          "evidence_spans": [
+            {
+              "node_id": "pte_chunk_105",
+              "quote": "This lesson practices some of the skills tested by the PTE Academic item type Write essay."
+            },
+            {
+              "node_id": "pte_chunk_105",
+              "quote": "Writing for a purpose (to learn, to inform, to persuade)"
+            },
+            {
+              "node_id": "pte_chunk_105",
+              "quote": "Supporting an opinion with details, examples and explanations"
+            },
+            {
+              "node_id": "pte_chunk_105",
+              "quote": "Organizing sentences and paragraphs in a logical way"
+            },
+            {
+              "node_id": "pte_chunk_105",
+              "quote": "Developing complex ideas within a complete essay"
+            },
+            {
+              "node_id": "pte_chunk_105",
+              "quote": "Using words and phrases appropriate to the context"
+            },
+            {
+              "node_id": "pte_chunk_105",
+              "quote": "Writing under timed conditions"
+            },
+            {
+              "node_id": "pte_chunk_105",
+              "quote": "Identifying the topic, theme or main ideas"
+            },
+            {
+              "node_id": "pte_chunk_105",
+              "quote": "Identifying a writer’s purpose, style, tone or attitude"
+            }
+          ],
+          "reason": null
+        },
+        "learning_objectives": [
+          {
+            "text": "Practice the writing skills needed for the Write essay item type.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_105"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_105",
+                "quote": "Practiced the writing skills listed above"
+              },
+              {
+                "node_id": "pte_chunk_105",
+                "quote": "This lesson practices some of the skills tested by the PTE Academic item type Write essay."
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Analyze the rubric, format, and scoring of the Write essay item type.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_105"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_105",
+                "quote": "Analyzed the rubric, format and scoring of this item type"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Practice writing strategies for this item type and complete practice items under timed conditions.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_105"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_105",
+                "quote": "Practiced writing strategies for this item type"
+              },
+              {
+                "node_id": "pte_chunk_105",
+                "quote": "Completed practice items under timed conditions"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Practice written discourse skills related to successful completion of the Write essay item type.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_105"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_105",
+                "quote": "Practiced written discourse skills related to the successful completion of this item type"
+              }
+            ],
+            "reason": null
+          }
+        ],
+        "key_terms": [
+          {
+            "term": "Write Essay",
+            "meaning": {
+              "text": "Write Essay is a long-answer writing item type that tests the ability to write a persuasive or argumentative essay on a given topic in 20 minutes.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_112"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_112",
+                  "quote": "Write Essay is a long-answer writing item type which tests your ability to write a persuasive or argumentative essay on a given topic in 20 minutes."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Content",
+            "meaning": {
+              "text": "Content assesses whether the essay has addressed the topic.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_112"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_112",
+                  "quote": "The first factor is content and this assesses whether you have addressed the topic."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Development, structure and coherence",
+            "meaning": {
+              "text": "Development, structure and coherence assesses whether ideas are logical and coherent.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_112"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_112",
+                  "quote": "The second factor is development, structure and coherence and it assesses whether your ideas are logical and coherent."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Topic sentence",
+            "meaning": {
+              "text": "A topic sentence gives the main idea and is normally the first sentence in a paragraph.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_110"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_110",
+                  "quote": "A topic sentence gives the main idea of the sentence and is also normally the first sentence in a paragraph."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Supporting sentences",
+            "meaning": {
+              "text": "Supporting sentences elaborate, expand, explain, and justify the topic sentence, and they often give examples or evidence.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_110"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_110",
+                  "quote": "The other sentences are supporting sentences which elaborate, expand, explain and justify the topic sentences."
+                },
+                {
+                  "node_id": "pte_chunk_110",
+                  "quote": "Supporting sentences often give examples or evidence."
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "core_lessons": [
+          {
+            "title": "Understand the Write Essay Task",
+            "explanation": {
+              "text": "Write Essay is a long-answer writing item type in which the test taker writes a persuasive or argumentative essay on a given topic in 20 minutes.",
+              "claim_kind": "task_format",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_112"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_112",
+                  "quote": "Write Essay is a long-answer writing item type which tests your ability to write a persuasive or argumentative essay on a given topic in 20 minutes."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Know the Assessment Factors",
+            "explanation": {
+              "text": "The Write Essay item type is assessed according to seven factors: content; development, structure and coherence; form; range of language; grammar usage and mechanics; vocabulary breadth and correct academic or idiomatic language use; and spelling.",
+              "claim_kind": "official_rule",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_113"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_113",
+                  "quote": "This item type is assessed according to seven factors."
+                },
+                {
+                  "node_id": "pte_chunk_113",
+                  "quote": "The first factor is content and this assesses whether you have addressed the topic."
+                },
+                {
+                  "node_id": "pte_chunk_113",
+                  "quote": "The second factor is development, structure and coherence and it assesses whether your ideas are logical and coherent."
+                },
+                {
+                  "node_id": "pte_chunk_113",
+                  "quote": "Thirdly, you will be assessed on form; that is, on whether you have written between 200-300 words."
+                },
+                {
+                  "node_id": "pte_chunk_113",
+                  "quote": "Fourthly, the item assesses the range of your language."
+                },
+                {
+                  "node_id": "pte_chunk_113",
+                  "quote": "The fifth assessment factor is grammar usage and mechanics."
+                },
+                {
+                  "node_id": "pte_chunk_113",
+                  "quote": "you are assessed on how broad your vocabulary is and on your ability to use academic or idiomatic language correctly."
+                },
+                {
+                  "node_id": "pte_chunk_113",
+                  "quote": "Finally, you are assessed on spelling."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Interpret the Prompt Before Planning",
+            "explanation": {
+              "text": "Correctly interpreting the question prompt is the first skill needed for this item. Topic words guide content selection, while requirement words help determine the writing purpose, such as agreeing or disagreeing or discussing advantages or disadvantages.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_107"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_107",
+                  "quote": "the first skill they need to develop to successfully complete this item is to correctly interpret the question prompt."
+                },
+                {
+                  "node_id": "pte_chunk_107",
+                  "quote": "words which tell test takers the topic of the question help to guide them in selecting correct content"
+                },
+                {
+                  "node_id": "pte_chunk_107",
+                  "quote": "words which tell them the requirements of the essay help them to determine their writing purpose"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Plan a Relevant Answer",
+            "explanation": {
+              "text": "After identifying the topic and writing purpose, the next skill is to plan a relevant answer by brainstorming ideas and supporting reasons, checking them against the prompt, and noting a main opinion or argument with three reasons.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_107",
+                "pte_chunk_108"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_107",
+                  "quote": "Having identified the topic and the requirements or writing purpose of the task, tell test takers that the next skill needed is to plan a relevant answer."
+                },
+                {
+                  "node_id": "pte_chunk_107",
+                  "quote": "brainstorm and list any words or ideas which help them to answer the question, along with supporting reasons"
+                },
+                {
+                  "node_id": "pte_chunk_107",
+                  "quote": "check these ideas against the essay prompt to make sure that they address the topic, answer the main question"
+                },
+                {
+                  "node_id": "pte_chunk_108",
+                  "quote": "note a main opinion or argument which describes whether they agree or disagree, and give three reasons why."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Address the Question Content",
+            "explanation": {
+              "text": "If the essay content does not address the question’s content, the essay will be scored zero in all seven factors.",
+              "claim_kind": "official_rule",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_108"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_108",
+                  "quote": "if the content of their essay does not address the question’s content, they will be scored zero in all 7 factors."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Build Sentences with Cause, Effect, and Result Language",
+            "explanation": {
+              "text": "To express the main argument of an essay plan, test takers need verbs or verb phrases that describe causes, effects, or changes, and noun phrases that describe the factors creating changes and the results of changes.",
+              "claim_kind": "grammar_rule",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_108"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_108",
+                  "quote": "there are two key elements for forming a sentence which correctly expresses the main argument of the plan."
+                },
+                {
+                  "node_id": "pte_chunk_108",
+                  "quote": "verbs or verb phrases which describe causes, effects or changes"
+                },
+                {
+                  "node_id": "pte_chunk_108",
+                  "quote": "noun phrases which describe the factors that create changes and the results of changes."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Use Adverbs to Make Opinions More Specific",
+            "explanation": {
+              "text": "Adverbs can modify verbs and help express opinions more specifically or more tentatively.",
+              "claim_kind": "grammar_rule",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_108"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_108",
+                  "quote": "they can use adverbs to modify verbs and express their opinions more specifically or more tentatively."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Structure Paragraphs with Topic and Supporting Sentences",
+            "explanation": {
+              "text": "A paragraph consists of a topic sentence and supporting sentences. The topic sentence gives the main idea and is normally first, while supporting sentences elaborate, expand, explain, justify, and often give examples or evidence.",
+              "claim_kind": "factual_explanation",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_110"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_110",
+                  "quote": "a paragraph consists of a topic sentence and supporting sentences."
+                },
+                {
+                  "node_id": "pte_chunk_110",
+                  "quote": "A topic sentence gives the main idea of the sentence and is also normally the first sentence in a paragraph."
+                },
+                {
+                  "node_id": "pte_chunk_110",
+                  "quote": "The other sentences are supporting sentences which elaborate, expand, explain and justify the topic sentences."
+                },
+                {
+                  "node_id": "pte_chunk_110",
+                  "quote": "Supporting sentences often give examples or evidence."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Edit for Organization, Logic, Grammar, Vocabulary, and Spelling",
+            "explanation": {
+              "text": "Editing should check paragraph organization, logic, grammar, vocabulary, and spelling, including whether there is a clear topic sentence, whether supporting sentences relate to the topic sentence, whether linking words connect ideas, whether verbs are used correctly, whether sentence fragments are present, and whether punctuation and spelling are accurate.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_111",
+                "pte_chunk_118"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_111",
+                  "quote": "assess the organization, logic, grammar, vocabulary and spelling of the paragraph"
+                },
+                {
+                  "node_id": "pte_chunk_118",
+                  "quote": "Is there a clear topic sentence?"
+                },
+                {
+                  "node_id": "pte_chunk_118",
+                  "quote": "Do all supporting sentences relate to the main idea in the topic sentence?"
+                },
+                {
+                  "node_id": "pte_chunk_118",
+                  "quote": "Are supporting sentences connected with linking words and phrases?"
+                },
+                {
+                  "node_id": "pte_chunk_118",
+                  "quote": "Is the verb ‘to have’ used correctly with noun phrases?"
+                },
+                {
+                  "node_id": "pte_chunk_118",
+                  "quote": "Is the verb ‘to be’ used correctly with adjectival phrases?"
+                },
+                {
+                  "node_id": "pte_chunk_118",
+                  "quote": "Are there any sentence fragments? (i.e. sentences without a main verb)"
+                },
+                {
+                  "node_id": "pte_chunk_118",
+                  "quote": "Is punctuation used correctly?"
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "worked_examples": [
+          {
+            "example": {
+              "text": "Prompt focus practice: If a prompt asks whether governments should restrict smoking in public places, underline the topic words “governments,” “restrict smoking,” and “public places.” Then underline the requirement words that tell you whether to give an opinion, agree or disagree, or discuss both sides.",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "Topic words help guide content selection, and requirement words help determine writing purpose.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_107"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_107",
+                  "quote": "words which tell test takers the topic of the question help to guide them in selecting correct content"
+                },
+                {
+                  "node_id": "pte_chunk_107",
+                  "quote": "words which tell them the requirements of the essay help them to determine their writing purpose"
+                }
+              ],
+              "reason": null
+            },
+            "title": "Worked example 1"
+          },
+          {
+            "example": {
+              "text": "Planning example: Main opinion: governments should restrict smoking in some public places. Reason 1: public health. Reason 2: cleaner shared spaces. Reason 3: protection for children and non-smokers. Before writing, check that each reason directly answers the prompt.",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "To plan a relevant answer, brainstorm ideas with supporting reasons, check those ideas against the essay prompt, and note a main opinion or argument with three reasons.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_107",
+                "pte_chunk_108"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_107",
+                  "quote": "the next skill needed is to plan a relevant answer."
+                },
+                {
+                  "node_id": "pte_chunk_107",
+                  "quote": "brainstorm and list any words or ideas which help them to answer the question, along with supporting reasons"
+                },
+                {
+                  "node_id": "pte_chunk_107",
+                  "quote": "check these ideas against the essay prompt to make sure that they address the topic, answer the main question"
+                },
+                {
+                  "node_id": "pte_chunk_108",
+                  "quote": "note a main opinion or argument which describes whether they agree or disagree, and give three reasons why."
+                }
+              ],
+              "reason": null
+            },
+            "title": "Worked example 2"
+          },
+          {
+            "example": {
+              "text": "Paragraph example: “Strict smoking restrictions can improve public health. For instance, fewer people are exposed to smoke in workplaces and public transport areas. Furthermore, these rules can make shared spaces cleaner and safer. Consequently, targeted restrictions can benefit both smokers and non-smokers.”",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "This example models a topic sentence followed by supporting sentences that elaborate, explain, justify, give examples, and use discourse markers to show relationships between ideas.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_110"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_110",
+                  "quote": "A topic sentence gives the main idea of the sentence and is also normally the first sentence in a paragraph."
+                },
+                {
+                  "node_id": "pte_chunk_110",
+                  "quote": "The other sentences are supporting sentences which elaborate, expand, explain and justify the topic sentences."
+                },
+                {
+                  "node_id": "pte_chunk_110",
+                  "quote": "Supporting sentences often give examples or evidence."
+                },
+                {
+                  "node_id": "pte_chunk_110",
+                  "quote": "use discourse markers to show relationships between ideas."
+                }
+              ],
+              "reason": null
+            },
+            "title": "Worked example 3"
+          }
+        ],
+        "common_misconceptions": [
+          {
+            "misconception": {
+              "text": "An essay can ignore the exact prompt as long as it is well written.",
+              "claim_kind": "misconception_statement",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "If the content of the essay does not address the question’s content, the essay will be scored zero in all seven factors.",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_108"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_108",
+                  "quote": "if the content of their essay does not address the question’s content, they will be scored zero in all 7 factors."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "misconception": {
+              "text": "A group of noun phrases at the beginning of a sentence is enough to make a complete sentence.",
+              "claim_kind": "misconception_statement",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "Noun phrases at the beginning of a sentence need to be followed by a conjugated verb; without a main verb, they are sentence fragments.",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_117"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_117",
+                  "quote": "the noun phrases at the beginning of the sentence need to be followed by a conjugated verb to make sense."
+                },
+                {
+                  "node_id": "pte_chunk_117",
+                  "quote": "Without a main verb these noun phrases are sentence fragments."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "misconception": {
+              "text": "Supporting sentences can introduce unrelated ideas if the writing still uses linking words.",
+              "claim_kind": "misconception_statement",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "Supporting sentences should relate to the main idea in the topic sentence, be logically organized, and be connected with linking words and phrases.",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_118"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_118",
+                  "quote": "Do all supporting sentences relate to the main idea in the topic sentence?"
+                },
+                {
+                  "node_id": "pte_chunk_118",
+                  "quote": "Are supporting sentences logically organized?"
+                },
+                {
+                  "node_id": "pte_chunk_118",
+                  "quote": "Are supporting sentences connected with linking words and phrases?"
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "practice_questions": [
+          {
+            "question": {
+              "text": "Look at this essay prompt: “Some people believe that online learning is better than classroom learning. To what extent do you agree or disagree? Support your answer with reasons and examples.” Identify the topic words and the requirement words.",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Topic words: online learning, classroom learning. Requirement words: to what extent, agree or disagree, support your answer with reasons and examples.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Create a short essay plan for this prompt: “Some people believe that online learning is better than classroom learning. To what extent do you agree or disagree?” Include one main opinion and three supporting reasons.",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Sample answer: Main opinion: classroom learning is generally more effective, although online learning is useful for some learners. Reason 1: classroom lessons allow immediate teacher feedback. Reason 2: classroom learning encourages discussion and collaboration. Reason 3: online learning is flexible but can require strong self-discipline.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Write one topic sentence and two supporting sentences for a paragraph about the benefits of classroom learning.",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Sample answer: Classroom learning often provides stronger interaction between students and teachers. For example, students can ask questions immediately when they do not understand a point. Furthermore, teachers can notice confusion and adjust the lesson more quickly.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Edit this sentence fragment into a complete sentence: “Students who complete higher education often better paid.”",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Students who complete higher education are often better paid.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Use the checklist idea from the lesson to review your own paragraph. Name three things you should check.",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Sample answer: Check whether there is a clear topic sentence, whether all supporting sentences relate to the topic sentence, and whether grammar, punctuation, and spelling are accurate.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "review_checklist": [
+          {
+            "text": "I can identify the topic words and requirement words in an essay prompt before planning.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can create a relevant essay plan with a main opinion and three supporting reasons.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can write a clear topic sentence for a paragraph.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can add supporting sentences that explain, justify, or give examples for the topic sentence.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can use causal verbs, noun phrases, and adverbs to express a main argument more clearly.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can edit a paragraph for logical organization, linking words, grammar, punctuation, spelling, and sentence fragments.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          }
+        ]
+      }
+    ]
+  },
+  "source_chunks": [
+    {
+      "node_id": "pte_chunk_105",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 7",
+      "chapter_number": 7,
+      "section": "LESSON 7",
+      "topic": "LESSON 7",
+      "content_type": "unknown",
+      "page_start": 105,
+      "page_end": 105,
+      "is_front_matter": false,
+      "text_preview": "Lesson 7© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 48 The Official Guide to PTE Academic Teacher Notes Overview Time allocated: 2 hours This lesson focuses on the following skills: Writing: • Writing for a purpose (to learn, to inform, to persuade) • Supporting an opinion..."
+    },
+    {
+      "node_id": "pte_chunk_106",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 7",
+      "chapter_number": 7,
+      "section": "LESSON 7",
+      "topic": "LESSON 7",
+      "content_type": "unknown",
+      "page_start": 106,
+      "page_end": 106,
+      "is_front_matter": false,
+      "text_preview": "Lesson 7© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 49 The Official Guide to PTE Academic Teacher Notes • Copies of ‘Negative verb phrases which signal causes, effects and changes’ (1 handout per group) • Copies of ‘Adverbs which signal specific causes, effects and changes’..."
+    },
+    {
+      "node_id": "pte_chunk_107",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 7",
+      "chapter_number": 7,
+      "section": "LESSON 7",
+      "topic": "LESSON 7",
+      "content_type": "unknown",
+      "page_start": 107,
+      "page_end": 107,
+      "is_front_matter": false,
+      "text_preview": "Lesson 7© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 50 The Official Guide to PTE Academic Teacher Notes – Phrases such as ‘The first factor’, ‘The second factor’, ‘Thirdly’, ‘Fourthly’, ‘The fifth assessment factor’ and ‘Finally’ are cohesive devices which allow us to order..."
+    },
+    {
+      "node_id": "pte_chunk_108",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 7",
+      "chapter_number": 7,
+      "section": "LESSON 7",
+      "topic": "LESSON 7",
+      "content_type": "unknown",
+      "page_start": 108,
+      "page_end": 108,
+      "is_front_matter": false,
+      "text_preview": "Lesson 7© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 51 The Official Guide to PTE Academic Teacher Notes – note a main opinion or argument which describes whether they agree or disagree, and give three reasons why. • Remind test takers that if the content of their essay does..."
+    },
+    {
+      "node_id": "pte_chunk_109",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 7",
+      "chapter_number": 7,
+      "section": "LESSON 7",
+      "topic": "LESSON 7",
+      "content_type": "unknown",
+      "page_start": 109,
+      "page_end": 109,
+      "is_front_matter": false,
+      "text_preview": "Lesson 7© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 52 The Official Guide to PTE Academic Teacher Notes • Project an image of the table ‘Noun phrases which describe factors, influences and results’ on the board and draw test takers’ attention to the various grammatical comb..."
+    },
+    {
+      "node_id": "pte_chunk_110",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 7",
+      "chapter_number": 7,
+      "section": "LESSON 7",
+      "topic": "LESSON 7",
+      "content_type": "unknown",
+      "page_start": 110,
+      "page_end": 110,
+      "is_front_matter": false,
+      "text_preview": "Lesson 7© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 53 The Official Guide to PTE Academic Teacher Notes • Then ask them to express reason 3 in a grammatically correct sentence by placing a verb between the noun phrase and the adjectival phrase. Remind test takers that the v..."
+    },
+    {
+      "node_id": "pte_chunk_111",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 7",
+      "chapter_number": 7,
+      "section": "LESSON 7",
+      "topic": "LESSON 7",
+      "content_type": "unknown",
+      "page_start": 111,
+      "page_end": 111,
+      "is_front_matter": false,
+      "text_preview": "Lesson 7© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 54 The Official Guide to PTE Academic Teacher Notes Main activity 4 group work and whole class (20 mins) Editing skills Materials: • Copies of ‘Paragraph editing checklist’ • Image of ‘Paragraph editing practice’ for proje..."
+    },
+    {
+      "node_id": "pte_chunk_112",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 7",
+      "chapter_number": 7,
+      "section": "LESSON 7",
+      "topic": "LESSON 7",
+      "content_type": "unknown",
+      "page_start": 112,
+      "page_end": 112,
+      "is_front_matter": false,
+      "text_preview": "Lesson 7Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 The sentences below have been placed in a random order. Restore the original order by numbering the sentences correctly. a In addition to grammar and mechanics, you are assessed on how broad your vocabulary i..."
+    },
+    {
+      "node_id": "pte_chunk_113",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 7",
+      "chapter_number": 7,
+      "section": "LESSON 7",
+      "topic": "LESSON 7",
+      "content_type": "unknown",
+      "page_start": 113,
+      "page_end": 113,
+      "is_front_matter": false,
+      "text_preview": "Lesson 7Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 a In addition to grammar and mechanics, you are assessed on how broad your vocabulary is and on your ability to use academic or idiomatic language correctly. b Fourthly, the item assesses the range of your la..."
+    },
+    {
+      "node_id": "pte_chunk_114",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 7",
+      "chapter_number": 7,
+      "section": "LESSON 7",
+      "topic": "LESSON 7",
+      "content_type": "unknown",
+      "page_start": 114,
+      "page_end": 114,
+      "is_front_matter": false,
+      "text_preview": "Lesson 7Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 This plan refers to the essay prompt on page 78 of the Official Guide. Main argument: ➔education significantly ➔ ➔prosperity. Reason 1: Developed countries = high rates of compulsory secondary schooling and h..."
+    },
+    {
+      "node_id": "pte_chunk_115",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 7",
+      "chapter_number": 7,
+      "section": "LESSON 7",
+      "topic": "LESSON 7",
+      "content_type": "unknown",
+      "page_start": 115,
+      "page_end": 115,
+      "is_front_matter": false,
+      "text_preview": "Lesson 7Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Increased education High rates of literacy Compulsory secondary schooling A better educated society Verbs or verb phrases greater prosperity a wealthier society a more skilled workforce higher standards of li..."
+    },
+    {
+      "node_id": "pte_chunk_116",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 7",
+      "chapter_number": 7,
+      "section": "LESSON 7",
+      "topic": "LESSON 7",
+      "content_type": "unknown",
+      "page_start": 116,
+      "page_end": 116,
+      "is_front_matter": false,
+      "text_preview": "Lesson 7Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Verbs or verb phrases Verbs rarely/sometimes/often/never significantly greatly moderately generally may/might/could cause/s result/s in lead/s to make/s for Adverbs which signal specific causes, effects and c..."
+    },
+    {
+      "node_id": "pte_chunk_117",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 7",
+      "chapter_number": 7,
+      "section": "LESSON 7",
+      "topic": "LESSON 7",
+      "content_type": "unknown",
+      "page_start": 117,
+      "page_end": 117,
+      "is_front_matter": false,
+      "text_preview": "Lesson 7Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Societies which are well educated typically have/experience/enjoy/boast greater levels of prosperity Noun phrase (Noun + relative clause) modifying adverb the verb ‘to have’ (or an equivalent) in the present..."
+    },
+    {
+      "node_id": "pte_chunk_118",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 7",
+      "chapter_number": 7,
+      "section": "LESSON 7",
+      "topic": "LESSON 7",
+      "content_type": "unknown",
+      "page_start": 118,
+      "page_end": 118,
+      "is_front_matter": false,
+      "text_preview": "Lesson 7Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Use this checklist to edit your work. Paragraph organization Yes No Is there a clear topic sentence? Do all supporting sentences relate to the main idea in the topic sentence? Are supporting sentences logical..."
+    },
+    {
+      "node_id": "pte_chunk_119",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 7",
+      "chapter_number": 7,
+      "section": "LESSON 7",
+      "topic": "LESSON 7",
+      "content_type": "unknown",
+      "page_start": 119,
+      "page_end": 119,
+      "is_front_matter": false,
+      "text_preview": "Lesson 7Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Use the ‘Paragraph editing checklist’ to edit the paragraph below. Similarly, rates of tertiary education participation have rellatively high in all G8 nations. In most developed countries, secondary educatio..."
+    },
+    {
+      "node_id": "pte_chunk_120",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 7",
+      "chapter_number": 7,
+      "section": "LESSON 7",
+      "topic": "LESSON 7",
+      "content_type": "unknown",
+      "page_start": 120,
+      "page_end": 120,
+      "is_front_matter": false,
+      "text_preview": "Lesson 7Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 The main errors in the paragraph are labeled below: Similarly, rates of tertiary education participation have rellatively high in all G8 nations. In most developed countries, secondary education have compulso..."
+    }
+  ],
+  "audit": {
+    "status": "PASS",
+    "contract_status": "PASS",
+    "contract_audit_path": "output/pte.ch7.gen.contract.audit.json",
+    "contract_report_path": "output/pte.ch7.gen.contract.audit.txt"
+  }
+}
