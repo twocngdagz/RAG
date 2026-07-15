@@ -1,0 +1,890 @@
+{
+  "schema_version": "book_learning_materials.v2",
+  "book": {
+    "slug": "pte",
+    "title": "pte",
+    "source_pdf": "input/pdfs/pte.pdf"
+  },
+  "generation": {
+    "generated_at": "2026-07-15T03:28:20.647686+00:00",
+    "pipeline_version": "book_learning_materials.v2",
+    "prompt_version": "book_learning_materials_v2_chapter.v2",
+    "backend": "codex-cli",
+    "model": "gpt-5.5",
+    "selection_mode": "chapters",
+    "selected_chapter_numbers": [
+      15
+    ],
+    "book_synthesis_performed": false,
+    "clean_chunks_path": "extracted/pte.section_clean_chunks.json"
+  },
+  "learning_materials": {
+    "chapters": [
+      {
+        "chapter_number": 15,
+        "chapter_title": "Lesson 14: Summarize spoken text and Highlight correct summary",
+        "source_chunk_ids": [
+          "pte_chunk_218",
+          "pte_chunk_219",
+          "pte_chunk_220",
+          "pte_chunk_221",
+          "pte_chunk_222",
+          "pte_chunk_223",
+          "pte_chunk_224",
+          "pte_chunk_225",
+          "pte_chunk_226",
+          "pte_chunk_227",
+          "pte_chunk_228",
+          "pte_chunk_229",
+          "pte_chunk_230",
+          "pte_chunk_231",
+          "pte_chunk_232",
+          "pte_chunk_233"
+        ],
+        "estimated_study_time": {
+          "text": "Plan one focused study session of about 2 hours, plus extra time for homework practice if needed.",
+          "claim_kind": "study_plan",
+          "origin": "pedagogical_generation",
+          "source_chunk_ids": [],
+          "grounded_in_source_chunk_ids": [],
+          "evidence_spans": [],
+          "reason": null
+        },
+        "chapter_summary": {
+          "text": "This chapter provides skills practice for Summarize spoken text and Highlight correct summary. It focuses on listening, reading, and writing skills including identifying main ideas, summarizing, recognizing supporting points, understanding speaker purpose or attitude, following lecture sequence, taking notes while listening, writing summaries, and choosing the most accurate summary.",
+          "claim_kind": "source_summary",
+          "origin": "source_grounded",
+          "source_chunk_ids": [
+            "pte_chunk_218"
+          ],
+          "grounded_in_source_chunk_ids": [],
+          "evidence_spans": [
+            {
+              "node_id": "pte_chunk_218",
+              "quote": "This lesson provides skills practice for the PTE Academic item types Summarize spoken text and Highlight correct \nsummary."
+            },
+            {
+              "node_id": "pte_chunk_218",
+              "quote": "Listening\n• Identifying the topic, theme or main ideas\n• Summarizing the main idea\n• Identifying supporting points or examples\n• Identifying a speaker’s purpose, style, tone or attitude"
+            },
+            {
+              "node_id": "pte_chunk_218",
+              "quote": "• Following an oral sequencing of information\n• Comprehending variations in tone, speed, accent\nReading\n• Identifying supporting points or examples\n• Identifying the most accurate summary"
+            },
+            {
+              "node_id": "pte_chunk_218",
+              "quote": "Writing\n• Writing a summary \n• Writing under timed conditions\n• Taking notes while listening to a recording\n• Communicating the main points of a lecture in writing"
+            }
+          ],
+          "reason": null
+        },
+        "learning_objectives": [
+          {
+            "text": "Practice the listening, reading, and writing skills listed for the lesson.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_219"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_219",
+                "quote": "By the end of this lesson, test takers will have: \n➤\t Practiced the listening, reading and writing skills listed above"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Analyze the rubric, format, and scoring of Summarize spoken text and Highlight correct summary.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_219"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_219",
+                "quote": "test takers will look at the Summarize spoken text and Highlight correct summary \nitem types"
+              },
+              {
+                "node_id": "pte_chunk_219",
+                "quote": "➤\t Analyzed the rubric, format and scoring of these item types"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Practice listening, reading, and writing strategies for the item types.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_219"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_219",
+                "quote": "➤\t Practiced listening, reading and writing strategies for these item types"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Practice vocabulary and spelling skills related to successful completion of the item types.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_219"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_219",
+                "quote": "➤\t Practiced vocabulary and spelling skills related to the successful completion of these item types"
+              }
+            ],
+            "reason": null
+          }
+        ],
+        "key_terms": [
+          {
+            "term": "Signpost words",
+            "meaning": {
+              "text": "Signpost words are signal words used by lecturers to show lecture structure, emphasize main ideas, and distinguish main ideas from supporting details.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_221"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_221",
+                  "quote": "lecturers also use signal words to give their listeners ‘signposts’ of a lecture’s \nstructure, to emphasize main ideas, and to distinguish main ideas from supporting details."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Redundant information",
+            "meaning": {
+              "text": "Redundant information is bracketed text: ideas that are inaccurate or ideas not mentioned by the speaker.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_223"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_223",
+                  "quote": "Tell test takers to put ideas that are inaccurate in curly brackets { }, and ideas not mentioned \nby the speaker in square brackets [ ]. Explain that bracketed text is redundant information"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Speaker attitude",
+            "meaning": {
+              "text": "Speaker attitude refers to whether the speaker has a strong, weak, or neutral opinion and whether the speaker views something favorably or unfavorably.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_221"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_221",
+                  "quote": "whether the speaker has a strong, weak or neutral \nopinion about the topic, and whether the speaker regards something favorably or unfavorably"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Summary",
+            "meaning": {
+              "text": "A summary is a brief statement that accurately represents the topic and main points of a written or spoken text.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_220"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_220",
+                  "quote": "A summary is a brief \nstatement that accurately represents the topic and main points of a written or spoken text."
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "core_lessons": [
+          {
+            "title": "Know The Two Item Types",
+            "explanation": {
+              "text": "The lesson covers Summarize spoken text and Highlight correct summary, including their format, rubrics, scoring, strategies, and timed practice.",
+              "claim_kind": "task_format",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_219"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_219",
+                  "quote": "test takers will look at the Summarize spoken text and Highlight correct summary \nitem types"
+                },
+                {
+                  "node_id": "pte_chunk_219",
+                  "quote": "they will look closely at the format, rubrics and scoring of these item types; analyze strategies \nfor approaching them successfully, and complete practice items under timed conditions."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Take Notes For Main Ideas",
+            "explanation": {
+              "text": "When listening, note key words rather than every word because the aim is to identify the topic and the most important information.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_220"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_220",
+                  "quote": "The ‘listeners’ in each pair should only note key words, not every word, as the aim is to \nidentify the topic and most important information."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Use Signpost Words To Follow Lectures",
+            "explanation": {
+              "text": "Signpost words help listeners understand lecture structure, order key points, identify the main topic, and notice emphasis.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_221"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_221",
+                  "quote": "‘Today I’d like to…’ signals the lecturer’s main topic; ‘three main strategies’ signals the lecture’s 3-\npart structure"
+                },
+                {
+                  "node_id": "pte_chunk_221",
+                  "quote": "Sequencing words and \nphrases such as ‘my first piece of advice’, ‘firstly’, ‘secondly’, and ‘last but not least’ help to order \nkey points"
+                },
+                {
+                  "node_id": "pte_chunk_221",
+                  "quote": "words such as ‘always …’, ‘make sure to …’, ‘it is also very important \nto’ signal emphasis."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Infer Attitude From Vocabulary",
+            "explanation": {
+              "text": "A speaker’s attitude or opinion can be inferred from vocabulary, including words that express positive, negative, neutral, certain, or uncertain attitudes.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_221"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_221",
+                  "quote": "the attitude or opinion of a speaker can be inferred by looking at the vocabulary \nused"
+                },
+                {
+                  "node_id": "pte_chunk_221",
+                  "quote": "At the top of the first three columns write the following headings \n‘positive’, ‘negative’, ‘neutral’."
+                },
+                {
+                  "node_id": "pte_chunk_221",
+                  "quote": "a lecturer can also display an attitude which is certain or uncertain."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Write A Focused Summary",
+            "explanation": {
+              "text": "A summary accurately represents the topic and main points, usually omits examples, often uses complex noun phrases and the simple present tense, and does not retell personal information or give a narrative.",
+              "claim_kind": "factual_explanation",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_220"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_220",
+                  "quote": "A summary is a brief \nstatement that accurately represents the topic and main points of a written or spoken text. Examples \nare usually omitted."
+                },
+                {
+                  "node_id": "pte_chunk_220",
+                  "quote": "they often contain complex noun phrases to describe the main ideas."
+                },
+                {
+                  "node_id": "pte_chunk_220",
+                  "quote": "The simple present tense is often used because the writer is giving a factual statement of the main \npoints. A summary does not retell personal information or give a narrative."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Eliminate Weak Summary Options",
+            "explanation": {
+              "text": "For Highlight correct summary, eliminate paragraphs with incorrect information, information not mentioned in the recording, or details that omit the main or important points.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_226"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_226",
+                  "quote": "eliminate the \nparagraphs that obviously contain incorrect information. Then, eliminate the paragraphs that contain information \nthat is not mentioned in the recording."
+                },
+                {
+                  "node_id": "pte_chunk_226",
+                  "quote": "you should try \nto eliminate paragraphs which contain details but which omit the main or important points."
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "worked_examples": [
+          {
+            "title": "Note Only Key Words From A Mini Lecture",
+            "example": {
+              "text": "Listen to a short lecture about three study strategies. Write only key words such as topic, first strategy, second strategy, final strategy, and any repeated emphasis words. After listening, compare your notes with a partner and ask for spelling clarification on unclear key words.",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "This practice matches the lesson procedure: one learner reads a lecture aloud, the listener notes key words, and unclear vocabulary or spelling can be checked after speaking.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_220"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_220",
+                  "quote": "‘A’s and ‘B’s should take turns reading out their lecture to their partner in a clear voice \nand at a slightly slower than normal speed"
+                },
+                {
+                  "node_id": "pte_chunk_220",
+                  "quote": "The ‘listeners’ in each pair should only note key words, not every word"
+                },
+                {
+                  "node_id": "pte_chunk_220",
+                  "quote": "they can ask the ‘lecturers’ for \nverification of vocabulary and correct spelling, and revise or correct their notes as necessary."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Choose The Most Accurate Summary",
+            "example": {
+              "text": "After listening to a lecture, read four possible summaries. Mark any statement that contradicts your notes as inaccurate. Mark any statement that your notes do not support as not mentioned. Eliminate those options and choose the remaining summary that best preserves the main ideas.",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "The lesson trains learners to identify main ideas in each summary, decide whether ideas are accurate, inaccurate, or not presented, eliminate summaries containing redundant information, and select the most accurate summary.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_223"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_223",
+                  "quote": "before choosing a summary they should first identify the main ideas in each one \nand determine whether these ideas are accurate, inaccurate or not presented in the lecture."
+                },
+                {
+                  "node_id": "pte_chunk_223",
+                  "quote": "summaries containing any bracketed information can be eliminated."
+                },
+                {
+                  "node_id": "pte_chunk_223",
+                  "quote": "Once test takers have eliminated those summaries containing redundant information, tell them to \nselect the most accurate summary"
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "common_misconceptions": [
+          {
+            "misconception": {
+              "text": "In a listening task, the best notes are word-for-word notes of everything the speaker says.",
+              "claim_kind": "misconception_statement",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "Listeners should note key words, not every word, because the aim is to identify the topic and most important information.",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_220"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_220",
+                  "quote": "The ‘listeners’ in each pair should only note key words, not every word, as the aim is to \nidentify the topic and most important information."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "misconception": {
+              "text": "For Highlight correct summary, it is best to read the answer options before listening to the recording.",
+              "claim_kind": "misconception_statement",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "For this item type, learners should focus first on listening and note-taking, then look at the options; looking at the options first may distract them.",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_222"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_222",
+                  "quote": "for this item type it is very important to first remain focused on listening to \nthe recording and taking notes and to look at the options after that."
+                },
+                {
+                  "node_id": "pte_chunk_222",
+                  "quote": "Looking at the options before they \ncomplete the listening and note-taking part of the item may distract them from what they hear."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "misconception": {
+              "text": "A summary should retell the lecture as a personal story or narrative.",
+              "claim_kind": "misconception_statement",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "A summary is a brief statement of the topic and main points; it does not retell personal information or give a narrative.",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_220"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_220",
+                  "quote": "A summary is a brief \nstatement that accurately represents the topic and main points of a written or spoken text."
+                },
+                {
+                  "node_id": "pte_chunk_220",
+                  "quote": "A summary does not retell personal information or give a narrative."
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "practice_questions": [
+          {
+            "question": {
+              "text": "You hear a lecture that begins, “Today I’d like to talk about three major reasons for urban migration. First... Now let’s move on... Finally...” What should you listen for and note?",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Note the main topic, the three sequenced main points, and key words connected to each point. Do not try to write every word.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "After listening to a lecture, one summary contains a correct detail but leaves out the main point. Should that option remain a strong candidate?",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "No. Eliminate summaries that contain details but omit the main or important points.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "A speaker says, “Without doubt, this is a major problem,” and later says, “perhaps this may improve.” Which words help you judge certainty or uncertainty?",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "“Without doubt” and “major problem” suggest certainty, while “perhaps” and “may” suggest uncertainty.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "When checking a written summary of a spoken text, what should you check before finalizing it?",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Check whether it contains all key information, has the required word count, and uses correct grammar, spelling, and punctuation.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "review_checklist": [
+          {
+            "text": "I can identify a lecture’s topic and main ideas from signpost words and stressed key words.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can take notes using key words instead of trying to write every word.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can use vocabulary clues to infer whether a speaker’s opinion is positive, negative, neutral, certain, or uncertain.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can eliminate summaries that contain inaccurate information, information not mentioned in the lecture, or details that miss the main point.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can write a concise summary that states the topic and main points without turning the lecture into a narrative.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          }
+        ]
+      }
+    ]
+  },
+  "source_chunks": [
+    {
+      "node_id": "pte_chunk_218",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 14",
+      "chapter_number": 15,
+      "section": "LESSON 14",
+      "topic": "LESSON 14",
+      "content_type": "unknown",
+      "page_start": 218,
+      "page_end": 218,
+      "is_front_matter": false,
+      "text_preview": "Lesson 14© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 98 The Official Guide to PTE Academic Teacher Notes Overview Time allocated: 2 hours This lesson focuses on the following skills: Listening • Identifying the topic, theme or main ideas • Summarizing the main idea • Identi..."
+    },
+    {
+      "node_id": "pte_chunk_219",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 14",
+      "chapter_number": 15,
+      "section": "LESSON 14",
+      "topic": "LESSON 14",
+      "content_type": "unknown",
+      "page_start": 219,
+      "page_end": 219,
+      "is_front_matter": false,
+      "text_preview": "Lesson 14© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 99 The Official Guide to PTE Academic Teacher Notes Objectives By the end of this lesson, test takers will have: ➤ Practiced the listening, reading and writing skills listed above ➤ Analyzed the rubric, format and scoring..."
+    },
+    {
+      "node_id": "pte_chunk_220",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 14",
+      "chapter_number": 15,
+      "section": "LESSON 14",
+      "topic": "LESSON 14",
+      "content_type": "unknown",
+      "page_start": 220,
+      "page_end": 220,
+      "is_front_matter": false,
+      "text_preview": "Lesson 14© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 100 The Official Guide to PTE Academic Teacher Notes • Organize test takers into pairs and designate one as ‘A’ and the other as ‘B’. Tell them that they are going to work together and present further information to each..."
+    },
+    {
+      "node_id": "pte_chunk_221",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 14",
+      "chapter_number": 15,
+      "section": "LESSON 14",
+      "topic": "LESSON 14",
+      "content_type": "unknown",
+      "page_start": 221,
+      "page_end": 221,
+      "is_front_matter": false,
+      "text_preview": "Lesson 14© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 101 The Official Guide to PTE Academic Teacher Notes Steps: • Remind test takers that in Lesson 9 they looked at discourse markers (i.e. words that indicate the structure of a paragraph and the relationships between sente..."
+    },
+    {
+      "node_id": "pte_chunk_222",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 14",
+      "chapter_number": 15,
+      "section": "LESSON 14",
+      "topic": "LESSON 14",
+      "content_type": "unknown",
+      "page_start": 222,
+      "page_end": 222,
+      "is_front_matter": false,
+      "text_preview": "Lesson 14© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 102 The Official Guide to PTE Academic Teacher Notes Main activity 2: part 2 whole class, group work (15 mins) Identifying vocabulary that signals attitude and opinion Materials: • Copies of ‘Identifying a speaker’s attit..."
+    },
+    {
+      "node_id": "pte_chunk_223",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 14",
+      "chapter_number": 15,
+      "section": "LESSON 14",
+      "topic": "LESSON 14",
+      "content_type": "unknown",
+      "page_start": 223,
+      "page_end": 223,
+      "is_front_matter": false,
+      "text_preview": "Lesson 14© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 103 The Official Guide to PTE Academic Teacher Notes • Play the audio recording that accompanies Listening item 10, CD-ROM Practice set 2 so that the whole class can hear it clearly. • After they have finished listening,..."
+    },
+    {
+      "node_id": "pte_chunk_224",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 14",
+      "chapter_number": 15,
+      "section": "LESSON 14",
+      "topic": "LESSON 14",
+      "content_type": "unknown",
+      "page_start": 224,
+      "page_end": 224,
+      "is_front_matter": false,
+      "text_preview": "Lesson 14© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 104 The Official Guide to PTE Academic Teacher Notes Homework activities • For homework, ask test takers to attempt the Summarize spoken text practice item on pages 128–129 in the Official Guide, as well as the Highlight..."
+    },
+    {
+      "node_id": "pte_chunk_225",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 14",
+      "chapter_number": 15,
+      "section": "LESSON 14",
+      "topic": "LESSON 14",
+      "content_type": "unknown",
+      "page_start": 225,
+      "page_end": 225,
+      "is_front_matter": false,
+      "text_preview": "Lesson 14Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Imagine that you are giving a short lecture. Read the following lecture out loud to your partner at a slightly slower than normal speed. As you speak, your partner should try to note the main ideas. Read eac..."
+    },
+    {
+      "node_id": "pte_chunk_226",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 14",
+      "chapter_number": 15,
+      "section": "LESSON 14",
+      "topic": "LESSON 14",
+      "content_type": "unknown",
+      "page_start": 226,
+      "page_end": 226,
+      "is_front_matter": false,
+      "text_preview": "Lesson 14Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 B: Highlight correct summary lecture Imagine that you are giving a short lecture. Read the following lecture out loud to your partner at a slightly slower than normal speed. As you speak, your partner should..."
+    },
+    {
+      "node_id": "pte_chunk_227",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 14",
+      "chapter_number": 15,
+      "section": "LESSON 14",
+      "topic": "LESSON 14",
+      "content_type": "unknown",
+      "page_start": 227,
+      "page_end": 227,
+      "is_front_matter": false,
+      "text_preview": "Lesson 14Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Signpost words in a lecture What words are used by the lecturer to help the listener understand the structure of the lecture and note key words? “Today I’d like to give you some strategies for successfully c..."
+    },
+    {
+      "node_id": "pte_chunk_228",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 14",
+      "chapter_number": 15,
+      "section": "LESSON 14",
+      "topic": "LESSON 14",
+      "content_type": "unknown",
+      "page_start": 228,
+      "page_end": 228,
+      "is_front_matter": false,
+      "text_preview": "Lesson 14Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 More signpost words Look at the underlined signpost words in the following lecture. What job is each underlined word or phrase doing in the lecture? Work in groups and try to write synonyms for these words...."
+    },
+    {
+      "node_id": "pte_chunk_229",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 14",
+      "chapter_number": 15,
+      "section": "LESSON 14",
+      "topic": "LESSON 14",
+      "content_type": "unknown",
+      "page_start": 229,
+      "page_end": 229,
+      "is_front_matter": false,
+      "text_preview": "Lesson 14Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 More signpost words: Sample suggested answers “Today I want to talk about/tell you about some strategies for successfully completing the ‘ Highlight correct summary’ item task in PTE Academic. (These signpos..."
+    },
+    {
+      "node_id": "pte_chunk_230",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 14",
+      "chapter_number": 15,
+      "section": "LESSON 14",
+      "topic": "LESSON 14",
+      "content_type": "unknown",
+      "page_start": 230,
+      "page_end": 230,
+      "is_front_matter": false,
+      "text_preview": "Lesson 14Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Identifying a speaker’s attitudes and opinions You will hear a short lecture. Below is a transcript of the lecture. Some words which help to convey the speaker’s attitudes and opinions have been omitted from..."
+    },
+    {
+      "node_id": "pte_chunk_231",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 14",
+      "chapter_number": 15,
+      "section": "LESSON 14",
+      "topic": "LESSON 14",
+      "content_type": "unknown",
+      "page_start": 231,
+      "page_end": 231,
+      "is_front_matter": false,
+      "text_preview": "Lesson 14Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Identifying a speaker’s attitudes and opinions: Answer key Transcript Most students at some point of their high school education will be faced with a choice of studying history or geography. For my part, I b..."
+    },
+    {
+      "node_id": "pte_chunk_232",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 14",
+      "chapter_number": 15,
+      "section": "LESSON 14",
+      "topic": "LESSON 14",
+      "content_type": "unknown",
+      "page_start": 232,
+      "page_end": 232,
+      "is_front_matter": false,
+      "text_preview": "Lesson 14Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Identifying redundant information in a summary With your partner, first underline the signpost words in each summary that introduce main ideas or signal supporting examples. Next, look at the main ideas in e..."
+    },
+    {
+      "node_id": "pte_chunk_233",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 14",
+      "chapter_number": 15,
+      "section": "LESSON 14",
+      "topic": "LESSON 14",
+      "content_type": "unknown",
+      "page_start": 233,
+      "page_end": 233,
+      "is_front_matter": false,
+      "text_preview": "Lesson 14Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Identifying redundant information in a summary: Answer key Transcript Travel challenges and offers life-changing experiences that broaden perceptions and knowledge. For me, travelling has become a life-long..."
+    }
+  ],
+  "audit": {
+    "status": "PASS",
+    "contract_status": "PASS",
+    "contract_audit_path": "output/pte.ch15.gen.contract.audit.json",
+    "contract_report_path": "output/pte.ch15.gen.contract.audit.txt"
+  }
+}
