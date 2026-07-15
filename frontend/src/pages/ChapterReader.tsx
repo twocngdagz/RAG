@@ -20,6 +20,7 @@ import { textOf, type ChapterIndexItem } from '../lib/types'
 import { Section } from '../components/Section'
 import { GroundedText } from '../components/GroundedText'
 import { CoachView } from '../components/CoachView'
+import { ErrorBoundary } from '../components/ErrorBoundary'
 
 export function ChapterReader({ chapters }: { chapters: ChapterIndexItem[] }) {
   const { slug = 'pte', n } = useParams()
@@ -71,7 +72,15 @@ export function ChapterReader({ chapters }: { chapters: ChapterIndexItem[] }) {
     return (
       <>
         {tabs}
-        {enrich.loading ? <ReaderSkeleton /> : enrich.data ? <CoachView e={enrich.data} /> : <ReaderSkeleton />}
+        {enrich.loading ? (
+          <ReaderSkeleton />
+        ) : enrich.data ? (
+          <ErrorBoundary label="lesson">
+            <CoachView e={enrich.data} />
+          </ErrorBoundary>
+        ) : (
+          <ReaderSkeleton />
+        )}
       </>
     )
   }
