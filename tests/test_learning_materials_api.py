@@ -35,12 +35,24 @@ def make_document(*, slug="pte", number=1, title="Lesson 1"):
     }
 
 
+def make_enrichment(*, slug="pte", n=1):
+    return {
+        "schema_version": "pte_lesson_enrichment.v1",
+        "task_type": "answer_short_question",
+        "lesson_title": f"Lesson {n}",
+        "source_label": f"{slug}:ch{n:02d}",
+        "core_method": {"name": "Cue → Type → Key → Answer"},
+        "techniques": [{"name": "Question-Word Prediction"}],
+    }
+
+
 @pytest.fixture
 def client(tmp_path):
     engine = store.create_db(f"sqlite:///{tmp_path}/api.db")
     with Session(engine) as s:
         store.upsert_chapter(s, make_document(number=1, title="Lesson 1"), contract_status="PASS")
         store.upsert_chapter(s, make_document(number=2, title="Lesson 2"), contract_status="PASS")
+        store.upsert_enrichment(s, make_enrichment(n=1))  # only chapter 1 is enriched
         s.commit()
     return TestClient(create_app(engine))
 
@@ -102,3 +114,27 @@ def test_section_endpoint_rejects_unknown_section(client):
 
 def test_section_endpoint_404_for_missing_chapter(client):
     assert client.get("/books/pte/chapters/99/sections/key_terms").status_code == 404
+
+
+# --------------------------------------------------------------------------- #
+# Enrichment (teaching layer)
+# --------------------------------------------------------------------------- #
+
+def test_index_flags_which_chapters_are_enriched(client):
+    body = client.get("/books/pte/chapters").json()
+    by_num = {c["chapter_number"]: c for c in body}
+    assert by_num[1]["has_enrichment"] is True
+    assert by_num[2]["has_enrichment"] is False
+
+
+def test_enrichment_endpoint_returns_the_teaching_document(client):
+    r = client.get("/books/pte/chapters/1/enrichment")
+    assert r.status_code == 200
+    doc = r.json()
+    assert doc["schema_version"] == "pte_lesson_enrichment.v1"
+    assert doc["core_method"]["name"] == "Cue → Type → Key → Answer"
+
+
+def test_enrichment_404_when_absent(client):
+    assert client.get("/books/pte/chapters/2/enrichment").status_code == 404
+    assert client.get("/books/pte/chapters/99/enrichment").status_code == 404

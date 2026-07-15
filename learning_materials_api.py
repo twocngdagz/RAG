@@ -59,6 +59,7 @@ class ChapterIndexItem(BaseModel):
     backend: str | None = None
     model: str | None = None
     contract_status: str
+    has_enrichment: bool = False
 
 
 def create_app(engine: Engine | None = None) -> FastAPI:
@@ -94,7 +95,13 @@ def create_app(engine: Engine | None = None) -> FastAPI:
         rows = store.list_chapters(session, slug)
         if not rows:
             raise HTTPException(status_code=404, detail=f"No chapters for book {slug!r}.")
-        return [row.index_item() for row in rows]
+        enriched = set(store.chapters_with_enrichment(session, slug))
+        items = []
+        for row in rows:
+            item = row.index_item()
+            item["has_enrichment"] = row.chapter_number in enriched
+            items.append(item)
+        return items
 
     @app.get("/books/{slug}/chapters/{chapter_number}")
     def get_chapter(
@@ -128,6 +135,18 @@ def create_app(engine: Engine | None = None) -> FastAPI:
             )
         chapter = json.loads(record.document)["learning_materials"]["chapters"][0]
         return {"section": section, "content": chapter.get(section)}
+
+    @app.get("/books/{slug}/chapters/{chapter_number}/enrichment")
+    def get_chapter_enrichment(
+        slug: str, chapter_number: int, session: Session = Depends(get_session)
+    ) -> dict[str, Any]:
+        record = store.get_enrichment(session, slug, chapter_number)
+        if record is None:
+            raise HTTPException(
+                status_code=404,
+                detail=f"No enrichment for chapter {chapter_number} of book {slug!r}.",
+            )
+        return json.loads(record.document)
 
     return app
 

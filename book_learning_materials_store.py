@@ -23,6 +23,7 @@ chapter, whose grounding already passed at generation time.
 
 import argparse
 import json
+import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -78,6 +79,37 @@ class ChapterRecord(Base):
             "model": self.model,
             "contract_status": self.contract_status,
         }
+
+
+ENRICHMENT_SCHEMA_VERSION = "pte_lesson_enrichment.v1"
+# A lesson enrichment names the lesson it belongs to via source_label, e.g. "pte:ch01".
+_SOURCE_LABEL_RE = re.compile(r"^([a-z0-9_-]+):ch0*(\d+)$", re.IGNORECASE)
+
+
+class EnrichmentRecord(Base):
+    """The teaching layer for one lesson, stored beside the grounded base.
+
+    One row per (book, chapter). The whole enrichment document is kept in a JSON
+    column; it is synthesized teaching (not source-quoted), so it is NOT run
+    through the base contract -- its own schema_version gates it. Re-generating a
+    lesson's enrichment replaces this row without touching the base chapter.
+    """
+
+    __tablename__ = "learning_material_enrichments"
+
+    id: Mapped[str] = mapped_column(String, primary_key=True)
+    book_slug: Mapped[str] = mapped_column(String, index=True)
+    chapter_number: Mapped[int] = mapped_column(Integer)
+    schema_version: Mapped[str] = mapped_column(String)
+    task_type: Mapped[str | None] = mapped_column(String, nullable=True)
+    lesson_title: Mapped[str | None] = mapped_column(String, nullable=True)
+    source_label: Mapped[str | None] = mapped_column(String, nullable=True)
+    loaded_at: Mapped[str] = mapped_column(String)
+    document: Mapped[str] = mapped_column(Text)
+
+    __table_args__ = (
+        UniqueConstraint("book_slug", "chapter_number", name="uq_enrichment_book_chapter"),
+    )
 
 
 def stable_chapter_id(book_slug: str, chapter_number: int) -> str:
@@ -196,6 +228,73 @@ def list_books(session: Session) -> list[dict[str, Any]]:
         .order_by(ChapterRecord.book_slug)
     )
     return [{"slug": slug, "chapter_count": count} for slug, count in session.execute(stmt)]
+
+
+# --------------------------------------------------------------------------- #
+# Enrichment (teaching layer)
+# --------------------------------------------------------------------------- #
+
+def stable_enrichment_id(book_slug: str, chapter_number: int) -> str:
+    return f"{book_slug}:ch{chapter_number:02d}:enrichment"
+
+
+def extract_enrichment_metadata(document: dict[str, Any]) -> dict[str, Any]:
+    schema_version = document.get("schema_version")
+    if schema_version != ENRICHMENT_SCHEMA_VERSION:
+        raise StoreError(
+            f"Unsupported enrichment schema_version: {schema_version!r} "
+            f"(expected {ENRICHMENT_SCHEMA_VERSION!r})."
+        )
+    label = str(document.get("source_label") or "").strip()
+    match = _SOURCE_LABEL_RE.match(label)
+    if not match:
+        raise StoreError(
+            f"Enrichment source_label must look like 'slug:chNN'; got {label!r}."
+        )
+    return {
+        "book_slug": match.group(1).lower(),
+        "chapter_number": int(match.group(2)),
+        "schema_version": schema_version,
+        "task_type": document.get("task_type"),
+        "lesson_title": document.get("lesson_title"),
+        "source_label": label,
+    }
+
+
+def upsert_enrichment(session: Session, document: dict[str, Any]) -> EnrichmentRecord:
+    meta = extract_enrichment_metadata(document)
+    record_id = stable_enrichment_id(meta["book_slug"], meta["chapter_number"])
+    record = session.get(EnrichmentRecord, record_id)
+    if record is None:
+        record = EnrichmentRecord(id=record_id)
+        session.add(record)
+    record.book_slug = meta["book_slug"]
+    record.chapter_number = meta["chapter_number"]
+    record.schema_version = meta["schema_version"]
+    record.task_type = meta["task_type"]
+    record.lesson_title = meta["lesson_title"]
+    record.source_label = meta["source_label"]
+    record.loaded_at = now_iso()
+    record.document = json.dumps(document, ensure_ascii=False)
+    return record
+
+
+def load_enrichment_file(session: Session, path: str | Path) -> EnrichmentRecord:
+    document = json.loads(Path(path).read_text(encoding="utf-8"))
+    return upsert_enrichment(session, document)
+
+
+def get_enrichment(session: Session, book_slug: str, chapter_number: int) -> EnrichmentRecord | None:
+    return session.get(EnrichmentRecord, stable_enrichment_id(book_slug, chapter_number))
+
+
+def chapters_with_enrichment(session: Session, book_slug: str) -> list[int]:
+    stmt = (
+        select(EnrichmentRecord.chapter_number)
+        .where(EnrichmentRecord.book_slug == book_slug)
+        .order_by(EnrichmentRecord.chapter_number)
+    )
+    return list(session.scalars(stmt))
 
 
 # --------------------------------------------------------------------------- #
