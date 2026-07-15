@@ -1,676 +1,683 @@
 {
   "schema_version": "pte_lesson_enrichment.v1",
-  "task_type": "Write Essay",
+  "task_type": "write_essay",
   "lesson_title": "Write Essay: Planning, Paragraphing, and Editing",
   "source_label": "pte:ch07",
   "modality": "writing",
   "overview": {
-    "summary": "This lesson teaches a repeatable method for producing a relevant, logically organized, and grammatically controlled PTE Academic essay under a 20-minute time limit. The learner first decodes the prompt, chooses a clear position, plans focused reasons, develops each paragraph around one main idea, and reserves time for editing.",
-    "task_profile": [
-      "Write a persuasive or argumentative essay in response to a given academic-style prompt.",
-      "Complete the response within 20 minutes.",
-      "Address every part of the prompt directly rather than writing generally about the topic.",
-      "Develop a clear position with reasons, explanations, and relevant examples.",
-      "Organize the response into a logical introduction, body paragraphs, and conclusion.",
-      "Use accurate grammar, spelling, punctuation, vocabulary, and written discourse."
+    "what_it_is": "Write Essay is a long-answer PTE Academic writing task in which the test taker develops a persuasive or argumentative response to a given prompt under strict time pressure. Success depends on answering the exact question, presenting a clear position, organizing ideas into logical paragraphs, supporting claims with explanations or examples, and editing the response for grammar, vocabulary, spelling, punctuation, and sentence completeness.",
+    "format_facts": [
+      {
+        "label": "Task purpose",
+        "value": "Write a persuasive or argumentative essay that directly responds to the topic and requirement words in the prompt."
+      },
+      {
+        "label": "Time limit",
+        "value": "The response must be planned, written, and checked within 20 minutes."
+      },
+      {
+        "label": "Response form",
+        "value": "The answer should be a complete academic essay with an introduction, logically developed body paragraphs, and a conclusion."
+      },
+      {
+        "label": "Recommended length",
+        "value": "Aim for approximately 200-300 words while following the response-length requirement displayed in the test."
+      },
+      {
+        "label": "Typical prompt types",
+        "value": "Common prompts ask for agreement or disagreement, the extent of agreement, advantages and disadvantages, causes and solutions, or discussion of two views."
+      },
+      {
+        "label": "Primary skill",
+        "value": "Writing is the main communicative skill, supported by reading skills used to decode the prompt accurately."
+      }
     ],
-    "assessment_focus": [
-      "Content: whether the response answers the actual question and covers its required elements.",
-      "Development, structure and coherence: whether ideas are sufficiently developed and logically connected.",
-      "Form: whether the response follows the expected essay length and format.",
-      "Range of language: whether the writer uses varied sentence structures and appropriate expressions.",
-      "Grammar usage and mechanics: whether sentences, punctuation, capitalization, and grammatical forms are controlled.",
-      "Vocabulary: whether the essay uses precise, appropriate, and sufficiently varied academic language.",
-      "Spelling: whether words are spelled accurately and consistently."
+    "scoring_factors": [
+      {
+        "name": "Content",
+        "what_it_measures": "Whether the response addresses the exact topic, task instruction, and required aspects of the question."
+      },
+      {
+        "name": "Development, structure and coherence",
+        "what_it_measures": "Whether the position is developed logically through connected paragraphs, relevant supporting ideas, and clear progression."
+      },
+      {
+        "name": "Form",
+        "what_it_measures": "Whether the response follows the required essay format and appropriate response length."
+      },
+      {
+        "name": "Range of language",
+        "what_it_measures": "Whether the writer can use varied sentence structures and language suitable for developing complex ideas."
+      },
+      {
+        "name": "Grammar usage and mechanics",
+        "what_it_measures": "Whether grammar, sentence construction, punctuation, capitalization, and other writing mechanics are controlled accurately."
+      },
+      {
+        "name": "Vocabulary",
+        "what_it_measures": "Whether vocabulary is sufficiently broad, precise, academic, idiomatic, and appropriate to the context."
+      },
+      {
+        "name": "Spelling",
+        "what_it_measures": "Whether words are spelled accurately and consistently."
+      }
     ],
-    "estimated_study_time": "Plan for about 2 hours of study for this chapter, with extra time for the homework essay and detailed review.",
-    "success_definition": [
-      "The essay directly answers the prompt from the introduction to the conclusion.",
-      "The writer states a clear position and maintains it consistently.",
-      "Each body paragraph contains one focused reason supported by explanation and example.",
-      "Ideas are connected with accurate logical linkers rather than mechanically inserted transitions.",
-      "Most sentences are complete, clear, and grammatically accurate.",
-      "The essay is completed within the time limit with enough time for proofreading."
+    "critical_rules": [
+      "Answer the exact prompt; an essay that does not address the required content may receive zero across the scoring factors.",
+      "Identify both the topic words and the requirement words before brainstorming.",
+      "State a clear position and keep that position consistent from the introduction to the conclusion.",
+      "Use each body paragraph for one main reason rather than mixing several unrelated ideas.",
+      "Support every major claim with an explanation, consequence, example, comparison, or evidence.",
+      "Write complete sentences containing a subject and a properly conjugated main verb.",
+      "Reserve time to check paragraph logic, grammar, vocabulary, punctuation, spelling, and sentence fragments.",
+      "Do not rely on memorized paragraphs that only loosely match the question."
     ]
   },
   "learning_goals": [
-    "Identify topic words that define what the essay must discuss.",
-    "Identify requirement words that define the writing purpose, such as agree, disagree, discuss, compare, or evaluate.",
-    "Convert the prompt into a simple planning question before generating ideas.",
-    "Choose a clear main position that can be defended consistently.",
-    "Create a relevant plan containing a main opinion and at least two or three supporting reasons.",
-    "Write focused paragraphs using a topic sentence, explanation, example, and concluding link.",
-    "Use cause, effect, result, contrast, and qualification language to develop complex ideas.",
-    "Use adverbs and qualifying expressions to make claims appropriately strong or cautious.",
-    "Edit an essay for relevance, organization, grammar, vocabulary, punctuation, spelling, and sentence completeness.",
-    "Complete a full essay under a 20-minute timed condition."
+    "Identify the topic words, limiting words, and requirement words in an essay prompt.",
+    "Recognize whether a prompt requires an opinion, balanced discussion, advantages and disadvantages, or causes and solutions.",
+    "Create a relevant essay plan containing a clear position and three usable supporting ideas.",
+    "Write an introduction that directly paraphrases the topic and presents a clear thesis.",
+    "Construct body paragraphs with a topic sentence, explanation, example, and link to the argument.",
+    "Use cause, effect, result, contrast, addition, and concession language accurately.",
+    "Develop ideas with specific reasoning instead of repeating the same claim in different words.",
+    "Edit an essay efficiently for content relevance, coherence, grammar, vocabulary, spelling, punctuation, and fragments.",
+    "Complete a full essay within a realistic 20-minute time limit."
   ],
   "core_method": {
-    "name": "Decode–Decide–Plan–Build–Edit",
-    "purpose": "A five-stage routine that reduces irrelevant content, weak paragraphing, and rushed proofreading.",
+    "name": "DEAL Essay Method",
+    "summary": "DEAL is a four-stage method for producing a relevant and coherent PTE essay: Decode the prompt, Establish a plan, Assemble the paragraphs, and Look back to edit. The method prevents off-topic writing and creates a repeatable workflow for the 20-minute task.",
     "steps": [
       {
-        "stage": "1. Decode the prompt",
-        "instruction": "Underline or mentally isolate the topic words and requirement words. Ask what subject must be discussed and what action the prompt requires.",
-        "checkpoint": "Can the task be restated as one simple question without changing its meaning?"
+        "step": "Decode",
+        "detail": "Underline the topic words, identify any limiting words, and circle the requirement words. Decide exactly what the essay must do, such as agree, disagree, discuss both views, compare benefits and drawbacks, or propose solutions."
       },
       {
-        "stage": "2. Decide the position",
-        "instruction": "Choose the exact opinion or central argument before writing. Avoid a vague position such as saying that both sides are good unless the prompt specifically requires balanced discussion.",
-        "checkpoint": "Can the position be expressed in one direct sentence?"
+        "step": "Establish",
+        "detail": "Write a one-line position and generate three possible reasons. Test each reason against the prompt, remove weak or repeated ideas, and select the two strongest body-paragraph points."
       },
       {
-        "stage": "3. Plan the reasons",
-        "instruction": "Write two or three reasons that directly support the position. Add a short explanation or example beside each reason.",
-        "checkpoint": "Does every planned point answer the prompt rather than merely relate to the general topic?"
+        "step": "Arrange",
+        "detail": "Assign one main idea to each body paragraph. Add a brief explanation, a consequence or example, and a sentence linking the point back to the thesis."
       },
       {
-        "stage": "4. Build the essay",
-        "instruction": "Write a concise introduction, focused body paragraphs, and a conclusion. Keep one controlling idea in each body paragraph.",
-        "checkpoint": "Does each paragraph have a clear job and a logical connection to the thesis?"
+        "step": "Launch",
+        "detail": "Write the introduction quickly: paraphrase the issue, state your position, and preview the main reasons without giving excessive background."
       },
       {
-        "stage": "5. Edit strategically",
-        "instruction": "Check content first, then paragraph logic, sentence completeness, verbs, vocabulary, punctuation, spelling, and word count.",
-        "checkpoint": "Is the response relevant, complete, readable, and mechanically accurate?"
+        "step": "Develop",
+        "detail": "Write each body paragraph using a clear topic sentence followed by explanation, evidence or example, and a concluding link."
+      },
+      {
+        "step": "Conclude",
+        "detail": "Restate the overall position in new words and summarize the main reasoning without introducing a new argument."
+      },
+      {
+        "step": "Look back",
+        "detail": "Check prompt coverage first, then paragraph logic, verbs, sentence boundaries, vocabulary, punctuation, spelling, and word length."
       }
     ],
-    "recommended_structure": [
-      "Introduction: paraphrase the topic, state the position, and preview the main reasons.",
-      "Body paragraph 1: present the strongest reason, explain it, and support it with an example.",
-      "Body paragraph 2: present a second distinct reason, explain it, and support it with an example.",
-      "Optional body paragraph 3: add another reason, limitation, or counterargument only when it can be developed clearly.",
-      "Conclusion: restate the position and summarize the central reasoning without introducing a new idea."
-    ],
-    "time_allocation": [
-      "Minutes 0–2: decode the prompt and decide the position.",
-      "Minutes 2–4: create the essay plan.",
-      "Minutes 4–17: write the introduction, body paragraphs, and conclusion.",
-      "Minutes 17–19: edit content, paragraph logic, grammar, and sentence structure.",
-      "Minutes 19–20: check spelling, punctuation, capitalization, and word count."
-    ]
+    "formula": "Decode prompt → Position + two strong reasons → Introduction → Body 1: Point-Explain-Example-Link → Body 2: Point-Explain-Example-Link → Conclusion → Edit"
   },
   "techniques": [
     {
-      "name": "Topic-word and requirement-word separation",
-      "teaching_point": "Topic words control what information is relevant, while requirement words control what kind of response must be produced.",
-      "procedure": [
-        "Circle the subject or issue.",
-        "Underline the action required by the prompt.",
-        "Identify any limits, comparisons, groups, places, or conditions.",
-        "Restate the task in your own words."
+      "name": "Topic and Requirement Split",
+      "purpose": "Prevent the essay from answering only the general topic while missing the actual instruction.",
+      "how_to": [
+        "Underline the subject matter, such as online learning and classroom learning.",
+        "Circle the command phrase, such as to what extent do you agree or disagree.",
+        "Mark any limits, such as for university students, in public places, or in developing countries.",
+        "Rewrite the task in a simple question before planning."
       ],
-      "example": "In the prompt about online learning versus classroom learning, the topic words are online learning and classroom learning, while the requirement words are to what extent, agree or disagree, and support your answer."
+      "example": "Prompt: Some people believe online learning is better than classroom learning. To what extent do you agree or disagree? Topic words: online learning and classroom learning. Requirement words: to what extent, agree or disagree, support with reasons and examples.",
+      "why_it_matters": "Content relevance is fundamental. A polished essay that answers a different question cannot compensate for misunderstanding the prompt.",
+      "common_error": "Writing generally about education technology without comparing the two learning modes or stating the extent of agreement."
     },
     {
-      "name": "Prompt-to-question conversion",
-      "teaching_point": "Rewriting the prompt as a direct question makes irrelevant ideas easier to detect.",
-      "procedure": [
-        "Remove introductory wording such as 'Some people believe'.",
-        "Keep the exact comparison or claim.",
-        "Turn the instruction into a question.",
-        "Test each planned reason against that question."
+      "name": "Position Sentence",
+      "purpose": "Give the essay a single controlling argument that guides every paragraph.",
+      "how_to": [
+        "Choose a clear position before writing.",
+        "Avoid vague statements such as both sides have advantages unless the prompt permits a balanced position.",
+        "State the degree of agreement when the prompt asks to what extent.",
+        "Check that both body paragraphs can directly support the position."
       ],
-      "example": "Prompt: 'Online learning is better than classroom learning. To what extent do you agree?' Planning question: 'Is online learning generally better than classroom learning, and why?'"
+      "example": "Although online courses provide valuable flexibility, I largely disagree that they are superior because classroom learning offers faster feedback and stronger interaction.",
+      "why_it_matters": "A stable thesis improves coherence and makes it easier to choose relevant supporting ideas.",
+      "common_error": "Agreeing in the introduction, presenting mostly opposing reasons in the body, and giving a neutral conclusion."
     },
     {
-      "name": "One-sentence thesis test",
-      "teaching_point": "A strong essay position should be clear enough to state in one sentence before writing begins.",
-      "procedure": [
-        "State the degree of agreement or disagreement.",
-        "Name the central reason or reasons.",
-        "Avoid announcing the essay with phrases such as 'This essay will discuss'.",
-        "Check that the thesis answers the requirement words."
+      "name": "Reason Relevance Test",
+      "purpose": "Select ideas that directly answer the prompt and can be developed clearly.",
+      "how_to": [
+        "Write three possible reasons in note form.",
+        "Ask how each reason proves the thesis.",
+        "Remove reasons that overlap or require specialist knowledge.",
+        "Choose reasons that can be explained with a realistic example."
       ],
-      "example": "Although online courses offer valuable flexibility, classroom learning is generally more effective because it provides immediate feedback and stronger collaboration."
+      "example": "For classroom learning: immediate teacher feedback, active peer discussion, and stronger study routines. The first two are selected because they are distinct and easy to develop.",
+      "why_it_matters": "Two well-developed reasons usually create a stronger essay than several undeveloped claims.",
+      "common_error": "Choosing broad ideas such as education is important that do not answer the comparison in the prompt."
     },
     {
-      "name": "Three-column planning",
-      "teaching_point": "A reason becomes usable only when it can be explained and supported.",
-      "procedure": [
-        "Column 1: write the main reason.",
-        "Column 2: explain why the reason matters.",
-        "Column 3: add a realistic example or consequence.",
-        "Delete any point that cannot be developed."
-      ],
-      "example": "Reason: immediate feedback. Explanation: students can correct misunderstandings quickly. Example: a teacher can clarify a difficult formula during the lesson."
-    },
-    {
-      "name": "PEEL paragraph construction",
-      "teaching_point": "Each body paragraph should develop one controlling idea through a predictable sequence.",
-      "procedure": [
-        "Point: state the paragraph's main reason.",
-        "Explain: show how or why the reason supports the thesis.",
-        "Example: provide a realistic illustration, situation, or consequence.",
+      "name": "PEEL Body Paragraph",
+      "purpose": "Turn a basic opinion into a logically developed paragraph.",
+      "how_to": [
+        "Point: begin with a topic sentence stating one clear reason.",
+        "Explain: show why the reason is valid or how it works.",
+        "Example: add a realistic case, observation, or consequence.",
         "Link: connect the paragraph back to the essay position."
       ],
-      "example": "Classroom learning provides immediate academic support. When students misunderstand a concept, they can ask questions and receive clarification at once. For example, a teacher can adjust an explanation after noticing that several learners are confused. Therefore, direct interaction can prevent small misunderstandings from becoming larger learning gaps."
+      "example": "Classroom learning provides immediate academic support. When students misunderstand a concept, they can ask questions and receive clarification at once. For example, a teacher can observe confusion during a mathematics lesson and demonstrate the method differently. Therefore, direct interaction can make classroom instruction more effective.",
+      "why_it_matters": "The structure keeps supporting sentences relevant to the topic sentence and improves development and coherence.",
+      "common_error": "Giving a topic sentence followed by several unrelated facts connected only by furthermore or moreover."
     },
     {
-      "name": "Cause–effect expansion",
-      "teaching_point": "Cause and result language helps turn a basic statement into developed reasoning.",
-      "procedure": [
-        "Name the cause or influencing factor.",
-        "State the immediate effect.",
-        "Explain the broader result.",
-        "Connect the result to the position."
+      "name": "Cause-Effect Chain",
+      "purpose": "Express complex arguments by showing how one factor produces a consequence.",
+      "how_to": [
+        "Name the cause or contributing factor.",
+        "Use a causal verb or phrase such as leads to, results in, or contributes to.",
+        "Explain the immediate effect.",
+        "Extend the chain to a broader result when relevant."
       ],
-      "example": "Regular interaction encourages students to participate, which increases their engagement and can consequently improve long-term learning."
+      "example": "Regular interaction with teachers leads to quicker correction of mistakes, which improves understanding and may produce better academic performance.",
+      "why_it_matters": "Causal reasoning develops ideas more deeply than simple claims and demonstrates control of complex relationships.",
+      "common_error": "Using because, therefore, and as a result without a logically valid relationship between the clauses."
     },
     {
-      "name": "Qualified opinion",
-      "teaching_point": "Academic arguments are often more convincing when claims are specific rather than absolute.",
-      "procedure": [
-        "Replace absolute words such as always, never, and everyone.",
-        "Use adverbs such as generally, often, potentially, or considerably.",
-        "Identify the conditions under which the claim is true.",
-        "Keep the final position clear despite qualification."
+      "name": "Opinion Refinement with Adverbs",
+      "purpose": "Make claims more precise and avoid absolute statements that are difficult to defend.",
+      "how_to": [
+        "Use largely or generally for a strong but qualified position.",
+        "Use potentially or may when describing uncertain consequences.",
+        "Use particularly to emphasize a specific group or situation.",
+        "Avoid weakening every sentence with perhaps or maybe."
       ],
-      "example": "Online learning can be highly effective for disciplined adults, but it is generally less suitable for learners who require close supervision."
+      "example": "Online learning is particularly useful for working adults, but it may be less effective for students who require frequent supervision.",
+      "why_it_matters": "Careful qualification creates a more academic tone and allows a balanced argument without losing clarity.",
+      "common_error": "Writing absolute claims such as online learning always fails or classroom education is perfect."
     },
     {
-      "name": "Paragraph unity check",
-      "teaching_point": "Linking words cannot repair a paragraph containing unrelated ideas.",
-      "procedure": [
-        "Underline the topic sentence.",
-        "Ask how every supporting sentence develops that sentence.",
-        "Remove or move unrelated information.",
-        "Check that the final sentence reinforces the same paragraph focus."
+      "name": "Reverse Outline Editing",
+      "purpose": "Check whether the finished essay has a logical structure before correcting small language errors.",
+      "how_to": [
+        "Read only the thesis and topic sentences.",
+        "Ask whether they form a clear argument.",
+        "Check that every supporting sentence belongs under its topic sentence.",
+        "Delete or revise any sentence that introduces an unrelated idea."
       ],
-      "example": "A paragraph about teacher feedback should not suddenly discuss transport costs unless the paragraph's controlling idea is the wider practical value of classroom study."
+      "example": "Thesis: classroom learning is generally stronger. Body 1: immediate feedback. Body 2: collaboration. Conclusion: these benefits make classroom learning more effective for most students.",
+      "why_it_matters": "Organization and relevance should be corrected before time is spent on minor spelling changes.",
+      "common_error": "Editing individual words while leaving a contradictory thesis or an off-topic body paragraph unchanged."
     },
     {
-      "name": "Sentence-fragment repair",
-      "teaching_point": "A complete sentence normally requires a subject and a conjugated main verb.",
-      "procedure": [
-        "Locate the subject.",
-        "Locate the main verb.",
-        "Check whether the verb is correctly conjugated.",
-        "Join dependent clauses to a complete main clause when necessary."
+      "name": "Final Verb Scan",
+      "purpose": "Detect sentence fragments, agreement mistakes, and missing auxiliary verbs quickly.",
+      "how_to": [
+        "Locate the main verb in every sentence.",
+        "Check that the subject and verb agree.",
+        "Check that passive forms contain the correct form of be.",
+        "Check that relative clauses do not leave the main clause incomplete."
       ],
-      "example": "Fragment: 'Students who complete higher education often better paid.' Corrected: 'Students who complete higher education are often better paid.'"
-    },
-    {
-      "name": "Two-pass editing",
-      "teaching_point": "Editing is more effective when meaning and language are checked separately.",
-      "procedure": [
-        "First pass: check prompt coverage, thesis consistency, paragraph order, and relevance.",
-        "Second pass: check sentence structure, verbs, agreement, articles, punctuation, spelling, and word forms.",
-        "Correct high-impact errors before stylistic improvements.",
-        "Avoid rewriting entire paragraphs during the final minute."
-      ],
-      "example": "First confirm that both online and classroom learning are addressed; then correct errors such as 'student can learns' to 'students can learn'."
+      "example": "Fragment: Students who complete higher education often better paid. Corrected: Students who complete higher education are often better paid.",
+      "why_it_matters": "Many serious grammar errors can be found by checking sentence verbs systematically.",
+      "common_error": "Assuming that a long group of nouns and modifiers automatically forms a complete sentence."
     }
   ],
   "worked_examples": [
     {
-      "title": "Decoding an opinion prompt",
-      "prompt": "Some people believe that online learning is better than classroom learning. To what extent do you agree or disagree? Support your answer with reasons and examples.",
-      "analysis": {
-        "topic_words": [
-          "online learning",
-          "classroom learning"
-        ],
-        "requirement_words": [
-          "to what extent",
-          "agree or disagree",
-          "support your answer",
-          "reasons and examples"
-        ],
-        "restated_question": "Is online learning better than classroom learning, and how strongly do I agree or disagree?"
-      },
-      "lesson": "The writer must compare the educational value of the two modes and state a clear degree of agreement."
-    },
-    {
-      "title": "Building a relevant essay plan",
-      "prompt": "Some people believe that online learning is better than classroom learning. To what extent do you agree or disagree?",
-      "sample_plan": {
-        "position": "Classroom learning is generally more effective, although online learning is useful for independent learners.",
-        "reason_1": "Classroom lessons allow immediate teacher feedback.",
-        "support_1": "Students can correct misunderstandings before they become serious.",
-        "reason_2": "Classroom learning encourages discussion and collaboration.",
-        "support_2": "Learners practise explaining ideas and responding to different viewpoints.",
-        "reason_3": "Online learning offers flexibility but requires strong self-discipline.",
-        "support_3": "Some learners postpone lessons or become distracted without a fixed schedule."
-      },
-      "lesson": "Every reason directly compares the effectiveness of the two learning modes."
-    },
-    {
-      "title": "From weak thesis to strong thesis",
-      "prompt": "Some people believe that online learning is better than classroom learning.",
-      "weak_response": "Online learning and classroom learning both have advantages and disadvantages.",
-      "problem": "The sentence does not reveal the writer's degree of agreement and gives no direction to the essay.",
-      "improved_response": "Although online education is flexible and accessible, classroom learning is generally more effective because it offers immediate feedback and sustained interaction.",
-      "lesson": "The improved version states a qualified position and previews the two body-paragraph reasons."
-    },
-    {
-      "title": "Developing a complete body paragraph",
-      "topic_sentence": "Classroom learning often provides stronger interaction between students and teachers.",
-      "supporting_sentences": [
-        "Students can ask questions immediately when they do not understand a point.",
-        "Teachers can also notice confusion through facial expressions, incomplete answers, or reduced participation.",
-        "For example, an instructor may pause a lesson and provide another explanation when several students appear uncertain.",
-        "As a result, direct interaction can make the learning process more responsive and effective."
-      ],
-      "lesson": "The paragraph moves from a general reason to explanation, example, and result without leaving the central topic."
-    },
-    {
-      "title": "Using cause-and-result language",
-      "basic_version": "Online classes are flexible. Many students like them.",
-      "developed_version": "Because online classes allow learners to study at convenient times, they can make education more accessible to people with work or family responsibilities; consequently, many adult students view them as a practical alternative.",
-      "language_features": [
-        "because introduces the cause",
-        "allow identifies the enabling factor",
-        "make education more accessible expresses the effect",
-        "consequently introduces the broader result"
-      ],
-      "lesson": "Logical language should reveal the relationship between ideas rather than simply joining sentences."
-    },
-    {
-      "title": "Repairing a sentence fragment",
-      "incorrect": "Students who complete higher education often better paid.",
-      "diagnosis": [
-        "The noun phrase is present.",
-        "The relative clause 'who complete higher education' is present.",
-        "The adjective phrase 'better paid' is present.",
-        "A conjugated main verb is missing."
-      ],
-      "corrected": "Students who complete higher education are often better paid.",
-      "lesson": "The verb 'are' completes the sentence and connects the subject to the complement."
-    },
-    {
-      "title": "Government smoking restriction paragraph",
-      "prompt_focus": "Whether governments should restrict smoking in public places.",
-      "sample_paragraph": "Targeted smoking restrictions can improve public health. For instance, fewer people are exposed to second-hand smoke in workplaces, transport areas, and other shared environments. Furthermore, these rules can make public spaces cleaner and safer, particularly for children and people with respiratory problems. Consequently, carefully designed restrictions can protect non-smokers without requiring a total ban in every location.",
-      "analysis": [
-        "The first sentence states the paragraph's controlling idea.",
-        "The second sentence gives a concrete public-health example.",
-        "The third sentence adds another related benefit.",
-        "The final sentence connects the evidence to a qualified policy position."
+      "title": "Decoding an Agree-or-Disagree Prompt",
+      "input": "Some people believe that online learning is better than classroom learning. To what extent do you agree or disagree? Support your answer with reasons and examples.",
+      "decoding": "The topic is the relative quality of online and classroom learning. The task requires a clear degree of agreement, not merely a list of advantages. The response must use reasons and examples to justify the position.",
+      "plan": "Position: largely disagree. Body 1: classroom learning gives immediate feedback. Body 2: classroom learning promotes discussion and collaboration. Concession: online learning is flexible and useful for some learners.",
+      "model_answer": "The essay should argue that online learning has important practical benefits but is not generally better than classroom learning. The introduction should state the degree of disagreement, while the body paragraphs should explain the advantages of immediate feedback and direct collaboration. A short concession may recognize online flexibility without weakening the main position.",
+      "annotations": [
+        {
+          "part": "Topic words",
+          "comment": "Online learning and classroom learning define the two modes that must be compared."
+        },
+        {
+          "part": "Requirement words",
+          "comment": "To what extent requires a stated degree, such as completely, largely, or partly."
+        },
+        {
+          "part": "Support instruction",
+          "comment": "Reasons and examples must be included rather than unsupported personal preference."
+        },
+        {
+          "part": "Position",
+          "comment": "Largely disagree allows a clear argument while still acknowledging the flexibility of online study."
+        }
       ]
     },
     {
-      "title": "Editing for paragraph relevance",
-      "original_paragraph": "Classroom learning gives students immediate support. They can ask teachers questions during lessons. Online courses are often cheaper than university accommodation. Furthermore, teachers can observe whether students understand a difficult topic.",
-      "problem": "The sentence about accommodation cost does not develop the paragraph's main idea of immediate academic support.",
-      "revised_paragraph": "Classroom learning gives students immediate support. They can ask teachers questions during lessons, and instructors can observe whether students understand a difficult topic. If confusion is visible, the teacher can provide another explanation or additional practice. This direct response can help students solve problems before they fall behind.",
-      "lesson": "Removing the unrelated sentence produces stronger unity even though the original paragraph contained a linking word."
+      "title": "Planning a Relevant Essay",
+      "input": "Governments should restrict smoking in public places. Do you agree or disagree?",
+      "decoding": "The topic is government restriction of smoking, specifically in public places. The task requires an opinion on whether such restrictions should exist.",
+      "plan": "Position: agree with targeted restrictions. Reason 1: reduced exposure to second-hand smoke. Reason 2: cleaner and safer shared spaces. Reason 3: protection of children and vulnerable people. Select reasons 1 and 2 for the main body and use reason 3 as supporting detail.",
+      "model_answer": "Thesis: Governments should impose targeted restrictions on smoking in enclosed and crowded public places because these measures protect public health and improve shared environments. Body paragraph 1 explains how restrictions reduce involuntary exposure to smoke, especially for workers, children, and people with respiratory conditions. Body paragraph 2 explains how restrictions reduce litter, unpleasant air, and conflict between smokers and non-smokers. The conclusion restates support for proportionate restrictions rather than a complete ban in every outdoor area.",
+      "annotations": [
+        {
+          "part": "Targeted restrictions",
+          "comment": "This phrase refines the position and avoids claiming that smoking must be prohibited everywhere."
+        },
+        {
+          "part": "Public health",
+          "comment": "This reason directly answers why government action may be justified."
+        },
+        {
+          "part": "Shared spaces",
+          "comment": "This is distinct from the health argument and therefore supports a separate body paragraph."
+        },
+        {
+          "part": "Prompt check",
+          "comment": "Every selected reason relates to smoking, government restrictions, and public places."
+        }
+      ]
+    },
+    {
+      "title": "Building a Complete Body Paragraph",
+      "input": "Write a paragraph explaining one benefit of classroom learning.",
+      "decoding": "The paragraph needs one central benefit, supporting explanation, a specific example, and a concluding connection to effectiveness.",
+      "plan": "Point: stronger teacher-student interaction. Explain: questions can be answered immediately. Example: a teacher notices confusion and changes the explanation. Link: rapid correction improves understanding.",
+      "model_answer": "Classroom learning often provides stronger interaction between students and teachers. When learners do not understand a concept, they can ask questions and receive an immediate explanation instead of waiting for an online response. For example, a teacher who notices that several students are confused can demonstrate the idea in a different way and check their understanding through follow-up questions. Consequently, direct communication can prevent small misunderstandings from becoming larger learning problems.",
+      "annotations": [
+        {
+          "part": "Topic sentence",
+          "comment": "The first sentence states one clear benefit: stronger interaction."
+        },
+        {
+          "part": "Explanation",
+          "comment": "The second sentence explains how the interaction helps learning."
+        },
+        {
+          "part": "Example",
+          "comment": "The teacher noticing confusion provides a realistic classroom situation."
+        },
+        {
+          "part": "Result link",
+          "comment": "Consequently introduces the broader effect on learning."
+        }
+      ]
+    },
+    {
+      "title": "Editing Fragments and Weak Logic",
+      "input": "Students who complete higher education often better paid. Furthermore, universities are large buildings. Therefore, education improves employment.",
+      "decoding": "The first sentence is missing a conjugated verb. The second sentence is grammatically complete but irrelevant to the argument. The final conclusion is too broad and is not logically supported by the statement about buildings.",
+      "plan": "Add the missing auxiliary verb, remove the irrelevant sentence, and add an explanation that connects qualifications to employment outcomes.",
+      "model_answer": "Students who complete higher education are often better paid because many professional positions require advanced qualifications. University study can also develop specialized knowledge and transferable skills that improve a graduate's employment prospects. Therefore, access to higher education may contribute to stronger long-term career opportunities.",
+      "annotations": [
+        {
+          "part": "Are often better paid",
+          "comment": "The auxiliary verb are completes the passive structure."
+        },
+        {
+          "part": "Because clause",
+          "comment": "The reason explains the connection between education and salary."
+        },
+        {
+          "part": "Removed sentence",
+          "comment": "The statement about university buildings does not support the employment argument."
+        },
+        {
+          "part": "Qualified conclusion",
+          "comment": "May contribute is more defensible than claiming that education always guarantees employment."
+        }
+      ]
+    },
+    {
+      "title": "Full Timed Model Essay",
+      "input": "Some people believe that online learning is better than classroom learning. To what extent do you agree or disagree? Support your answer with reasons and examples.",
+      "decoding": "A direct comparison and a clear degree of agreement are required. The response should not discuss technology in general. It should explain why one form of learning is usually more effective while acknowledging relevant exceptions.",
+      "plan": "Introduction: recognize online flexibility but largely disagree. Body 1: immediate feedback and teacher observation. Body 2: discussion, collaboration, and study discipline. Conclusion: online learning is useful, but classroom learning is generally more effective.",
+      "model_answer": "Online education has become increasingly common because it allows people to study from almost any location. Although this flexibility is valuable, I largely disagree that online learning is better than classroom learning because face-to-face teaching provides quicker feedback and stronger academic interaction.\n\nFirst, classroom students can receive immediate assistance when they misunderstand a concept. A teacher can observe facial expressions, identify confusion, and change an explanation before the class moves to a new topic. In an online course, learners may need to send a message or wait for a scheduled discussion before receiving similar support. This delay can allow small misunderstandings to affect later lessons.\n\nSecond, classroom learning encourages active participation and cooperation. Students can debate ideas, complete group activities, and learn from questions raised by their classmates. For example, a discussion about an environmental issue may expose learners to several perspectives that they would not consider while studying alone. Regular attendance can also provide a routine that helps less disciplined students remain focused.\n\nIn conclusion, online learning is particularly useful for working adults and people who live far from educational institutions. Nevertheless, classroom learning is generally more effective because it combines immediate guidance, social interaction, and a structured learning environment.",
+      "annotations": [
+        {
+          "part": "Introduction",
+          "comment": "The response paraphrases the issue, acknowledges one benefit, and states a clear degree of disagreement."
+        },
+        {
+          "part": "Body paragraph 1",
+          "comment": "The paragraph develops immediate feedback through explanation, comparison, and consequence."
+        },
+        {
+          "part": "Body paragraph 2",
+          "comment": "The paragraph focuses on collaboration and structure rather than repeating the feedback argument."
+        },
+        {
+          "part": "Conclusion",
+          "comment": "The final paragraph restates the qualified position without introducing a new major reason."
+        }
+      ]
     }
   ],
-  "useful_language": {
-    "stating_a_position": [
-      "I strongly agree that...",
-      "I largely disagree with the view that...",
-      "Although this argument has some merit, I believe that...",
-      "In my view, the most effective approach is to...",
-      "This essay argues that...",
-      "On balance, the advantages are more significant than the disadvantages."
-    ],
-    "introducing_reasons": [
-      "The primary reason is that...",
-      "One important consideration is...",
-      "A further reason is that...",
-      "Another significant factor is...",
-      "This is particularly important because...",
-      "The strongest argument in favour of this position is..."
-    ],
-    "explaining_cause": [
-      "because",
-      "since",
-      "as a result of",
-      "is caused by",
-      "stems from",
-      "can be attributed to"
-    ],
-    "expressing_effect_or_result": [
-      "therefore",
-      "consequently",
-      "as a result",
-      "which leads to",
-      "thereby increasing",
-      "can result in"
-    ],
-    "adding_support": [
-      "Furthermore,",
-      "In addition,",
-      "Moreover,",
-      "Another relevant point is that...",
-      "This argument is reinforced by...",
-      "Equally important is the fact that..."
-    ],
-    "giving_examples": [
-      "For example,",
-      "For instance,",
-      "A clear illustration of this is...",
-      "This can be seen when...",
-      "Consider the case of...",
-      "One practical example is..."
-    ],
-    "contrasting_ideas": [
-      "However,",
-      "Nevertheless,",
-      "By contrast,",
-      "On the other hand,",
-      "Although...",
-      "While it is true that..."
-    ],
-    "qualifying_claims": [
-      "generally",
-      "often",
-      "to some extent",
-      "in many cases",
-      "potentially",
-      "particularly when"
-    ],
-    "discussing_advantages_and_disadvantages": [
-      "A major advantage is...",
-      "The principal benefit is...",
-      "A possible drawback is...",
-      "One limitation of this approach is...",
-      "The benefits may outweigh the costs when...",
-      "Despite these advantages, it is important to consider..."
-    ],
-    "introducing_a_counterargument": [
-      "Critics may argue that...",
-      "It could be claimed that...",
-      "Some people reasonably point out that...",
-      "Admittedly,",
-      "An opposing view is that...",
-      "While this concern is valid, it does not fully account for..."
-    ],
-    "concluding": [
-      "In conclusion,",
-      "To conclude,",
-      "Overall,",
-      "For these reasons,",
-      "On balance,",
-      "It is therefore reasonable to conclude that..."
-    ],
-    "academic_cause_effect_verbs": [
-      "encourage",
-      "enable",
-      "increase",
-      "reduce",
-      "contribute to",
-      "influence"
-    ]
-  },
+  "useful_language": [
+    {
+      "category": "Stating a Position",
+      "items": [
+        {
+          "item": "I strongly agree that...",
+          "when_to_use": "Use when the essay will fully support the statement with little or no concession."
+        },
+        {
+          "item": "I largely agree that...",
+          "when_to_use": "Use when the main position is positive but one limitation or exception will be acknowledged."
+        },
+        {
+          "item": "I partly agree with this view because...",
+          "when_to_use": "Use when both sides contain important truths and the essay will explain the boundary of agreement."
+        },
+        {
+          "item": "I disagree with the claim that...",
+          "when_to_use": "Use when the essay will directly challenge the statement."
+        },
+        {
+          "item": "This essay argues that...",
+          "when_to_use": "Use to introduce a formal thesis, especially in discussion or problem-solution essays."
+        }
+      ]
+    },
+    {
+      "category": "Introducing Reasons and Support",
+      "items": [
+        {
+          "item": "The primary reason is that...",
+          "when_to_use": "Use to introduce the strongest supporting reason."
+        },
+        {
+          "item": "A further consideration is...",
+          "when_to_use": "Use to introduce a distinct second argument."
+        },
+        {
+          "item": "This is particularly important for...",
+          "when_to_use": "Use to identify the group most affected by the argument."
+        },
+        {
+          "item": "For example,...",
+          "when_to_use": "Use before a specific illustration that clarifies the preceding claim."
+        },
+        {
+          "item": "This can be seen when...",
+          "when_to_use": "Use to introduce a realistic situation without claiming formal research evidence."
+        }
+      ]
+    },
+    {
+      "category": "Cause, Effect, and Result",
+      "items": [
+        {
+          "item": "leads to",
+          "when_to_use": "Use when one factor directly produces a result."
+        },
+        {
+          "item": "contributes to",
+          "when_to_use": "Use when the factor is one of several possible causes."
+        },
+        {
+          "item": "results in",
+          "when_to_use": "Use to connect an action or condition to its consequence."
+        },
+        {
+          "item": "therefore",
+          "when_to_use": "Use to introduce a conclusion that follows logically from the previous sentence."
+        },
+        {
+          "item": "consequently",
+          "when_to_use": "Use to emphasize an important result of the preceding explanation."
+        },
+        {
+          "item": "which may produce",
+          "when_to_use": "Use to extend a cause-effect chain while avoiding an absolute claim."
+        }
+      ]
+    },
+    {
+      "category": "Contrast and Concession",
+      "items": [
+        {
+          "item": "Although...",
+          "when_to_use": "Use to acknowledge a valid opposing point before presenting the main argument."
+        },
+        {
+          "item": "However,...",
+          "when_to_use": "Use to contrast the current sentence with the preceding idea."
+        },
+        {
+          "item": "Nevertheless,...",
+          "when_to_use": "Use when the main position remains valid despite the concession."
+        },
+        {
+          "item": "By contrast,...",
+          "when_to_use": "Use when comparing two clearly different situations or outcomes."
+        },
+        {
+          "item": "While this may be true in some cases,...",
+          "when_to_use": "Use to limit an opposing generalization before explaining why it is not universally valid."
+        }
+      ]
+    },
+    {
+      "category": "Qualifying Claims",
+      "items": [
+        {
+          "item": "generally",
+          "when_to_use": "Use when a statement is usually true but not universal."
+        },
+        {
+          "item": "largely",
+          "when_to_use": "Use to show a strong but not complete degree."
+        },
+        {
+          "item": "potentially",
+          "when_to_use": "Use when an outcome is possible rather than certain."
+        },
+        {
+          "item": "particularly",
+          "when_to_use": "Use to emphasize a specific case, group, or circumstance."
+        },
+        {
+          "item": "to some extent",
+          "when_to_use": "Use when accepting part of a claim while maintaining important reservations."
+        }
+      ]
+    },
+    {
+      "category": "Concluding",
+      "items": [
+        {
+          "item": "In conclusion,...",
+          "when_to_use": "Use to signal the final paragraph clearly."
+        },
+        {
+          "item": "Overall,...",
+          "when_to_use": "Use to present a final judgment based on the essay's main points."
+        },
+        {
+          "item": "For these reasons,...",
+          "when_to_use": "Use when the conclusion follows directly from the arguments already presented."
+        },
+        {
+          "item": "Although X offers certain benefits, Y remains...",
+          "when_to_use": "Use to restate a qualified position after acknowledging the opposing side."
+        },
+        {
+          "item": "The most effective approach is therefore to...",
+          "when_to_use": "Use in solution or policy essays when recommending an action."
+        }
+      ]
+    }
+  ],
   "common_mistakes": [
     {
-      "mistake": "Writing about the general topic instead of answering the exact question.",
-      "why_it_hurts": "The essay may appear fluent but receive no credit for content if it does not address the required issue.",
-      "repair": "Underline the topic and requirement words, then compare every planned paragraph with the restated question."
+      "mistake": "Writing about the broad topic but ignoring the task instruction.",
+      "why_it_hurts": "The essay may be judged irrelevant even when its grammar and vocabulary are strong.",
+      "fix": "Underline topic words and requirement words, then rewrite the prompt as a direct question before planning."
     },
     {
-      "mistake": "Using a memorized introduction that does not match the prompt.",
-      "why_it_hurts": "Generic sentences consume time and may weaken relevance or make the position unclear.",
-      "repair": "Paraphrase the actual claim and state a prompt-specific thesis."
+      "mistake": "Using a memorized introduction or body paragraph that does not precisely match the prompt.",
+      "why_it_hurts": "Generic material weakens content relevance and often creates unnatural or contradictory ideas.",
+      "fix": "Reuse only flexible sentence structures, while changing the thesis, reasons, examples, and key vocabulary for the actual question."
     },
     {
-      "mistake": "Giving three reasons as a list without developing them.",
-      "why_it_hurts": "The essay contains ideas but lacks explanation, support, and coherence.",
-      "repair": "Develop fewer reasons more fully through explanation, example, and consequence."
+      "mistake": "Presenting too many reasons without developing them.",
+      "why_it_hurts": "The essay becomes a list of claims rather than a coherent argument.",
+      "fix": "Choose two strong body-paragraph reasons and develop each with explanation, example, and consequence."
     },
     {
-      "mistake": "Changing position during the essay.",
-      "why_it_hurts": "The introduction, body, and conclusion appear contradictory.",
-      "repair": "Write the thesis before the body and check that every topic sentence supports it."
-    },
-    {
-      "mistake": "Placing several unrelated ideas in one paragraph.",
-      "why_it_hurts": "The paragraph lacks unity even when transitions are present.",
-      "repair": "Give each paragraph one controlling idea and move or remove unrelated material."
-    },
-    {
-      "mistake": "Beginning with a long noun phrase but omitting the main verb.",
-      "why_it_hurts": "The result is a sentence fragment rather than a complete statement.",
-      "repair": "Find the subject and confirm that it is followed by a conjugated main verb."
+      "mistake": "Allowing supporting sentences to move away from the topic sentence.",
+      "why_it_hurts": "The paragraph loses unity even when linking words are present.",
+      "fix": "Ask whether every sentence explains, proves, illustrates, or extends the paragraph's main point."
     },
     {
       "mistake": "Using linking words mechanically.",
-      "why_it_hurts": "Words such as furthermore or therefore may signal a relationship that does not actually exist.",
-      "repair": "Choose the linker only after deciding whether the relationship is addition, contrast, cause, result, or example."
+      "why_it_hurts": "Words such as therefore and however cannot create logic when the underlying ideas are unrelated.",
+      "fix": "Identify the real relationship first, such as addition, contrast, cause, result, or example, and then select the linker."
     },
     {
-      "mistake": "Making unsupported absolute claims.",
-      "why_it_hurts": "Statements using always, never, all, or completely are difficult to defend and may sound inaccurate.",
-      "repair": "Use qualifiers such as generally, often, in many cases, or particularly when."
+      "mistake": "Writing sentence fragments without a conjugated main verb.",
+      "why_it_hurts": "Fragments reduce grammatical accuracy and make complex ideas difficult to understand.",
+      "fix": "Perform a verb scan and ensure that every sentence has a complete main clause."
     },
     {
-      "mistake": "Using an example as the paragraph's main argument.",
-      "why_it_hurts": "The paragraph becomes too narrow and the reader must infer the central point.",
-      "repair": "State the general reason first, then use the example as support."
+      "mistake": "Changing position between the introduction, body, and conclusion.",
+      "why_it_hurts": "The argument appears contradictory and poorly controlled.",
+      "fix": "Write a one-sentence thesis during planning and use it to check every paragraph."
     },
     {
-      "mistake": "Writing an entirely new argument in the conclusion.",
-      "why_it_hurts": "The final paragraph introduces an undeveloped idea and weakens closure.",
-      "repair": "Restate the thesis and synthesize the existing reasons without adding new evidence."
+      "mistake": "Using absolute claims such as always, never, everyone, or completely without evidence.",
+      "why_it_hurts": "Extreme statements are difficult to defend and can make the argument sound inaccurate.",
+      "fix": "Use qualified language such as generally, often, may, largely, or in many cases."
     },
     {
-      "mistake": "Editing only spelling.",
-      "why_it_hurts": "Major problems with relevance, paragraph logic, and incomplete sentences remain uncorrected.",
-      "repair": "Edit in order: content, organization, sentence completeness, grammar, vocabulary, punctuation, spelling."
+      "mistake": "Adding a new reason in the conclusion.",
+      "why_it_hurts": "The new point is not developed and disrupts the essay's structure.",
+      "fix": "Use the conclusion only to restate the position and synthesize the existing reasons."
     },
     {
-      "mistake": "Trying to use difficult vocabulary without control.",
-      "why_it_hurts": "An inappropriate word or incorrect word form can make the sentence unclear.",
-      "repair": "Prefer precise, familiar academic language and check whether the required form is a noun, verb, adjective, or adverb."
+      "mistake": "Spending the entire 20 minutes writing and leaving no editing time.",
+      "why_it_hurts": "Correctable errors in verbs, spelling, punctuation, and sentence boundaries remain in the final response.",
+      "fix": "Stop drafting with approximately two to three minutes remaining and follow a fixed editing order."
     }
   ],
   "practice_plan": {
-    "lesson_sequence": [
+    "time_budget": [
       {
-        "phase": "1. Task awareness",
-        "duration": "10 minutes",
-        "activities": [
-          "Review the task purpose and 20-minute condition.",
-          "List the seven assessment factors.",
-          "Compare a relevant response with a fluent but off-topic response.",
-          "Explain why content relevance controls the entire task."
-        ]
+        "phase": "Prompt decoding",
+        "minutes": "2 minutes",
+        "focus": "Identify the topic, limits, task type, required position, and all parts that must be answered."
       },
       {
-        "phase": "2. Prompt decoding",
-        "duration": "15 minutes",
-        "activities": [
-          "Mark topic words in four prompts.",
-          "Mark requirement words in the same prompts.",
-          "Restate each prompt as a direct question.",
-          "Reject one irrelevant idea for each prompt."
-        ]
+        "phase": "Planning",
+        "minutes": "3 minutes",
+        "focus": "Write the thesis, choose two main reasons, and add one explanation or example for each."
       },
       {
-        "phase": "3. Thesis and planning",
-        "duration": "20 minutes",
-        "activities": [
-          "Write one-sentence positions for four prompt types.",
-          "Generate three possible reasons for one selected prompt.",
-          "Rank the reasons by relevance and ease of development.",
-          "Create a reason–explanation–example planning table."
-        ]
+        "phase": "Introduction",
+        "minutes": "2 minutes",
+        "focus": "Paraphrase the topic and state a direct position without excessive background."
       },
       {
-        "phase": "4. Sentence development",
-        "duration": "15 minutes",
-        "activities": [
-          "Expand simple claims with cause-and-effect language.",
-          "Replace absolute statements with qualified claims.",
-          "Repair four sentence fragments.",
-          "Practise accurate verb forms after long noun phrases."
-        ]
+        "phase": "Body paragraph 1",
+        "minutes": "4 minutes",
+        "focus": "Develop the first reason using a topic sentence, explanation, example, and link."
       },
       {
-        "phase": "5. Paragraph construction",
-        "duration": "20 minutes",
-        "activities": [
-          "Write topic sentences for two planned reasons.",
-          "Add explanations showing why each reason matters.",
-          "Add one realistic example to each paragraph.",
-          "Use a final sentence to connect each paragraph to the thesis."
-        ]
+        "phase": "Body paragraph 2",
+        "minutes": "4 minutes",
+        "focus": "Develop a distinct second reason with logical support."
       },
       {
-        "phase": "6. Editing practice",
-        "duration": "10 minutes",
-        "activities": [
-          "Identify an unrelated supporting sentence.",
-          "Correct an inaccurate linker.",
-          "Repair subject–verb agreement and article errors.",
-          "Correct punctuation, capitalization, and spelling."
-        ]
+        "phase": "Conclusion",
+        "minutes": "2 minutes",
+        "focus": "Restate the position and summarize the main reasoning."
       },
       {
-        "phase": "7. Timed essay",
-        "duration": "20 minutes",
-        "activities": [
-          "Decode and plan within four minutes.",
-          "Write the complete essay within thirteen minutes.",
-          "Edit the essay within the final three minutes.",
-          "Record the final word count and the errors found."
-        ]
-      },
-      {
-        "phase": "8. Reflection and homework",
-        "duration": "10 minutes",
-        "activities": [
-          "Score the essay using the mastery checklist.",
-          "Identify one content weakness and one language weakness.",
-          "Rewrite the weakest paragraph.",
-          "Complete a second essay as homework using the same method."
-        ]
+        "phase": "Editing",
+        "minutes": "3 minutes",
+        "focus": "Check prompt coverage, paragraph unity, verbs, sentence boundaries, vocabulary, spelling, punctuation, and length."
       }
     ],
-    "practice_items": [
+    "drills": [
       {
-        "task": "Prompt analysis",
-        "question": "Some people believe that online learning is better than classroom learning. To what extent do you agree or disagree? Support your answer with reasons and examples.",
-        "expected_response": "Topic words: online learning and classroom learning. Requirement words: to what extent, agree or disagree, and support your answer with reasons and examples."
+        "name": "Sixty-Second Prompt Decode",
+        "instructions": "Take five essay prompts. For each prompt, spend no more than one minute marking the topic words, requirement words, limits, and task type. Do not write the essay."
       },
       {
-        "task": "Essay planning",
-        "question": "Create a plan containing one main opinion and three supporting reasons for the online-learning prompt.",
-        "expected_response": "Position: classroom learning is generally more effective, although online learning is useful for some learners. Reasons: immediate feedback, stronger discussion and collaboration, and the self-discipline required by online study."
+        "name": "Three Reasons, Two Winners",
+        "instructions": "For each prompt, generate three reasons, test each against the question, and select the two strongest and most distinct ideas."
       },
       {
-        "task": "Paragraph writing",
-        "question": "Write one topic sentence and two supporting sentences about the benefits of classroom learning.",
-        "expected_response": "Classroom learning often provides stronger interaction between students and teachers. Students can ask questions immediately when they do not understand a point. Furthermore, teachers can notice confusion and adjust the lesson more quickly."
+        "name": "Topic Sentence Workshop",
+        "instructions": "Write five topic sentences for different prompts. Each sentence must state one reason and show its connection to the thesis."
       },
       {
-        "task": "Sentence repair",
-        "question": "Edit the fragment: 'Students who complete higher education often better paid.'",
-        "expected_response": "Students who complete higher education are often better paid."
+        "name": "PEEL Expansion",
+        "instructions": "Start with a single claim and expand it into a four-sentence paragraph containing a point, explanation, example, and link."
       },
       {
-        "task": "Self-editing",
-        "question": "Name at least three checks to perform when reviewing a paragraph.",
-        "expected_response": "Check for a clear topic sentence, supporting sentences that relate to the topic sentence, and accurate grammar, punctuation, and spelling."
+        "name": "Cause-Effect Upgrade",
+        "instructions": "Rewrite simple claims such as public transport is useful into cause-effect chains using leads to, contributes to, which means, and consequently."
+      },
+      {
+        "name": "Fragment Repair",
+        "instructions": "Correct ten incomplete sentences by adding the missing main verb, auxiliary verb, subject, or independent clause."
+      },
+      {
+        "name": "Reverse Outline Check",
+        "instructions": "After writing an essay, copy only the thesis, topic sentences, and conclusion. Check whether they form a consistent argument without reading the supporting details."
+      },
+      {
+        "name": "Twenty-Minute Simulation",
+        "instructions": "Complete one full essay under test conditions. Record the time spent on decoding, planning, writing, and editing, then identify the stage that caused the greatest difficulty."
       }
     ],
-    "homework": [
-      "Choose one new PTE-style essay prompt.",
-      "Complete a four-minute prompt analysis and plan.",
-      "Write the essay within sixteen additional minutes.",
-      "Underline the thesis and each topic sentence.",
-      "Label each supporting sentence as explanation, example, result, contrast, or link.",
-      "Correct the essay using the two-pass editing method.",
-      "Rewrite the weakest body paragraph after reviewing the errors."
-    ]
+    "routine": "Use a three-round practice cycle. In Round 1, work without time pressure and focus on prompt interpretation and paragraph structure. In Round 2, reduce planning and writing time gradually while maintaining relevance and accuracy. In Round 3, complete full 20-minute simulations, score the response with the seven assessment factors, record recurring errors, and rewrite only the weakest paragraph."
   },
   "mastery_checklist": [
-    "I can identify the exact topic words in an essay prompt.",
-    "I can identify whether the prompt asks for an opinion, comparison, discussion, advantages and disadvantages, causes, solutions, or evaluation.",
-    "I can restate the prompt as a direct planning question.",
-    "I can choose and express a clear position in one sentence.",
-    "I can generate reasons that directly support my position.",
-    "I can add an explanation and example for each major reason.",
-    "I can write an introduction that paraphrases the topic and states my thesis.",
-    "I can write a focused topic sentence for every body paragraph.",
-    "I can keep all supporting sentences connected to the paragraph's main idea.",
-    "I can use cause, effect, contrast, example, and result linkers accurately.",
-    "I can qualify claims instead of relying on unsupported absolute statements.",
-    "I can recognize and repair sentence fragments.",
-    "I can check subject–verb agreement, verb tense, articles, plurals, and word forms.",
-    "I can write a conclusion that restates the position without introducing a new argument.",
-    "I can complete the essay within 20 minutes.",
-    "I can reserve time to edit relevance, organization, grammar, punctuation, spelling, and word count."
+    "I can identify the exact topic and every requirement in an essay prompt.",
+    "I can recognize the difference between agree-or-disagree, discussion, advantages-disadvantages, and problem-solution tasks.",
+    "I can state a clear and appropriately qualified position.",
+    "I can generate three ideas and select the two most relevant and developable reasons.",
+    "I can write an introduction that paraphrases the issue and presents a thesis.",
+    "I can write a topic sentence that clearly supports the thesis.",
+    "I can develop a paragraph with explanation, example, consequence, and a logical link.",
+    "I can keep all supporting sentences related to the paragraph's main idea.",
+    "I can use addition, contrast, concession, cause, effect, and result language accurately.",
+    "I can avoid unsupported absolute claims by using suitable qualifying language.",
+    "I can write complete sentences with correct main verbs and sentence boundaries.",
+    "I can maintain the same position throughout the introduction, body, and conclusion.",
+    "I can complete the essay and leave at least two minutes for checking.",
+    "I can edit in a fixed order: relevance, organization, verbs, sentence structure, vocabulary, spelling, and punctuation."
   ],
-  "strategy_notes": {
-    "high_priority_rules": [
-      "Answer the exact prompt; strong grammar cannot compensate for irrelevant content.",
-      "Decide the thesis before writing the introduction.",
-      "Develop two strong reasons rather than listing many weak ideas.",
-      "Keep one controlling idea in each body paragraph.",
-      "Use examples to support reasoning, not to replace it.",
-      "Reserve the final minutes for editing."
-    ],
-    "idea_selection_rules": [
-      "Choose reasons that are directly connected to the requirement words.",
-      "Prefer ideas that can be explained clearly in two or three sentences.",
-      "Avoid highly technical claims that require evidence you cannot provide.",
-      "Use realistic general examples rather than invented statistics.",
-      "Remove duplicate reasons that lead to the same argument.",
-      "Include a counterargument only when it strengthens rather than confuses the position."
-    ],
-    "language_control_rules": [
-      "Use a mixture of simple, compound, and complex sentences.",
-      "Do not make every sentence long; clarity is more important than length.",
-      "Use precise verbs such as enable, reduce, encourage, influence, and contribute.",
-      "Check the part of speech required after each determiner, preposition, or auxiliary verb.",
-      "Use punctuation to separate clauses correctly.",
-      "Prefer accurate familiar vocabulary to inaccurate advanced vocabulary."
-    ],
-    "editing_order": [
-      "Confirm that the essay answers every part of the prompt.",
-      "Confirm that the thesis, body paragraphs, and conclusion express a consistent position.",
-      "Check that each paragraph contains one main idea and relevant support.",
-      "Check every sentence for a subject and conjugated main verb.",
-      "Check verbs, agreement, articles, plurals, and word forms.",
-      "Check linking words, punctuation, capitalization, spelling, and word count."
-    ],
-    "exam_day_reminders": [
-      "Do not begin writing immediately after reading the first few words of the prompt.",
-      "Use brief notes rather than writing a full draft during planning.",
-      "Keep the introduction concise so most time is available for development.",
-      "Do not delete a complete paragraph during the final minute unless it is clearly irrelevant.",
-      "When time is nearly finished, correct errors that affect sentence meaning before minor style issues.",
-      "Submit a complete essay with a conclusion rather than an unfinished longer response."
-    ]
-  },
+  "strategy_notes": [
+    "Content relevance comes before advanced vocabulary; a simple direct answer is stronger than an impressive but off-topic essay.",
+    "Two deeply developed body paragraphs are usually safer than three short and repetitive paragraphs under a 20-minute limit.",
+    "Plan examples as brief illustrations, not long personal stories that consume too many words.",
+    "Use realistic examples when exact statistics or research evidence are not known; do not invent precise studies or percentages.",
+    "A concession can strengthen an argument when it is brief and followed by a clear return to the main position.",
+    "Topic sentences should contain meaning, not merely labels such as there are several reasons for this.",
+    "Linking words should reveal relationships that already exist between ideas; they cannot repair weak reasoning.",
+    "Editing should begin with the highest-impact questions: Did I answer the prompt, and is my position consistent?",
+    "During the grammar check, focus first on verbs, subject-verb agreement, articles, plurals, and sentence boundaries.",
+    "Use vocabulary you can control accurately instead of forcing rare words that may be inappropriate or misspelled.",
+    "Do not rewrite the entire essay during the final minutes; make targeted corrections that improve clarity and accuracy.",
+    "After practice, maintain an error log containing the original error, the correction, the rule, and a new example sentence."
+  ],
   "metadata": {
-    "chapter_number": 7,
-    "estimated_study_time": "Approximately 2 hours, plus optional homework and review time.",
-    "communicative_skills": [
-      "writing",
-      "reading"
-    ],
-    "enabling_skills": [
-      "grammar",
-      "spelling",
-      "vocabulary",
-      "written discourse",
-      "mechanics"
-    ],
-    "primary_learning_unit": "PTE Academic Write Essay",
-    "difficulty": "intermediate_to_advanced",
-    "lesson_orientation": "teaching_first",
-    "recommended_prerequisites": [
-      "basic paragraph structure",
-      "sentence completeness",
-      "common linking words",
-      "basic opinion language"
-    ],
+    "difficulty": "Intermediate to upper-intermediate",
+    "estimated_study_time": "Plan for about 2 hours of study for this chapter, with extra time for a timed homework essay and detailed self-review.",
     "tags": [
-      "pte",
+      "pte-academic",
       "write-essay",
+      "argumentative-writing",
+      "prompt-decoding",
       "essay-planning",
-      "prompt-analysis",
-      "paragraphing",
-      "topic-sentences",
-      "supporting-sentences",
-      "coherence",
-      "editing",
+      "paragraph-development",
+      "written-discourse",
+      "grammar-editing",
       "timed-writing"
-    ]
+    ],
+    "provenance_note": "Teaching-first enrichment based on the supplied Chapter 7 lesson material covering PTE Write Essay prompt interpretation, planning, causal and opinion language, paragraph construction, supporting sentences, timed writing, and editing."
   }
 }

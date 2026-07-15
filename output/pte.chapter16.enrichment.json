@@ -1,727 +1,619 @@
 {
   "schema_version": "pte_lesson_enrichment.v1",
-  "task_type": "PTE Academic Write essay",
+  "task_type": "write_essay",
   "lesson_title": "Lesson 15: Write Essay Skills Practice",
   "source_label": "pte:ch16",
-  "modality": {
-    "primary_skill": "Writing",
-    "integrated_skill": "Reading the prompt accurately before writing",
-    "response_mode": "Typed academic essay completed under timed conditions",
-    "enabling_skills": [
-      "Grammar",
-      "Vocabulary",
-      "Spelling",
-      "Written discourse",
-      "Punctuation and mechanics"
-    ],
-    "main_performance_demands": [
-      "Answering every part of the prompt",
-      "Taking and maintaining a clear position",
-      "Organizing ideas into a complete essay",
-      "Developing reasons with explanations and examples",
-      "Editing efficiently before time expires"
-    ]
-  },
+  "modality": "writing",
   "overview": {
-    "summary": "This lesson develops a repeatable method for planning, writing, and editing a PTE Academic essay. The learner first analyzes the topic and task, chooses a clear position, selects two strong supporting reasons, organizes those reasons into paragraphs, and then checks the completed essay for relevance, structure, language accuracy, and spelling.",
-    "estimated_study_time": "About 2 hours, including one complete 20-minute timed essay and detailed review.",
-    "teaching_focus": [
-      "Teach prompt analysis before sentence writing so the response answers the actual question.",
-      "Teach the learner to choose a clear position instead of presenting disconnected arguments without a conclusion.",
-      "Build each body paragraph around one topic sentence and one central reason.",
-      "Develop reasons through explanation, consequences, evidence, or a realistic example.",
-      "Use editing checklists in a fixed order so limited review time is used efficiently."
+    "what_it_is": "Write essay is a PTE Academic writing task in which the test taker analyzes a prompt, takes a clear position, organizes relevant ideas into a complete essay, supports the position with reasons and examples, and edits the response under timed conditions.",
+    "format_facts": [
+      {
+        "label": "Response type",
+        "value": "A formal academic essay that directly answers the question or instruction in the prompt."
+      },
+      {
+        "label": "Time limit",
+        "value": "The learner has 20 minutes to analyze the prompt, plan, write, and edit the essay."
+      },
+      {
+        "label": "Target length",
+        "value": "A complete response should normally remain within the required 200-to-300-word range."
+      },
+      {
+        "label": "Basic structure",
+        "value": "Use an introduction, logically developed body paragraphs, and a conclusion."
+      },
+      {
+        "label": "Position",
+        "value": "The introduction should state a clear main opinion that directly addresses the task."
+      },
+      {
+        "label": "Development",
+        "value": "Each body paragraph should present one main reason and develop it with explanation, evidence, consequences, or an example."
+      }
     ],
-    "success_definition": [
-      "The introduction clearly identifies the topic and gives a direct main opinion.",
-      "Each body paragraph develops one reason that supports the main opinion.",
-      "Ideas progress logically and are connected with accurate linking language.",
-      "The conclusion restates the position without introducing a new argument.",
-      "The final response is relevant, readable, grammatically controlled, and carefully edited."
+    "scoring_factors": [
+      {
+        "name": "Content",
+        "what_it_measures": "Whether the response addresses the prompt, maintains a relevant position, and includes suitable supporting ideas."
+      },
+      {
+        "name": "Form",
+        "what_it_measures": "Whether the response follows the expected essay format and required length."
+      },
+      {
+        "name": "Development, structure, and coherence",
+        "what_it_measures": "Whether ideas are logically organized, paragraphs have clear functions, and connections between ideas are easy to follow."
+      },
+      {
+        "name": "Grammar",
+        "what_it_measures": "Whether sentences are grammatically accurate and include an appropriate variety of structures."
+      },
+      {
+        "name": "General linguistic range",
+        "what_it_measures": "Whether the writer can express both straightforward and more complex ideas clearly."
+      },
+      {
+        "name": "Vocabulary range",
+        "what_it_measures": "Whether vocabulary is varied, accurate, formal, and appropriate to the topic."
+      },
+      {
+        "name": "Spelling and mechanics",
+        "what_it_measures": "Whether spelling, punctuation, capitalization, and sentence boundaries are controlled accurately."
+      }
+    ],
+    "critical_rules": [
+      "Identify both the topic and the exact task before writing.",
+      "Take a clear position instead of remaining neutral or listing disconnected arguments.",
+      "Make every body paragraph support the opinion stated in the introduction.",
+      "Develop reasons with explanations, examples, results, or consequences rather than merely naming them.",
+      "Keep one controlling idea in each body paragraph.",
+      "Use linking language to show addition, contrast, cause, example, and conclusion.",
+      "Reserve time to edit grammar, punctuation, vocabulary, spelling, and relevance.",
+      "Do not force a memorized template onto a prompt when its sentences do not answer the actual question."
     ]
   },
   "learning_goals": [
-    {
-      "goal": "Analyze an essay prompt accurately.",
-      "learner_can_do": "Identify the topic, instruction words, required position, scope, and every question that must be answered.",
-      "evidence_of_mastery": "The learner can underline the important parts of a prompt and explain the task in one simple sentence before planning."
-    },
-    {
-      "goal": "State a clear and defensible position.",
-      "learner_can_do": "Write a one-sentence thesis that directly answers the prompt and previews the main direction of the essay.",
-      "evidence_of_mastery": "A reader can identify the learner's opinion immediately without guessing."
-    },
-    {
-      "goal": "Create a practical essay plan.",
-      "learner_can_do": "Sort ideas into an introduction, two body reasons, supporting explanations or examples, and a conclusion.",
-      "evidence_of_mastery": "The plan contains only ideas that directly support the chosen position."
-    },
-    {
-      "goal": "Construct unified body paragraphs.",
-      "learner_can_do": "Write a topic sentence followed by logically ordered supporting sentences that explain and extend the same main idea.",
-      "evidence_of_mastery": "Every sentence in the paragraph can be connected back to its topic sentence."
-    },
-    {
-      "goal": "Use cohesive written discourse.",
-      "learner_can_do": "Connect ideas with sequencing, addition, contrast, cause-and-effect, example, and conclusion language.",
-      "evidence_of_mastery": "The essay flows naturally without relying on repetitive or mechanical linkers."
-    },
-    {
-      "goal": "Complete the task within 20 minutes.",
-      "learner_can_do": "Allocate time for analysis, planning, drafting, and editing rather than using the entire period for drafting.",
-      "evidence_of_mastery": "The learner produces a complete essay and still reserves time for a final language check."
-    }
+    "Analyze an essay prompt for its topic, instruction words, scope, and required position.",
+    "Write a direct thesis statement that answers the prompt.",
+    "Generate relevant reasons and select the strongest ideas before drafting.",
+    "Organize an essay into an introduction, focused body paragraphs, and a conclusion.",
+    "Build paragraphs with a topic sentence, explanation, example, and link to the main opinion.",
+    "Use cohesive devices accurately without overusing memorized connectors.",
+    "Develop ideas with appropriate academic vocabulary and varied sentence structures.",
+    "Edit an essay systematically for relevance, organization, grammar, punctuation, spelling, and word count.",
+    "Complete a planned and edited essay within a 20-minute practice period."
   ],
   "core_method": {
-    "name": "The 5P Essay Cycle",
-    "purpose": "A simple routine that prevents off-topic writing, weak paragraph development, and unfinished essays.",
+    "name": "Decode, Decide, Design, Develop, and Diagnose",
+    "summary": "First decode exactly what the prompt asks, decide a clear position, design a short paragraph plan, develop each reason logically, and diagnose weaknesses through a final editing check.",
     "steps": [
       {
-        "step": "1. Parse the prompt",
-        "recommended_time": "About 1 minute",
-        "actions": [
-          "Circle or note the main topic.",
-          "Identify the instruction type, such as agree or disagree, discuss, advantages and disadvantages, causes and solutions, or evaluate.",
-          "Count how many questions or task parts must be answered.",
-          "Notice limiting words such as should, most important, in modern society, governments, schools, or individuals."
-        ],
-        "required_output": "A plain-language statement of exactly what the essay must do."
+        "step": "Decode",
+        "detail": "Underline the topic, circle the task words, and identify whether the prompt asks for agreement, advantages and disadvantages, causes and solutions, or an evaluation."
       },
       {
-        "step": "2. Position yourself",
-        "recommended_time": "About 30 seconds",
-        "actions": [
-          "Choose the side that is easiest to support clearly.",
-          "Avoid a neutral position unless the task specifically requires balanced discussion.",
-          "Write one direct thesis sentence.",
-          "Check that the thesis answers the prompt rather than merely repeating its topic."
-        ],
-        "required_output": "One clear main opinion that can be defended throughout the essay."
+        "step": "Decide",
+        "detail": "Choose a clear position that can be defended with at least two relevant reasons."
       },
       {
-        "step": "3. Plan two developed reasons",
-        "recommended_time": "About 1 to 2 minutes",
-        "actions": [
-          "Choose two reasons that are different but strongly connected to the thesis.",
-          "Add one explanation or consequence to each reason.",
-          "Add one example, comparison, or practical result where useful.",
-          "Reject interesting ideas that do not directly support the chosen position."
-        ],
-        "required_output": "A four-part plan containing the introduction direction, body reason one, body reason two, and conclusion direction."
+        "step": "Brainstorm",
+        "detail": "Generate several possible ideas, then reject ideas that are vague, repetitive, difficult to explain, or only indirectly related to the prompt."
       },
       {
-        "step": "4. Produce the essay",
-        "recommended_time": "About 14 to 15 minutes",
-        "actions": [
-          "Write a focused introduction containing the topic and thesis.",
-          "Develop body paragraph one around the first planned reason.",
-          "Develop body paragraph two around the second planned reason.",
-          "Write a conclusion that restates the position and summarizes the reasoning.",
-          "Keep checking that each paragraph supports the same overall argument."
-        ],
-        "required_output": "A complete, logically organized essay with an introduction, body, and conclusion."
+        "step": "Design",
+        "detail": "Assign one purpose to each paragraph: introduction, reason one, reason two, optional counterargument, and conclusion."
       },
       {
-        "step": "5. Proofread in layers",
-        "recommended_time": "About 2 to 3 minutes",
-        "actions": [
-          "Check task completion and remove unrelated content.",
-          "Check paragraph structure and logical progression.",
-          "Check verbs, agreement, articles, sentence boundaries, and word forms.",
-          "Check spelling, punctuation, capitalization, and repeated words.",
-          "Repair clear errors instead of rewriting large sections at the last moment."
-        ],
-        "required_output": "A cleaner final response with fewer avoidable language and organization errors."
+        "step": "Draft",
+        "detail": "Write the introduction with brief background and a direct thesis, avoiding a long history of the topic."
+      },
+      {
+        "step": "Develop",
+        "detail": "Build each body paragraph around one topic sentence followed by explanation, an example or consequence, and a sentence linking the reason to the thesis."
+      },
+      {
+        "step": "Conclude",
+        "detail": "Restate the position in fresh language and summarize the main reasoning without introducing a new argument."
+      },
+      {
+        "step": "Diagnose",
+        "detail": "Check task completion, paragraph unity, logical links, grammar, spelling, punctuation, repeated vocabulary, and word count."
       }
     ],
-    "minimum_plan_template": {
-      "introduction": "Topic background plus direct thesis",
-      "body_paragraph_1": "Reason one plus explanation plus example or consequence",
-      "body_paragraph_2": "Reason two plus explanation plus example or consequence",
-      "conclusion": "Restated position plus brief synthesis of the two reasons"
-    }
+    "formula": "Introduction: context + direct thesis; Body paragraph: topic sentence + explanation + example or consequence + link; Conclusion: restated thesis + summary of reasons."
   },
   "techniques": [
     {
-      "name": "Topic-Task-Scope Prompt Analysis",
-      "purpose": "Prevent a fluent but irrelevant response.",
-      "procedure": [
-        "Write the topic as a short noun phrase.",
-        "Rewrite the task instruction as a verb, such as agree, compare, explain, evaluate, or propose.",
-        "Identify the required scope, including who, where, when, or under what conditions.",
-        "List every question that needs an answer.",
-        "Check the plan against those elements before drafting."
+      "name": "Prompt Boxing",
+      "purpose": "Prevent off-topic writing by separating the subject of the prompt from the action the writer must perform.",
+      "how_to": [
+        "Box the main topic, such as zoos, online education, or public transport.",
+        "Underline command words such as agree, discuss, evaluate, explain, or suggest.",
+        "Mark limiting words such as children, in cities, today, or in developing countries.",
+        "Rewrite the task as one simple question before brainstorming."
       ],
-      "example": {
-        "prompt": "Are zoos helping or hurting animals? Should zoos be banned? Do you agree or disagree?",
-        "topic": "The effect and future of zoos",
-        "task": "Evaluate zoos and take a position on whether they should be banned",
-        "scope": "Animal welfare, especially the effects of well-run zoos",
-        "direct_answer": "Zoos should not be banned when they meet strict welfare standards."
-      }
+      "example": "Prompt: Should zoos be banned? Do you agree or disagree? Rewritten task: Do I support banning all zoos, and what reasons justify my position?",
+      "why_it_matters": "Many weak essays discuss the general topic but fail to perform the exact task required by the prompt.",
+      "common_error": "Writing about the history of zoos or animal rights without clearly answering whether zoos should be banned."
     },
     {
-      "name": "Thesis Formula",
-      "purpose": "Create a direct position that guides the whole response.",
-      "procedure": [
-        "State agreement, disagreement, preference, or judgment.",
-        "Name the central topic in clear language.",
-        "Add the two main reasons when this can be done naturally.",
-        "Avoid vague phrases such as there are many advantages and disadvantages.",
-        "Confirm that every body paragraph can support the thesis."
+      "name": "Thesis Before Details",
+      "purpose": "Give the essay one controlling opinion that guides all later paragraph decisions.",
+      "how_to": [
+        "Choose one clear position after brainstorming.",
+        "State the position directly in the introduction.",
+        "Preview the two main reasons when this can be done naturally.",
+        "Compare every body paragraph with the thesis and remove ideas that do not support it."
       ],
-      "formula": "I agree or disagree that X because reason one and reason two.",
-      "model": "I disagree that zoos should be banned because responsibly managed institutions can educate the public, support conservation, and protect endangered species."
+      "example": "I disagree that all zoos should be banned because well-managed institutions can educate the public and protect endangered species.",
+      "why_it_matters": "A precise thesis improves relevance, paragraph unity, and the clarity of the conclusion.",
+      "common_error": "Using an unclear thesis such as zoos have both good and bad points without revealing the writer's final position."
     },
     {
-      "name": "Reason-Explain-Example-Link Development",
-      "purpose": "Turn a basic opinion into a developed body paragraph.",
-      "procedure": [
-        "Reason: state one clear supporting point in the topic sentence.",
-        "Explain: show why the reason is valid or how it works.",
-        "Example: provide a realistic illustration, consequence, or comparison.",
-        "Link: connect the paragraph back to the thesis.",
-        "Edit: remove any sentence that introduces an unrelated second topic."
+      "name": "One Paragraph, One Main Reason",
+      "purpose": "Create body paragraphs that are unified, easy to follow, and clearly connected to the thesis.",
+      "how_to": [
+        "Begin with a topic sentence naming one reason.",
+        "Explain how or why the reason supports the position.",
+        "Add an example, result, comparison, or consequence.",
+        "End by linking the discussion back to the main argument."
       ],
-      "model_sequence": [
-        "Reason: Well-managed zoos can improve public understanding of wildlife.",
-        "Explain: Direct observation and educational programs make conservation problems easier to understand.",
-        "Example: Visitors who learn how habitat destruction affects endangered animals may be more willing to support conservation projects.",
-        "Link: Therefore, educational zoos can contribute to animal protection rather than merely displaying animals."
-      ]
+      "example": "One major benefit of ethical zoos is public education. Visitors can observe animals and learn about habitat destruction, which may encourage support for conservation projects. Therefore, a well-run zoo can influence behavior beyond the visit itself.",
+      "why_it_matters": "Paragraph unity helps the reader understand the argument and demonstrates controlled written discourse.",
+      "common_error": "Combining education, ticket prices, family entertainment, animal health, and tourism in one paragraph."
     },
     {
-      "name": "One Paragraph, One Main Idea",
-      "purpose": "Maintain paragraph unity and logical organization.",
-      "procedure": [
-        "Write the topic sentence before the supporting sentences.",
-        "Ask what single claim the paragraph must prove.",
-        "Arrange support from general explanation to specific example or result.",
-        "Use a transition only when the relationship between ideas is accurate.",
-        "Move or delete sentences that do not support the paragraph's main claim."
+      "name": "Reason, Explain, Illustrate, Link",
+      "purpose": "Turn undeveloped claims into persuasive academic reasoning.",
+      "how_to": [
+        "State the reason clearly.",
+        "Explain the mechanism or logic behind it.",
+        "Illustrate it with a realistic example or consequence.",
+        "Link the developed point to the essay's main opinion."
       ],
-      "self_check_question": "Does every sentence explain, prove, illustrate, or conclude the idea in the topic sentence?"
+      "example": "Captive breeding can protect endangered species because controlled environments reduce threats from hunting and habitat loss. For example, a carefully managed breeding program can increase a population before animals are reintroduced into protected areas. This makes ethical captivity preferable to allowing a species to disappear.",
+      "why_it_matters": "Scoring rewards supported ideas, not a list of short claims.",
+      "common_error": "Writing zoos save animals and then immediately moving to a different reason."
     },
     {
-      "name": "Controlled Introduction",
-      "purpose": "Begin efficiently without wasting time on broad or memorized statements.",
-      "procedure": [
-        "Introduce the real issue in one relevant background sentence.",
-        "Paraphrase rather than copy the prompt mechanically.",
-        "State the thesis directly.",
-        "Avoid examples and detailed evidence in the introduction.",
-        "Ensure the introduction prepares the reader for the body reasons."
+      "name": "Controlled Cohesion",
+      "purpose": "Make relationships between ideas clear without filling the essay with repetitive connectors.",
+      "how_to": [
+        "Use firstly or one important reason only when introducing a major point.",
+        "Use because, therefore, and as a result for cause-and-effect relationships.",
+        "Use however or although for genuine contrast.",
+        "Use pronouns, repeated key concepts, and logical sentence order in addition to linking words."
       ],
-      "model": "The treatment of animals in captivity has created intense debate about the value of modern zoos. Although poorly managed facilities can cause suffering, I disagree that all zoos should be banned because responsible institutions support education and conservation."
+      "example": "Although captivity can restrict natural behavior, this problem is reduced when institutions provide sufficient space, enrichment, and professional care.",
+      "why_it_matters": "Effective cohesion comes from meaningful relationships, not from placing a connector at the start of every sentence.",
+      "common_error": "Beginning nearly every sentence with moreover, furthermore, or on the other hand even when no logical relationship exists."
     },
     {
-      "name": "Purposeful Conclusion",
-      "purpose": "Close the argument without adding a new body point.",
-      "procedure": [
-        "Use a clear concluding signal.",
-        "Restate the position using different wording.",
-        "Briefly synthesize the two main reasons.",
-        "Do not introduce a new example, statistic, or argument.",
-        "Finish with a direct final judgment rather than an uncertain statement."
+      "name": "High-Value Editing",
+      "purpose": "Use the final minutes to correct errors that most strongly affect clarity and scoring.",
+      "how_to": [
+        "Check that the thesis answers the prompt directly.",
+        "Read the first sentence of each paragraph to test the essay's logical progression.",
+        "Check subject-verb agreement, verb tense, articles, plurals, and sentence boundaries.",
+        "Correct repeated misspellings and replace unclear or informal wording."
       ],
-      "model": "In conclusion, zoos should remain open when strict welfare standards are enforced, because their educational work and conservation programs can produce benefits that would otherwise be difficult to achieve."
-    },
-    {
-      "name": "Editing Ladder",
-      "purpose": "Make final checking systematic and fast.",
-      "procedure": [
-        "Level one: confirm that every prompt requirement has been answered.",
-        "Level two: confirm that the thesis, body reasons, and conclusion agree.",
-        "Level three: check sentence boundaries, subject-verb agreement, tense, articles, and word forms.",
-        "Level four: check spelling, punctuation, capitalization, and typing mistakes.",
-        "Level five: replace repeated vague words only when there is enough time."
-      ],
-      "priority_rule": "Fix errors that affect meaning or sentence correctness before improving style."
+      "example": "Weak: Zoos is important because it protect animal. Edited: Zoos can be important because they protect vulnerable animals.",
+      "why_it_matters": "A targeted editing routine is faster and more reliable than rereading the essay without a clear purpose.",
+      "common_error": "Spending all remaining time replacing simple vocabulary while leaving an incomplete conclusion or serious grammar errors."
     }
   ],
   "worked_examples": [
     {
-      "title": "Planning a Zoo Essay",
-      "prompt": "Are zoos helping or hurting our animals? Should zoos be banned? Do you agree or disagree?",
-      "prompt_analysis": [
-        "Topic: the effects of zoos on animals",
-        "Task: evaluate whether zoos help or harm animals",
-        "Decision required: agree or disagree with banning zoos",
-        "Scope: animal welfare, education, conservation, and breeding",
-        "Best response direction: defend well-managed zoos while acknowledging the need for strict standards"
-      ],
-      "plan": {
-        "position": "Zoos should not be completely banned.",
-        "introduction": "Introduce the animal-welfare debate and distinguish responsible zoos from poorly managed facilities.",
-        "body_reason_1": "Good zoos educate visitors and increase public support for conservation.",
-        "body_reason_2": "Breeding and protection programs can help endangered animals survive.",
-        "conclusion": "Support zoos only when high welfare and conservation standards are enforced."
-      },
-      "why_it_works": [
-        "The position directly answers the banning question.",
-        "The two body reasons are different but related.",
-        "The plan remains focused on animals rather than unrelated issues such as ticket prices.",
-        "The conclusion logically follows from the qualified position.",
-        "The stance allows acknowledgment of poor zoos without becoming neutral."
+      "title": "Planning and Writing the Zoo Essay",
+      "input": "Are zoos helping or hurting animals? Should zoos be banned? Do you agree or disagree?",
+      "decoding": "The topic is the effect of zoos on animals. The task requires a clear agreement or disagreement with banning zoos. The response must evaluate zoos in relation to animal welfare rather than merely describe zoo activities.",
+      "plan": "Introduction: introduce the animal-welfare debate and disagree with a total ban. Body 1: responsible zoos educate visitors and encourage conservation. Body 2: breeding and rehabilitation programs protect endangered animals. Body 3: acknowledge that poorly managed zoos cause harm, so regulation is necessary. Conclusion: support ethical, regulated zoos rather than banning all zoos.",
+      "model_answer": "The treatment of animals in zoos has become a major public concern. While some facilities keep animals in unsuitable conditions, I disagree that all zoos should be banned because well-managed institutions can promote conservation, education, and species protection.\n\nOne important benefit of responsible zoos is that they educate the public about wildlife. Visitors can observe animals that they may never encounter in nature and learn about threats such as illegal hunting and habitat destruction. This experience can encourage people to support conservation projects and make more environmentally responsible choices.\n\nZoos can also contribute to the survival of endangered species. Carefully controlled breeding programs may increase the population of animals that are unlikely to survive in the wild. In addition, injured animals can receive veterinary treatment and, when possible, be returned to protected habitats. Without this support, some species could move closer to extinction.\n\nAdmittedly, not every zoo treats animals properly. Small enclosures, poor care, and a lack of stimulation can cause serious harm. However, these problems justify stronger welfare standards, regular inspections, and the closure of irresponsible facilities rather than a complete ban.\n\nIn conclusion, zoos should be permitted when they provide high standards of care and make a genuine contribution to education and conservation. Strict regulation is a more balanced solution than banning every zoo.",
+      "annotations": [
+        {
+          "part": "Introduction",
+          "comment": "The opening gives brief context and states a direct disagreement with a total ban."
+        },
+        {
+          "part": "Body paragraph 1",
+          "comment": "The paragraph develops one reason, public education, and explains its possible effect on conservation behavior."
+        },
+        {
+          "part": "Body paragraph 2",
+          "comment": "The second reason focuses on breeding, rehabilitation, and species survival rather than repeating education."
+        },
+        {
+          "part": "Counterargument",
+          "comment": "The essay recognizes genuine welfare problems but responds with regulation as a more precise solution."
+        },
+        {
+          "part": "Conclusion",
+          "comment": "The final paragraph restates the position without introducing a new main reason."
+        }
       ]
     },
     {
-      "title": "Writing a Direct Main Opinion",
-      "task": "Write one sentence that directly answers the zoo prompt.",
-      "weak_answer": "Zoos have many advantages and disadvantages, and people have different opinions about them.",
-      "improved_answer": "I disagree that zoos should be banned because well-run zoos can improve animal welfare through education, conservation, and carefully managed breeding programs.",
-      "improvements": [
-        "It states a clear position.",
-        "It directly addresses whether zoos should be banned.",
-        "It gives reasons that can become body paragraphs.",
-        "It avoids an unsupported neutral statement.",
-        "It provides a consistent direction for the essay."
+      "title": "Developing a Paragraph from a Topic Sentence",
+      "input": "Topic sentence: A well-written paragraph needs good planning, logical organization, and careful editing.",
+      "decoding": "The task is not to write an entire essay. It requires supporting sentences that explain the three qualities named in the topic sentence.",
+      "plan": "Sentence 1: explain planning. Sentence 2: explain organization. Sentence 3: show how linking improves flow. Sentence 4: explain editing. Sentence 5: connect all three elements to reader understanding.",
+      "model_answer": "First, planning helps the writer select one clear main idea and remove unrelated information. Next, logical organization allows each sentence to develop naturally from the previous one. Appropriate linking expressions can then show relationships such as cause, contrast, and example. Finally, careful editing removes errors in grammar, punctuation, spelling, and sentence structure. Together, these stages produce a focused paragraph that readers can understand easily.",
+      "annotations": [
+        {
+          "part": "Supporting sentence 1",
+          "comment": "It explains the practical value of planning rather than simply repeating that planning is important."
+        },
+        {
+          "part": "Supporting sentence 2",
+          "comment": "It develops the second element of the topic sentence: logical organization."
+        },
+        {
+          "part": "Supporting sentence 3",
+          "comment": "It adds a specific method for creating logical relationships."
+        },
+        {
+          "part": "Supporting sentence 4",
+          "comment": "It identifies the types of problems editing should correct."
+        },
+        {
+          "part": "Final sentence",
+          "comment": "It links all the supporting details back to the paragraph's controlling idea."
+        }
       ]
     },
     {
-      "title": "Improving a Paragraph",
-      "topic_sentence": "A well-written paragraph needs good planning, logical organization, and careful editing.",
-      "supporting_sentences": [
-        "First, planning helps the writer choose one clear main idea before drafting.",
-        "Next, logical organization ensures that each supporting sentence develops that idea in a sensible order.",
-        "For example, an explanation should normally appear before a specific illustration so the reader can understand its relevance.",
-        "Finally, careful editing removes errors in grammar, punctuation, spelling, and sentence structure.",
-        "As a result, the completed paragraph becomes easier to follow and more convincing."
-      ],
-      "why_it_works": [
-        "Every sentence develops the topic sentence.",
-        "The order moves from planning to organization and then editing.",
-        "The example illustrates rather than changes the main topic.",
-        "Linking expressions accurately show sequence and result.",
-        "The final sentence explains the combined effect of the three features."
+      "title": "Ethical Captivity or Extinction",
+      "input": "Some people believe keeping animals in captivity is unacceptable, while others argue that captivity can prevent extinction. Discuss the issue and give your opinion.",
+      "decoding": "The prompt requires discussion of both views and a personal position. The essay should distinguish harmful captivity from ethical conservation programs.",
+      "plan": "Introduction: identify the conflict and support ethical captivity in limited cases. Body 1: explain objections involving freedom and natural behavior. Body 2: explain protection from habitat loss, hunting, and population collapse. Body 3: establish conditions for acceptable captivity. Conclusion: captivity is justified only when welfare and conservation standards are met.",
+      "model_answer": "Keeping wild animals in captivity is controversial because it limits their freedom. Nevertheless, I believe carefully regulated captivity can be justified when it protects endangered species and maintains high standards of animal welfare.\n\nOpponents of captivity correctly argue that animals should normally live in natural environments. Restricted enclosures may prevent migration, hunting, and normal social behavior. If a facility exists mainly for entertainment and provides poor living conditions, keeping animals there is difficult to defend.\n\nHowever, some species face dangers that cannot be controlled in the wild. Habitat destruction, illegal hunting, disease, and climate change can reduce populations to critically low levels. In such cases, protected breeding programs may provide food, veterinary care, and a safe environment in which the species can recover. These programs can also support later reintroduction into protected habitats.\n\nThe key issue is therefore not whether every form of captivity is acceptable, but whether it has a legitimate conservation purpose. Facilities should provide suitable space, professional care, environmental enrichment, and transparent welfare monitoring. Institutions that fail to meet these standards should be closed.\n\nIn conclusion, unnecessary or poorly managed captivity should be opposed. Ethical captivity, however, can be preferable to extinction when it forms part of a genuine and scientifically managed conservation program.",
+      "annotations": [
+        {
+          "part": "Task coverage",
+          "comment": "The response discusses both the objection to captivity and the conservation argument."
+        },
+        {
+          "part": "Position",
+          "comment": "The opinion is conditional rather than vague: captivity is accepted only under strict ethical conditions."
+        },
+        {
+          "part": "Development",
+          "comment": "Each paragraph explains why the stated reason matters instead of listing isolated claims."
+        },
+        {
+          "part": "Qualification",
+          "comment": "The distinction between entertainment-based captivity and conservation-based captivity adds precision."
+        },
+        {
+          "part": "Conclusion",
+          "comment": "The final judgment reflects the balanced reasoning developed throughout the essay."
+        }
       ]
     },
     {
       "title": "Repairing a Weak Essay Plan",
-      "weak_plan": {
-        "introduction": "Zoos are interesting.",
-        "body": "Animals, tickets, children, nature.",
-        "conclusion": "Zoos exist."
-      },
-      "diagnosis": [
-        "The introduction does not state an opinion.",
-        "The body contains disconnected topics rather than developed reasons.",
-        "The plan does not clearly answer whether zoos should be banned.",
-        "The body is not divided into logical paragraphs.",
-        "The conclusion does not restate an argument."
-      ],
-      "repaired_plan": {
-        "introduction": "Introduce the debate and state that ethical zoos should not be banned.",
-        "body_paragraph_1": "Explain how education in zoos can increase awareness of wildlife and conservation.",
-        "body_paragraph_2": "Explain how breeding and protection programs can support endangered species.",
-        "conclusion": "Restate that zoos should continue only under strict animal-welfare standards."
-      },
-      "repair_principles": [
-        "Replace general comments with a direct thesis.",
-        "Convert isolated nouns into complete supporting claims.",
-        "Give each body paragraph one purpose.",
-        "Make every reason support the chosen position.",
-        "Make the conclusion echo the argument rather than merely mention the topic."
-      ]
-    },
-    {
-      "title": "Checking an Essay Draft",
-      "draft_features": [
-        "The introduction names the topic and gives a direct opinion.",
-        "The first body paragraph explains one relevant reason.",
-        "The second body paragraph begins with a related topic sentence but later discusses ticket prices.",
-        "The conclusion restates the opinion.",
-        "Most sentences are grammatically clear, but several words are repeated."
-      ],
-      "evaluation": [
-        "The introduction is adequate because the topic and position are clear.",
-        "The first body paragraph is relevant and structurally sound.",
-        "The ticket-price discussion should be removed or connected directly to animal welfare.",
-        "The conclusion performs its required function.",
-        "Repeated words can be replaced after relevance and organization have been repaired."
-      ],
-      "revision_priority": [
-        "Remove or rewrite the unrelated ticket-price content.",
-        "Check that body paragraph two supports the thesis.",
-        "Repair any sentence-level grammar errors.",
-        "Correct spelling and punctuation.",
-        "Improve repeated vocabulary only if time remains."
-      ]
-    },
-    {
-      "title": "Complete Model Response",
-      "prompt": "Are zoos helping or hurting our animals? Should zoos be banned? Do you agree or disagree?",
-      "model_response": "The treatment of animals in captivity has created considerable debate about whether zoos should continue to operate. Although badly managed facilities can harm animals, I disagree that all zoos should be banned because responsible institutions can promote conservation and protect endangered species.\n\nFirst, well-managed zoos can educate the public about wildlife and environmental threats. Many people will never observe rare animals in their natural habitats, but carefully designed exhibits and educational programs can explain how pollution, hunting, and habitat destruction affect them. This knowledge may encourage visitors to support conservation projects and make more environmentally responsible choices. Therefore, a zoo can contribute to animal protection when education is one of its main purposes.\n\nSecond, modern zoos can assist species that are unlikely to survive without human support. Breeding programs, veterinary care, and cooperation between institutions may increase the population of endangered animals. In some cases, animals can later be returned to protected environments. While captivity should never be used merely for entertainment, ethical programs can prevent the permanent loss of vulnerable species.\n\nIn conclusion, zoos should not be completely banned. Instead, governments should enforce strict welfare standards and close facilities that mistreat animals. Responsible zoos deserve support because their educational and conservation work can produce genuine benefits for wildlife.",
-      "structure_map": [
-        "Introduction: background, qualification, and direct thesis",
-        "Body paragraph one: education and public conservation support",
-        "Body paragraph two: breeding, protection, and endangered species",
-        "Conclusion: restated position plus condition of strict regulation",
-        "Overall progression: problem, reason one, reason two, final judgment"
-      ],
-      "why_it_works": [
-        "The response answers every part of the prompt.",
-        "The writer takes a clear position while recognizing a reasonable limitation.",
-        "Each body paragraph has one controlling idea.",
-        "Explanations and examples develop rather than merely repeat the reasons.",
-        "The conclusion adds no unrelated argument and remains consistent with the thesis."
+      "input": "Weak plan: Introduction: zoos are interesting. Body: animals, tickets, children, nature. Conclusion: zoos exist.",
+      "decoding": "The plan contains a topic but no task response, position, paragraph purposes, developed reasons, or meaningful conclusion.",
+      "plan": "Introduction: introduce the debate and state that ethical zoos should not be banned. Body 1: education and public awareness. Body 2: conservation, breeding, and rehabilitation. Body 3: acknowledge welfare risks and propose strict regulation. Conclusion: restate support for regulated zoos.",
+      "model_answer": "Improved plan: Introduction: Public concern about animal welfare has led some people to demand a ban on zoos; however, ethical zoos should remain open because they can support education and conservation. Body paragraph 1: Explain how direct exposure to wildlife can increase public understanding of endangered species and environmental threats. Body paragraph 2: Explain how breeding, veterinary treatment, and rehabilitation programs can protect vulnerable populations. Body paragraph 3: Acknowledge that poorly managed zoos harm animals and argue for strict inspections and closure of facilities that fail welfare standards. Conclusion: Restate that regulated, conservation-focused zoos are preferable to a complete ban.",
+      "annotations": [
+        {
+          "part": "Original introduction",
+          "comment": "Zoos are interesting does not answer any likely argumentative task or establish a position."
+        },
+        {
+          "part": "Original body",
+          "comment": "The words animals, tickets, children, and nature are topics rather than developed reasons."
+        },
+        {
+          "part": "Improved body structure",
+          "comment": "Each paragraph now has a distinct purpose and a direct relationship to the thesis."
+        },
+        {
+          "part": "Counterargument",
+          "comment": "The revised plan recognizes poor animal treatment and provides a specific response."
+        },
+        {
+          "part": "Improved conclusion",
+          "comment": "The conclusion now restates the central judgment instead of making the empty statement that zoos exist."
+        }
       ]
     }
   ],
-  "useful_language": {
-    "introducing_the_topic": [
-      "The issue of whether X should be permitted has become widely debated.",
-      "There is continuing debate about the role of X in modern society.",
-      "The growing importance of X has raised questions about its benefits and risks.",
-      "Opinions differ considerably on whether X produces positive outcomes.",
-      "The relationship between X and Y has become an important public concern."
-    ],
-    "stating_a_clear_position": [
-      "I strongly agree that X because...",
-      "I disagree with the view that X should...",
-      "In my view, X is preferable because...",
-      "This essay argues that X should be supported under appropriate conditions.",
-      "Although X may create some difficulties, its overall benefits are greater.",
-      "I believe that X should not be prohibited, provided that..."
-    ],
-    "introducing_body_reasons": [
-      "The first major reason is that...",
-      "One important benefit of X is that...",
-      "A further consideration is that...",
-      "Another strong argument in favour of this position is that...",
-      "The most significant problem with X is that..."
-    ],
-    "explaining_ideas": [
-      "This is important because...",
-      "In other words, this means that...",
-      "The main reason for this is that...",
-      "This can be understood by considering...",
-      "Such a situation may lead to...",
-      "The practical effect is that..."
-    ],
-    "giving_examples": [
-      "For example, ...",
-      "For instance, ...",
-      "A clear illustration of this can be seen when...",
-      "This is particularly evident in cases where...",
-      "Consider, for example, the situation in which..."
-    ],
-    "showing_cause_and_effect": [
-      "As a result, ...",
-      "Consequently, ...",
-      "This may result in...",
-      "For this reason, ...",
-      "Therefore, ...",
-      "This can have the effect of..."
-    ],
-    "adding_information": [
-      "Furthermore, ...",
-      "In addition, ...",
-      "Moreover, ...",
-      "Another relevant point is that...",
-      "Equally importantly, ..."
-    ],
-    "contrasting_or_conceding": [
-      "However, ...",
-      "In contrast, ...",
-      "Although this argument has some merit, ...",
-      "While X can create difficulties, ...",
-      "Nevertheless, ...",
-      "On the other hand, ..."
-    ],
-    "linking_back_to_the_argument": [
-      "This supports the view that...",
-      "Therefore, this reason strengthens the argument for...",
-      "For these reasons, X remains a more effective approach.",
-      "This demonstrates why X should be supported.",
-      "Accordingly, this point directly supports the main position."
-    ],
-    "concluding_the_essay": [
-      "In conclusion, ...",
-      "To conclude, ...",
-      "Overall, the evidence suggests that...",
-      "For the reasons discussed, it is clear that...",
-      "Taking these points into account, ...",
-      "Ultimately, X should be supported because..."
-    ]
-  },
+  "useful_language": [
+    {
+      "category": "Introducing the topic",
+      "items": [
+        {
+          "item": "The issue of whether ... has become widely debated.",
+          "when_to_use": "Use when introducing a controversial topic without immediately giving detailed arguments."
+        },
+        {
+          "item": "There is growing concern about ...",
+          "when_to_use": "Use when the prompt involves a current social, environmental, educational, or technological problem."
+        },
+        {
+          "item": "Opinions differ regarding the role of ...",
+          "when_to_use": "Use when the prompt presents competing perspectives."
+        },
+        {
+          "item": "Although ... offers certain benefits, it also raises important concerns.",
+          "when_to_use": "Use when the essay will evaluate both positive and negative aspects."
+        }
+      ]
+    },
+    {
+      "category": "Stating a clear position",
+      "items": [
+        {
+          "item": "I agree that ... because ...",
+          "when_to_use": "Use for a direct agreement response followed by the main reason."
+        },
+        {
+          "item": "I disagree with the view that ...",
+          "when_to_use": "Use when rejecting a claim made in the prompt."
+        },
+        {
+          "item": "In my view, the most effective approach is to ...",
+          "when_to_use": "Use for solution, policy, or evaluation prompts."
+        },
+        {
+          "item": "While both perspectives have merit, I believe that ...",
+          "when_to_use": "Use when acknowledging two sides before giving a clear final position."
+        }
+      ]
+    },
+    {
+      "category": "Developing reasons",
+      "items": [
+        {
+          "item": "One important reason is that ...",
+          "when_to_use": "Use to introduce a major supporting reason in a body paragraph."
+        },
+        {
+          "item": "This is significant because ...",
+          "when_to_use": "Use to explain why a claim matters."
+        },
+        {
+          "item": "As a result, ...",
+          "when_to_use": "Use to introduce a direct consequence of the previous idea."
+        },
+        {
+          "item": "This can lead to ...",
+          "when_to_use": "Use when describing a likely effect without claiming absolute certainty."
+        }
+      ]
+    },
+    {
+      "category": "Giving examples and clarification",
+      "items": [
+        {
+          "item": "For example, ...",
+          "when_to_use": "Use before a clear and relevant illustration."
+        },
+        {
+          "item": "A clear example of this is ...",
+          "when_to_use": "Use when the example is central to the paragraph's reasoning."
+        },
+        {
+          "item": "In practical terms, this means that ...",
+          "when_to_use": "Use to convert an abstract claim into a concrete consequence."
+        },
+        {
+          "item": "In other words, ...",
+          "when_to_use": "Use to clarify a difficult idea in simpler language."
+        }
+      ]
+    },
+    {
+      "category": "Contrast and concession",
+      "items": [
+        {
+          "item": "However, ...",
+          "when_to_use": "Use when the next sentence genuinely contrasts with the previous point."
+        },
+        {
+          "item": "Although this argument is reasonable, ...",
+          "when_to_use": "Use when acknowledging an opposing idea before responding to it."
+        },
+        {
+          "item": "On the other hand, ...",
+          "when_to_use": "Use when presenting a clearly different perspective, not merely another supporting reason."
+        },
+        {
+          "item": "Despite these concerns, ...",
+          "when_to_use": "Use when returning to the main position after discussing a limitation."
+        }
+      ]
+    },
+    {
+      "category": "Concluding the essay",
+      "items": [
+        {
+          "item": "In conclusion, ...",
+          "when_to_use": "Use to signal the final paragraph clearly."
+        },
+        {
+          "item": "Overall, the strongest argument is that ...",
+          "when_to_use": "Use when the essay has compared competing views."
+        },
+        {
+          "item": "For these reasons, I believe that ...",
+          "when_to_use": "Use to connect the final judgment to the reasoning already presented."
+        },
+        {
+          "item": "Therefore, rather than ..., authorities should ...",
+          "when_to_use": "Use when the conclusion recommends a more precise alternative policy."
+        }
+      ]
+    }
+  ],
   "common_mistakes": [
     {
-      "mistake": "Remaining neutral in an agree-or-disagree essay",
-      "why_it_hurts": "The reader cannot identify the main position, and the body may become a disconnected list of both sides.",
-      "correction": "Choose a position before writing and make every body paragraph support it.",
-      "weak_example": "There are advantages and disadvantages to zoos.",
-      "improved_example": "Zoos should not be banned when they meet strict welfare and conservation standards."
+      "mistake": "Remaining neutral in an agree-or-disagree essay.",
+      "why_it_hurts": "The reader cannot identify the essay's controlling opinion, and body paragraphs may point in conflicting directions.",
+      "fix": "Choose a position during planning and state it directly in the introduction and conclusion."
     },
     {
-      "mistake": "Copying or paraphrasing the prompt without answering it",
-      "why_it_hurts": "The introduction names the topic but does not establish an argument.",
-      "correction": "Add a direct thesis that answers the task instruction.",
-      "weak_example": "Many people ask whether zoos help or hurt animals.",
-      "improved_example": "Although poor zoos can harm animals, responsible zoos should remain open because they support education and conservation."
+      "mistake": "Discussing the general topic instead of answering the task.",
+      "why_it_hurts": "Relevant vocabulary cannot compensate for missing task completion.",
+      "fix": "Rewrite the prompt as a simple question and ensure the thesis answers that question."
     },
     {
-      "mistake": "Listing ideas instead of developing them",
-      "why_it_hurts": "Single-word or one-sentence reasons provide little explanation and make the essay appear superficial.",
-      "correction": "Develop each reason with explanation, consequence, example, and a link to the thesis.",
-      "weak_example": "Zoos provide education, breeding, jobs, and entertainment.",
-      "improved_example": "Zoos can educate visitors about habitat loss, which may increase public support for conservation programs."
+      "mistake": "Listing several reasons without developing them.",
+      "why_it_hurts": "The essay appears superficial and provides little evidence of reasoning or written discourse control.",
+      "fix": "Develop fewer reasons using explanation, example, consequence, and a link to the thesis."
     },
     {
-      "mistake": "Including unrelated sentences in a paragraph",
-      "why_it_hurts": "Paragraph unity is lost, and the reader cannot follow the argument.",
-      "correction": "Check every supporting sentence against the topic sentence and delete or move unrelated content.",
-      "weak_example": "Zoos protect endangered animals. Tickets can also be expensive.",
-      "improved_example": "Zoos protect endangered animals by providing breeding programs and veterinary care."
+      "mistake": "Including unrelated sentences in a body paragraph.",
+      "why_it_hurts": "The paragraph loses unity and the reader must guess how the information supports the main idea.",
+      "fix": "Compare every sentence with the topic sentence and remove or relocate unrelated material."
     },
     {
-      "mistake": "Using too many memorized linking words",
-      "why_it_hurts": "The essay sounds mechanical, and some connectors may express the wrong logical relationship.",
-      "correction": "Use linkers only when they accurately show addition, contrast, cause, example, or result.",
-      "weak_example": "Moreover, however, therefore, zoos are useful.",
-      "improved_example": "Furthermore, breeding programs can help endangered populations recover."
+      "mistake": "Writing a long introduction with definitions and history.",
+      "why_it_hurts": "It consumes limited time and words without developing the argument.",
+      "fix": "Use two or three focused sentences: context, task focus, and thesis."
     },
     {
-      "mistake": "Writing an overlong introduction",
-      "why_it_hurts": "Time and words are spent on general background instead of developed body arguments.",
-      "correction": "Limit the introduction to relevant context and a clear thesis.",
-      "weak_example": "Since the beginning of human history, animals have always been part of every society in many different and interesting ways.",
-      "improved_example": "The use of animals in zoos remains controversial because captivity can create both welfare risks and conservation opportunities."
+      "mistake": "Starting every sentence with a memorized linker.",
+      "why_it_hurts": "Connections sound mechanical and may not accurately represent the relationship between ideas.",
+      "fix": "Use connectors selectively and rely on logical sentence order, pronouns, and repeated key concepts."
     },
     {
-      "mistake": "Adding a new argument in the conclusion",
-      "why_it_hurts": "The new point is not explained and makes the essay feel unfinished.",
-      "correction": "Restate the thesis and synthesize the existing body reasons.",
-      "weak_example": "In conclusion, zoos should remain open, and they also create employment.",
-      "improved_example": "In conclusion, ethical zoos should remain open because their educational and conservation work can protect wildlife."
+      "mistake": "Introducing a new argument in the conclusion.",
+      "why_it_hurts": "The new idea is undeveloped and weakens the sense of completion.",
+      "fix": "Restate the thesis and summarize existing reasons only."
     },
     {
-      "mistake": "Editing vocabulary before checking task completion",
-      "why_it_hurts": "A polished sentence cannot compensate for an unanswered question or irrelevant paragraph.",
-      "correction": "Check relevance and structure first, then grammar, spelling, and vocabulary.",
-      "weak_example": "Replacing useful with beneficial while one part of the prompt remains unanswered.",
-      "improved_example": "Answer all prompt parts first, repair paragraph logic, and then improve repeated vocabulary."
+      "mistake": "Using complicated sentences that cannot be controlled accurately.",
+      "why_it_hurts": "Run-on sentences, fragments, and agreement errors reduce clarity.",
+      "fix": "Combine simple and complex sentences, but divide any sentence that contains too many clauses."
     },
     {
-      "mistake": "Using examples as unsupported facts",
-      "why_it_hurts": "Invented statistics or exaggerated claims can weaken credibility and create language errors.",
-      "correction": "Use realistic general examples unless a precise fact is known and necessary.",
-      "weak_example": "Exactly 97 percent of zoo animals are successfully returned to nature.",
-      "improved_example": "Some conservation programs prepare suitable animals for release into protected habitats."
+      "mistake": "Ignoring spelling and punctuation until time expires.",
+      "why_it_hurts": "Frequent mechanical errors can make otherwise relevant ideas difficult to understand.",
+      "fix": "Reserve at least two minutes for a focused final check."
     },
     {
-      "mistake": "Writing until the final second without proofreading",
-      "why_it_hurts": "Typing errors, missing words, agreement problems, and incomplete sentences remain uncorrected.",
-      "correction": "Reserve the final two or three minutes for a fixed editing routine.",
-      "weak_example": "Finishing the conclusion as time expires.",
-      "improved_example": "Complete the first draft early enough to check relevance, grammar, spelling, and punctuation."
+      "mistake": "Using examples that are invented in excessive or unbelievable detail.",
+      "why_it_hurts": "The example may distract from the argument and waste valuable writing time.",
+      "fix": "Use brief, plausible examples that clearly illustrate the reason."
     }
   ],
   "practice_plan": {
-    "total_time_minutes": 120,
-    "session_stages": [
+    "time_budget": [
       {
-        "stage": "1. Understand the task",
-        "time_minutes": 10,
-        "activities": [
-          "Review the purpose of the Write essay item.",
-          "Identify the functions of the introduction, body, and conclusion.",
-          "Compare a clear thesis with a neutral statement.",
-          "Review the 5P Essay Cycle."
-        ],
-        "output": "A short explanation of what a successful essay must contain."
+        "phase": "Task and scoring review",
+        "minutes": "10",
+        "focus": "Review the essay purpose, structure, time limit, length requirement, and major scoring factors."
       },
       {
-        "stage": "2. Decode prompts",
-        "time_minutes": 15,
-        "activities": [
-          "Analyze four prompts for topic, task, and scope.",
-          "Underline instruction words.",
-          "Count the required task parts.",
-          "Rewrite each prompt as a simple question."
-        ],
-        "output": "Four accurate prompt-analysis notes."
+        "phase": "Prompt-decoding practice",
+        "minutes": "15",
+        "focus": "Identify topics, command words, limitations, essay types, and required positions in several prompts."
       },
       {
-        "stage": "3. Practise thesis writing",
-        "time_minutes": 10,
-        "activities": [
-          "Choose a position for each prompt.",
-          "Write four one-sentence thesis statements.",
-          "Check that each thesis directly answers its prompt.",
-          "Improve vague or neutral opinions."
-        ],
-        "output": "Four direct and supportable thesis statements."
+        "phase": "Thesis and idea selection",
+        "minutes": "15",
+        "focus": "Write direct thesis statements and select two reasons that can be explained clearly."
       },
       {
-        "stage": "4. Build paragraph support",
-        "time_minutes": 20,
-        "activities": [
-          "Start with the paragraph-planning topic sentence.",
-          "Add an explanation of why planning matters.",
-          "Add a sentence about logical sequencing.",
-          "Add a sentence about editing.",
-          "Finish with a consequence or linking sentence."
-        ],
-        "output": "One unified paragraph containing at least four supporting sentences."
+        "phase": "Paragraph-building practice",
+        "minutes": "20",
+        "focus": "Develop topic sentences using explanation, examples, consequences, and linking sentences."
       },
       {
-        "stage": "5. Plan a complete essay",
-        "time_minutes": 15,
-        "activities": [
-          "Use the zoo prompt or another lesson prompt.",
-          "Write an introduction direction and thesis.",
-          "Select two body reasons.",
-          "Add an explanation or example for each reason.",
-          "Write the conclusion direction."
-        ],
-        "output": "A complete four-paragraph essay plan."
+        "phase": "Essay planning practice",
+        "minutes": "15",
+        "focus": "Produce concise introduction, body, and conclusion plans for two different prompts."
       },
       {
-        "stage": "6. Edit a weak plan and draft",
-        "time_minutes": 15,
-        "activities": [
-          "Identify the missing thesis.",
-          "Remove unrelated ideas.",
-          "Separate reasons into body paragraphs.",
-          "Repair the conclusion.",
-          "Check that all ideas answer the prompt."
-        ],
-        "output": "A revised plan and a list of the most important corrections."
+        "phase": "Timed essay",
+        "minutes": "20",
+        "focus": "Plan, write, and edit one complete essay under test-style conditions."
       },
       {
-        "stage": "7. Complete timed practice",
-        "time_minutes": 20,
-        "activities": [
-          "Analyze and plan before drafting.",
-          "Write a complete introduction, two body paragraphs, and conclusion.",
-          "Maintain one clear position.",
-          "Reserve time for editing.",
-          "Stop when the 20-minute period ends."
-        ],
-        "output": "One complete timed essay."
-      },
-      {
-        "stage": "8. Review and rewrite",
-        "time_minutes": 15,
-        "activities": [
-          "Use the mastery checklist.",
-          "Underline the thesis and topic sentences.",
-          "Mark supporting explanations and examples.",
-          "Circle language errors and repeated words.",
-          "Rewrite the weakest paragraph."
-        ],
-        "output": "A scored self-review and one improved paragraph."
+        "phase": "Checklist review and rewrite",
+        "minutes": "25",
+        "focus": "Evaluate relevance, structure, paragraph unity, grammar, vocabulary, spelling, and improve the weakest paragraph."
       }
     ],
-    "independent_drills": [
-      "Write five thesis statements from five different prompt types without writing full essays.",
-      "Turn five single-word ideas into complete reason-explanation-example paragraph plans.",
-      "Edit one previous essay using the relevance-structure-grammar-spelling order.",
-      "Complete two additional 20-minute essays on different topics.",
-      "Keep an error log containing the original sentence, corrected sentence, and rule learned."
+    "drills": [
+      {
+        "name": "Sixty-Second Prompt Decode",
+        "instructions": "Take four prompts. For each one, identify the topic, task words, limitations, essay type, and required position within sixty seconds."
+      },
+      {
+        "name": "One-Sentence Thesis Drill",
+        "instructions": "Write five thesis statements that directly answer five different prompts. Reject any thesis that could be used unchanged for an unrelated topic."
+      },
+      {
+        "name": "Reason Quality Filter",
+        "instructions": "Brainstorm five reasons for one prompt, then keep only the two that are most relevant, distinct, and easy to develop."
+      },
+      {
+        "name": "Paragraph Expansion",
+        "instructions": "Begin with one topic sentence and add an explanation, example, consequence, and link to the thesis."
+      },
+      {
+        "name": "Irrelevance Removal",
+        "instructions": "Read a mixed paragraph, underline the controlling idea, and delete every sentence that does not explain or support it."
+      },
+      {
+        "name": "Connector Accuracy",
+        "instructions": "Choose whether each sentence relationship shows addition, contrast, cause, result, example, or conclusion, then insert a suitable connector only where needed."
+      },
+      {
+        "name": "Two-Minute Edit",
+        "instructions": "Use a fixed order: task response, paragraph structure, sentence boundaries, verbs, articles and plurals, spelling, punctuation, and word count."
+      }
     ],
-    "feedback_cycle": [
-      "Identify the strongest part of the essay and explain why it works.",
-      "Identify the single highest-priority weakness affecting task completion or organization.",
-      "Correct repeated grammar and spelling patterns rather than only isolated errors.",
-      "Rewrite one paragraph using the feedback.",
-      "Apply the same correction target in the next timed essay."
-    ]
+    "routine": "For each new prompt, spend about two minutes decoding and planning, approximately sixteen minutes drafting, and the final two minutes editing. During later review, classify every weakness as a prompt, idea, paragraph, grammar, vocabulary, spelling, punctuation, or timing problem so the next practice session targets a specific skill."
   },
   "mastery_checklist": [
-    "I can identify the topic, task instruction, scope, and all required prompt parts.",
-    "I can explain the prompt in my own words before planning.",
-    "I can take a clear position instead of remaining neutral.",
-    "I can write a thesis that directly answers the prompt.",
-    "I can choose two relevant and sufficiently different supporting reasons.",
-    "I can organize ideas into an introduction, body paragraphs, and conclusion.",
-    "I can begin each body paragraph with a clear topic sentence.",
-    "I can develop a reason with explanation, example, consequence, or comparison.",
-    "I can remove sentences that do not support the paragraph's main idea.",
+    "I can identify the exact topic and task requirements before writing.",
+    "I can recognize whether a prompt requires agreement, discussion, evaluation, causes and solutions, or advantages and disadvantages.",
+    "I can state a clear position in one direct thesis sentence.",
+    "I can select two relevant and distinct reasons instead of listing many weak ideas.",
+    "I can write an introduction with concise background and a clear opinion.",
+    "I can begin each body paragraph with a focused topic sentence.",
+    "I can develop reasons using explanations, examples, consequences, or comparisons.",
+    "I can keep every sentence in a paragraph connected to the same main idea.",
     "I can use linking expressions according to their real logical function.",
-    "I can restate my position in the conclusion without adding a new argument.",
-    "I can check subject-verb agreement, tense, articles, sentence boundaries, and word forms.",
-    "I can check spelling, punctuation, capitalization, and typing errors.",
-    "I can complete a full essay and reserve editing time within 20 minutes.",
-    "I can identify one improvement target and apply it to my next practice essay."
+    "I can write a conclusion that restates my opinion without introducing a new argument.",
+    "I can check grammar, spelling, punctuation, vocabulary, relevance, and word count systematically.",
+    "I can complete a coherent essay within 20 minutes."
   ],
   "strategy_notes": [
-    {
-      "principle": "Relevance is more important than displaying memorized language.",
-      "application": "Use vocabulary and sentence patterns only when they directly answer the prompt."
-    },
-    {
-      "principle": "Choose the easiest position to support, not necessarily the position with the most complex ideas.",
-      "application": "Two clear, developed reasons are safer than several ambitious but weakly explained claims."
-    },
-    {
-      "principle": "Plan with key phrases rather than complete sentences.",
-      "application": "Short notes save time and reduce the temptation to copy the plan word for word."
-    },
-    {
-      "principle": "Treat the thesis as a promise to the reader.",
-      "application": "Every body paragraph must help prove the position stated in the introduction."
-    },
-    {
-      "principle": "Use examples to clarify reasoning rather than replace it.",
-      "application": "Explain the idea first, then add a realistic example showing how it works."
-    },
-    {
-      "principle": "A balanced acknowledgment is not the same as a neutral essay.",
-      "application": "You may recognize a limitation while still maintaining a clear overall judgment."
-    },
-    {
-      "principle": "Prefer controlled sentences over unnecessarily complicated ones.",
-      "application": "Use complex grammar only when the relationship between ideas remains clear and accurate."
-    },
-    {
-      "principle": "Avoid absolute claims unless they are logically defensible.",
-      "application": "Words such as all, never, always, and completely often create claims that are difficult to support."
-    },
-    {
-      "principle": "Do not restart the whole essay after drafting begins.",
-      "application": "Repair the thesis, topic sentences, or individual sentences rather than deleting large sections under time pressure."
-    },
-    {
-      "principle": "Edit from large problems to small problems.",
-      "application": "Check prompt coverage and paragraph logic before grammar, spelling, and vocabulary variety."
-    },
-    {
-      "principle": "Use the conclusion to confirm, not expand, the argument.",
-      "application": "Restate the position and combine the body reasons into a final judgment."
-    },
-    {
-      "principle": "Track recurring errors across several essays.",
-      "application": "A personal error log is more useful than correcting the same article, verb, or spelling error repeatedly."
-    }
+    "A clear, fully developed argument is safer than several briefly mentioned ideas.",
+    "Choose reasons that can be explained quickly with familiar vocabulary.",
+    "The thesis is a decision tool: any paragraph that does not support it should be revised or removed.",
+    "Examples do not need detailed statistics or named research; they need to be plausible and relevant.",
+    "A counterargument is useful only when there is enough time to answer it clearly.",
+    "Paragraph length should reflect idea development, not a fixed number of sentences.",
+    "Simple vocabulary used accurately is stronger than advanced vocabulary used incorrectly.",
+    "Sentence variety can come from controlled use of relative clauses, conditionals, concessive clauses, and cause-and-effect structures.",
+    "Do not edit by repeatedly rereading from the beginning; perform separate checks for content, organization, grammar, and mechanics.",
+    "If time is running out, complete the conclusion before attempting stylistic improvements.",
+    "Avoid absolute claims such as always, never, everyone, and completely unless they can be defended.",
+    "After practice, rewrite the weakest paragraph rather than rewriting the entire essay without a specific learning goal."
   ],
   "metadata": {
-    "chapter_number": 16,
-    "lesson_number": 15,
-    "estimated_study_time": "Approximately 2 hours",
-    "timed_practice_minutes": 20,
-    "source_alignment": "Enriched from the supplied Lesson 15 summary, objectives, teaching points, examples, misconceptions, practice items, and self-check statements.",
-    "source_aligned_practice_target": "Produce a complete academic essay with a clear position, developed reasons, logical paragraphing, and sufficient time for final editing.",
-    "recommended_progression": "Prompt analysis, thesis writing, paragraph construction, essay planning, guided drafting, timed drafting, feedback, and targeted rewriting.",
-    "assessment_priorities": [
-      "Task relevance and completion",
-      "Clear position and argument",
-      "Paragraph organization and coherence",
-      "Development through explanations and examples",
-      "Grammar and sentence control",
-      "Vocabulary appropriateness",
-      "Spelling and mechanics"
-    ],
+    "difficulty": "intermediate_to_upper_intermediate",
+    "estimated_study_time": "Plan to spend about 2 hours studying this chapter and completing the writing practice.",
     "tags": [
-      "PTE Academic",
-      "Write essay",
-      "Essay planning",
-      "Paragraph development",
-      "Written discourse",
-      "Timed writing",
-      "Editing",
-      "Academic English"
-    ]
+      "pte_academic",
+      "write_essay",
+      "essay_planning",
+      "prompt_analysis",
+      "paragraph_development",
+      "written_discourse",
+      "grammar",
+      "vocabulary",
+      "editing",
+      "timed_writing"
+    ],
+    "provenance_note": "Teaching-first enrichment based on the supplied pte:ch16 lesson content, including prompt analysis, stance selection, essay planning, paragraph construction, complete essay structure, editing checklists, worked zoo examples, and 20-minute timed practice."
   }
 }

@@ -1,683 +1,641 @@
 {
   "schema_version": "pte_lesson_enrichment.v1",
-  "task_type": "lesson_enrichment",
-  "lesson_title": "Lesson 14: Summarize Spoken Text and Highlight Correct Summary",
+  "task_type": "summarize_spoken_text_and_highlight_correct_summary",
+  "lesson_title": "Lesson 14: Summarize spoken text and Highlight correct summary",
   "source_label": "pte:ch15",
-  "modality": {
-    "primary_skills": [
-      "listening",
-      "reading",
-      "writing"
-    ],
-    "enabling_skills": [
-      "grammar",
-      "spelling",
-      "vocabulary",
-      "written organization"
-    ],
-    "item_types": [
-      "Summarize spoken text",
-      "Highlight correct summary"
-    ],
-    "study_mode": [
-      "guided listening",
-      "keyword note-taking",
-      "summary writing",
-      "option elimination",
-      "timed practice"
-    ]
-  },
+  "modality": "integrated",
   "overview": {
-    "lesson_purpose": "This lesson teaches a shared listening process for two PTE Academic item types. In both tasks, the learner must understand the recording's topic, main message, supporting points, organization, and speaker attitude. The final response differs: Summarize spoken text requires a concise written summary, while Highlight correct summary requires selection of the paragraph that most accurately represents the recording.",
-    "estimated_study_time": "Plan one focused session of about 2 hours, followed by additional timed practice and error review if needed.",
-    "why_the_tasks_are_linked": [
-      "Both tasks begin with identifying the topic and central message of a spoken text.",
-      "Both require the learner to separate main ideas from examples and minor details.",
-      "Both depend on efficient notes made while the recording is playing.",
-      "Both reward accurate understanding rather than memory of every sentence.",
-      "Both require attention to lecture structure, emphasis, speaker purpose, and attitude."
-    ],
-    "key_contrast": [
-      "In Summarize spoken text, the learner creates an original written response from notes.",
-      "In Highlight correct summary, the learner evaluates ready-made summaries and selects one.",
-      "The writing task requires grammar, spelling, punctuation, and logical sentence construction.",
-      "The selection task requires careful comparison, contradiction checking, and elimination of unsupported information."
-    ],
-    "success_definition": "Success means capturing the lecture's central message and major supporting points without copying every word, adding personal opinions, overusing examples, or selecting an option that is accurate only in one small detail."
-  },
-  "learning_goals": [
-    {
-      "goal": "Identify the topic and central message",
-      "evidence_of_mastery": "The learner can state what the recording is mainly about in one clear sentence."
-    },
-    {
-      "goal": "Recognize major supporting points",
-      "evidence_of_mastery": "The learner can distinguish two or three essential points from examples, repetitions, and background details."
-    },
-    {
-      "goal": "Follow spoken organization",
-      "evidence_of_mastery": "The learner can use signpost words to arrange notes in the same logical sequence as the lecture."
-    },
-    {
-      "goal": "Infer speaker purpose and attitude",
-      "evidence_of_mastery": "The learner can identify whether the speaker is explaining, comparing, criticizing, recommending, warning, or expressing certainty or uncertainty."
-    },
-    {
-      "goal": "Take efficient notes",
-      "evidence_of_mastery": "The learner records keywords, abbreviations, relationships, and sequence markers instead of attempting word-for-word transcription."
-    },
-    {
-      "goal": "Write an accurate spoken-text summary",
-      "evidence_of_mastery": "The learner produces a concise, logically organized response containing the topic and major points with controlled grammar, spelling, and punctuation."
-    },
-    {
-      "goal": "Select the most accurate summary",
-      "evidence_of_mastery": "The learner eliminates options containing contradictions, unsupported information, excessive detail, or an incomplete main idea."
-    },
-    {
-      "goal": "Perform under test conditions",
-      "evidence_of_mastery": "The learner completes listening, planning, writing, checking, or option selection within the time shown in the task instructions."
-    }
-  ],
-  "core_method": {
-    "name": "LISTEN–MAP–MATCH–CHECK",
-    "purpose": "Use one repeatable process for both item types, changing only the final production or selection stage.",
-    "steps": [
+    "what_it_is": "This lesson develops the integrated listening, reading, and writing skills needed for two PTE Academic listening item types. In Summarize spoken text, the test taker listens to an academic recording, identifies its central message and major supporting points, and produces a concise written summary. In Highlight correct summary, the test taker listens, builds a mental or written map of the recording, and selects the paragraph that most accurately represents the main idea and essential supporting information.",
+    "format_facts": [
       {
-        "step": 1,
-        "label": "LISTEN for the frame",
-        "instruction": "Identify the broad topic, the speaker's purpose, and the direction of the lecture. Ask: What subject is being discussed, and what is the speaker trying to explain or argue?"
+        "label": "Summarize spoken text input",
+        "value": "You hear an academic talk or lecture and take notes while listening."
       },
       {
-        "step": 2,
-        "label": "MAP the main ideas",
-        "instruction": "Record the central message and major supporting points using keywords, abbreviations, arrows, numbering, and contrast symbols. Follow the order signaled by the speaker."
+        "label": "Summarize spoken text response",
+        "value": "You write a concise summary that communicates the topic, central message, and most important supporting points."
       },
       {
-        "step": 3,
-        "label": "MATCH importance",
-        "instruction": "Rank information as topic, main point, support, example, or minor detail. Keep information that explains the lecture's message and reduce or omit information that merely illustrates it."
+        "label": "Highlight correct summary input",
+        "value": "You hear a recording and then compare several written summary options."
       },
       {
-        "step": 4,
-        "label": "BUILD or SELECT",
-        "instruction": "For Summarize spoken text, turn the note map into a concise written summary. For Highlight correct summary, compare each option with the note map and eliminate weak choices."
+        "label": "Highlight correct summary response",
+        "value": "You select the one paragraph that best matches the recording as a whole."
       },
       {
-        "step": 5,
-        "label": "CHECK accuracy",
-        "instruction": "Confirm that the response preserves the speaker's meaning, degree of certainty, and sequence without adding opinions or unsupported claims."
+        "label": "Listening priority",
+        "value": "The recording should be approached through topic recognition, lecture structure, signpost words, repeated ideas, stressed vocabulary, and speaker attitude."
       },
       {
-        "step": 6,
-        "label": "CHECK language or selection",
-        "instruction": "For writing, check word count, grammar, spelling, punctuation, and sentence completeness. For selection, confirm that the chosen option covers the main idea and important supporting points better than all alternatives."
+        "label": "Final quality control",
+        "value": "For a written summary, check content coverage, task length, grammar, spelling, and punctuation; for a selection task, check that the chosen option is accurate, complete, and free from unsupported information."
       }
     ],
-    "note_map_template": [
-      "TOPIC: the broad subject",
-      "MAIN CLAIM: the speaker's central message",
-      "P1, P2, P3: major supporting points in order",
-      "RELATIONSHIPS: cause, effect, contrast, problem, solution, sequence, or comparison",
-      "ATTITUDE: positive, negative, neutral, certain, cautious, critical, or supportive",
-      "CONCLUSION: the speaker's final implication, recommendation, or result"
+    "scoring_factors": [
+      {
+        "name": "Content accuracy",
+        "what_it_measures": "Whether the response represents ideas that were actually stated or clearly implied in the recording."
+      },
+      {
+        "name": "Main-idea coverage",
+        "what_it_measures": "Whether the central topic and the speaker's most important message are included rather than replaced by a minor example."
+      },
+      {
+        "name": "Supporting-point selection",
+        "what_it_measures": "Whether the response includes the most important reasons, stages, causes, effects, comparisons, or conclusions."
+      },
+      {
+        "name": "Organization and coherence",
+        "what_it_measures": "Whether the ideas are connected logically and presented in an order that reflects the recording."
+      },
+      {
+        "name": "Language control",
+        "what_it_measures": "For the written summary, whether grammar, vocabulary, spelling, punctuation, and sentence construction communicate the meaning clearly."
+      },
+      {
+        "name": "Option discrimination",
+        "what_it_measures": "For Highlight correct summary, whether the test taker can reject options containing contradictions, unsupported additions, distorted emphasis, or incomplete coverage."
+      }
     ],
-    "decision_rule": "A detail belongs in the final response only when removing it would make the lecture's central message incomplete, inaccurate, or difficult to understand."
+    "critical_rules": [
+      "Listen for the topic and lecture structure before trying to record individual details.",
+      "Write key words and short phrases rather than complete word-for-word sentences.",
+      "Treat signpost expressions such as \"first,\" \"however,\" \"the main point,\" and \"finally\" as clues to importance and organization.",
+      "Do not allow an interesting example, statistic, or personal story to replace the lecture's central message.",
+      "Do not add background knowledge, assumptions, or opinions that were not stated in the recording.",
+      "For Highlight correct summary, listen and take notes before studying the options in detail so that the options do not control or distort your understanding.",
+      "Eliminate an option when it contradicts the recording, introduces unsupported information, or focuses mainly on a minor detail.",
+      "Before submitting a written summary, verify content, word-count compliance, grammar, spelling, capitalization, and punctuation."
+    ]
+  },
+  "learning_goals": [
+    "Identify the topic, central message, and lecture purpose from a single listening.",
+    "Recognize signpost words that introduce, sequence, contrast, emphasize, exemplify, and conclude ideas.",
+    "Take efficient notes using key words, abbreviations, symbols, and short relationships instead of full sentences.",
+    "Distinguish major supporting points from examples, repetition, personal anecdotes, and background details.",
+    "Infer whether a speaker is positive, negative, neutral, certain, doubtful, approving, or critical.",
+    "Organize notes into a clear topic-and-support structure after the recording ends.",
+    "Write a concise, objective summary using accurate grammar and logical connections.",
+    "Compare summary options against notes and eliminate inaccurate, unsupported, incomplete, or over-detailed choices.",
+    "Preserve the speaker's degree of certainty by distinguishing strong claims from cautious or possible claims.",
+    "Complete both item types efficiently under timed conditions and perform a final accuracy check."
+  ],
+  "core_method": {
+    "name": "Listen–Map–Filter–Respond–Verify",
+    "summary": "Build an independent map of the recording before writing or selecting an answer. Capture the topic, the speaker's controlling message, the main supporting points, the relationships between those points, and the final conclusion. Filter out examples and redundant details, then either produce a focused written summary or select the option that best matches the map.",
+    "steps": [
+      {
+        "step": "Listen for the frame",
+        "detail": "Use the opening sentences to identify the broad topic, the speaker's purpose, and any announced structure such as three causes, two solutions, or a comparison."
+      },
+      {
+        "step": "Map the lecture",
+        "detail": "Create short notes for the topic, main claim, major points, contrast, cause-and-effect links, attitude, and conclusion."
+      },
+      {
+        "step": "Track signposts",
+        "detail": "Mark sequence, contrast, emphasis, examples, and conclusions with simple symbols such as 1, 2, 3, versus, arrow, plus, minus, and therefore."
+      },
+      {
+        "step": "Filter the notes",
+        "detail": "Keep ideas necessary to understand the message and remove repeated wording, minor examples, isolated statistics, and personal narrative unless they are central."
+      },
+      {
+        "step": "Respond",
+        "detail": "For Summarize spoken text, combine the topic and key points into a concise, objective paragraph. For Highlight correct summary, compare each option with the note map rather than with vague memory."
+      },
+      {
+        "step": "Verify",
+        "detail": "Check that the response preserves the main point, includes essential support, avoids unsupported additions, reflects the speaker's certainty, and satisfies language or selection requirements."
+      }
+    ],
+    "formula": "TOPIC + SPEAKER'S MAIN CLAIM + TWO OR THREE ESSENTIAL SUPPORTING POINTS + RESULT, IMPLICATION, OR CONCLUSION"
   },
   "techniques": [
     {
-      "name": "Keyword-only note-taking",
-      "teaching_point": "Write content words such as nouns, main verbs, numbers, technical terms, and attitude words. Avoid articles, repeated phrases, and complete sentences unless a short sentence is essential.",
-      "example": "Instead of writing 'The lecturer explained that urban migration has increased because employment is concentrated in cities,' write 'urban migration ↑ — jobs concentrated cities.'",
-      "application": "Use in both item types."
-    },
-    {
-      "name": "Three-level information sorting",
-      "teaching_point": "Classify notes as central message, major support, or minor detail.",
-      "example": "Central message: remote work changes cities; major support: less commuting and changed office demand; minor detail: one company's office policy.",
-      "application": "Include the first two levels in a summary and use the third only when necessary."
+      "name": "Skeleton note-taking",
+      "purpose": "Capture the structure of a lecture without falling behind.",
+      "how_to": [
+        "Write the topic at the top of the note area as soon as it becomes clear.",
+        "Use one short line for each major point.",
+        "Record content words such as nouns, verbs, adjectives, names, numbers, and technical terms.",
+        "Omit most articles, auxiliary verbs, and other grammar words while listening.",
+        "Use arrows for causes and effects, versus for contrasts, and plus or minus signs for positive and negative attitudes."
+      ],
+      "example": "urban migration: topic; 1 jobs and wages; 2 education and services; 3 climate or conflict; result: rapid city growth",
+      "why_it_matters": "Short notes preserve attention for listening and make the lecture's organization visible.",
+      "common_error": "Writing complete sentences causes the listener to miss the next main point."
     },
     {
       "name": "Signpost tracking",
-      "teaching_point": "Listen for words that announce a topic, add a point, introduce contrast, give an example, show cause, or signal a conclusion.",
-      "example": "First, however, for example, as a result, and finally reveal the lecture's structure.",
-      "application": "Place corresponding symbols or numbers in notes so the final response follows the recording's organization."
+      "purpose": "Recognize when the speaker introduces, develops, contrasts, or concludes an important idea.",
+      "how_to": [
+        "Circle expressions that introduce the topic, such as \"today I will discuss\" or \"the central issue is.\"",
+        "Number sequence markers such as \"first,\" \"next,\" and \"finally.\"",
+        "Mark contrast words such as \"however,\" \"although,\" and \"on the other hand.\"",
+        "Underline emphasis signals such as \"most importantly,\" \"the key point,\" and \"it is essential.\"",
+        "Mark conclusion signals such as \"therefore,\" \"overall,\" and \"to sum up.\""
+      ],
+      "example": "\"First\" introduces point one, \"now let us move on\" signals a new section, and \"the most significant reason\" identifies the speaker's priority.",
+      "why_it_matters": "Signposts reveal which information belongs in the final summary and how the ideas are related.",
+      "common_error": "Treating every sentence as equally important produces disorganized notes."
     },
     {
-      "name": "Stress and repetition detection",
-      "teaching_point": "Speakers often emphasize important information through stronger stress, slower delivery, repetition, reformulation, or a summarizing sentence.",
-      "example": "A phrase repeated as 'The key issue is...' and later 'What really matters is...' is likely central.",
-      "application": "Give repeated or strongly stressed ideas greater weight than isolated examples."
+      "name": "Main point versus example test",
+      "purpose": "Prevent a vivid example from replacing the lecture's central message.",
+      "how_to": [
+        "Ask whether the idea can summarize a complete section of the recording.",
+        "Check whether the speaker introduces it with an example marker such as \"for instance\" or \"such as.\"",
+        "Remove names, dates, or statistics when the larger idea remains understandable without them.",
+        "Keep an example only when the lecture depends on it to explain the central argument.",
+        "Prefer general concepts that connect several details."
+      ],
+      "example": "The main point is \"remote work changes team communication\"; \"a company in Singapore holds online meetings\" is only an example.",
+      "why_it_matters": "PTE summaries reward accurate coverage of the whole recording, not the memorization of one memorable detail.",
+      "common_error": "Choosing a summary because it contains a correct statistic even though it omits the main claim."
     },
     {
-      "name": "Attitude-word analysis",
-      "teaching_point": "Notice vocabulary that shows approval, criticism, certainty, doubt, importance, or limitation.",
-      "example": "'Clearly essential' shows strong certainty and importance, while 'possibly useful' shows caution.",
-      "application": "Preserve the speaker's strength of opinion instead of changing a cautious claim into a definite fact."
-    },
-    {
-      "name": "Relationship symbols",
-      "teaching_point": "Use symbols to record logical relationships quickly.",
-      "example": "→ for result, because or ← for cause, vs for contrast, + for advantage, − for disadvantage, ↑ for increase, and ↓ for decrease.",
-      "application": "Use the symbols when reconstructing cause-and-effect or comparison sentences."
-    },
-    {
-      "name": "Noun-phrase compression",
-      "teaching_point": "Condense several spoken clauses into precise academic noun phrases.",
-      "example": "'People increasingly depend on private cars, and this creates congestion' becomes 'increasing dependence on private cars and the resulting congestion.'",
-      "application": "Useful for concise Summarize spoken text responses."
+      "name": "Attitude and certainty scale",
+      "purpose": "Preserve the speaker's opinion and degree of confidence.",
+      "how_to": [
+        "Mark strong certainty words such as \"clearly,\" \"undoubtedly,\" and \"without doubt.\"",
+        "Mark cautious language such as \"perhaps,\" \"may,\" \"might,\" and \"appears to.\"",
+        "Identify evaluative vocabulary such as \"beneficial,\" \"serious,\" \"ineffective,\" or \"promising.\"",
+        "Notice whether the speaker approves, criticizes, questions, or neutrally explains the subject.",
+        "Use equally strong or cautious language in the written summary."
+      ],
+      "example": "\"The policy may reduce congestion\" should not become \"The policy will eliminate congestion.\"",
+      "why_it_matters": "Changing possibility into certainty, or criticism into neutrality, changes the meaning of the lecture.",
+      "common_error": "Using stronger claims in the summary than the speaker used in the recording."
     },
     {
       "name": "Option evidence grid",
-      "teaching_point": "For each Highlight correct summary option, compare its claims with the notes and label them supported, contradicted, not mentioned, or incomplete.",
-      "example": "An option containing two supported details but omitting the main conclusion is marked incomplete.",
-      "application": "Select the option with the strongest overall coverage and no serious accuracy error."
+      "purpose": "Evaluate Highlight correct summary options systematically.",
+      "how_to": [
+        "Label each important claim in an option as supported, contradicted, or not mentioned.",
+        "Check whether the option includes the recording's central message.",
+        "Check whether its supporting details receive the same emphasis as in the lecture.",
+        "Reject an option with one major contradiction even if several other details are correct.",
+        "Choose the option with the best overall match rather than the greatest number of familiar words."
+      ],
+      "example": "Option B: main idea supported; point two contradicted; extra recommendation not mentioned; result: eliminate.",
+      "why_it_matters": "Distractors often reuse vocabulary from the recording while changing relationships or emphasis.",
+      "common_error": "Selecting an option simply because it repeats several words heard in the recording."
     },
     {
-      "name": "Scope checking",
-      "teaching_point": "Check whether an option or sentence is too broad, too narrow, or appropriately matched to the recording.",
-      "example": "A lecture about one university study does not justify a summary claiming that all universities worldwide behave the same way.",
-      "application": "Reject exaggerations such as all, never, completely, or only when the recording does not support them."
+      "name": "One-breath summary planning",
+      "purpose": "Create a focused written summary before drafting full sentences.",
+      "how_to": [
+        "State the lecture topic in a short noun phrase.",
+        "Add the speaker's central claim in one clause.",
+        "Select two or three supporting points from the filtered notes.",
+        "Add the result, implication, or conclusion when it is important.",
+        "Say the complete plan silently in one continuous statement before writing."
+      ],
+      "example": "Lecture: urban migration; claim: mainly driven by opportunity and insecurity; support: employment, services, environmental pressure; result: cities must plan for growth.",
+      "why_it_matters": "A short oral plan reduces repetition and prevents the summary from becoming a list of disconnected notes.",
+      "common_error": "Starting to write immediately and discovering halfway through that the main point has not been stated."
     },
     {
-      "name": "Final-language scan",
-      "teaching_point": "Reserve time to check sentence boundaries, subject-verb agreement, verb tense, articles, spelling, capitalization, and punctuation.",
-      "example": "Change 'The speaker discuss three cause' to 'The speaker discusses three causes.'",
-      "application": "Use before submitting Summarize spoken text."
+      "name": "Compression through noun phrases",
+      "purpose": "Express several related ideas concisely and academically.",
+      "how_to": [
+        "Convert long clauses into precise noun phrases where clarity is maintained.",
+        "Combine related details under a broader category.",
+        "Use linkers to show cause, contrast, sequence, and result.",
+        "Avoid decorative adjectives and repeated wording.",
+        "Prefer accurate, familiar grammar over unnecessarily complex structures."
+      ],
+      "example": "\"People move because they want jobs with higher salaries\" can become \"better employment and income opportunities.\"",
+      "why_it_matters": "Effective compression makes room for more key content while maintaining clarity.",
+      "common_error": "Using very long noun phrases that contain grammar errors or unclear relationships."
     }
   ],
   "worked_examples": [
     {
-      "title": "Example 1: Mapping a sequenced lecture",
-      "task_focus": "Identifying topic, signposts, and major points",
-      "mini_lecture": "Today I would like to discuss three reasons for urban migration. First, cities offer a wider range of employment. Second, urban areas usually provide better access to education and health services. Finally, transport and communication networks make cities more connected, although rapid migration can also create housing pressure.",
-      "weak_notes": [
-        "Today speaker discusses something.",
-        "Cities have many things.",
-        "Transport is mentioned.",
-        "Housing is difficult."
-      ],
-      "improved_notes": [
-        "Topic: reasons urban migration",
-        "1 jobs wider range",
-        "2 better education + health access",
-        "3 transport/comms connectivity",
-        "contrast/result: rapid migration → housing pressure"
-      ],
-      "teaching_explanation": [
-        "The topic is stated directly in the opening sentence.",
-        "The signposts first, second, and finally reveal three major points.",
-        "The housing problem is important because it qualifies the advantages.",
-        "The improved notes preserve structure and relationships without copying every word."
-      ],
-      "sample_summary": "The speaker explains that urban migration is driven mainly by employment opportunities, improved access to education and health services, and stronger transport and communication networks, although rapid population growth can place pressure on urban housing."
-    },
-    {
-      "title": "Example 2: Preserving speaker certainty",
-      "task_focus": "Distinguishing strong and cautious claims",
-      "mini_lecture": "Without doubt, air pollution is a major public-health problem in large cities. Expanding public transport will probably reduce some traffic emissions, while remote-working policies may also help, although their long-term impact remains uncertain.",
-      "notes": [
-        "air pollution = definite major health problem",
-        "public transport probably ↓ traffic emissions",
-        "remote work may help",
-        "long-term effect uncertain"
-      ],
-      "inaccurate_summary": "The speaker proves that public transport and remote work will completely solve urban air pollution.",
-      "improved_summary": "The speaker identifies urban air pollution as a serious public-health problem and suggests that public transport and remote-working policies could reduce emissions, while emphasizing that their long-term effects are not yet certain.",
-      "teaching_explanation": [
-        "The phrase without doubt expresses strong certainty about the problem.",
-        "Probably, may, and uncertain weaken the claims about solutions.",
-        "The inaccurate version changes cautious possibilities into guaranteed outcomes.",
-        "A strong summary preserves both the content and the degree of certainty."
-      ]
-    },
-    {
-      "title": "Example 3: Choosing the most accurate summary",
-      "task_focus": "Eliminating incorrect, unsupported, and incomplete options",
-      "recording_notes": [
-        "Topic: social media at work",
-        "Benefits: recruitment, customer reach, stronger brand",
-        "Risks: staff criticism online, lost productivity",
-        "Main message: employers need balanced policy, not total ban"
-      ],
-      "options": [
+      "title": "Writing a summary from a three-part lecture",
+      "input": "Mini lecture: \"Today I would like to discuss three major reasons for urban migration. First, cities usually provide a wider range of jobs and higher wages. Second, urban areas often offer better universities, hospitals, and public services. Finally, drought, conflict, and other pressures may force people to leave rural communities. Although migration can improve individual opportunities, rapid population growth also creates housing and transport problems for cities.\"",
+      "decoding": "The opening announces the topic and a three-part structure. \"First,\" \"second,\" and \"finally\" identify the three major causes. The final sentence adds a balanced conclusion: migration may benefit individuals but creates planning problems for cities.",
+      "plan": "Topic: urban migration. Main claim: caused by opportunities and pressures. Support: jobs and wages; education, health, and services; drought or conflict. Conclusion: benefits individuals but strains urban housing and transport.",
+      "model_answer": "The lecture explains that urban migration is driven by better employment, higher incomes, improved education and public services, as well as pressures such as drought and conflict. Although relocation can expand individual opportunities, rapid migration may place serious pressure on urban housing and transport systems.",
+      "annotations": [
         {
-          "option": "A",
-          "text": "Social media should be completely prohibited because it always damages productivity and company reputation.",
-          "evaluation": "Reject: it exaggerates the risks, ignores benefits, and contradicts the balanced recommendation."
+          "part": "The lecture explains that urban migration is driven by",
+          "comment": "Introduces the topic and controlling idea without adding personal opinion."
         },
         {
-          "option": "B",
-          "text": "Social media can support recruitment, customer communication, and brand development, but employers must also manage reputational and productivity risks through balanced workplace policies.",
-          "evaluation": "Keep: it includes the main idea, major benefits, major risks, and the speaker's recommendation."
+          "part": "better employment, higher incomes, improved education and public services",
+          "comment": "Combines the first two major causes into concise noun phrases."
         },
         {
-          "option": "C",
-          "text": "Online criticism from employees is the most important problem facing modern businesses.",
-          "evaluation": "Reject: the detail may be related, but the summary is too narrow and omits the main point."
+          "part": "as well as pressures such as drought and conflict",
+          "comment": "Includes the final cause while keeping examples subordinate to the category of pressure."
         },
         {
-          "option": "D",
-          "text": "Businesses use social media mainly to replace managers with automated recruitment systems.",
-          "evaluation": "Reject: the central claim is not supported by the notes."
+          "part": "Although relocation can expand individual opportunities",
+          "comment": "Preserves the speaker's positive qualification."
+        },
+        {
+          "part": "rapid migration may place serious pressure on urban housing and transport systems",
+          "comment": "Reports the concluding implication and retains the cautious modal \"may.\""
         }
-      ],
-      "correct_answer": "B",
-      "teaching_explanation": [
-        "The best option covers the whole recording rather than one memorable detail.",
-        "It represents both positive and negative information.",
-        "It preserves the recommendation for balance.",
-        "It does not introduce unsupported information or extreme language."
       ]
     },
     {
-      "title": "Example 4: Removing unnecessary examples",
-      "task_focus": "Separating evidence from the main point",
-      "mini_lecture": "Regular physical activity supports learning by improving concentration, sleep quality, and emotional wellbeing. For example, one school introduced a short morning exercise program, and teachers later reported that students settled more quickly in class. The broader point is that movement can support academic performance when it becomes part of a consistent routine.",
-      "raw_notes": [
-        "physical activity supports learning",
-        "concentration",
-        "sleep",
-        "emotional wellbeing",
-        "one school",
-        "morning exercise",
-        "teachers said students settled quickly",
-        "consistent routine supports academic performance"
-      ],
-      "priority_notes": [
-        "Topic: exercise + learning",
-        "Benefits: concentration, sleep, wellbeing",
-        "Main conclusion: consistent movement routine → academic performance"
-      ],
-      "sample_summary": "The lecture explains that regular physical activity can improve learning by supporting concentration, sleep, and emotional wellbeing, and concludes that consistent movement routines may contribute to stronger academic performance.",
-      "teaching_explanation": [
-        "The school program illustrates the argument but is not the central message.",
-        "The summary keeps the three broad benefits and final conclusion.",
-        "Removing the example makes the response more concise without losing meaning.",
-        "Examples should be included only when they carry an essential result not stated elsewhere."
+      "title": "Selecting the most accurate summary",
+      "input": "Recording notes: topic—social media at work; benefits—recruitment, customer engagement, stronger brand; risks—employee criticism, distraction, lost productivity; speaker conclusion—companies need clear policies rather than a complete ban. Options: A. Social media is mainly harmful because employees waste time, so all companies should prohibit it. B. Social media can support recruitment, customer relationships, and branding, but it may also damage reputation and productivity; therefore, organizations should manage its use through clear policies. C. Social media helps companies recruit managers from foreign countries, although it has little effect on customers. D. Companies should allow unlimited social media access because online activity always improves productivity.",
+      "decoding": "The correct option must contain both the advantages and disadvantages and must preserve the recommendation for managed use. Options A and D are extreme and contradict the balanced position. Option C introduces unsupported details and omits the main risks.",
+      "plan": "Compare every option with four checkpoints: balanced main idea, benefits, risks, and policy conclusion.",
+      "model_answer": "Option B is the correct summary because it includes the main idea, accurately represents both the benefits and risks, and preserves the speaker's recommendation for clear workplace policies.",
+      "annotations": [
+        {
+          "part": "Option A",
+          "comment": "Incorrect because it presents only the negative side and changes management into a complete prohibition."
+        },
+        {
+          "part": "Option B",
+          "comment": "Correct because it covers the whole recording with accurate emphasis and no unsupported information."
+        },
+        {
+          "part": "Option C",
+          "comment": "Incorrect because recruiting foreign managers was not mentioned and the option minimizes customer-related benefits."
+        },
+        {
+          "part": "Option D",
+          "comment": "Incorrect because \"unlimited\" and \"always\" contradict the speaker's concerns about distraction and productivity."
+        }
       ]
     },
     {
-      "title": "Example 5: Repairing a fragmented written summary",
-      "task_focus": "Turning notes into grammatical academic prose",
-      "notes": [
-        "renewable energy costs ↓",
-        "adoption ↑",
-        "storage remains challenge",
-        "govt investment + research needed"
-      ],
-      "weak_response": "Renewable energy cheaper. More adoption. Storage problem. Government should investment research.",
-      "repaired_response": "The speaker explains that falling renewable-energy costs are encouraging wider adoption, but energy storage remains a significant challenge; therefore, continued government investment and research are needed to support a reliable transition.",
-      "teaching_explanation": [
-        "The repaired version uses complete clauses rather than note fragments.",
-        "But accurately marks contrast.",
-        "Therefore presents the recommendation as a result of the storage challenge.",
-        "Investment is used as a noun, while invest would be the verb form."
+      "title": "Preserving speaker attitude and certainty",
+      "input": "Mini lecture: \"Without doubt, plastic pollution is a major environmental problem. Current recycling systems are clearly insufficient. New biodegradable materials may reduce some waste, but they are unlikely to solve the problem alone. Governments, manufacturers, and consumers must therefore reduce unnecessary plastic use.\"",
+      "decoding": "The speaker is highly certain about the seriousness of the problem and the weakness of current recycling. The speaker is cautious about biodegradable materials and strongly recommends shared action to reduce plastic consumption.",
+      "plan": "Topic: plastic pollution. Certain claims: major problem; recycling insufficient. Cautious claim: biodegradable materials may help but cannot solve everything. Conclusion: shared reduction effort is necessary.",
+      "model_answer": "The speaker argues that plastic pollution is a serious environmental problem and that existing recycling systems are inadequate. Although biodegradable materials may reduce some waste, they cannot provide a complete solution, so governments, producers, and consumers must work together to limit unnecessary plastic use.",
+      "annotations": [
+        {
+          "part": "argues that plastic pollution is a serious environmental problem",
+          "comment": "Reflects the speaker's strong position rather than presenting the issue as uncertain."
+        },
+        {
+          "part": "existing recycling systems are inadequate",
+          "comment": "Paraphrases the clearly stated criticism of current recycling."
+        },
+        {
+          "part": "Although biodegradable materials may reduce some waste",
+          "comment": "Keeps the cautious modal \"may\" used in the lecture."
+        },
+        {
+          "part": "they cannot provide a complete solution",
+          "comment": "Summarizes the limitation without claiming the materials are useless."
+        },
+        {
+          "part": "must work together to limit unnecessary plastic use",
+          "comment": "Preserves the speaker's strong concluding recommendation."
+        }
+      ]
+    },
+    {
+      "title": "Rejecting a correct detail that misses the main point",
+      "input": "Mini lecture: \"Sleep supports memory, concentration, emotional control, and physical recovery. Researchers have found that students who regularly sleep too little often struggle to retain new information. One experiment asked participants to learn word pairs before sleeping. However, this experiment was only one example of a broader finding: consistent sleep is essential for effective learning and health.\" Candidate summary: \"Participants in an experiment learned word pairs before going to sleep.\"",
+      "decoding": "The candidate summary contains a fact from the recording, but it reports only one experimental detail. It omits the wider claim that regular sleep supports learning, emotional control, memory, and health.",
+      "plan": "Replace the narrow experiment detail with the broader relationship between sleep, cognitive performance, and physical well-being.",
+      "model_answer": "The lecture emphasizes that consistent sleep is essential for learning and health because it supports memory, concentration, emotional regulation, and physical recovery, while insufficient sleep can reduce the ability to retain new information.",
+      "annotations": [
+        {
+          "part": "The lecture emphasizes that consistent sleep is essential",
+          "comment": "States the main conclusion rather than beginning with the experiment."
+        },
+        {
+          "part": "for learning and health",
+          "comment": "Captures the two broad areas affected by sleep."
+        },
+        {
+          "part": "memory, concentration, emotional regulation, and physical recovery",
+          "comment": "Includes the major supporting functions in compressed form."
+        },
+        {
+          "part": "insufficient sleep can reduce the ability to retain new information",
+          "comment": "Reports the research implication without overloading the summary with experimental procedure."
+        }
       ]
     }
   ],
-  "useful_language": {
-    "topic_and_purpose_signposts": [
-      "Today I would like to discuss...",
-      "The main focus of this lecture is...",
-      "The speaker examines...",
-      "The lecture explains...",
-      "The central issue is...",
-      "The speaker argues that..."
-    ],
-    "sequence_signposts": [
-      "first",
-      "to begin with",
-      "the next point",
-      "now let us move on to",
-      "finally",
-      "in conclusion"
-    ],
-    "addition_linkers": [
-      "furthermore",
-      "in addition",
-      "another important point is",
-      "similarly",
-      "also",
-      "as well as"
-    ],
-    "contrast_and_qualification_linkers": [
-      "however",
-      "although",
-      "in contrast",
-      "on the other hand",
-      "despite this",
-      "while"
-    ],
-    "cause_and_effect_linkers": [
-      "because",
-      "due to",
-      "therefore",
-      "as a result",
-      "consequently",
-      "which leads to"
-    ],
-    "example_signposts": [
-      "for example",
-      "for instance",
-      "such as",
-      "to illustrate",
-      "a clear example is",
-      "consider the case of"
-    ],
-    "attitude_and_certainty_clues": [
-      "without doubt",
-      "clearly",
-      "certainly",
-      "probably",
-      "perhaps",
-      "may",
-      "appears to",
-      "it is unlikely that",
-      "unfortunately",
-      "encouragingly"
-    ],
-    "summary_sentence_frames": [
-      "The speaker explains that [central message], emphasizing [major point 1] and [major point 2].",
-      "The lecture discusses [topic] and identifies [point 1], [point 2], and [point 3] as the main factors.",
-      "The recording compares [idea A] with [idea B], concluding that [main conclusion].",
-      "The speaker argues that [claim] because [reason 1] and [reason 2], although [qualification].",
-      "The lecture outlines the causes and effects of [topic], particularly [major cause] and [major result].",
-      "Overall, the speaker suggests that [recommendation or implication]."
-    ],
-    "option_elimination_phrases": [
-      "This option contradicts the recording because...",
-      "This information was not mentioned or supported.",
-      "This option focuses on a minor example rather than the main idea.",
-      "This option is too broad and overgeneralizes the speaker's claim.",
-      "This option is too narrow because it omits...",
-      "This option changes a possibility into a certainty.",
-      "This option includes a correct detail but misses the central message.",
-      "This option best covers both the main idea and the major supporting points."
-    ],
-    "checking_phrases": [
-      "Does this sentence represent the speaker's meaning accurately?",
-      "Have I included the topic and the most important points?",
-      "Have I added any opinion or information from outside the recording?",
-      "Does my wording preserve the speaker's certainty or uncertainty?",
-      "Is every sentence grammatically complete?",
-      "Does the selected option cover the recording as a whole?"
-    ]
-  },
+  "useful_language": [
+    {
+      "category": "Topic and purpose signals",
+      "items": [
+        {
+          "item": "Today I would like to discuss...",
+          "when_to_use": "Recognize it as an opening signal that usually introduces the lecture topic."
+        },
+        {
+          "item": "The main issue is...",
+          "when_to_use": "Treat the following idea as a strong candidate for the central message."
+        },
+        {
+          "item": "The purpose of this talk is...",
+          "when_to_use": "Use it to identify whether the speaker intends to explain, compare, argue, evaluate, or recommend."
+        },
+        {
+          "item": "This lecture focuses on...",
+          "when_to_use": "Record the following noun phrase as the probable topic."
+        }
+      ]
+    },
+    {
+      "category": "Sequence and organization signals",
+      "items": [
+        {
+          "item": "First / firstly",
+          "when_to_use": "Mark the first major point in a numbered structure."
+        },
+        {
+          "item": "Next / now let us move on to",
+          "when_to_use": "Start a new note line because the speaker is changing sections."
+        },
+        {
+          "item": "Another important factor is",
+          "when_to_use": "Add a further supporting point at the same level of importance."
+        },
+        {
+          "item": "Finally / the last point is",
+          "when_to_use": "Record the final major point rather than assuming the lecture has already concluded."
+        }
+      ]
+    },
+    {
+      "category": "Contrast, cause, and result signals",
+      "items": [
+        {
+          "item": "However / nevertheless",
+          "when_to_use": "Mark a contrast, limitation, or challenge to the previous idea."
+        },
+        {
+          "item": "Because / due to",
+          "when_to_use": "Connect a cause to the event, trend, or problem it explains."
+        },
+        {
+          "item": "Therefore / consequently",
+          "when_to_use": "Record the following information as a result, implication, or conclusion."
+        },
+        {
+          "item": "Although / while",
+          "when_to_use": "Preserve both sides of a balanced or qualified argument."
+        }
+      ]
+    },
+    {
+      "category": "Attitude and certainty signals",
+      "items": [
+        {
+          "item": "Without doubt / clearly",
+          "when_to_use": "Recognize strong certainty and avoid weakening the claim in the summary."
+        },
+        {
+          "item": "Perhaps / possibly",
+          "when_to_use": "Represent the idea as uncertain or tentative."
+        },
+        {
+          "item": "May / might / could",
+          "when_to_use": "Avoid changing a possibility into a definite prediction."
+        },
+        {
+          "item": "Unfortunately / surprisingly",
+          "when_to_use": "Identify the speaker's evaluation or emotional attitude toward the information."
+        }
+      ]
+    },
+    {
+      "category": "Written summary frames",
+      "items": [
+        {
+          "item": "The lecture explains that...",
+          "when_to_use": "Introduce an objective explanation of a process, cause, or concept."
+        },
+        {
+          "item": "The speaker argues that...",
+          "when_to_use": "Use when the recording presents a clear position or recommendation."
+        },
+        {
+          "item": "The talk identifies several factors, including...",
+          "when_to_use": "Introduce a compressed list of major causes, features, or solutions."
+        },
+        {
+          "item": "Although X, the speaker concludes that Y.",
+          "when_to_use": "Present a contrast or qualification followed by the central conclusion."
+        }
+      ]
+    },
+    {
+      "category": "Option-elimination labels",
+      "items": [
+        {
+          "item": "Supported",
+          "when_to_use": "Mark a statement that accurately matches the recording or your notes."
+        },
+        {
+          "item": "Contradicted",
+          "when_to_use": "Mark a statement that reverses, exaggerates, or conflicts with the speaker's message."
+        },
+        {
+          "item": "Not mentioned",
+          "when_to_use": "Mark information that may sound reasonable but has no evidence in the recording."
+        },
+        {
+          "item": "Too narrow",
+          "when_to_use": "Reject an option that reports one example or detail while omitting the central message."
+        },
+        {
+          "item": "Distorted emphasis",
+          "when_to_use": "Reject an option that turns a minor point into the main idea."
+        }
+      ]
+    }
+  ],
   "common_mistakes": [
     {
-      "mistake": "Trying to write every word",
-      "why_it_hurts": "The learner falls behind, misses later ideas, and produces disorganized notes.",
-      "correction": "Record only topic words, main claims, relationships, numbers, and essential examples."
+      "mistake": "Trying to write every word spoken in the recording.",
+      "why_it_hurts": "The listener falls behind, misses transitions, and loses the relationship between major ideas.",
+      "fix": "Record only content words, short phrases, symbols, and the structure of the lecture."
     },
     {
-      "mistake": "Reading all summary options before listening",
-      "why_it_hurts": "The options may distract the learner or create false expectations about the recording.",
-      "correction": "Focus first on the audio and notes, then evaluate the options against the lecture map."
+      "mistake": "Reading all Highlight correct summary options closely before listening.",
+      "why_it_hurts": "The wording of the options may distract the listener or create false expectations about the recording.",
+      "fix": "Build an independent note map first, then compare the options with that map."
     },
     {
-      "mistake": "Treating the first sentence as automatically correct",
-      "why_it_hurts": "The opening may introduce the subject without expressing the final central message.",
-      "correction": "Listen for later qualification, development, and conclusion before deciding the main point."
+      "mistake": "Choosing an option because it contains familiar words from the audio.",
+      "why_it_hurts": "Distractors often repeat vocabulary while changing the meaning, emphasis, or logical relationship.",
+      "fix": "Compare claims and relationships, not isolated vocabulary."
     },
     {
-      "mistake": "Including every example in a written summary",
-      "why_it_hurts": "Examples consume space and can hide the lecture's broader message.",
-      "correction": "Keep the principle or conclusion demonstrated by the example unless the example itself is essential."
+      "mistake": "Including a correct detail but omitting the main point.",
+      "why_it_hurts": "A summary of one example does not represent the recording as a whole.",
+      "fix": "State the topic and central message before adding supporting details."
     },
     {
-      "mistake": "Selecting an option because it contains familiar words",
-      "why_it_hurts": "Distractors often repeat vocabulary from the audio while changing the meaning or emphasizing a minor point.",
-      "correction": "Compare ideas and logical relationships, not isolated word matches."
+      "mistake": "Adding personal knowledge or a reasonable-sounding explanation.",
+      "why_it_hurts": "The response becomes inaccurate because it includes information unsupported by the recording.",
+      "fix": "Use only ideas found in the audio or clearly represented in your notes."
     },
     {
-      "mistake": "Choosing a correct detail that omits the main idea",
-      "why_it_hurts": "A summary must represent the recording as a whole.",
-      "correction": "Reject options that are accurate but incomplete."
+      "mistake": "Changing cautious language into certainty.",
+      "why_it_hurts": "Words such as \"may\" and \"perhaps\" carry important meaning, and removing them misrepresents the speaker.",
+      "fix": "Mark certainty and uncertainty vocabulary while listening and preserve it in the response."
     },
     {
-      "mistake": "Accepting unsupported information",
-      "why_it_hurts": "An option can sound reasonable in real life but still be wrong because the speaker did not mention it.",
-      "correction": "Require evidence from the notes for every major claim in an option."
+      "mistake": "Writing the summary as a personal story.",
+      "why_it_hurts": "Narrative retelling wastes space and shifts attention away from the topic and key academic points.",
+      "fix": "Use objective reporting language such as \"the lecture explains\" or \"the speaker argues.\""
     },
     {
-      "mistake": "Changing the speaker's level of certainty",
-      "why_it_hurts": "Words such as may, probably, and perhaps cannot be summarized as will, proves, or certainly.",
-      "correction": "Preserve modal verbs and cautious language when the speaker is uncertain."
+      "mistake": "Listing notes without grammatical connections.",
+      "why_it_hurts": "Disconnected fragments may fail to show cause, contrast, sequence, or conclusion.",
+      "fix": "Use a small number of accurate linkers to convert the note map into coherent sentences."
     },
     {
-      "mistake": "Writing note fragments as the final response",
-      "why_it_hurts": "Fragments weaken grammar, coherence, and readability.",
-      "correction": "Convert notes into complete sentences with clear subjects, verbs, and logical linkers."
+      "mistake": "Selecting the longest or most detailed summary option.",
+      "why_it_hurts": "Length does not guarantee accuracy; long options may contain unsupported additions or excessive examples.",
+      "fix": "Choose the option with the best balance of main idea, essential support, and factual accuracy."
     },
     {
-      "mistake": "Using personal reactions",
-      "why_it_hurts": "The task requires an objective summary, not agreement, disagreement, or personal narrative.",
-      "correction": "Report only the speaker's ideas and conclusions."
-    },
-    {
-      "mistake": "Ignoring spelling and punctuation",
-      "why_it_hurts": "Correct content can still be weakened by avoidable language errors.",
-      "correction": "Reserve a final checking stage for spelling, agreement, capitalization, punctuation, and sentence boundaries."
-    },
-    {
-      "mistake": "Overusing a memorized template",
-      "why_it_hurts": "A rigid template may produce repetition, irrelevant filler, or incorrect logical relationships.",
-      "correction": "Use flexible sentence frames that match the actual organization of the recording."
+      "mistake": "Skipping the final language check in Summarize spoken text.",
+      "why_it_hurts": "Spelling, punctuation, sentence-boundary, and agreement errors can reduce clarity and language quality.",
+      "fix": "Reserve a final review period for content, length, grammar, spelling, and punctuation."
     }
   ],
-  "practice_plan": [
-    {
-      "stage": "1. Task orientation",
-      "duration": "10 minutes",
-      "activities": [
-        "Review the purpose of Summarize spoken text and Highlight correct summary.",
-        "Identify the skills shared by both tasks.",
-        "Compare writing a summary with selecting a summary.",
-        "Read the on-screen instructions for each practice item carefully."
-      ],
-      "success_measure": "The learner can explain the final response required for each task without confusing the two."
-    },
-    {
-      "stage": "2. Signpost and attitude training",
-      "duration": "15 minutes",
-      "activities": [
-        "Sort signpost words into topic, sequence, addition, contrast, example, cause, and conclusion groups.",
-        "Sort attitude words into positive, negative, neutral, certain, and uncertain groups.",
-        "Listen to short statements and label the speaker's degree of certainty.",
-        "Rewrite strong claims as cautious claims and cautious claims as strong claims to observe the difference."
-      ],
-      "success_measure": "The learner correctly identifies the function of at least eight out of ten signal expressions."
-    },
-    {
-      "stage": "3. Keyword note-taking",
-      "duration": "20 minutes",
-      "activities": [
-        "Listen to four short mini-lectures.",
-        "Write no more than eight to twelve note units for each recording.",
-        "Use at least three symbols or abbreviations.",
-        "Label each note as topic, main point, support, example, or conclusion.",
-        "Compare the notes with a transcript only after completing the listening attempt."
-      ],
-      "success_measure": "The notes capture the central message and at least two major points without becoming sentence-by-sentence transcription."
-    },
-    {
-      "stage": "4. Guided summary construction",
-      "duration": "20 minutes",
-      "activities": [
-        "Turn one note map into a single central-message sentence.",
-        "Add two major supporting points using suitable linkers.",
-        "Add one qualification or conclusion when present.",
-        "Remove unnecessary examples and repeated ideas.",
-        "Check grammar, spelling, punctuation, and the task's required length."
-      ],
-      "success_measure": "The summary is accurate, concise, complete, and free from personal opinion."
-    },
-    {
-      "stage": "5. Correct-summary elimination",
-      "duration": "20 minutes",
-      "activities": [
-        "Listen to a recording without reading the options first.",
-        "Create a topic-main points-conclusion note map.",
-        "Label each option as accurate, contradicted, not mentioned, too narrow, too broad, or incomplete.",
-        "Choose the option with the best overall coverage.",
-        "Explain why every rejected option is weaker."
-      ],
-      "success_measure": "The learner selects the correct option and gives an evidence-based reason for rejecting each distractor."
-    },
-    {
-      "stage": "6. Timed mixed practice",
-      "duration": "25 minutes",
-      "activities": [
-        "Complete one Summarize spoken text item under the displayed test conditions.",
-        "Complete two Highlight correct summary items under the displayed test conditions.",
-        "Do not replay the recordings during the timed attempt.",
-        "Record confidence levels before checking the answers.",
-        "Review whether each error came from listening, notes, interpretation, language, or time management."
-      ],
-      "success_measure": "The learner follows the complete method without pausing the recording or abandoning the checking stage."
-    },
-    {
-      "stage": "7. Feedback and repair",
-      "duration": "10 minutes",
-      "activities": [
-        "Compare the response with a model or answer explanation.",
-        "Underline missing main ideas and circle unnecessary details.",
-        "Correct language errors in the written response.",
-        "Rewrite one weak summary sentence.",
-        "Record one specific strategy to use in the next attempt."
-      ],
-      "success_measure": "The learner can name the cause of each error and produce a corrected response."
-    },
-    {
-      "stage": "8. Homework extension",
-      "duration": "Optional additional practice",
-      "activities": [
-        "Complete two new spoken-summary items on different academic topics.",
-        "Complete three correct-summary selection items.",
-        "Maintain an error log with listening, content, organization, grammar, spelling, and selection categories.",
-        "Repeat one failed item after reviewing the error, using a fresh set of notes.",
-        "Track whether accuracy improves across three practice sessions."
-      ],
-      "success_measure": "The learner shows fewer repeated errors and more consistent identification of main ideas."
-    }
-  ],
+  "practice_plan": {
+    "time_budget": [
+      {
+        "phase": "Item-type orientation",
+        "minutes": "10",
+        "focus": "Compare the purpose, response type, and main challenges of Summarize spoken text and Highlight correct summary."
+      },
+      {
+        "phase": "Signpost training",
+        "minutes": "15",
+        "focus": "Classify lecture signals for topic, sequence, contrast, emphasis, example, cause, result, and conclusion."
+      },
+      {
+        "phase": "Key-word note-taking",
+        "minutes": "20",
+        "focus": "Listen to short recordings and reduce each section to key words, symbols, and relationships."
+      },
+      {
+        "phase": "Attitude and certainty",
+        "minutes": "15",
+        "focus": "Identify positive, negative, neutral, certain, and uncertain language."
+      },
+      {
+        "phase": "Summary construction",
+        "minutes": "25",
+        "focus": "Transform note maps into concise written summaries using topic, claim, support, and conclusion."
+      },
+      {
+        "phase": "Option elimination",
+        "minutes": "20",
+        "focus": "Classify summary statements as supported, contradicted, not mentioned, too narrow, or distorted."
+      },
+      {
+        "phase": "Timed mixed practice",
+        "minutes": "10",
+        "focus": "Complete one written-summary task and one correct-summary selection under task conditions."
+      },
+      {
+        "phase": "Review and error log",
+        "minutes": "5",
+        "focus": "Record missed signposts, note-taking problems, content omissions, grammar errors, and distractor patterns."
+      }
+    ],
+    "drills": [
+      {
+        "name": "Five-keyword challenge",
+        "instructions": "Listen to a 30- to 45-second academic passage and record only five key words. Reconstruct the topic, main claim, and conclusion from those words."
+      },
+      {
+        "name": "Signpost sorting",
+        "instructions": "Sort expressions into introduction, sequence, contrast, example, emphasis, cause, result, and conclusion groups, then predict what type of information should follow each one."
+      },
+      {
+        "name": "Main idea or example",
+        "instructions": "Review ten lecture statements and label each as main idea, supporting point, example, repetition, or background information."
+      },
+      {
+        "name": "Certainty correction",
+        "instructions": "Rewrite inaccurate summaries that replace \"may,\" \"might,\" or \"perhaps\" with definite language, or that weaken strong claims such as \"clearly\" and \"without doubt.\""
+      },
+      {
+        "name": "Distractor autopsy",
+        "instructions": "For each incorrect Highlight correct summary option, identify the exact failure: contradiction, unsupported addition, missing main point, distorted emphasis, excessive detail, or reversed relationship."
+      },
+      {
+        "name": "Thirty-second planning",
+        "instructions": "After listening, spend thirty seconds organizing notes into topic, main claim, support one, support two, support three, and conclusion before drafting."
+      },
+      {
+        "name": "Compression ladder",
+        "instructions": "Reduce a lecture transcript first to six lines of notes, then to three main points, and finally to one concise summary paragraph without losing the central message."
+      },
+      {
+        "name": "Spelling and vocabulary replay",
+        "instructions": "Review difficult content words from practice recordings, confirm their spelling, create short collocations, and reuse them in a new summary sentence."
+      }
+    ],
+    "routine": "For every practice recording, complete the same cycle: predict only the broad academic topic, listen once without pausing, map the topic and lecture structure, mark attitude and certainty, filter examples and repetition, produce or select the response, and finish with an evidence-based review. Maintain an error log with separate columns for missed main ideas, weak notes, misunderstood vocabulary, incorrect certainty, grammar, spelling, and distractor type."
+  },
   "mastery_checklist": [
-    "I can identify the broad topic within the opening part of a lecture.",
-    "I can state the recording's central message in one sentence.",
-    "I can distinguish major supporting points from examples and minor details.",
-    "I can recognize signposts that show sequence, addition, contrast, cause, example, and conclusion.",
-    "I can use stressed or repeated words as clues to importance.",
-    "I can infer whether the speaker is positive, negative, neutral, certain, or uncertain.",
-    "I can take keyword notes without trying to transcribe every sentence.",
-    "I can use abbreviations and symbols without making my notes difficult to understand.",
-    "I can reconstruct the lecture's logical sequence from my notes.",
-    "I can write an objective summary without adding personal opinions.",
-    "I can preserve cautious language such as may, might, probably, and perhaps.",
-    "I can combine major ideas using accurate grammatical linkers.",
-    "I can remove examples that are not essential to the central message.",
-    "I can check word count, grammar, spelling, punctuation, and sentence completeness.",
-    "I can reject an option containing information that was not mentioned.",
-    "I can reject an option that contradicts the recording.",
-    "I can reject an option that focuses only on a minor supporting point.",
-    "I can detect options that are too broad, too narrow, or overly certain.",
-    "I can choose the summary that best covers the main idea and important supporting points.",
-    "I can complete both item types under the timing and response conditions displayed in the task."
+    "I can identify the lecture topic within the opening section of a recording.",
+    "I can distinguish the central message from an example, statistic, or personal anecdote.",
+    "I can recognize signposts that introduce, sequence, contrast, emphasize, and conclude ideas.",
+    "I can take useful notes without attempting word-for-word transcription.",
+    "I can show cause, effect, contrast, and sequence through simple note-taking symbols.",
+    "I can identify the speaker's purpose, attitude, and degree of certainty.",
+    "I can reduce my notes to the topic, main claim, essential support, and conclusion.",
+    "I can write an objective summary instead of retelling the lecture as a narrative.",
+    "I can combine several related details into concise and accurate language.",
+    "I can reject an option containing a major contradiction even when some details are correct.",
+    "I can identify information that is reasonable but not mentioned in the recording.",
+    "I can reject a summary that focuses on a minor point and omits the main idea.",
+    "I can preserve cautious language such as \"may\" and strong language such as \"must.\"",
+    "I can check my written response for content, task length, grammar, spelling, and punctuation.",
+    "I can complete both item types under timed conditions without changing my strategy."
   ],
   "strategy_notes": [
-    {
-      "focus": "Listen before evaluating",
-      "guidance": "Build your own understanding of the recording before allowing answer options to influence you."
-    },
-    {
-      "focus": "Meaning over exact wording",
-      "guidance": "A correct summary may paraphrase the recording and use very different vocabulary. Judge whether the meaning and relationships remain accurate."
-    },
-    {
-      "focus": "Global accuracy",
-      "guidance": "The best summary represents the whole recording. One correct detail cannot compensate for a missing or distorted central message."
-    },
-    {
-      "focus": "Information hierarchy",
-      "guidance": "Prioritize the topic, central claim, two or three major points, and final conclusion. Treat examples and repeated wording as lower priority."
-    },
-    {
-      "focus": "Option comparison",
-      "guidance": "Do not stop when an option seems acceptable. Compare all options and select the one that is most complete and least distorted."
-    },
-    {
-      "focus": "Extreme language",
-      "guidance": "Be cautious with options using all, always, never, completely, only, or proves. Accept such wording only when the speaker clearly supports it."
-    },
-    {
-      "focus": "Lecture endings",
-      "guidance": "The final part may summarize, qualify, or revise earlier points. Listen carefully for the speaker's conclusion rather than relying only on opening statements."
-    },
-    {
-      "focus": "Flexible summary structure",
-      "guidance": "Match the response structure to the lecture. Use cause-effect language for causal lectures, contrast language for comparisons, and sequence language for processes."
-    },
-    {
-      "focus": "Language control",
-      "guidance": "Prefer accurate, manageable sentence structures over overly complex sentences that create grammar or punctuation errors."
-    },
-    {
-      "focus": "Error diagnosis",
-      "guidance": "After practice, classify mistakes as missed audio, weak notes, wrong importance judgment, distorted attitude, unsupported inference, grammar, spelling, or time management."
-    },
-    {
-      "focus": "One-listen discipline",
-      "guidance": "During realistic practice, play the recording only once so note-taking and concentration develop under authentic pressure."
-    },
-    {
-      "focus": "Instruction awareness",
-      "guidance": "Follow the word limit, timing, and response instructions displayed in the actual item rather than relying only on memorized preparation rules."
-    }
+    "The first and final parts of a lecture often contain valuable clues to the topic, purpose, and conclusion, but the whole recording must still be considered.",
+    "Repeated or strongly stressed vocabulary may signal importance, although repetition alone does not automatically make an idea the main point.",
+    "When a lecturer announces a number, such as \"three reasons,\" create three numbered spaces immediately so the structure is ready before the details arrive.",
+    "Examples introduced by \"for instance\" or \"such as\" usually support a broader idea; summarize the broader category unless the example is essential.",
+    "A strong Highlight correct summary option normally captures both the central message and the most important support without introducing new claims.",
+    "One serious contradiction can make an option incorrect even when the rest of the paragraph sounds accurate.",
+    "An option may be factually related to the topic but still be wrong because the information was not mentioned in the recording.",
+    "Prefer controlled, accurate sentences over highly complex sentences that increase the risk of grammar errors.",
+    "Use the simple present for reporting the lecture's content, such as \"the speaker explains\" or \"the lecture identifies,\" unless another tense is logically necessary.",
+    "Do not copy fragments from notes without restoring grammar, logical links, and complete sentence structure.",
+    "When two options seem possible, compare their treatment of the main conclusion, not only their supporting details.",
+    "After each practice item, explain why every rejected option is wrong; this develops stronger discrimination than checking only the correct answer."
   ],
   "metadata": {
-    "chapter_number": 15,
-    "lesson_number": 14,
-    "estimated_study_time": "Approximately 2 hours plus optional homework practice",
-    "difficulty": "intermediate_to_upper_intermediate",
-    "delivery_style": "teaching_first",
-    "lesson_sequence": [
-      "understand the task types",
-      "recognize lecture signals",
-      "take structured notes",
-      "separate main and supporting information",
-      "write or select a summary",
-      "check accuracy and language",
-      "complete timed practice",
-      "review and repair errors"
-    ],
-    "assessment_focus": [
-      "main-idea accuracy",
-      "supporting-point coverage",
-      "speaker-purpose and attitude recognition",
-      "logical organization",
-      "grammar and spelling",
-      "option-elimination accuracy",
-      "time management"
-    ],
-    "recommended_resources": [
-      "short academic lectures",
-      "note-taking worksheet",
-      "signpost-word reference list",
-      "speaker-attitude vocabulary bank",
-      "summary evaluation checklist",
-      "timed PTE-style practice items"
-    ],
+    "difficulty": "Intermediate to upper-intermediate",
+    "estimated_study_time": "Plan one focused study session of about 2 hours, plus extra time for homework practice if needed.",
     "tags": [
-      "pte-academic",
+      "PTE Academic",
       "listening",
-      "summarize-spoken-text",
-      "highlight-correct-summary",
+      "writing",
+      "reading",
+      "summarize spoken text",
+      "highlight correct summary",
       "note-taking",
-      "main-idea",
-      "speaker-attitude",
-      "summary-writing",
-      "option-elimination",
-      "timed-practice"
-    ]
+      "main idea",
+      "signpost words",
+      "speaker attitude",
+      "certainty",
+      "summary writing",
+      "option elimination",
+      "integrated skills",
+      "timed practice"
+    ],
+    "provenance_note": "Teaching-first enrichment based on the supplied Chapter 15 lesson material, including its learning objectives, terminology, source teaching points, worked examples, misconceptions, practice items, and self-check statements. Original mini lectures, response models, annotations, drills, and option-analysis examples were added to make the lesson directly teachable and suitable for independent practice."
   }
 }

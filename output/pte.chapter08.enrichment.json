@@ -1,502 +1,560 @@
 {
   "schema_version": "pte_lesson_enrichment.v1",
-  "task_type": "integrated_skills_recap",
+  "task_type": "recap_lesson_1",
   "lesson_title": "RECAP LESSON 1",
   "source_label": "pte:ch08",
-  "modality": {
-    "primary": "review, reflection, discussion, and targeted practice",
-    "skills": [
-      "speaking",
-      "writing",
-      "reading",
-      "listening"
-    ],
-    "delivery": [
-      "individual reflection",
-      "pair assessment",
-      "small-group problem-solving",
-      "timed independent practice"
-    ]
-  },
+  "modality": "integrated",
   "overview": {
-    "purpose": "This lesson consolidates the strategies and skills developed in Lessons 1–7. Instead of reteaching every item type, learners identify what they can already do, diagnose recurring difficulties, exchange practical solutions, and select the most useful activities for further practice.",
-    "estimated_study_time": "45–60 minutes",
-    "main_outcome": "By the end of the lesson, the learner should have a clear record of strengths, priority problem areas, recommended strategies, and a short plan for future practice.",
-    "teaching_focus": [
-      "recalling item types and their required skills",
-      "distinguishing confidence from actual performance",
-      "turning general problems into specific improvement actions",
-      "using partner feedback constructively",
-      "prioritizing practice according to need rather than repeating everything"
+    "what_it_is": "A diagnostic review lesson in which learners recall the PTE Academic item types studied in Lessons 1–7, identify their strengths and problem areas, compare responses with a partner or group, convert difficulties into practical improvement strategies, and choose targeted extra practice. It is not a separate scored PTE item type; it is a structured learning process for improving speaking, writing, reading, and listening performance.",
+    "format_facts": [
+      {
+        "label": "Primary purpose",
+        "value": "Review earlier item types, diagnose difficulties, and create specific improvement actions."
+      },
+      {
+        "label": "Interaction format",
+        "value": "Individual reflection followed by pair, small-group, or whole-class discussion."
+      },
+      {
+        "label": "Main review cycle",
+        "value": "Recall the task, identify the skill, describe the problem, compare evidence, choose a solution, and repeat the task."
+      },
+      {
+        "label": "Item types emphasized",
+        "value": "Answer short question; Read aloud; Repeat sentence; Reading: Fill in the blanks; Reading & writing: Fill in the blanks; Select missing word; Highlight incorrect words; and Summarize written text."
+      },
+      {
+        "label": "Items normally deferred",
+        "value": "Reading multiple-choice items and Write essay do not require detailed recap here because they receive further treatment in later lessons."
+      },
+      {
+        "label": "Recommended duration",
+        "value": "Approximately 45–60 minutes, with additional time for selected practice tasks."
+      }
     ],
-    "recap_scope": [
-      "Answer short question",
-      "Read aloud",
-      "Repeat sentence",
-      "Reading: Fill in the blanks",
-      "Reading & writing: Fill in the blanks",
-      "Select missing word",
-      "Highlight incorrect words",
-      "Summarize written text"
+    "scoring_factors": [
+      {
+        "name": "Accurate task recall",
+        "what_it_measures": "Whether the learner can correctly explain what each reviewed item type requires and which communicative skills it uses."
+      },
+      {
+        "name": "Diagnostic specificity",
+        "what_it_measures": "Whether the learner identifies a precise difficulty, such as hesitation, weak prediction, poor detail selection, spelling, or loss of concentration, rather than using a vague label such as bad English."
+      },
+      {
+        "name": "Evidence-based reflection",
+        "what_it_measures": "Whether strengths and weaknesses are supported by examples from completed practice responses, recordings, notes, or feedback."
+      },
+      {
+        "name": "Strategy usefulness",
+        "what_it_measures": "Whether the proposed solution directly addresses the identified problem and can be practised in a repeatable way."
+      },
+      {
+        "name": "Transfer across skills",
+        "what_it_measures": "Whether the learner can connect one underlying skill, such as identifying main ideas or processing language quickly, to several PTE item types."
+      }
+    ],
+    "critical_rules": [
+      "Do not treat the recap as passive revision; produce written evidence of strengths, weaknesses, causes, and next actions.",
+      "Describe one observable problem at a time, such as pausing too long before answering, rather than making a general statement such as speaking is difficult.",
+      "Base peer feedback on the response or task requirements, not on personal preference.",
+      "Give at least one positive observation before recommending a correction.",
+      "Match every solution to the cause of the problem; more practice alone is not a complete strategy.",
+      "Repeat a task after feedback whenever possible so that the learner tests whether the new strategy works.",
+      "Prioritize high-impact weaknesses or patterns that affect several item types.",
+      "Do not spend equal time on every earlier item type when some skills are already secure."
     ]
   },
   "learning_goals": [
-    "Name the item types covered in Lessons 1–7 and identify the communicative and enabling skills used in each one.",
-    "Describe at least two current strengths and two priority difficulties across speaking, writing, reading, and listening.",
-    "Explain a practice problem precisely by identifying what happened, when it happened, and why it may have happened.",
-    "Use self-assessment and partner feedback to identify one realistic improvement action for each priority skill.",
-    "Distinguish between an item-type problem, such as misunderstanding the task, and a language problem, such as weak vocabulary or pronunciation.",
-    "Choose extra practice activities based on evidence from previous responses rather than practising every item type equally.",
-    "Record useful strategies from classmates or a study partner and decide which strategies are suitable for personal use.",
-    "Create a short follow-up plan containing a target skill, practice activity, success measure, and review date."
+    "Name the main item types studied in Lessons 1–7 and explain the response required for each one.",
+    "Connect each reviewed item type to the speaking, writing, reading, listening, grammar, vocabulary, spelling, pronunciation, or fluency skills it uses.",
+    "Identify personal strengths using specific evidence from previous practice.",
+    "Identify precise problem areas and distinguish symptoms from likely causes.",
+    "Give and receive constructive peer feedback using task-focused language.",
+    "Turn each significant problem into a practical strategy and a measurable next step.",
+    "Select extra practice according to need rather than repeating every activity.",
+    "Complete a short review cycle and record whether performance improves after applying feedback."
   ],
   "core_method": {
-    "name": "Recall–Diagnose–Discuss–Repair–Repeat",
-    "principle": "A recap is most useful when learners actively retrieve earlier strategies, analyse real performance problems, and test a specific solution.",
+    "name": "REVIEW–DIAGNOSE–SOLVE–REPEAT",
+    "summary": "Use a six-stage cycle to recall an item type, examine actual performance, identify the exact problem and its cause, obtain focused feedback, choose one corrective action, and immediately test that action through repeated practice.",
     "steps": [
       {
-        "step": 1,
-        "label": "Recall",
-        "instruction": "Without consulting notes, list the earlier item types and write the main skill or skills required for each one."
+        "step": "Recall",
+        "detail": "Name the item type, describe what appears on screen, state the required response, and identify the main skills involved without first checking the guide."
       },
       {
-        "step": 2,
-        "label": "Diagnose",
-        "instruction": "Review previous practice and identify exact moments where performance became difficult, inaccurate, slow, hesitant, or incomplete."
+        "step": "Review evidence",
+        "detail": "Examine a previous answer, recording, completed worksheet, practice score, or memory of the task and note what happened."
       },
       {
-        "step": 3,
-        "label": "Discuss",
-        "instruction": "Explain one problem to a partner using evidence from an actual response, then listen to the partner’s questions and suggestions."
+        "step": "Diagnose",
+        "detail": "Write one strength, one precise weakness, and the likely cause of the weakness."
       },
       {
-        "step": 4,
-        "label": "Repair",
-        "instruction": "Choose one practical strategy that directly addresses the cause of the problem, not merely its visible result."
+        "step": "Compare",
+        "detail": "Exchange responses with a familiar partner and ask for one evidence-based positive comment and one high-priority improvement."
       },
       {
-        "step": 5,
-        "label": "Repeat",
-        "instruction": "Attempt a short practice item again while deliberately applying the chosen strategy."
+        "step": "Solve",
+        "detail": "Choose one concrete strategy, such as reducing notes to keywords, predicting grammar before listening, or answering immediately with a short phrase."
       },
       {
-        "step": 6,
-        "label": "Evaluate",
-        "instruction": "Compare the new attempt with the earlier one and decide whether the strategy improved accuracy, fluency, timing, organization, or confidence."
+        "step": "Repeat",
+        "detail": "Attempt a similar task again, apply the selected strategy, and record whether accuracy, fluency, speed, or confidence improved."
       }
-    ]
+    ],
+    "formula": "ITEM TYPE + REQUIRED SKILL + OBSERVED PROBLEM + LIKELY CAUSE + ONE STRATEGY + REPEATED TASK = TARGETED IMPROVEMENT"
   },
   "techniques": [
     {
-      "name": "Item-Type and Skill Mapping",
-      "purpose": "Connect each item type with the exact abilities needed to complete it.",
-      "procedure": [
-        "Write the item type in the first column.",
-        "Write the tested communicative skills in the second column.",
-        "Add enabling skills such as grammar, spelling, vocabulary, pronunciation, oral fluency, or written discourse.",
-        "Mark each skill as confident, developing, or priority.",
-        "Check earlier lesson notes only after completing the map from memory."
+      "name": "Item-Type Memory Map",
+      "purpose": "Rebuild accurate knowledge of earlier PTE tasks and reveal gaps in task understanding.",
+      "how_to": [
+        "Write the names of the item types studied in Lessons 1–7 from memory.",
+        "For each item, record the input mode, the required response, and the skills used.",
+        "Add one strategy that is essential for successful performance.",
+        "Check the completed map against lesson notes only after recalling independently.",
+        "Mark uncertain or incorrect entries as priority review areas."
       ],
-      "example": "Repeat sentence → listening, speaking, short-term memory, pronunciation, stress, and oral fluency."
+      "example": "Repeat sentence: input is spoken; response is spoken; main skills are listening, memory, pronunciation, stress, and oral fluency; useful strategy is to retain meaningful chunks rather than isolated words.",
+      "why_it_matters": "A learner cannot improve efficiently when the task requirements or scoring-relevant skills are misunderstood.",
+      "common_error": "Listing only the item names without explaining what the learner must actually do."
     },
     {
-      "name": "Evidence-Based Confidence Check",
-      "purpose": "Prevent learners from judging performance only by feelings.",
-      "procedure": [
-        "State whether you feel confident about the task.",
-        "Review an actual response or score.",
-        "Identify evidence supporting or contradicting that feeling.",
-        "Rewrite the judgment using specific language.",
-        "Choose one measurable next step."
+      "name": "Strength–Problem–Evidence Record",
+      "purpose": "Replace vague self-evaluation with specific, observable information.",
+      "how_to": [
+        "Choose one completed practice item.",
+        "Write one successful feature of the response.",
+        "Write one feature that reduced accuracy, clarity, fluency, or task completion.",
+        "Add evidence, such as a missing main point, a long pause, an incorrect word, or an unfinished sentence.",
+        "Rate the problem as high, medium, or low priority."
       ],
-      "example": "Instead of saying 'I am bad at listening,' say 'I usually understand the topic, but I miss individual words when the speaker changes speed.'"
+      "example": "Strength: I understood the topic of the summary passage. Problem: I included too many minor details. Evidence: my sentence mentioned three examples but did not clearly state the writer's main claim.",
+      "why_it_matters": "Specific evidence makes it possible to select a strategy that addresses the real weakness.",
+      "common_error": "Writing broad comments such as vocabulary is weak without identifying where or how vocabulary caused a problem."
     },
     {
-      "name": "Problem–Cause–Solution Note",
-      "purpose": "Turn vague difficulties into actionable improvements.",
-      "procedure": [
-        "Describe the visible problem.",
-        "Identify the likely cause.",
-        "Select one strategy aimed at that cause.",
-        "Choose a practice item where the strategy can be tested.",
-        "Record what improvement would look like."
+      "name": "Problem-to-Solution Ladder",
+      "purpose": "Develop a corrective strategy that addresses the cause of a problem rather than only its visible symptom.",
+      "how_to": [
+        "State the observed problem in one sentence.",
+        "Ask why the problem happened.",
+        "Ask whether the cause is task knowledge, language knowledge, processing speed, attention, memory, or test strategy.",
+        "Choose one action that directly addresses that cause.",
+        "Define how the action will be practised and measured."
       ],
-      "example": "Problem: I hesitate in Answer short question. Cause: I try to produce a full sentence. Solution: give one accurate word or short phrase immediately."
+      "example": "Problem: I miss the final word in Select missing word. Cause: I stop following the speaker while considering earlier options. Solution: delay option evaluation, follow the whole argument, and predict the ending from the final sentence and discourse direction.",
+      "why_it_matters": "Repeating the same task without changing the underlying process often repeats the same mistake.",
+      "common_error": "Using practise more as the only solution without specifying what to practise differently."
     },
     {
-      "name": "Partner Feedback with One Priority",
-      "purpose": "Keep peer assessment focused and manageable.",
-      "procedure": [
-        "The learner completes one response.",
-        "The partner first identifies one successful feature.",
-        "The partner identifies one high-impact weakness.",
-        "The partner recommends one specific change.",
-        "The learner repeats the task using only that change."
+      "name": "Two Stars and One Next Step",
+      "purpose": "Make peer assessment balanced, constructive, and easy to apply.",
+      "how_to": [
+        "Listen to or read the complete response before commenting.",
+        "Identify two features that supported successful task completion.",
+        "Choose only one high-impact improvement for the next attempt.",
+        "Link the improvement to a specific part of the response.",
+        "Ask the learner to restate the next step in their own words."
       ],
-      "example": "Your answer was accurate, but the first word was delayed. On the next attempt, begin as soon as you know the answer."
+      "example": "Star 1: Your short answer was accurate. Star 2: Your pronunciation was clear. Next step: begin speaking sooner because the pause before the answer was longer than necessary.",
+      "why_it_matters": "Limited, prioritized feedback is easier to remember and apply than a long list of corrections.",
+      "common_error": "Correcting every minor language issue and leaving the learner unsure which change matters most."
     },
     {
-      "name": "Think-Aloud Strategy Review",
-      "purpose": "Reveal the decisions made before, during, and after a task.",
-      "procedure": [
-        "Explain what you noticed first.",
-        "Describe how you selected or produced the answer.",
-        "Identify where uncertainty appeared.",
-        "Explain why an alternative was rejected.",
-        "Decide which part of the process should change next time."
+      "name": "Cross-Skill Pattern Hunt",
+      "purpose": "Identify one underlying weakness that affects several PTE item types.",
+      "how_to": [
+        "Review problems from speaking, writing, reading, and listening tasks.",
+        "Group similar problems under broader skills such as main-idea recognition, rapid word retrieval, grammar, concentration, or working memory.",
+        "Identify which pattern appears most often.",
+        "Select a drill that supports several item types.",
+        "Track whether improvement transfers to more than one task."
       ],
-      "example": "In Select missing word, I rejected one option because its grammar fitted but its meaning did not logically complete the speaker’s conclusion."
+      "example": "A learner misses the main idea in Summarize written text, Select missing word, and listening review tasks. The shared weakness is following discourse structure, so the learner practises identifying topic sentences, contrast markers, conclusions, and final claims.",
+      "why_it_matters": "Improving one shared skill can produce gains across multiple sections of the test.",
+      "common_error": "Treating every incorrect response as an unrelated mistake."
     },
     {
-      "name": "Targeted Repetition",
-      "purpose": "Repeat only the part of a task connected to the identified weakness.",
-      "procedure": [
-        "Choose one high-priority problem.",
-        "Select a short matching activity.",
-        "Complete the activity once without assistance.",
-        "Review the specific target rather than every feature.",
-        "Repeat immediately and compare the two attempts."
+      "name": "Priority Practice Matrix",
+      "purpose": "Choose the most useful extra practice when review time is limited.",
+      "how_to": [
+        "List the identified problem areas.",
+        "Rate each problem by frequency, impact, and confidence.",
+        "Prioritize problems that occur often and affect several item types.",
+        "Choose one short drill and one authentic practice item for the highest-priority problem.",
+        "Postpone low-impact issues until the major weakness is more stable."
       ],
-      "example": "For weak sentence stress, repeat one Read aloud passage three times while marking and emphasizing content words."
-    },
-    {
-      "name": "Four-Skill Review Rotation",
-      "purpose": "Ensure that speaking, writing, reading, and listening are all considered without giving them equal practice time automatically.",
-      "procedure": [
-        "Spend two minutes reviewing each skill.",
-        "Write one strength and one difficulty for each skill.",
-        "Rank the four difficulties by impact.",
-        "Choose the top one or two for practice.",
-        "Leave lower-priority areas for a later review session."
-      ],
-      "example": "A learner may review all four skills but spend most practice time on listening if it affects Answer short question, Repeat sentence, Select missing word, and Highlight incorrect words."
+      "example": "Hesitation affects Answer short question, Read aloud, and Repeat sentence, so immediate-response and chunking drills receive priority over reviewing a single rare vocabulary error.",
+      "why_it_matters": "Review time produces better results when it is directed toward high-impact weaknesses.",
+      "common_error": "Practising only the easiest or most enjoyable item type."
     }
   ],
   "worked_examples": [
     {
-      "title": "Summarize Written Text: Choosing Supporting Details",
-      "situation": "The learner can identify the general topic but includes too many examples and minor details.",
-      "problem": "I understand what the passage is about, but I do not know which information belongs in the summary.",
-      "diagnosis": "The learner has identified the topic but has not separated the central claim from evidence and examples.",
-      "partner_questions": [
-        "What single point connects most of the passage?",
-        "Which details directly explain or support that point?",
-        "Would the main meaning remain clear if this detail were removed?",
-        "Is this information a central point or only an example?"
-      ],
-      "solution": "Agree on the main idea first, then retain only the supporting points necessary to explain it. Remove examples, repetition, and minor statistics unless they are essential.",
-      "improved_action": "Write the main idea in a short note, list two supporting points, and build the final sentence from only those notes.",
-      "success_measure": "The summary communicates the passage’s main message without unrelated examples or excessive detail."
+      "title": "Selecting Details in Summarize Written Text",
+      "input": "Item type: Summarize written text. Learner reflection: I can identify the topic, but I do not know which details to keep. My summary often contains examples but the main argument is not clear.",
+      "decoding": "The issue is not basic comprehension of the topic. The learner has difficulty distinguishing the central claim from supporting evidence and therefore gives too much space to examples.",
+      "plan": "Agree on the main point first, label each remaining detail as essential support or optional example, keep only details that explain or qualify the main point, and compare the revised sentence with a partner.",
+      "model_answer": "Problem: I include interesting examples before establishing the writer's central message. Likely cause: I treat all factual information as equally important. Strategy: write the main claim in five to ten words, test every detail by asking whether it is necessary to understand that claim, and remove details that only illustrate it. Next practice: revise one earlier summary and then complete one new timed item.",
+      "annotations": [
+        {
+          "part": "Problem statement",
+          "comment": "The weakness is described precisely as poor selection of supporting information."
+        },
+        {
+          "part": "Likely cause",
+          "comment": "The learner is confusing examples with essential ideas rather than failing to understand the passage."
+        },
+        {
+          "part": "Strategy",
+          "comment": "The main claim is established before decisions are made about supporting details."
+        },
+        {
+          "part": "Measurement",
+          "comment": "The learner can compare the number and relevance of details before and after revision."
+        }
+      ]
     },
     {
-      "title": "Answer Short Question: Reducing Hesitation",
-      "situation": "The learner usually knows the answer but pauses because they are trying to create a complete sentence.",
-      "problem": "My response begins too late.",
-      "diagnosis": "The learner is adding unnecessary language instead of giving the simple response requested.",
-      "partner_feedback": "Your answers are often correct, but you hesitate before speaking. Practise producing one word or a short phrase immediately.",
-      "solution": "Listen for the question cue, predict the required answer category, and respond with the shortest accurate answer.",
-      "before": "The thing that a doctor uses to listen to the heart is called a stethoscope.",
-      "after": "A stethoscope.",
-      "success_measure": "The answer begins promptly and contains no unnecessary introduction."
+      "title": "Reducing Hesitation in Answer Short Question",
+      "input": "Learner reflection: I usually understand the question quickly, but I hesitate before speaking because I try to create a complete sentence.",
+      "decoding": "The task often requires only one word or a short phrase. The learner's desire to produce a full sentence increases response time without improving task completion.",
+      "plan": "Listen for the key question cue, retrieve the shortest accurate answer, respond immediately, and review accuracy after the attempt rather than editing silently before speaking.",
+      "model_answer": "Strength: I normally understand what information the question requests. Weakness: I delay my answer while constructing unnecessary grammar. Partner feedback: answer with one word or a short phrase as soon as the answer is known. Practice action: complete ten questions, record the delay before each answer, and aim to respond within approximately one second when confident.",
+      "annotations": [
+        {
+          "part": "Strength",
+          "comment": "The learner separates listening comprehension from speaking hesitation."
+        },
+        {
+          "part": "Task requirement",
+          "comment": "A short accurate response is prioritized over an unnecessary full sentence."
+        },
+        {
+          "part": "Peer feedback",
+          "comment": "The recommendation directly addresses the cause of hesitation."
+        },
+        {
+          "part": "Progress measure",
+          "comment": "Response delay and answer accuracy can both be monitored."
+        }
+      ]
     },
     {
-      "title": "Read Aloud: Improving Fluency Through Sense Groups",
-      "situation": "The learner pronounces most words correctly but reads one word at a time.",
-      "problem": "The response sounds slow and disconnected.",
-      "diagnosis": "The learner is focusing on individual words instead of meaningful phrases.",
-      "solution": "Mark sense groups before reading and pause only at logical boundaries.",
-      "marked_text": "Many university students // balance academic study // with part-time employment // to manage living expenses.",
-      "practice_sequence": [
-        "Read the sentence silently and mark phrase boundaries.",
-        "Underline important content words.",
-        "Read once slowly with clear grouping.",
-        "Read again at a natural rate.",
-        "Record and compare both attempts."
-      ],
-      "success_measure": "The second attempt has smoother phrasing, fewer unnecessary pauses, and clearer stress."
+      "title": "Maintaining Focus in Highlight Incorrect Words",
+      "input": "Learner reflection: I follow the first part of the recording, but after I click one incorrect word, I lose my place and miss the next difference.",
+      "decoding": "The main difficulty is attention recovery and eye–ear coordination, not vocabulary knowledge. The physical act of selecting a word interrupts continuous tracking.",
+      "plan": "Keep the eyes slightly ahead of the audio, use meaning groups rather than individual words, click without rereading previous text, and immediately return attention to the current spoken phrase.",
+      "model_answer": "Problem: selecting an error interrupts my tracking of the recording. Cause: I look back at the selected word to confirm it. Solution: make one click, do not verify during the recording, and move my eyes to the next phrase immediately. Extra drill: read a transcript while listening and lightly mark substitutions on paper without stopping.",
+      "annotations": [
+        {
+          "part": "Observed symptom",
+          "comment": "The learner misses later differences after making an earlier selection."
+        },
+        {
+          "part": "Root cause",
+          "comment": "The interruption comes from checking the previous answer rather than continuing to track the audio."
+        },
+        {
+          "part": "Corrective action",
+          "comment": "The strategy protects continuous attention during the one-time recording."
+        },
+        {
+          "part": "Supporting drill",
+          "comment": "Paper marking develops coordination before returning to computer-based selection."
+        }
+      ]
     },
     {
-      "title": "Repeat Sentence: Preserving Meaning When Memory Is Incomplete",
-      "situation": "The learner remembers the beginning of a sentence but loses several words in the middle.",
-      "problem": "I stop speaking when I cannot remember every word.",
-      "diagnosis": "The learner treats perfect recall as necessary and abandons the response after one memory gap.",
-      "solution": "Listen in meaningful chunks, retain the sentence rhythm and key content words, and continue speaking even if one small element is uncertain.",
-      "practice_method": [
-        "Listen for two or three sense groups.",
-        "Repeat the first group mentally while hearing the next one.",
-        "Begin promptly after the recording ends.",
-        "Maintain natural rhythm.",
-        "Avoid restarting after an error."
-      ],
-      "success_measure": "The learner produces more of the sentence continuously instead of stopping after the first forgotten word."
-    },
-    {
-      "title": "Fill in the Blanks: Combining Grammar and Collocation",
-      "situation": "Two answer choices appear possible based on general meaning.",
-      "problem": "I choose a word because it has the correct topic meaning, but the complete phrase sounds unnatural.",
-      "diagnosis": "The learner is checking meaning but not grammar and collocation.",
-      "solution": "Test every option using three filters: grammatical form, common word partnership, and overall meaning.",
-      "example_context": "Researchers must _____ evidence before reaching a conclusion.",
-      "option_analysis": [
-        "do evidence: incorrect collocation",
-        "make evidence: incorrect collocation",
-        "collect evidence: grammatically and semantically appropriate",
-        "perform evidence: unnatural word partnership"
-      ],
-      "success_measure": "The selected word fits the sentence structure, forms a natural collocation, and completes the intended meaning."
-    },
-    {
-      "title": "Highlight Incorrect Words: Recovering After a Missed Difference",
-      "situation": "The learner notices one mismatch but loses their place in the transcript.",
-      "problem": "After selecting one incorrect word, I miss the next part of the recording.",
-      "diagnosis": "Attention remains on the previous error instead of returning immediately to the audio.",
-      "solution": "Make the selection quickly, then move the eyes one or two words ahead and continue tracking.",
-      "practice_method": [
-        "Follow the text with the cursor.",
-        "Click only when a clear mismatch is heard.",
-        "Do not mentally review the previous selection.",
-        "Use sentence meaning to relocate your position if tracking is lost.",
-        "Continue until the recording ends."
-      ],
-      "success_measure": "One detected mismatch does not cause several later words to be missed."
+      "title": "Improving Context Decisions in Fill in the Blanks",
+      "input": "Learner reflection: I choose a word because its meaning seems suitable, but my answer is often grammatically wrong or does not form a natural phrase.",
+      "decoding": "The learner is using meaning alone and is not checking part of speech, sentence grammar, collocation, or the wider logical context.",
+      "plan": "Predict the required grammatical form, identify nearby collocations, compare the meaning of the available choices, insert the best option, and reread the complete sentence.",
+      "model_answer": "Problem: I select semantically related words without checking how they function in the sentence. Strategy: before looking at the choices, predict whether the blank requires a noun, verb, adjective, adverb, or fixed phrase; then eliminate options that do not fit the grammar or collocation. Final check: reread the sentence and the surrounding sentence to confirm both meaning and flow.",
+      "annotations": [
+        {
+          "part": "Initial diagnosis",
+          "comment": "The learner recognizes that meaning alone is insufficient."
+        },
+        {
+          "part": "Pre-selection step",
+          "comment": "Predicting the part of speech reduces the number of plausible options."
+        },
+        {
+          "part": "Collocation check",
+          "comment": "Natural word partnerships are considered alongside grammar."
+        },
+        {
+          "part": "Context check",
+          "comment": "The final answer must fit the whole passage, not only the words beside the blank."
+        }
+      ]
     }
   ],
-  "useful_language": {
-    "describing_strengths": [
-      "I am usually successful when I need to...",
-      "One skill I can use confidently is...",
-      "My strongest part of this item type is...",
-      "The evidence from my practice shows that...",
-      "Compared with my earlier attempt, I can now..."
-    ],
-    "describing_problems": [
-      "I understand the task, but I have difficulty with...",
-      "The problem usually begins when...",
-      "I lose accuracy when...",
-      "I can identify the main idea; however, I struggle to...",
-      "My response becomes less fluent because..."
-    ],
-    "asking_for_peer_feedback": [
-      "Which part of my response was strongest?",
-      "Where did my response become unclear or inaccurate?",
-      "What is the most important change I should make?",
-      "Did I apply the correct strategy for this item type?",
-      "Can you show me where my answer stopped matching the source?"
-    ],
-    "giving_constructive_feedback": [
-      "Your strongest feature was...",
-      "One high-priority improvement would be...",
-      "Your answer would be clearer if you...",
-      "The strategy worked until...",
-      "On the next attempt, focus mainly on..."
-    ],
-    "problem_solving_linkers": [
-      "The main problem is...",
-      "This may be caused by...",
-      "Therefore, a useful strategy would be...",
-      "For example,...",
-      "As a result,...",
-      "In contrast,...",
-      "However,...",
-      "The next step is..."
-    ],
-    "option_elimination_phrases": [
-      "This option is not mentioned in the source.",
-      "This choice contradicts the speaker’s main point.",
-      "This option contains a correct detail but misses the main idea.",
-      "This answer is grammatically possible but does not fit the context.",
-      "This choice is too broad, too narrow, or unsupported.",
-      "This word does not form a natural collocation with the surrounding words."
-    ],
-    "reflection_frames": [
-      "Before practice, I tended to...",
-      "The strategy I tested was...",
-      "The second attempt improved because...",
-      "I still need to work on...",
-      "In my next session, I will..."
-    ]
-  },
+  "useful_language": [
+    {
+      "category": "Describing strengths",
+      "items": [
+        {
+          "item": "One part I completed successfully was...",
+          "when_to_use": "Use when beginning a self-assessment with a specific positive observation."
+        },
+        {
+          "item": "The clearest evidence of improvement was...",
+          "when_to_use": "Use when comparing a recent response with an earlier attempt."
+        },
+        {
+          "item": "I was accurate when I...",
+          "when_to_use": "Use to connect a strength to an observable action or answer."
+        },
+        {
+          "item": "This strategy helped me to...",
+          "when_to_use": "Use when explaining why a particular technique was effective."
+        }
+      ]
+    },
+    {
+      "category": "Describing problems precisely",
+      "items": [
+        {
+          "item": "I understood the task, but I had difficulty with...",
+          "when_to_use": "Use to separate task knowledge from a language or processing weakness."
+        },
+        {
+          "item": "The problem usually occurs when...",
+          "when_to_use": "Use to identify the situation that triggers the difficulty."
+        },
+        {
+          "item": "I lost accuracy because...",
+          "when_to_use": "Use when explaining the likely cause of an incorrect response."
+        },
+        {
+          "item": "The part that needs the most attention is...",
+          "when_to_use": "Use when prioritizing one weakness among several possibilities."
+        }
+      ]
+    },
+    {
+      "category": "Giving peer feedback",
+      "items": [
+        {
+          "item": "Your strongest feature was...",
+          "when_to_use": "Use to begin partner feedback with task-relevant praise."
+        },
+        {
+          "item": "One change that could improve the next attempt is...",
+          "when_to_use": "Use to give one prioritized and actionable recommendation."
+        },
+        {
+          "item": "I noticed that after..., you...",
+          "when_to_use": "Use to connect feedback to a specific moment in the response."
+        },
+        {
+          "item": "The response would be clearer if...",
+          "when_to_use": "Use when suggesting a change to organization, wording, pronunciation, or detail selection."
+        }
+      ]
+    },
+    {
+      "category": "Explaining solutions",
+      "items": [
+        {
+          "item": "A practical way to address this is to...",
+          "when_to_use": "Use when proposing a focused corrective action."
+        },
+        {
+          "item": "Before answering, I will...",
+          "when_to_use": "Use for a preparation or prediction strategy."
+        },
+        {
+          "item": "During the task, I will focus on...",
+          "when_to_use": "Use to define the behaviour that should change during performance."
+        },
+        {
+          "item": "After the task, I will check whether...",
+          "when_to_use": "Use to create a measurable review step."
+        }
+      ]
+    },
+    {
+      "category": "Prioritizing practice",
+      "items": [
+        {
+          "item": "This should be my first priority because...",
+          "when_to_use": "Use when a weakness is frequent, high-impact, or shared across item types."
+        },
+        {
+          "item": "This skill affects both... and...",
+          "when_to_use": "Use when identifying a cross-skill improvement opportunity."
+        },
+        {
+          "item": "I can postpone this issue because...",
+          "when_to_use": "Use when a problem is minor or does not seriously affect task completion."
+        },
+        {
+          "item": "My next practice session will include...",
+          "when_to_use": "Use when converting reflection into a concrete study plan."
+        }
+      ]
+    }
+  ],
   "common_mistakes": [
     {
-      "mistake": "Treating the recap as a passive review of teacher explanations.",
-      "why_it_hurts": "The learner may remember advice but fail to connect it with personal performance problems.",
-      "correction": "Use actual responses, partner discussion, and repeated practice to generate learner-specific solutions."
+      "mistake": "Treating the recap as a teacher-led lecture.",
+      "why_it_hurts": "Learners do not examine their own performance, explain their difficulties, or develop independent problem-solving skills.",
+      "fix": "Use individual reflection, pair comparison, group problem-solving, and learner-generated solutions before teacher clarification."
     },
     {
-      "mistake": "Trying to review every earlier item type in equal detail.",
-      "why_it_hurts": "Limited time is spent on low-priority areas while serious weaknesses receive insufficient practice.",
-      "correction": "Briefly map all relevant item types, then concentrate on the problems with the greatest effect on performance."
+      "mistake": "Writing vague weaknesses such as listening is bad.",
+      "why_it_hurts": "A vague diagnosis does not show when the problem occurs or which strategy could correct it.",
+      "fix": "Name the exact behaviour, such as losing the next phrase after selecting an answer or missing contrast words near the end of a recording."
     },
     {
-      "mistake": "Using vague self-assessment statements such as 'My listening is bad.'",
-      "why_it_hurts": "A vague diagnosis does not identify what kind of practice is needed.",
-      "correction": "Describe the exact difficulty, such as losing track after an unfamiliar word or failing to predict the final idea."
+      "mistake": "Repeating every item type equally.",
+      "why_it_hurts": "Limited study time is spent on secure skills while high-impact weaknesses receive insufficient attention.",
+      "fix": "Prioritize problems according to frequency, impact, confidence, and transfer across tasks."
     },
     {
-      "mistake": "Giving peer feedback that contains only criticism.",
-      "why_it_hurts": "The learner may not know which successful behaviours should be retained.",
-      "correction": "Identify one strength, one priority weakness, and one practical next action."
+      "mistake": "Giving feedback based on preference rather than task requirements.",
+      "why_it_hurts": "Comments may encourage changes that do not improve accuracy, fluency, relevance, or comprehension.",
+      "fix": "Refer to the required response, the learner's evidence, and the skill being reviewed."
     },
     {
-      "mistake": "Giving too many corrections after one response.",
-      "why_it_hurts": "The learner cannot apply several new instructions effectively in an immediate repeat attempt.",
-      "correction": "Select the single change most likely to improve performance."
+      "mistake": "Giving too many corrections at once.",
+      "why_it_hurts": "The learner cannot remember or apply a long list during the next timed attempt.",
+      "fix": "Select one high-priority change and test it immediately."
     },
     {
-      "mistake": "Choosing extra practice because it is familiar or enjoyable.",
-      "why_it_hurts": "Practice may avoid the learner’s actual problem areas.",
-      "correction": "Choose activities based on evidence from errors, hesitation, timing, or incomplete responses."
+      "mistake": "Choosing a strategy that does not match the cause.",
+      "why_it_hurts": "For example, vocabulary study will not directly solve a concentration problem caused by checking earlier answers.",
+      "fix": "Identify whether the cause involves language knowledge, task knowledge, attention, memory, speed, or strategy before choosing the drill."
     },
     {
-      "mistake": "Repeating a task without changing the method.",
-      "why_it_hurts": "The same error pattern is likely to be repeated.",
-      "correction": "Before repeating, name the strategy to test and define what improvement should be visible."
+      "mistake": "Accepting feedback without repeating the task.",
+      "why_it_hurts": "The learner does not discover whether the proposed solution actually improves performance.",
+      "fix": "Complete a second attempt or a closely related practice item and compare the result."
     },
     {
-      "mistake": "Assuming that lack of confidence always means lack of ability.",
-      "why_it_hurts": "A learner may over-practise a task they already perform accurately while ignoring a less noticeable weakness.",
-      "correction": "Compare feelings with recordings, written responses, answer keys, timing, and partner observations."
-    },
-    {
-      "mistake": "Spending detailed recap time on Reading multiple-choice or Write essay in this lesson.",
-      "why_it_hurts": "These areas are covered again later, while other item types may need more immediate consolidation.",
-      "correction": "Prioritize the item types specifically connected with Lessons 1–7 and return to later-covered tasks in their dedicated lessons."
+      "mistake": "Recapping Reading multiple-choice and Write essay in excessive detail at this stage.",
+      "why_it_hurts": "It reduces time available for item types that are the intended focus of this recap and that may not receive immediate later review.",
+      "fix": "Record urgent questions about those tasks, but keep the main recap focused on the designated homework and feedback items."
     }
   ],
-  "practice_plan": [
-    {
-      "stage": "1. Rapid Recall",
-      "time": "5 minutes",
-      "activity": "List the item types from Lessons 1–7 and match each one with its main skills without using notes.",
-      "output": "A completed item-type and skill map.",
-      "check": "Confirm the map using previous lesson materials only after completing it from memory."
-    },
-    {
-      "stage": "2. Four-Skill Self-Assessment",
-      "time": "7 minutes",
-      "activity": "For speaking, writing, reading, and listening, record one strength, one difficulty, and one piece of evidence.",
-      "output": "Four short evidence-based reflections.",
-      "check": "Replace vague comments with descriptions of observable behaviour."
-    },
-    {
-      "stage": "3. Priority Ranking",
-      "time": "3 minutes",
-      "activity": "Rank the identified problems according to frequency, impact, and urgency.",
-      "output": "One primary problem and one secondary problem.",
-      "check": "The selected priorities should affect several tasks or significantly reduce scores."
-    },
-    {
-      "stage": "4. Partner Problem-Solving",
-      "time": "10 minutes",
-      "activity": "Explain one problem to a partner. The partner asks diagnostic questions and suggests one practical strategy.",
-      "output": "A Problem–Cause–Solution note.",
-      "check": "The proposed solution must directly address the identified cause."
-    },
-    {
-      "stage": "5. Targeted Practice Attempt",
-      "time": "8 minutes",
-      "activity": "Complete one short practice item connected with the priority problem.",
-      "output": "A recorded, written, or selected response.",
-      "check": "Complete the task under the appropriate time pressure where possible."
-    },
-    {
-      "stage": "6. Feedback and Immediate Repeat",
-      "time": "8 minutes",
-      "activity": "Receive one focused correction and repeat the same or a similar item using that correction.",
-      "output": "A second response for comparison.",
-      "check": "Compare accuracy, fluency, timing, organization, and strategy use between attempts."
-    },
-    {
-      "stage": "7. Independent Mini-Quiz",
-      "time": "5 minutes",
-      "activity": "Answer four recap questions: name three item types, explain one strategy, identify one problem cause, and choose one suitable practice activity.",
-      "output": "Four concise written answers.",
-      "check": "Each answer should contain specific item-type or skill language."
-    },
-    {
-      "stage": "8. Follow-Up Plan",
-      "time": "4 minutes",
-      "activity": "Write a plan for the next study session.",
-      "output": "A target, activity, success measure, and review point.",
-      "check": "The goal should be narrow enough to evaluate after one practice session."
-    }
-  ],
+  "practice_plan": {
+    "time_budget": [
+      {
+        "phase": "Independent recall",
+        "minutes": "6–8",
+        "focus": "List reviewed item types, required responses, and associated skills from memory."
+      },
+      {
+        "phase": "Personal diagnosis",
+        "minutes": "8–10",
+        "focus": "Record strengths, precise weaknesses, evidence, and likely causes."
+      },
+      {
+        "phase": "Peer comparison",
+        "minutes": "10–12",
+        "focus": "Exchange responses and provide two positive observations plus one next step."
+      },
+      {
+        "phase": "Group problem-solving",
+        "minutes": "8–10",
+        "focus": "Share common difficulties and develop practical solutions."
+      },
+      {
+        "phase": "Targeted repeat practice",
+        "minutes": "10–15",
+        "focus": "Apply one selected strategy to a similar task and compare performance."
+      },
+      {
+        "phase": "Action-plan close",
+        "minutes": "3–5",
+        "focus": "Record the next drill, success measure, and date for review."
+      }
+    ],
+    "drills": [
+      {
+        "name": "Three-Column Item Recall",
+        "instructions": "Create three columns labelled item type, required response, and main skills. Complete them from memory for at least eight reviewed item types, then correct the map using lesson notes."
+      },
+      {
+        "name": "One-Minute Problem Diagnosis",
+        "instructions": "Choose one earlier response and write the problem, evidence, likely cause, and one solution in sixty seconds. Repeat with three different item types."
+      },
+      {
+        "name": "Peer Feedback Exchange",
+        "instructions": "Give a partner two evidence-based strengths and one prioritized next step. The partner must explain how the suggestion will be applied in the next attempt."
+      },
+      {
+        "name": "Immediate Response Sprint",
+        "instructions": "Complete ten Answer short question prompts using only the shortest accurate answer. Track hesitation and review errors after the full set."
+      },
+      {
+        "name": "Main-Idea and Support Sort",
+        "instructions": "Take a short reading passage and classify each note as topic, main claim, essential support, example, or minor detail. Use the result to produce a concise summary plan."
+      },
+      {
+        "name": "Listen–Track–Recover",
+        "instructions": "Follow a transcript while listening once. Mark a deliberate mismatch without stopping, then move immediately to the next phrase to practise recovery for Highlight incorrect words."
+      },
+      {
+        "name": "Grammar–Meaning–Collocation Check",
+        "instructions": "For each blank, predict the part of speech, identify possible collocations, compare meanings, insert an answer, and reread the surrounding context."
+      },
+      {
+        "name": "Strategy Retest",
+        "instructions": "Repeat a similar practice item immediately after feedback and write one sentence explaining whether the chosen strategy improved accuracy, speed, fluency, or confidence."
+      }
+    ],
+    "routine": "Use a compact weekly review cycle: select one speaking, one reading or writing, and one listening response; complete the Strength–Problem–Evidence record; receive or simulate focused feedback; apply one correction; repeat a similar item; and record the result in an error-and-strategy log. Revisit recurring problems until the same weakness no longer appears across two or three practice sessions."
+  },
   "mastery_checklist": [
-    "I can name the main item types reviewed from Lessons 1–7.",
-    "I can connect each reviewed item type with its communicative and enabling skills.",
-    "I can explain at least two strengths using evidence from previous practice.",
-    "I can describe at least two difficulties in specific, observable language.",
-    "I can distinguish a task-strategy problem from a grammar, vocabulary, pronunciation, spelling, fluency, or comprehension problem.",
-    "I can explain a problem using the Problem–Cause–Solution structure.",
-    "I can ask a partner focused questions about the quality of my response.",
-    "I can give feedback that includes one strength, one priority problem, and one next action.",
-    "I can select a strategy that directly addresses the cause of an error.",
-    "I can repeat a practice task while deliberately applying one new strategy.",
-    "I can compare two attempts and identify whether the second one improved.",
-    "I can choose extra practice according to evidence and priority rather than familiarity.",
-    "I can identify which earlier item types do not require detailed review in this recap.",
-    "I can create a realistic follow-up plan with a measurable success condition."
+    "I can name the reviewed item types without relying immediately on the guide.",
+    "I can explain what input I receive and what response I must produce for each item type.",
+    "I can connect each task to its main communicative and enabling skills.",
+    "I can state at least one specific strength and support it with evidence.",
+    "I can describe a problem precisely instead of using a vague label.",
+    "I can distinguish the visible error from its likely underlying cause.",
+    "I can give a partner balanced, task-focused, and actionable feedback.",
+    "I can convert a weakness into one concrete strategy and one practice activity.",
+    "I can prioritize review according to impact rather than personal preference.",
+    "I can repeat a task after feedback and compare the two attempts.",
+    "I can identify one weakness that affects several item types.",
+    "I can create a short follow-up study plan with a measurable success criterion."
   ],
   "strategy_notes": [
-    "Recalling strategies without looking at notes strengthens retrieval and reveals what has not yet become automatic.",
-    "The most useful recap question is not simply 'What did I get wrong?' but 'What decision or skill caused the error?'",
-    "One difficulty may affect several item types. For example, weak listening chunking can affect Answer short question, Repeat sentence, Select missing word, and Highlight incorrect words.",
-    "A learner may feel confident because a task is familiar, but familiarity does not guarantee accuracy. Check confidence against evidence.",
-    "Peer assessment works best with a familiar and supportive partner who can explain feedback clearly.",
-    "Partners should discuss the response, not judge the learner. Feedback should describe observable features rather than personal ability.",
-    "When opinions differ, return to the task instructions, source text or recording, scoring criteria, and answer explanation.",
-    "For speaking tasks, recordings provide stronger evidence than memory because they reveal hesitation, pronunciation, stress, pacing, and incomplete responses.",
-    "For writing tasks, compare content selection, organization, grammar, spelling, punctuation, and compliance with task requirements.",
-    "For reading tasks, review why each rejected answer was wrong, including contradiction, missing evidence, incorrect grammar, weak collocation, or excessive breadth.",
-    "For listening tasks, identify the exact point where comprehension was lost and whether the cause was vocabulary, speed, accent, attention, prediction, or note-taking.",
-    "Extra practice should be narrow and purposeful. Ten focused minutes on one weakness can be more valuable than repeating a complete mixed practice set without analysis.",
-    "Reading multiple-choice tasks and Write essay do not require detailed treatment in this recap because they receive further attention in later lessons.",
-    "Keep a problem log across lessons. Repeated entries reveal patterns and help determine which skills should receive the most practice.",
-    "End every review with a next action. Reflection without a planned behaviour change is unlikely to improve later performance."
+    "The recap lesson is most effective when learners do the explaining, comparing, and problem-solving rather than waiting for complete teacher solutions.",
+    "A useful problem statement identifies the task, the exact moment of difficulty, the effect on performance, and the likely cause.",
+    "Speaking review should consider response timing, fluency, pronunciation, stress, intonation, accuracy, and whether the response length suits the task.",
+    "Writing review should distinguish idea selection, organization, grammar, vocabulary, spelling, punctuation, and compliance with task requirements.",
+    "Reading review should examine main-idea recognition, contextual vocabulary, grammar, collocation, logical relationships, and time management.",
+    "Listening review should examine attention, prediction, note-taking, sound discrimination, tracking, memory, and understanding of discourse direction.",
+    "The best extra practice is not always a complete test item; a short drill may isolate the underlying skill more efficiently.",
+    "After isolated practice, return to an authentic or timed item to confirm that the skill transfers to test conditions.",
+    "Keep an error-and-strategy log containing the item type, problem, cause, strategy, repeated result, and next review date.",
+    "Reading multiple-choice items and Write essay can be briefly noted if urgent difficulties arise, but detailed treatment may be deferred because they are revisited later."
   ],
   "metadata": {
-    "chapter_number": 8,
-    "lesson_sequence": "Recap after Lessons 1–7",
+    "difficulty": "B1–B2 diagnostic review",
     "estimated_study_time": "45–60 minutes",
-    "lesson_type": "diagnostic and consolidation lesson",
-    "learner_level": "PTE Academic preparation",
-    "recommended_grouping": [
-      "individual",
-      "pairs",
-      "small groups",
-      "whole-class strategy sharing"
+    "tags": [
+      "pte-academic",
+      "recap",
+      "integrated-skills",
+      "self-assessment",
+      "peer-assessment",
+      "error-analysis",
+      "targeted-practice",
+      "speaking-review",
+      "writing-review",
+      "reading-review",
+      "listening-review",
+      "study-planning"
     ],
-    "reviewed_item_types": [
-      "Answer short question",
-      "Read aloud",
-      "Repeat sentence",
-      "Reading: Fill in the blanks",
-      "Reading & writing: Fill in the blanks",
-      "Select missing word",
-      "Highlight incorrect words",
-      "Summarize written text"
-    ],
-    "deferred_detailed_review": [
-      "Reading: Multiple-choice, choose single answer",
-      "Reading: Multiple-choice, choose multiple answers",
-      "Write essay",
-      "item types introduced after Lesson 7"
-    ],
-    "recommended_evidence": [
-      "previous written responses",
-      "saved speaking recordings",
-      "practice scores and answer keys",
-      "timing records",
-      "partner observations",
-      "personal error log"
-    ],
-    "completion_evidence": [
-      "item-type and skill map",
-      "four-skill self-assessment",
-      "Problem–Cause–Solution note",
-      "two comparable practice attempts",
-      "personal follow-up plan"
-    ],
-    "teaching_note": "The teacher or study facilitator should guide the review, clarify task requirements when necessary, and protect discussion time so that learners can generate and test their own solutions."
+    "provenance_note": "Enriched from the supplied Chapter 8 recap material and its stated review process for Lessons 1–7. The lesson preserves the source emphasis on learner discussion, self and peer assessment, shared problem-solving, targeted extra practice, and selective recap of designated item types while expanding these ideas into a structured teaching-first diagnostic workflow."
   }
 }

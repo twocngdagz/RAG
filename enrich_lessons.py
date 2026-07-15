@@ -142,22 +142,74 @@ def build_payload(chapter_number: int) -> str:
     # Reassert the output contract so a fresh project chat (no prior JSON turns in
     # its history) still returns machine-readable output instead of drifting to
     # prose/markdown tables.
-    out.append(
-        "\n---\nOUTPUT CONTRACT (must follow exactly): Reply with ONLY one fenced "
-        "```json code block containing a single valid pte_lesson_enrichment.v1 "
-        "object. No prose, no markdown tables, and no text before or after the "
-        "code block. The object MUST use exactly these top-level keys and no "
-        "others: schema_version, task_type, lesson_title, source_label, modality, "
-        "overview, learning_goals, core_method, techniques, worked_examples, "
-        "useful_language, common_mistakes, practice_plan, mastery_checklist, "
-        "strategy_notes, metadata. Do NOT invent alternative field names or a "
-        "different structure; populate this exact schema. Fill every section with "
-        "substantive content (aim for 4+ items in each list). Adapt useful_language "
-        "to this task type — for reading/selection items include signpost words, "
-        "linkers, and option-elimination phrases rather than leaving it empty."
-    )
-
+    out.append(SCHEMA_CONTRACT)
     return "\n".join(out)
+
+
+# The exact nested shape the frontend renders. The model reliably follows top-level
+# keys but improvises inner field names unless they are spelled out, so pin every
+# nested field explicitly (matches pte_lesson_enrichment.v1 / CoachView).
+SCHEMA_CONTRACT = """
+---
+OUTPUT CONTRACT (follow EXACTLY). Reply with ONLY one fenced ```json code block:
+a single valid pte_lesson_enrichment.v1 object. No prose, no markdown tables, and
+no text before or after the code block. Use these keys and these nested field
+names EXACTLY — do not rename, nest differently, or invent alternatives. Fill
+every list with substantive content (aim for 4+ items each).
+
+{
+  "schema_version": "pte_lesson_enrichment.v1",
+  "task_type": "<short string, e.g. 'summarize_written_text'>",
+  "lesson_title": "<string>",
+  "source_label": "<slug:chNN, exactly as given above>",
+  "modality": "<reading|writing|speaking|listening|integrated>",
+  "overview": {
+    "what_it_is": "<string>",
+    "format_facts": [{"label": "<string>", "value": "<string>"}],
+    "scoring_factors": [{"name": "<string>", "what_it_measures": "<string>"}],
+    "critical_rules": ["<string>"]
+  },
+  "learning_goals": ["<string>"],
+  "core_method": {
+    "name": "<string>",
+    "summary": "<string>",
+    "steps": [{"step": "<short name>", "detail": "<string>"}],
+    "formula": "<string or null>"
+  },
+  "techniques": [{
+    "name": "<string>", "purpose": "<string>",
+    "how_to": ["<string>"],
+    "example": "<string>", "why_it_matters": "<string>", "common_error": "<string>"
+  }],
+  "worked_examples": [{
+    "title": "<string>", "input": "<string>", "decoding": "<string>",
+    "plan": "<string>", "model_answer": "<string>",
+    "annotations": [{"part": "<string>", "comment": "<string>"}]
+  }],
+  "useful_language": [{
+    "category": "<string>",
+    "items": [{"item": "<string>", "when_to_use": "<string>"}]
+  }],
+  "common_mistakes": [{"mistake": "<string>", "why_it_hurts": "<string>", "fix": "<string>"}],
+  "practice_plan": {
+    "time_budget": [{"phase": "<string>", "minutes": "<string>", "focus": "<string>"}],
+    "drills": [{"name": "<string>", "instructions": "<string>"}],
+    "routine": "<string>"
+  },
+  "mastery_checklist": ["<string>"],
+  "strategy_notes": ["<string>"],
+  "metadata": {
+    "difficulty": "<string>", "estimated_study_time": "<string>",
+    "tags": ["<string>"], "provenance_note": "<string>"
+  }
+}
+
+Adapt content to this task type, but keep the shape identical. For non-speaking
+tasks, model_answer may be a written sample or a worked selection; still provide
+it as a string. useful_language must be a list of {category, items:[{item,
+when_to_use}]} — for reading/selection tasks use signpost words, linkers, and
+option-elimination phrases rather than leaving it empty.
+"""
 
 
 # --------------------------------------------------------------------------- #
@@ -269,8 +321,16 @@ def validate_enrichment(document: dict[str, Any], chapter_number: int) -> None:
         if not isinstance(document.get(key), list) or not document[key]:
             raise ValueError(f"'{key}' must be a non-empty list.")
     core = document.get("core_method")
-    if not isinstance(core, dict) or not core.get("steps"):
-        raise ValueError("core_method must be an object with non-empty 'steps'.")
+    steps = core.get("steps") if isinstance(core, dict) else None
+    if not isinstance(steps, list) or not all(isinstance(s, dict) and s.get("step") for s in steps):
+        raise ValueError("core_method.steps must be a non-empty list of {step, detail} objects.")
+    # Render-critical inner fields the frontend can't reconstruct from a wrong shape.
+    for i, t in enumerate(document["techniques"]):
+        if not isinstance(t, dict) or not isinstance(t.get("how_to"), list) or not t["how_to"]:
+            raise ValueError(f"techniques[{i}].how_to must be a non-empty list (got wrong shape).")
+    for i, w in enumerate(document["worked_examples"]):
+        if not isinstance(w, dict) or not isinstance(w.get("model_answer"), str) or not w["model_answer"].strip():
+            raise ValueError(f"worked_examples[{i}].model_answer must be a non-empty string.")
 
 
 # --------------------------------------------------------------------------- #

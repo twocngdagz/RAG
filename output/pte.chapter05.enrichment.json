@@ -1,636 +1,576 @@
 {
   "schema_version": "pte_lesson_enrichment.v1",
-  "task_type": "listening_prediction_and_transcript_comparison",
+  "task_type": "select_missing_word_and_highlight_incorrect_words",
   "lesson_title": "Select Missing Word and Highlight Incorrect Words",
   "source_label": "pte:ch05",
-  "modality": [
-    "listening",
-    "reading",
-    "spoken-text tracking",
-    "pronunciation and sentence-stress practice"
-  ],
+  "modality": "integrated",
   "overview": {
-    "summary": "This lesson teaches two closely related PTE Academic listening item types. In Select Missing Word, you follow a recording, predict how the speaker will complete the final idea, and choose the best option. In Highlight Incorrect Words, you listen while following a transcript and select only the written words that differ from the recording.",
-    "why_it_matters": "Both tasks require active listening rather than word-by-word translation. Successful test takers anticipate meaning, recognize grammatical and vocabulary patterns, follow the speaker's sequence of ideas, and recover quickly when they miss a word.",
-    "estimated_study_time": "About 2 hours of focused study",
-    "item_type_profiles": {
-      "select_missing_word": {
-        "primary_skill": "Listening",
-        "response": "Choose the word or phrase that best completes the recording.",
-        "recording_length": "Approximately 20–70 seconds in the source lesson.",
-        "scoring_principle": "The response is marked correct or incorrect, so an informed guess is better than leaving the item unanswered."
+    "what_it_is": "This lesson teaches two PTE Academic listening item types. Select Missing Word requires the test taker to predict how a short recording ends by combining topic, vocabulary, grammar, and discourse clues. Highlight Incorrect Words requires the test taker to follow a written transcript while listening and select only the words that differ from the recording. Together, the tasks develop predictive listening, accurate speech-to-text matching, vocabulary awareness, grammatical anticipation, concentration, and sentence-stress recognition.",
+    "format_facts": [
+      {
+        "label": "Select Missing Word input",
+        "value": "You listen to a recording that usually lasts about 20–70 seconds, with the final word or short ending replaced by a sound."
       },
-      "highlight_incorrect_words": {
-        "primary_skills": "Listening and reading",
-        "response": "Click the words in the transcript that differ from the spoken recording.",
-        "main_challenge": "Following speech and written text simultaneously without losing your place.",
-        "scoring_principle": "Correct selections receive credit, while selecting words that actually match can reduce the score; therefore, accuracy is more important than clicking many words."
+      {
+        "label": "Select Missing Word response",
+        "value": "You choose one answer from several options to complete the speaker's final idea."
+      },
+      {
+        "label": "Select Missing Word scoring",
+        "value": "The response is scored as correct or incorrect, so one final selection must be made."
+      },
+      {
+        "label": "Highlight Incorrect Words input",
+        "value": "You read a transcript on screen while listening to the corresponding recording."
+      },
+      {
+        "label": "Highlight Incorrect Words response",
+        "value": "You click the written words that do not match what the speaker actually says."
+      },
+      {
+        "label": "Listening condition",
+        "value": "The recording should be treated as a one-listen task, so preparation, continuous tracking, and immediate decisions are essential."
       }
-    },
-    "lesson_focus": [
-      "Predicting a missing ending from topic, vocabulary, grammar, and discourse clues.",
-      "Following a speaker's main idea and sequence from the beginning to the end.",
-      "Matching written words with rapidly delivered speech.",
-      "Using sentence stress to notice important or contrasting information.",
-      "Building the confidence to guess in Select Missing Word but remain selective in Highlight Incorrect Words."
+    ],
+    "scoring_factors": [
+      {
+        "name": "Final-answer accuracy",
+        "what_it_measures": "Whether the selected ending in Select Missing Word correctly completes the speaker's meaning."
+      },
+      {
+        "name": "Contextual prediction",
+        "what_it_measures": "The ability to use topic, collocation, grammar, tone, and discourse direction to anticipate missing language."
+      },
+      {
+        "name": "Mismatch identification",
+        "what_it_measures": "The ability to detect exact differences between spoken words and the written transcript in Highlight Incorrect Words."
+      },
+      {
+        "name": "Selection control",
+        "what_it_measures": "The ability to avoid clicking uncertain words, because unsupported selections can damage performance."
+      }
+    ],
+    "critical_rules": [
+      "In Select Missing Word, listen for the speaker's overall conclusion rather than relying only on the final few words.",
+      "Use the answer options after understanding the recording; do not choose an option only because it sounds familiar.",
+      "If uncertain in Select Missing Word, make the best evidence-based guess because leaving the item unanswered cannot earn credit.",
+      "In Highlight Incorrect Words, skim the transcript before the recording starts so you know the topic and sentence structure.",
+      "Keep following the transcript even after detecting a mismatch; do not stop mentally to analyse one word.",
+      "Click a word in Highlight Incorrect Words only when you are confident that the spoken word is different.",
+      "Treat different pronunciation, accent, or reduced speech as a possible listening difficulty, not automatically as a transcript error.",
+      "Pay special attention to stressed content words, contrasts, negatives, numbers, prefixes, and suffixes."
     ]
   },
   "learning_goals": [
-    "Explain the format, response method, and scoring logic of Select Missing Word and Highlight Incorrect Words.",
-    "Use topic knowledge to predict the type of idea or conclusion a speaker is likely to express.",
-    "Use collocations and nearby vocabulary to identify natural word combinations.",
-    "Use grammar to predict whether the missing language should be a noun, verb, adjective, adverb, phrase, or clause.",
-    "Follow a transcript while listening without stopping when one word is missed.",
-    "Recognize when a spoken word and a written word differ in meaning, form, number, tense, prefix, or suffix.",
-    "Use sentence stress and contrastive stress to focus attention on important content words.",
-    "Apply different risk strategies: make an informed guess in Select Missing Word, but avoid uncertain clicks in Highlight Incorrect Words."
+    "Identify the topic, theme, and likely direction of a short academic recording.",
+    "Use topic knowledge to predict how a speaker may complete an idea.",
+    "Use vocabulary collocations to identify natural and unnatural answer choices.",
+    "Use grammar to determine the required part of speech, tense, number, or phrase structure.",
+    "Recognize conclusion signals and predict the speaker's final message.",
+    "Track a written transcript continuously while listening to natural speech.",
+    "Distinguish genuine word substitutions from accent, linking, reduction, and pronunciation variation.",
+    "Use sentence stress to focus attention on important information words.",
+    "Apply different guessing rules to the two item types.",
+    "Complete both tasks accurately under realistic one-listen conditions."
   ],
   "core_method": {
-    "name": "PREDICT–FOLLOW–VERIFY",
-    "principle": "Prepare a likely meaning before the critical moment, follow the speaker's developing message, and verify the final answer using meaning, grammar, vocabulary, and sound.",
+    "name": "Predict, Track, Verify",
+    "summary": "For Select Missing Word, build a prediction from the whole recording and verify it against the options. For Highlight Incorrect Words, preview the transcript, track the speaker word by word, and select only confirmed mismatches while continuing to follow the text.",
     "steps": [
       {
-        "step": 1,
-        "label": "Preview",
-        "instruction": "Read the instructions and identify the general topic. For Highlight Incorrect Words, skim the transcript and place your attention at the beginning of the text."
+        "step": "Preview",
+        "detail": "Quickly inspect the prompt, transcript, or answer choices. Identify the likely topic and notice important nouns, verbs, linkers, negatives, and sentence endings."
       },
       {
-        "step": 2,
-        "label": "Predict",
-        "instruction": "Anticipate likely vocabulary, conclusions, contrasts, causes, results, or recommendations connected to the topic."
+        "step": "Set a purpose",
+        "detail": "For Select Missing Word, listen for the speaker's conclusion. For Highlight Incorrect Words, prepare to compare sound and text continuously."
       },
       {
-        "step": 3,
-        "label": "Track",
-        "instruction": "Follow the speaker's ideas continuously. In a transcript task, move your eyes or cursor along the text at the speed of the recording."
+        "step": "Follow the topic",
+        "detail": "Identify what the speaker is discussing, whether the attitude is positive, negative, uncertain, or contrasting, and where the argument is moving."
       },
       {
-        "step": 4,
-        "label": "Notice",
-        "instruction": "Listen closely to stressed content words, negatives, numbers, names, comparison words, verb forms, prefixes, and suffixes."
+        "step": "Notice signals",
+        "detail": "Listen for linkers such as however, therefore, in conclusion, despite this, and as a result because they reveal the relationship between ideas."
       },
       {
-        "step": 5,
-        "label": "Verify",
-        "instruction": "Check whether the answer fits the speaker's meaning, the sentence grammar, the surrounding vocabulary, and the logical conclusion."
+        "step": "Predict language",
+        "detail": "Use collocation and grammar to predict the kind of word or phrase that should appear next, including its part of speech and meaning."
       },
       {
-        "step": 6,
-        "label": "Respond strategically",
-        "instruction": "Choose the most likely option in Select Missing Word even when uncertain. In Highlight Incorrect Words, click only when there is clear evidence of a mismatch."
+        "step": "Track continuously",
+        "detail": "During Highlight Incorrect Words, move through the transcript at the speaker's pace and resist looking back at earlier lines."
+      },
+      {
+        "step": "Verify",
+        "detail": "Compare the predicted meaning with the Select Missing Word options, or compare the exact spoken word with the transcript before clicking."
+      },
+      {
+        "step": "Commit",
+        "detail": "Choose the strongest supported option in Select Missing Word, but remain conservative and click only confirmed differences in Highlight Incorrect Words."
       }
     ],
-    "prediction_filters": [
-      "Topic filter: Does the answer belong to the subject being discussed?",
-      "Meaning filter: Does it complete the speaker's final message logically?",
-      "Grammar filter: Is it the correct part of speech and grammatical form?",
-      "Collocation filter: Does it form a natural combination with nearby words?",
-      "Discourse filter: Does it match a conclusion, contrast, cause, result, or recommendation signalled by the speaker?",
-      "Sound filter: Did the spoken form genuinely differ from the transcript, or was it only pronounced quickly?"
-    ]
+    "formula": "Select Missing Word: Topic + Discourse direction + Collocation + Grammar = Best ending. Highlight Incorrect Words: Preview + Track + Hear exact word + Confirm difference = Click."
   },
   "techniques": [
     {
-      "name": "Three-clue prediction",
-      "applies_to": "Select Missing Word",
-      "how_to_use": [
-        "Identify the topic of the recording.",
-        "Predict vocabulary commonly associated with that topic.",
-        "Examine the grammar immediately before the missing ending.",
-        "Choose only options that satisfy topic, vocabulary, and grammar together."
+      "name": "Three-Clue Prediction",
+      "purpose": "To predict a missing word or ending by combining several independent clues instead of relying on intuition alone.",
+      "how_to": [
+        "Identify the topic of the recording or sentence.",
+        "Check which words commonly appear together as a collocation.",
+        "Determine the grammatical form required in the gap.",
+        "Choose the option that satisfies meaning, vocabulary, and grammar at the same time."
       ],
-      "teaching_point": "A strong prediction normally has more than one source of evidence. Do not select an option merely because it is related to the topic."
+      "example": "In 'Can you guess the missing ___?', the topic is a gap activity, 'missing word' is a common collocation, and a noun is required after the adjective 'missing'.",
+      "why_it_matters": "An option supported by several clues is more reliable than one selected because of a single familiar word.",
+      "common_error": "Choosing an option that matches the topic but does not fit the grammar or collocation."
     },
     {
-      "name": "Final-idea listening",
-      "applies_to": "Select Missing Word",
-      "how_to_use": [
-        "Follow the main idea from the beginning rather than waiting only for the final sentence.",
-        "Notice how each supporting point develops the speaker's argument.",
-        "Watch for conclusion signals near the end.",
-        "Predict whether the speaker will finish with a result, judgement, warning, recommendation, or summary."
+      "name": "Conclusion-Signal Listening",
+      "purpose": "To recognize when the speaker is presenting the final point that the missing ending must complete.",
+      "how_to": [
+        "Listen for signals such as therefore, so, overall, in conclusion, and this means.",
+        "Notice whether the speaker is summarizing, warning, recommending, or rejecting an idea.",
+        "Reduce the recording to a short final message in your own words.",
+        "Match that message to the option with the same logical meaning."
       ],
-      "teaching_point": "The missing ending usually depends on the complete message, not just the last two or three words."
+      "example": "If a speaker describes repeated claims but says there is no reliable evidence, the final answer should express doubt rather than certainty.",
+      "why_it_matters": "Select Missing Word usually depends on the direction of the whole recording, especially its final conclusion.",
+      "common_error": "Selecting an answer based on one detail from the middle of the recording instead of the final argument."
     },
     {
-      "name": "Option elimination",
-      "applies_to": "Select Missing Word",
-      "how_to_use": [
-        "Remove options with the wrong part of speech.",
-        "Remove options that contradict the speaker's message.",
-        "Remove options that repeat a minor detail instead of completing the main conclusion.",
-        "Compare the remaining options for natural collocation and logical fit."
+      "name": "Grammar-Slot Analysis",
+      "purpose": "To eliminate answer choices that cannot fit the missing grammatical position.",
+      "how_to": [
+        "Listen to the words immediately before the missing section.",
+        "Decide whether the gap needs a noun, verb, adjective, adverb, clause, or fixed phrase.",
+        "Check agreement, tense, singular or plural form, and required prepositions.",
+        "Remove options that create an incomplete or ungrammatical sentence."
       ],
-      "teaching_point": "Elimination is especially useful when no option exactly matches the word you predicted."
+      "example": "After 'The research was not sufficiently...', an adjective such as 'reliable' is more likely than a noun such as 'reliability'.",
+      "why_it_matters": "Grammar can eliminate attractive distractors before meaning is considered in detail.",
+      "common_error": "Ignoring word form because two answer choices have similar meanings."
     },
     {
-      "name": "Cursor-and-eye tracking",
-      "applies_to": "Highlight Incorrect Words",
-      "how_to_use": [
-        "Skim the transcript before the recording starts.",
-        "Begin at the first word and move continuously with the audio.",
-        "Use the cursor or your visual focus as a moving marker.",
-        "After identifying a mismatch, click it and immediately rejoin the current spoken position."
+      "name": "Eyes-Forward Tracking",
+      "purpose": "To maintain the speaker's position in the transcript during Highlight Incorrect Words.",
+      "how_to": [
+        "Skim the transcript before listening and note sentence boundaries.",
+        "Follow the text with your eyes at the speaker's pace.",
+        "When a mismatch occurs, select it quickly and continue moving forward.",
+        "Use punctuation and line breaks to recover your place if you temporarily lose synchronization."
       ],
-      "teaching_point": "Do not continue thinking about a previous mismatch. Rejoining the recording quickly prevents one error from causing several missed words."
+      "example": "If the recording says 'friends' while the transcript shows 'colleagues', select 'colleagues' and immediately continue to the next words.",
+      "why_it_matters": "Stopping to analyse one mismatch can cause several later differences to be missed.",
+      "common_error": "Looking back repeatedly at an earlier word and losing the current position."
     },
     {
-      "name": "Content-word attention",
-      "applies_to": "Highlight Incorrect Words",
-      "how_to_use": [
-        "Give extra attention to nouns, main verbs, adjectives, adverbs, numbers, and names.",
-        "Listen for words carrying the central facts or claims.",
+      "name": "Stress-Target Checking",
+      "purpose": "To use sentence stress as an attention guide for important or contrasting information.",
+      "how_to": [
+        "Expect nouns, main verbs, adjectives, adverbs, numbers, and negatives to receive stronger stress.",
         "Check stressed words carefully against the transcript.",
-        "Continue tracking function words, but do not let them distract you from information-heavy words."
+        "Listen for stressed prefixes or suffixes that create contrast, such as legal versus illegal.",
+        "Continue checking unstressed words, but give priority to information-bearing words."
       ],
-      "teaching_point": "Incorrect words frequently change important information, so content words deserve strong attention."
+      "example": "In 'The policy was INeffective, not effective', stress highlights the prefix that changes the meaning.",
+      "why_it_matters": "Many meaningful substitutions occur in content words, and speakers often emphasize contrasts that reveal them.",
+      "common_error": "Assuming every stressed word must be incorrect or ignoring small but meaningful affixes."
     },
     {
-      "name": "Word-form discrimination",
-      "applies_to": "Highlight Incorrect Words",
-      "how_to_use": [
-        "Check singular and plural endings such as student versus students.",
-        "Check verb tense and participle endings such as develop, developed, and developing.",
-        "Listen for negative prefixes such as un-, in-, im-, and dis-.",
-        "Check suffixes that change part of speech, such as success, successful, and successfully."
+      "name": "Sound-versus-Word Verification",
+      "purpose": "To avoid selecting a correct transcript word simply because natural pronunciation makes it sound unfamiliar.",
+      "how_to": [
+        "Consider linking, weak forms, contractions, and reduced sounds before deciding a word is different.",
+        "Ask whether the sound could be a normal pronunciation of the written word.",
+        "Check the surrounding grammar and meaning.",
+        "Select the transcript word only when a different lexical word was actually spoken."
       ],
-      "teaching_point": "A word may look and sound similar to the spoken word but still be incorrect because its grammatical form is different."
-    },
-    {
-      "name": "Stress-guided checking",
-      "applies_to": "Both item types",
-      "how_to_use": [
-        "Listen for words pronounced more strongly or clearly.",
-        "Notice contrastive stress when the speaker corrects, compares, or rejects an idea.",
-        "Pay attention when a prefix or suffix receives emphasis.",
-        "Use stress as an attention signal, but confirm the answer through meaning and grammar."
-      ],
-      "teaching_point": "Stress helps direct attention, but it is not proof by itself."
-    },
-    {
-      "name": "Natural read-aloud rehearsal",
-      "applies_to": "Skill-building practice",
-      "how_to_use": [
-        "Read the entire transcript in a clear voice.",
-        "Use a natural speed rather than reading each word separately.",
-        "Pause according to punctuation and meaningful groups.",
-        "Stress key information words so a partner can practise identifying differences."
-      ],
-      "teaching_point": "Reading aloud builds awareness of pronunciation, sentence rhythm, and the relationship between written and spoken English."
+      "example": "The phrase 'going to' may sound like 'gonna' in natural speech, but this pronunciation difference does not necessarily mean the transcript is incorrect.",
+      "why_it_matters": "Highlight Incorrect Words tests word differences, not minor accent or pronunciation variation.",
+      "common_error": "Clicking a correctly transcribed word because the speaker reduced or linked its sounds."
     }
   ],
   "worked_examples": [
     {
-      "title": "Predicting a missing noun",
-      "task_type": "Select Missing Word",
-      "prompt": "Can you guess the missing ___?",
-      "answer": "word",
-      "reasoning": [
-        "Topic clue: The activity is about guessing missing language.",
-        "Vocabulary clue: Missing word is a common collocation.",
-        "Grammar clue: Missing is an adjective and normally needs a noun after it.",
-        "Sentence-structure clue: Guess is transitive here and needs an object."
-      ],
-      "lesson": "Use several clues together instead of depending on a single familiar word."
-    },
-    {
-      "title": "Predicting a concluding result",
-      "task_type": "Select Missing Word",
-      "prompt": "The researchers repeated the experiment several times and obtained the same ___ every time.",
-      "options": [
-        "location",
-        "result",
-        "colour",
-        "schedule"
-      ],
-      "answer": "result",
-      "reasoning": [
-        "Topic clue: Experiments produce results.",
-        "Collocation clue: Obtain a result is a natural academic collocation.",
-        "Grammar clue: The structure requires a singular countable noun.",
-        "Meaning clue: Repetition producing the same outcome supports result."
-      ],
-      "option_elimination": [
-        "Location is grammatically possible but does not express an experimental outcome.",
-        "Colour has no contextual support.",
-        "Schedule does not logically follow from repeating an experiment.",
-        "Result satisfies grammar, collocation, topic, and meaning."
+      "title": "Predicting a Missing Noun",
+      "input": "Sentence ending: 'Can you guess the missing ___?' Options: message, word, silently, complete.",
+      "decoding": "The activity concerns guessing something absent from a sentence. The adjective 'missing' normally modifies a noun, and 'missing word' is a common collocation.",
+      "plan": "Check the topic, identify the required part of speech, test each option as a natural collocation, and select the only option supported by all three clues.",
+      "model_answer": "Select 'word'.",
+      "annotations": [
+        {
+          "part": "Topic clue",
+          "comment": "The sentence describes a language-gap activity."
+        },
+        {
+          "part": "Vocabulary clue",
+          "comment": "'Missing word' is a frequent and natural collocation."
+        },
+        {
+          "part": "Grammar clue",
+          "comment": "A noun is required after the adjective 'missing'."
+        },
+        {
+          "part": "Elimination",
+          "comment": "'Silently' is an adverb, 'complete' does not fit naturally, and 'message' is less contextually precise."
+        }
       ]
     },
     {
-      "title": "Using the whole recording rather than the final words",
-      "task_type": "Select Missing Word",
-      "prompt": "A speaker describes an ancient island story, explains that no physical evidence has been found, and concludes that the account is probably a ___ rather than a historical fact.",
-      "options": [
-        "measurement",
-        "legend",
-        "location",
-        "discovery"
-      ],
-      "answer": "legend",
-      "reasoning": [
-        "The recording contrasts a traditional story with historical fact.",
-        "The absence of physical evidence weakens a literal interpretation.",
-        "The phrase a legend rather than a historical fact forms a logical contrast.",
-        "The other options do not summarize the speaker's conclusion."
-      ],
-      "lesson": "Track the argument from evidence to conclusion."
+      "title": "Selecting the Speaker's Final Conclusion",
+      "input": "Recording summary: A speaker describes a famous lost-island story, explains that many people believe it, but repeatedly notes that no reliable physical evidence has been found. Options include certainty that the island existed, doubt about the story, a travel recommendation, and a description of modern islands.",
+      "decoding": "The main contrast is between a popular belief and the absence of proof. The ending must reflect the speaker's conclusion, not an interesting supporting detail.",
+      "plan": "Identify the topic, mark the contrast signalled by 'but', paraphrase the final attitude as 'the claim remains unproven', and select the option expressing doubt.",
+      "model_answer": "Choose the option stating that the story cannot be accepted as fact because convincing evidence is missing.",
+      "annotations": [
+        {
+          "part": "Topic",
+          "comment": "The recording concerns a legendary island."
+        },
+        {
+          "part": "Contrast",
+          "comment": "Popular belief is contrasted with a lack of evidence."
+        },
+        {
+          "part": "Speaker attitude",
+          "comment": "The speaker is cautious and unconvinced."
+        },
+        {
+          "part": "Distractor control",
+          "comment": "An option mentioning islands may share vocabulary but fail to express the conclusion."
+        }
+      ]
     },
     {
-      "title": "Detecting a meaning-changing substitution",
-      "task_type": "Highlight Incorrect Words",
-      "spoken_text": "The team won the championship last year.",
-      "transcript": "The team lost the championship last year.",
-      "incorrect_transcript_word": "lost",
-      "reasoning": [
-        "The spoken word is won, while the written word is lost.",
-        "Both words fit the grammar, so grammar alone cannot reveal the mismatch.",
-        "The words have opposite meanings.",
-        "The main verb is likely to receive sentence stress, making it an important checkpoint."
-      ],
-      "lesson": "Some incorrect words remain grammatically correct; exact listening is essential."
+      "title": "Confirming a Spoken-Transcript Substitution",
+      "input": "Transcript: 'The researchers discussed the result with their colleagues before publishing the report.' Recording: 'The researchers discussed the result with their friends before publishing the report.'",
+      "decoding": "Every part matches except the noun after 'their'. The recording contains 'friends', while the written transcript contains 'colleagues'.",
+      "plan": "Track continuously, compare the exact noun heard with the noun displayed, select the written mismatch, and continue following the sentence.",
+      "model_answer": "Highlight 'colleagues'.",
+      "annotations": [
+        {
+          "part": "Confirmed mismatch",
+          "comment": "The spoken and written nouns are different lexical items."
+        },
+        {
+          "part": "Correct click target",
+          "comment": "Select the incorrect written word, not the word that was spoken."
+        },
+        {
+          "part": "Grammar",
+          "comment": "Both nouns fit grammatically, so meaning and sound comparison are required."
+        },
+        {
+          "part": "Tracking behaviour",
+          "comment": "The learner should click quickly and continue rather than replaying the difference mentally."
+        }
+      ]
     },
     {
-      "title": "Detecting a plural difference",
-      "task_type": "Highlight Incorrect Words",
-      "spoken_text": "Several new courses were introduced this semester.",
-      "transcript": "Several new course were introduced this semester.",
-      "incorrect_transcript_word": "course",
-      "reasoning": [
-        "Several normally requires a plural countable noun.",
-        "The recording contains the plural ending in courses.",
-        "The written singular form is grammatically inconsistent.",
-        "Listening for final consonant sounds helps confirm the mismatch."
-      ],
-      "lesson": "Use grammar to support what you hear, especially for quiet endings."
-    },
-    {
-      "title": "Detecting a negative prefix",
-      "task_type": "Highlight Incorrect Words",
-      "spoken_text": "The researchers considered the method unreliable.",
-      "transcript": "The researchers considered the method reliable.",
-      "incorrect_transcript_word": "reliable",
-      "reasoning": [
-        "The recording includes the negative prefix un-.",
-        "The transcript removes the negative meaning.",
-        "The two forms sound similar in connected speech.",
-        "The prefix changes the speaker's judgement completely."
-      ],
-      "lesson": "Listen carefully to prefixes because a short sound can reverse the meaning."
-    },
-    {
-      "title": "Recovering after a missed word",
-      "task_type": "Highlight Incorrect Words",
-      "scenario": "You lose your place after clicking one incorrect word while the recording continues.",
-      "best_response": "Stop reviewing the previous word, scan forward for a distinctive word you can hear, reconnect with the transcript, and continue tracking.",
-      "reasoning": [
-        "The recording is not paused while you decide.",
-        "Looking backward can cause several additional missed differences.",
-        "Distinctive nouns, numbers, names, and stressed words are useful re-entry points.",
-        "One missed item is less damaging than losing the remainder of the passage."
-      ],
-      "lesson": "Recovery speed is a core test skill."
+      "title": "Using Stress to Detect a Meaning Change",
+      "input": "Transcript: 'The new treatment was effective in every trial.' Recording: 'The new treatment was ineffective in every trial.'",
+      "decoding": "The speaker stresses the negative prefix in 'ineffective'. The transcript omits that prefix and therefore states the opposite meaning.",
+      "plan": "Notice the stressed contrast, verify the whole spoken word, compare it with the transcript, and select the incorrect written form.",
+      "model_answer": "Highlight 'effective'.",
+      "annotations": [
+        {
+          "part": "Stress clue",
+          "comment": "The prefix 'in-' may receive emphasis because it reverses the meaning."
+        },
+        {
+          "part": "Meaning contrast",
+          "comment": "'Effective' and 'ineffective' express opposite results."
+        },
+        {
+          "part": "Written target",
+          "comment": "The transcript word 'effective' is the item to select."
+        },
+        {
+          "part": "Accuracy rule",
+          "comment": "The selection is justified by an exact lexical difference, not merely by pronunciation."
+        }
+      ]
     }
   ],
   "useful_language": [
     {
-      "category": "Conclusion and result signposts",
-      "phrases": [
-        "therefore",
-        "as a result",
-        "consequently",
-        "for this reason",
-        "this means that",
-        "we can conclude that"
-      ],
-      "use": "These expressions indicate that the final missing language may summarize a result or conclusion."
+      "category": "Conclusion signals",
+      "items": [
+        {
+          "item": "therefore",
+          "when_to_use": "Expect a result, consequence, or logical conclusion to follow."
+        },
+        {
+          "item": "in conclusion",
+          "when_to_use": "Prepare for the speaker's final summary or judgement."
+        },
+        {
+          "item": "overall",
+          "when_to_use": "Listen for a general evaluation that combines earlier points."
+        },
+        {
+          "item": "this means that",
+          "when_to_use": "Expect the speaker to explain the implication of the previous information."
+        }
+      ]
     },
     {
-      "category": "Contrast and correction signposts",
-      "phrases": [
-        "however",
-        "although",
-        "in contrast",
-        "on the other hand",
-        "rather than",
-        "in fact"
-      ],
-      "use": "These linkers warn that the speaker may reject, qualify, or reverse an earlier idea."
+      "category": "Contrast and correction signals",
+      "items": [
+        {
+          "item": "however",
+          "when_to_use": "Expect the speaker to change direction or introduce an opposing point."
+        },
+        {
+          "item": "although",
+          "when_to_use": "Listen for a contrast between two connected facts."
+        },
+        {
+          "item": "rather than",
+          "when_to_use": "Expect a preference or correction between alternatives."
+        },
+        {
+          "item": "in fact",
+          "when_to_use": "Prepare for clarification, stronger evidence, or correction of an earlier assumption."
+        }
+      ]
     },
     {
-      "category": "Example and support signposts",
-      "phrases": [
-        "for example",
-        "for instance",
-        "such as",
-        "in particular",
-        "one illustration is",
-        "to demonstrate this"
-      ],
-      "use": "These phrases usually introduce supporting information rather than the speaker's final conclusion."
+      "category": "Cause-and-effect signals",
+      "items": [
+        {
+          "item": "because",
+          "when_to_use": "Expect a reason or explanation."
+        },
+        {
+          "item": "as a result",
+          "when_to_use": "Expect a consequence that may help predict the final idea."
+        },
+        {
+          "item": "due to",
+          "when_to_use": "Listen for the cause of a situation or conclusion."
+        },
+        {
+          "item": "consequently",
+          "when_to_use": "Expect the speaker to state the logical outcome of earlier information."
+        }
+      ]
     },
     {
-      "category": "Sequence signposts",
-      "phrases": [
-        "first",
-        "next",
-        "afterwards",
-        "subsequently",
-        "finally",
-        "in the last stage"
-      ],
-      "use": "These words help you follow the order of ideas and anticipate when the recording is approaching its conclusion."
+      "category": "Option-evaluation phrases",
+      "items": [
+        {
+          "item": "This option matches the speaker's conclusion.",
+          "when_to_use": "Use during review to justify the final Select Missing Word choice."
+        },
+        {
+          "item": "This option fits the topic but not the grammar.",
+          "when_to_use": "Use when eliminating a semantically related but grammatically impossible distractor."
+        },
+        {
+          "item": "This option repeats a detail, not the main point.",
+          "when_to_use": "Use when an answer is based on supporting information rather than the speaker's final message."
+        },
+        {
+          "item": "This option creates a natural collocation.",
+          "when_to_use": "Use when vocabulary partnership supports one answer more strongly than the others."
+        }
+      ]
     },
     {
-      "category": "Option-elimination phrases",
-      "phrases": [
-        "This option is grammatically possible, but it does not fit the topic.",
-        "This option repeats a detail instead of completing the main idea.",
-        "This option contradicts the speaker's conclusion.",
-        "This option has the wrong part of speech.",
-        "This option does not form a natural collocation.",
-        "This option is the best fit because it matches meaning, grammar, and context."
-      ],
-      "use": "Use these sentence frames when analysing choices during practice."
-    },
-    {
-      "category": "Transcript-comparison phrases",
-      "phrases": [
-        "The recording says ___, but the transcript shows ___.",
-        "The spoken and written forms differ in number.",
-        "The verb tense does not match the recording.",
-        "The prefix changes the meaning.",
-        "The words sound similar, but they are not identical.",
-        "I will not click because the difference is not clear."
-      ],
-      "use": "Use these phrases to explain and review Highlight Incorrect Words answers."
+      "category": "Mismatch-checking phrases",
+      "items": [
+        {
+          "item": "I heard a different word.",
+          "when_to_use": "Use only after confirming an exact spoken-transcript substitution."
+        },
+        {
+          "item": "The pronunciation changed, but the word is the same.",
+          "when_to_use": "Use to avoid false selections caused by accent, linking, or reduction."
+        },
+        {
+          "item": "The prefix changes the meaning.",
+          "when_to_use": "Use when comparing forms such as possible and impossible."
+        },
+        {
+          "item": "I am not certain, so I will not click.",
+          "when_to_use": "Use as the decision rule for uncertain Highlight Incorrect Words selections."
+        }
+      ]
     }
   ],
   "common_mistakes": [
     {
-      "mistake": "Waiting for the final second before beginning to understand the recording.",
-      "why_it_hurts": "The final answer normally depends on the speaker's complete argument or sequence.",
-      "correction": "Follow the topic, main point, supporting information, and direction of the talk from the beginning."
+      "mistake": "Trying to predict the Select Missing Word answer from the options before understanding the recording.",
+      "why_it_hurts": "The options can create false expectations and distract attention from the speaker's actual argument.",
+      "fix": "First identify the topic and conclusion, then evaluate the options against your prediction."
     },
     {
-      "mistake": "Choosing an option only because it is related to the topic.",
-      "why_it_hurts": "Several distractors may use topic-related vocabulary while failing the grammar or conclusion.",
-      "correction": "Require the option to pass the meaning, grammar, collocation, and discourse filters."
+      "mistake": "Using only topic similarity to choose an answer.",
+      "why_it_hurts": "Several distractors may contain words connected to the topic but fail to complete the grammar or logic.",
+      "fix": "Require support from topic, collocation, grammar, and discourse direction."
     },
     {
-      "mistake": "Refusing to guess in Select Missing Word.",
-      "why_it_hurts": "An unanswered item cannot receive credit, and the source strategy recommends attempting the item.",
-      "correction": "Eliminate weak options and choose the most likely remaining answer."
+      "mistake": "Refusing to guess in Select Missing Word when uncertain.",
+      "why_it_hurts": "An unanswered item cannot be correct, while an evidence-based guess still has a chance of earning credit.",
+      "fix": "Eliminate weak options and select the strongest remaining answer."
     },
     {
-      "mistake": "Guessing aggressively in Highlight Incorrect Words.",
-      "why_it_hurts": "Selecting a word that actually matches the recording can reduce the score.",
-      "correction": "Click only when you have clear sound, grammatical, or meaning evidence."
+      "mistake": "Guess-clicking uncertain words in Highlight Incorrect Words.",
+      "why_it_hurts": "Incorrect selections can reduce the benefit of correct identifications.",
+      "fix": "Click only when a different spoken word has been clearly confirmed."
     },
     {
-      "mistake": "Reading the transcript too far ahead.",
-      "why_it_hurts": "Your eyes and the audio become unsynchronized.",
-      "correction": "Keep your visual position close to the currently spoken word."
+      "mistake": "Stopping after finding one incorrect word.",
+      "why_it_hurts": "The recording continues, and later mismatches may be missed.",
+      "fix": "Select quickly and keep moving forward with the speaker."
     },
     {
-      "mistake": "Stopping after an unfamiliar word.",
-      "why_it_hurts": "The recording continues, causing you to lose several later words.",
-      "correction": "Let the unknown word go, maintain the general meaning, and continue tracking."
+      "mistake": "Looking back at earlier lines of the transcript.",
+      "why_it_hurts": "Backward eye movement causes the listener to lose synchronization with the audio.",
+      "fix": "Use an eyes-forward rule and recover at the next punctuation mark if needed."
     },
     {
-      "mistake": "Assuming similar-sounding words are identical.",
-      "why_it_hurts": "Differences in tense, number, prefix, or suffix may be short but meaningful.",
-      "correction": "Listen for word endings and compare the form with the surrounding grammar."
+      "mistake": "Treating accent or reduced pronunciation as a word substitution.",
+      "why_it_hurts": "The transcript may be correct even when the word sounds unfamiliar in connected speech.",
+      "fix": "Check whether linking, contractions, weak forms, or accent can explain the sound."
     },
     {
-      "mistake": "Checking only strongly stressed words.",
-      "why_it_hurts": "A mismatch can also occur in an unstressed word or grammatical ending.",
-      "correction": "Use stress to prioritize attention while still following every word."
+      "mistake": "Ignoring unstressed grammatical words completely.",
+      "why_it_hurts": "Although content words are often stressed, errors may also occur in articles, auxiliaries, prepositions, or negatives.",
+      "fix": "Use stress to guide attention, but continue comparing the complete transcript."
     },
     {
-      "mistake": "Reviewing a clicked word while the recording continues.",
-      "why_it_hurts": "You may lose your place and miss the next differences.",
-      "correction": "Click once, move forward immediately, and review only after the recording ends."
-    },
-    {
-      "mistake": "Reading aloud in a slow, word-by-word manner during practice.",
-      "why_it_hurts": "It does not develop realistic connected-speech recognition.",
-      "correction": "Read clearly at a natural rate, group words by meaning, and pause according to punctuation."
+      "mistake": "Reading a practice transcript unnaturally slowly.",
+      "why_it_hurts": "Slow word-by-word reading does not prepare learners for natural test speed, stress, or connected speech.",
+      "fix": "Read clearly at a natural rate, pause according to punctuation, and continue through the whole passage."
     }
   ],
   "practice_plan": {
-    "total_time": "120 minutes",
-    "blocks": [
+    "time_budget": [
       {
-        "minutes": 10,
-        "focus": "Item-type orientation",
-        "activities": [
-          "Review what each item type asks you to do.",
-          "Compare the skills and response methods.",
-          "State the different guessing rules for the two tasks.",
-          "Explain how each task contributes to listening or reading performance."
-        ]
+        "phase": "Task orientation",
+        "minutes": "10",
+        "focus": "Review the two formats, scoring logic, and the opposite guessing rules."
       },
       {
-        "minutes": 20,
-        "focus": "Topic, vocabulary, and grammar prediction",
-        "activities": [
-          "Complete ten short missing-final-word sentences.",
-          "Label each clue as topic, vocabulary, grammar, or discourse.",
-          "Explain why the predicted word fits.",
-          "Create two new prediction sentences of your own."
-        ]
+        "phase": "Prediction foundations",
+        "minutes": "20",
+        "focus": "Practise topic, vocabulary, collocation, and grammar clues."
       },
       {
-        "minutes": 20,
-        "focus": "Select Missing Word guided practice",
-        "activities": [
-          "Preview the topic and options.",
-          "Listen once and write a one-line summary of the speaker's direction.",
-          "Eliminate options using the prediction filters.",
-          "Choose an answer and explain the evidence."
-        ]
+        "phase": "Select Missing Word strategy",
+        "minutes": "20",
+        "focus": "Listen for discourse direction, conclusions, and final-answer meaning."
       },
       {
-        "minutes": 15,
-        "focus": "Sentence stress and word-form awareness",
-        "activities": [
-          "Underline likely stressed content words in a short transcript.",
-          "Read the text aloud at a natural speed.",
-          "Contrast pairs such as increase and decrease.",
-          "Practise hearing plural, tense, prefix, and suffix differences."
-        ]
+        "phase": "Transcript preview and tracking",
+        "minutes": "15",
+        "focus": "Skim passages, follow punctuation, and maintain eyes-forward synchronization."
       },
       {
-        "minutes": 20,
-        "focus": "Highlight Incorrect Words guided practice",
-        "activities": [
-          "Skim the transcript before listening.",
-          "Track the text continuously with a finger or cursor.",
-          "Mark only clearly confirmed differences.",
-          "Classify each difference by meaning, number, tense, prefix, suffix, or substituted vocabulary."
-        ]
+        "phase": "Stress and word discrimination",
+        "minutes": "20",
+        "focus": "Compare stressed content words, prefixes, suffixes, negatives, and similar-sounding words."
       },
       {
-        "minutes": 20,
-        "focus": "Timed mixed practice",
-        "activities": [
-          "Complete two Select Missing Word items under realistic conditions.",
-          "Complete two Highlight Incorrect Words items with one listening only.",
-          "Record confidence as high, medium, or low for every response.",
-          "Compare accuracy with confidence to identify over-clicking or under-guessing."
-        ]
+        "phase": "Timed mixed practice",
+        "minutes": "25",
+        "focus": "Complete both item types under one-listen test conditions."
       },
       {
-        "minutes": 10,
-        "focus": "Error review",
-        "activities": [
-          "Identify whether each error came from meaning, grammar, vocabulary, sound, or tracking.",
-          "Rewrite the clue that should have led to the correct answer.",
-          "Choose one recovery strategy for future use.",
-          "Repeat the most difficult item without pausing."
-        ]
-      },
-      {
-        "minutes": 5,
-        "focus": "Final reflection",
-        "activities": [
-          "State the three prediction clues from memory.",
-          "Explain when guessing is appropriate.",
-          "Name two types of word-form differences.",
-          "Set one target for the next listening session."
-        ]
+        "phase": "Error review and self-check",
+        "minutes": "10",
+        "focus": "Classify errors as topic, vocabulary, grammar, tracking, sound discrimination, or over-clicking problems."
       }
     ],
-    "independent_drills": [
-      "Pause a podcast before the end of a sentence and predict the next word or phrase, then check the recording.",
-      "Read a short academic paragraph aloud while a partner follows a version containing several substituted words.",
-      "Build a notebook of academic collocations such as reach a conclusion, conduct research, and produce evidence.",
-      "Practise minimal contrasts involving negatives, plurals, verb endings, and word families.",
-      "Shadow short recordings to improve your ability to connect written forms with natural speech."
-    ],
-    "review_questions": [
+    "drills": [
       {
-        "question": "What three main types of clues help predict missing language?",
-        "answer": "Topic clues, vocabulary or collocation clues, and grammar clues."
+        "name": "Three-Clue Gap Drill",
+        "instructions": "Complete short sentence gaps and write one topic clue, one collocation clue, and one grammar clue for every answer."
       },
       {
-        "question": "What should you do when uncertain in Select Missing Word?",
-        "answer": "Eliminate unlikely choices and make an informed guess."
+        "name": "Part-of-Speech Elimination",
+        "instructions": "Use answer sets containing nouns, verbs, adjectives, and adverbs; identify the required form before considering meaning."
       },
       {
-        "question": "Why are stressed words useful in Highlight Incorrect Words?",
-        "answer": "They often carry important information or contrast, so they are valuable points for careful transcript checking."
+        "name": "Final-Idea Paraphrase",
+        "instructions": "Listen to a short recording, pause before the ending, and state the expected conclusion in five to eight words before viewing the options."
       },
       {
-        "question": "What should you do before the Highlight Incorrect Words recording begins?",
-        "answer": "Skim the transcript quickly, identify the topic, and prepare to track from the first word."
+        "name": "Linker Prediction",
+        "instructions": "After hearing however, therefore, although, or as a result, predict whether the next idea will contrast, conclude, concede, or show a consequence."
       },
       {
-        "question": "Why should you avoid random clicking in Highlight Incorrect Words?",
-        "answer": "Incorrect selections can reduce the score, so only confirmed mismatches should be selected."
+        "name": "Moving-Finger Tracking",
+        "instructions": "Follow a printed transcript with a finger or cursor while a partner reads it naturally, keeping movement continuous and forward."
       },
       {
-        "question": "How should you react after losing your place?",
-        "answer": "Scan forward for a distinctive word, reconnect with the current audio position, and continue."
+        "name": "Controlled Substitution Reading",
+        "instructions": "A partner reads a transcript but secretly replaces four words; underline only the confirmed written mismatches."
+      },
+      {
+        "name": "Stress Contrast Drill",
+        "instructions": "Practise pairs such as possible/impossible, effective/ineffective, legal/illegal, and increase/decrease, emphasizing the contrasting sound."
+      },
+      {
+        "name": "One-Listen Confidence Review",
+        "instructions": "After each Highlight Incorrect Words item, label every click as certain, probable, or guessed, then remove guessed selections from future attempts."
       }
-    ]
+    ],
+    "routine": "Use a four-round routine. Round 1: complete prediction exercises without audio. Round 2: listen to short endings and explain the topic, collocation, and grammar evidence. Round 3: compare audio with transcripts while maintaining forward tracking. Round 4: complete a timed mixed set, review every wrong answer, and record the cause of the error in a study log."
   },
   "mastery_checklist": [
     "I can explain the difference between Select Missing Word and Highlight Incorrect Words.",
-    "I can identify the main topic and direction of a short academic recording.",
-    "I can use topic knowledge to predict likely vocabulary.",
-    "I can use collocations to decide which answer sounds natural.",
-    "I can use grammar to predict the required part of speech and word form.",
-    "I can recognize conclusion, contrast, result, and sequence signposts.",
-    "I can follow the full recording instead of listening only for the final words.",
-    "I can eliminate options that contradict the speaker's meaning.",
-    "I can make an informed guess in Select Missing Word when uncertain.",
-    "I can skim a transcript quickly before listening.",
-    "I can keep my eyes or cursor synchronized with the recording.",
-    "I can identify substitutions between spoken and written vocabulary.",
-    "I can hear differences in singular and plural forms.",
-    "I can hear differences in tense, prefixes, and suffixes.",
-    "I can use sentence stress to prioritize important words.",
-    "I can avoid clicking uncertain words in Highlight Incorrect Words.",
-    "I can recover quickly after missing a word or losing my place.",
-    "I can read a practice transcript aloud clearly, naturally, and with appropriate stress."
+    "I can identify the topic of a short recording before it ends.",
+    "I can recognize linkers that signal contrast, cause, result, and conclusion.",
+    "I can use collocations to predict natural missing language.",
+    "I can determine the grammatical form required by a missing section.",
+    "I can choose an answer that matches the speaker's final idea rather than a minor detail.",
+    "I can skim a transcript efficiently before listening begins.",
+    "I can follow a transcript continuously without repeatedly looking back.",
+    "I can identify exact spoken-transcript substitutions.",
+    "I can distinguish pronunciation variation from a genuine word difference.",
+    "I can use sentence stress to prioritize important information words.",
+    "I can continue tracking after selecting an incorrect written word.",
+    "I can make an evidence-based guess in Select Missing Word.",
+    "I can avoid uncertain clicks in Highlight Incorrect Words.",
+    "I can complete both item types under realistic one-listen conditions."
   ],
-  "strategy_notes": {
-    "select_missing_word": [
-      "Read the topic information and inspect the options before listening.",
-      "Listen for the general content, main points, and relationship between ideas.",
-      "Use the progress indicator to anticipate when the recording is nearing its end.",
-      "Predict the speaker's likely conclusion before comparing the options.",
-      "Check that the chosen answer has the correct meaning and part of speech.",
-      "Do not leave the item unanswered; choose the most likely option."
-    ],
-    "highlight_incorrect_words": [
-      "Use the preparation time to skim the passage and identify the topic.",
-      "Place the cursor near the first word without clicking.",
-      "Move continuously along the transcript as the recording plays.",
-      "Listen closely for similar-sounding but non-identical words.",
-      "Select only words that clearly differ from the recording.",
-      "If a word was clicked accidentally, undo it when possible.",
-      "After a mismatch, return immediately to the current audio position.",
-      "Do not guess because selecting correct transcript words can reduce the score."
-    ],
-    "attention_priorities": [
-      "Negatives and contrast words",
-      "Numbers, dates, measurements, and quantities",
-      "Names, technical terms, and topic-specific nouns",
-      "Main verbs and verb tense",
-      "Comparative and superlative forms",
-      "Prefixes, suffixes, and plural endings"
-    ],
-    "test_day_reminders": [
-      "The audio normally plays once, so remain focused from the beginning.",
-      "Do not translate every sentence into your first language.",
-      "Missing one word does not mean the whole item is lost.",
-      "Meaning and grammar should confirm what you think you heard.",
-      "Use different risk rules for the two item types.",
-      "Move to the next item once your response has been checked."
-    ]
-  },
+  "strategy_notes": [
+    "The two tasks require different risk strategies: make a best guess in Select Missing Word, but avoid guessing in Highlight Incorrect Words.",
+    "A correct Select Missing Word option should complete both the sentence and the speaker's broader argument.",
+    "Predict meaning before inspecting the options too closely, because options can contain misleading topic vocabulary.",
+    "The final missing section may depend on information introduced much earlier in the recording.",
+    "Grammar is especially useful when two options appear to have similar meanings.",
+    "During Highlight Incorrect Words, the click target is the incorrect word shown in the transcript.",
+    "Natural speech may contain linking, reductions, hesitations, false starts, or accent variation; these do not automatically indicate transcript errors.",
+    "Stressed words deserve attention because they commonly carry new, important, negative, numerical, or contrasting information.",
+    "Punctuation provides recovery points if tracking is briefly lost.",
+    "Do not allow one difficult word to interrupt comprehension of the rest of the recording.",
+    "Practising by reading transcripts aloud at natural speed develops awareness of stress, intonation, punctuation, and connected speech.",
+    "Error review should identify the failed process, not only the correct answer.",
+    "A useful error log can classify mistakes as topic, conclusion, vocabulary, grammar, tracking, pronunciation, or over-selection errors."
+  ],
   "metadata": {
-    "chapter_number": 5,
-    "estimated_study_time_minutes": 120,
     "difficulty": "intermediate",
-    "teaching_orientation": "scaffolded, example-rich, strategy-first",
-    "communicative_skills": [
-      "listening",
-      "reading",
-      "speaking practice"
-    ],
-    "enabling_skills": [
-      "vocabulary",
-      "pronunciation",
-      "sentence stress",
-      "grammar awareness",
-      "word discrimination"
-    ],
-    "source_scope": [
-      "Official Guide Select Missing Word pages 150–153",
-      "Official Guide Highlight Incorrect Words pages 154–158",
-      "Official Guide Teacher Notes Lesson 5",
-      "PTE Academic Expert B1 task strategies and test reference"
-    ],
-    "source_citations": [
-      "",
-      "",
-      "",
-      ""
-    ],
-    "source_fidelity_note": "The enrichment expands the supplied lesson's teaching points, examples, correction rules, and practice sequence without changing the distinction between informed guessing in Select Missing Word and cautious selection in Highlight Incorrect Words.",
+    "estimated_study_time": "Plan for about 2 hours of focused study.",
     "tags": [
       "PTE Academic",
-      "Select Missing Word",
-      "Highlight Incorrect Words",
-      "listening prediction",
+      "listening",
+      "reading",
+      "select missing word",
+      "highlight incorrect words",
+      "prediction",
       "contextual clues",
+      "collocations",
       "sentence stress",
       "transcript tracking",
-      "option elimination"
-    ]
+      "word discrimination",
+      "test strategy"
+    ],
+    "provenance_note": "Teaching-first enrichment based on the supplied Chapter 5 lesson material covering Select Missing Word and Highlight Incorrect Words, including source objectives, format details, prediction strategies, sentence-stress practice, transcript comparison, worked examples, misconceptions, practice questions, and self-check outcomes."
   }
 }

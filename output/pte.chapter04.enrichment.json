@@ -1,1257 +1,742 @@
 {
   "schema_version": "pte_lesson_enrichment.v1",
-  "task_type": "lesson_enrichment",
+  "task_type": "reading_multiple_choice",
   "lesson_title": "Lesson 4: Reading Multiple-choice Items",
   "source_label": "pte:ch04",
   "modality": "reading",
   "overview": {
-    "lesson_focus": "This lesson teaches a controlled method for answering PTE Academic Reading multiple-choice questions. It covers both Multiple-choice, choose single answer and Multiple-choice, choose multiple answers. The central skill is evidence-based selection: understand exactly what the prompt asks, locate the relevant part of the passage, compare every option with the text, and reject distractors for a clear reason.",
-    "why_this_lesson_matters": "Many learners lose marks because they select an option that repeats words from the passage but does not answer the actual question. Successful readers match meaning rather than isolated vocabulary. They distinguish the main idea from supporting details, facts from opinions, causes from results, and the writer's position from ideas merely mentioned in the passage.",
-    "item_types": [
+    "what_it_is": "This lesson develops a systematic approach to PTE Academic Reading multiple-choice items. Learners practise identifying what a prompt requires, predicting the likely answer type, reading efficiently for gist and detail, matching ideas rather than isolated words, eliminating distractors, and proving every selected answer with evidence from the passage.",
+    "format_facts": [
       {
-        "name": "Reading: Multiple-choice, choose single answer",
-        "response_requirement": "Select the one option that answers the prompt most accurately.",
-        "main_challenge": "Several options may sound reasonable, but only one fully matches the passage and the precise focus of the prompt."
+        "label": "Item type 1",
+        "value": "Multiple-choice, choose single answer requires the test taker to select one best response from several options."
       },
       {
-        "name": "Reading: Multiple-choice, choose multiple answers",
-        "response_requirement": "Select all options that are supported by the passage and required by the prompt.",
-        "main_challenge": "Each option must be judged independently. A partly true option is not automatically a correct answer."
+        "label": "Item type 2",
+        "value": "Multiple-choice, choose multiple answers requires the test taker to select all options that are supported by the passage."
+      },
+      {
+        "label": "Item components",
+        "value": "A typical item contains instructions, a reading passage, a prompt, and a set of answer options."
+      },
+      {
+        "label": "Prompt styles",
+        "value": "Prompts may use wh-questions, such as why, how, what, or which, or may ask the learner to complete a sentence."
+      },
+      {
+        "label": "Reading demands",
+        "value": "Questions may test the main idea, specific details, writer purpose, tone, attitude, organization, inference, vocabulary in context, or supporting examples."
+      },
+      {
+        "label": "Answer relationship",
+        "value": "Correct options often paraphrase the passage rather than repeat its exact wording."
       }
     ],
-    "lesson_outcome": "By the end of the lesson, learners should be able to decode prompts, predict the required answer type, skim for gist, scan for evidence, recognize paraphrases, eliminate distractors, infer unfamiliar vocabulary, and explain why every selected or rejected option is correct or incorrect."
+    "scoring_factors": [
+      {
+        "name": "Single-answer accuracy",
+        "what_it_measures": "Whether the learner can identify the one option that best answers the exact prompt."
+      },
+      {
+        "name": "Multiple-answer precision",
+        "what_it_measures": "Whether the learner can select every supported option while avoiding unsupported or partly true distractors."
+      },
+      {
+        "name": "Main-idea comprehension",
+        "what_it_measures": "Whether the learner can distinguish the central message from examples, explanations, and minor details."
+      },
+      {
+        "name": "Detailed comprehension",
+        "what_it_measures": "Whether the learner can locate and correctly interpret facts, reasons, comparisons, definitions, opinions, and sequences."
+      },
+      {
+        "name": "Inference and purpose",
+        "what_it_measures": "Whether the learner can identify implied meaning, the writer's intention, attitude, or reason for including information."
+      },
+      {
+        "name": "Contextual vocabulary",
+        "what_it_measures": "Whether the learner can infer the meaning and function of unfamiliar words from context and word structure."
+      }
+    ],
+    "critical_rules": [
+      "Answer the exact question asked by the prompt, not a different question suggested by familiar words in the passage.",
+      "Do not select an option only because it repeats vocabulary from the text; compare the meaning of the whole option with the passage.",
+      "For a single-answer item, choose the option that gives the most complete and accurate response, even when another option is partly true.",
+      "For a multiple-answer item, evaluate every option independently and select only those that can be supported by clear textual evidence.",
+      "Distinguish the passage's main point from supporting details, examples, causes, effects, and background information.",
+      "Treat absolute words such as always, never, completely, only, and all with caution unless the passage clearly supports them.",
+      "Use surrounding sentences, word stems, prefixes, and suffixes before guessing the meaning of an unfamiliar word.",
+      "Before finalizing an answer, identify the sentence or idea in the passage that proves it."
+    ]
   },
   "learning_goals": [
-    {
-      "goal": "Recognize the structure of a multiple-choice item.",
-      "success_indicator": "The learner can label the instructions, passage, prompt, and options without confusing the prompt with the general instructions."
-    },
-    {
-      "goal": "Distinguish the two reading multiple-choice item types.",
-      "success_indicator": "The learner checks whether the task requires one answer or more than one answer before reading closely."
-    },
-    {
-      "goal": "Decode prompt wording.",
-      "success_indicator": "The learner identifies the question word, focus words, limiting words, and the type of information required."
-    },
-    {
-      "goal": "Identify the main idea or theme.",
-      "success_indicator": "The learner can state the passage's central message in one short sentence and distinguish it from examples or minor details."
-    },
-    {
-      "goal": "Locate specific details.",
-      "success_indicator": "The learner can scan for names, dates, causes, results, definitions, comparisons, opinions, and sequences of events."
-    },
-    {
-      "goal": "Recognize paraphrased evidence.",
-      "success_indicator": "The learner matches equivalent meanings even when the option uses vocabulary that differs from the passage."
-    },
-    {
-      "goal": "Evaluate every option.",
-      "success_indicator": "The learner can provide a passage-based reason for selecting or rejecting each option."
-    },
-    {
-      "goal": "Infer unfamiliar vocabulary.",
-      "success_indicator": "The learner uses word parts, grammar, contrast, examples, definitions, and surrounding context to make a careful meaning estimate."
-    },
-    {
-      "goal": "Recognize writer purpose, tone, and attitude.",
-      "success_indicator": "The learner distinguishes whether the writer is explaining, comparing, criticizing, supporting, warning, questioning, or reporting neutrally."
-    }
+    "Identify and label the instructions, passage, prompt, and options in a reading multiple-choice item.",
+    "Recognize whether a question requires one answer or multiple answers.",
+    "Use wh-words and sentence-completion prompts to predict the required information type.",
+    "Skim a passage to identify its topic, main idea, tone, and general organization.",
+    "Scan efficiently for names, dates, causes, effects, comparisons, definitions, and other specific details.",
+    "Recognize paraphrases and avoid relying on exact word matching.",
+    "Explain why a selected option is correct and why each rejected option is a distractor.",
+    "Infer unfamiliar vocabulary through context, word families, stems, prefixes, and suffixes.",
+    "Group academic vocabulary by theme to predict likely passage content.",
+    "Apply a repeatable method under timed reading conditions."
   ],
   "core_method": {
-    "name": "PREDICT–MAP–MATCH–PROVE",
-    "purpose": "Use a repeatable process that prevents guessing and simple word matching.",
+    "name": "Prompt-to-Proof Method",
+    "summary": "Decode the prompt first, predict what kind of information is needed, read strategically, and require textual proof before selecting an answer.",
     "steps": [
       {
-        "step": 1,
-        "name": "Check the task type",
-        "instruction": "Confirm whether you must choose one answer or more than one answer. Do this before analyzing the content.",
-        "guiding_question": "How many options am I required to select?"
+        "step": "Identify the task",
+        "detail": "Confirm whether the item requires one answer or multiple answers. Read the instructions carefully because the selection rule changes the decision process."
       },
       {
-        "step": 2,
-        "name": "Decode the prompt",
-        "instruction": "Underline the question word, the topic, and any limiting words such as mainly, according to the text, most likely, present, two reasons, or except.",
-        "guiding_question": "What exact information must the correct option provide?"
+        "step": "Decode the prompt",
+        "detail": "Underline the question focus, including wh-words, limiting expressions, time references, comparison language, and words such as main, purpose, reason, according to, or suggests."
       },
       {
-        "step": 3,
-        "name": "Predict the answer type",
-        "instruction": "Predict whether the answer should be a reason, method, person, place, time, definition, main idea, attitude, example, cause, result, or comparison.",
-        "guiding_question": "What shape should the answer have?"
+        "step": "Predict the answer type",
+        "detail": "Decide whether the answer should be a reason, method, person, place, definition, result, opinion, example, comparison, main idea, or inference."
       },
       {
-        "step": 4,
-        "name": "Map the passage",
-        "instruction": "Skim the title, opening, topic sentences, repeated ideas, contrast words, and conclusion. Give each paragraph a short mental label.",
-        "guiding_question": "Where is the main idea, and where are the supporting details?"
+        "step": "Preview the options",
+        "detail": "Notice repeated themes, contrasting ideas, extreme wording, categories, and vocabulary that may appear as paraphrases in the passage."
       },
       {
-        "step": 5,
-        "name": "Locate the evidence zone",
-        "instruction": "Scan for prompt keywords, related vocabulary, synonyms, pronouns, numbers, names, or discourse markers. Read the relevant sentence and nearby sentences carefully.",
-        "guiding_question": "Which part of the passage directly controls the answer?"
+        "step": "Skim for structure",
+        "detail": "Read topic sentences, the introduction, the conclusion, and repeated ideas to establish the passage's gist and organization."
       },
       {
-        "step": 6,
-        "name": "Match meaning, not words",
-        "instruction": "Compare each option with the passage's meaning. Expect the correct answer to paraphrase the evidence rather than copy it.",
-        "guiding_question": "Does this option express the same complete idea as the passage?"
+        "step": "Scan for evidence",
+        "detail": "Search for the section connected to the prompt, then read the relevant sentence together with the sentence before and after it."
       },
       {
-        "step": 7,
-        "name": "Eliminate distractors",
-        "instruction": "Reject options that are contradicted, not mentioned, too broad, too narrow, only partly true, focused on the wrong category, or based on the wrong part of the passage.",
-        "guiding_question": "What precise defect makes this option wrong?"
+        "step": "Test every option",
+        "detail": "Classify each option as supported, contradicted, not mentioned, too broad, too narrow, partly true, or answering the wrong question."
       },
       {
-        "step": 8,
-        "name": "Prove the answer",
-        "instruction": "Before confirming, identify the exact sentence or combined evidence that supports the selection. For multiple answers, prove each selected option separately.",
-        "guiding_question": "Can I point to evidence rather than rely on memory or general knowledge?"
+        "step": "Select and verify",
+        "detail": "Choose the strongest supported answer or answers, reread the complete prompt with the selection, and confirm that each choice has direct or logically necessary evidence."
       }
     ],
-    "quick_version": "Task type → Prompt → Prediction → Passage map → Evidence → Option comparison → Elimination → Proof"
+    "formula": "TASK TYPE → PROMPT → PREDICT → PREVIEW → SKIM → SCAN → PROVE → ELIMINATE → SELECT → VERIFY"
   },
   "techniques": [
     {
-      "name": "Label the Four Parts of the Item",
-      "teaching_point": "A multiple-choice item normally contains instructions, a passage, a prompt, and answer options. Each part performs a different function.",
-      "how_to_apply": [
-        "Read the instructions to confirm the number of answers required.",
-        "Treat the passage as the only evidence source.",
-        "Treat the prompt as the question that controls relevance.",
-        "Treat every option as a claim that must be tested against the passage."
+      "name": "Wh-word decoding",
+      "purpose": "To predict the kind of information the answer must contain before reading the passage closely.",
+      "how_to": [
+        "Circle the wh-word or question phrase.",
+        "Translate it into an information category.",
+        "Predict common language patterns that may signal the answer.",
+        "Reject options that belong to the wrong information category."
       ],
-      "mini_example": {
-        "instructions": "Select one response.",
-        "passage": "A short text about remote employment.",
-        "prompt": "What is the writer's main concern?",
-        "options": "Four possible interpretations.",
-        "lesson": "An option may be true about remote employment generally but still be wrong if it does not express the writer's concern."
-      }
+      "example": "In the prompt 'Why was the museum closed during the summer?', why requires a reason. Look for cause language such as because, due to, owing to, or as a result of.",
+      "why_it_matters": "It narrows the search and prevents the learner from selecting a true detail that does not answer the question.",
+      "common_error": "Choosing an option that states when or how the museum closed instead of explaining why."
     },
     {
-      "name": "Use Wh-words to Predict the Answer",
-      "teaching_point": "Question words signal the kind of evidence you need.",
-      "prompt_decoder": [
-        {
-          "prompt_word": "Who",
-          "predicted_information": "A person, profession, group, institution, or organization."
-        },
-        {
-          "prompt_word": "What",
-          "predicted_information": "A thing, idea, event, action, definition, result, or main point."
-        },
-        {
-          "prompt_word": "When",
-          "predicted_information": "A date, period, stage, sequence point, or condition involving time."
-        },
-        {
-          "prompt_word": "Where",
-          "predicted_information": "A place, location, environment, section, or context."
-        },
-        {
-          "prompt_word": "Why",
-          "predicted_information": "A cause, reason, purpose, motivation, or explanation."
-        },
-        {
-          "prompt_word": "How",
-          "predicted_information": "A method, process, manner, degree, change, comparison, or mechanism."
-        },
-        {
-          "prompt_word": "Which",
-          "predicted_information": "A selection from a defined category or set."
-        }
+      "name": "Sentence-completion grammar check",
+      "purpose": "To use grammar and meaning together when the prompt is an incomplete sentence.",
+      "how_to": [
+        "Read the incomplete sentence without the options.",
+        "Predict the grammatical form needed after the final word.",
+        "Insert each option mentally.",
+        "Check both grammatical fit and textual support."
       ],
-      "warning": "The wh-word is only the starting point. Limiting words determine the exact answer. For example, 'Why does the writer mention the survey?' asks for rhetorical purpose, not simply the survey's findings."
+      "example": "Prompt: 'The author mentions the experiment in order to ...' The answer should complete an infinitive purpose structure, such as 'illustrate an unexpected effect of rewards.'",
+      "why_it_matters": "An option may discuss the same topic but fail to complete the sentence logically or grammatically.",
+      "common_error": "Selecting an option because its vocabulary appears in the passage even though the completed sentence does not make sense."
     },
     {
-      "name": "Decode Sentence-completion Prompts",
-      "teaching_point": "A sentence-completion prompt may hide the question inside an unfinished statement.",
-      "how_to_apply": [
-        "Read the stem without the options.",
-        "Predict the grammar needed after the final word.",
-        "Predict the meaning needed to complete the statement.",
-        "Test each option for both grammatical and logical fit."
+      "name": "Gist in one line",
+      "purpose": "To separate the central message from supporting details.",
+      "how_to": [
+        "Read the title if one is provided.",
+        "Read the first and final sentences carefully.",
+        "Identify repeated nouns and ideas.",
+        "Write or think of a one-line statement beginning with 'The passage mainly explains that ...'"
       ],
-      "mini_example": {
-        "prompt": "The research was considered significant because...",
-        "prediction": "The answer must provide a reason for the research's significance.",
-        "incorrect_direction": "An option describing when the research occurred does not answer because."
-      }
+      "example": "After reading about two types of motivation and their effects, a useful gist statement is: 'The passage explains different forms of motivation and shows that external rewards can produce unexpected effects.'",
+      "why_it_matters": "Main-idea questions often contain distractors based on memorable examples rather than the whole passage.",
+      "common_error": "Choosing the most interesting example instead of the idea that connects all paragraphs."
     },
     {
-      "name": "Build a Paragraph Map",
-      "teaching_point": "Do not treat the passage as one large block. Give each paragraph a short function label.",
-      "common_paragraph_functions": [
-        "Introduce the topic",
-        "Define a concept",
-        "Present a problem",
-        "Explain a cause",
-        "Describe an effect",
-        "Give an example",
-        "Present evidence",
-        "Contrast two positions",
-        "Challenge a belief",
-        "Offer a solution",
-        "State a conclusion"
+      "name": "Topic-sentence mapping",
+      "purpose": "To understand passage organization and find where different ideas are developed.",
+      "how_to": [
+        "Identify the sentence that introduces each paragraph's main idea.",
+        "Give each paragraph a two-to-five-word label.",
+        "Notice whether later sentences provide examples, causes, contrasts, or results.",
+        "Use the labels to locate evidence quickly."
       ],
-      "how_to_apply": "After skimming each paragraph, summarize it in three to seven words, such as 'defines intrinsic motivation' or 'gives surprising study results.' This makes later scanning faster."
+      "example": "Paragraph 1: 'Two kinds of motivation.' Paragraph 2: 'Unexpected effects of external motivation.'",
+      "why_it_matters": "Questions about purpose, organization, and supporting points are easier when the role of each paragraph is clear.",
+      "common_error": "Reading every sentence at the same speed without recognizing which sentences control the paragraph."
     },
     {
-      "name": "Use Topic Sentences for Gist",
-      "teaching_point": "A topic sentence often expresses the central idea of a paragraph, while later sentences explain, support, contrast, or illustrate it.",
-      "how_to_apply": [
-        "Check the first sentence, but do not assume it is always the topic sentence.",
-        "Notice repeated nouns and concepts throughout the paragraph.",
-        "Separate the general claim from examples, statistics, and illustrations.",
-        "Paraphrase the paragraph in one sentence."
+      "name": "Paraphrase matching",
+      "purpose": "To connect answer options with equivalent meanings in the passage.",
+      "how_to": [
+        "Identify the key meaning in an option.",
+        "Look for synonyms, changed word forms, or altered sentence structure in the passage.",
+        "Compare the complete proposition, not individual words.",
+        "Check whether the option adds, removes, or changes an important condition."
       ],
-      "diagnostic_question": "If the examples disappeared, what general statement would remain?"
+      "example": "Passage: 'Motivation increases the amount of effort a student invests.' Option: 'Motivated learners devote more energy to their work.' These express the same idea.",
+      "why_it_matters": "Correct answers frequently avoid copying the source language directly.",
+      "common_error": "Rejecting the correct option because it uses different vocabulary."
     },
     {
-      "name": "Skim for Gist, Then Scan for Evidence",
-      "teaching_point": "Skimming and scanning are different operations.",
-      "skim": {
-        "purpose": "Understand the overall subject, organization, and main message.",
-        "focus": "Title, opening, topic sentences, repeated ideas, contrast markers, and conclusion."
-      },
-      "scan": {
-        "purpose": "Find a specific fact, term, name, cause, result, or definition.",
-        "focus": "Keywords, synonyms, numbers, capital letters, technical terms, and discourse markers."
-      },
-      "warning": "Scanning without first understanding the topic can lead you to the correct word in the wrong context."
-    },
-    {
-      "name": "Create a Keyword Family",
-      "teaching_point": "Do not scan only for exact words from the prompt. Predict related words and paraphrases.",
-      "mini_example": {
-        "prompt_concept": "The museum was closed because of repairs.",
-        "possible_passage_language": [
-          "renovation",
-          "maintenance work",
-          "structural improvements",
-          "restoration",
-          "temporary building work"
-        ]
-      },
-      "how_to_apply": "Write or think of two to four synonyms, related verbs, nouns, causes, or results before searching the passage."
-    },
-    {
-      "name": "Recognize Paraphrase",
-      "teaching_point": "Correct answers frequently restate the passage using a different grammatical structure or vocabulary.",
-      "paraphrase_patterns": [
-        {
-          "passage": "The policy reduced the number of private vehicles entering the city.",
-          "option": "Fewer motorists drove into the urban centre after the policy was introduced.",
-          "relationship": "Same meaning expressed with different vocabulary and sentence structure."
-        },
-        {
-          "passage": "Researchers remain uncertain about the long-term effects.",
-          "option": "The eventual consequences have not yet been established.",
-          "relationship": "Uncertainty is paraphrased as not yet established."
-        },
-        {
-          "passage": "Only a minority supported the proposal.",
-          "option": "Most participants did not favour the plan.",
-          "relationship": "A positive statement about a minority is restated as a negative statement about the majority."
-        }
-      ]
-    },
-    {
-      "name": "Classify Distractors",
-      "teaching_point": "Wrong options are often designed around predictable reasoning errors.",
-      "distractor_types": [
-        {
-          "type": "Word-match distractor",
-          "description": "Repeats words from the passage but changes their relationship or does not answer the prompt.",
-          "repair": "Compare the full idea, not the repeated vocabulary."
-        },
-        {
-          "type": "Opposite distractor",
-          "description": "States the reverse of the passage.",
-          "repair": "Check negatives, contrasts, and comparative language carefully."
-        },
-        {
-          "type": "Not-mentioned distractor",
-          "description": "Sounds logical or factually possible but is not supported by the text.",
-          "repair": "Use passage evidence only; ignore outside knowledge."
-        },
-        {
-          "type": "Half-true distractor",
-          "description": "Begins accurately but adds an unsupported or incorrect claim.",
-          "repair": "Every meaningful part of the option must be supported."
-        },
-        {
-          "type": "Too-broad distractor",
-          "description": "Makes a general claim that is stronger or wider than the passage.",
-          "repair": "Watch for words such as all, always, completely, impossible, and only."
-        },
-        {
-          "type": "Too-narrow distractor",
-          "description": "Uses one detail or example as though it were the entire main idea.",
-          "repair": "Ask whether the option covers the whole passage or only one small part."
-        },
-        {
-          "type": "Wrong-category distractor",
-          "description": "Gives a cause when the prompt asks for an indicator, or gives an example when the prompt asks for a conclusion.",
-          "repair": "Return to the predicted answer type."
-        },
-        {
-          "type": "Wrong-person distractor",
-          "description": "Attributes an opinion to the writer when it belongs to a researcher, critic, or historical group.",
-          "repair": "Track who believes or says each idea."
-        },
-        {
-          "type": "Wrong-time distractor",
-          "description": "Confuses past conditions, present evidence, and future predictions.",
-          "repair": "Mark tense and time expressions."
-        },
-        {
-          "type": "True-but-irrelevant distractor",
-          "description": "Is supported somewhere in the passage but does not answer the specific prompt.",
-          "repair": "Test relevance after testing truth."
-        }
-      ]
-    },
-    {
-      "name": "Track Logical Signals",
-      "teaching_point": "Discourse markers show how ideas relate and often reveal where the answer lies.",
-      "signal_groups": [
-        {
-          "function": "Contrast or correction",
-          "signals": [
-            "however",
-            "although",
-            "yet",
-            "nevertheless",
-            "in contrast",
-            "rather than",
-            "despite"
-          ],
-          "reading_action": "Expect the writer's main or corrected position after the contrast."
-        },
-        {
-          "function": "Cause",
-          "signals": [
-            "because",
-            "since",
-            "due to",
-            "as a result of"
-          ],
-          "reading_action": "Connect the reason to the correct result."
-        },
-        {
-          "function": "Result",
-          "signals": [
-            "therefore",
-            "consequently",
-            "thus",
-            "as a result",
-            "leading to"
-          ],
-          "reading_action": "Distinguish the outcome from its cause."
-        },
-        {
-          "function": "Example",
-          "signals": [
-            "for example",
-            "for instance",
-            "such as",
-            "including"
-          ],
-          "reading_action": "Do not mistake the example for the broader point."
-        },
-        {
-          "function": "Addition",
-          "signals": [
-            "furthermore",
-            "in addition",
-            "also",
-            "moreover"
-          ],
-          "reading_action": "Expect another supporting point."
-        },
-        {
-          "function": "Conclusion",
-          "signals": [
-            "overall",
-            "in conclusion",
-            "therefore",
-            "the evidence suggests"
-          ],
-          "reading_action": "Look for the final interpretation or main message."
-        }
-      ]
-    },
-    {
-      "name": "Infer Unfamiliar Words Systematically",
-      "teaching_point": "You do not need a perfect dictionary definition. You need a meaning accurate enough to understand the sentence and evaluate the options.",
-      "inference_sequence": [
-        "Identify the word's part of speech from its position in the sentence.",
-        "Separate any recognizable prefix, root, or suffix.",
-        "Look for a definition, example, contrast, synonym, or result nearby.",
-        "Replace the unknown word with a simple possible meaning.",
-        "Check whether the replacement fits the paragraph's logic and tone."
+      "name": "Distractor classification",
+      "purpose": "To eliminate wrong options using a clear reason rather than intuition.",
+      "how_to": [
+        "Mark an option as supported only when the passage confirms its full meaning.",
+        "Mark it contradicted when the passage states the opposite.",
+        "Mark it not mentioned when the idea is plausible but absent.",
+        "Mark it partly true when only one part is supported.",
+        "Mark it wrong focus when it does not answer the prompt."
       ],
-      "word_part_examples": [
-        {
-          "word": "unpredictable",
-          "parts": "un- + predict + -able",
-          "estimated_meaning": "not able to be predicted"
-        },
-        {
-          "word": "misinterpretation",
-          "parts": "mis- + interpret + -ation",
-          "estimated_meaning": "an incorrect understanding"
-        },
-        {
-          "word": "environmental",
-          "parts": "environment + -al",
-          "estimated_meaning": "related to the environment"
-        }
-      ]
+      "example": "A passage identifies drought as a present indicator of environmental change. Options such as campaigners, industrial gases, and carbon dioxide may be related to the topic, but they represent people or causes rather than the requested indicator.",
+      "why_it_matters": "Most distractors are designed to be related to the passage while failing in one precise way.",
+      "common_error": "Rejecting an option as 'wrong' without identifying whether it is contradicted, unsupported, incomplete, or irrelevant."
     },
     {
-      "name": "Separate Writer Purpose from Passage Topic",
-      "teaching_point": "The topic tells you what the passage is about. Purpose tells you why the writer presents the information.",
-      "purpose_patterns": [
-        {
-          "purpose": "Explain",
-          "evidence": "Definitions, causes, stages, or mechanisms."
-        },
-        {
-          "purpose": "Compare",
-          "evidence": "Similarities, differences, whereas, unlike, both."
-        },
-        {
-          "purpose": "Argue or persuade",
-          "evidence": "A position supported by reasons and evaluative language."
-        },
-        {
-          "purpose": "Criticize",
-          "evidence": "Weaknesses, limitations, negative judgments, or challenges to a view."
-        },
-        {
-          "purpose": "Report",
-          "evidence": "Mostly neutral presentation of findings, events, or observations."
-        },
-        {
-          "purpose": "Warn",
-          "evidence": "Risks, harmful consequences, urgency, or recommendations for prevention."
-        },
-        {
-          "purpose": "Illustrate",
-          "evidence": "A specific example used to clarify a broader claim."
-        }
-      ]
-    },
-    {
-      "name": "Prepare Theme-related Vocabulary Groups",
-      "teaching_point": "Academic passages become easier when you recognize vocabulary families associated with common subjects.",
-      "procedure": [
-        "Group related words under a broad academic theme.",
-        "Give the group a short heading.",
-        "Add synonyms, common collocations, and related processes.",
-        "Predict common text types in which the vocabulary may appear."
+      "name": "Evidence-window reading",
+      "purpose": "To avoid misinterpreting a keyword found in isolation.",
+      "how_to": [
+        "Locate the key sentence connected to the prompt.",
+        "Read at least one sentence before it.",
+        "Read at least one sentence after it.",
+        "Check pronouns, contrast linkers, conditions, and examples before deciding."
       ],
-      "sample_groups": [
-        {
-          "heading": "Politics and Government",
-          "words": [
-            "constitution",
-            "democracy",
-            "self-government",
-            "political landscape",
-            "legislation",
-            "representation",
-            "policy"
-          ],
-          "possible_text_types": [
-            "report",
-            "historical account",
-            "commentary",
-            "chart explanation"
-          ]
-        },
-        {
-          "heading": "Population",
-          "words": [
-            "population",
-            "birth rate",
-            "life expectancy",
-            "infant mortality rate",
-            "migration",
-            "demographic change"
-          ],
-          "possible_text_types": [
-            "research summary",
-            "statistical report",
-            "graph description",
-            "social-science article"
-          ]
-        },
-        {
-          "heading": "Environment",
-          "words": [
-            "drought",
-            "emissions",
-            "biodiversity",
-            "conservation",
-            "climate pattern",
-            "habitat loss"
-          ],
-          "possible_text_types": [
-            "science report",
-            "policy discussion",
-            "research article",
-            "editorial"
-          ]
-        }
-      ]
+      "example": "A sentence may say, 'The method was initially successful. However, later trials produced inconsistent results.' Reading only the first sentence would create the wrong answer.",
+      "why_it_matters": "Writers often qualify, contrast, or correct an idea in the following sentence.",
+      "common_error": "Stopping as soon as a word from an option appears in the passage."
+    },
+    {
+      "name": "Word-part and context inference",
+      "purpose": "To make a careful guess about unfamiliar vocabulary without losing too much time.",
+      "how_to": [
+        "Identify the word's likely part of speech.",
+        "Look for a familiar stem or related word.",
+        "Identify prefixes and suffixes.",
+        "Read nearby definitions, examples, contrasts, and results.",
+        "Replace the unknown word with a simple possible meaning and test the sentence."
+      ],
+      "example": "In 'The policy was ineffective and was therefore discontinued,' the prefix in- suggests 'not,' effect relates to results, and discontinued confirms that the policy did not work.",
+      "why_it_matters": "The exact dictionary definition is often unnecessary; an approximate contextual meaning may be enough to answer correctly.",
+      "common_error": "Spending too long trying to translate every unfamiliar word."
+    },
+    {
+      "name": "Theme-vocabulary grouping",
+      "purpose": "To activate background vocabulary and predict likely passage content.",
+      "how_to": [
+        "Group related words under a broad academic heading.",
+        "Add several synonyms, collocations, and associated concepts.",
+        "Predict common text types that might use the group.",
+        "Use the group to recognize paraphrases during reading."
+      ],
+      "example": "Constitution, democracy, self-government, and political landscape belong under Politics or Government. Related words include policy, representation, legislation, and electoral system.",
+      "why_it_matters": "Recognizing semantic groups improves reading speed even when the exact wording changes.",
+      "common_error": "Memorizing isolated words without learning their relationships, collocations, or typical contexts."
     }
   ],
   "worked_examples": [
     {
-      "title": "Predicting the Answer Type from a Why Prompt",
-      "item_type": "Prompt analysis",
-      "prompt": "Why was the museum closed during the summer?",
-      "thinking_process": [
-        "The controlling word is why.",
-        "The answer must provide a reason or cause.",
-        "Useful passage signals may include because, due to, since, following, or as a result of.",
-        "An option giving the reopening date may be true but does not answer why."
-      ],
-      "sample_passage": "The museum closed from June to August while engineers repaired damage to the eastern roof.",
-      "options": [
+      "title": "Predicting the answer type from a why prompt",
+      "input": "Passage: 'The city museum closed from December to February so that engineers could replace its outdated electrical system before the main tourist season.' Prompt: 'Why was the museum closed during the summer?' Options: A. Because visitor numbers were low. B. Because its electrical system required replacement. C. Because a new exhibition was being designed. D. Because engineers were unavailable.",
+      "decoding": "The word why asks for a reason. The answer should identify the cause of the closure, not its timing, duration, or later benefit.",
+      "plan": "Scan for the sentence containing closed, then identify the purpose clause beginning with 'so that.' Compare the meaning of every option with that clause.",
+      "model_answer": "B. Because its electrical system required replacement.",
+      "annotations": [
         {
-          "option": "It normally received fewer visitors in summer.",
-          "evaluation": "Incorrect. The passage does not give this as the reason."
+          "part": "Prompt word",
+          "comment": "'Why' signals that the required information is a reason."
         },
         {
-          "option": "Essential repairs were being completed.",
-          "evaluation": "Correct. This paraphrases the roof repair as the cause of closure."
+          "part": "Textual proof",
+          "comment": "The passage directly states that engineers needed to replace the outdated electrical system."
         },
         {
-          "option": "It reopened at the end of August.",
-          "evaluation": "Incorrect. This gives timing, not a reason."
+          "part": "Option A",
+          "comment": "Visitor numbers are not given as the reason."
         },
         {
-          "option": "Engineers inspected several local buildings.",
-          "evaluation": "Incorrect. This is not stated."
+          "part": "Option C",
+          "comment": "No new exhibition is mentioned."
+        },
+        {
+          "part": "Option D",
+          "comment": "The passage says engineers performed the work, not that they were unavailable."
         }
-      ],
-      "answer": "Essential repairs were being completed.",
-      "lesson": "Match the option to the information category requested by the prompt."
+      ]
     },
     {
-      "title": "Separating an Indicator from Causes and People",
-      "item_type": "Choose single answer",
-      "prompt": "According to the passage, which is a present indicator of environmental change?",
-      "sample_passage": "Scientists report that long droughts have reduced river levels in several regions. Environmental campaigners argue that industrial gases and carbon dioxide emissions must be controlled.",
-      "options": [
+      "title": "Separating an indicator from related climate vocabulary",
+      "input": "Passage: 'Researchers point to increasingly long droughts and falling river levels as visible indicators of regional climate change. Industrial emissions and rising carbon dioxide concentrations are major causes, while environmental campaigners continue to demand stronger controls.' Prompt: 'Which option is presented as a current indicator of environmental change?' Options: A. Campaigners. B. Industrial emissions. C. Carbon dioxide. D. Drought.",
+      "decoding": "The key word indicator means a sign or observable evidence. The prompt does not ask for a cause, a person, or a substance.",
+      "plan": "Classify each option by its role in the passage: campaigners are people, emissions and carbon dioxide are causes, and drought is a visible sign.",
+      "model_answer": "D. Drought.",
+      "annotations": [
         {
-          "option": "Environmental campaigners",
-          "evaluation": "Incorrect. They are people who discuss the issue, not an indicator."
+          "part": "Required category",
+          "comment": "The answer must be an observable sign."
         },
         {
-          "option": "Industrial gases",
-          "evaluation": "Incorrect. They are presented as a contributing cause."
+          "part": "Correct evidence",
+          "comment": "The text explicitly calls long droughts visible indicators."
         },
         {
-          "option": "Carbon dioxide",
-          "evaluation": "Incorrect. It is discussed as an emission requiring control, not the observed sign requested."
+          "part": "Related distractors",
+          "comment": "Industrial emissions and carbon dioxide are strongly related to climate change but are categorized as causes."
         },
         {
-          "option": "Drought",
-          "evaluation": "Correct. The drought is an observable sign associated with environmental change."
+          "part": "Wrong-category distractor",
+          "comment": "Campaigners are people responding to the issue, not indicators of it."
         }
-      ],
-      "answer": "Drought",
-      "lesson": "An option can be related to the topic and still belong to the wrong category."
+      ]
     },
     {
-      "title": "Finding the Main Idea Instead of Choosing an Example",
-      "item_type": "Choose single answer",
-      "prompt": "What is the main point of the passage?",
-      "sample_passage": "Urban trees provide several benefits. They reduce summer temperatures by creating shade, absorb some air pollutants, and slow rainwater entering drainage systems. In one city, streets with mature trees were measured as three degrees cooler than nearby streets without them.",
-      "options": [
+      "title": "Finding the main idea rather than a supporting example",
+      "input": "Passage: 'Almost all students are motivated in one way or another. Some are interested in demanding academic work, while others are strongly attracted to social activities. Motivation affects effort, persistence, attention, and the value students give to rewards. Because of these effects, motivation generally improves performance.' Prompt: 'What is the writer's main purpose?' Options: A. To criticize students who prefer social activities. B. To explain that motivation has several positive effects on learning and performance. C. To argue that academic motivation is the only useful kind. D. To show that rewards always improve performance.",
+      "decoding": "The phrase main purpose requires the idea that covers the whole passage. Examples of academic and social motivation support the larger claim about motivation's effects.",
+      "plan": "Summarize the passage in one sentence, then select the option that matches the full summary without adding judgment or absolute claims.",
+      "model_answer": "B. To explain that motivation has several positive effects on learning and performance.",
+      "annotations": [
         {
-          "option": "One city recorded a three-degree temperature difference.",
-          "evaluation": "Incorrect. This is a supporting example."
+          "part": "Main idea",
+          "comment": "The passage lists several ways motivation influences learning and concludes that it improves performance."
         },
         {
-          "option": "Urban trees provide several environmental benefits.",
-          "evaluation": "Correct. It covers the complete paragraph."
+          "part": "Option A",
+          "comment": "The writer describes socially motivated students but does not criticize them."
         },
         {
-          "option": "Drainage systems are ineffective during heavy rain.",
-          "evaluation": "Incorrect. The passage does not make this claim."
+          "part": "Option C",
+          "comment": "The passage accepts more than one kind of motivation."
         },
         {
-          "option": "All cities should plant the same species of tree.",
-          "evaluation": "Incorrect. This recommendation is not stated."
+          "part": "Option D",
+          "comment": "The absolute word 'always' is unsupported, and rewards are not the passage's central focus."
         }
-      ],
-      "answer": "Urban trees provide several environmental benefits.",
-      "lesson": "A main-idea answer must cover the passage broadly without becoming more general than the text."
+      ]
     },
     {
-      "title": "Recognizing a Correct Paraphrase",
-      "item_type": "Choose single answer",
-      "prompt": "What did the researchers conclude?",
-      "sample_passage": "The study found no reliable evidence that the new timetable improved attendance. The researchers therefore recommended further trials before it was adopted nationally.",
-      "options": [
+      "title": "Choosing multiple supported answers",
+      "input": "Passage: 'Urban trees reduce surface temperatures by providing shade and releasing moisture into the air. They may also improve air quality by trapping some airborne particles. However, trees require long-term maintenance, and poorly selected species can damage pavements or underground pipes.' Prompt: 'According to the passage, which statements are correct?' Options: A. Urban trees can help cool cities. B. All tree species improve underground infrastructure. C. Trees may capture some particles from the air. D. Urban trees require no maintenance. E. Inappropriate species may cause structural damage.",
+      "decoding": "The instruction requires multiple answers. Each option must be evaluated separately against the passage.",
+      "plan": "Match each option to a specific sentence. Reject options containing reversed or absolute meanings.",
+      "model_answer": "A, C, and E.",
+      "annotations": [
         {
-          "option": "The timetable had already increased attendance throughout the country.",
-          "evaluation": "Incorrect. This contradicts the passage."
+          "part": "Option A",
+          "comment": "Supported by shade and moisture reducing surface temperatures."
         },
         {
-          "option": "More testing was needed before widespread implementation.",
-          "evaluation": "Correct. Further trials and national adoption are paraphrased."
+          "part": "Option B",
+          "comment": "Contradicted because some species can damage pipes."
         },
         {
-          "option": "The researchers opposed every change to school timetables.",
-          "evaluation": "Incorrect. This is too broad."
+          "part": "Option C",
+          "comment": "Supported by the statement that trees can trap airborne particles."
         },
         {
-          "option": "Attendance data was unavailable.",
-          "evaluation": "Incorrect. The passage says the evidence was not reliable, not that data did not exist."
+          "part": "Option D",
+          "comment": "Contradicted by the requirement for long-term maintenance."
+        },
+        {
+          "part": "Option E",
+          "comment": "Supported by the warning about pavement and pipe damage."
         }
-      ],
-      "answer": "More testing was needed before widespread implementation.",
-      "lesson": "Correct options often change both vocabulary and grammar while preserving the original meaning."
+      ]
     },
     {
-      "title": "Testing Each Option Independently in a Multiple-answer Item",
-      "item_type": "Choose multiple answers",
-      "prompt": "Which two benefits of flexible working are identified in the passage?",
-      "sample_passage": "Flexible schedules may allow employees to avoid peak-hour travel and manage family responsibilities more easily. However, some workers report difficulty separating work from personal time, and managers may need new methods for monitoring progress.",
-      "options": [
+      "title": "Inferring an unfamiliar word from context",
+      "input": "Passage: 'The first trial produced promising results, but the improvement was transient. Within two weeks, participants had returned to their previous performance levels.' Prompt: 'The word transient is closest in meaning to:' Options: A. Permanent. B. Temporary. C. Unexpected. D. Measurable.",
+      "decoding": "The second sentence explains that the improvement disappeared within two weeks, so the unknown adjective describes something that did not last.",
+      "plan": "Use the contrast between promising results and the later return to previous levels. Replace transient with each option and test the meaning.",
+      "model_answer": "B. Temporary.",
+      "annotations": [
         {
-          "option": "Employees can reduce travel during the busiest periods.",
-          "evaluation": "Correct. This paraphrases avoiding peak-hour travel."
+          "part": "Context clue",
+          "comment": "Participants returned to their earlier level after only two weeks."
         },
         {
-          "option": "Employees may find family responsibilities easier to organize.",
-          "evaluation": "Correct. This directly matches the passage."
+          "part": "Logical meaning",
+          "comment": "The improvement lasted for a short period."
         },
         {
-          "option": "Managers no longer need to monitor progress.",
-          "evaluation": "Incorrect. The passage says managers may need new monitoring methods."
+          "part": "Option A",
+          "comment": "Permanent expresses the opposite meaning."
         },
         {
-          "option": "Workers always achieve a better work-life balance.",
-          "evaluation": "Incorrect. Always is too strong, and the passage mentions difficulty separating work from personal time."
+          "part": "Options C and D",
+          "comment": "The result may have been unexpected or measurable, but neither word explains its short duration."
         }
-      ],
-      "answer": [
-        "Employees can reduce travel during the busiest periods.",
-        "Employees may find family responsibilities easier to organize."
-      ],
-      "lesson": "Do not select an option merely because it describes a possible benefit. Select it only when the passage identifies that benefit."
-    },
-    {
-      "title": "Identifying the Writer's Purpose",
-      "item_type": "Choose single answer",
-      "prompt": "Why does the writer mention the 2018 survey?",
-      "sample_passage": "Public concern about plastic waste is not entirely new. A 2018 survey found that more than two-thirds of respondents already supported restrictions on disposable packaging. Recent campaigns have increased attention, but they did not create the concern from nothing.",
-      "options": [
-        {
-          "option": "To prove that all disposable packaging had been banned by 2018.",
-          "evaluation": "Incorrect. No ban is described."
-        },
-        {
-          "option": "To show that concern existed before the recent campaigns.",
-          "evaluation": "Correct. The survey supports the writer's claim about earlier concern."
-        },
-        {
-          "option": "To explain how the survey questions were designed.",
-          "evaluation": "Incorrect. Survey methodology is not discussed."
-        },
-        {
-          "option": "To criticize respondents for changing their opinions.",
-          "evaluation": "Incorrect. The writer does not express this attitude."
-        }
-      ],
-      "answer": "To show that concern existed before the recent campaigns.",
-      "lesson": "When the prompt asks why information is mentioned, identify the role that information plays in the writer's argument."
-    },
-    {
-      "title": "Using Contrast to Infer an Unfamiliar Word",
-      "item_type": "Vocabulary in context",
-      "prompt": "The word 'scarce' is closest in meaning to...",
-      "sample_passage": "Fresh water is abundant in the northern region, but it is scarce in the dry interior, where communities depend on carefully managed reserves.",
-      "options": [
-        {
-          "option": "polluted",
-          "evaluation": "Incorrect. Water quality is not the focus."
-        },
-        {
-          "option": "limited",
-          "evaluation": "Correct. The contrast with abundant and the need for reserves indicate that water is not plentiful."
-        },
-        {
-          "option": "expensive",
-          "evaluation": "Incorrect. Price is not mentioned."
-        },
-        {
-          "option": "flowing",
-          "evaluation": "Incorrect. This does not fit the contrast."
-        }
-      ],
-      "answer": "limited",
-      "lesson": "The contrast marker but and the opposite word abundant provide enough context to infer the meaning."
-    },
-    {
-      "title": "Using Topic Vocabulary Groups",
-      "item_type": "Pre-reading vocabulary preparation",
-      "words": [
-        "constitution",
-        "democracy",
-        "self-government",
-        "political landscape"
-      ],
-      "thinking_process": [
-        "All four words relate to systems of rule and political organization.",
-        "A suitable heading is Politics and Government.",
-        "Related academic vocabulary includes policy, representation, legislation, election, and governance.",
-        "A passage using these terms may be a historical report, political commentary, research summary, or explanation of a chart."
-      ],
-      "answer": "Politics and Government",
-      "lesson": "Recognizing a theme activates relevant vocabulary and helps predict passage content before close reading."
+      ]
     }
   ],
-  "useful_language": {
-    "prompt_language": [
-      {
-        "expression": "According to the passage...",
-        "meaning": "Use only information stated or clearly supported by the text."
-      },
-      {
-        "expression": "The main purpose of the passage is to...",
-        "meaning": "Identify why the writer produced the whole text."
-      },
-      {
-        "expression": "The writer mentions X in order to...",
-        "meaning": "Identify the function of a specific detail or example."
-      },
-      {
-        "expression": "Which statement is supported by the passage?",
-        "meaning": "Choose a claim that can be proved from the text."
-      },
-      {
-        "expression": "Which statement is not supported?",
-        "meaning": "Look carefully for the exception and do not forget the negative."
-      },
-      {
-        "expression": "It can be inferred that...",
-        "meaning": "Choose a conclusion strongly suggested by evidence, even if it is not stated in exactly those words."
-      },
-      {
-        "expression": "The writer's attitude is best described as...",
-        "meaning": "Identify the writer's emotional or evaluative position."
-      },
-      {
-        "expression": "The word or phrase X is closest in meaning to...",
-        "meaning": "Use the local context rather than the word's most familiar everyday meaning."
-      },
-      {
-        "expression": "Which of the following are reasons for...",
-        "meaning": "Find causes or explanations and test each option independently."
-      }
-    ],
-    "evidence_language_for_self_explanation": [
-      "The passage states that...",
-      "This option paraphrases the idea that...",
-      "The evidence appears in the sentence...",
-      "The writer contrasts X with Y, which shows that...",
-      "This is the main idea because the other sentences provide examples of it.",
-      "This option is too broad because the passage refers only to...",
-      "This option is too narrow because it focuses on one example rather than the whole argument.",
-      "This option is not mentioned in the passage.",
-      "This option reverses the relationship between cause and result.",
-      "This option is partly true, but its final claim is unsupported.",
-      "This detail belongs to the researcher's opinion, not the writer's position.",
-      "The prompt asks for a reason, but this option gives a result.",
-      "The option uses similar words, but the meaning is different."
-    ],
-    "writer_attitude_vocabulary": [
-      {
-        "attitude": "supportive",
-        "clues": "beneficial, valuable, convincing, promising"
-      },
-      {
-        "attitude": "critical",
-        "clues": "flawed, inadequate, misleading, fails to consider"
-      },
-      {
-        "attitude": "cautious",
-        "clues": "may, might, appears, evidence remains limited"
-      },
-      {
-        "attitude": "concerned",
-        "clues": "risk, threat, serious consequences, urgent"
-      },
-      {
-        "attitude": "neutral",
-        "clues": "reports information without strong approval or criticism"
-      },
-      {
-        "attitude": "skeptical",
-        "clues": "questions the evidence, doubts a claim, points out uncertainty"
-      },
-      {
-        "attitude": "optimistic",
-        "clues": "likely improvement, positive potential, encouraging results"
-      }
-    ],
-    "academic_vocabulary_relationships": [
-      "cause → consequence",
-      "problem → response",
-      "claim → evidence",
-      "general idea → example",
-      "theory → application",
-      "past condition → present change",
-      "similarity → difference",
-      "advantage → limitation",
-      "observation → conclusion"
-    ]
-  },
+  "useful_language": [
+    {
+      "category": "Prompt signals",
+      "items": [
+        {
+          "item": "According to the passage",
+          "when_to_use": "Use this as a reminder to select only information explicitly supported by the text, not outside knowledge."
+        },
+        {
+          "item": "The passage mainly discusses",
+          "when_to_use": "Use it to identify the broad idea covering most or all of the passage."
+        },
+        {
+          "item": "The writer mentions X in order to",
+          "when_to_use": "Use it to identify the function of an example, fact, quotation, or comparison."
+        },
+        {
+          "item": "It can be inferred that",
+          "when_to_use": "Use it when the answer is not directly stated but follows logically from textual evidence."
+        },
+        {
+          "item": "Which of the following is supported",
+          "when_to_use": "Use it to test each option against direct or logically necessary evidence."
+        },
+        {
+          "item": "The word X is closest in meaning to",
+          "when_to_use": "Use it to infer meaning from context rather than choose the word's most familiar dictionary definition."
+        }
+      ]
+    },
+    {
+      "category": "Reason and result signals",
+      "items": [
+        {
+          "item": "because / since / as",
+          "when_to_use": "Look for these when a why prompt requires a reason."
+        },
+        {
+          "item": "due to / owing to / as a result of",
+          "when_to_use": "Use these to identify noun phrases expressing causes."
+        },
+        {
+          "item": "therefore / consequently / thus",
+          "when_to_use": "Look after these words for conclusions or results."
+        },
+        {
+          "item": "leads to / results in / causes",
+          "when_to_use": "Use these to map cause-and-effect relationships."
+        },
+        {
+          "item": "because of this / for this reason",
+          "when_to_use": "Use these to connect earlier evidence with a later conclusion."
+        }
+      ]
+    },
+    {
+      "category": "Contrast and qualification signals",
+      "items": [
+        {
+          "item": "however",
+          "when_to_use": "Read carefully after this word because the writer may limit or reverse the previous idea."
+        },
+        {
+          "item": "although / even though",
+          "when_to_use": "Use these to distinguish a concession from the writer's main claim."
+        },
+        {
+          "item": "whereas / while",
+          "when_to_use": "Use these to identify comparisons or differences between two subjects."
+        },
+        {
+          "item": "but / yet",
+          "when_to_use": "Look for a correction, limitation, or unexpected contrast."
+        },
+        {
+          "item": "despite / in spite of",
+          "when_to_use": "Use these to identify a result that occurs contrary to an expected condition."
+        },
+        {
+          "item": "rather than",
+          "when_to_use": "Use it to identify the writer's preferred or corrected alternative."
+        }
+      ]
+    },
+    {
+      "category": "Example and support signals",
+      "items": [
+        {
+          "item": "for example / for instance",
+          "when_to_use": "Recognize that the following information supports a broader point and may not itself be the main idea."
+        },
+        {
+          "item": "such as",
+          "when_to_use": "Use it to identify members of a category or examples of a general statement."
+        },
+        {
+          "item": "including",
+          "when_to_use": "Use it to recognize a non-complete list of supporting details."
+        },
+        {
+          "item": "this is illustrated by",
+          "when_to_use": "Use it to identify evidence provided to clarify or prove a claim."
+        },
+        {
+          "item": "in particular",
+          "when_to_use": "Use it to identify a detail receiving special emphasis."
+        }
+      ]
+    },
+    {
+      "category": "Option-elimination language",
+      "items": [
+        {
+          "item": "Supported by the passage",
+          "when_to_use": "Label an option this way when its complete meaning matches direct or logically necessary evidence."
+        },
+        {
+          "item": "Contradicted by the passage",
+          "when_to_use": "Use this when the text states the opposite of the option."
+        },
+        {
+          "item": "Not mentioned",
+          "when_to_use": "Use this when an option is plausible but has no textual evidence."
+        },
+        {
+          "item": "Partly true but incomplete",
+          "when_to_use": "Use this when one part of an option is supported but another part is wrong or missing."
+        },
+        {
+          "item": "Too broad",
+          "when_to_use": "Use this when an option makes a larger claim than the passage supports."
+        },
+        {
+          "item": "Too narrow",
+          "when_to_use": "Use this when an option describes only one example but the prompt asks for the main idea."
+        },
+        {
+          "item": "Answers the wrong question",
+          "when_to_use": "Use this when the option is true but does not match the information category requested by the prompt."
+        }
+      ]
+    },
+    {
+      "category": "Writer attitude signals",
+      "items": [
+        {
+          "item": "surprisingly / unexpectedly",
+          "when_to_use": "Use these to recognize that the writer views a result as contrary to expectations."
+        },
+        {
+          "item": "unfortunately / regrettably",
+          "when_to_use": "Use these to identify a negative evaluation."
+        },
+        {
+          "item": "clearly / undoubtedly",
+          "when_to_use": "Use these to identify strong confidence or certainty."
+        },
+        {
+          "item": "may / might / appears to",
+          "when_to_use": "Use these to recognize limited certainty and avoid selecting an overly definite option."
+        },
+        {
+          "item": "arguably / possibly",
+          "when_to_use": "Use these to identify a cautious or debatable claim."
+        }
+      ]
+    }
+  ],
   "common_mistakes": [
     {
-      "mistake": "Choosing an option because it repeats words from the passage.",
-      "why_it_fails": "The option may use familiar vocabulary while changing the relationship, category, or conclusion.",
-      "correction": "Translate both the passage evidence and the option into simple meaning, then compare the complete ideas."
+      "mistake": "Selecting an option because it repeats exact words from the passage.",
+      "why_it_hurts": "Distractors often copy visible vocabulary while changing the relationship, category, cause, time, or conclusion.",
+      "fix": "Paraphrase the option in simple language and compare its complete meaning with the passage."
     },
     {
-      "mistake": "Reading the passage closely before understanding the prompt.",
-      "why_it_fails": "The learner spends time processing information without knowing what evidence is needed.",
-      "correction": "Decode the prompt first, predict the answer type, and then read with a purpose."
+      "mistake": "Reading the passage without first understanding the prompt.",
+      "why_it_hurts": "The learner reads without a clear purpose and may remember information that does not answer the question.",
+      "fix": "Decode the prompt and predict the required answer type before close reading."
     },
     {
-      "mistake": "Believing there is only one correct reading order for every item.",
-      "why_it_fails": "Different prompts require different approaches. A gist question and a detail question do not require identical reading behaviour.",
-      "correction": "Use a flexible order: inspect the task type and prompt, skim for structure, then scan and read the evidence zone closely."
+      "mistake": "Assuming the passage must always be read before the prompt and options.",
+      "why_it_hurts": "A fixed reading order may waste time and prevent focused scanning.",
+      "fix": "Use a flexible order: inspect the instructions and prompt first, preview options briefly, then skim and scan the passage."
     },
     {
-      "mistake": "Selecting an option that is true but irrelevant.",
-      "why_it_fails": "An option must be both supported by the passage and responsive to the prompt.",
-      "correction": "Ask two questions: Is it true according to the text? Does it answer this exact prompt?"
+      "mistake": "Choosing a supporting detail for a main-idea question.",
+      "why_it_hurts": "A memorable example may be accurate but too narrow to represent the passage as a whole.",
+      "fix": "Create a one-sentence summary and choose the option that covers the greatest proportion of the passage."
     },
     {
-      "mistake": "Using personal knowledge to complete missing evidence.",
-      "why_it_fails": "PTE reading questions assess comprehension of the supplied passage, not general subject knowledge.",
-      "correction": "Treat unsupported outside knowledge as a distractor, even when it is factually plausible."
+      "mistake": "Selecting a partly true option.",
+      "why_it_hurts": "Multiple-choice options must be correct as complete statements; one unsupported phrase makes the whole option unreliable.",
+      "fix": "Break long options into claims and verify every claim separately."
     },
     {
-      "mistake": "Choosing a memorable example as the main idea.",
-      "why_it_fails": "Examples are concrete and easy to remember, but they often support a broader claim.",
-      "correction": "Ask what general idea the example demonstrates."
+      "mistake": "Using personal knowledge instead of passage evidence.",
+      "why_it_hurts": "An option may be generally true in real life but still be unsupported by the supplied text.",
+      "fix": "Ask, 'Where is the proof in this passage?' and reject answers based only on outside knowledge."
     },
     {
-      "mistake": "Ignoring limiting words such as mainly, most likely, present, according to the writer, or except.",
-      "why_it_fails": "These words change the scope or direction of the task.",
-      "correction": "Underline limiting words before reading the passage."
+      "mistake": "Ignoring negative or limiting words in the prompt.",
+      "why_it_hurts": "Words such as not, except, least, mainly, only, and most likely can reverse or narrow the required answer.",
+      "fix": "Underline all limiting words before examining the options."
     },
     {
-      "mistake": "Treating a partly correct option as fully correct.",
-      "why_it_fails": "One unsupported clause can invalidate the entire option.",
-      "correction": "Break long options into smaller claims and verify each claim."
+      "mistake": "Treating all related vocabulary as the same category.",
+      "why_it_hurts": "A passage may distinguish between a cause, effect, indicator, example, person, and solution even when all belong to the same topic.",
+      "fix": "Label the role of each option in relation to the prompt."
     },
     {
-      "mistake": "Confusing the writer's opinion with an opinion reported in the passage.",
-      "why_it_fails": "Academic passages often present several viewpoints without endorsing all of them.",
-      "correction": "Track attribution phrases such as researchers argue, critics claim, the author suggests, or participants reported."
+      "mistake": "Stopping at the first sentence containing a matching keyword.",
+      "why_it_hurts": "The next sentence may introduce contrast, exception, or qualification.",
+      "fix": "Read an evidence window containing the sentence before and after the match."
     },
     {
-      "mistake": "Confusing causes, effects, examples, and indicators.",
-      "why_it_fails": "The option may be related to the topic but answer the wrong information category.",
-      "correction": "Predict the required category from the prompt before evaluating options."
+      "mistake": "Selecting too many options in a multiple-answer item.",
+      "why_it_hurts": "Related, plausible, or partly true distractors may be included alongside fully supported answers.",
+      "fix": "Require independent textual proof for every selected option and remove any option that cannot be fully defended."
     },
     {
-      "mistake": "Selecting too many options in a multiple-answer item because several seem possible.",
-      "why_it_fails": "Possibility is not evidence.",
-      "correction": "Prove every selected option separately and reject any option that cannot be tied to specific passage evidence."
-    },
-    {
-      "mistake": "Rejecting a correct option because it uses unfamiliar wording.",
-      "why_it_fails": "Correct answers often paraphrase rather than repeat the passage.",
-      "correction": "Look for equivalent relationships and meanings, not identical vocabulary."
-    },
-    {
-      "mistake": "Spending too long trying to define every unfamiliar word.",
-      "why_it_fails": "Many unknown words are not essential to the question.",
-      "correction": "First ask whether the word controls the answer. Infer only the level of meaning needed for comprehension."
-    },
-    {
-      "mistake": "Reading only the sentence containing a matching keyword.",
-      "why_it_fails": "The previous or following sentence may contain a contrast, exception, pronoun reference, or conclusion that changes the meaning.",
-      "correction": "Read the evidence sentence together with its immediate context."
+      "mistake": "Trying to understand every unfamiliar word.",
+      "why_it_hurts": "This consumes time and interrupts understanding of the passage's main structure.",
+      "fix": "Decide whether the word is essential; when it is, infer only the approximate meaning needed for the question."
     }
   ],
   "practice_plan": {
-    "estimated_study_time": "Study this chapter in one focused session of about 2 hours, then add extra practice time for the worksheet and CD-ROM practice items if available.",
-    "session_structure": [
+    "time_budget": [
       {
-        "stage": 1,
-        "name": "Item orientation",
-        "duration_minutes": 10,
-        "activities": [
-          "Label the instructions, passage, prompt, and options in two sample items.",
-          "Identify whether each item requires one answer or multiple answers.",
-          "Explain the difference between a prompt and an option."
-        ],
-        "success_target": "Correctly identify all item parts and response requirements."
+        "phase": "Item-format orientation",
+        "minutes": "10",
+        "focus": "Label instructions, passage, prompt, and options; distinguish single-answer from multiple-answer items."
       },
       {
-        "stage": 2,
-        "name": "Prompt-decoding drill",
-        "duration_minutes": 15,
-        "activities": [
-          "Sort prompts into reason, method, main idea, detail, purpose, attitude, inference, and vocabulary categories.",
-          "Underline wh-words and limiting words.",
-          "Predict the expected answer type before viewing any passage."
-        ],
-        "success_target": "Correctly predict the information category for at least eight of ten prompts."
+        "phase": "Prompt decoding",
+        "minutes": "15",
+        "focus": "Classify wh-prompts and sentence-completion prompts by the information they require."
       },
       {
-        "stage": 3,
-        "name": "Gist and paragraph mapping",
-        "duration_minutes": 15,
-        "activities": [
-          "Skim a short academic passage.",
-          "Give each paragraph a three-to-seven-word label.",
-          "Write one sentence stating the passage's central message.",
-          "Separate the main claim from two supporting examples."
-        ],
-        "success_target": "Produce a main-idea statement broad enough to cover the passage but not broader than the text."
+        "phase": "Vocabulary prediction",
+        "minutes": "15",
+        "focus": "Build theme-related word groups and predict likely synonyms, collocations, and passage content."
       },
       {
-        "stage": 4,
-        "name": "Keyword-family and scanning practice",
-        "duration_minutes": 15,
-        "activities": [
-          "Choose four important concepts from a prompt.",
-          "Generate synonyms and related vocabulary for each concept.",
-          "Scan the passage for exact words and paraphrases.",
-          "Mark the evidence zone and read one sentence before and after it."
-        ],
-        "success_target": "Locate relevant evidence without depending only on exact word matches."
+        "phase": "Skimming and structure",
+        "minutes": "20",
+        "focus": "Identify titles, topic sentences, repeated concepts, paragraph functions, and the overall gist."
       },
       {
-        "stage": 5,
-        "name": "Distractor laboratory",
-        "duration_minutes": 20,
-        "activities": [
-          "Analyze one single-answer item with four options.",
-          "Label each wrong option by distractor type.",
-          "Rewrite one distractor so that it becomes correct.",
-          "Explain why the correct option answers the prompt more precisely."
-        ],
-        "success_target": "Give a specific text-based reason for every option."
+        "phase": "Scanning and evidence",
+        "minutes": "20",
+        "focus": "Locate details efficiently and read evidence windows around relevant keywords."
       },
       {
-        "stage": 6,
-        "name": "Unfamiliar-word inference",
-        "duration_minutes": 10,
-        "activities": [
-          "Identify the grammatical role of five unfamiliar words.",
-          "Mark any prefix, root, or suffix.",
-          "Use contrast, definition, example, or result clues.",
-          "Replace each word with a simple estimated meaning and check the sentence."
-        ],
-        "success_target": "Reach a context-appropriate meaning without needing an exact dictionary definition."
+        "phase": "Option analysis",
+        "minutes": "20",
+        "focus": "Classify options as supported, contradicted, not mentioned, partly true, too broad, too narrow, or wrong focus."
       },
       {
-        "stage": 7,
-        "name": "Guided item practice",
-        "duration_minutes": 20,
-        "activities": [
-          "Complete one choose-single-answer item using the full PREDICT–MAP–MATCH–PROVE method.",
-          "Complete one choose-multiple-answers item.",
-          "Write a short evidence note beside each selected answer.",
-          "Review every unselected option."
-        ],
-        "success_target": "Make selections only when clear passage evidence is available."
+        "phase": "Timed practice",
+        "minutes": "15",
+        "focus": "Complete mixed single-answer and multiple-answer items using the full Prompt-to-Proof Method."
       },
       {
-        "stage": 8,
-        "name": "Timed practice",
-        "duration_minutes": 10,
-        "activities": [
-          "Complete a small mixed set without pausing.",
-          "Use the quick method: task type, prompt, map, evidence, elimination, proof.",
-          "Mark any item where confidence is low."
-        ],
-        "success_target": "Maintain an evidence-based process under time pressure."
-      },
-      {
-        "stage": 9,
-        "name": "Error review and vocabulary grouping",
-        "duration_minutes": 5,
-        "activities": [
-          "Record each error by cause rather than merely writing the correct answer.",
-          "Group new vocabulary by academic theme.",
-          "Choose one strategy to emphasize in the next practice session."
-        ],
-        "success_target": "Identify whether each error came from prompt misunderstanding, weak passage mapping, missed paraphrase, vocabulary, or distractor attraction."
+        "phase": "Review and error log",
+        "minutes": "5",
+        "focus": "Record the reason for each error and identify one strategy to apply in the next practice set."
       }
     ],
-    "source_practice_items": [
+    "drills": [
       {
-        "question": "A prompt begins with 'According to this text, how...?' What type of information should you predict before reading closely?",
-        "answer": "Predict that the answer will describe a way, process, manner, degree, or difference. Then scan for wording that explains how something happens or how two things differ.",
-        "skill": "Prompt decoding"
+        "name": "Prompt category sprint",
+        "instructions": "Read ten prompts without passages. For each prompt, write the required answer type, such as reason, method, comparison, main idea, purpose, definition, detail, or inference."
       },
       {
-        "question": "You see the words 'population,' 'birth rate,' 'life expectancy,' and 'infant mortality rate.' Give a suitable theme heading.",
-        "answer": "Population",
-        "skill": "Vocabulary grouping"
+        "name": "Five-second gist",
+        "instructions": "Read the title and topic sentence of each paragraph, then state the passage's likely main idea in one sentence before reading the details."
       },
       {
-        "question": "After selecting an answer, what should you do with the remaining options?",
-        "answer": "Check every remaining option against the passage and state why it is correct or incorrect. Treat unsupported options as distractors.",
-        "skill": "Option analysis"
+        "name": "Paragraph label drill",
+        "instructions": "Give each paragraph a short functional label such as definition, cause, example, contrast, problem, solution, or conclusion."
       },
       {
-        "question": "Name two strategies for dealing with an unfamiliar word.",
-        "answer": "Examine its stem, prefix, or suffix; compare it with familiar words; identify its grammatical role; and use definitions, examples, contrasts, or surrounding context.",
-        "skill": "Vocabulary inference"
+        "name": "Paraphrase pairs",
+        "instructions": "Match sentences from a passage with answer options that express the same meaning using different vocabulary or grammar."
+      },
+      {
+        "name": "Distractor autopsy",
+        "instructions": "For every wrong option, identify one exact failure type: contradicted, not mentioned, partly true, too broad, too narrow, extreme, or wrong question."
+      },
+      {
+        "name": "Evidence underline",
+        "instructions": "Underline the shortest passage segment that proves each correct answer and circle any limiting word that makes a distractor wrong."
+      },
+      {
+        "name": "Unknown-word detective",
+        "instructions": "For each unfamiliar word, identify its part of speech, stem, affixes, nearby clues, and approximate contextual meaning."
+      },
+      {
+        "name": "Theme-group expansion",
+        "instructions": "Organize vocabulary into topics such as population, politics, environment, education, health, technology, and economics, then add five related academic terms to each group."
+      },
+      {
+        "name": "Multiple-answer restraint",
+        "instructions": "Complete several multiple-answer questions and write one evidence sentence beside every selected option. Remove any choice that lacks clear proof."
       }
     ],
-    "additional_practice_items": [
-      {
-        "question": "The passage says, 'Although the first trial produced encouraging results, the sample was too small to support a firm conclusion.' Which option best reflects the writer's position?",
-        "options": [
-          "The trial proved the treatment was effective.",
-          "The trial was completely unsuccessful.",
-          "The early findings were positive but not conclusive.",
-          "The sample size was larger than expected."
-        ],
-        "answer": "The early findings were positive but not conclusive.",
-        "explanation": "Although introduces a contrast. The results were encouraging, but the evidence was insufficient for certainty."
-      },
-      {
-        "question": "A passage explains that a new railway reduced journey time, increased access to employment, and caused rent to rise near stations. Which two positive effects are identified?",
-        "options": [
-          "Shorter journeys",
-          "Lower rents near stations",
-          "Better access to jobs",
-          "Reduced railway construction costs"
-        ],
-        "answer": [
-          "Shorter journeys",
-          "Better access to jobs"
-        ],
-        "explanation": "The rent increase is a negative effect, while construction costs are not mentioned."
-      },
-      {
-        "question": "The writer describes one university's recycling program after claiming that small institutional changes can reduce waste. Why is the program mentioned?",
-        "options": [
-          "To define the meaning of waste",
-          "To provide an example supporting the general claim",
-          "To prove all universities use the same system",
-          "To criticize students who do not recycle"
-        ],
-        "answer": "To provide an example supporting the general claim",
-        "explanation": "The specific program illustrates the broader idea that institutional changes can reduce waste."
-      }
-    ],
-    "error_log_template": {
-      "fields": [
-        "Item number",
-        "Prompt type",
-        "My selected answer",
-        "Correct answer",
-        "Evidence sentence",
-        "Distractor type",
-        "Reason for my error",
-        "Strategy for next attempt"
-      ],
-      "recommended_error_categories": [
-        "Misread prompt",
-        "Missed limiting word",
-        "Chose exact word match",
-        "Confused detail with main idea",
-        "Missed paraphrase",
-        "Used outside knowledge",
-        "Misread contrast or negation",
-        "Selected partly true option",
-        "Weak vocabulary inference",
-        "Confused writer and reported opinion"
-      ]
-    }
+    "routine": "For each practice item, spend the opening stage identifying the task type, underlining the prompt focus, and predicting the answer category. Skim for the passage's structure, scan for the relevant section, and read a small evidence window closely. Evaluate every option with a named reason, select only fully supported answers, and finish by rereading the prompt together with the selected response. After checking the answer, record whether any error came from prompt decoding, locating evidence, misunderstanding vocabulary, confusing main ideas with details, or accepting a distractor."
   },
   "mastery_checklist": [
-    {
-      "statement": "I can label the instructions, passage, prompt, and options in a reading multiple-choice item.",
-      "evidence_of_mastery": "I can explain the function of each part."
-    },
-    {
-      "statement": "I check whether the item requires one answer or multiple answers.",
-      "evidence_of_mastery": "I do this before evaluating any option."
-    },
-    {
-      "statement": "I can use wh-words and sentence-completion prompts to predict the required answer type.",
-      "evidence_of_mastery": "I can classify prompts as asking for a reason, method, detail, main idea, purpose, attitude, inference, or meaning."
-    },
-    {
-      "statement": "I notice limiting words such as mainly, according to the text, except, present, and most likely.",
-      "evidence_of_mastery": "I underline or mentally emphasize them before reading."
-    },
-    {
-      "statement": "I can skim a passage for its gist and organization.",
-      "evidence_of_mastery": "I can give each paragraph a short function label."
-    },
-    {
-      "statement": "I can identify topic sentences and distinguish them from supporting examples.",
-      "evidence_of_mastery": "I can explain how later sentences support the paragraph's central claim."
-    },
-    {
-      "statement": "I can scan for details using exact words and related vocabulary.",
-      "evidence_of_mastery": "I generate likely synonyms or paraphrases before searching."
-    },
-    {
-      "statement": "I compare meaning rather than selecting by word matching.",
-      "evidence_of_mastery": "I can identify when an option repeats vocabulary but changes the idea."
-    },
-    {
-      "statement": "I can explain why every option is correct or incorrect.",
-      "evidence_of_mastery": "I use labels such as contradicted, not mentioned, partly true, too broad, too narrow, or irrelevant."
-    },
-    {
-      "statement": "I can distinguish causes, effects, examples, indicators, and conclusions.",
-      "evidence_of_mastery": "My chosen option matches the category requested by the prompt."
-    },
-    {
-      "statement": "I can identify the writer's purpose, tone, or attitude.",
-      "evidence_of_mastery": "I support my interpretation with wording from the passage."
-    },
-    {
-      "statement": "I can distinguish the writer's view from opinions reported by other people.",
-      "evidence_of_mastery": "I track attribution words and pronoun references."
-    },
-    {
-      "statement": "I can infer the approximate meaning of an unfamiliar word.",
-      "evidence_of_mastery": "I use word parts, grammar, and nearby context rather than guessing randomly."
-    },
-    {
-      "statement": "I can group academic vocabulary by theme.",
-      "evidence_of_mastery": "I can add related terms and predict likely passage types."
-    },
-    {
-      "statement": "I can complete a mixed practice set while maintaining an evidence-based process.",
-      "evidence_of_mastery": "I can identify a supporting sentence for every answer I select."
-    }
+    "I can distinguish between choose-single-answer and choose-multiple-answers instructions.",
+    "I can label the instructions, passage, prompt, and options in a multiple-choice item.",
+    "I can identify the important wh-word or limiting phrase in a prompt.",
+    "I can predict whether the answer should be a reason, process, comparison, detail, purpose, inference, or main idea.",
+    "I can skim a passage and state its gist in one sentence.",
+    "I can identify the topic sentence and supporting function of each paragraph.",
+    "I can scan for specific facts, definitions, causes, effects, examples, and sequences.",
+    "I can recognize correct paraphrases even when they use different vocabulary from the passage.",
+    "I can identify textual evidence for every answer I select.",
+    "I can explain why each rejected option is wrong.",
+    "I can distinguish a cause from an effect, indicator, example, person, or solution.",
+    "I can detect options that are too broad, too narrow, extreme, or only partly true.",
+    "I can infer an unfamiliar word's approximate meaning from context and word parts.",
+    "I can group academic vocabulary by theme and use those groups to predict content.",
+    "I can complete mixed multiple-choice items using a consistent timed routine."
   ],
-  "strategy_notes": {
-    "decision_rules": [
-      "A correct option must satisfy three conditions: it answers the exact prompt, it is supported by the passage, and its wording does not add an unsupported claim.",
-      "For a main-idea question, prefer the option that covers the passage's central message without focusing on only one example.",
-      "For a detail question, locate the evidence zone and read the surrounding sentences before evaluating options.",
-      "For a purpose question, ask what role the information plays in the writer's explanation or argument.",
-      "For an inference question, choose the conclusion most strongly supported by the text, not the most imaginative possibility.",
-      "For an attitude question, base the answer on evaluative words, certainty markers, contrasts, and the writer's conclusion.",
-      "For vocabulary questions, substitute the proposed meaning into the original sentence and test whether the logic remains intact.",
-      "For multiple-answer items, treat each option as a separate true-or-false claim and prove each selected answer independently."
-    ],
-    "confidence_check": {
-      "high_confidence": "I can identify the exact supporting evidence and explain why the competing options fail.",
-      "medium_confidence": "I have relevant evidence, but two options remain close because of paraphrasing or scope.",
-      "low_confidence": "I am relying on general knowledge, word matching, or memory of the passage rather than a specific evidence sentence.",
-      "action_when_low": "Return to the prompt, restate the required answer type, locate the evidence zone, and compare the final two options word by word for scope, category, and unsupported additions."
-    },
-    "recommended_annotation_codes": [
-      {
-        "code": "MI",
-        "meaning": "Main idea"
-      },
-      {
-        "code": "D",
-        "meaning": "Specific detail"
-      },
-      {
-        "code": "C",
-        "meaning": "Cause"
-      },
-      {
-        "code": "R",
-        "meaning": "Result"
-      },
-      {
-        "code": "EX",
-        "meaning": "Example"
-      },
-      {
-        "code": "CON",
-        "meaning": "Contrast"
-      },
-      {
-        "code": "P",
-        "meaning": "Writer purpose"
-      },
-      {
-        "code": "A",
-        "meaning": "Writer attitude"
-      },
-      {
-        "code": "E",
-        "meaning": "Answer evidence"
-      }
-    ],
-    "study_advice": [
-      "Review errors by reasoning category, not only by final answer.",
-      "Maintain a vocabulary notebook organized by theme, word family, collocation, and common paraphrases.",
-      "When reviewing practice, spend more time explaining wrong options than celebrating the correct one.",
-      "Practise stating the gist of short passages in one sentence before answering questions.",
-      "Alternate untimed analysis practice with short timed sets so accuracy develops before speed.",
-      "Use unfamiliar topics during practice because the test measures comprehension of the passage rather than prior subject knowledge."
-    ],
-    "final_reminder": "Do not ask, 'Which option looks familiar?' Ask, 'Which option answers this exact prompt, preserves the passage's meaning, and can be proved with evidence?'"
-  },
+  "strategy_notes": [
+    "The best starting point is usually the instructions and prompt because they define the reading purpose.",
+    "Previewing options should be brief; do not spend so long analyzing them that they distort your understanding of the passage.",
+    "For a main-idea question, prioritize ideas repeated or developed across the passage rather than a single striking sentence.",
+    "For a detail question, locate the relevant area and read locally instead of repeatedly rereading the entire passage.",
+    "For a writer-purpose question, ask what function a sentence or example performs: defining, illustrating, contrasting, criticizing, supporting, or concluding.",
+    "For an inference question, choose the conclusion that must or reasonably can follow from the passage, not one that is merely possible.",
+    "Correct options often preserve the passage's degree of certainty. If the text says may, an option saying always is probably too strong.",
+    "The presence of familiar vocabulary is not evidence; the relationship between ideas must also match.",
+    "In multiple-answer items, do not search for a predetermined number of answers. Judge every option independently.",
+    "When two options appear possible in a single-answer item, compare scope, precision, and completeness; the stronger answer usually covers the prompt more exactly.",
+    "A correct answer may combine information from more than one sentence, especially in main-idea, inference, and purpose questions.",
+    "Vocabulary groups are most useful when they include related concepts, collocations, word families, and common text types rather than isolated translations.",
+    "Maintain an error log using categories such as wrong prompt interpretation, keyword matching, missed contrast, unsupported inference, vocabulary error, and over-selection.",
+    "Speed should come from a repeatable process and selective reading, not from rushing through every sentence."
+  ],
   "metadata": {
-    "chapter_number": 4,
+    "difficulty": "B1-B2 developing academic reading",
     "estimated_study_time": "Study this chapter in one focused session of about 2 hours, then add extra practice time for the worksheet and CD-ROM practice items if available.",
-    "communicative_skill": "Reading",
-    "item_types": [
-      "Reading: Multiple-choice, choose single answer",
-      "Reading: Multiple-choice, choose multiple answers"
+    "tags": [
+      "PTE Academic",
+      "reading",
+      "multiple-choice",
+      "choose single answer",
+      "choose multiple answers",
+      "prompt decoding",
+      "skimming",
+      "scanning",
+      "main idea",
+      "detail",
+      "writer purpose",
+      "inference",
+      "paraphrasing",
+      "distractor elimination",
+      "academic vocabulary"
     ],
-    "key_terms": [
-      {
-        "term": "Distractor",
-        "definition": "A wrong option designed to appear plausible."
-      },
-      {
-        "term": "Indicator",
-        "definition": "A sign that shows a condition, trend, or change."
-      },
-      {
-        "term": "Prompt",
-        "definition": "The question or incomplete statement that tells the reader what information to identify."
-      },
-      {
-        "term": "Topic sentence",
-        "definition": "A sentence that expresses the main idea of a paragraph."
-      },
-      {
-        "term": "Gist",
-        "definition": "The central or overall meaning of a passage."
-      },
-      {
-        "term": "Paraphrase",
-        "definition": "The same meaning expressed with different words or grammatical structure."
-      },
-      {
-        "term": "Evidence zone",
-        "definition": "The sentence or group of nearby sentences that directly supports the answer."
-      }
-    ],
-    "difficulty": "intermediate",
-    "teaching_orientation": "strategy-first, evidence-based, worked-example-rich",
-    "source_scope": "Lesson 4 reading multiple-choice teaching points, examples, practice items, vocabulary grouping, misconceptions, and self-check statements"
+    "provenance_note": "Teaching-first enrichment based on the supplied Lesson 4 material for Reading multiple-choice items, including its objectives, prompt-analysis activities, gist and detail strategies, vocabulary prediction work, distractor analysis, unfamiliar-word techniques, worked examples, practice questions, and self-check criteria."
   }
 }

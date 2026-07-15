@@ -1,920 +1,750 @@
 {
   "schema_version": "pte_lesson_enrichment.v1",
-  "task_type": "pte_lesson_enrichment",
+  "task_type": "listening_multiple_choice",
   "lesson_title": "Lesson 12: Listening Multiple-Choice Items",
   "source_label": "pte:ch13",
   "modality": "listening",
   "overview": {
-    "summary": "This lesson teaches a prompt-first method for Listening: Multiple-choice, choose single answer and Listening: Multiple-choice, choose multiple answers. Learners first identify exactly what the prompt asks, convert it into a listening target, take selective notes during the recording, and then evaluate each option against the evidence they heard.",
-    "item_types": [
+    "what_it_is": "This lesson develops the skills needed for two PTE Academic listening item types: Multiple-choice, choose single answer and Multiple-choice, choose multiple answers. In both tasks, the learner reads a prompt, listens to an academic recording once, identifies the requested information, evaluates the answer options against evidence from the recording, and selects the best-supported response or responses.",
+    "format_facts": [
       {
-        "name": "Listening: Multiple-choice, choose single answer",
-        "response_rule": "Select one option only.",
-        "main_demand": "Identify the one option that most accurately answers the prompt.",
-        "learner_warning": "Several options may mention ideas from the recording, but only one fully answers the question."
+        "label": "Item types",
+        "value": "The lesson covers Listening: Multiple-choice, choose single answer and Listening: Multiple-choice, choose multiple answers."
       },
       {
-        "name": "Listening: Multiple-choice, choose multiple answers",
-        "response_rule": "Select every option that is supported by the recording and required by the prompt.",
-        "main_demand": "Evaluate each option independently instead of searching for one overall best answer.",
-        "learner_warning": "Do not select an option merely because it contains familiar words from the recording."
+        "label": "Preparation time",
+        "value": "There are 7 seconds before the recording begins. Use this time primarily to understand the prompt and identify the listening purpose."
       },
       {
-        "name": "Positive prompt",
-        "response_rule": "Select information that is correct, supported or directly answers the question.",
-        "main_demand": "Listen for matching meaning rather than exact repeated words.",
-        "learner_warning": "Correct options are often paraphrased."
+        "label": "Audio playback",
+        "value": "The recording is normally heard once, so concentration, selective note-taking and recovery after missed information are essential."
       },
       {
-        "name": "Negative prompt",
-        "response_rule": "Select information that is incorrect, unsupported, mismatched or excluded.",
-        "main_demand": "Notice words such as NOT, EXCEPT, incorrect or does not.",
-        "learner_warning": "A learner may understand the recording correctly but still choose the opposite answer by overlooking the negative word."
+        "label": "Single-answer response",
+        "value": "Only one option is correct. Select the option that best answers the exact prompt."
+      },
+      {
+        "label": "Multiple-answer response",
+        "value": "More than one option may be correct. Evaluate every option separately and select only those supported by the recording."
+      },
+      {
+        "label": "Prompt focus",
+        "value": "Prompts may test gist, detailed information, speaker purpose, organization, inference, attitude, feelings or degree of certainty."
+      },
+      {
+        "label": "Note-taking",
+        "value": "Notes should contain brief key words, symbols and abbreviations rather than complete sentences."
       }
     ],
-    "skill_focus": [
-      "Main idea or gist: identifying the central topic, message or conclusion of the recording.",
-      "Detailed information: identifying specific facts, examples, reasons, definitions, comparisons or sequences.",
-      "Speaker's purpose: understanding why the speaker introduces a point, example, contrast or explanation.",
-      "Organization: following how the talk moves from one idea to another.",
-      "Inference: combining clues to reach a conclusion that may not be stated directly.",
-      "Stylistics: identifying the speaker's attitude, feelings, emphasis or degree of certainty."
+    "scoring_factors": [
+      {
+        "name": "Answer accuracy",
+        "what_it_measures": "Whether the selected option or options correctly answer the question using evidence from the recording."
+      },
+      {
+        "name": "Prompt control",
+        "what_it_measures": "Whether the learner responds to the exact demand of the prompt, including negative wording such as NOT, EXCEPT or LEAST."
+      },
+      {
+        "name": "Evidence discrimination",
+        "what_it_measures": "Whether the learner can distinguish relevant evidence from background details, examples, repetition and redundant information."
+      },
+      {
+        "name": "Selection discipline",
+        "what_it_measures": "Whether the learner avoids unsupported choices, especially in multiple-answer items where unnecessary selections can reduce performance."
+      }
     ],
-    "lesson_flow": [
-      "Decode the item instructions and determine whether one answer or several answers are required.",
-      "Read the prompt during preparation time and identify the exact listening target.",
-      "Predict the kind of information that could answer the prompt.",
-      "Listen once while recording only brief, relevant key words.",
-      "Separate useful evidence from examples, repetition and background information.",
-      "Compare every option with the meaning of the recording.",
-      "Eliminate options that are contradicted, unsupported, too broad, too narrow or only partly correct.",
-      "Review errors by identifying whether the problem came from prompt reading, listening, note-taking or option analysis."
+    "critical_rules": [
+      "Read the prompt before thinking about the answer options.",
+      "Identify the listening skill being tested before the recording begins.",
+      "Underline or mentally emphasize negative words such as NOT, EXCEPT, INCORRECT and LEAST.",
+      "Use the 7-second preparation period mainly to decide what information you need to hear.",
+      "Do not try to write complete sentences while listening.",
+      "Do not stop concentrating because of one unfamiliar or unclear word.",
+      "Judge options by meaning and evidence, not by whether they repeat words from the recording.",
+      "For multiple-answer items, select only options that have clear support.",
+      "Keep your first evidence-based answer unless you notice a specific contradiction or misreading.",
+      "Answer the prompt, not merely the general topic of the recording."
     ]
   },
   "learning_goals": [
     "Distinguish accurately between choose single answer and choose multiple answers instructions.",
-    "Identify whether a prompt tests gist, detail, purpose, organization, inference or stylistics.",
-    "Use the seven-second preparation period primarily to understand the prompt and establish a listening target.",
-    "Recognize negative prompt language such as NOT, EXCEPT, incorrect and does not match.",
-    "Take short notes using key words, symbols and abbreviations instead of full sentences.",
-    "Continue listening after missing an unfamiliar word or unclear phrase.",
-    "Separate relevant evidence from redundant background information.",
-    "Match answer options to meaning rather than relying on repeated vocabulary.",
-    "Eliminate distractors using contradiction, omission, exaggeration and partial-match checks.",
-    "Complete both item types under realistic timed conditions and explain the evidence for each selection."
+    "Recognize whether a prompt asks for gist, detail, purpose, organization, inference or stylistic information.",
+    "Use the 7-second preparation time to establish a clear listening target.",
+    "Take brief, selective notes using key words, abbreviations and symbols.",
+    "Identify main ideas and separate them from examples or minor supporting details.",
+    "Listen for specific facts, reasons, opinions, definitions and sequences when the prompt requires detail.",
+    "Infer a speaker's conclusion, attitude or degree of certainty from language, emphasis and context.",
+    "Recognize redundant or irrelevant information and exclude it from the decision.",
+    "Handle negatively worded prompts without accidentally selecting true statements.",
+    "Evaluate each answer option against evidence from the recording rather than relying on memory of isolated words."
   ],
   "core_method": {
-    "name": "PROMPT–TARGET–NOTES–PROOF",
+    "name": "TARGET–NOTE–MATCH",
+    "summary": "Decode the prompt before listening, collect only information connected to that target, and then match each option to the strength and meaning of the evidence.",
     "steps": [
       {
-        "stage": "1. Check the response rule",
-        "instruction": "Confirm whether the item requires one answer or more than one answer.",
-        "self_question": "Am I choosing the best single response, or checking every option independently?"
+        "step": "Read the instruction",
+        "detail": "Confirm whether the task requires one answer or more than one answer. This determines how many options you may select and how carefully every option must be checked."
       },
       {
-        "stage": "2. Mark the controlling word",
-        "instruction": "Identify words such as mainly, why, according to, implies, attitude, NOT or EXCEPT.",
-        "self_question": "Which word changes what counts as a correct answer?"
+        "step": "Target the skill",
+        "detail": "Classify the prompt as gist, detail, purpose, organization, inference or stylistics. Turn it into a simple listening question such as 'What is the main point?' or 'Why did the speaker mention this?'"
       },
       {
-        "stage": "3. Classify the prompt",
-        "instruction": "Decide whether the prompt asks for gist, detail, purpose, organization, inference or stylistics.",
-        "self_question": "What kind of information must I listen for?"
+        "step": "Mark the danger word",
+        "detail": "Notice words such as NOT, EXCEPT, INCORRECT, LEAST or MOST. Restate the question positively in your own mind, for example, 'I need the mismatches.'"
       },
       {
-        "stage": "4. Create a listening target",
-        "instruction": "Rewrite the prompt mentally as a simple target such as main topic, two causes, speaker's opinion or incorrect matches.",
-        "self_question": "What should my notes contain if I understand the recording?"
+        "step": "Predict evidence",
+        "detail": "Predict the type of language that may answer the prompt. A reason question may contain because, since or therefore; an attitude question may contain clearly, unfortunately, perhaps or must."
       },
       {
-        "stage": "5. Predict the evidence type",
-        "instruction": "Anticipate whether the answer will probably be a reason, result, example, comparison, definition, sequence or conclusion.",
-        "self_question": "What form is the answer likely to take?"
+        "step": "Listen selectively",
+        "detail": "Follow the whole recording but give extra attention to information related to the prompt. Do not attempt to record every detail."
       },
       {
-        "stage": "6. Listen selectively",
-        "instruction": "Record only information connected to the listening target, especially repeated ideas, contrasts, causes, results and conclusions.",
-        "self_question": "Does this information help answer the prompt?"
+        "step": "Note key evidence",
+        "detail": "Write content words, contrasts, causes, results, numbers, names and attitude markers. Use arrows, plus and minus signs, abbreviations and short phrases."
       },
       {
-        "stage": "7. Recover immediately",
-        "instruction": "When a word is missed, leave a small gap in the notes and continue listening for the next meaningful point.",
-        "self_question": "What is the speaker saying now?"
+        "step": "Match by meaning",
+        "detail": "Compare each option with the recording's meaning. Accept paraphrases and reject options that are merely mentioned, exaggerated, reversed or unsupported."
       },
       {
-        "stage": "8. Test every option",
-        "instruction": "Compare the complete meaning of each option with the recording.",
-        "self_question": "Is this fully supported, partly supported, contradicted or not mentioned?"
-      },
-      {
-        "stage": "9. Demand proof",
-        "instruction": "Select an option only when a specific note, paraphrase or logical inference supports it.",
-        "self_question": "What exact evidence justifies this choice?"
-      },
-      {
-        "stage": "10. Final instruction check",
-        "instruction": "Before submitting, check the number of answers and whether the prompt is positive or negative.",
-        "self_question": "Have I answered the question that was actually asked?"
+        "step": "Confirm and submit",
+        "detail": "Check that the number of selections matches the instruction and that every selected option directly answers the prompt."
       }
     ],
-    "prompt_decision_guide": [
-      {
-        "prompt_pattern": "What is the lecture mainly about?",
-        "skill": "Main idea or gist",
-        "listen_for": "The repeated central idea, the opening frame and the final conclusion."
-      },
-      {
-        "prompt_pattern": "Why does the speaker mention X?",
-        "skill": "Speaker's purpose",
-        "listen_for": "The function of X, such as giving an example, supporting a claim, introducing a contrast or correcting a belief."
-      },
-      {
-        "prompt_pattern": "Which factors caused or contributed to X?",
-        "skill": "Detailed information",
-        "listen_for": "Explicit reasons, causes and supporting points."
-      },
-      {
-        "prompt_pattern": "What can be inferred from the speaker's comments?",
-        "skill": "Inference",
-        "listen_for": "Several clues that together support a reasonable conclusion."
-      },
-      {
-        "prompt_pattern": "How does the speaker feel about X?",
-        "skill": "Stylistics",
-        "listen_for": "Evaluative vocabulary, tone, certainty markers and contrastive emphasis."
-      },
-      {
-        "prompt_pattern": "Which option does NOT correctly match X with Y?",
-        "skill": "Negative detail matching",
-        "listen_for": "Mismatches, unsupported claims or relationships that the recording does not confirm."
-      }
-    ]
+    "formula": "Instruction + Prompt skill + Key evidence + Option check = Supported selection"
   },
   "techniques": [
     {
-      "name": "Seven-second prompt priority",
-      "teaching_point": "Use the preparation time to understand the prompt before attempting to process all the options.",
-      "how_to_apply": [
-        "Locate the key question word.",
-        "Underline or mentally emphasize negative words.",
-        "Classify the listening skill.",
-        "Create a short listening target."
+      "name": "Prompt-to-skill decoding",
+      "purpose": "To know exactly what kind of information must be extracted from the recording.",
+      "how_to": [
+        "Read the full prompt before the audio begins.",
+        "Circle or mentally highlight the question word and any limiting expression.",
+        "Classify the demand as gist, detail, purpose, organization, inference or stylistics.",
+        "Rewrite the prompt mentally as a short listening target.",
+        "Keep that target active while listening."
       ],
-      "example": "For 'Why does the lecturer discuss steel?', reduce the target to 'purpose of steel example'."
+      "example": "Prompt: 'What is the lecture mainly about?' Listening target: 'Find the central message that covers the whole lecture, not one example.'",
+      "why_it_matters": "Without a clear listening target, learners often collect random details and then choose an option that sounds familiar but does not answer the question.",
+      "common_error": "Listening only for the topic noun, such as 'climate', without identifying what the speaker actually says about that topic."
     },
     {
-      "name": "Prompt-to-target conversion",
-      "teaching_point": "Turn a long question into a small note-taking target.",
-      "how_to_apply": [
-        "Remove non-essential wording.",
-        "Keep the question focus.",
-        "Include the required number or category when stated.",
-        "Write a two-to-five-word target."
+      "name": "Seven-second preparation priority",
+      "purpose": "To use the short preparation period efficiently.",
+      "how_to": [
+        "Read the instruction and prompt first.",
+        "Identify whether the answer must be single or multiple.",
+        "Mark negative or comparative words.",
+        "Predict the expected information type.",
+        "Read answer options only if time remains after the prompt is fully understood."
       ],
-      "example": "Which advantages of glass walls are mentioned? becomes 'glass advantages'."
+      "example": "For 'Why does the lecturer mention steel?', the preparation goal is to listen for a function or reason, not simply every fact about steel.",
+      "why_it_matters": "Trying to read a long prompt and all options within seven seconds can leave the learner uncertain about the actual question when the recording starts.",
+      "common_error": "Scanning all answer options quickly but beginning the recording without understanding whether the prompt asks for a reason, opinion or main idea."
     },
     {
-      "name": "Keyword and abbreviation notes",
-      "teaching_point": "Notes should preserve meaning while requiring minimal writing time.",
-      "how_to_apply": [
-        "Use content words rather than articles or complete grammar.",
-        "Shorten common academic words.",
-        "Use arrows for cause and result.",
-        "Use plus and minus signs for advantages and disadvantages."
+      "name": "Compressed note-taking",
+      "purpose": "To preserve useful evidence without losing attention to the recording.",
+      "how_to": [
+        "Write content words rather than grammatical words.",
+        "Use abbreviations such as gov, env, edu, prob and sol.",
+        "Use symbols such as +, -, versus, arrows and question marks.",
+        "Record contrasts and cause-effect relationships.",
+        "Leave space to add a correction when the speaker changes direction."
       ],
-      "example": "weatherproof; lets light in; lighter than masonry becomes 'wp; +light; lt wt vs mason'."
+      "example": "Instead of writing 'Glass is used because it allows natural light into the building and weighs less than masonry,' write 'glass: light in + lighter than masonry.'",
+      "why_it_matters": "Short notes reduce writing load and allow the learner to continue following the speaker's organization and emphasis.",
+      "common_error": "Writing complete sentences, falling behind and missing the next important point."
     },
     {
-      "name": "Main-idea tracking",
-      "teaching_point": "For gist questions, follow the idea that controls the entire recording rather than an interesting detail.",
-      "how_to_apply": [
-        "Notice the topic introduced at the beginning.",
-        "Mark ideas repeated or paraphrased.",
-        "Notice the speaker's conclusion.",
-        "Reject options based on only one example."
+      "name": "Gist triangle",
+      "purpose": "To identify the main idea rather than choosing an option based on one memorable detail.",
+      "how_to": [
+        "Identify the general topic.",
+        "Ask what central claim or message the speaker makes about that topic.",
+        "Notice repeated ideas, opening statements and concluding statements.",
+        "Check which option covers most of the recording.",
+        "Reject options focused on only one example or detail."
       ],
-      "example": "A lecture may mention steel, glass and concrete, but the main idea may be the development of modern skyscraper construction."
+      "example": "Topic: urban transport. Central claim: cities should combine public transport with safe walking and cycling routes. A correct gist option must include the combined policy, not only bicycle lanes.",
+      "why_it_matters": "Main-idea distractors frequently contain accurate details but represent only a small part of the recording.",
+      "common_error": "Selecting the option that repeats the most recognizable words instead of the option that represents the whole message."
     },
     {
-      "name": "Detail anchoring",
-      "teaching_point": "For detail questions, connect each fact to its category so that notes remain interpretable.",
-      "how_to_apply": [
-        "Write the category before its details.",
-        "Separate causes from effects.",
-        "Separate advantages from disadvantages.",
-        "Number sequences when order matters."
+      "name": "Detail checkpointing",
+      "purpose": "To capture precise facts, reasons, definitions or sequences requested by the prompt.",
+      "how_to": [
+        "Identify the category of detail required, such as why, when, where, how or how many.",
+        "Listen for names, figures, causes, results and examples connected to that category.",
+        "Write the requested detail beside a short label.",
+        "Notice corrections such as 'not X but Y' or 'initially, however'.",
+        "Compare options with the final meaning rather than the first statement heard."
       ],
-      "example": "Glass: weatherproof, light, low weight; Steel: strong frame, supports height."
+      "example": "Prompt: 'Why did the researchers repeat the experiment?' Note label: 'repeat why?' Evidence: 'first sample too small.'",
+      "why_it_matters": "Academic speakers often introduce several facts, but only one fact answers the exact detail question.",
+      "common_error": "Choosing a true statement from the recording that does not answer the question word."
     },
     {
-      "name": "Redundancy filtering",
-      "teaching_point": "Not every fact in a recording helps answer the prompt.",
-      "how_to_apply": [
-        "Ask whether the fact directly answers the prompt.",
-        "Ignore repeated explanation once the meaning is clear.",
-        "Treat historical background as secondary unless the prompt asks about history.",
-        "Do not let memorable numbers dominate unrelated questions."
+      "name": "Contrast and correction tracking",
+      "purpose": "To detect the speaker's real position when an earlier statement is later qualified or corrected.",
+      "how_to": [
+        "Listen for but, however, although, rather, instead, in fact and actually.",
+        "Mark the first idea briefly.",
+        "Add an arrow or correction when the speaker changes direction.",
+        "Give more weight to the final qualified position.",
+        "Check whether an option describes the initial idea or the speaker's final view."
       ],
-      "example": "A date such as 'after World War II' may be true but irrelevant when the prompt asks why glass walls became popular."
+      "example": "Notes: 'online classes convenient BUT not equal access -> blended approach preferred.'",
+      "why_it_matters": "Distractors often repeat the first idea heard, while the correct answer reflects the later contrast or conclusion.",
+      "common_error": "Selecting an early statement and ignoring the speaker's later qualification."
     },
     {
-      "name": "Meaning-over-word matching",
-      "teaching_point": "Correct options usually paraphrase the recording, while distractors may repeat exact words incorrectly.",
-      "how_to_apply": [
-        "Restate the option in simpler language.",
-        "Compare the relationship between ideas.",
-        "Check whether the option changes cause, result or degree.",
-        "Reject options supported only by vocabulary overlap."
+      "name": "NOT-prompt reversal",
+      "purpose": "To prevent accidental selection of correct statements when the question asks for incorrect ones.",
+      "how_to": [
+        "Mark the negative word before listening.",
+        "Restate the task as 'Find the false or mismatched options.'",
+        "Test each option against the recording.",
+        "Label supported options as true and unsupported options as false.",
+        "Select according to the negative instruction, not according to familiarity."
       ],
-      "example": "'Allows natural illumination' may match 'lets more daylight enter the building'."
+      "example": "Prompt: 'Which options do NOT correctly match a material with its reason for use?' Select the material-reason pairs that conflict with or are not supported by the recording.",
+      "why_it_matters": "Learners naturally look for correct information, so negative wording can reverse an otherwise accurate decision.",
+      "common_error": "Identifying the true matches correctly and then selecting them despite the word NOT."
     },
     {
-      "name": "Four-way option test",
-      "teaching_point": "Classify each option before selecting it.",
-      "how_to_apply": [
-        "Supported: the recording clearly confirms it.",
-        "Contradicted: the recording states the opposite.",
-        "Not mentioned: the idea is absent.",
-        "Partly supported: one part is correct but the full option is not."
+      "name": "Option evidence audit",
+      "purpose": "To eliminate attractive distractors systematically.",
+      "how_to": [
+        "Ask whether the option directly answers the prompt.",
+        "Find the specific evidence supporting or contradicting it.",
+        "Check whether the option is too broad, too narrow or too absolute.",
+        "Reject options that use correct vocabulary but change the relationship between ideas.",
+        "For multiple answers, judge each option independently."
       ],
-      "example": "An option saying glass is heavier than concrete is contradicted if the speaker says it is lighter."
-    },
-    {
-      "name": "Negative-prompt reversal",
-      "teaching_point": "A negative word reverses the selection goal.",
-      "how_to_apply": [
-        "Mark NOT or EXCEPT before listening.",
-        "Write 'choose false' beside the target.",
-        "Verify true matches first.",
-        "Select the remaining mismatched or unsupported options."
-      ],
-      "example": "For 'Which options do NOT correctly match the material and reason?', true matches must be rejected rather than selected."
-    },
-    {
-      "name": "Miss-and-move recovery",
-      "teaching_point": "One unclear word should not damage understanding of the remaining recording.",
-      "how_to_apply": [
-        "Do not replay the missed sound mentally.",
-        "Leave a gap or question mark.",
-        "Listen for restatement or examples.",
-        "Use later context to reconstruct the meaning."
-      ],
-      "example": "If the material name is missed, later phrases such as 'transparent', 'daylight' and 'weatherproof' may identify glass."
-    },
-    {
-      "name": "First-choice stability",
-      "teaching_point": "Do not replace an evidence-based initial answer merely because another option sounds sophisticated.",
-      "how_to_apply": [
-        "Change an answer only when a clear contradiction or stronger piece of evidence is found.",
-        "Do not change because of nervousness.",
-        "Return to the prompt before reconsidering.",
-        "Require explicit evidence for the new choice."
-      ],
-      "example": "Keep the first choice when it matches the main conclusion and the alternative matches only one supporting example."
+      "example": "Recording: 'The policy may reduce congestion in some districts.' Option: 'The policy will eliminate congestion throughout the city.' Reject because 'may reduce' has been exaggerated to 'will eliminate'.",
+      "why_it_matters": "Many distractors are partly true or use words from the recording while altering certainty, scope, cause or conclusion.",
+      "common_error": "Choosing an option because one phrase matches the audio, without checking the complete meaning."
     }
   ],
   "worked_examples": [
     {
-      "title": "Negative multiple-answer prompt",
-      "prompt": "Which options do NOT correctly match a material with its reason for use?",
-      "preparation_thought": "The controlling word is NOT. I must select mismatches, not correct relationships.",
-      "listening_target": "Material-reason pairs; choose false pairs.",
-      "sample_notes": [
-        "glass → weatherproof",
-        "glass → daylight",
-        "glass → lower wt than masonry",
-        "steel → strong frame"
-      ],
-      "option_analysis": [
+      "title": "Worked Example 1: Main Idea in a Single-Answer Item",
+      "input": "Instruction: Select the correct response. Only one response is correct. Prompt: What is the lecture mainly about? Recording summary: The lecturer explains that urban trees cool streets, reduce storm-water runoff and improve residents' wellbeing. Although planting costs can be high, the lecturer argues that cities should treat trees as essential infrastructure. Options: A. The historical development of city parks. B. The difficulties of measuring rainfall. C. The importance of urban trees as city infrastructure. D. The most common species of urban tree.",
+      "decoding": "The phrase 'mainly about' signals a gist question. The answer must cover the full recording, including the benefits and the lecturer's central argument.",
+      "plan": "Note the topic, repeated benefits and final claim: 'urban trees -> cooling + runoff + wellbeing; essential infrastructure.' Reject options that mention topics not discussed or focus on one narrow detail.",
+      "model_answer": "Select C: The importance of urban trees as city infrastructure.",
+      "annotations": [
         {
-          "option": "Glass is used because it allows natural light into a building.",
-          "decision": "Do not select.",
-          "reason": "The notes directly support this relationship."
+          "part": "Prompt signal",
+          "comment": "'Mainly about' requires the central message, not an isolated fact."
         },
         {
-          "option": "Glass is used because it is heavier than masonry.",
-          "decision": "Select.",
-          "reason": "The recording gives the opposite relationship."
+          "part": "Option A",
+          "comment": "Parks may be related to urban trees, but historical development is not discussed."
         },
         {
-          "option": "Steel is used to provide structural strength.",
-          "decision": "Do not select.",
-          "reason": "The relationship is supported."
+          "part": "Option B",
+          "comment": "Storm-water runoff is mentioned, but rainfall measurement is not the lecture's focus."
         },
         {
-          "option": "Steel is mainly used because it is transparent.",
-          "decision": "Select.",
-          "reason": "The property belongs to glass, not steel."
+          "part": "Option C",
+          "comment": "This paraphrases the lecturer's overall argument and covers the recording broadly."
+        },
+        {
+          "part": "Option D",
+          "comment": "Tree species are not central and may not have been mentioned at all."
         }
-      ],
-      "teaching_message": "A negative prompt tests both listening comprehension and instruction control."
+      ]
     },
     {
-      "title": "Relevant evidence versus background detail",
-      "prompt": "Why did glass walls become popular in skyscraper construction?",
-      "listening_target": "Reasons for glass popularity.",
-      "sample_recording_content": [
-        "Their widespread use began after World War II.",
-        "Glass could protect the interior from the weather.",
-        "It allowed more natural light into buildings.",
-        "It was lighter than traditional masonry or concrete walls."
-      ],
-      "sample_notes": [
-        "wp",
-        "+ daylight",
-        "lighter vs masonry/concrete"
-      ],
-      "redundant_note": "after WWII",
-      "reasoning": "The date provides historical context, but it does not explain why the material became popular.",
-      "best_answer_profile": "An option combining weather protection, natural light and reduced weight."
+      "title": "Worked Example 2: Detailed Information in a Multiple-Answer Item",
+      "input": "Instruction: Select all the correct responses. Prompt: According to the speaker, which benefits are produced by flexible working arrangements? Recording summary: The speaker states that flexible schedules can reduce commuting time, help some employees manage family duties and allow companies to recruit from a wider geographical area. The speaker warns that communication may become more difficult and does not claim that office costs always fall. Options: A. Employees spend less time commuting. B. Communication between colleagues becomes easier. C. Employees may manage family responsibilities more effectively. D. Companies can recruit candidates from more locations. E. Office expenses are always reduced.",
+      "decoding": "The prompt asks for specific benefits, so each option must be checked against explicit supporting details.",
+      "plan": "Create a benefit list: 'less commute; family duties; wider recruitment.' Mark communication difficulty as a disadvantage and 'always lower costs' as unsupported.",
+      "model_answer": "Select A, C and D.",
+      "annotations": [
+        {
+          "part": "Option A",
+          "comment": "Directly supported by the statement about reduced commuting time."
+        },
+        {
+          "part": "Option B",
+          "comment": "Contradicted because the speaker says communication may become more difficult."
+        },
+        {
+          "part": "Option C",
+          "comment": "Supported by the reference to managing family duties."
+        },
+        {
+          "part": "Option D",
+          "comment": "Supported by recruitment from a wider geographical area."
+        },
+        {
+          "part": "Option E",
+          "comment": "The absolute word 'always' is unsupported."
+        }
+      ]
     },
     {
-      "title": "Gist question",
-      "prompt": "What is the lecture mainly about?",
-      "sample_recording_outline": [
-        "Modern cities are experiencing rapid population growth.",
-        "The speaker discusses pressure on transport, housing and public services.",
-        "Several examples of smart-city technologies are presented.",
-        "The conclusion argues that technology must be combined with long-term urban planning."
-      ],
-      "sample_notes": [
-        "city pop ↑",
-        "pressure: trans/housing/services",
-        "smart tech ex",
-        "tech + planning"
-      ],
-      "options": [
+      "title": "Worked Example 3: Handling a NOT Prompt",
+      "input": "Instruction: Select all the correct responses. Prompt: Which options do NOT correctly match a building material with its reason for use? Recording summary: Glass became popular because it is weatherproof, allows natural light into buildings and is lighter than masonry. Steel is valued because it can support tall structures while using relatively narrow columns. The speaker briefly mentions that skyscraper construction expanded after World War II. Options: A. Glass — allows natural light to enter. B. Steel — supports tall structures. C. Glass — became popular mainly because it was invented after World War II. D. Steel — is selected because it is transparent. E. Glass — can be lighter than masonry.",
+      "decoding": "NOT reverses the normal task. The learner must identify incorrect material-reason matches rather than true matches.",
+      "plan": "Write 'select false matches.' Check each pair: A true, B true, C false because the date is background rather than a reason, D false because transparency describes glass, E true.",
+      "model_answer": "Select C and D.",
+      "annotations": [
         {
-          "option": "The history of public transport systems",
-          "decision": "Reject",
-          "reason": "Transport is only one supporting area."
+          "part": "Negative instruction",
+          "comment": "The required selections are the mismatches, not the accurate pairs."
         },
         {
-          "option": "How cities can respond to growth through technology and planning",
-          "decision": "Select",
-          "reason": "It includes the central problem and the speaker's overall response."
+          "part": "Option C",
+          "comment": "It turns a historical date into a reason for glass use, which the recording does not support."
         },
         {
-          "option": "Why housing is the most serious urban problem",
-          "decision": "Reject",
-          "reason": "The recording does not rank housing as the most serious issue."
+          "part": "Option D",
+          "comment": "Transparency is associated with glass, not the structural reason given for steel."
         },
         {
-          "option": "A comparison of three electronic devices",
-          "decision": "Reject",
-          "reason": "This misrepresents examples as the main topic."
+          "part": "Redundant detail",
+          "comment": "The post-war reference is background information and should not be treated as the answer to a reason question."
+        },
+        {
+          "part": "Evidence discipline",
+          "comment": "A, B and E are accurate, so they must not be selected in a NOT item."
         }
-      ],
-      "teaching_message": "The correct gist option covers the whole recording without becoming too general."
+      ]
     },
     {
-      "title": "Speaker's purpose question",
-      "prompt": "Why does the speaker mention a failed agricultural experiment?",
-      "sample_context": "The speaker argues that new farming technologies should be tested carefully before large-scale adoption. A failed experiment is described immediately after this claim.",
-      "sample_notes": [
-        "new ag tech → test first",
-        "failed exp = warning/example"
-      ],
-      "options": [
+      "title": "Worked Example 4: Speaker Attitude and Degree of Certainty",
+      "input": "Instruction: Select the correct response. Only one response is correct. Prompt: How does the speaker feel about the proposed university attendance policy? Recording summary: The speaker says, 'The proposal may improve attendance, but I am not convinced that compulsory monitoring is the right solution. It could place unnecessary pressure on students with work or family responsibilities. A trial might be reasonable, provided the results are reviewed carefully.' Options: A. Completely opposed and unwilling to consider any trial. B. Strongly certain that the policy will solve attendance problems. C. Cautious and doubtful, but open to a limited trial. D. Uninterested because the issue has no effect on students.",
+      "decoding": "The prompt tests stylistics: attitude and certainty. Key signals include 'not convinced', 'could', 'might' and 'provided'.",
+      "plan": "Note attitude markers: doubtful, cautious, conditional support. Reject absolute options because the speaker does not express complete opposition or certainty.",
+      "model_answer": "Select C: Cautious and doubtful, but open to a limited trial.",
+      "annotations": [
         {
-          "option": "To provide an example supporting the need for careful testing",
-          "decision": "Select",
-          "reason": "The example illustrates the speaker's main warning."
+          "part": "Not convinced",
+          "comment": "Shows doubt rather than strong support."
         },
         {
-          "option": "To show that all agricultural technology is ineffective",
-          "decision": "Reject",
-          "reason": "The option exaggerates the speaker's position."
+          "part": "Could and might",
+          "comment": "These modal verbs signal possibility and limited certainty."
         },
         {
-          "option": "To explain the complete history of farming",
-          "decision": "Reject",
-          "reason": "The example serves a local purpose, not a historical overview."
+          "part": "Provided",
+          "comment": "Introduces a condition for accepting a trial."
         },
         {
-          "option": "To criticize the scientists personally",
-          "decision": "Reject",
-          "reason": "No personal criticism is indicated."
+          "part": "Option A",
+          "comment": "Too absolute because the speaker is willing to consider a trial."
+        },
+        {
+          "part": "Option C",
+          "comment": "Accurately combines the speaker's reservations with conditional openness."
         }
-      ],
-      "teaching_message": "Purpose questions ask what a piece of information does within the speaker's argument."
+      ]
     },
     {
-      "title": "Inference from several clues",
-      "prompt": "What can be inferred about the speaker's view of remote work?",
-      "sample_recording_content": [
-        "Remote work has increased flexibility for many employees.",
-        "The speaker notes that communication problems can develop without clear procedures.",
-        "The speaker recommends a mixed system rather than a complete return to office work.",
-        "The final comment is that organisations must adapt management practices."
-      ],
-      "sample_notes": [
-        "+ flex",
-        "- comm if no process",
-        "pref hybrid",
-        "mgmt adapt"
-      ],
-      "options": [
+      "title": "Worked Example 5: Speaker Purpose",
+      "input": "Instruction: Select the correct response. Only one response is correct. Prompt: Why does the lecturer mention a failed medical trial? Recording summary: The lecturer is explaining why researchers must publish negative as well as positive results. The failed trial is used to show that unpublished failures can cause later researchers to repeat ineffective methods. Options: A. To criticize all medical research. B. To provide an example supporting the need to publish negative findings. C. To explain how the treatment was eventually commercialized. D. To compare hospital funding systems.",
+      "decoding": "The word 'why' asks for the function of the example, not the factual details of the trial.",
+      "plan": "Connect the example to the surrounding argument: failed trial -> hidden negative result -> repeated ineffective research -> publish all findings.",
+      "model_answer": "Select B: To provide an example supporting the need to publish negative findings.",
+      "annotations": [
         {
-          "option": "The speaker completely opposes remote work.",
-          "decision": "Reject",
-          "reason": "The speaker recognizes important benefits."
+          "part": "Purpose question",
+          "comment": "Ask what argumentative job the example performs."
         },
         {
-          "option": "The speaker believes remote work is perfect in every situation.",
-          "decision": "Reject",
-          "reason": "Communication risks are acknowledged."
+          "part": "Local evidence",
+          "comment": "The failed trial illustrates a consequence of not publishing negative results."
         },
         {
-          "option": "The speaker supports remote work when organisations manage it appropriately.",
-          "decision": "Select",
-          "reason": "This conclusion combines the positive and cautionary clues."
+          "part": "Option A",
+          "comment": "This exaggerates a specific criticism into opposition to all medical research."
         },
         {
-          "option": "The speaker thinks employees should make all management decisions.",
-          "decision": "Reject",
-          "reason": "This is not stated or implied."
+          "part": "Option B",
+          "comment": "It accurately links the example to the lecturer's central argument."
+        },
+        {
+          "part": "Distractor pattern",
+          "comment": "Options C and D introduce topics not supported by the recording."
         }
-      ],
-      "teaching_message": "An inference must be strongly supported by the combined evidence, not merely possible."
-    },
-    {
-      "title": "Stylistics and degree of certainty",
-      "prompt": "How certain is the speaker that the policy will succeed?",
-      "sample_language": [
-        "The policy may improve participation.",
-        "There is some evidence that it could reduce costs.",
-        "However, it is too early to draw a firm conclusion."
-      ],
-      "sample_notes": [
-        "may improve",
-        "some evid",
-        "could cut cost",
-        "too early = uncertain"
-      ],
-      "options": [
-        {
-          "option": "Completely certain",
-          "decision": "Reject",
-          "reason": "The speaker repeatedly uses cautious language."
-        },
-        {
-          "option": "Cautiously optimistic but not certain",
-          "decision": "Select",
-          "reason": "The speaker sees possible benefits while withholding a firm conclusion."
-        },
-        {
-          "option": "Entirely uninterested",
-          "decision": "Reject",
-          "reason": "The speaker evaluates evidence and possible outcomes."
-        },
-        {
-          "option": "Certain that the policy will fail",
-          "decision": "Reject",
-          "reason": "The speaker mentions potential benefits."
-        }
-      ],
-      "teaching_message": "Modal verbs and certainty expressions are key evidence in stylistics questions."
+      ]
     }
   ],
-  "useful_language": {
-    "prompt_signals": [
-      {
-        "signal": "mainly, primarily, best title, central idea",
-        "meaning": "Listen for gist or the overall message."
-      },
-      {
-        "signal": "according to the speaker, which factor, what happened, how many",
-        "meaning": "Listen for explicit detailed information."
-      },
-      {
-        "signal": "why does the speaker mention, what is the purpose of",
-        "meaning": "Identify the function of an example, fact or comment."
-      },
-      {
-        "signal": "what can be inferred, what does this suggest, what is implied",
-        "meaning": "Combine clues to reach a supported conclusion."
-      },
-      {
-        "signal": "how does the speaker feel, what is the speaker's attitude",
-        "meaning": "Listen for evaluation, emotion and certainty."
-      },
-      {
-        "signal": "NOT, EXCEPT, incorrect, does not match",
-        "meaning": "Reverse the normal selection goal and choose unsupported or false information."
-      }
-    ],
-    "lecture_signposts": [
-      {
-        "language": "The main point is, the key issue is, what matters most is",
-        "function": "Introduces or emphasizes the central idea."
-      },
-      {
-        "language": "First, next, finally, to begin with",
-        "function": "Signals organization or sequence."
-      },
-      {
-        "language": "For example, for instance, such as, to illustrate",
-        "function": "Introduces supporting evidence rather than the main idea."
-      },
-      {
-        "language": "However, although, in contrast, on the other hand",
-        "function": "Signals contrast or correction."
-      },
-      {
-        "language": "Because, since, due to, the reason is",
-        "function": "Signals cause or explanation."
-      },
-      {
-        "language": "Therefore, consequently, as a result, this leads to",
-        "function": "Signals result or conclusion."
-      },
-      {
-        "language": "In other words, that is, put simply",
-        "function": "Signals restatement or clarification."
-      },
-      {
-        "language": "To conclude, overall, in summary",
-        "function": "Signals the final position or overall message."
-      }
-    ],
-    "attitude_and_certainty_markers": [
-      {
-        "language": "certainly, clearly, undoubtedly",
-        "interpretation": "High certainty."
-      },
-      {
-        "language": "probably, likely, appears to",
-        "interpretation": "Moderate certainty."
-      },
-      {
-        "language": "may, might, could, perhaps",
-        "interpretation": "Possibility or caution."
-      },
-      {
-        "language": "surprisingly, unfortunately, importantly",
-        "interpretation": "Speaker evaluation or attitude."
-      },
-      {
-        "language": "I strongly believe, it is essential",
-        "interpretation": "Strong support or emphasis."
-      },
-      {
-        "language": "I am not convinced, the evidence is limited",
-        "interpretation": "Doubt or reservation."
-      }
-    ],
-    "option_elimination_phrases": [
-      "This option is contradicted by the recording.",
-      "This idea is mentioned, but it does not answer the prompt.",
-      "This option is too broad because the speaker discusses only one part of it.",
-      "This option is too narrow because it focuses on one example instead of the main idea.",
-      "This option is only partly correct; the second claim is unsupported.",
-      "This option changes a possibility into a certainty.",
-      "This option reverses the cause-and-effect relationship.",
-      "This option repeats a word from the recording but changes its meaning.",
-      "This option includes information that was not mentioned.",
-      "This option is supported by both the notes and the speaker's conclusion."
-    ],
-    "note_taking_abbreviations": [
-      {
-        "symbol": "→",
-        "meaning": "causes, leads to or results in"
-      },
-      {
-        "symbol": "↑ / ↓",
-        "meaning": "increase / decrease"
-      },
-      {
-        "symbol": "+ / -",
-        "meaning": "advantage / disadvantage or positive / negative"
-      },
-      {
-        "symbol": "vs",
-        "meaning": "contrast or comparison"
-      },
-      {
-        "symbol": "b/c",
-        "meaning": "because"
-      },
-      {
-        "symbol": "govt",
-        "meaning": "government"
-      },
-      {
-        "symbol": "env",
-        "meaning": "environment"
-      },
-      {
-        "symbol": "ex",
-        "meaning": "example"
-      },
-      {
-        "symbol": "?",
-        "meaning": "unclear or missed information"
-      },
-      {
-        "symbol": "*",
-        "meaning": "important or repeated point"
-      }
-    ]
-  },
+  "useful_language": [
+    {
+      "category": "Main-idea signposts",
+      "items": [
+        {
+          "item": "The main point is ...",
+          "when_to_use": "Use as a mental cue when the speaker explicitly introduces the central message."
+        },
+        {
+          "item": "What this shows is ...",
+          "when_to_use": "Listen for a conclusion or interpretation following evidence or examples."
+        },
+        {
+          "item": "Overall ...",
+          "when_to_use": "Use to identify a summary statement near the end of a section or recording."
+        },
+        {
+          "item": "The key issue is ...",
+          "when_to_use": "Use when the speaker distinguishes the central issue from background information."
+        },
+        {
+          "item": "In conclusion ...",
+          "when_to_use": "Use to capture the speaker's final position or overall message."
+        }
+      ]
+    },
+    {
+      "category": "Detail and example signposts",
+      "items": [
+        {
+          "item": "For example ...",
+          "when_to_use": "Recognize that the following information supports a broader point and may not itself be the main idea."
+        },
+        {
+          "item": "Specifically ...",
+          "when_to_use": "Listen for a precise fact, definition, number or case."
+        },
+        {
+          "item": "In particular ...",
+          "when_to_use": "Use when the speaker narrows attention to an important supporting detail."
+        },
+        {
+          "item": "Such as ...",
+          "when_to_use": "Use to identify examples belonging to a category."
+        },
+        {
+          "item": "According to the study ...",
+          "when_to_use": "Use to identify reported evidence, findings or statistics."
+        }
+      ]
+    },
+    {
+      "category": "Contrast and correction signposts",
+      "items": [
+        {
+          "item": "However ...",
+          "when_to_use": "Expect a contrast, limitation or change in direction."
+        },
+        {
+          "item": "Although ...",
+          "when_to_use": "Listen for a concession followed by the speaker's more important point."
+        },
+        {
+          "item": "Rather than ...",
+          "when_to_use": "Use to distinguish the preferred or accurate idea from the rejected alternative."
+        },
+        {
+          "item": "In fact ...",
+          "when_to_use": "Expect clarification, stronger evidence or correction of an assumption."
+        },
+        {
+          "item": "Not X, but Y ...",
+          "when_to_use": "Record Y as the corrected or emphasized information."
+        }
+      ]
+    },
+    {
+      "category": "Cause, result and purpose signposts",
+      "items": [
+        {
+          "item": "Because ...",
+          "when_to_use": "Listen for a direct reason when the prompt asks why."
+        },
+        {
+          "item": "Therefore ...",
+          "when_to_use": "Listen for a conclusion or result based on earlier information."
+        },
+        {
+          "item": "As a result ...",
+          "when_to_use": "Identify the consequence of a cause, policy, event or condition."
+        },
+        {
+          "item": "In order to ...",
+          "when_to_use": "Identify the purpose of an action or recommendation."
+        },
+        {
+          "item": "This leads to ...",
+          "when_to_use": "Track a cause-effect connection that may be paraphrased in an option."
+        }
+      ]
+    },
+    {
+      "category": "Attitude and certainty markers",
+      "items": [
+        {
+          "item": "Clearly ...",
+          "when_to_use": "Signals strong confidence or emphasis."
+        },
+        {
+          "item": "Probably ...",
+          "when_to_use": "Signals likelihood but not certainty."
+        },
+        {
+          "item": "May or might ...",
+          "when_to_use": "Signals possibility and limited certainty."
+        },
+        {
+          "item": "Unfortunately ...",
+          "when_to_use": "Signals a negative evaluation or disappointment."
+        },
+        {
+          "item": "I am not convinced ...",
+          "when_to_use": "Signals doubt, reservation or disagreement."
+        }
+      ]
+    },
+    {
+      "category": "Option-elimination phrases",
+      "items": [
+        {
+          "item": "Mentioned but not answering the prompt",
+          "when_to_use": "Reject an option that contains true information but does not address the question."
+        },
+        {
+          "item": "Too broad",
+          "when_to_use": "Reject an option that extends the speaker's claim beyond the recording."
+        },
+        {
+          "item": "Too narrow",
+          "when_to_use": "Reject an option that represents only one example when the prompt asks for the main idea."
+        },
+        {
+          "item": "Contradicted by the recording",
+          "when_to_use": "Reject an option whose meaning is opposite to the speaker's statement."
+        },
+        {
+          "item": "Unsupported assumption",
+          "when_to_use": "Reject an option that sounds logical but is not stated or implied in the recording."
+        }
+      ]
+    }
+  ],
   "common_mistakes": [
     {
-      "mistake": "Trying to read the prompt and every answer option during the seven-second preparation period.",
-      "why_it_hurts": "The learner may begin listening without understanding the question.",
-      "correction": "Prioritize the prompt, identify the controlling word and decide what information to listen for."
+      "mistake": "Trying to read the prompt and every answer option during the 7-second preparation period.",
+      "why_it_hurts": "The recording may begin before the learner has identified the actual listening target.",
+      "fix": "Prioritize the instruction, prompt type and key limiting words. Read options only if preparation time remains."
     },
     {
-      "mistake": "Ignoring the word NOT or EXCEPT.",
-      "why_it_hurts": "The learner selects true statements when the task requires false or unsupported statements.",
-      "correction": "Mark the negative word and write a mental instruction such as 'choose incorrect'."
+      "mistake": "Listening only for repeated words from the answer options.",
+      "why_it_hurts": "Correct answers are often paraphrased, while distractors may repeat exact words but change the meaning.",
+      "fix": "Match complete ideas, relationships and degree of certainty rather than isolated vocabulary."
     },
     {
-      "mistake": "Writing full sentences while listening.",
-      "why_it_hurts": "Writing becomes slower than the recording and later information is missed.",
-      "correction": "Use key words, abbreviations, symbols and short category labels."
+      "mistake": "Writing full sentences while taking notes.",
+      "why_it_hurts": "The learner falls behind and misses later evidence, contrasts or conclusions.",
+      "fix": "Use key words, abbreviations, arrows and symbols."
     },
     {
       "mistake": "Stopping mentally after missing one word.",
-      "why_it_hurts": "The learner misses several later ideas while trying to reconstruct an earlier sound.",
-      "correction": "Leave a gap, continue listening and use later context to recover the meaning."
+      "why_it_hurts": "Worry about one unclear part can cause several following ideas to be missed.",
+      "fix": "Leave a question mark in the notes and immediately continue following the speaker."
     },
     {
-      "mistake": "Selecting an option because it repeats exact words from the recording.",
-      "why_it_hurts": "Distractors often reuse vocabulary while changing the relationship or conclusion.",
-      "correction": "Compare the full meaning of the option with the recording."
+      "mistake": "Selecting a true statement that does not answer the prompt.",
+      "why_it_hurts": "Multiple-choice questions test relevance as well as factual accuracy.",
+      "fix": "Ask, 'Does this option answer this exact question?' before selecting it."
     },
     {
-      "mistake": "Treating every fact as equally important.",
-      "why_it_hurts": "Background dates, names or examples may distract from the information requested by the prompt.",
-      "correction": "Keep only details that answer the listening target."
+      "mistake": "Ignoring negative wording such as NOT or EXCEPT.",
+      "why_it_hurts": "The learner may correctly identify true information but select the opposite of what the task requires.",
+      "fix": "Mark the negative word and restate the task as 'select the false or excluded options.'"
     },
     {
-      "mistake": "Choosing a detail option for a gist question.",
-      "why_it_hurts": "The option may be true but represent only one small part of the recording.",
-      "correction": "Choose the option that covers the complete message and conclusion."
+      "mistake": "Choosing a minor example as the main idea.",
+      "why_it_hurts": "The selected option may be accurate but too narrow to represent the whole recording.",
+      "fix": "For gist questions, choose the option that covers the topic, central claim and overall direction."
     },
     {
-      "mistake": "Selecting a partly correct option.",
-      "why_it_hurts": "An option is incorrect when any essential part of its claim is unsupported.",
-      "correction": "Test every clause in the option, especially statements joined by and, because or therefore."
+      "mistake": "Treating all information as equally important.",
+      "why_it_hurts": "Background, dates, repetition and illustrations can distract from the evidence required by the prompt.",
+      "fix": "Label notes by function: main point, reason, example, contrast, result or background."
     },
     {
-      "mistake": "Assuming all plausible statements are correct.",
-      "why_it_hurts": "PTE answers must be supported by the recording, not by general knowledge.",
-      "correction": "Demand direct evidence or a strong evidence-based inference."
+      "mistake": "Selecting every option that seems possibly correct in a multiple-answer item.",
+      "why_it_hurts": "Unsupported selections reduce answer quality and may affect the score.",
+      "fix": "Require clear evidence for every selected option and leave doubtful options unselected unless the recording supports them."
     },
     {
-      "mistake": "Changing an evidence-based first answer because another option sounds more academic.",
-      "why_it_hurts": "Sophisticated wording can make a distractor appear convincing.",
-      "correction": "Change an answer only after finding clearer evidence or a definite contradiction."
+      "mistake": "Changing an evidence-based first answer because another option sounds more sophisticated.",
+      "why_it_hurts": "Complex wording can appear attractive even when it is unsupported or exaggerated.",
+      "fix": "Change an answer only after identifying a specific prompt error, contradiction or stronger piece of evidence."
     },
     {
-      "mistake": "For multiple-answer items, searching for one best option and stopping.",
-      "why_it_hurts": "Additional correct answers may be missed.",
-      "correction": "Evaluate every option independently as supported, contradicted, not mentioned or partly supported."
+      "mistake": "Ignoring modal verbs and qualifiers.",
+      "why_it_hurts": "An option may change 'may help' into 'will solve' or 'some' into 'all', creating a false statement.",
+      "fix": "Compare certainty and scope words carefully, including may, might, often, sometimes, all, never and always."
     },
     {
-      "mistake": "Using personal knowledge to correct or extend the speaker's ideas.",
-      "why_it_hurts": "The selected answer may be true in the real world but absent from the recording.",
-      "correction": "Answer from the speaker's message only."
+      "mistake": "Deciding too early before the speaker finishes.",
+      "why_it_hurts": "Later information may correct, limit or reverse an earlier statement.",
+      "fix": "Keep options provisional until the recording ends, especially after contrast markers."
     }
   ],
   "practice_plan": {
-    "total_duration": "Approximately 120 minutes",
-    "stages": [
+    "time_budget": [
       {
-        "stage": "1. Item-type orientation",
-        "duration": "10 minutes",
-        "activities": [
-          "Compare single-answer and multiple-answer instructions.",
-          "Underline the words that control the number of selections.",
-          "Classify four sample rubrics.",
-          "Explain what must be checked before submitting."
-        ],
-        "success_criterion": "The learner follows the correct selection rule without prompting."
+        "phase": "Item-type orientation",
+        "minutes": "10",
+        "focus": "Review the difference between single-answer and multiple-answer instructions, response rules and common prompt wording."
       },
       {
-        "stage": "2. Prompt classification",
-        "duration": "15 minutes",
-        "activities": [
-          "Sort prompts into gist, detail, purpose, organization, inference and stylistics.",
-          "Circle controlling words.",
-          "Rewrite each prompt as a short listening target.",
-          "Compare targets with model answers."
-        ],
-        "success_criterion": "At least eight out of ten prompts are classified correctly."
+        "phase": "Prompt decoding",
+        "minutes": "15",
+        "focus": "Classify prompts as gist, detail, purpose, organization, inference or stylistics."
       },
       {
-        "stage": "3. Seven-second preparation drill",
-        "duration": "10 minutes",
-        "activities": [
-          "Display a prompt for seven seconds.",
-          "Hide the prompt.",
-          "State the listening skill.",
-          "Write a two-to-five-word listening target."
-        ],
-        "success_criterion": "The learner consistently identifies the prompt focus within seven seconds."
+        "phase": "Seven-second preparation drills",
+        "minutes": "10",
+        "focus": "Practise reading prompts, marking danger words and predicting the required evidence."
       },
       {
-        "stage": "4. Selective note-taking",
-        "duration": "15 minutes",
-        "activities": [
-          "Listen to four short academic extracts.",
-          "Take notes using no more than ten words or symbols per extract.",
-          "Compare full-sentence notes with abbreviated notes.",
-          "Remove redundant details."
-        ],
-        "success_criterion": "Notes capture the required meaning without attempting to transcribe the recording."
+        "phase": "Selective note-taking",
+        "minutes": "15",
+        "focus": "Convert spoken information into key words, abbreviations, symbols and relationships."
       },
       {
-        "stage": "5. Main idea and detail contrast",
-        "duration": "15 minutes",
-        "activities": [
-          "Listen to one recording with both a gist question and a detail question.",
-          "Use separate note columns for main idea and supporting points.",
-          "Identify which notes answer each prompt.",
-          "Explain why a true detail may be wrong for a gist question."
-        ],
-        "success_criterion": "The learner distinguishes the central message from examples and supporting details."
+        "phase": "Gist and detail listening",
+        "minutes": "20",
+        "focus": "Distinguish main ideas from examples and capture requested supporting facts."
       },
       {
-        "stage": "6. Negative-prompt workshop",
-        "duration": "15 minutes",
-        "activities": [
-          "Practise prompts containing NOT, EXCEPT and incorrect.",
-          "Verify supported matches first.",
-          "Select only mismatches.",
-          "Explain each choice using recording evidence."
-        ],
-        "success_criterion": "The learner does not reverse the required selection."
+        "phase": "Purpose, inference and attitude",
+        "minutes": "15",
+        "focus": "Identify why information is mentioned and infer speaker position or certainty."
       },
       {
-        "stage": "7. Timed single-answer practice",
-        "duration": "15 minutes",
-        "activities": [
-          "Complete three choose single answer items.",
-          "Use the prompt-first process.",
-          "Choose one response only.",
-          "Record the evidence supporting the final answer."
-        ],
-        "success_criterion": "The learner selects the best overall response rather than the first true statement."
+        "phase": "Option elimination",
+        "minutes": "15",
+        "focus": "Reject options that are unsupported, contradicted, too broad, too narrow or exaggerated."
       },
       {
-        "stage": "8. Timed multiple-answer practice",
-        "duration": "15 minutes",
-        "activities": [
-          "Complete three choose multiple answers items.",
-          "Evaluate every option independently.",
-          "Avoid unsupported selections.",
-          "Label each rejected option by distractor type."
-        ],
-        "success_criterion": "The learner selects all and only the supported responses."
+        "phase": "Timed mixed practice",
+        "minutes": "15",
+        "focus": "Complete single-answer and multiple-answer items under realistic one-play conditions."
       },
       {
-        "stage": "9. Error analysis",
-        "duration": "5 minutes",
-        "activities": [
-          "Identify whether each error came from prompt reading, listening, notes or option analysis.",
-          "Write one corrective action.",
-          "Compare repeated error patterns.",
-          "Choose one priority for the next practice session."
-        ],
-        "success_criterion": "The learner can explain the cause of an incorrect answer."
-      },
-      {
-        "stage": "10. Final self-check",
-        "duration": "5 minutes",
-        "activities": [
-          "Complete the mastery checklist.",
-          "Rate confidence for each listening skill.",
-          "Name one successful strategy.",
-          "Name one skill requiring further practice."
-        ],
-        "success_criterion": "The learner identifies a specific next step rather than giving a general confidence rating."
+        "phase": "Error review and self-check",
+        "minutes": "5",
+        "focus": "Identify whether errors came from prompt reading, listening, notes, inference or option evaluation."
       }
     ],
-    "mini_drills": [
+    "drills": [
       {
-        "name": "Prompt flash",
-        "instruction": "View a prompt for seven seconds and state the tested skill and listening target.",
-        "recommended_repetitions": "10 prompts"
+        "name": "Prompt classification sprint",
+        "instructions": "Read ten prompts without audio. Label each one G for gist, D for detail, P for purpose, O for organization, I for inference or S for stylistics. Underline the exact words that reveal the category."
       },
       {
-        "name": "Ten-word notes",
-        "instruction": "Summarize a thirty-second recording using a maximum of ten written words or symbols.",
-        "recommended_repetitions": "4 recordings"
+        "name": "Seven-second target drill",
+        "instructions": "Display one prompt for seven seconds. State the item type, listening skill, danger word and expected evidence type before the timer ends."
       },
       {
-        "name": "Distractor diagnosis",
-        "instruction": "Label wrong options as contradicted, not mentioned, too broad, too narrow, partly correct or wrong relationship.",
-        "recommended_repetitions": "12 options"
+        "name": "Keyword compression drill",
+        "instructions": "Listen to 20-second academic statements and reduce each one to no more than six written content words plus symbols."
       },
       {
-        "name": "Miss-and-move",
-        "instruction": "Continue taking notes after an intentionally unclear word and reconstruct the main message from later context.",
-        "recommended_repetitions": "3 recordings"
+        "name": "Keep-listening recovery drill",
+        "instructions": "Use recordings containing unfamiliar terms. When an unknown word occurs, write a question mark and continue taking notes without pausing."
+      },
+      {
+        "name": "Main idea versus example drill",
+        "instructions": "After a short recording, write one sentence for the main idea and list two supporting examples separately. Then reject options that represent only an example."
+      },
+      {
+        "name": "NOT-prompt sorting drill",
+        "instructions": "For each negatively worded question, label options T for supported and F for unsupported, then select according to the negative instruction."
+      },
+      {
+        "name": "Certainty ladder drill",
+        "instructions": "Order expressions such as might, may, probably, will and certainly by strength. Compare each recording statement with options that alter its certainty."
+      },
+      {
+        "name": "Distractor diagnosis drill",
+        "instructions": "For every incorrect option, label the reason: not mentioned, opposite, too broad, too narrow, wrong relationship, wrong certainty or irrelevant detail."
+      },
+      {
+        "name": "One-play timed set",
+        "instructions": "Complete a mixed group of listening multiple-choice items with each recording played once. Do not pause, replay or consult a transcript until all answers are submitted."
+      },
+      {
+        "name": "Transcript evidence review",
+        "instructions": "After timed practice, use the transcript to underline the exact evidence for correct answers and mark the wording that makes each distractor incorrect."
       }
     ],
-    "review_protocol": [
-      "Replay the recording only after completing the item under one-listen conditions.",
-      "Locate the exact phrase or paraphrase supporting each correct answer.",
-      "Explain why every distractor is wrong rather than checking only the correct answer.",
-      "Rewrite unclear notes using a more efficient abbreviation system.",
-      "Record the error category in a study log.",
-      "Repeat the same prompt type with a new recording within twenty-four hours."
-    ]
+    "routine": "For every item, follow the same routine: confirm single or multiple answer, decode the prompt, mark negative wording, predict the evidence, listen once while taking compressed notes, compare options by complete meaning, select only supported responses, and review errors by category after practice."
   },
   "mastery_checklist": [
-    "I check whether the item requires one answer or multiple answers.",
-    "I notice controlling words such as mainly, why, according to, inferred, attitude, NOT and EXCEPT.",
-    "I can classify prompts as gist, detail, purpose, organization, inference or stylistics.",
-    "I use preparation time mainly to understand the prompt.",
-    "I can convert the prompt into a short listening target.",
-    "I take notes using key words, abbreviations and symbols.",
-    "I continue listening when I miss a word or phrase.",
-    "I distinguish relevant evidence from historical background, repetition and unrelated examples.",
-    "I match options to meaning rather than exact vocabulary.",
-    "I can identify options that are contradicted, unsupported or only partly correct.",
-    "I choose one answer only when the instruction requires a single response.",
-    "I evaluate every option independently when multiple answers are required.",
-    "I can explain the evidence supporting each selected option.",
-    "I do not use outside knowledge to add information to the recording.",
-    "I change an initial answer only when stronger evidence justifies the change.",
-    "I can complete practice items under one-listen timed conditions."
+    "I can distinguish immediately between a single-answer item and a multiple-answer item.",
+    "I can identify whether a prompt tests gist, detail, purpose, organization, inference or stylistics.",
+    "I can notice and correctly respond to NOT, EXCEPT, INCORRECT, LEAST and MOST.",
+    "I can use the 7-second preparation period without becoming distracted by long answer options.",
+    "I can convert a prompt into a simple listening target.",
+    "I can take notes using key words, abbreviations and symbols rather than full sentences.",
+    "I can continue listening after missing an unfamiliar word or unclear phrase.",
+    "I can identify a recording's main idea and distinguish it from examples.",
+    "I can capture requested details such as reasons, dates, results, definitions and sequences.",
+    "I can explain why a speaker mentions a particular example.",
+    "I can infer attitude and certainty from modal verbs, evaluative language, stress and context.",
+    "I can recognize contrasts, corrections and changes of direction.",
+    "I can dismiss redundant background information that does not answer the prompt.",
+    "I can reject options that are true but irrelevant to the question.",
+    "I can identify options that exaggerate certainty or scope.",
+    "I can evaluate every option independently in a multiple-answer item.",
+    "I can avoid changing an evidence-based answer without a clear reason.",
+    "I can complete mixed listening multiple-choice practice under timed, one-play conditions.",
+    "I can explain the evidence for every answer I select.",
+    "I can classify my errors and choose a specific drill to improve the weak skill."
   ],
   "strategy_notes": [
-    "The prompt controls the listening process. A learner who knows what to listen for needs fewer notes and makes fewer guesses.",
-    "The seven-second preparation period is most valuable when used to identify the question type, controlling word and listening target.",
-    "For gist questions, the opening may introduce the topic, but the conclusion often reveals the speaker's final position.",
-    "For detail questions, organize notes by category so that facts do not become disconnected fragments.",
-    "For purpose questions, ask what role an example or comment plays in the speaker's argument.",
-    "For inference questions, avoid answers that are merely possible; choose conclusions strongly supported by several clues.",
-    "For stylistics questions, modal verbs, evaluative adverbs and certainty expressions often provide stronger evidence than the topic itself.",
-    "In multiple-answer items, each option should be judged separately; one correct choice does not make a related option correct.",
-    "A true statement can still be the wrong answer when it does not answer the prompt.",
-    "A distractor may use exact vocabulary from the recording but reverse the speaker's meaning.",
-    "Background dates, names and statistics should be noted only when the prompt requests them or they support the answer.",
-    "When a negative prompt is used, verify the correct statements first and then select the unsupported or mismatched statements.",
-    "Brief notes reduce cognitive load because the learner remains focused on listening rather than transcription.",
-    "Missing one word rarely prevents comprehension of the whole recording; later restatement, examples and context can restore the meaning.",
-    "The strongest final answer is supported by the prompt, the notes and the overall meaning of the recording."
+    "The prompt controls the listening process. Understanding the topic alone is not enough.",
+    "Preparation time should produce a listening target, not a complete reading of every option.",
+    "For gist questions, opening and concluding statements are useful, but repeated ideas across the recording are often stronger evidence.",
+    "For detail questions, label the requested category before listening, such as reason, date, result or definition.",
+    "For purpose questions, ask what function an example performs in the speaker's argument.",
+    "For organization questions, track movement such as problem to solution, cause to effect, past to present or claim to evidence.",
+    "For inference questions, combine clues without adding outside knowledge.",
+    "For stylistics questions, listen to qualifiers, modal verbs, evaluative vocabulary, stress and tone.",
+    "A familiar word match is weaker evidence than a complete meaning match.",
+    "An option can be factually true and still be wrong because it does not answer the prompt.",
+    "Absolute words such as always, never, completely and all should be checked carefully against the recording.",
+    "When the speaker says 'but', 'however' or 'in fact', the information that follows often carries greater decision value.",
+    "Historical dates and contextual facts may be redundant when the prompt asks for a reason or purpose.",
+    "In multiple-answer items, do not select an option merely because it is possible; select it because it is supported.",
+    "The best reason to change an answer is new evidence, not nervousness.",
+    "During review, study why distractors are wrong as carefully as why the correct answers are right."
   ],
   "metadata": {
-    "chapter_number": 13,
-    "lesson_number": 12,
-    "estimated_study_time": "Approximately 2 hours",
-    "primary_item_types": [
-      "Listening: Multiple-choice, choose single answer",
-      "Listening: Multiple-choice, choose multiple answers",
-      "Positive-prompt multiple choice",
-      "Negative-prompt multiple choice"
-    ],
-    "communicative_skills": [
-      "Listening",
-      "Reading prompts and answer options",
-      "Selective note-taking",
-      "Evidence-based option analysis"
-    ],
-    "target_listening_skills": [
-      "Main idea or gist",
-      "Detailed information",
-      "Speaker's purpose",
-      "Organization",
-      "Inference",
-      "Stylistics"
-    ],
-    "difficulty": "Intermediate to upper-intermediate PTE preparation",
-    "recommended_prerequisites": [
-      "Basic familiarity with the PTE computer-based interface",
-      "Ability to understand common academic vocabulary",
-      "Ability to take simple notes while listening",
-      "Familiarity with common linking and signpost expressions"
-    ],
-    "source_alignment": [
-      "Item-type distinction between single-answer and multiple-answer listening questions",
-      "Prompt-first use of the seven-second preparation period",
-      "Brief and relevant note-taking with key words and abbreviations",
-      "Recovery after missed or unclear information",
-      "Identification and dismissal of redundant information",
-      "Prompt-specific strategies for gist and detailed information",
-      "Special handling of negative prompts containing NOT",
-      "Timed practice followed by feedback and self-assessment"
-    ],
-    "content_tags": [
-      "pte-listening",
+    "difficulty": "Intermediate to upper-intermediate",
+    "estimated_study_time": "Plan for about 2 hours of study for this chapter.",
+    "tags": [
+      "PTE Academic",
+      "listening",
       "multiple-choice",
-      "single-answer",
-      "multiple-answers",
-      "prompt-analysis",
-      "note-taking",
-      "option-elimination",
+      "choose single answer",
+      "choose multiple answers",
       "gist",
-      "detail",
+      "detailed information",
+      "speaker purpose",
+      "organization",
       "inference",
-      "speaker-attitude",
-      "timed-practice"
-    ]
+      "stylistics",
+      "note-taking",
+      "prompt analysis",
+      "option elimination",
+      "timed practice"
+    ],
+    "provenance_note": "Teaching-first enrichment based on the supplied Chapter 13 Lesson 12 material, including its objectives, listening-skill categories, preparation-time guidance, note-taking strategies, negative-prompt example, redundant-information example, misconceptions, practice questions and self-check statements."
   }
 }
