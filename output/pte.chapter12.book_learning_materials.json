@@ -1,0 +1,919 @@
+{
+  "schema_version": "book_learning_materials.v2",
+  "book": {
+    "slug": "pte",
+    "title": "pte",
+    "source_pdf": "input/pdfs/pte.pdf"
+  },
+  "generation": {
+    "generated_at": "2026-07-15T03:11:39.710362+00:00",
+    "pipeline_version": "book_learning_materials.v2",
+    "prompt_version": "book_learning_materials_v2_chapter.v2",
+    "backend": "codex-cli",
+    "model": "gpt-5.5",
+    "selection_mode": "chapters",
+    "selected_chapter_numbers": [
+      12
+    ],
+    "book_synthesis_performed": false,
+    "clean_chunks_path": "extracted/pte.section_clean_chunks.json"
+  },
+  "learning_materials": {
+    "chapters": [
+      {
+        "chapter_number": 12,
+        "chapter_title": "Lesson 11",
+        "source_chunk_ids": [
+          "pte_chunk_177",
+          "pte_chunk_178",
+          "pte_chunk_179",
+          "pte_chunk_180",
+          "pte_chunk_181",
+          "pte_chunk_182",
+          "pte_chunk_183",
+          "pte_chunk_184",
+          "pte_chunk_185",
+          "pte_chunk_186"
+        ],
+        "estimated_study_time": {
+          "text": "Plan about 2 hours for this lesson, with time for reading-skill review, prompt analysis, unfamiliar-word strategies, practice items, and self-checking.",
+          "claim_kind": "study_plan",
+          "origin": "pedagogical_generation",
+          "source_chunk_ids": [],
+          "grounded_in_source_chunk_ids": [],
+          "evidence_spans": [],
+          "reason": null
+        },
+        "chapter_summary": {
+          "text": "This lesson focuses on reading skills such as main idea or gist, writer’s purpose, organization, inference, explicit and implicit information, classifying and categorizing information, and inferring unfamiliar words. It provides further skills practice for Reading: Multiple-choice, choose single answer and Reading: Multiple-choice, choose multiple answers.",
+          "claim_kind": "source_summary",
+          "origin": "source_grounded",
+          "source_chunk_ids": [
+            "pte_chunk_177"
+          ],
+          "grounded_in_source_chunk_ids": [],
+          "evidence_spans": [
+            {
+              "node_id": "pte_chunk_177",
+              "quote": "This lesson focuses on the following reading skills:  \n• Main idea or gist: Read for and identify the main idea or theme of the text"
+            },
+            {
+              "node_id": "pte_chunk_177",
+              "quote": "• Writer’s purpose: Read for and understand the function of what the writer says or identify the reasons why \nthe writer mentions specific pieces of information"
+            },
+            {
+              "node_id": "pte_chunk_177",
+              "quote": "• Organization: Read for and identify the overall organization and connections between pieces of information\n• Inference: Read a text and infer meanings, form generalizations, make predictions, find relationships or draw \nconclusions"
+            },
+            {
+              "node_id": "pte_chunk_177",
+              "quote": "• Comprehending explicit and implicit information \n• Classifying and categorizing information\n• Inferring the meaning of unfamiliar words"
+            },
+            {
+              "node_id": "pte_chunk_177",
+              "quote": "This lesson provides further skills practice for the PTE Academic item types Reading: Multiple-choice, choose \nsingle answer and Reading: Multiple-choice, choose multiple answers"
+            }
+          ],
+          "reason": null
+        },
+        "learning_objectives": [
+          {
+            "text": "Practice reading skills including gist, writer’s purpose, organization, inference, explicit and implicit information, categorization, and unfamiliar-word meaning.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_177"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_177",
+                "quote": "By the end of this lesson, test takers will have: \n➤\t Practiced the reading skills listed above"
+              },
+              {
+                "node_id": "pte_chunk_177",
+                "quote": "• Main idea or gist: Read for and identify the main idea or theme of the text"
+              },
+              {
+                "node_id": "pte_chunk_177",
+                "quote": "• Writer’s purpose: Read for and understand the function of what the writer says or identify the reasons why \nthe writer mentions specific pieces of information"
+              },
+              {
+                "node_id": "pte_chunk_177",
+                "quote": "• Organization: Read for and identify the overall organization and connections between pieces of information\n• Inference: Read a text and infer meanings, form generalizations, make predictions, find relationships or draw \nconclusions"
+              },
+              {
+                "node_id": "pte_chunk_177",
+                "quote": "• Comprehending explicit and implicit information \n• Classifying and categorizing information\n• Inferring the meaning of unfamiliar words"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Analyze the rubrics and format of Reading multiple-choice item types.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_177"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_177",
+                "quote": "➤\t Analyzed the rubrics and format of these items"
+              },
+              {
+                "node_id": "pte_chunk_177",
+                "quote": "Reading: Multiple-choice, choose \nsingle answer\nReading: Multiple-choice, choose \nmultiple answers"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Analyze the nature of multiple-choice items, answer options, and test-taking strategies.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_177"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_177",
+                "quote": "➤\t Analyzed the nature of multiple-choice items and some answer options\n➤\t Analyzed test-taking strategies for multiple-choice items"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Complete practice items under timed conditions and review feedback to practice items.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_177"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_177",
+                "quote": "➤\t Completed practice items under timed conditions\n➤\t Reviewed feedback to practice items"
+              }
+            ],
+            "reason": null
+          }
+        ],
+        "key_terms": [
+          {
+            "term": "Main idea or gist",
+            "meaning": {
+              "text": "Reading for and identifying the main idea or theme of the text.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_177"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_177",
+                  "quote": "Main idea or gist: Read for and identify the main idea or theme of the text"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Writer’s purpose",
+            "meaning": {
+              "text": "Reading to understand the function of what the writer says or the reasons why the writer mentions specific information.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_177"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_177",
+                  "quote": "Writer’s purpose: Read for and understand the function of what the writer says or identify the reasons why \nthe writer mentions specific pieces of information"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Inference",
+            "meaning": {
+              "text": "Reading a text to infer meanings, form generalizations, make predictions, find relationships, or draw conclusions.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_177"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_177",
+                  "quote": "Inference: Read a text and infer meanings, form generalizations, make predictions, find relationships or draw \nconclusions"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Inferring unfamiliar words",
+            "meaning": {
+              "text": "Working out the meanings of unfamiliar words from context.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_181"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_181",
+                  "quote": "Aim: Familiarize test takers with strategies for working out the meanings of unfamiliar words from context"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Prompt",
+            "meaning": {
+              "text": "A prompt tells test takers what type of information they are being asked for.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_179"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_179",
+                  "quote": "they must always read \nthe prompt carefully to make sure they know exactly what type of information they are being asked \nfor."
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "core_lessons": [
+          {
+            "title": "Know The Reading Skills Being Practiced",
+            "explanation": {
+              "text": "Lesson 11 practices reading for main idea or gist, writer’s purpose, organization, inference, explicit and implicit information, classifying and categorizing information, and inferring the meaning of unfamiliar words.",
+              "claim_kind": "source_summary",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_177"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_177",
+                  "quote": "This lesson focuses on the following reading skills:  \n• Main idea or gist: Read for and identify the main idea or theme of the text"
+                },
+                {
+                  "node_id": "pte_chunk_177",
+                  "quote": "• Writer’s purpose: Read for and understand the function of what the writer says or identify the reasons why \nthe writer mentions specific pieces of information"
+                },
+                {
+                  "node_id": "pte_chunk_177",
+                  "quote": "• Organization: Read for and identify the overall organization and connections between pieces of information\n• Inference: Read a text and infer meanings, form generalizations, make predictions, find relationships or draw \nconclusions"
+                },
+                {
+                  "node_id": "pte_chunk_177",
+                  "quote": "• Comprehending explicit and implicit information \n• Classifying and categorizing information\n• Inferring the meaning of unfamiliar words"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Read Prompts Carefully",
+            "explanation": {
+              "text": "Reading multiple-choice single-answer and multiple-answer items can have various prompt types, so read the prompt carefully to know exactly what type of information is being asked for.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_179"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_179",
+                  "quote": "Reading: Multiple-choice, choose single answers and Reading: Multiple-choice, \nchoose multiple answers items can have various types of prompts"
+                },
+                {
+                  "node_id": "pte_chunk_179",
+                  "quote": "they must always read \nthe prompt carefully to make sure they know exactly what type of information they are being asked \nfor."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Infer Meaning From Overall Meaning And Writer’s Opinion",
+            "explanation": {
+              "text": "Prompts that ask test takers to infer meaning require careful reading of the passage and options, with attention to overall meaning and the writer’s opinion.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_179"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_179",
+                  "quote": "prompts that ask test takers to infer meaning require them to read the passage and \noptions very carefully"
+                },
+                {
+                  "node_id": "pte_chunk_179",
+                  "quote": "to make sure they have a clear understanding of the overall meaning of the \npassage and the writer’s opinion."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "For Some Inference Prompts, Read The Passage First",
+            "explanation": {
+              "text": "For the prompt “Which of the following can be inferred from the text?”, it is better to read the passage first to prevent becoming confused by the options.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_179",
+                "pte_chunk_180"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_179",
+                  "quote": "Write the following prompt on the board:\n– ‘Which of the following can be inferred from the text?’"
+                },
+                {
+                  "node_id": "pte_chunk_180",
+                  "quote": "In this case it is better to read the passage \nfirst to prevent becoming confused by the options."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Paraphrase Options Before Eliminating Them",
+            "explanation": {
+              "text": "Read the options carefully, paraphrase each one to check meaning, eliminate options that seem obviously incorrect, make a first guess, and re-read the passage to double-check each option.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_180"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_180",
+                  "quote": "read through the options carefully and get test takers to paraphrase each one \nto make sure they understand the meaning."
+                },
+                {
+                  "node_id": "pte_chunk_180",
+                  "quote": "eliminate those options they feel are obviously incorrect, if \nany, and to make a first guess about which option(s) could be correct."
+                },
+                {
+                  "node_id": "pte_chunk_180",
+                  "quote": "Ask them to re-read the passage with their partner to double check each option, one by one."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Use Context To Work Out Unfamiliar Words",
+            "explanation": {
+              "text": "To work out unfamiliar words, find clues in the sentence, look at other words in the context, and break words down into parts.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_181"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_181",
+                  "quote": "find clues in the sentence that could help them \nwork out the meaning of ‘inaccessible’."
+                },
+                {
+                  "node_id": "pte_chunk_181",
+                  "quote": "look at other words in the \ncontext: ‘outback’ and ‘bush’"
+                },
+                {
+                  "node_id": "pte_chunk_181",
+                  "quote": "Break the words down into its parts – e.g. out/back; in/access/ible, etc"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "When The Prompt Asks For Specific Word Meaning",
+            "explanation": {
+              "text": "If a prompt asks for the meaning of specific words in the text, it may not be necessary to identify the gist first; pay attention to wording such as “in the passage” because a word’s meaning may be altered by context.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_182"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_182",
+                  "quote": "In \nthis case it is not necessary to identify the gist because the prompt asks for the meaning of specific \nwords in the text."
+                },
+                {
+                  "node_id": "pte_chunk_182",
+                  "quote": "they should pay attention to the phrase ‘in the \npassage’ in the prompt"
+                },
+                {
+                  "node_id": "pte_chunk_182",
+                  "quote": "the writer may have slightly altered the meaning of a word to fit his/her purpose, or used \na less familiar alternative meaning of a word."
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "worked_examples": [
+          {
+            "title": "Inferring Tone From Word Choice",
+            "example": {
+              "text": "Read these two descriptions: “sun-baked Andalucía” and “sunburnt Andalucía.” Ask yourself which wording sounds more positive, then identify the exact words that create that impression.",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "The lesson discusses words that affect understanding of the writer’s opinion, including the differences between “sun-baked” and “sunburnt” and between “extraordinary” and “peculiar.”",
+              "claim_kind": "factual_explanation",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_179"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_179",
+                  "quote": "Discuss which words in the second sentence affect their understanding of the writer’s opinion and \nwhy."
+                },
+                {
+                  "node_id": "pte_chunk_179",
+                  "quote": "talk about the differences between words such as sun-baked and sunburnt, \nextraordinary and peculiar, etc."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Working Out An Unfamiliar Word",
+            "example": {
+              "text": "If you see “inaccessible outback areas” in a sentence about modern technologies bringing teaching to the bush, look at surrounding words such as “outback” and “bush” before deciding what “inaccessible” means.",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "The lesson uses the sentence “Special provision is made for inaccessible outback areas, with modern technologies bringing teaching to the bush” and asks learners to find clues in the sentence, including the contextual words “outback” and “bush.”",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_181",
+                "pte_chunk_184"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_184",
+                  "quote": "Special provision is made for inaccessible outback areas, with modern technologies bringing teaching to the \nbush."
+                },
+                {
+                  "node_id": "pte_chunk_181",
+                  "quote": "find clues in the sentence that could help them \nwork out the meaning of ‘inaccessible’."
+                },
+                {
+                  "node_id": "pte_chunk_181",
+                  "quote": "look at other words in the \ncontext: ‘outback’ and ‘bush’"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Matching A Word To Its Passage Meaning",
+            "example": {
+              "text": "For a prompt asking which options mean “residences,” underline the matching words in the passage, then check each underlined word in context before choosing it.",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "The lesson asks learners to underline words matching the options, use context to check whether the first underlined word has the same meaning as “residences,” and then continue with the remaining words.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_182"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_182",
+                  "quote": "underline the words matching those in the options."
+                },
+                {
+                  "node_id": "pte_chunk_182",
+                  "quote": "use the \ncontext to work out whether it has the same meaning as ‘residences’."
+                },
+                {
+                  "node_id": "pte_chunk_182",
+                  "quote": "they should continue with the remaining words."
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "common_misconceptions": [
+          {
+            "misconception": {
+              "text": "You should answer Reading multiple-choice items by looking at the options before understanding what the prompt is asking.",
+              "claim_kind": "misconception_statement",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "Read the prompt carefully so you know exactly what type of information is being asked for.",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_179"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_179",
+                  "quote": "they must always read \nthe prompt carefully to make sure they know exactly what type of information they are being asked \nfor."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "misconception": {
+              "text": "For every prompt, you must first read the whole passage in detail to identify the gist.",
+              "claim_kind": "misconception_statement",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "For an item asking for the meaning of specific words in the text, it is not necessary to identify the gist first.",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_182"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_182",
+                  "quote": "In \nthis case it is not necessary to identify the gist because the prompt asks for the meaning of specific \nwords in the text."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "misconception": {
+              "text": "When you meet an unfamiliar word, you should always stop and fully define it before looking at the options.",
+              "claim_kind": "misconception_statement",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "In the page 95 practice item, it is better to look at the options first because some unfamiliar words may be irrelevant or unimportant and working out their meaning will waste time.",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_180"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_180",
+                  "quote": "the practice item on page 95 in the Official \nGuide."
+                },
+                {
+                  "node_id": "pte_chunk_180",
+                  "quote": "In this case it is better to look at the options first, as some of the \nunfamiliar words may be irrelevant or unimportant and working out the meaning will waste time."
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "practice_questions": [
+          {
+            "question": {
+              "text": "A prompt says, “Which of the following can be inferred from the text?” What should you do before choosing an option?",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Read the passage first, identify its gist and overall meaning, then read and check the options carefully.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "You see the sentence “It was ubiquitous, with every category of crime falling in every part of the country.” Which context phrase helps you infer the meaning of “ubiquitous”?",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "The phrase “every part of the country” helps you infer that “ubiquitous” is connected with being everywhere or wide-ranging.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "A question asks for words that mean “residences” in the passage. What should you pay attention to in the prompt and passage?",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Pay attention to “in the passage,” underline possible matching words, and use context to check whether each one has the same meaning as “residences.”",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Why should you paraphrase each multiple-choice option before eliminating it?",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Paraphrasing helps you make sure you understand the meaning of each option before deciding whether it is obviously incorrect or needs to be checked against the passage.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "review_checklist": [
+          {
+            "text": "I can identify whether a prompt asks for gist, inference, writer’s purpose, or a specific word meaning.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can read a passage for overall meaning before answering an inference prompt.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can paraphrase answer options before eliminating or selecting them.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can use context clues and word parts to infer the meaning of unfamiliar words.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can notice when a word’s meaning depends on how it is used in the passage.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can reflect on which multiple-choice strategies helped me answer efficiently and accurately.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          }
+        ]
+      }
+    ]
+  },
+  "source_chunks": [
+    {
+      "node_id": "pte_chunk_177",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 11",
+      "chapter_number": 12,
+      "section": "LESSON 11",
+      "topic": "LESSON 11",
+      "content_type": "unknown",
+      "page_start": 177,
+      "page_end": 177,
+      "is_front_matter": false,
+      "text_preview": "Lesson 11© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 76 The Official Guide to PTE Academic Teacher Notes Overview Time allocated: 2 hours This lesson focuses on the following reading skills: • Main idea or gist: Read for and identify the main idea or theme of the text • Wri..."
+    },
+    {
+      "node_id": "pte_chunk_178",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 11",
+      "chapter_number": 12,
+      "section": "LESSON 11",
+      "topic": "LESSON 11",
+      "content_type": "unknown",
+      "page_start": 178,
+      "page_end": 178,
+      "is_front_matter": false,
+      "text_preview": "Lesson 11© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 77 The Official Guide to PTE Academic Teacher Notes Lesson Plan Introduction (5 mins) Materials: Official Guide pp. 91–94 • Explain that this lesson provides further skills practice for the PTE Academic item types Reading..."
+    },
+    {
+      "node_id": "pte_chunk_179",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 11",
+      "chapter_number": 12,
+      "section": "LESSON 11",
+      "topic": "LESSON 11",
+      "content_type": "unknown",
+      "page_start": 179,
+      "page_end": 179,
+      "is_front_matter": false,
+      "text_preview": "Lesson 11© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 78 The Official Guide to PTE Academic Teacher Notes • Ask them what connotations the phrase ‘sun-baked’ has, i.e. what it makes them think of (e.g. baked bread, food, warm inviting smells, etc). • Ask if they can think of..."
+    },
+    {
+      "node_id": "pte_chunk_180",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 11",
+      "chapter_number": 12,
+      "section": "LESSON 11",
+      "topic": "LESSON 11",
+      "content_type": "unknown",
+      "page_start": 180,
+      "page_end": 180,
+      "is_front_matter": false,
+      "text_preview": "Lesson 11© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 79 The Official Guide to PTE Academic Teacher Notes • Ask test takers to suggest a synonym for (or paraphrase) ‘inferred’ (e.g. implied, assumed, presumed, concluded, etc). • Ask what the prompt is asking them to do (e.g...."
+    },
+    {
+      "node_id": "pte_chunk_181",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 11",
+      "chapter_number": 12,
+      "section": "LESSON 11",
+      "topic": "LESSON 11",
+      "content_type": "unknown",
+      "page_start": 181,
+      "page_end": 181,
+      "is_front_matter": false,
+      "text_preview": "Lesson 11© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 80 The Official Guide to PTE Academic Teacher Notes Main activity 2 whole class and pair work (15 mins) Using context to identify the inferred meaning of unfamiliar words Materials: • Image of ‘Sample Sentences: Dealing w..."
+    },
+    {
+      "node_id": "pte_chunk_182",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 11",
+      "chapter_number": 12,
+      "section": "LESSON 11",
+      "topic": "LESSON 11",
+      "content_type": "unknown",
+      "page_start": 182,
+      "page_end": 182,
+      "is_front_matter": false,
+      "text_preview": "Lesson 11© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 81 The Official Guide to PTE Academic Teacher Notes each of these words (e.g. are contextual, grammatical or lexical clues most helpful for finding out the meaning of words such as frivolous, entourage, essential, princip..."
+    },
+    {
+      "node_id": "pte_chunk_183",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 11",
+      "chapter_number": 12,
+      "section": "LESSON 11",
+      "topic": "LESSON 11",
+      "content_type": "unknown",
+      "page_start": 183,
+      "page_end": 183,
+      "is_front_matter": false,
+      "text_preview": "Lesson 11© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 82 The Official Guide to PTE Academic Teacher Notes • To test the usefulness of the strategy, get test takers to reread the passage on page 100 in the Official Guide to identify the gist and the writer’s opinion. • With t..."
+    },
+    {
+      "node_id": "pte_chunk_184",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 11",
+      "chapter_number": 12,
+      "section": "LESSON 11",
+      "topic": "LESSON 11",
+      "content_type": "unknown",
+      "page_start": 184,
+      "page_end": 184,
+      "is_front_matter": false,
+      "text_preview": "Lesson 11Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Sample Sentences: Dealing with unfamiliar words 1. Special provision is made for inaccessible outback areas, with modern technologies bringing teaching to the bush. 2. It was ubiquitous, with every category..."
+    },
+    {
+      "node_id": "pte_chunk_185",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 11",
+      "chapter_number": 12,
+      "section": "LESSON 11",
+      "topic": "LESSON 11",
+      "content_type": "unknown",
+      "page_start": 185,
+      "page_end": 185,
+      "is_front_matter": false,
+      "text_preview": "Lesson 11Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Worksheet 1 1. Read the following sentence: ‘Modern X-ray crystallography provides the most powerful and accurate method for determining single-crystal structures.’ Presuming this statement to be true, what..."
+    },
+    {
+      "node_id": "pte_chunk_186",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 11",
+      "chapter_number": 12,
+      "section": "LESSON 11",
+      "topic": "LESSON 11",
+      "content_type": "unknown",
+      "page_start": 186,
+      "page_end": 186,
+      "is_front_matter": false,
+      "text_preview": "Lesson 11Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 1. Read the following sentence: ‘Modern X-ray crystallography provides the most powerful and accurate method for determining single-crystal structures.’ Presuming this statement to be true, what might we als..."
+    }
+  ],
+  "audit": {
+    "status": "PASS",
+    "contract_status": "PASS",
+    "contract_audit_path": "output/pte.ch12.gen.contract.audit.json",
+    "contract_report_path": "output/pte.ch12.gen.contract.audit.txt"
+  }
+}
