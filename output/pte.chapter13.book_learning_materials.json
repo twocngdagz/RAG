@@ -1,0 +1,1012 @@
+{
+  "schema_version": "book_learning_materials.v2",
+  "book": {
+    "slug": "pte",
+    "title": "pte",
+    "source_pdf": "input/pdfs/pte.pdf"
+  },
+  "generation": {
+    "generated_at": "2026-07-15T03:15:37.232398+00:00",
+    "pipeline_version": "book_learning_materials.v2",
+    "prompt_version": "book_learning_materials_v2_chapter.v2",
+    "backend": "codex-cli",
+    "model": "gpt-5.5",
+    "selection_mode": "chapters",
+    "selected_chapter_numbers": [
+      13
+    ],
+    "book_synthesis_performed": false,
+    "clean_chunks_path": "extracted/pte.section_clean_chunks.json"
+  },
+  "learning_materials": {
+    "chapters": [
+      {
+        "chapter_number": 13,
+        "chapter_title": "Lesson 12: Listening Multiple-Choice Items",
+        "source_chunk_ids": [
+          "pte_chunk_187",
+          "pte_chunk_188",
+          "pte_chunk_189",
+          "pte_chunk_190",
+          "pte_chunk_191",
+          "pte_chunk_192",
+          "pte_chunk_193",
+          "pte_chunk_194",
+          "pte_chunk_195",
+          "pte_chunk_196",
+          "pte_chunk_197",
+          "pte_chunk_198",
+          "pte_chunk_199",
+          "pte_chunk_200",
+          "pte_chunk_201"
+        ],
+        "estimated_study_time": {
+          "text": "Plan for about 2 hours of study for this chapter.",
+          "claim_kind": "study_plan",
+          "origin": "pedagogical_generation",
+          "source_chunk_ids": [],
+          "grounded_in_source_chunk_ids": [],
+          "evidence_spans": [],
+          "reason": null
+        },
+        "chapter_summary": {
+          "text": "This lesson provides practice for Listening: Multiple-choice, choose single answer and Listening: Multiple-choice, choose multiple answers. It focuses on listening skills such as gist, detailed information, speaker purpose, organization, inference and stylistics, and asks learners to analyze item format, rubrics, strategies, timed practice items and feedback.",
+          "claim_kind": "source_summary",
+          "origin": "source_grounded",
+          "source_chunk_ids": [
+            "pte_chunk_187"
+          ],
+          "grounded_in_source_chunk_ids": [],
+          "evidence_spans": [
+            {
+              "node_id": "pte_chunk_187",
+              "quote": "This lesson provides skills practice for the PTE Academic item types Listening: Multiple-choice, choose single answer and Listening: Multiple-choice, choose multiple answers."
+            },
+            {
+              "node_id": "pte_chunk_187",
+              "quote": "Main idea or gist: Listen for and identify the main idea or theme of the recording"
+            },
+            {
+              "node_id": "pte_chunk_187",
+              "quote": "Detailed information: Listen for and identify specific details, facts, opinions, definitions or sequences of events"
+            },
+            {
+              "node_id": "pte_chunk_187",
+              "quote": "Speaker’s purpose: Listen for and understand the function of what the speaker says or identify the reasons why the speaker mentions specific pieces of information"
+            },
+            {
+              "node_id": "pte_chunk_187",
+              "quote": "Organization: Listen for and identify the overall organization and connections between pieces of information"
+            },
+            {
+              "node_id": "pte_chunk_187",
+              "quote": "Inference: Listen for information that helps you infer meanings, form generalizations, make predictions, find relationships or draw conclusions"
+            },
+            {
+              "node_id": "pte_chunk_187",
+              "quote": "Stylistics: Listen for and identify the speaker’s attitude, feelings or degree of certainty on an issue"
+            },
+            {
+              "node_id": "pte_chunk_187",
+              "quote": "Analyzed the rubrics and format of these items"
+            },
+            {
+              "node_id": "pte_chunk_187",
+              "quote": "Analyzed test-taking strategies for multiple-choice items"
+            },
+            {
+              "node_id": "pte_chunk_187",
+              "quote": "Completed practice items under timed conditions"
+            },
+            {
+              "node_id": "pte_chunk_187",
+              "quote": "Reviewed feedback to practice items"
+            }
+          ],
+          "reason": null
+        },
+        "learning_objectives": [
+          {
+            "text": "Practice the listening and reading skills listed for this lesson.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_187"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_187",
+                "quote": "Practiced the listening and reading skills listed above"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Analyze the rubrics and format of the two listening multiple-choice item types.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_187"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_187",
+                "quote": "Analyzed the rubrics and format of these items"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Analyze test-taking strategies for multiple-choice items.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_187"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_187",
+                "quote": "Analyzed test-taking strategies for multiple-choice items"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Complete practice items under timed conditions and review feedback to practice items.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_187"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_187",
+                "quote": "Completed practice items under timed conditions"
+              },
+              {
+                "node_id": "pte_chunk_187",
+                "quote": "Reviewed feedback to practice items"
+              }
+            ],
+            "reason": null
+          }
+        ],
+        "key_terms": [
+          {
+            "term": "Main idea or gist",
+            "meaning": {
+              "text": "Listening for the main idea or theme of the recording.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_194"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_194",
+                  "quote": "Main idea or gist: Listen for and identify the main idea or theme of the recording."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Detailed information",
+            "meaning": {
+              "text": "Listening for specific details, facts, opinions, definitions or sequences of events.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_194"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_194",
+                  "quote": "Detailed information: Listen for and identify specific details, facts, opinions, definitions or sequences of events."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Speaker’s purpose",
+            "meaning": {
+              "text": "Understanding the function of what the speaker says or why the speaker mentions specific information.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_194"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_194",
+                  "quote": "Speaker’s purpose: Listen for and understand the function of what the speaker says or identify the reasons why the speaker mentions specific information."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Organization",
+            "meaning": {
+              "text": "Identifying the overall organization and connections between pieces of information.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_194"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_194",
+                  "quote": "Organization: Listen for and identify the overall organization and connections between pieces of information."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Inference",
+            "meaning": {
+              "text": "Using information to infer meanings, form generalizations, make predictions, find relationships or draw conclusions.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_194"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_194",
+                  "quote": "Inference: Listen for information that helps you infer meanings, form generalizations, make predictions, find relationships or draw conclusions."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Stylistics",
+            "meaning": {
+              "text": "Identifying the speaker’s attitude, feelings or degree of certainty on an issue.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_194"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_194",
+                  "quote": "Stylistics: Listen for and identify the speaker’s attitude, feelings or degree of certainty on an issue."
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "core_lessons": [
+          {
+            "title": "Know The Item Types",
+            "explanation": {
+              "text": "The lesson is for Listening: Multiple-choice, choose single answer and Listening: Multiple-choice, choose multiple answers.",
+              "claim_kind": "task_format",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_187"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_187",
+                  "quote": "This lesson provides skills practice for the PTE Academic item types Listening: Multiple-choice, choose single answer and Listening: Multiple-choice, choose multiple answers."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Read The Prompt For The Listening Skill",
+            "explanation": {
+              "text": "For these listening multiple-choice items, read the prompt carefully so you know what information to listen for, which listening skill is being tested, and which listening strategy to apply.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_189"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_189",
+                  "quote": "they must always read the prompt carefully to make sure they know exactly what type of information they are being asked to listen for"
+                },
+                {
+                  "node_id": "pte_chunk_189",
+                  "quote": "which type of listening skill is being tested) and which type of listening strategy they should apply."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Use The Preparation Time On The Prompt",
+            "explanation": {
+              "text": "For this item type, there are 7 seconds to prepare before listening; this is enough time to read and consider the prompt, but generally not enough time to read the options as well.",
+              "claim_kind": "official_rule",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_191"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_191",
+                  "quote": "for this item type, they have 7 seconds to prepare before listening."
+                },
+                {
+                  "node_id": "pte_chunk_191",
+                  "quote": "This is enough time to read and consider the item prompt, but is in general not enough time to read the options as well"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Take Brief Relevant Notes",
+            "explanation": {
+              "text": "When listening, take notes using key words or abbreviations only, and keep the notes brief and relevant.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_190",
+                "pte_chunk_193"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_190",
+                  "quote": "they should write key words or abbreviations only when taking notes."
+                },
+                {
+                  "node_id": "pte_chunk_193",
+                  "quote": "they need to remain focused while listening and take brief but relevant notes."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Stay Focused If You Miss Something",
+            "explanation": {
+              "text": "If parts of a passage are unclear or not understood, remain focused and continue listening, because understanding every word is not always necessary and worrying about missed words can cause more information to be missed.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_192"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_192",
+                  "quote": "if there are parts of a passage that they do not hear clearly or do not understand they should remain focused and continue to listen."
+                },
+                {
+                  "node_id": "pte_chunk_192",
+                  "quote": "It is not always necessary for them to understand or catch every word in the recording"
+                },
+                {
+                  "node_id": "pte_chunk_192",
+                  "quote": "worrying about misheard or misunderstood words will cause them to miss more information."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Dismiss Redundant Information",
+            "explanation": {
+              "text": "An important listening skill is quickly identifying information that is redundant or not relevant to the listening purpose, then dismissing it.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_191"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_191",
+                  "quote": "an important skill they need to develop when listening for particular information is how to quickly identify information that is redundant, or not relevant for, their listening purpose."
+                },
+                {
+                  "node_id": "pte_chunk_191",
+                  "quote": "which they can therefore quickly dismiss."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Match Strategies To Prompt Types",
+            "explanation": {
+              "text": "For gist, listen for a topic sentence, key words explaining the main idea, or a concluding sentence. For detailed information, listen for key words explaining secondary or supporting ideas, such as where, when and how.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_197"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_197",
+                  "quote": "Listen for: topic sentence; key words that explain main idea; a concluding sentence, etc"
+                },
+                {
+                  "node_id": "pte_chunk_197",
+                  "quote": "Listen for: key words that explain secondary/supporting ideas, e.g. words that describe where, when, how, etc"
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "worked_examples": [
+          {
+            "title": "A NOT Prompt In A Multiple-Answer Item",
+            "example": {
+              "text": "Prompt: Which options do NOT correctly match a material with its reason for use? Before listening, underline NOT and decide that you are listening for mismatches, not just true statements.",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "The practice item asks learners to select more than one response and asks which options do NOT correctly link materials and their rationale for use in skyscraper construction. The lesson explains that NOT makes the prompt difficult because learners are looking for false responses and must identify options with redundant or incorrect information.",
+              "claim_kind": "task_format",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_198",
+                "pte_chunk_190"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_198",
+                  "quote": "Listen to the recording and answer the question by selecting the correct responses. You will need to select more than one response."
+                },
+                {
+                  "node_id": "pte_chunk_198",
+                  "quote": "Which of the following do NOT correctly link materials and their rationale for use in the construction of skyscrapers?"
+                },
+                {
+                  "node_id": "pte_chunk_190",
+                  "quote": "‘NOT’ shows that they are looking for false responses, i.e. they have to be able to identify the options containing redundant or incorrect information and select these"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Using Evidence From The Recording",
+            "example": {
+              "text": "If the prompt asks why glass walls are used, your notes might separate useful details from extra background: useful notes could include weatherproof, light in, lighter than masonry or concrete; extra background such as a historical date may not answer the prompt.",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "In the transcript activity, details about the properties of glass and steel are relevant, while the phrase “beginning after World War II” is redundant; the reasons why glass became popular should be noted.",
+              "claim_kind": "factual_explanation",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_199"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_199",
+                  "quote": "Relevant Details about the properties of glass and steel should be noted"
+                },
+                {
+                  "node_id": "pte_chunk_199",
+                  "quote": "Although phrases such as ‘beginning after World War II’ are redundant, the reasons why glass became popular should be noted"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Single Answer Versus Multiple Answers",
+            "example": {
+              "text": "When the instruction says only one response is correct, choose one option. When it says you need to select more than one response, check all options and select each correct one.",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "For choose single answer, the instruction is to select the correct response and only one response is correct. For choose multiple answers, the instruction is to select all the correct responses and more than one response is needed.",
+              "claim_kind": "task_format",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_192"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_192",
+                  "quote": "Listen to the recording and answer the question by selecting the correct  response. Only one response is correct."
+                },
+                {
+                  "node_id": "pte_chunk_192",
+                  "quote": "Listen to the recording and answer the question by selecting all the correct responses. You will  need to select more than one response."
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "common_misconceptions": [
+          {
+            "misconception": {
+              "text": "The 7-second preparation time should be used to read the prompt and all the answer options before the recording begins.",
+              "claim_kind": "misconception_statement",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "The 7 seconds are enough to read and consider the item prompt, but generally not enough to read the options as well.",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_191"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_191",
+                  "quote": "they have 7 seconds to prepare before listening. This is enough time to read and consider the item prompt, but is in general not enough time to read the options as well"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "misconception": {
+              "text": "If you miss or do not understand a word, you must stop and work it out before continuing.",
+              "claim_kind": "misconception_statement",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "If parts of a passage are not heard clearly or not understood, remain focused and continue listening; it is not always necessary to understand every word.",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_192"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_192",
+                  "quote": "if there are parts of a passage that they do not hear clearly or do not understand they should remain focused and continue to listen."
+                },
+                {
+                  "node_id": "pte_chunk_192",
+                  "quote": "It is not always necessary for them to understand or catch every word in the recording"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "misconception": {
+              "text": "For listening multiple-choice items, changing your first answer is usually better than keeping it.",
+              "claim_kind": "misconception_statement",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "For listening multiple-choice items, it is better to stick with first guesses rather than make changes to responses.",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_192"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_192",
+                  "quote": "for listening multiple-choice items it is better to stick with their first guesses rather than to make changes to their responses."
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "practice_questions": [
+          {
+            "question": {
+              "text": "In a listening multiple-choice prompt, what should you identify before the recording starts: the topic only, or the type of information you are being asked to listen for?",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Identify the type of information you are being asked to listen for, which listening skill is being tested, and which listening strategy you should apply.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "A prompt says: “What is the lecture mainly about?” Which listening skill from this lesson is most directly being tested?",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Main idea or gist.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "A prompt contains the word “NOT.” What should you be especially careful to select?",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Select the responses that contain incorrect or redundant information, rather than the responses that correctly match the recording.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "During the 7-second preparation period, what is the safest priority?",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Read and consider the item prompt, then decide what to listen for.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "When taking notes during the recording, should you try to write full sentences or brief key words and abbreviations?",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Use brief key words and abbreviations.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "review_checklist": [
+          {
+            "text": "I can distinguish between choose single answer and choose multiple answers instructions.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can read a prompt and decide whether it asks for gist, details, purpose, organization, inference or stylistics.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can use the 7-second preparation time to focus on the prompt and decide what to listen for.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can stay focused when I miss a word instead of letting one unclear part distract me.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can take brief, relevant notes using key words or abbreviations.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can identify redundant information and dismiss it when it does not answer the prompt.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          }
+        ]
+      }
+    ]
+  },
+  "source_chunks": [
+    {
+      "node_id": "pte_chunk_187",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 12",
+      "chapter_number": 13,
+      "section": "LESSON 12",
+      "topic": "LESSON 12",
+      "content_type": "unknown",
+      "page_start": 187,
+      "page_end": 187,
+      "is_front_matter": false,
+      "text_preview": "Lesson 12© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 83 The Official Guide to PTE Academic Teacher Notes Overview Time allocated: 2 hours This lesson focuses on the following skills: Listening • Main idea or gist: Listen for and identify the main idea or theme of the record..."
+    },
+    {
+      "node_id": "pte_chunk_188",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 12",
+      "chapter_number": 13,
+      "section": "LESSON 12",
+      "topic": "LESSON 12",
+      "content_type": "unknown",
+      "page_start": 188,
+      "page_end": 188,
+      "is_front_matter": false,
+      "text_preview": "Lesson 12© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 84 The Official Guide to PTE Academic Teacher Notes Preparation The following materials should be prepared before the lesson: • Official Guide pages 130–134, 145–149 • Copies of ‘Prompt types and listening skills’ (1 hand..."
+    },
+    {
+      "node_id": "pte_chunk_189",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 12",
+      "chapter_number": 13,
+      "section": "LESSON 12",
+      "topic": "LESSON 12",
+      "content_type": "unknown",
+      "page_start": 189,
+      "page_end": 189,
+      "is_front_matter": false,
+      "text_preview": "Lesson 12© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 85 The Official Guide to PTE Academic Teacher Notes Main activity 1: part 1 whole class and pair work (20 mins) Recognize what the prompt is asking you to do Materials: • Copies of ‘Prompt types and listening skills’ • Co..."
+    },
+    {
+      "node_id": "pte_chunk_190",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 12",
+      "chapter_number": 13,
+      "section": "LESSON 12",
+      "topic": "LESSON 12",
+      "content_type": "unknown",
+      "page_start": 190,
+      "page_end": 190,
+      "is_front_matter": false,
+      "text_preview": "Lesson 12© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 86 The Official Guide to PTE Academic Teacher Notes Skills: Main idea or gist: Listen for and identify the main idea or theme of the recording; Detailed information: Listen for and identify specific details or, facts, opi..."
+    },
+    {
+      "node_id": "pte_chunk_191",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 12",
+      "chapter_number": 13,
+      "section": "LESSON 12",
+      "topic": "LESSON 12",
+      "content_type": "unknown",
+      "page_start": 191,
+      "page_end": 191,
+      "is_front_matter": false,
+      "text_preview": "Lesson 12© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 87 The Official Guide to PTE Academic Teacher Notes • Remind test takers that for this item type, they have 7 seconds to prepare before listening. This is enough time to read and consider the item prompt, but is in genera..."
+    },
+    {
+      "node_id": "pte_chunk_192",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 12",
+      "chapter_number": 13,
+      "section": "LESSON 12",
+      "topic": "LESSON 12",
+      "content_type": "unknown",
+      "page_start": 192,
+      "page_end": 192,
+      "is_front_matter": false,
+      "text_preview": "Lesson 12© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 88 The Official Guide to PTE Academic Teacher Notes Main activity 3: part 1 individual work (15 mins) Timed practice of item Materials: • Copies of ‘Timed practice items’ A and B • Audio CD tracks 10 and 16 Skills: Main i..."
+    },
+    {
+      "node_id": "pte_chunk_193",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 12",
+      "chapter_number": 13,
+      "section": "LESSON 12",
+      "topic": "LESSON 12",
+      "content_type": "unknown",
+      "page_start": 193,
+      "page_end": 193,
+      "is_front_matter": false,
+      "text_preview": "Lesson 12© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 89 The Official Guide to PTE Academic Teacher Notes Steps: • Ask test takers to sum up the main problem areas of these item types. • Ask them to sum up the best strategies for dealing with these problem areas. • Remind th..."
+    },
+    {
+      "node_id": "pte_chunk_194",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 12",
+      "chapter_number": 13,
+      "section": "LESSON 12",
+      "topic": "LESSON 12",
+      "content_type": "unknown",
+      "page_start": 194,
+      "page_end": 194,
+      "is_front_matter": false,
+      "text_preview": "Lesson 12Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Prompt types and listening skills Listening skills Strategies Main idea or gist: Listen for and identify the main idea or theme of the recording. Detailed information: Listen for and identify specific detail..."
+    },
+    {
+      "node_id": "pte_chunk_195",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 12",
+      "chapter_number": 13,
+      "section": "LESSON 12",
+      "topic": "LESSON 12",
+      "content_type": "unknown",
+      "page_start": 195,
+      "page_end": 195,
+      "is_front_matter": false,
+      "text_preview": "Lesson 12Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Prompt types The prompts of multiple-choice items are designed to test your listening skills in six specific areas (see ‘Prompt types and listening skills’). Look at the prompts below and decide with your pa..."
+    },
+    {
+      "node_id": "pte_chunk_196",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 12",
+      "chapter_number": 13,
+      "section": "LESSON 12",
+      "topic": "LESSON 12",
+      "content_type": "unknown",
+      "page_start": 196,
+      "page_end": 196,
+      "is_front_matter": false,
+      "text_preview": "Lesson 12Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Listening skill tested 1 According to the speaker, why is fishing similar to farming? 2 What produces the lift that makes an airplane fly? 3 What does the speaker mean when he says, “comparisons are useless..."
+    },
+    {
+      "node_id": "pte_chunk_197",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 12",
+      "chapter_number": 13,
+      "section": "LESSON 12",
+      "topic": "LESSON 12",
+      "content_type": "unknown",
+      "page_start": 197,
+      "page_end": 197,
+      "is_front_matter": false,
+      "text_preview": "Lesson 12Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Listening skills Strategies Main idea or gist: Listen for and identify the main idea or theme of the recording. Listen for: topic sentence; key words that explain main idea; a concluding sentence, etc Detail..."
+    },
+    {
+      "node_id": "pte_chunk_198",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 12",
+      "chapter_number": 13,
+      "section": "LESSON 12",
+      "topic": "LESSON 12",
+      "content_type": "unknown",
+      "page_start": 198,
+      "page_end": 198,
+      "is_front_matter": false,
+      "text_preview": "Lesson 12Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Practice item 1 Listen to the recording and answer the question by selecting the correct responses. You will need to select more than one response. Which of the following do NOT correctly link materials and..."
+    },
+    {
+      "node_id": "pte_chunk_199",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 12",
+      "chapter_number": 13,
+      "section": "LESSON 12",
+      "topic": "LESSON 12",
+      "content_type": "unknown",
+      "page_start": 199,
+      "page_end": 199,
+      "is_front_matter": false,
+      "text_preview": "Lesson 12Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 [Source: CD-ROM Practice set 1; Information Please® Database, © 2007 Pearson Education, Inc.: The History of Skyscrapers: A Race to the top by Karen Barss] Transcript Relevant to prompt? Explanation In today..."
+    },
+    {
+      "node_id": "pte_chunk_200",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 12",
+      "chapter_number": 13,
+      "section": "LESSON 12",
+      "topic": "LESSON 12",
+      "content_type": "unknown",
+      "page_start": 200,
+      "page_end": 200,
+      "is_front_matter": false,
+      "text_preview": "Lesson 12Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Timed practice item A Multiple-choice, choose multiple answers Listen to the recording and answer the question by selecting the correct responses. You will need to select more than one response. According to..."
+    },
+    {
+      "node_id": "pte_chunk_201",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 12",
+      "chapter_number": 13,
+      "section": "LESSON 12",
+      "topic": "LESSON 12",
+      "content_type": "unknown",
+      "page_start": 201,
+      "page_end": 201,
+      "is_front_matter": false,
+      "text_preview": "Lesson 12Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Timed practice item B Multiple-choice, choose single answer Listen to the recording and answer the question by selecting the correct response. Only one response is correct. What does the speaker believe is l..."
+    }
+  ],
+  "audit": {
+    "status": "PASS",
+    "contract_status": "PASS",
+    "contract_audit_path": "output/pte.ch13.gen.contract.audit.json",
+    "contract_report_path": "output/pte.ch13.gen.contract.audit.txt"
+  }
+}
