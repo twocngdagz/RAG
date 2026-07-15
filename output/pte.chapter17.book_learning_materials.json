@@ -1,0 +1,864 @@
+{
+  "schema_version": "book_learning_materials.v2",
+  "book": {
+    "slug": "pte",
+    "title": "pte",
+    "source_pdf": "input/pdfs/pte.pdf"
+  },
+  "generation": {
+    "generated_at": "2026-07-15T03:38:36.227834+00:00",
+    "pipeline_version": "book_learning_materials.v2",
+    "prompt_version": "book_learning_materials_v2_chapter.v2",
+    "backend": "codex-cli",
+    "model": "gpt-5.5",
+    "selection_mode": "chapters",
+    "selected_chapter_numbers": [
+      17
+    ],
+    "book_synthesis_performed": false,
+    "clean_chunks_path": "extracted/pte.section_clean_chunks.json"
+  },
+  "learning_materials": {
+    "chapters": [
+      {
+        "chapter_number": 17,
+        "chapter_title": "RECAP LESSON 2",
+        "source_chunk_ids": [
+          "pte_chunk_245",
+          "pte_chunk_246",
+          "pte_chunk_247",
+          "pte_chunk_248"
+        ],
+        "estimated_study_time": {
+          "text": "45-60 minutes",
+          "claim_kind": "study_plan",
+          "origin": "pedagogical_generation",
+          "source_chunk_ids": [],
+          "grounded_in_source_chunk_ids": [],
+          "evidence_spans": [],
+          "reason": null
+        },
+        "chapter_summary": {
+          "text": "This recap lesson is for reviewing item types from lessons 8-15, sharing problems and solutions, assessing progress in speaking, writing, reading, and listening, choosing extra practice, and preparing for PTE Academic by reviewing pages 21 to 35 in the Official Guide.",
+          "claim_kind": "source_summary",
+          "origin": "source_grounded",
+          "source_chunk_ids": [
+            "pte_chunk_245",
+            "pte_chunk_246"
+          ],
+          "grounded_in_source_chunk_ids": [],
+          "evidence_spans": [
+            {
+              "node_id": "pte_chunk_245",
+              "quote": "review, share and discuss any problems or \nqueries they may have about the item types covered in the series of lessons"
+            },
+            {
+              "node_id": "pte_chunk_245",
+              "quote": "find useful solutions and strategies for helping them deal with these difficulties, and discuss ways to continue \nimproving their skills in preparation for taking PTE Academic"
+            },
+            {
+              "node_id": "pte_chunk_246",
+              "quote": "Reviewing and improving writing skills\nRepeat the process as above, asking test takers to complete the assessment form page 85 in the Official Guide"
+            },
+            {
+              "node_id": "pte_chunk_246",
+              "quote": "Reviewing and improving reading skills\nRepeat the process as above, asking test takers to complete the assessment form on pages 116 and 117"
+            },
+            {
+              "node_id": "pte_chunk_246",
+              "quote": "Reviewing and improving listening skills\nRepeat the process as above, asking test takers to complete the assessment form on page 164"
+            },
+            {
+              "node_id": "pte_chunk_246",
+              "quote": "ask test takers if there are any specific activities from the previous lessons, or practice \nitems in the Official Guide or CD-ROM Practice sets, that they would like to repeat or review"
+            },
+            {
+              "node_id": "pte_chunk_246",
+              "quote": "put them into small \ngroups and refer them to pages 21 to 35 in the Official Guide"
+            }
+          ],
+          "reason": null
+        },
+        "learning_objectives": [
+          {
+            "text": "Review the item types covered in lessons 8-15 and identify the skills needed to complete each item type.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_245"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_245",
+                "quote": "Quickly recap the item types covered in lessons 8–15 and write the names on the board."
+              },
+              {
+                "node_id": "pte_chunk_245",
+                "quote": "briefly list the \nskills they need to master to complete each item type"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Discuss which skills feel confident and which skills are most problematic.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_245"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_245",
+                "quote": "discuss which of these skills \nthey feel confident about and which they find most problematic."
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Share problems from practice items and suggest ways to improve performance.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_245"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_245",
+                "quote": "share and discuss any problems that they have had \nwith the practice items covered in lessons 8–15"
+              },
+              {
+                "node_id": "pte_chunk_245",
+                "quote": "make suggestions for helping each other improve their performance where possible."
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Use self and peer assessment to compare current progress with earlier responses and find solutions for remaining problem areas.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_245"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_245",
+                "quote": "They should then compare their current and previous responses \nand assess what progress they have made."
+              },
+              {
+                "node_id": "pte_chunk_245",
+                "quote": "compare each other’s progress and find solutions to any areas that are still problematic."
+              }
+            ],
+            "reason": null
+          }
+        ],
+        "key_terms": [
+          {
+            "term": "Recap",
+            "meaning": {
+              "text": "A recap means quickly reviewing item types, homework activities, skills, and strategies from previous lessons.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_245",
+                "pte_chunk_247"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_245",
+                  "quote": "Quickly recap the item types covered in lessons 8–15 and write the names on the board."
+                },
+                {
+                  "node_id": "pte_chunk_247",
+                  "quote": "Recap homework activities and ask test \ntakers to identify any particular problems"
+                },
+                {
+                  "node_id": "pte_chunk_247",
+                  "quote": "Recap strategies listed on pp. 53–54 in the \nOfficial Guide and discuss those they have \napplied and find most useful"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Self and peer assessment",
+            "meaning": {
+              "text": "Self and peer assessment means completing an assessment form again, comparing current and previous responses, assessing progress, and discussing progress with a partner.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_245"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_245",
+                  "quote": "fill out the assessment form again"
+                },
+                {
+                  "node_id": "pte_chunk_245",
+                  "quote": "compare their current and previous responses \nand assess what progress they have made."
+                },
+                {
+                  "node_id": "pte_chunk_245",
+                  "quote": "work together with their \npartner to compare each other’s progress"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Problem areas",
+            "meaning": {
+              "text": "Problem areas are item types or skills that test takers find difficult, problematic, or in need of more practice.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_245",
+                "pte_chunk_246"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_245",
+                  "quote": "which item types and skills \nare most difficult or problematic for them and which they feel they need more practice in"
+                },
+                {
+                  "node_id": "pte_chunk_246",
+                  "quote": "using test takers’ problem areas as your focus."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Extra practice",
+            "meaning": {
+              "text": "Extra practice means repeating or reviewing specific activities from previous lessons, practice items in the Official Guide, or CD-ROM Practice sets.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_246"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_246",
+                  "quote": "any specific activities from the previous lessons, or practice \nitems in the Official Guide or CD-ROM Practice sets, that they would like to repeat or review."
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "core_lessons": [
+          {
+            "title": "Review item types before choosing practice",
+            "explanation": {
+              "text": "The lesson begins by recapping the item types from lessons 8-15 and the homework suggested after each lesson.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_245"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_245",
+                  "quote": "Quickly recap the item types covered in lessons 8–15 and write the names on the board."
+                },
+                {
+                  "node_id": "pte_chunk_245",
+                  "quote": "Recap the homework \nthat was suggested after each lesson"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Name the skills behind each item type",
+            "explanation": {
+              "text": "Test takers work in small groups for 5-10 minutes to list the skills needed for each item type, using their own words and not referring to the Official Guide at that point.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_245"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_245",
+                  "quote": "spend 5–10 minutes working together to briefly list the \nskills they need to master to complete each item type."
+                },
+                {
+                  "node_id": "pte_chunk_245",
+                  "quote": "Encourage them not to refer to the Official Guide at \nthis point and to express their thoughts in their own words."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Turn problems into shared solutions",
+            "explanation": {
+              "text": "Groups spend 10-15 minutes discussing problems from practice items and suggesting ways to help each other improve performance.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_245"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_245",
+                  "quote": "spend 10–15 minutes to share and discuss any problems that they have had \nwith the practice items covered in lessons 8–15"
+                },
+                {
+                  "node_id": "pte_chunk_245",
+                  "quote": "Ask them to make suggestions for helping each other improve their performance where possible."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Use assessment forms to measure progress",
+            "explanation": {
+              "text": "For speaking, test takers use the assessment form on pages 66 and 67 in the Official Guide and their self-assessment notes from Recap Lesson 1, then fill out the form again in a second colour.",
+              "claim_kind": "task_format",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_245"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_245",
+                  "quote": "Tell them to look at the assessment form \non pages 66 and 67 in the Official Guide, and the self-assessment notes they made in Recap Lesson 1."
+                },
+                {
+                  "node_id": "pte_chunk_245",
+                  "quote": "fill out the assessment form again (using a second colour to distinguish between the \nfirst and second stages of assessment)."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Review strategies across all language skills",
+            "explanation": {
+              "text": "The lesson reviews speaking strategies on pages 67-69, writing strategies on pages 86-87, reading strategies on pages 117-118, and listening strategies on pages 164-165 in the Official Guide.",
+              "claim_kind": "task_format",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_246"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_246",
+                  "quote": "looking at the ‘Developing your speaking skills’ sections on \npages 67–69 in the Official Guide."
+                },
+                {
+                  "node_id": "pte_chunk_246",
+                  "quote": "look at the ‘Developing your writing skills’ sections on pages 86 and 87."
+                },
+                {
+                  "node_id": "pte_chunk_246",
+                  "quote": "look at the ‘Developing your reading skills’ sections on pages 117 and 118."
+                },
+                {
+                  "node_id": "pte_chunk_246",
+                  "quote": "look at the ‘Developing your listening skills’ sections on pages 164–165."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Match review to item-specific skills",
+            "explanation": {
+              "text": "The homework overview links item types to skill review: Describe image reviews speaking skills, Re-order paragraphs reviews reading skills, and Write from dictation reviews listening and writing skills.",
+              "claim_kind": "factual_explanation",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_247"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_247",
+                  "quote": "Recap speaking skills tested by this item \ntype on p. 53 in the Official Guide"
+                },
+                {
+                  "node_id": "pte_chunk_247",
+                  "quote": "Recap reading skills tested by this item type \non pp. 103–104 in the Official Guide"
+                },
+                {
+                  "node_id": "pte_chunk_247",
+                  "quote": "Recap listening and writing skills tested by \nthese item types on pp. 137 and 161 in the \nOfficial Guide"
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Use targeted focus areas from the overview table",
+            "explanation": {
+              "text": "The overview table suggests possible focus areas including fluency and pronunciation for Describe image, article, referents and discourse marker use for Re-order paragraphs, note-taking, listening and recall for Re-tell lecture, signpost vocabulary for Summarize spoken text and Highlight correct summary, and general listening comprehension for listening multiple-choice items.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_247",
+                "pte_chunk_248"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_247",
+                  "quote": "You may wish \nto focus on \nfluency and \npronunciation"
+                },
+                {
+                  "node_id": "pte_chunk_247",
+                  "quote": "You may wish \nto focus on the \nuse of article, \nreferents and \ndiscourse \nmarker to \norganize ideas"
+                },
+                {
+                  "node_id": "pte_chunk_248",
+                  "quote": "You may wish \nto focus on \nnote-taking,  \nlistening and \nrecall skills"
+                },
+                {
+                  "node_id": "pte_chunk_248",
+                  "quote": "You may wish \nto focus on \nskills that \nhelp test \ntakers listen \nfor signpost \nvocabulary"
+                },
+                {
+                  "node_id": "pte_chunk_247",
+                  "quote": "You may \nwish to focus \non general \nlistening \ncomprehension \nskills"
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "worked_examples": [
+          {
+            "title": "Group review log",
+            "example": {
+              "text": "Make a four-column table: item type, skills needed, confidence level, and problems. For each item type from lessons 8-15, write one skill you feel confident about and one skill that still needs practice. Then share one problem with your group and ask for one practical solution.",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "This matches the lesson process of listing skills for each item type, discussing confidence and problematic skills, and sharing problems and solutions.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_245"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_245",
+                  "quote": "briefly list the \nskills they need to master to complete each item type."
+                },
+                {
+                  "node_id": "pte_chunk_245",
+                  "quote": "discuss which of these skills \nthey feel confident about and which they find most problematic."
+                },
+                {
+                  "node_id": "pte_chunk_245",
+                  "quote": "ask groups to share some of their problems and the solutions they have come up with."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Progress comparison",
+            "example": {
+              "text": "Choose one assessment form you have already completed. Fill it in again using a different colour. Compare the two versions and write three notes: one area that improved, one area that stayed difficult, and one solution you will try with a partner.",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "This follows the lesson direction to fill out the assessment form again in a second colour, compare current and previous responses, assess progress, and work with a partner on remaining problem areas.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_245"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_245",
+                  "quote": "fill out the assessment form again (using a second colour to distinguish between the \nfirst and second stages of assessment)."
+                },
+                {
+                  "node_id": "pte_chunk_245",
+                  "quote": "compare their current and previous responses \nand assess what progress they have made."
+                },
+                {
+                  "node_id": "pte_chunk_245",
+                  "quote": "compare each other’s progress and find solutions to any areas that are still problematic."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Selecting extra practice",
+            "example": {
+              "text": "After the class lists common difficulties, choose one previous activity or practice item to repeat. While reviewing it, focus only on the problem area the class identified, such as note-taking, signpost vocabulary, or general listening comprehension.",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "The lesson says extra practice can repeat or review previous activities or practice items, and that relevant practice should use test takers' problem areas as the focus.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_246"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_246",
+                  "quote": "any specific activities from the previous lessons, or practice \nitems in the Official Guide or CD-ROM Practice sets, that they would like to repeat or review."
+                },
+                {
+                  "node_id": "pte_chunk_246",
+                  "quote": "review the relevant activities or practice items, using test takers’ problem areas as your focus."
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "common_misconceptions": [
+          {
+            "misconception": {
+              "text": "A recap lesson is only for repeating old practice items and does not involve discussing problems, strategies, or future improvement.",
+              "claim_kind": "misconception_statement",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "This recap lesson includes reviewing and discussing problems, finding useful solutions and strategies, and discussing ways to continue improving skills for PTE Academic.",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_245"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_245",
+                  "quote": "review, share and discuss any problems or \nqueries they may have about the item types covered in the series of lessons."
+                },
+                {
+                  "node_id": "pte_chunk_245",
+                  "quote": "find useful solutions and strategies for helping them deal with these difficulties, and discuss ways to continue \nimproving their skills in preparation for taking PTE Academic."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "misconception": {
+              "text": "Learners should rely only on the Official Guide when first listing the skills needed for each item type.",
+              "claim_kind": "misconception_statement",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "At that point in the lesson, test takers are encouraged not to refer to the Official Guide and to express their thoughts in their own words.",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_245"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_245",
+                  "quote": "Encourage them not to refer to the Official Guide at \nthis point and to express their thoughts in their own words."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "misconception": {
+              "text": "Only speaking skills are reviewed in this recap lesson.",
+              "claim_kind": "misconception_statement",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "The lesson includes reviewing and improving speaking, writing, reading, and listening skills.",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_245",
+                "pte_chunk_246"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_246",
+                  "quote": "Reviewing and improving writing skills"
+                },
+                {
+                  "node_id": "pte_chunk_246",
+                  "quote": "Reviewing and improving reading skills"
+                },
+                {
+                  "node_id": "pte_chunk_246",
+                  "quote": "Reviewing and improving listening skills"
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "practice_questions": [
+          {
+            "question": {
+              "text": "Create a review table for three item types from lessons 8-15. For each one, write the item type, the main skill tested, one problem you have had, and one strategy or solution to try.",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "A strong answer names specific item types, links each one to a relevant skill, identifies a real problem, and gives a practical next step. Example: Re-tell lecture: listening and speaking; problem: weak recall; solution: practise note-taking and recall skills.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "After comparing two versions of an assessment form, what three things should you record about your progress?",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Record what has improved, what remains problematic, and what solution or strategy you will try next with a partner or group.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Choose one area from the homework overview that could be a useful focus for extra practice. Explain why that focus fits the item type.",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "A suitable answer connects an item type to its focus area. Example: for Re-tell lecture, note-taking, listening, and recall are useful because the overview notes those as possible focus areas for that item type.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "What should a group do when it still has unresolved questions after discussing practice problems?",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "The group should bring remaining problems to the whole class, discuss them, and use the Official Guide or information from lesson plans 8-15 when quick clarification is possible.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "review_checklist": [
+          {
+            "text": "I can name the item types covered in lessons 8-15 and describe the skills each one requires.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can identify which item types and skills I feel confident about and which ones need more practice.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can explain at least one problem I had with a practice item and one solution I will try.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I have compared my current self-assessment with an earlier one and noted my progress.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can choose extra practice based on my own problem areas rather than reviewing randomly.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I have a plan for continuing to improve my speaking, writing, reading, and listening skills.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          }
+        ]
+      }
+    ]
+  },
+  "source_chunks": [
+    {
+      "node_id": "pte_chunk_245",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "RECAP LESSON 2",
+      "chapter_number": 17,
+      "section": "RECAP LESSON 2",
+      "topic": "RECAP LESSON 2",
+      "content_type": "unknown",
+      "page_start": 245,
+      "page_end": 245,
+      "is_front_matter": false,
+      "text_preview": "Recap Lesson 2© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 111 The Official Guide to PTE Academic Teacher Notes Introduction • Explain to test takers that in this lesson they will work together to review, share and discuss any problems or queries they may have about the item..."
+    },
+    {
+      "node_id": "pte_chunk_246",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "RECAP LESSON 2",
+      "chapter_number": 17,
+      "section": "RECAP LESSON 2",
+      "topic": "RECAP LESSON 2",
+      "content_type": "unknown",
+      "page_start": 246,
+      "page_end": 246,
+      "is_front_matter": false,
+      "text_preview": "Recap Lesson 2© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 112 The Official Guide to PTE Academic Teacher Notes Improving speaking skills Steps • In their pairs, ask test takers to spend some time looking at the ‘Developing your speaking skills’ sections on pages 67–69 in th..."
+    },
+    {
+      "node_id": "pte_chunk_247",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "RECAP LESSON 2",
+      "chapter_number": 17,
+      "section": "RECAP LESSON 2",
+      "topic": "RECAP LESSON 2",
+      "content_type": "unknown",
+      "page_start": 247,
+      "page_end": 247,
+      "is_front_matter": false,
+      "text_preview": "Recap Lesson 2© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 113 The Official Guide to PTE Academic Teacher Notes Lesson Item type(s) Homework Feedback summary Notes 8 Describe image Complete practice item p. 54, Official Guide Complete Describe image items, CD- ROM Practice s..."
+    },
+    {
+      "node_id": "pte_chunk_248",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "RECAP LESSON 2",
+      "chapter_number": 17,
+      "section": "RECAP LESSON 2",
+      "topic": "RECAP LESSON 2",
+      "content_type": "unknown",
+      "page_start": 248,
+      "page_end": 248,
+      "is_front_matter": false,
+      "text_preview": "Recap Lesson 2© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 114 The Official Guide to PTE Academic Teacher Notes Lesson Item type(s) Homework Feedback summary Notes 13 Re-tell lecture Complete Retell lecture items, CD- ROM Practice sets 1–3 Recap homework activities and ask t..."
+    },
+    {
+      "node_id": "pte_chunk_249",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "RECAP LESSON 2",
+      "chapter_number": 17,
+      "section": "RECAP LESSON 2",
+      "topic": "RECAP LESSON 2",
+      "content_type": "unknown",
+      "page_start": 249,
+      "page_end": 249,
+      "is_front_matter": false,
+      "text_preview": ""
+    }
+  ],
+  "audit": {
+    "status": "PASS",
+    "contract_status": "PASS",
+    "contract_audit_path": "output/pte.ch17.gen.contract.audit.json",
+    "contract_report_path": "output/pte.ch17.gen.contract.audit.txt"
+  }
+}
