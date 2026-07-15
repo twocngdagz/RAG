@@ -1,0 +1,869 @@
+{
+  "schema_version": "pte_lesson_enrichment.v1",
+  "task_type": "read_aloud_repeat_sentence",
+  "lesson_title": "Lesson 2: Read Aloud and Repeat Sentence",
+  "source_label": "pte:ch02",
+  "modality": "integrated",
+  "overview": {
+    "what_it_is": "This lesson trains two closely related speaking tasks. In Read Aloud, you see an academic text and read every word aloud clearly and naturally. In Repeat Sentence, you hear one sentence once and reproduce it as accurately as possible. Both tasks reward accurate content, understandable pronunciation, and smooth oral fluency.",
+    "format_facts": [
+      {
+        "label": "Read Aloud input",
+        "value": "A written academic text of up to 60 words"
+      },
+      {
+        "label": "Read Aloud preparation",
+        "value": "Usually 30–40 seconds to inspect and prepare the text"
+      },
+      {
+        "label": "Read Aloud response time",
+        "value": "Varies according to the length of the text"
+      },
+      {
+        "label": "Read Aloud practice set",
+        "value": "Typically 6–7 questions in the current test format"
+      },
+      {
+        "label": "Repeat Sentence input",
+        "value": "One recorded sentence lasting approximately 3–9 seconds"
+      },
+      {
+        "label": "Repeat Sentence response time",
+        "value": "15 seconds"
+      },
+      {
+        "label": "Repeat Sentence practice set",
+        "value": "Typically 10–12 questions in the current test format"
+      },
+      {
+        "label": "Recording rule",
+        "value": "The prompt or recording is presented once, and the spoken response can be recorded only once"
+      }
+    ],
+    "scoring_factors": [
+      {
+        "name": "Content",
+        "what_it_measures": "Whether you reproduce the required words accurately and in the correct sequence. In Read Aloud, substitutions, omissions, and additions reduce accuracy. In Repeat Sentence, scoring depends on how much of the original sentence is repeated in the correct sequence."
+      },
+      {
+        "name": "Oral fluency",
+        "what_it_measures": "Whether your speech has a smooth rhythm, natural rate, appropriate phrasing, and few hesitations, repetitions, or false starts."
+      },
+      {
+        "name": "Pronunciation",
+        "what_it_measures": "Whether vowels, consonants, word endings, syllables, and stress patterns are clear enough to be easily understood by regular English speakers."
+      }
+    ],
+    "critical_rules": [
+      "Start speaking immediately after the microphone opens and the tone is heard.",
+      "Do not speak before the microphone opens because that speech will not be recorded.",
+      "Avoid silence of three seconds or longer because the recording may close automatically.",
+      "For Read Aloud, say all and only the written words in their original order.",
+      "For Repeat Sentence, reproduce as much of the sentence as possible in the original order.",
+      "Do not restart from the beginning after a small mistake; continue smoothly.",
+      "Use punctuation to plan phrasing, but do not pause heavily at every punctuation mark.",
+      "A regional accent is acceptable when the response remains clear and understandable.",
+      "Natural, controlled speech is better than speaking very quickly."
+    ]
+  },
+  "learning_goals": [
+    "Explain what Read Aloud and Repeat Sentence require and name their three scoring factors.",
+    "Use the preparation time for Read Aloud to identify difficult words, phrase groups, stressed words, and intonation.",
+    "Pronounce important beginning consonants, final consonants, consonant clusters, and suffixes clearly.",
+    "Use sound rather than spelling alone to guide pronunciation.",
+    "Divide written and spoken sentences into meaningful chunks.",
+    "Use punctuation as a guide without pausing mechanically after every comma.",
+    "Stress key nouns, main verbs, adjectives, adverbs, numbers, and new information.",
+    "Use weaker stress on articles, prepositions, auxiliary verbs, and repeated information when appropriate.",
+    "Use falling and rising intonation to communicate sentence structure and meaning.",
+    "Remember a spoken sentence through meaning, chunks, key words, and grammatical structure.",
+    "Continue speaking after a small mistake instead of restarting.",
+    "Complete both item types under realistic timed conditions."
+  ],
+  "core_method": {
+    "name": "Map → Hold → Speak",
+    "summary": "Create a quick sound map before speaking. For Read Aloud, map the visible text into pronunciation, chunks, stress, and intonation. For Repeat Sentence, hold the heard sentence as meaningful chunks and reproduce those chunks in their original sequence.",
+    "steps": [
+      {
+        "step": "Map the message",
+        "detail": "Understand the basic meaning. Meaning helps you choose natural chunks, stress the correct words, and remember the sentence."
+      },
+      {
+        "step": "Map the chunks",
+        "detail": "Divide the sentence into small grammatical and meaningful groups rather than individual words."
+      },
+      {
+        "step": "Map the sound",
+        "detail": "Notice difficult consonants, vowels, word endings, suffixes, and stressed syllables."
+      },
+      {
+        "step": "Map the emphasis",
+        "detail": "Identify the words carrying the main information and give them stronger sentence stress."
+      },
+      {
+        "step": "Hold the sequence",
+        "detail": "Keep the chunks in their original order. In Repeat Sentence, remember the sentence as two to four connected ideas rather than as many separate words."
+      },
+      {
+        "step": "Speak once",
+        "detail": "Begin promptly, maintain a natural rate, continue through minor errors, and finish the final word clearly."
+      }
+    ],
+    "formula": "READ ALOUD: TEXT → MEANING → CHUNKS → STRESS → INTONATION → SPEAK | REPEAT SENTENCE: LISTEN → MEANING → CHUNKS → KEY WORDS → EXACT SEQUENCE → SPEAK"
+  },
+  "techniques": [
+    {
+      "name": "Sound-First Pronunciation",
+      "purpose": "Prevent spelling from causing incorrect pronunciation.",
+      "how_to": [
+        "Look at the whole word rather than pronouncing each letter separately.",
+        "Identify the stressed syllable.",
+        "Recall the normal spoken form of the word.",
+        "Notice letters that may be silent or represented by a different sound.",
+        "Practise the word inside its phrase, not only in isolation."
+      ],
+      "example": "The word \"education\" is not spoken as separate letter-based parts. Practise the stressed syllable and the final \"tion\" sound inside the phrase \"higher EDUCATION\".",
+      "why_it_matters": "English spelling and pronunciation do not always match. Clear speech depends on producing the expected sounds, syllables, and stress.",
+      "common_error": "Giving every written vowel its full spelling-based sound."
+    },
+    {
+      "name": "Beginning-and-Ending Sound Check",
+      "purpose": "Make words recognizable and protect content accuracy.",
+      "how_to": [
+        "Check the first consonant because it helps the listener identify the word quickly.",
+        "Check final consonants such as t, d, k, s, and z.",
+        "Notice grammatical endings such as plural s, past-tense ed, and third-person s.",
+        "Practise difficult consonant clusters slowly once.",
+        "Return immediately to a natural speaking rate."
+      ],
+      "example": "In \"three discussion groups\", pronounce the beginning of \"discussion\" and the final plural sound in \"groups\" clearly.",
+      "why_it_matters": "Dropping a beginning or ending sound can make one word sound like another or remove grammatical information.",
+      "common_error": "Pronouncing the main part of a word but losing the final consonant or suffix."
+    },
+    {
+      "name": "Grammar-Based Chunking",
+      "purpose": "Create natural phrasing and reduce word-by-word speech.",
+      "how_to": [
+        "Keep noun phrases together.",
+        "Keep the main verb with closely connected words.",
+        "Keep prepositional phrases together when possible.",
+        "Separate introductory phrases from the main clause.",
+        "Place a very short pause between major chunks.",
+        "Avoid dividing a determiner from its noun or an auxiliary from its main verb."
+      ],
+      "example": "\"Words which form a phrase / are usually grouped together / when we say them.\" The first chunk names the subject, the second gives the main action, and the third explains when it happens.",
+      "why_it_matters": "Chunking improves fluency, allows easier breathing, and makes the sentence structure clear to the listener.",
+      "common_error": "Pausing after a fixed number of words even when the pause separates words that belong together."
+    },
+    {
+      "name": "Punctuation-to-Speech Mapping",
+      "purpose": "Use visible punctuation to plan pauses and intonation during Read Aloud.",
+      "how_to": [
+        "Treat a full stop as the end of one complete spoken unit.",
+        "Use commas as possible small boundaries, not automatic long pauses.",
+        "Keep words between paired commas together when they form an inserted phrase.",
+        "Use a slight continuation tone before unfinished information.",
+        "Use a finishing tone at the end of a complete statement.",
+        "Check whether a long sentence needs an additional grammatical pause even without punctuation."
+      ],
+      "example": "\"However, / despite the initial cost, / the new system reduced energy use.\" The two commas help isolate the introductory and inserted phrases.",
+      "why_it_matters": "Punctuation reveals how ideas are connected and helps you avoid reading a long sentence as one uncontrolled stream.",
+      "common_error": "Taking the same long pause at every comma, semicolon, and full stop."
+    },
+    {
+      "name": "Content-Word Stress",
+      "purpose": "Make important meaning words easy to hear.",
+      "how_to": [
+        "Underline key nouns, main verbs, adjectives, adverbs, numbers, and negative words.",
+        "Say these words slightly more strongly and clearly.",
+        "Reduce the prominence of articles, many prepositions, and auxiliary verbs.",
+        "Stress new or contrasting information.",
+        "Avoid stressing every word equally."
+      ],
+      "example": "In \"The CIRCULATION desk is located on the GROUND floor,\" the key nouns carry the main stress, while \"the\", \"is\", \"on\", and \"the\" remain lighter.",
+      "why_it_matters": "English rhythm depends on contrast between strong and weak words. Correct stress improves meaning and oral fluency.",
+      "common_error": "Speaking every word with equal force, which produces a mechanical rhythm."
+    },
+    {
+      "name": "New-Information Stress",
+      "purpose": "Use emphasis to show what information is being introduced or contrasted.",
+      "how_to": [
+        "Identify what the listener already knows from earlier in the sentence.",
+        "Identify the new fact being added.",
+        "Place stronger stress on the new fact.",
+        "Reduce stress on repeated information.",
+        "Use contrastive stress when correcting or comparing ideas."
+      ],
+      "example": "\"The first lecture is on MONDAY, but the laboratory session is on THURSDAY.\" The days are new and contrasted, so they receive strong stress.",
+      "why_it_matters": "Stress is not based only on grammar; it also shows which information matters most.",
+      "common_error": "Stressing repeated topic words while leaving the new information weak."
+    },
+    {
+      "name": "Intonation Contours",
+      "purpose": "Show whether an idea is continuing, complete, listed, questioned, or requested.",
+      "how_to": [
+        "Use falling intonation near the end of statements, commands, and wh- questions.",
+        "Use rising intonation for many yes-or-no questions and polite requests.",
+        "In a list, use a continuation or rising pattern on early items.",
+        "Use falling intonation on the final item of a completed list.",
+        "Avoid exaggerated musical movement.",
+        "Let intonation support meaning rather than distract from pronunciation."
+      ],
+      "example": "\"Students can borrow BOOKS ↗, JOURNALS ↗, and LAPTOPS ↘.\" The voice signals that the first two items continue and the final item completes the list.",
+      "why_it_matters": "Appropriate pitch movement makes speech easier to follow and prevents fluent reading from sounding flat.",
+      "common_error": "Using the same rising pattern at the end of every statement, making the response sound unfinished."
+    },
+    {
+      "name": "Read Aloud Preparation Scan",
+      "purpose": "Use the 30–40 seconds efficiently instead of repeatedly reading the text silently.",
+      "how_to": [
+        "Read once for the general meaning.",
+        "Circle or mentally mark difficult words.",
+        "Insert two to five major chunk boundaries.",
+        "Identify the most important stressed words.",
+        "Check the final sentence and decide where the voice should fall.",
+        "Rehearse only the most difficult phrase once.",
+        "Look at the beginning again so you can start confidently."
+      ],
+      "example": "For a passage about university research, first identify the topic, then mark a phrase such as \"recent scientific INVESTIGATIONS\", check the suffix in \"investigations\", and plan a falling tone at the final full stop.",
+      "why_it_matters": "Preparation should create a delivery plan. Reading the entire text silently several times may leave no time to solve pronunciation or phrasing problems.",
+      "common_error": "Spending all the preparation time on the first difficult word."
+    },
+    {
+      "name": "Meaning-and-Chunk Memory",
+      "purpose": "Remember a Repeat Sentence prompt without trying to store each word independently.",
+      "how_to": [
+        "Listen first for the overall message.",
+        "Divide the sentence into two to four meaningful chunks.",
+        "Remember one or two key words from each chunk.",
+        "Notice the grammatical frame, such as subject, verb, object, place, and time.",
+        "Replay the sentence mentally once as soon as the audio finishes.",
+        "Begin repeating immediately and rebuild the smaller connecting words around the key words."
+      ],
+      "example": "\"The circulation desk / is located / on the ground floor.\" Memory anchors: \"circulation desk\", \"located\", and \"ground floor\".",
+      "why_it_matters": "Meaningful chunks use working memory more efficiently than a list of unrelated words.",
+      "common_error": "Concentrating so strongly on the first three words that the end of the sentence is not heard."
+    },
+    {
+      "name": "Keep-Going Recovery",
+      "purpose": "Protect fluency when a word is forgotten or mispronounced.",
+      "how_to": [
+        "Do not restart the entire response.",
+        "Continue with the next remembered word or chunk.",
+        "Maintain the original rhythm as much as possible.",
+        "Avoid explaining the mistake.",
+        "Finish the sentence clearly.",
+        "Review the error only after the recording is complete."
+      ],
+      "example": "If you slightly mispronounce one word in a Read Aloud passage, continue into the next phrase rather than saying the word repeatedly.",
+      "why_it_matters": "Restarts, corrections, and false starts reduce oral fluency and can add extra words to the response.",
+      "common_error": "Repeating the beginning several times in an attempt to create a perfect response."
+    }
+  ],
+  "worked_examples": [
+    {
+      "title": "Read Aloud: Basic Phrase Chunking",
+      "input": "Words which form a phrase are usually grouped together when we say them.",
+      "decoding": "The sentence explains chunking. Its grammatical structure contains a subject noun phrase, a main verb phrase, and a final time or manner clause.",
+      "plan": "Keep \"words which form a phrase\" together, pause briefly before the main verb, and place the final clause in its own chunk. Stress the main content words and finish with falling intonation.",
+      "model_answer": "WORDS which form a PHRASE / are usually GROUPED together / when we SAY them. ↘",
+      "annotations": [
+        {
+          "part": "WORDS which form a PHRASE",
+          "comment": "This complete noun phrase identifies the subject and should not be separated after \"words\"."
+        },
+        {
+          "part": "are usually GROUPED together",
+          "comment": "The auxiliary remains light while the main action word receives stronger stress."
+        },
+        {
+          "part": "when we SAY them",
+          "comment": "The final clause completes the idea and ends with falling intonation."
+        },
+        {
+          "part": "Fluency",
+          "comment": "The slashes indicate tiny boundaries, not long silent pauses."
+        }
+      ]
+    },
+    {
+      "title": "Read Aloud: Punctuation and Inserted Information",
+      "input": "Renewable energy, although initially expensive, can reduce long-term operating costs and limit the environmental damage caused by traditional sources of power.",
+      "decoding": "The main message is that renewable energy can produce two benefits. The words between commas form an inserted contrast about its initial expense.",
+      "plan": "Separate the subject, inserted phrase, two connected benefits, and final descriptive phrase. Stress the contrasting and result words.",
+      "model_answer": "Renewable ENERGY / although initially EXPENSIVE / can REDUCE long-term operating COSTS / and LIMIT the environmental DAMAGE / caused by traditional sources of POWER. ↘",
+      "annotations": [
+        {
+          "part": "Renewable ENERGY",
+          "comment": "The topic is introduced as a compact noun phrase."
+        },
+        {
+          "part": "although initially EXPENSIVE",
+          "comment": "The commas isolate this concession, so it is spoken as one inserted group."
+        },
+        {
+          "part": "REDUCE long-term operating COSTS",
+          "comment": "The verb and important noun receive strong stress because they express the first benefit."
+        },
+        {
+          "part": "LIMIT the environmental DAMAGE",
+          "comment": "Parallel stress shows the second benefit."
+        },
+        {
+          "part": "Final contour",
+          "comment": "The voice falls on the final phrase because the statement is complete."
+        }
+      ]
+    },
+    {
+      "title": "Read Aloud: Academic Passage with a List",
+      "input": "Modern libraries provide far more than printed books. Students may use digital journals, collaborative study areas, specialist databases, and technical support when completing complex research projects.",
+      "decoding": "The first sentence gives the general claim. The second supports it with a list of services and a final purpose phrase.",
+      "plan": "Finish the first sentence clearly. In the second sentence, use continuation intonation through the early list items and fall on the final part.",
+      "model_answer": "Modern LIBRARIES provide far more than printed BOOKS. ↘ / STUDENTS may use digital JOURNALS ↗ / collaborative STUDY areas ↗ / specialist DATABASES ↗ / and technical SUPPORT / when completing complex RESEARCH projects. ↘",
+      "annotations": [
+        {
+          "part": "First sentence",
+          "comment": "The full stop creates a firm boundary; the two sentences must not be joined into one chunk."
+        },
+        {
+          "part": "List items",
+          "comment": "Rising or continuing intonation signals that more examples are coming."
+        },
+        {
+          "part": "technical SUPPORT",
+          "comment": "This is the final service in the list, so the voice begins moving toward completion."
+        },
+        {
+          "part": "complex RESEARCH projects",
+          "comment": "The final phrase explains the context and receives falling intonation."
+        }
+      ]
+    },
+    {
+      "title": "Read Aloud: Word Endings and Suffixes",
+      "input": "Scientific communication requires accurate descriptions, careful observations, and conclusions that can be understood by researchers from different disciplines.",
+      "decoding": "Several words contain important suffixes and final consonants, including \"scientific\", \"communication\", \"descriptions\", \"observations\", \"conclusions\", and \"disciplines\".",
+      "plan": "Check the stressed syllables, preserve the plural endings, chunk the three-part list, and finish the relative clause smoothly.",
+      "model_answer": "Scientific communiCATION requires accurate deSCRIPTIONS ↗ / careful obserVATIONS ↗ / and conCLUSIONS / that can be underSTOOD / by reSEARCHERS from different DISciplines. ↘",
+      "annotations": [
+        {
+          "part": "Suffixes",
+          "comment": "The capitalized syllables show the main word stress. The final plural sounds must remain audible."
+        },
+        {
+          "part": "Three-part list",
+          "comment": "The first two list items continue, while the third leads into the rest of the sentence."
+        },
+        {
+          "part": "that can be underSTOOD",
+          "comment": "The phrase remains together because it describes the conclusions."
+        },
+        {
+          "part": "Natural rate",
+          "comment": "Clear endings should not cause the entire sentence to become slow or separated."
+        }
+      ]
+    },
+    {
+      "title": "Repeat Sentence: Three Clear Chunks",
+      "input": "Audio: \"We will divide the class into three discussion groups.\"",
+      "decoding": "The message contains an action, an object, and the resulting group structure. The key words are \"divide\", \"class\", \"three\", \"discussion\", and \"groups\".",
+      "plan": "Hold three chunks: \"We will divide\", \"the class\", and \"into three discussion groups\". Preserve the future auxiliary and the number.",
+      "model_answer": "We will diVIDE / the CLASS / into THREE discussion GROUPS. ↘",
+      "annotations": [
+        {
+          "part": "We will diVIDE",
+          "comment": "The subject, auxiliary, and main verb form the action unit."
+        },
+        {
+          "part": "the CLASS",
+          "comment": "This is the object of the action and should not be omitted."
+        },
+        {
+          "part": "THREE discussion GROUPS",
+          "comment": "The number and final plural noun are essential details."
+        },
+        {
+          "part": "Content control",
+          "comment": "The response keeps the exact original wording and sequence."
+        }
+      ]
+    },
+    {
+      "title": "Repeat Sentence: Location Information",
+      "input": "Audio: \"The circulation desk is located on the ground floor.\"",
+      "decoding": "The sentence identifies an object and gives its location. The memory anchors are \"circulation desk\", \"located\", and \"ground floor\".",
+      "plan": "Remember the sentence as subject, location verb, and place phrase. Keep the articles and preposition in the original sequence.",
+      "model_answer": "The circuLATION DESK / is loCATED / on the GROUND FLOOR. ↘",
+      "annotations": [
+        {
+          "part": "The circuLATION DESK",
+          "comment": "This noun phrase should be stored as one unit."
+        },
+        {
+          "part": "is loCATED",
+          "comment": "Do not omit the auxiliary \"is\"."
+        },
+        {
+          "part": "on the GROUND FLOOR",
+          "comment": "The preposition and articles help reproduce the sentence exactly."
+        },
+        {
+          "part": "Stress",
+          "comment": "The key nouns are stronger, but the small connecting words remain audible."
+        }
+      ]
+    },
+    {
+      "title": "Repeat Sentence: Time, Place, and Event",
+      "input": "Audio: \"The research seminar has been moved to Friday afternoon.\"",
+      "decoding": "The sentence gives an event, a change, and a new time. The structure is a passive present-perfect form: \"has been moved\".",
+      "plan": "Store three chunks: the event, the change, and the new schedule. Protect the small words \"has\", \"been\", and \"to\" because they are easy to lose.",
+      "model_answer": "The RESEARCH SEMINAR / has been MOVED / to FRIDAY afternoon. ↘",
+      "annotations": [
+        {
+          "part": "The RESEARCH SEMINAR",
+          "comment": "The event name forms the first memory unit."
+        },
+        {
+          "part": "has been MOVED",
+          "comment": "The full verb structure must be preserved, not reduced to \"moved\"."
+        },
+        {
+          "part": "to FRIDAY afternoon",
+          "comment": "The new day is the most important new information and receives strong stress."
+        },
+        {
+          "part": "Sequence",
+          "comment": "Reordering the time phrase would reduce exactness even if the general meaning remained understandable."
+        }
+      ]
+    },
+    {
+      "title": "Repeat Sentence: Longer Academic Structure",
+      "input": "Audio: \"Students who require additional assistance should contact their course coordinator before the end of the week.\"",
+      "decoding": "The sentence contains the people, their condition, the required action, the person to contact, and a deadline.",
+      "plan": "Hold four chunks: \"Students who require additional assistance\", \"should contact\", \"their course coordinator\", and \"before the end of the week\".",
+      "model_answer": "STUDENTS who require additional asSISTANCE / should CONTACT / their COURSE coordiNATOR / before the END of the WEEK. ↘",
+      "annotations": [
+        {
+          "part": "STUDENTS who require additional asSISTANCE",
+          "comment": "The relative clause identifies which students are being discussed."
+        },
+        {
+          "part": "should CONTACT",
+          "comment": "The modal verb expresses an expected action and must not be replaced with \"must\" or \"can\"."
+        },
+        {
+          "part": "their COURSE coordiNATOR",
+          "comment": "This is the person the students should contact."
+        },
+        {
+          "part": "before the END of the WEEK",
+          "comment": "The deadline is the final chunk and should be completed clearly."
+        }
+      ]
+    }
+  ],
+  "useful_language": [
+    {
+      "category": "Chunking Patterns",
+      "items": [
+        {
+          "item": "The rapid growth of online education / has changed traditional teaching methods.",
+          "when_to_use": "Separate a long subject noun phrase from its main verb phrase."
+        },
+        {
+          "item": "According to recent research / regular exercise improves concentration.",
+          "when_to_use": "Separate an introductory phrase from the main clause."
+        },
+        {
+          "item": "The students / who completed the survey / reported similar concerns.",
+          "when_to_use": "Use separate phrasing when a relative clause adds information about the subject."
+        },
+        {
+          "item": "After the lecture / the students met / in the main library.",
+          "when_to_use": "Organize a sentence into time, action, and place chunks."
+        },
+        {
+          "item": "The new policy / will be introduced / at the beginning of next year.",
+          "when_to_use": "Use subject, verb, and time chunks to support Repeat Sentence memory."
+        }
+      ]
+    },
+    {
+      "category": "Stress Patterns",
+      "items": [
+        {
+          "item": "The NEW policy will REDUCE transport COSTS.",
+          "when_to_use": "Stress adjectives, main verbs, and nouns that carry the main message."
+        },
+        {
+          "item": "The FIRST experiment failed, but the SECOND succeeded.",
+          "when_to_use": "Use contrastive stress when two items or results are compared."
+        },
+        {
+          "item": "The lecture begins at THREE, not FOUR.",
+          "when_to_use": "Stress corrected or contrasting information."
+        },
+        {
+          "item": "Researchers have IDENTIFIED several important FACTORS.",
+          "when_to_use": "Keep auxiliary verbs lighter and emphasize the main verb and object."
+        },
+        {
+          "item": "Students can borrow BOOKS, JOURNALS, and LAPTOPS.",
+          "when_to_use": "Stress the content nouns in a list."
+        }
+      ]
+    },
+    {
+      "category": "Intonation Patterns",
+      "items": [
+        {
+          "item": "The results were published last YEAR. ↘",
+          "when_to_use": "Use falling intonation to complete a statement."
+        },
+        {
+          "item": "Where is the main LIBRARY? ↘",
+          "when_to_use": "Use falling intonation for a wh- question."
+        },
+        {
+          "item": "Can students attend ONline? ↗",
+          "when_to_use": "Use rising intonation for many yes-or-no questions."
+        },
+        {
+          "item": "Please submit the form by FRIday. ↘",
+          "when_to_use": "Use falling intonation for a command or firm instruction."
+        },
+        {
+          "item": "The course covers HISTORY ↗, POLITICS ↗, and ECONOMICS ↘.",
+          "when_to_use": "Use continuation intonation through a list and fall on the final item."
+        }
+      ]
+    },
+    {
+      "category": "Pronunciation Focus",
+      "items": [
+        {
+          "item": "Final sounds: cost, costs; group, groups; work, worked",
+          "when_to_use": "Practise preserving grammatical endings and avoiding word loss."
+        },
+        {
+          "item": "Suffixes: education, observation, scientific, dangerous",
+          "when_to_use": "Practise common academic endings without pronouncing every letter separately."
+        },
+        {
+          "item": "Consonant clusters: students, texts, projects, strengths",
+          "when_to_use": "Practise words where several consonants occur together."
+        },
+        {
+          "item": "Word stress: PHOtograph, phoTOGraphy, photoGRAPHic",
+          "when_to_use": "Practise how stress can move when a suffix changes the word form."
+        },
+        {
+          "item": "Weak words: a, the, of, to, can, have",
+          "when_to_use": "Keep grammatical words audible but less prominent than content words."
+        }
+      ]
+    },
+    {
+      "category": "Repeat Sentence Memory Frames",
+      "items": [
+        {
+          "item": "WHO or WHAT / ACTION / OBJECT",
+          "when_to_use": "Use for a basic sentence such as \"The committee approved the proposal.\""
+        },
+        {
+          "item": "EVENT / CHANGE / NEW TIME",
+          "when_to_use": "Use for schedule changes such as a seminar being moved."
+        },
+        {
+          "item": "PERSON / REQUIREMENT / DEADLINE",
+          "when_to_use": "Use for instructions and university announcements."
+        },
+        {
+          "item": "CAUSE / RESULT",
+          "when_to_use": "Use for sentences explaining why something happened."
+        },
+        {
+          "item": "GENERAL CLAIM / CONTRAST / DETAIL",
+          "when_to_use": "Use for longer academic sentences containing \"although\", \"however\", or \"while\"."
+        }
+      ]
+    },
+    {
+      "category": "Fluency Behaviors",
+      "items": [
+        {
+          "item": "Begin immediately after the tone",
+          "when_to_use": "Use in both item types to avoid an unrecorded or automatically closed response."
+        },
+        {
+          "item": "Maintain a controlled natural rate",
+          "when_to_use": "Use throughout the response instead of rushing difficult sections."
+        },
+        {
+          "item": "Continue after a small error",
+          "when_to_use": "Use when correcting yourself would create a repetition or false start."
+        },
+        {
+          "item": "Finish the final word clearly",
+          "when_to_use": "Use near the end of the progress bar so the response does not fade or become incomplete."
+        },
+        {
+          "item": "Pause only at meaningful boundaries",
+          "when_to_use": "Use to create smooth phrasing rather than word-by-word speech."
+        }
+      ]
+    }
+  ],
+  "common_mistakes": [
+    {
+      "mistake": "Adding, replacing, or omitting words in Read Aloud",
+      "why_it_hurts": "Content accuracy is based on reproducing the displayed text. Even a grammatically reasonable replacement is still different from the prompt.",
+      "fix": "Follow the text visually, keep your place with each phrase, and do not paraphrase."
+    },
+    {
+      "mistake": "Restarting after a pronunciation error",
+      "why_it_hurts": "A restart creates repetition, additional words, hesitation, and a false start.",
+      "fix": "Continue into the next word or chunk and protect the overall rhythm."
+    },
+    {
+      "mistake": "Reading one word at a time",
+      "why_it_hurts": "The speech becomes slow, mechanical, and difficult to understand as connected meaning.",
+      "fix": "Mark noun phrases, verb phrases, prepositional phrases, and clauses before speaking."
+    },
+    {
+      "mistake": "Reading too quickly",
+      "why_it_hurts": "Fast speech often removes final sounds, causes substitutions, and produces unclear stress.",
+      "fix": "Use a steady rate that allows every word to remain recognizable."
+    },
+    {
+      "mistake": "Pausing too often",
+      "why_it_hurts": "Frequent pauses damage oral fluency and may separate words that belong in the same phrase.",
+      "fix": "Use a small number of meaningful boundaries rather than pausing whenever you need to recognize the next word."
+    },
+    {
+      "mistake": "Taking a long pause at every comma",
+      "why_it_hurts": "Not all commas represent a major spoken boundary, and heavy pauses can make the delivery unnatural.",
+      "fix": "Use commas as guides, then check the grammar and meaning before deciding the size of the pause."
+    },
+    {
+      "mistake": "Ignoring word endings",
+      "why_it_hurts": "Missing final sounds can change tense, number, grammar, or the identity of the word.",
+      "fix": "Practise final consonants and suffixes in phrases while maintaining natural speed."
+    },
+    {
+      "mistake": "Using spelling as the only pronunciation guide",
+      "why_it_hurts": "English letters do not always represent the same sounds, and some letters are silent.",
+      "fix": "Learn the spoken form, stress pattern, and syllable structure of unfamiliar academic words."
+    },
+    {
+      "mistake": "Stressing every word equally",
+      "why_it_hurts": "Equal stress creates an unnatural rhythm and hides the most important information.",
+      "fix": "Emphasize content words and keep many grammatical words lighter."
+    },
+    {
+      "mistake": "Using flat intonation",
+      "why_it_hurts": "The listener receives fewer signals about which ideas continue, contrast, or finish.",
+      "fix": "Use gentle rising movement for continuation and falling movement for completion."
+    },
+    {
+      "mistake": "Memorizing only the first half of a Repeat Sentence prompt",
+      "why_it_hurts": "The response may begin accurately but lose most of its content before the end.",
+      "fix": "Listen to the complete sentence and store one key word from every major chunk."
+    },
+    {
+      "mistake": "Trying to write the full Repeat Sentence prompt",
+      "why_it_hurts": "Writing competes with listening and may cause the final words to be missed.",
+      "fix": "Train your auditory memory through meaning, structure, rhythm, and key-word anchors."
+    },
+    {
+      "mistake": "Repeating only disconnected key words",
+      "why_it_hurts": "The important words may be present, but their original sequence and grammatical connections are lost.",
+      "fix": "Reconstruct complete chunks around the key words."
+    },
+    {
+      "mistake": "Waiting too long before speaking",
+      "why_it_hurts": "The microphone may close after an extended silence, and the sentence can disappear from working memory.",
+      "fix": "Begin immediately with the first remembered chunk."
+    },
+    {
+      "mistake": "Attempting to change one's accent completely",
+      "why_it_hurts": "Forced imitation can reduce clarity and fluency.",
+      "fix": "Keep your natural accent while improving intelligibility, word stress, consonants, vowels, and rhythm."
+    }
+  ],
+  "practice_plan": {
+    "time_budget": [
+      {
+        "phase": "Task and scoring analysis",
+        "minutes": "10",
+        "focus": "Understand the two formats, timing, microphone behavior, and the three scoring factors."
+      },
+      {
+        "phase": "Sound and suffix training",
+        "minutes": "20",
+        "focus": "Practise beginning sounds, final sounds, consonant clusters, syllables, and academic suffixes."
+      },
+      {
+        "phase": "Chunking and punctuation",
+        "minutes": "20",
+        "focus": "Divide sentences into grammatical sense groups and use punctuation as a guide."
+      },
+      {
+        "phase": "Sentence stress",
+        "minutes": "15",
+        "focus": "Identify content words, weak words, new information, and contrast."
+      },
+      {
+        "phase": "Intonation",
+        "minutes": "15",
+        "focus": "Practise falling statements, rising yes-or-no questions, and continuation in lists."
+      },
+      {
+        "phase": "Read Aloud timed practice",
+        "minutes": "15",
+        "focus": "Use 30–40 seconds to prepare, then deliver each passage once."
+      },
+      {
+        "phase": "Repeat Sentence memory practice",
+        "minutes": "15",
+        "focus": "Store sentences as meaning, chunks, key words, and grammatical frames."
+      },
+      {
+        "phase": "Recorded review",
+        "minutes": "10",
+        "focus": "Check content, oral fluency, pronunciation, and the main cause of each error."
+      }
+    ],
+    "drills": [
+      {
+        "name": "Final-Sound Ladder",
+        "instructions": "Practise related forms such as \"work, works, worked\" and \"group, groups\". Say each form alone, then use it in a short phrase and a complete sentence."
+      },
+      {
+        "name": "Suffix Families",
+        "instructions": "Group academic words by endings such as \"tion\", \"sion\", \"ous\", \"ic\", and \"ity\". Mark the stressed syllable and practise each word inside a phrase."
+      },
+      {
+        "name": "Slash the Passage",
+        "instructions": "Take five Read Aloud texts and insert slash marks at meaningful phrase boundaries. Compare the result with the grammar and punctuation before reading."
+      },
+      {
+        "name": "Stress Underlining",
+        "instructions": "Underline nouns, main verbs, adjectives, adverbs, numbers, negatives, and contrasts. Read the passage while keeping small grammatical words lighter."
+      },
+      {
+        "name": "Intonation Arrows",
+        "instructions": "Add rising and falling arrows to statements, questions, and lists. Record two versions and choose the version whose meaning is easiest to follow."
+      },
+      {
+        "name": "Thirty-Second Preparation",
+        "instructions": "Prepare a passage in four stages: meaning, difficult words, chunk boundaries, and stress. Stop preparing when the timer ends and read it once."
+      },
+      {
+        "name": "Read Aloud Triple Check",
+        "instructions": "After recording, compare the response with the text. Check whether all and only the written words were spoken, whether the rate was smooth, and whether every word was understandable."
+      },
+      {
+        "name": "Back-Chaining",
+        "instructions": "For a difficult phrase, practise the final part first, then add the preceding words. For example: \"the week\", \"end of the week\", \"before the end of the week\"."
+      },
+      {
+        "name": "Chunk Echo",
+        "instructions": "Listen to a sentence in two to four chunks. Repeat each chunk during early practice, then repeat the entire sentence after hearing it once."
+      },
+      {
+        "name": "Key-Word Skeleton",
+        "instructions": "After hearing a sentence, say only one key word from each chunk. Listen again, then rebuild the exact sentence around those key words."
+      },
+      {
+        "name": "Meaning Reconstruction",
+        "instructions": "Explain the sentence's meaning in a few words before repeating it. Gradually remove the explanation stage as your memory improves."
+      },
+      {
+        "name": "One-Listen Repeat",
+        "instructions": "Play each sentence once only. Begin immediately after it finishes and record one response without restarting."
+      },
+      {
+        "name": "Progressive Length",
+        "instructions": "Begin with sentences of six to eight words, then practise nine to twelve words, followed by longer sentences with relative clauses, passive forms, and time expressions."
+      },
+      {
+        "name": "Accent Variation",
+        "instructions": "Practise with clear speakers using different regional accents. Focus on meaning, stressed words, and chunk boundaries instead of attempting to copy every accent feature."
+      },
+      {
+        "name": "Error-Source Log",
+        "instructions": "Classify each problem as content, fluency, beginning sound, ending sound, word stress, sentence stress, intonation, chunking, or memory. Repeat the weakest category rather than repeating every item equally."
+      }
+    ],
+    "routine": "Complete three rounds. In Round 1, mark Read Aloud texts and listen to Repeat Sentence prompts without strict timing so you can understand the techniques. In Round 2, record every response once under realistic timing. In Round 3, use unseen passages and sentences, play each audio only once, and review content, fluency, and pronunciation separately. Repeat only the items whose errors reveal a specific weakness."
+  },
+  "mastery_checklist": [
+    "I can explain what the Read Aloud item type requires.",
+    "I can explain what the Repeat Sentence item type requires.",
+    "I can name content, oral fluency, and pronunciation as the three scoring factors.",
+    "I can use Read Aloud preparation time to inspect meaning, difficult words, chunks, stress, and intonation.",
+    "I can pronounce important consonants at the beginning and end of words.",
+    "I can preserve plural, tense, and other grammatical endings.",
+    "I can pronounce common academic suffixes by sound rather than spelling alone.",
+    "I can read a short passage in meaningful phrase groups.",
+    "I can use punctuation as a guide without pausing mechanically.",
+    "I can keep noun phrases, verb phrases, and prepositional phrases together.",
+    "I can identify likely stressed nouns, verbs, adjectives, adverbs, numbers, and negative words.",
+    "I can place stronger stress on new and contrasting information.",
+    "I can keep many articles, prepositions, and auxiliary verbs lighter but audible.",
+    "I can use falling intonation to complete statements.",
+    "I can use rising or continuing intonation appropriately in questions and lists.",
+    "I can read at a natural rate without rushing or speaking word by word.",
+    "I can begin speaking promptly after the microphone opens.",
+    "I can continue smoothly after a minor error instead of restarting.",
+    "I can remember a sentence as meaningful chunks rather than isolated words.",
+    "I can retain key information from the beginning, middle, and end of a sentence.",
+    "I can reconstruct small grammatical words around remembered key words.",
+    "I can repeat a sentence once while preserving as much of the original sequence as possible.",
+    "I can complete Read Aloud and Repeat Sentence practice under timed conditions.",
+    "I can review a recording separately for content, fluency, and pronunciation."
+  ],
+  "strategy_notes": [
+    "During Read Aloud preparation, solve the highest-risk parts first: unfamiliar words, long noun phrases, lists, and the beginning of the passage.",
+    "Return your eyes to the first line before the preparation countdown ends so that you can start without searching for your place.",
+    "Follow the text with your eyes slightly ahead of your voice.",
+    "Do not sacrifice content accuracy to produce dramatic intonation.",
+    "Use small pauses between chunks; long pauses damage fluency and may close the microphone.",
+    "Slightly emphasize key words rather than shouting or changing volume suddenly.",
+    "When a passage contains a long list, plan the breath and continuation pattern before speaking.",
+    "For Repeat Sentence, listen for meaning before attempting to memorize individual words.",
+    "Use the speaker's rhythm and stress as a memory framework.",
+    "Protect the first chunk, one key word from each middle chunk, and the final chunk.",
+    "Pay attention to small but meaningful words such as negatives, modals, articles, and prepositions.",
+    "If the exact sentence is partly forgotten, reproduce the longest accurate sequence you can remember instead of inventing unrelated content.",
+    "Do not fill forgotten sections with explanations or comments.",
+    "Practise with one playback only because replaying recordings repeatedly does not reproduce test conditions.",
+    "Compare recordings with the original words, not only with your memory of what you intended to say.",
+    "Aim for intelligibility and natural rhythm rather than trying to remove your regional accent.",
+    "Measure improvement by fewer omissions, substitutions, hesitations, and unclear endings."
+  ],
+  "metadata": {
+    "difficulty": "intermediate",
+    "estimated_study_time": "Plan to spend about 2 hours studying this chapter, with extra time if you repeat the timed practice items.",
+    "tags": [
+      "read aloud",
+      "repeat sentence",
+      "speaking",
+      "reading",
+      "listening",
+      "pronunciation",
+      "oral fluency",
+      "chunking",
+      "sentence stress",
+      "intonation",
+      "working memory",
+      "timed speaking"
+    ],
+    "provenance_note": "The lesson preserves the supplied teaching points about content accuracy, oral fluency, pronunciation, word sounds, suffixes, chunking, punctuation, sentence stress, new information, intonation, and timed practice. Current format details added beyond the base lesson include a Read Aloud text length of up to 60 words, 30–40 seconds of preparation, a response time that varies by passage length, approximately 6–7 Read Aloud items, a Repeat Sentence recording length of 3–9 seconds, a 15-second response window, and approximately 10–12 Repeat Sentence items. The detailed memory framework, microphone strategy, recovery method, additional passages, and drills were added as teaching support using current official Pearson test-format, score-guide, and test-tip guidance."
+  }
+}
