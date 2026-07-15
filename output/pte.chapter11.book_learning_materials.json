@@ -1,0 +1,860 @@
+{
+  "schema_version": "book_learning_materials.v2",
+  "book": {
+    "slug": "pte",
+    "title": "pte",
+    "source_pdf": "input/pdfs/pte.pdf"
+  },
+  "generation": {
+    "generated_at": "2026-07-15T03:05:26.266526+00:00",
+    "pipeline_version": "book_learning_materials.v2",
+    "prompt_version": "book_learning_materials_v2_chapter.v2",
+    "backend": "codex-cli",
+    "model": "gpt-5.5",
+    "selection_mode": "chapters",
+    "selected_chapter_numbers": [
+      11
+    ],
+    "book_synthesis_performed": false,
+    "clean_chunks_path": "extracted/pte.section_clean_chunks.json"
+  },
+  "learning_materials": {
+    "chapters": [
+      {
+        "chapter_number": 11,
+        "chapter_title": "Lesson 10: Write from Dictation and Listening: Fill in the Blanks",
+        "source_chunk_ids": [
+          "pte_chunk_159",
+          "pte_chunk_160",
+          "pte_chunk_161",
+          "pte_chunk_162",
+          "pte_chunk_163",
+          "pte_chunk_164",
+          "pte_chunk_165",
+          "pte_chunk_166",
+          "pte_chunk_167",
+          "pte_chunk_168",
+          "pte_chunk_169",
+          "pte_chunk_170",
+          "pte_chunk_171",
+          "pte_chunk_172",
+          "pte_chunk_173",
+          "pte_chunk_174",
+          "pte_chunk_175",
+          "pte_chunk_176"
+        ],
+        "estimated_study_time": {
+          "text": "Plan for about 2 hours of focused study.",
+          "claim_kind": "study_plan",
+          "origin": "pedagogical_generation",
+          "source_chunk_ids": [],
+          "grounded_in_source_chunk_ids": [],
+          "evidence_spans": [],
+          "reason": null
+        },
+        "chapter_summary": {
+          "text": "This lesson practises Listening: Fill in the blanks and Write from dictation. It focuses on listening, writing, and speaking skills, including following spoken sequencing, understanding academic vocabulary, writing from dictation, correct grammar and spelling, natural-rate speech, intonation, pronunciation, stress, and timed conditions.",
+          "claim_kind": "source_summary",
+          "origin": "source_grounded",
+          "source_chunk_ids": [
+            "pte_chunk_159"
+          ],
+          "grounded_in_source_chunk_ids": [],
+          "evidence_spans": [
+            {
+              "node_id": "pte_chunk_159",
+              "quote": "This lesson provides skills practice for the PTE Academic item types Write from dictation and Listening: Fill in \nthe blanks."
+            },
+            {
+              "node_id": "pte_chunk_159",
+              "quote": "Listening\n• Identifying words and phrases appropriate to the context\n• Understanding academic vocabulary\n• Comprehending explicit and implicit information\n• Following an oral sequencing of information"
+            },
+            {
+              "node_id": "pte_chunk_159",
+              "quote": "Writing\n• Writing from dictation\n• Using words and phrases appropriate to the context\n• Using correct grammar\n• Using correct spelling"
+            },
+            {
+              "node_id": "pte_chunk_159",
+              "quote": "Speaking\n• Speaking at a natural rate\n• Producing fluent speech\n• Using correct intonation\n• Using correct pronunciation\n• Using correct stress\n• Speaking under timed conditions"
+            }
+          ],
+          "reason": null
+        },
+        "learning_objectives": [
+          {
+            "text": "Practise the listening, writing, and speaking skills listed for the lesson.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_159"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_159",
+                "quote": "By the end of this lesson, test takers will have: \n➤\t Practiced the listening, writing and speaking skills listed above"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Analyze the rubrics, format, and test-taking strategies for Listening: Fill in the blanks and Write from dictation.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_159"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_159",
+                "quote": "➤\t Analyzed the rubrics and format of these items\n➤\t Analyzed test-taking strategies for these items"
+              },
+              {
+                "node_id": "pte_chunk_159",
+                "quote": "This lesson provides skills practice for the PTE Academic item types Write from dictation and Listening: Fill in \nthe blanks."
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Complete practice items under timed conditions and review feedback on those practice items.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_159"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_159",
+                "quote": "➤\t Completed practice items under timed conditions\n➤\t Reviewed feedback to practice items"
+              }
+            ],
+            "reason": null
+          },
+          {
+            "text": "Develop awareness of how context, meaning, and spelling help distinguish homophones.",
+            "claim_kind": "learning_objective",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "pte_chunk_162"
+            ],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [
+              {
+                "node_id": "pte_chunk_162",
+                "quote": "in English there are many words that have the same pronunciation but \ndifferent spellings and that the spelling of such words depends on the context and the meaning."
+              }
+            ],
+            "reason": null
+          }
+        ],
+        "key_terms": [
+          {
+            "term": "Listening: Fill in the blanks",
+            "meaning": {
+              "text": "An item type that tests the ability to listen for missing words in a recording and type the words into a transcription; it assesses both listening and writing skills.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_166"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_166",
+                  "quote": "Fill in the blanks is an item type that tests your ability to listen for missing words in a recording and type the \nwords into a transcription. It assesses both listening and writing skills."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Write from dictation",
+            "meaning": {
+              "text": "An item type that tests the ability to understand and remember a sentence heard, then write it exactly as heard using correct spelling; it assesses both listening and writing skills.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_167"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_167",
+                  "quote": "Write from dictation is an item type that tests your ability to understand and remember a sentence you hear and \nthen write exactly as you hear it using correct spelling. It assesses both listening and writing skills."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Homophones",
+            "meaning": {
+              "text": "Words that have the same pronunciation but different spellings; their correct spelling depends on context and meaning.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_162"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_162",
+                  "quote": "in English there are many words that have the same pronunciation but \ndifferent spellings and that the spelling of such words depends on the context and the meaning."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "Content scoring",
+            "meaning": {
+              "text": "For Fill in the blanks, content is scored by counting right words with correct spelling; for Write from dictation, content is scored by counting correct words in the response.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_166",
+                "pte_chunk_167"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_166",
+                  "quote": "Your score on Fill in the blanks is based on content. Content is scored by counting the number of right words \nwith correct spelling in your response."
+                },
+                {
+                  "node_id": "pte_chunk_167",
+                  "quote": "Your score on Write from dictation is based on content. Content is scored by counting the number of correct \nwords in your response."
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "core_lessons": [
+          {
+            "title": "Follow The Spoken Sequence",
+            "explanation": {
+              "text": "For both item types, an important skill is remaining focused while listening and closely following the sequence of a spoken text.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_160"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_160",
+                  "quote": "an important skill for both of these items types is the ability to remain focused \nwhile listening, and to closely follow the sequence of a spoken text."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Know The Fill In The Blanks Format",
+            "explanation": {
+              "text": "In Listening: Fill in the blanks, instructions appear at the top of the screen, a seven-second countdown precedes the automatic recording, and the response is entered into up to seven blanks in a transcription.",
+              "claim_kind": "task_format",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_166"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_166",
+                  "quote": "Instructions are presented at the top of the computer screen. The instructions for this item type are always the  \nsame."
+                },
+                {
+                  "node_id": "pte_chunk_166",
+                  "quote": "In the audio status box, the status will count down from seven seconds. Then a recording will play \nautomatically."
+                },
+                {
+                  "node_id": "pte_chunk_166",
+                  "quote": "A transcription of the recording with up to seven blanks follows. To respond, type the missing words into the \nblanks."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Know The Write From Dictation Format",
+            "explanation": {
+              "text": "In Write from dictation, the learner hears a sentence once, types the sentence in the response box exactly as heard, and writes as much of the sentence as possible.",
+              "claim_kind": "task_format",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_167"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_167",
+                  "quote": "You will hear a sentence. Type the sentence in the box below exactly as you hear it. Write as much of the \nsentence as you can. You will hear the sentence only once."
+                },
+                {
+                  "node_id": "pte_chunk_167",
+                  "quote": "A response box follows. Use this space to type the sentence."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Use Context To Spell Homophones",
+            "explanation": {
+              "text": "When a word has the same pronunciation as another word, context and meaning determine the correct spelling.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_162"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_162",
+                  "quote": "it was important to listen to and understand the meaning of the context in order to know which was the \ncorrect spelling in each case"
+                },
+                {
+                  "node_id": "pte_chunk_162",
+                  "quote": "the spelling of such words depends on the context and the meaning."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Check Grammar, Meaning, And Spelling",
+            "explanation": {
+              "text": "After completing listening texts, learners should check that their sentences make sense and use correct grammatical forms and spelling.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_161"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_161",
+                  "quote": "check \ntheir own responses to make sure that the sentences make sense, and that they have used correct \ngrammatical forms and spelling."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Practise Without Visual Clues",
+            "explanation": {
+              "text": "During paired practice, learners should sit so they are not facing each other, because this imitates test conditions in which there are no visual clues such as lip movements, facial clues, or gestures.",
+              "claim_kind": "strategy",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_163"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_163",
+                  "quote": "test takers should sit so that they are not facing each other. Explain that this is to imitate test \nconditions in which test takers will have no visual clues (lip movements, other facial clues, gestures, etc)"
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "worked_examples": [
+          {
+            "title": "Homophone Choice From Context",
+            "example": {
+              "text": "Prompt: The ___ of the financial crisis are still being felt around the world. Answer: effects. Check: the sentence is about results of a crisis, so the spelling is effects, not affect.",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "The lesson answer key gives the completed sentence as: The effects of the financial crisis are still being felt around the world.",
+              "claim_kind": "factual_explanation",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_171"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_171",
+                  "quote": "The effects of the financial crisis are still being felt around the world."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Write From Dictation Memory Check",
+            "example": {
+              "text": "Prompt heard once: Before submitting your report, check that the bibliography is complete. Learner response: Before submitting your report, check that the bibliography is complete.",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "In the practice item, the reader reads each sentence once only, pauses for 10 seconds, and the listener writes as much as they can remember.",
+              "claim_kind": "task_format",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_175"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_175",
+                  "quote": "Read each sentence aloud to your partner once only. Then pause for 10 seconds to let your partner \nwrite the sentence."
+                },
+                {
+                  "node_id": "pte_chunk_175",
+                  "quote": "Listen carefully to the sentences that your partner reads aloud. Write as much of each sentence as \nyou can remember in the space below."
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "common_misconceptions": [
+          {
+            "misconception": {
+              "text": "For homophones, hearing the sound alone is enough to know the correct spelling.",
+              "claim_kind": "misconception_statement",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "For homophones, the correct spelling depends on context and meaning.",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_162"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_162",
+                  "quote": "the spelling of such words depends on the context and the meaning."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "misconception": {
+              "text": "In Write from dictation, it is acceptable to write a rough paraphrase of the sentence.",
+              "claim_kind": "misconception_statement",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "In Write from dictation, the sentence should be typed exactly as heard, and the learner should write as much of the sentence as possible.",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "pte_chunk_167"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "pte_chunk_167",
+                  "quote": "Type the sentence in the box below exactly as you hear it. Write as much of the \nsentence as you can."
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "practice_questions": [
+          {
+            "question": {
+              "text": "Choose the correct word: Many experts were initially skeptical and could not ___ the key hypothesis. Options: accept / except.",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "accept",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Write the full sentence from memory after one reading: The project involved a number of discrete studies.",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "The project involved a number of discrete studies.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "For Listening: Fill in the blanks, what should you type into the blanks?",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Type the missing words in each blank.",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Choose the correct word: It is unclear ___ the government will successfully ___ the current political storm. Options: whether/weather or weather/whether.",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "whether; weather",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "review_checklist": [
+          {
+            "text": "I can stay focused while listening and follow the sequence of a spoken text.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can use context and meaning to choose the correct spelling of homophones.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can check my responses for meaning, grammar, and spelling after listening.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can practise Write from dictation by listening once, remembering accurately, and writing as much of the sentence as I can.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can practise Listening: Fill in the blanks by listening for missing words and entering the correctly spelled words.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": null
+          }
+        ]
+      }
+    ]
+  },
+  "source_chunks": [
+    {
+      "node_id": "pte_chunk_159",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 10",
+      "chapter_number": 11,
+      "section": "LESSON 10",
+      "topic": "LESSON 10",
+      "content_type": "unknown",
+      "page_start": 159,
+      "page_end": 159,
+      "is_front_matter": false,
+      "text_preview": "Lesson 10© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 70 The Official Guide to PTE Academic Teacher Notes Overview Time allocated: 2 hours This lesson focuses on the following skills: Listening • Identifying words and phrases appropriate to the context • Understanding academ..."
+    },
+    {
+      "node_id": "pte_chunk_160",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 10",
+      "chapter_number": 11,
+      "section": "LESSON 10",
+      "topic": "LESSON 10",
+      "content_type": "unknown",
+      "page_start": 160,
+      "page_end": 160,
+      "is_front_matter": false,
+      "text_preview": "Lesson 10© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 71 The Official Guide to PTE Academic Teacher Notes • Copies of ‘Reading texts’ A and B (1 handout each per pair) • Copies of ‘Listening texts’ A and B (1 handout each per pair) • Copies of ‘Homophones’ (individual handou..."
+    },
+    {
+      "node_id": "pte_chunk_161",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 10",
+      "chapter_number": 11,
+      "section": "LESSON 10",
+      "topic": "LESSON 10",
+      "content_type": "unknown",
+      "page_start": 161,
+      "page_end": 161,
+      "is_front_matter": false,
+      "text_preview": "Lesson 10© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 72 The Official Guide to PTE Academic Teacher Notes • Make sure that groups start to read at the same time and monitor them for fluency. • When groups have finished, discuss any problems or difficulties they experienced w..."
+    },
+    {
+      "node_id": "pte_chunk_162",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 10",
+      "chapter_number": 11,
+      "section": "LESSON 10",
+      "topic": "LESSON 10",
+      "content_type": "unknown",
+      "page_start": 162,
+      "page_end": 162,
+      "is_front_matter": false,
+      "text_preview": "Lesson 10© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 73 The Official Guide to PTE Academic Teacher Notes • Elicit the written responses from test takers (note that without context ‘pair’ can be written ‘pear’ or ‘pare’, and ‘there’ can be written ‘their’ or ‘they’re’). Ask..."
+    },
+    {
+      "node_id": "pte_chunk_163",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 10",
+      "chapter_number": 11,
+      "section": "LESSON 10",
+      "topic": "LESSON 10",
+      "content_type": "unknown",
+      "page_start": 163,
+      "page_end": 163,
+      "is_front_matter": false,
+      "text_preview": "Lesson 10© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 74 The Official Guide to PTE Academic Teacher Notes Main activity 3: part 1 pair work (10 mins) Completing Fill in the blanks practice items Materials: Copies of ‘Fill in the blanks Practice items’ A and B Skills: Identif..."
+    },
+    {
+      "node_id": "pte_chunk_164",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 10",
+      "chapter_number": 11,
+      "section": "LESSON 10",
+      "topic": "LESSON 10",
+      "content_type": "unknown",
+      "page_start": 164,
+      "page_end": 164,
+      "is_front_matter": false,
+      "text_preview": "Lesson 10© Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 75 The Official Guide to PTE Academic Teacher Notes Round up (10 mins) Materials: Official Guide pp. 137–138, 161–162, 164–166 Aim: Review problems encountered with practice items and general strategies for dealing with t..."
+    },
+    {
+      "node_id": "pte_chunk_165",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 10",
+      "chapter_number": 11,
+      "section": "LESSON 10",
+      "topic": "LESSON 10",
+      "content_type": "unknown",
+      "page_start": 165,
+      "page_end": 165,
+      "is_front_matter": false,
+      "text_preview": "Lesson 10Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 [Source: Official Guide to PTE Academic pp 124, 169–170; © 2006 Boyer Lectures, Lecture 1: The Golden Age by Ian MacFarlane, first broad- cast by Radio National, 12 November 2006, reproduced by permission of..."
+    },
+    {
+      "node_id": "pte_chunk_166",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 10",
+      "chapter_number": 11,
+      "section": "LESSON 10",
+      "topic": "LESSON 10",
+      "content_type": "unknown",
+      "page_start": 166,
+      "page_end": 166,
+      "is_front_matter": false,
+      "text_preview": "Lesson 10Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Reading text A Read this text aloud once to your partner. Read clearly and remember to use correct intonation and stress. Note that two sentences are underlined in the last paragraph. Pause after these sente..."
+    },
+    {
+      "node_id": "pte_chunk_167",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 10",
+      "chapter_number": 11,
+      "section": "LESSON 10",
+      "topic": "LESSON 10",
+      "content_type": "unknown",
+      "page_start": 167,
+      "page_end": 167,
+      "is_front_matter": false,
+      "text_preview": "Lesson 10Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Reading text B Read this text aloud once to your partner. Read clearly and remember to use correct intonation and stress. Note that two sentences are underlined in the last two paragraphs. Pause after these..."
+    },
+    {
+      "node_id": "pte_chunk_168",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 10",
+      "chapter_number": 11,
+      "section": "LESSON 10",
+      "topic": "LESSON 10",
+      "content_type": "unknown",
+      "page_start": 168,
+      "page_end": 168,
+      "is_front_matter": false,
+      "text_preview": "Lesson 10Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Listening text A Listen as your partner reads the following text aloud and write the missing words in the blanks. In the final paragraphs there are two missing sentences that you must write from dictation. Y..."
+    },
+    {
+      "node_id": "pte_chunk_169",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 10",
+      "chapter_number": 11,
+      "section": "LESSON 10",
+      "topic": "LESSON 10",
+      "content_type": "unknown",
+      "page_start": 169,
+      "page_end": 169,
+      "is_front_matter": false,
+      "text_preview": "Lesson 10Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Listening text B Listen as your partner reads the following text aloud and write the missing words in the blanks. In the final paragraph there are two missing sentences that you must write from dictation. Yo..."
+    },
+    {
+      "node_id": "pte_chunk_170",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 10",
+      "chapter_number": 11,
+      "section": "LESSON 10",
+      "topic": "LESSON 10",
+      "content_type": "unknown",
+      "page_start": 170,
+      "page_end": 170,
+      "is_front_matter": false,
+      "text_preview": "Lesson 10Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Homophones Listen as sentences 1–13 are read aloud and fill in the blanks with the correct word. For sentences 14–16 you should write the whole sentence from dictation. Review your spelling after you have co..."
+    },
+    {
+      "node_id": "pte_chunk_171",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 10",
+      "chapter_number": 11,
+      "section": "LESSON 10",
+      "topic": "LESSON 10",
+      "content_type": "unknown",
+      "page_start": 171,
+      "page_end": 171,
+      "is_front_matter": false,
+      "text_preview": "Lesson 10Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Homophones: Answer key Fill in the blanks 1. The effects of the financial crisis are still being felt around the world. 2. It is difficult to predict how future studies will affect research findings. 3. Many..."
+    },
+    {
+      "node_id": "pte_chunk_172",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 10",
+      "chapter_number": 11,
+      "section": "LESSON 10",
+      "topic": "LESSON 10",
+      "content_type": "unknown",
+      "page_start": 172,
+      "page_end": 172,
+      "is_front_matter": false,
+      "text_preview": "Lesson 10Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Homophone word bank Homophones Meaning Usage effect affect except accept"
+    },
+    {
+      "node_id": "pte_chunk_173",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 10",
+      "chapter_number": 11,
+      "section": "LESSON 10",
+      "topic": "LESSON 10",
+      "content_type": "unknown",
+      "page_start": 173,
+      "page_end": 173,
+      "is_front_matter": false,
+      "text_preview": "Lesson 10Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Fill in the blanks Practice items A Task 1 Fill in the blanks Listen as your partner reads the following text aloud and write the missing words in the blanks. Here at last was a base from which this largest..."
+    },
+    {
+      "node_id": "pte_chunk_174",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 10",
+      "chapter_number": 11,
+      "section": "LESSON 10",
+      "topic": "LESSON 10",
+      "content_type": "unknown",
+      "page_start": 174,
+      "page_end": 174,
+      "is_front_matter": false,
+      "text_preview": "Lesson 10Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Fill in the blanks Practice items B Task 1 Reading text Read this text aloud once to your partner. Read clearly and remember to use correct intonation and stress. Here at last was a base from which this larg..."
+    },
+    {
+      "node_id": "pte_chunk_175",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 10",
+      "chapter_number": 11,
+      "section": "LESSON 10",
+      "topic": "LESSON 10",
+      "content_type": "unknown",
+      "page_start": 175,
+      "page_end": 175,
+      "is_front_matter": false,
+      "text_preview": "Lesson 10Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Write from dictation Practice items A Read each sentence aloud to your partner once only. Then pause for 10 seconds to let your partner write the sentence. 1. Four of the students failed to complete their as..."
+    },
+    {
+      "node_id": "pte_chunk_176",
+      "source_pdf": "input/pdfs/pte.pdf",
+      "chapter": "LESSON 10",
+      "chapter_number": 11,
+      "section": "LESSON 10",
+      "topic": "LESSON 10",
+      "content_type": "unknown",
+      "page_start": 176,
+      "page_end": 176,
+      "is_front_matter": false,
+      "text_preview": "Lesson 10Photocopiable © Pearson Education Ltd 2012 © Pearson Education Asia Limited 2012 Write from dictation Practice items B Read each sentence aloud to your partner once only. Then pause for 10 seconds to let your partner write the sentence. 1. It was evident that the study lacked a key hypot..."
+    }
+  ],
+  "audit": {
+    "status": "PASS",
+    "contract_status": "PASS",
+    "contract_audit_path": "output/pte.ch11.gen.contract.audit.json",
+    "contract_report_path": "output/pte.ch11.gen.contract.audit.txt"
+  }
+}
