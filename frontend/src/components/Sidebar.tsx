@@ -1,23 +1,32 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { GraduationCap, X } from 'lucide-react'
-import type { ChapterIndexItem } from '../lib/types'
+import type { BookInfo, ChapterIndexItem } from '../lib/types'
+
+/** Display name for a book: the API only exposes slugs, so uppercase it
+ * (pte → "PTE"). Swap for a real title if /books ever returns one. */
+export const bookLabel = (slug: string) => slug.toUpperCase()
 
 /** Lesson navigation. Persistent rail on desktop, dismissible drawer on mobile.
  * The current lesson is highlighted (nav-state-active) and every item is a
- * deep-linkable route (deep-linking). */
+ * deep-linkable route (deep-linking). With more than one book loaded, a picker
+ * switches between them (the URL owns the selection). */
 export function Sidebar({
   slug,
+  books,
   chapters,
   activeNumber,
   open,
   onClose,
 }: {
   slug: string
+  books: BookInfo[]
   chapters: ChapterIndexItem[]
   activeNumber?: number
   open: boolean
   onClose: () => void
 }) {
+  const navigate = useNavigate()
+
   return (
     <>
       {/* Mobile scrim */}
@@ -36,12 +45,12 @@ export function Sidebar({
         aria-label="Lessons"
       >
         <div className="flex items-center justify-between gap-2 border-b border-slate-200 px-5 py-4">
-          <NavLink to="/" className="flex items-center gap-2">
+          <NavLink to={`/books/${slug}`} className="flex items-center gap-2">
             <span className="flex size-8 items-center justify-center rounded-lg bg-brand-700 text-white">
               <GraduationCap className="size-5" aria-hidden="true" />
             </span>
             <span className="font-display text-base font-semibold text-slate-900">
-              PTE&nbsp;Learn
+              {bookLabel(slug)}&nbsp;Learn
             </span>
           </NavLink>
           <button
@@ -53,6 +62,32 @@ export function Sidebar({
             <X className="size-5" />
           </button>
         </div>
+
+        {books.length > 1 && (
+          <div className="border-b border-slate-200 px-5 py-3">
+            <label
+              htmlFor="book-picker"
+              className="text-xs font-semibold uppercase tracking-wide text-slate-400"
+            >
+              Book
+            </label>
+            <select
+              id="book-picker"
+              value={slug}
+              onChange={(e) => {
+                navigate(`/books/${e.target.value}`)
+                onClose()
+              }}
+              className="mt-1 w-full cursor-pointer rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-sm font-medium text-slate-800 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-100"
+            >
+              {books.map((b) => (
+                <option key={b.slug} value={b.slug}>
+                  {bookLabel(b.slug)} — {b.chapter_count} lesson{b.chapter_count === 1 ? '' : 's'}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
 
         <nav className="flex-1 overflow-y-auto px-3 py-4">
           <p className="px-2 pb-2 text-xs font-semibold uppercase tracking-wide text-slate-400">

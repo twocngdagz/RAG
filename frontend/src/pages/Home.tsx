@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, BookOpenCheck, ShieldCheck, Sparkles } from 'lucide-react'
 import type { ChapterIndexItem } from '../lib/types'
+import { bookLabel } from '../components/Sidebar'
 
 /** Orientation screen: what this is, why it’s trustworthy, and a clear way in.
  * One primary action (Start), lessons listed for direct access. */
@@ -14,7 +15,7 @@ export function Home({ slug, chapters }: { slug: string; chapters: ChapterIndexI
           Grounded study materials
         </span>
         <h1 className="mt-4 text-4xl font-bold leading-[1.1] tracking-tight text-slate-900 sm:text-5xl">
-          Study PTE Academic with materials you can trust.
+          Study {bookLabel(slug)} with materials you can trust.
         </h1>
         <p className="mt-4 max-w-xl text-lg leading-relaxed text-slate-600">
           {chapters.length} lessons built from the official course — every explanation is traceable

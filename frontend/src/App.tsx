@@ -3,16 +3,17 @@ import { Navigate, Route, Routes, useParams } from 'react-router-dom'
 import { GraduationCap, Menu } from 'lucide-react'
 import { api } from './lib/api'
 import { useAsync } from './lib/useAsync'
-import { Sidebar } from './components/Sidebar'
+import type { BookInfo } from './lib/types'
+import { Sidebar, bookLabel } from './components/Sidebar'
 import { Home } from './pages/Home'
 import { ChapterReader } from './pages/ChapterReader'
 
 export default function App() {
   const books = useAsync(() => api.books(), [])
-  const slug = books.data?.[0]?.slug
+  const fallback = books.data?.[0]?.slug
 
   if (books.loading) return <FullScreen>Loading…</FullScreen>
-  if (books.error || !slug)
+  if (books.error || !fallback)
     return (
       <FullScreen>
         <p className="font-medium text-slate-700">Can’t reach the learning API.</p>
@@ -22,13 +23,24 @@ export default function App() {
       </FullScreen>
     )
 
-  return <Shell slug={slug} />
+  return (
+    <Routes>
+      {/* The URL owns which book is open; "/" and unknown paths go to the first book. */}
+      <Route path="/books/:slug/*" element={<Shell books={books.data!} />} />
+      <Route path="*" element={<Navigate to={`/books/${fallback}`} replace />} />
+    </Routes>
+  )
 }
 
-function Shell({ slug }: { slug: string }) {
+function Shell({ books }: { books: BookInfo[] }) {
+  const { slug = books[0].slug } = useParams()
   const chapters = useAsync(() => api.chapterIndex(slug), [slug])
   const [navOpen, setNavOpen] = useState(false)
 
+  // Unknown book in the URL → bounce to the first one.
+  if (!books.some((b) => b.slug === slug)) {
+    return <Navigate to={`/books/${books[0].slug}`} replace />
+  }
   if (chapters.loading) return <FullScreen>Loading lessons…</FullScreen>
   const list = chapters.data ?? []
 
@@ -37,26 +49,25 @@ function Shell({ slug }: { slug: string }) {
       <Routes>
         {/* Sidebar shares the active-lesson highlight via the route param. */}
         <Route
-          path="/books/:slug/lessons/:n"
+          path="lessons/:n"
           element={
-            <SidebarWithActive slug={slug} chapters={list} open={navOpen} onClose={() => setNavOpen(false)} />
+            <SidebarWithActive slug={slug} books={books} chapters={list} open={navOpen} onClose={() => setNavOpen(false)} />
           }
         />
         <Route
           path="*"
           element={
-            <Sidebar slug={slug} chapters={list} open={navOpen} onClose={() => setNavOpen(false)} />
+            <Sidebar slug={slug} books={books} chapters={list} open={navOpen} onClose={() => setNavOpen(false)} />
           }
         />
       </Routes>
 
       <div className="flex min-w-0 flex-1 flex-col">
-        <MobileBar onMenu={() => setNavOpen(true)} />
+        <MobileBar slug={slug} onMenu={() => setNavOpen(true)} />
         <main className="flex-1">
           <Routes>
-            <Route path="/" element={<Navigate to={`/books/${slug}`} replace />} />
-            <Route path="/books/:slug" element={<Home slug={slug} chapters={list} />} />
-            <Route path="/books/:slug/lessons/:n" element={<ChapterReader chapters={list} />} />
+            <Route index element={<Home slug={slug} chapters={list} />} />
+            <Route path="lessons/:n" element={<ChapterReader chapters={list} />} />
             <Route path="*" element={<Navigate to={`/books/${slug}`} replace />} />
           </Routes>
         </main>
@@ -67,6 +78,7 @@ function Shell({ slug }: { slug: string }) {
 
 function SidebarWithActive(props: {
   slug: string
+  books: BookInfo[]
   chapters: React.ComponentProps<typeof Sidebar>['chapters']
   open: boolean
   onClose: () => void
@@ -75,7 +87,7 @@ function SidebarWithActive(props: {
   return <Sidebar {...props} activeNumber={Number(n)} />
 }
 
-function MobileBar({ onMenu }: { onMenu: () => void }) {
+function MobileBar({ slug, onMenu }: { slug: string; onMenu: () => void }) {
   return (
     <header className="sticky top-0 z-20 flex items-center gap-3 border-b border-slate-200 bg-white/90 px-4 py-3 backdrop-blur lg:hidden">
       <button
@@ -90,7 +102,7 @@ function MobileBar({ onMenu }: { onMenu: () => void }) {
         <span className="flex size-6 items-center justify-center rounded-md bg-brand-700 text-white">
           <GraduationCap className="size-4" aria-hidden="true" />
         </span>
-        PTE Learn
+        {bookLabel(slug)}&nbsp;Learn
       </span>
     </header>
   )
