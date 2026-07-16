@@ -58,6 +58,24 @@ Notes:
 - Failures save the raw reply to `output/_lessonNN.reply.txt` and are reported at
   the end (`FAILED: [...]`) for a targeted re-run.
 
+## Plan limits (this can and did restrict the account)
+
+Each lesson is a **30–60K-character generation** — a full book (with retries) can
+consume a day's plan allowance even though the request *rate* looks human. The
+run command mitigates this:
+
+- `--cooldown SECONDS` (default 90) waits between lessons to spread usage.
+- **Restriction detection**: on any failure the driver scans the page for
+  ChatGPT's limit notices ("you've reached your limit", "usage cap", "too many
+  requests", …). If found, the batch **stops immediately** — a capped account
+  can't produce anything, so retries only add load — and prints the exact resume
+  command for the remaining lessons.
+
+Budgeting guidance: prefer one book per day; if a batch is interrupted by a cap,
+resume after the limit window resets (per-lesson file+DB checkpointing means
+nothing is lost). Avoid immediately re-running failed lessons back-to-back — each
+retry is another full-size generation.
+
 ## Reusing this for a different book / exam
 
 The system is **engine (reusable) + domain pack (swappable)**:

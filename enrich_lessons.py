@@ -35,6 +35,7 @@ import argparse
 import json
 import re
 import sys
+import time
 from pathlib import Path
 from typing import Any
 
@@ -386,11 +387,12 @@ def cmd_run(args) -> int:
     engine = store.create_db(args.db_url)
     # headless is fine for send once you've logged in via the driver's `login`.
     with ChatGPTDriver(args.profile_dir, headless=args.headless) as d:
-        for n in args.chapters:
+        for i, n in enumerate(args.chapters):
             print(f"\n=== Lesson {n} ===")
             payload = build_payload(n)
             print(f"  payload: {len(payload)} chars -> sending to project (fresh chat)")
             raw = ""  # reset per-iteration so a failure never saves the prior reply
+            document = None
             # Navigating to the project URL each time yields a fresh, prompt-primed chat.
             try:
                 reply = d.send_and_wait(args.project_url, payload, timeout_s=args.timeout)
@@ -398,21 +400,43 @@ def cmd_run(args) -> int:
                 document = normalize_document(strip_citation_artifacts(extract_json_object(raw)))
                 validate_enrichment(document, n)
             except (ValueError, json.JSONDecodeError, store.StoreError, RuntimeError, PWError) as exc:
+                document = None
                 debug = Path(f"output/_lesson{n:02d}.reply.txt")
                 debug.write_text(raw or "", encoding="utf-8")
                 print(f"  ! chapter {n} FAILED: {exc}\n    raw reply saved to {debug}", file=sys.stderr)
                 failed.append(n)
+                # A capped account can't produce anything — stop the batch instead
+                # of burning more attempts, and say exactly what ChatGPT showed.
+                notice = d.restriction_notice()
+                if notice:
+                    rest = args.chapters[i + 1:]
+                    todo = failed + [m for m in rest if m not in failed]
+                    print(
+                        f"\n!! ChatGPT usage restriction detected: {notice!r}\n"
+                        f"   Stopping the batch — the account is capped, retries would only add load.\n"
+                        f"   Resume when the limit resets:  run … {' '.join(map(str, todo))}",
+                        file=sys.stderr,
+                    )
+                    failed = todo
+                    break
                 if args.stop_on_error:
                     break
-                continue
-            # Persist immediately so a long run is never all-or-nothing.
-            path = write_enrichment_file(document, n)
-            with Session(engine) as s:
-                rec = store.load_enrichment_file(s, path)
-                s.commit()
-                rec_id = rec.id  # read inside the session; detaches on close
-            print(f"  OK  wrote {path.name} + DB <- {rec_id} (task_type={document.get('task_type')})")
-            stored.append(n)
+
+            if document is not None:
+                # Persist immediately so a long run is never all-or-nothing.
+                path = write_enrichment_file(document, n)
+                with Session(engine) as s:
+                    rec = store.load_enrichment_file(s, path)
+                    s.commit()
+                    rec_id = rec.id  # read inside the session; detaches on close
+                print(f"  OK  wrote {path.name} + DB <- {rec_id} (task_type={document.get('task_type')})")
+                stored.append(n)
+
+            # Spread requests out: cumulative output volume (each lesson is a
+            # 30–60K-char generation), not raw speed, is what trips plan limits.
+            if args.cooldown > 0 and i < len(args.chapters) - 1:
+                print(f"  cooling down {args.cooldown}s before the next lesson…")
+                time.sleep(args.cooldown)
 
     print(f"\n{'='*48}\nDone: {len(stored)}/{len(args.chapters)} enriched and stored.")
     if stored:
@@ -435,7 +459,11 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     sr.add_argument("chapters", type=int, nargs="+")
     sr.add_argument("--project-url", required=True, help="ChatGPT project URL (ends /project).")
     sr.add_argument("--profile-dir", default=DEFAULT_PROFILE)
-    sr.add_argument("--timeout", type=int, default=300)
+    sr.add_argument("--timeout", type=int, default=600)
+    sr.add_argument(
+        "--cooldown", type=int, default=90,
+        help="Seconds to wait between lessons (0 disables). Spreads plan usage on long batches.",
+    )
     sr.add_argument("--headless", action="store_true")
     sr.add_argument("--stop-on-error", action="store_true", help="Abort the batch on first failure.")
     sr.set_defaults(func=cmd_run)

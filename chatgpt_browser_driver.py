@@ -25,6 +25,7 @@ assistant text to stop changing -- the robust pattern for scraping a streaming U
 """
 
 import argparse
+import re
 import sys
 import time
 from pathlib import Path
@@ -41,6 +42,21 @@ SEND_BTN = "[data-testid='send-button'], button[aria-label*='Send' i]"
 STOP_BTN = "[data-testid='stop-button'], button[aria-label*='Stop' i]"
 ASSISTANT = "[data-message-author-role='assistant']"
 USER = "[data-message-author-role='user']"
+
+# Plan/usage-limit notices ChatGPT shows when an account gets restricted. Checked
+# on failure paths so a rate-limited batch stops immediately instead of burning
+# more attempts against a capped account.
+RESTRICTION_RE = re.compile(
+    r"(you.{0,5}ve? reached (your|the)\b.{0,40}\blimit"
+    r"|message limit reached"
+    r"|usage (cap|limit)"
+    r"|too many requests"
+    r"|reached our limit"
+    r"|you.{0,5}ve? hit (your|the)\b.{0,40}\blimit"
+    r"|try again (later|after|in)"
+    r"|upgrade to (plus|pro|go) to continue)",
+    re.IGNORECASE,
+)
 
 
 class ChatGPTDriver:
@@ -86,6 +102,19 @@ class ChatGPTDriver:
         self.page.goto(CHATGPT_HOME, wait_until="domcontentloaded")
         self.page.wait_for_selector(COMPOSER, timeout=timeout_s * 1000)
         print("Logged in. Session saved to the profile.")
+
+    def restriction_notice(self) -> str | None:
+        """Scan the visible page for a plan/rate-limit notice. Returns the matching
+        line (what ChatGPT actually said) or None. Call on failure paths only —
+        lesson content on a successful page could contain look-alike phrases."""
+        try:
+            text = self.page.evaluate("() => document.body.innerText") or ""
+        except Exception:
+            return None
+        for line in text.splitlines():
+            if RESTRICTION_RE.search(line):
+                return line.strip()
+        return None
 
     def _wait_until(self, predicate, seconds: float) -> bool:
         """Poll predicate() until true or the budget elapses. Swallows errors so a
