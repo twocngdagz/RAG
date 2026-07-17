@@ -5,6 +5,7 @@ import {
   ClipboardCheck,
   Compass,
   Info,
+  LayoutTemplate,
   Lightbulb,
   ListChecks,
   MessageSquareQuote,
@@ -13,7 +14,7 @@ import {
   Target,
   Timer,
 } from 'lucide-react'
-import type { LessonEnrichment } from '../lib/types'
+import type { LangCategory, LessonEnrichment } from '../lib/types'
 import { Section } from './Section'
 
 /** Safe-array: tolerate fields the model sometimes omits or shapes differently,
@@ -42,7 +43,75 @@ function ModelAnswer({ text }: { text: string }) {
   )
 }
 
+/** Keep only well-formed useful_language categories (a category object with items). */
+const validLangCats = (cats: LangCategory[] | undefined) =>
+  A(cats).filter((c) => c && typeof c === 'object' && A(c.items).length > 0)
+
+/** The reusable sentence-stem toolkit, grouped by category. */
+function LanguageGrid({ cats }: { cats: LangCategory[] }) {
+  return (
+    <div className="grid gap-4 sm:grid-cols-2">
+      {cats.map((cat, i) => (
+        <div key={i} className="rounded-xl border border-slate-200 bg-white p-4">
+          <h3 className="font-display text-sm font-semibold text-slate-900">{cat.category}</h3>
+          <ul className="mt-2 space-y-2">
+            {A(cat.items).map((it, ii) => (
+              <li key={ii} className="text-sm">
+                <span className="font-medium text-slate-800">{it.item}</span>
+                <span className="block text-xs text-slate-500">{it.when_to_use}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+/** Render the core_method.formula as a memorisable pattern: split on its → or +
+ * separators into ordered slots, and highlight any [bracketed] fill-in blanks. */
+function TemplatePattern({ formula }: { formula: string }) {
+  const arrow = formula.includes('→')
+  const parts = (arrow ? formula.split('→') : formula.includes(' + ') ? formula.split(' + ') : [formula])
+    .map((p) => p.trim())
+    .filter(Boolean)
+
+  const renderSlots = (text: string) =>
+    text.split(/(\[[^\]]+\])/).map((tok, i) =>
+      /^\[[^\]]+\]$/.test(tok) ? (
+        <span key={i} className="mx-0.5 rounded bg-brand-100 px-1.5 py-0.5 text-sm font-semibold text-brand-800">
+          {tok.slice(1, -1)}
+        </span>
+      ) : (
+        <span key={i}>{tok}</span>
+      ),
+    )
+
+  if (parts.length === 1) {
+    return <p className="text-[15px] leading-relaxed text-slate-800">{renderSlots(parts[0])}</p>
+  }
+  return (
+    <ol className="space-y-2">
+      {parts.map((p, i) => (
+        <li key={i} className="flex gap-3">
+          <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-md bg-brand-700 text-xs font-bold text-white tabular-nums">
+            {i + 1}
+          </span>
+          <span className="text-[15px] leading-snug text-slate-800">{renderSlots(p)}</span>
+        </li>
+      ))}
+    </ol>
+  )
+}
+
 export function CoachView({ e }: { e: LessonEnrichment }) {
+  const formula = e.core_method?.formula?.trim() || ''
+  const langCats = validLangCats(e.useful_language)
+  // Productive tasks have a reusable scaffold: surface it as one consolidated
+  // "template" block (pattern + fill-in phrases) instead of splitting the pattern
+  // (hero) from the phrases (a section far below).
+  const hasTemplate = formula.length > 0
+
   return (
     <article className="reading mx-auto max-w-3xl px-5 py-8 sm:px-8">
       {/* Method hero */}
@@ -52,9 +121,9 @@ export function CoachView({ e }: { e: LessonEnrichment }) {
         </span>
         <h1 className="mt-3 font-display text-2xl font-bold sm:text-3xl">{e.core_method?.name}</h1>
         <p className="mt-2 max-w-xl text-brand-50/90">{e.core_method?.summary}</p>
-        {e.core_method?.formula && (
+        {formula && !hasTemplate && (
           <div className="mt-4 rounded-lg bg-white/10 px-4 py-3 text-center text-sm font-semibold tracking-wide ring-1 ring-white/15">
-            {e.core_method.formula}
+            {formula}
           </div>
         )}
         {A(e.core_method?.steps).length > 0 && (
@@ -75,6 +144,30 @@ export function CoachView({ e }: { e: LessonEnrichment }) {
       </header>
 
       <div className="mt-8 space-y-8">
+        {/* Reusable template — the highest-leverage, memorisable scaffold, kept
+            with the phrases that fill it. Only for tasks that have a formula. */}
+        {hasTemplate && (
+          <Section
+            icon={LayoutTemplate}
+            title="Your reusable template"
+            purpose="Memorise this shape and drop any prompt into it — the pattern stays the same, only the details change."
+          >
+            <div className="rounded-xl border border-brand-200 bg-brand-50/60 p-4 sm:p-5">
+              <p className="mb-2.5 text-xs font-semibold uppercase tracking-wide text-brand-700">The pattern</p>
+              <TemplatePattern formula={formula} />
+            </div>
+            {langCats.length > 0 && (
+              <div className="mt-5">
+                <p className="mb-2 text-sm font-semibold text-slate-700">
+                  Phrases to fill it
+                  <span className="ml-2 font-normal text-slate-400">— drop these into the slots above</span>
+                </p>
+                <LanguageGrid cats={langCats} />
+              </div>
+            )}
+          </Section>
+        )}
+
         {/* Overview */}
         <Section icon={Info} title="What this task is" purpose="Format, scoring, and the rules that matter.">
           <p>{e.overview?.what_it_is}</p>
@@ -206,25 +299,11 @@ export function CoachView({ e }: { e: LessonEnrichment }) {
         )}
 
         {/* Useful language */}
-        {A(e.useful_language).filter((c) => c && typeof c === 'object' && A(c.items).length > 0).length > 0 && (
+        {/* When there is no template, the phrases stand alone; otherwise they're
+            shown inside the template block above. */}
+        {!hasTemplate && langCats.length > 0 && (
           <Section icon={MessageSquareQuote} title="Useful language" purpose="A toolkit you can reuse.">
-            <div className="grid gap-4 sm:grid-cols-2">
-              {A(e.useful_language)
-                .filter((c) => c && typeof c === 'object' && A(c.items).length > 0)
-                .map((cat, i) => (
-                  <div key={i} className="rounded-xl border border-slate-200 bg-white p-4">
-                    <h3 className="font-display text-sm font-semibold text-slate-900">{cat.category}</h3>
-                    <ul className="mt-2 space-y-2">
-                      {A(cat.items).map((it, ii) => (
-                        <li key={ii} className="text-sm">
-                          <span className="font-medium text-slate-800">{it.item}</span>
-                          <span className="block text-xs text-slate-500">{it.when_to_use}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-            </div>
+            <LanguageGrid cats={langCats} />
           </Section>
         )}
 
