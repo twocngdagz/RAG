@@ -20,6 +20,7 @@ import { textOf, type ChapterIndexItem } from '../lib/types'
 import { Section } from '../components/Section'
 import { GroundedText } from '../components/GroundedText'
 import { CoachView } from '../components/CoachView'
+import { EssayPractice } from '../components/EssayPractice'
 import { ErrorBoundary } from '../components/ErrorBoundary'
 
 export function ChapterReader({ chapters }: { chapters: ChapterIndexItem[] }) {
@@ -34,7 +35,14 @@ export function ChapterReader({ chapters }: { chapters: ChapterIndexItem[] }) {
     () => (hasCoach ? api.enrichment(slug, number) : Promise.resolve(null)),
     [slug, number, hasCoach],
   )
-  const [view, setView] = useState<'lesson' | 'coach'>('lesson')
+  // Writing tasks get a live practice+feedback tab. Prompts come from the
+  // lesson's own worked examples (their `input` is the essay prompt).
+  const canPractice = enrich.data?.task_type === 'write_essay'
+  const essayPrompts = Array.from(
+    new Set((enrich.data?.worked_examples ?? []).map((w) => (w.input || '').trim()).filter(Boolean)),
+  )
+
+  const [view, setView] = useState<'lesson' | 'coach' | 'practice'>('lesson')
   useEffect(() => {
     setView(hasCoach ? 'coach' : 'lesson')
   }, [number, hasCoach])
@@ -63,6 +71,9 @@ export function ChapterReader({ chapters }: { chapters: ChapterIndexItem[] }) {
     <div className="sticky top-0 z-10 border-b border-slate-200 bg-slate-50/90 backdrop-blur lg:top-0">
       <div className="mx-auto flex max-w-3xl gap-1 px-5 py-2 sm:px-8">
         <ViewTab active={view === 'coach'} onClick={() => setView('coach')} icon={Sparkles} label="Coach" />
+        {canPractice && (
+          <ViewTab active={view === 'practice'} onClick={() => setView('practice')} icon={PenLine} label="Practice" />
+        )}
         <ViewTab active={view === 'lesson'} onClick={() => setView('lesson')} icon={BookOpen} label="From the book" />
       </div>
     </div>
@@ -81,6 +92,15 @@ export function ChapterReader({ chapters }: { chapters: ChapterIndexItem[] }) {
         ) : (
           <ReaderSkeleton />
         )}
+      </>
+    )
+  }
+
+  if (view === 'practice' && canPractice) {
+    return (
+      <>
+        {tabs}
+        <EssayPractice slug={slug} number={number} prompts={essayPrompts} />
       </>
     )
   }

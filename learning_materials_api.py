@@ -23,13 +23,22 @@ import json
 import os
 from typing import Any
 
+import httpx
 from fastapi import Depends, FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from sqlalchemy.engine import Engine
 from sqlalchemy.orm import Session
 
+try:  # let the server pick up OLLAMA_API_KEY from .env for essay scoring
+    from dotenv import load_dotenv
+
+    load_dotenv()
+except ImportError:
+    pass
+
 import book_learning_materials_store as store
+import essay_feedback
 
 # Sections the frontend can request individually, mapped to how they sit in the
 # chapter object. All are lists except the two chapter-level scalars.
@@ -62,6 +71,11 @@ class ChapterIndexItem(BaseModel):
     has_enrichment: bool = False
 
 
+class EssayFeedbackRequest(BaseModel):
+    prompt: str = Field(min_length=1, max_length=2000)
+    essay: str = Field(min_length=1, max_length=8000)
+
+
 def create_app(engine: Engine | None = None) -> FastAPI:
     engine = engine or store.create_db(os.getenv("LEARNING_MATERIALS_DB_URL", store.DEFAULT_DB_URL))
 
@@ -72,7 +86,7 @@ def create_app(engine: Engine | None = None) -> FastAPI:
     app.add_middleware(
         CORSMiddleware,
         allow_origins=[o.strip() for o in origins],
-        allow_methods=["GET"],
+        allow_methods=["GET", "POST"],
         allow_headers=["*"],
     )
 
@@ -147,6 +161,21 @@ def create_app(engine: Engine | None = None) -> FastAPI:
                 detail=f"No enrichment for chapter {chapter_number} of book {slug!r}.",
             )
         return json.loads(record.document)
+
+    @app.post("/books/{slug}/chapters/{chapter_number}/essay-feedback")
+    def post_essay_feedback(
+        slug: str, chapter_number: int, body: EssayFeedbackRequest
+    ) -> dict[str, Any]:
+        """Live scoring: assess a learner's essay against the PTE rubric via the
+        hosted model. The app's only non-read endpoint; nothing is stored."""
+        try:
+            return essay_feedback.score_essay(body.prompt, body.essay)
+        except RuntimeError as exc:  # OLLAMA_API_KEY not configured on the server
+            raise HTTPException(status_code=503, detail=str(exc))
+        except httpx.HTTPError as exc:
+            raise HTTPException(status_code=502, detail=f"Scoring model error: {exc}")
+        except (ValueError, json.JSONDecodeError) as exc:
+            raise HTTPException(status_code=502, detail=f"Could not parse model output: {exc}")
 
     return app
 

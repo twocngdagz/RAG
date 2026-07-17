@@ -129,6 +129,26 @@ export interface BookInfo {
   chapter_count: number
 }
 
+// ---- Essay feedback (live scoring against the PTE Write Essay rubric) --------
+
+export interface EssayTrait {
+  name: string
+  score: number
+  max: number
+  evidence: string
+  fix: string
+}
+
+export interface EssayFeedback {
+  word_count: number
+  gating_applied: boolean
+  traits: EssayTrait[]
+  raw_total: number
+  max_raw_total: number
+  top_priorities: string[]
+  one_line_verdict: string
+}
+
 /** Read the text of a field that is a grounded object or (legacy) a bare string. */
 export function textOf(value: Grounded | string | null | undefined): string | null {
   if (value == null) return null
