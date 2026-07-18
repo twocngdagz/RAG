@@ -172,6 +172,16 @@ export interface EssayAttempt {
   traits: { name: string; score: number; max: number }[]
 }
 
+export interface EssayAttemptDetail {
+  id: number
+  chapter_number: number
+  created_at: string
+  prompt_type: string | null
+  prompt_text: string
+  essay_text: string
+  feedback: EssayFeedback
+}
+
 /** Read the text of a field that is a grounded object or (legacy) a bare string. */
 export function textOf(value: Grounded | string | null | undefined): string | null {
   if (value == null) return null

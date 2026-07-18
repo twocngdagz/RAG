@@ -9,6 +9,7 @@ import {
   PenLine,
   RotateCcw,
   Send,
+  X,
 } from 'lucide-react'
 import { api } from '../lib/api'
 import { useAsync } from '../lib/useAsync'
@@ -77,6 +78,7 @@ export function EssayPractice({ slug, number }: { slug: string; number: number }
   // History (scored attempts, DB-backed). Re-fetched after each new score.
   const [historyVersion, setHistoryVersion] = useState(0)
   const history = useAsync(() => api.essayAttempts(slug), [slug, historyVersion])
+  const [selectedAttempt, setSelectedAttempt] = useState<number | null>(null)
 
   const [seconds, setSeconds] = useState(EXAM_SECONDS)
   const [running, setRunning] = useState(false)
@@ -269,7 +271,10 @@ export function EssayPractice({ slug, number }: { slug: string; number: number }
 
       {result && <FeedbackReport r={result} onRetry={reset} />}
 
-      <HistorySection attempts={history.data ?? []} />
+      <HistorySection attempts={history.data ?? []} onSelect={setSelectedAttempt} />
+      {selectedAttempt != null && (
+        <AttemptModal slug={slug} id={selectedAttempt} onClose={() => setSelectedAttempt(null)} />
+      )}
     </div>
   )
 }
@@ -280,8 +285,15 @@ const shortDate = (iso: string) => {
   return d || iso
 }
 
-/** Progress history — hidden by default; expands to a score trend + attempt list. */
-function HistorySection({ attempts }: { attempts: EssayAttempt[] }) {
+/** Progress history — hidden by default; expands to a score trend + attempt list.
+ * Each attempt opens its full evaluation in a modal. */
+function HistorySection({
+  attempts,
+  onSelect,
+}: {
+  attempts: EssayAttempt[]
+  onSelect: (id: number) => void
+}) {
   const [open, setOpen] = useState(false)
   if (attempts.length === 0) return null
 
@@ -317,18 +329,25 @@ function HistorySection({ attempts }: { attempts: EssayAttempt[] }) {
           {series.length > 1 && <Sparkline series={series.map((a) => a.raw_total)} max={max} />}
           <ul className="space-y-2">
             {attempts.map((a) => (
-              <li key={a.id} className="flex items-center gap-3 rounded-lg border border-slate-200 bg-white p-3">
-                <span className="flex w-12 shrink-0 flex-col items-center rounded-md bg-brand-50 py-1 text-brand-700">
-                  <span className="text-sm font-bold tabular-nums">{a.raw_total}</span>
-                  <span className="text-[10px] text-brand-400">/{a.max_raw_total}</span>
-                </span>
-                <span className="min-w-0 flex-1">
-                  <span className="block truncate text-sm text-slate-700">{a.prompt_excerpt}</span>
-                  <span className="text-xs text-slate-400">
-                    {shortDate(a.created_at)} · {a.word_count} words
-                    {a.prompt_type ? ` · ${a.prompt_type.replace(/_/g, ' ')}` : ''}
+              <li key={a.id}>
+                <button
+                  type="button"
+                  onClick={() => onSelect(a.id)}
+                  className="flex w-full items-center gap-3 rounded-lg border border-slate-200 bg-white p-3 text-left transition-colors hover:border-brand-300 hover:bg-brand-50/40"
+                >
+                  <span className="flex w-12 shrink-0 flex-col items-center rounded-md bg-brand-50 py-1 text-brand-700">
+                    <span className="text-sm font-bold tabular-nums">{a.raw_total}</span>
+                    <span className="text-[10px] text-brand-400">/{a.max_raw_total}</span>
                   </span>
-                </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block truncate text-sm text-slate-700">{a.prompt_excerpt}</span>
+                    <span className="text-xs text-slate-400">
+                      {shortDate(a.created_at)} · {a.word_count} words
+                      {a.prompt_type ? ` · ${a.prompt_type.replace(/_/g, ' ')}` : ''}
+                    </span>
+                  </span>
+                  <ChevronDown className="size-4 shrink-0 -rotate-90 text-slate-300" aria-hidden="true" />
+                </button>
               </li>
             ))}
           </ul>
@@ -360,10 +379,93 @@ function Sparkline({ series, max }: { series: number[]; max: number }) {
   )
 }
 
+/** Full evaluation of a past attempt, shown in a modal: prompt, the essay you
+ * wrote, and the complete trait breakdown. */
+function AttemptModal({ slug, id, onClose }: { slug: string; id: number; onClose: () => void }) {
+  const detail = useAsync(() => api.essayAttempt(slug, id), [slug, id])
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && onClose()
+    window.addEventListener('keydown', onKey)
+    document.body.style.overflow = 'hidden'
+    return () => {
+      window.removeEventListener('keydown', onKey)
+      document.body.style.overflow = ''
+    }
+  }, [onClose])
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-slate-900/50 p-4 sm:p-8"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+    >
+      <div
+        className="my-4 w-full max-w-2xl rounded-2xl bg-white p-6 shadow-xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="flex items-start justify-between gap-4">
+          <h2 className="font-display text-lg font-bold text-slate-900">Your evaluation</h2>
+          <button
+            type="button"
+            onClick={onClose}
+            className="rounded-md p-1 text-slate-400 hover:bg-slate-100 hover:text-slate-600"
+            aria-label="Close"
+          >
+            <X className="size-5" />
+          </button>
+        </div>
+
+        {detail.loading ? (
+          <div className="flex items-center gap-2 py-10 text-slate-400">
+            <Loader2 className="size-4 animate-spin" aria-hidden="true" /> Loading…
+          </div>
+        ) : detail.data ? (
+          <div className="mt-4 space-y-5">
+            <div className="rounded-lg bg-slate-50 p-3 ring-1 ring-slate-200/60">
+              <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">Prompt</p>
+              <p className="mt-1 text-sm text-slate-700">{detail.data.prompt_text}</p>
+            </div>
+            <div>
+              <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-slate-400">
+                Your essay
+              </p>
+              <div className="max-h-56 overflow-y-auto whitespace-pre-wrap rounded-lg border border-slate-200 bg-white p-3 text-sm leading-relaxed text-slate-700">
+                {detail.data.essay_text}
+              </div>
+            </div>
+            <FeedbackBody r={detail.data.feedback} />
+          </div>
+        ) : (
+          <p className="py-10 text-sm text-rose-600">Couldn’t load this attempt. {detail.error}</p>
+        )}
+      </div>
+    </div>
+  )
+}
+
 function FeedbackReport({ r, onRetry }: { r: EssayFeedback; onRetry: () => void }) {
-  const pct = r.max_raw_total ? Math.round((100 * r.raw_total) / r.max_raw_total) : 0
   return (
     <div className="mt-6 space-y-5">
+      <FeedbackBody r={r} />
+      <button
+        type="button"
+        onClick={onRetry}
+        className="inline-flex items-center gap-2 rounded-xl border border-slate-300 px-5 py-2.5 font-medium text-slate-700 hover:bg-slate-100"
+      >
+        <RotateCcw className="size-4" aria-hidden="true" /> Write another
+      </button>
+    </div>
+  )
+}
+
+/** The score header + trait breakdown + priorities, reused by the live result
+ * and the history-detail modal. */
+function FeedbackBody({ r }: { r: EssayFeedback }) {
+  const pct = r.max_raw_total ? Math.round((100 * r.raw_total) / r.max_raw_total) : 0
+  return (
+    <div className="space-y-5">
       {/* Score header */}
       <div className="rounded-2xl bg-gradient-to-br from-brand-700 to-brand-900 p-6 text-white">
         <div className="flex items-end justify-between gap-4">
@@ -444,14 +546,6 @@ function FeedbackReport({ r, onRetry }: { r: EssayFeedback; onRetry: () => void 
           </ol>
         </div>
       )}
-
-      <button
-        type="button"
-        onClick={onRetry}
-        className="inline-flex items-center gap-2 rounded-xl border border-slate-300 px-5 py-2.5 font-medium text-slate-700 hover:bg-slate-100"
-      >
-        <RotateCcw className="size-4" aria-hidden="true" /> Write another
-      </button>
     </div>
   )
 }

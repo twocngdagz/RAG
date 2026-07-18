@@ -3,6 +3,7 @@ import type {
   ChapterDocument,
   ChapterIndexItem,
   EssayAttempt,
+  EssayAttemptDetail,
   EssayFeedback,
   EssayPrompt,
   LessonEnrichment,
@@ -54,4 +55,6 @@ export const api = {
     }),
   essayPrompts: () => get<EssayPrompt[]>('/essay-prompts'),
   essayAttempts: (slug: string) => get<EssayAttempt[]>(`/books/${slug}/essay-attempts`),
+  essayAttempt: (slug: string, id: number) =>
+    get<EssayAttemptDetail>(`/books/${slug}/essay-attempts/${id}`),
 }

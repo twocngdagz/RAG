@@ -204,6 +204,24 @@ def create_app(engine: Engine | None = None) -> FastAPI:
         session.commit()
         return feedback
 
+    @app.get("/books/{slug}/essay-attempts/{attempt_id}")
+    def get_essay_attempt(
+        slug: str, attempt_id: int, session: Session = Depends(get_session)
+    ) -> dict[str, Any]:
+        """One saved attempt in full — prompt, essay, and the complete feedback."""
+        rec = session.get(store.EssayAttempt, attempt_id)
+        if rec is None or rec.book_slug != slug:
+            raise HTTPException(status_code=404, detail=f"Attempt {attempt_id} not found.")
+        return {
+            "id": rec.id,
+            "chapter_number": rec.chapter_number,
+            "created_at": rec.created_at,
+            "prompt_type": rec.prompt_type,
+            "prompt_text": rec.prompt_text,
+            "essay_text": rec.essay_text,
+            "feedback": json.loads(rec.feedback),
+        }
+
     @app.get("/books/{slug}/essay-attempts")
     def get_essay_attempts(
         slug: str, session: Session = Depends(get_session)
