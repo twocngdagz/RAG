@@ -6,9 +6,12 @@ import {
   Clock,
   History,
   Loader2,
+  Minus,
   PenLine,
   RotateCcw,
   Send,
+  TrendingDown,
+  TrendingUp,
   X,
 } from 'lucide-react'
 import { api } from '../lib/api'
@@ -327,6 +330,7 @@ function HistorySection({
       {open && (
         <div className="mt-4 space-y-4">
           {series.length > 1 && <Sparkline series={series.map((a) => a.raw_total)} max={max} />}
+          <TraitProgress attempts={attempts} />
           <ul className="space-y-2">
             {attempts.map((a) => (
               <li key={a.id}>
@@ -377,6 +381,83 @@ function Sparkline({ series, max }: { series: number[]; max: number }) {
       </svg>
     </div>
   )
+}
+
+const TRAIT_MAX: Record<string, number> = {
+  content: 6,
+  form: 2,
+  development_structure_coherence: 6,
+  grammar: 2,
+  general_linguistic_range: 6,
+  vocabulary_range: 2,
+  spelling: 2,
+}
+const TRAIT_ORDER = Object.keys(TRAIT_MAX)
+
+/** Per-trait progress: for each of the seven traits, a mini trend + latest score
+ * + direction, so a learner sees which specific weakness is improving or stuck. */
+function TraitProgress({ attempts }: { attempts: EssayAttempt[] }) {
+  const series = [...attempts].reverse() // oldest -> newest
+  const rows = TRAIT_ORDER.map((name) => {
+    const scores = series
+      .map((a) => a.traits.find((t) => t.name === name)?.score)
+      .filter((v): v is number => typeof v === 'number')
+    return { name, scores, max: TRAIT_MAX[name] }
+  }).filter((r) => r.scores.length > 0)
+
+  if (rows.length === 0) return null
+
+  return (
+    <div className="rounded-lg bg-slate-50 p-3 ring-1 ring-slate-200/60">
+      <p className="mb-2 text-xs font-medium text-slate-500">Progress by trait</p>
+      <div className="space-y-1.5">
+        {rows.map((r) => {
+          const latest = r.scores[r.scores.length - 1]
+          const delta = latest - r.scores[0]
+          return (
+            <div key={r.name} className="flex items-center gap-3">
+              <span className="w-44 shrink-0 truncate text-xs text-slate-600">
+                {TRAIT_LABEL[r.name] ?? r.name}
+              </span>
+              <div className="h-4 min-w-0 flex-1">
+                {r.scores.length > 1 && <MiniSpark scores={r.scores} max={r.max} />}
+              </div>
+              <span className="inline-flex w-16 shrink-0 items-center justify-end gap-1 text-xs tabular-nums">
+                <span className="font-semibold text-slate-700">
+                  {latest}/{r.max}
+                </span>
+                {r.scores.length > 1 && <TrendArrow delta={delta} />}
+              </span>
+            </div>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
+
+function MiniSpark({ scores, max }: { scores: number[]; max: number }) {
+  const w = 100
+  const hgt = 16
+  const n = scores.length
+  const pts = scores
+    .map((v, i) => {
+      const x = n === 1 ? 0 : (i / (n - 1)) * w
+      const y = hgt - (Math.max(0, Math.min(v, max)) / max) * hgt
+      return `${x.toFixed(1)},${y.toFixed(1)}`
+    })
+    .join(' ')
+  return (
+    <svg viewBox={`0 0 ${w} ${hgt}`} className="h-4 w-full text-brand-400" preserveAspectRatio="none" aria-hidden="true">
+      <polyline points={pts} fill="none" stroke="currentColor" strokeWidth="1.5" vectorEffect="non-scaling-stroke" />
+    </svg>
+  )
+}
+
+function TrendArrow({ delta }: { delta: number }) {
+  if (delta > 0) return <TrendingUp className="size-3.5 text-emerald-600" aria-label={`up ${delta}`} />
+  if (delta < 0) return <TrendingDown className="size-3.5 text-rose-500" aria-label={`down ${delta}`} />
+  return <Minus className="size-3.5 text-slate-300" aria-label="no change" />
 }
 
 /** Full evaluation of a past attempt, shown in a modal: prompt, the essay you
