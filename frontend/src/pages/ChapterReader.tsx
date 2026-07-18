@@ -35,12 +35,10 @@ export function ChapterReader({ chapters }: { chapters: ChapterIndexItem[] }) {
     () => (hasCoach ? api.enrichment(slug, number) : Promise.resolve(null)),
     [slug, number, hasCoach],
   )
-  // Writing tasks get a live practice+feedback tab. Prompts come from the
-  // lesson's own worked examples (their `input` is the essay prompt).
+  // Writing tasks get a live practice+feedback tab; the essay prompt bank is
+  // served separately (validated by essay_prompts.py), so the tab just needs to
+  // know this is an essay lesson.
   const canPractice = enrich.data?.task_type === 'write_essay'
-  const essayPrompts = Array.from(
-    new Set((enrich.data?.worked_examples ?? []).map((w) => (w.input || '').trim()).filter(Boolean)),
-  )
 
   const [view, setView] = useState<'lesson' | 'coach' | 'practice'>('lesson')
   useEffect(() => {
@@ -100,7 +98,7 @@ export function ChapterReader({ chapters }: { chapters: ChapterIndexItem[] }) {
     return (
       <>
         {tabs}
-        <EssayPractice slug={slug} number={number} prompts={essayPrompts} />
+        <EssayPractice slug={slug} number={number} />
       </>
     )
   }

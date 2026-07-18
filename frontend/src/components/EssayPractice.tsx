@@ -9,6 +9,7 @@ import {
   Send,
 } from 'lucide-react'
 import { api } from '../lib/api'
+import { useAsync } from '../lib/useAsync'
 import type { EssayFeedback } from '../lib/types'
 
 const TRAIT_LABEL: Record<string, string> = {
@@ -19,6 +20,14 @@ const TRAIT_LABEL: Record<string, string> = {
   general_linguistic_range: 'General linguistic range',
   vocabulary_range: 'Vocabulary range',
   spelling: 'Spelling',
+}
+
+const TYPE_LABEL: Record<string, string> = {
+  agree_disagree: 'Agree / Disagree',
+  advantages_disadvantages: 'Advantages / Disadvantages',
+  problem_solution: 'Problem / Solution',
+  positive_negative: 'Positive / Negative',
+  discuss_two_views: 'Discuss both views',
 }
 
 const CUSTOM = '__custom__'
@@ -41,16 +50,11 @@ function mmss(total: number) {
   return `${m}:${s.toString().padStart(2, '0')}`
 }
 
-export function EssayPractice({
-  slug,
-  number,
-  prompts,
-}: {
-  slug: string
-  number: number
-  prompts: string[]
-}) {
-  const [choice, setChoice] = useState(prompts[0] ?? CUSTOM)
+export function EssayPractice({ slug, number }: { slug: string; number: number }) {
+  const bank = useAsync(() => api.essayPrompts(), [])
+  const prompts = bank.data ?? []
+
+  const [choice, setChoice] = useState('') // prompt id, or CUSTOM
   const [customPrompt, setCustomPrompt] = useState('')
   const [essay, setEssay] = useState('')
   const [loading, setLoading] = useState(false)
@@ -60,6 +64,11 @@ export function EssayPractice({
   const [seconds, setSeconds] = useState(EXAM_SECONDS)
   const [running, setRunning] = useState(false)
   const timer = useRef<ReturnType<typeof setInterval> | null>(null)
+
+  // Default to the first prompt once the bank loads.
+  useEffect(() => {
+    if (prompts.length && !choice) setChoice(prompts[0].id)
+  }, [prompts, choice])
 
   useEffect(() => {
     if (!running) return
@@ -77,9 +86,15 @@ export function EssayPractice({
     }
   }, [running])
 
-  const prompt = choice === CUSTOM ? customPrompt : choice
+  const selected = prompts.find((p) => p.id === choice)
+  const promptText =
+    choice === CUSTOM
+      ? customPrompt.trim()
+      : selected
+        ? `${selected.statement} ${selected.directive} ${selected.instruction}`.trim()
+        : ''
   const words = countWords(essay)
-  const canSubmit = prompt.trim().length > 0 && words > 0 && !loading
+  const canSubmit = promptText.length > 0 && words > 0 && !loading
 
   async function submit() {
     setLoading(true)
@@ -87,7 +102,7 @@ export function EssayPractice({
     setResult(null)
     setRunning(false)
     try {
-      setResult(await api.essayFeedback(slug, number, prompt.trim(), essay.trim()))
+      setResult(await api.essayFeedback(slug, number, promptText, essay.trim()))
     } catch (e) {
       setError(e instanceof Error ? e.message : String(e))
     } finally {
@@ -125,19 +140,24 @@ export function EssayPractice({
             <label htmlFor="prompt" className="text-xs font-semibold uppercase tracking-wide text-slate-400">
               Essay prompt
             </label>
-            <select
-              id="prompt"
-              value={choice}
-              onChange={(e) => setChoice(e.target.value)}
-              className="mt-1.5 w-full cursor-pointer rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-800 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-100"
-            >
-              {prompts.map((p, i) => (
-                <option key={i} value={p}>
-                  {p.length > 90 ? p.slice(0, 90) + '…' : p}
-                </option>
-              ))}
-              <option value={CUSTOM}>Write my own prompt…</option>
-            </select>
+            {bank.loading ? (
+              <p className="mt-2 text-sm text-slate-400">Loading prompts…</p>
+            ) : (
+              <select
+                id="prompt"
+                value={choice}
+                onChange={(e) => setChoice(e.target.value)}
+                className="mt-1.5 w-full cursor-pointer rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-800 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-100"
+              >
+                {prompts.map((p) => (
+                  <option key={p.id} value={p.id}>
+                    {(TYPE_LABEL[p.type] ?? p.type)} — {p.topic.replace(/_/g, ' ')}
+                  </option>
+                ))}
+                <option value={CUSTOM}>Write my own prompt…</option>
+              </select>
+            )}
+
             {choice === CUSTOM ? (
               <textarea
                 value={customPrompt}
@@ -147,9 +167,18 @@ export function EssayPractice({
                 rows={2}
               />
             ) : (
-              <p className="mt-2 rounded-lg bg-slate-50 p-3 text-sm text-slate-700 ring-1 ring-slate-200/60">
-                {choice}
-              </p>
+              selected && (
+                <div className="mt-2 rounded-lg bg-slate-50 p-4 ring-1 ring-slate-200/60">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-100 px-2.5 py-0.5 text-xs font-medium text-brand-800">
+                    {TYPE_LABEL[selected.type] ?? selected.type} · {selected.time_minutes} min ·{' '}
+                    {selected.word_range[0]}–{selected.word_range[1]} words
+                  </span>
+                  <p className="mt-2 leading-relaxed text-slate-800">
+                    {selected.statement} <strong className="text-slate-900">{selected.directive}</strong>{' '}
+                    {selected.instruction}
+                  </p>
+                </div>
+              )
             )}
           </div>
 
@@ -165,15 +194,13 @@ export function EssayPractice({
               </span>
               <button
                 type="button"
-                onClick={() => (running ? setRunning(false) : setRunning(true))}
+                onClick={() => setRunning((r) => !r)}
                 className="rounded-lg px-3 py-1.5 text-sm font-medium text-brand-700 hover:bg-brand-50"
               >
                 {running ? 'Pause' : seconds === EXAM_SECONDS ? 'Start timer' : 'Resume'}
               </button>
             </div>
-            <span className={`text-sm font-semibold tabular-nums ${wordClass(words)}`}>
-              {words} words
-            </span>
+            <span className={`text-sm font-semibold tabular-nums ${wordClass(words)}`}>{words} words</span>
           </div>
 
           {/* Essay */}

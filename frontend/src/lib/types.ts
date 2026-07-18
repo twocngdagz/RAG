@@ -149,6 +149,17 @@ export interface EssayFeedback {
   one_line_verdict: string
 }
 
+export interface EssayPrompt {
+  id: string
+  type: string
+  topic: string
+  statement: string
+  directive: string
+  instruction: string
+  time_minutes: number
+  word_range: [number, number]
+}
+
 /** Read the text of a field that is a grounded object or (legacy) a bare string. */
 export function textOf(value: Grounded | string | null | undefined): string | null {
   if (value == null) return null

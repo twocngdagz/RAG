@@ -3,6 +3,7 @@ import type {
   ChapterDocument,
   ChapterIndexItem,
   EssayFeedback,
+  EssayPrompt,
   LessonEnrichment,
 } from './types'
 
@@ -46,4 +47,5 @@ export const api = {
     get<LessonEnrichment>(`/books/${slug}/chapters/${n}/enrichment`),
   essayFeedback: (slug: string, n: number, prompt: string, essay: string) =>
     post<EssayFeedback>(`/books/${slug}/chapters/${n}/essay-feedback`, { prompt, essay }),
+  essayPrompts: () => get<EssayPrompt[]>('/essay-prompts'),
 }

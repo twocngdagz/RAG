@@ -21,6 +21,7 @@ drift. Pydantic covers only the light index layer; the body is a passthrough.
 
 import json
 import os
+from pathlib import Path
 from typing import Any
 
 import httpx
@@ -97,6 +98,16 @@ def create_app(engine: Engine | None = None) -> FastAPI:
     @app.get("/health")
     def health() -> dict[str, str]:
         return {"status": "ok"}
+
+    @app.get("/essay-prompts")
+    def get_essay_prompts() -> list[dict[str, Any]]:
+        """The validated Write Essay practice-prompt bank (essay_prompts.py output).
+        Book-agnostic; read on each request so a regenerated bank shows up live."""
+        path = Path(os.getenv("ESSAY_PROMPTS_FILE", "output/essay_prompts.json"))
+        if not path.exists():
+            return []
+        data = json.loads(path.read_text(encoding="utf-8"))
+        return data.get("prompts", data) if isinstance(data, dict) else data
 
     @app.get("/books", response_model=list[BookInfo])
     def get_books(session: Session = Depends(get_session)) -> list[dict[str, Any]]:

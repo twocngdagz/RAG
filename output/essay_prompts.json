@@ -1,0 +1,199 @@
+{
+  "prompts": [
+    {
+      "type": "advantages_disadvantages",
+      "topic": "remote_learning",
+      "statement": "The rapid shift to online platforms has made remote learning a common practice in many educational institutions worldwide.",
+      "directive": "Discuss the advantages and disadvantages and give your own opinion.",
+      "instruction": "Support your position with reasons and examples.",
+      "time_minutes": 20,
+      "word_range": [
+        200,
+        300
+      ],
+      "id": "remote-learning-01"
+    },
+    {
+      "type": "advantages_disadvantages",
+      "topic": "renewable_energy_adoption",
+      "statement": "Governments are increasingly encouraging the adoption of renewable energy sources such as solar and wind power to reduce carbon emissions.",
+      "directive": "Discuss the advantages and disadvantages and give your own opinion.",
+      "instruction": "Support your position with reasons and examples.",
+      "time_minutes": 20,
+      "word_range": [
+        200,
+        300
+      ],
+      "id": "renewable-energy-adoptio-01"
+    },
+    {
+      "type": "advantages_disadvantages",
+      "topic": "gig_economy",
+      "statement": "The gig economy provides flexible work opportunities but also raises concerns about job security and benefits.",
+      "directive": "Discuss the advantages and disadvantages and give your own opinion.",
+      "instruction": "Support your position with reasons and examples.",
+      "time_minutes": 20,
+      "word_range": [
+        200,
+        300
+      ],
+      "id": "gig-economy-01"
+    },
+    {
+      "type": "agree_disagree",
+      "topic": "mandatory_volunteering",
+      "statement": "Some schools propose that all students should participate in mandatory volunteering activities as part of the curriculum.",
+      "directive": "To what extent do you agree or disagree?",
+      "instruction": "Support your position with reasons and examples.",
+      "time_minutes": 20,
+      "word_range": [
+        200,
+        300
+      ],
+      "id": "mandatory-volunteering-01"
+    },
+    {
+      "type": "agree_disagree",
+      "topic": "universal_basic_income",
+      "statement": "Universal Basic Income (UBI) is suggested as a solution to economic inequality in many developed countries.",
+      "directive": "To what extent do you agree or disagree?",
+      "instruction": "Support your position with reasons and examples.",
+      "time_minutes": 20,
+      "word_range": [
+        200,
+        300
+      ],
+      "id": "universal-basic-income-01"
+    },
+    {
+      "type": "agree_disagree",
+      "topic": "ai_teachers",
+      "statement": "There is a growing debate about whether artificial intelligence could effectively replace human teachers in classrooms.",
+      "directive": "To what extent do you agree or disagree?",
+      "instruction": "Support your position with reasons and examples.",
+      "time_minutes": 20,
+      "word_range": [
+        200,
+        300
+      ],
+      "id": "ai-teachers-01"
+    },
+    {
+      "type": "discuss_two_views",
+      "topic": "city_vs_countryside",
+      "statement": "Living in a city offers numerous conveniences, while residing in the countryside provides a quieter, more natural environment.",
+      "directive": "Discuss both views and give your own opinion.",
+      "instruction": "Support your position with reasons and examples.",
+      "time_minutes": 20,
+      "word_range": [
+        200,
+        300
+      ],
+      "id": "city-vs-countryside-01"
+    },
+    {
+      "type": "discuss_two_views",
+      "topic": "online_vs_traditional_retail",
+      "statement": "Online shopping has transformed consumer habits, but many argue that traditional brick‑and‑mortar stores still hold value.",
+      "directive": "Discuss both views and give your own opinion.",
+      "instruction": "Support your position with reasons and examples.",
+      "time_minutes": 20,
+      "word_range": [
+        200,
+        300
+      ],
+      "id": "online-vs-traditional-re-01"
+    },
+    {
+      "type": "discuss_two_views",
+      "topic": "nuclear_power",
+      "statement": "Nuclear power is promoted as a low‑carbon energy source, yet concerns about safety and waste persist.",
+      "directive": "Discuss both views and give your own opinion.",
+      "instruction": "Support your position with reasons and examples.",
+      "time_minutes": 20,
+      "word_range": [
+        200,
+        300
+      ],
+      "id": "nuclear-power-01"
+    },
+    {
+      "type": "positive_negative",
+      "topic": "telemedicine",
+      "statement": "Telemedicine allows patients to consult doctors remotely, increasing access to healthcare services.",
+      "directive": "Is this a positive or negative development?",
+      "instruction": "Support your position with reasons and examples.",
+      "time_minutes": 20,
+      "word_range": [
+        200,
+        300
+      ],
+      "id": "telemedicine-01"
+    },
+    {
+      "type": "positive_negative",
+      "topic": "rising_life_expectancy",
+      "statement": "Advancements in medicine have led to a steady increase in global life expectancy over the past decades.",
+      "directive": "Is this a positive or negative development?",
+      "instruction": "Support your position with reasons and examples.",
+      "time_minutes": 20,
+      "word_range": [
+        200,
+        300
+      ],
+      "id": "rising-life-expectancy-01"
+    },
+    {
+      "type": "positive_negative",
+      "topic": "social_media_politics",
+      "statement": "Social media platforms have become influential channels for political communication and campaigning.",
+      "directive": "Is this a positive or negative development?",
+      "instruction": "Support your position with reasons and examples.",
+      "time_minutes": 20,
+      "word_range": [
+        200,
+        300
+      ],
+      "id": "social-media-politics-01"
+    },
+    {
+      "type": "problem_solution",
+      "topic": "plastic_pollution",
+      "statement": "Plastic waste continues to accumulate in oceans, threatening marine life and ecosystems.",
+      "directive": "What are the main causes, and what measures can be taken to address them?",
+      "instruction": "Support your position with reasons and examples.",
+      "time_minutes": 20,
+      "word_range": [
+        200,
+        300
+      ],
+      "id": "plastic-pollution-01"
+    },
+    {
+      "type": "problem_solution",
+      "topic": "youth_unemployment",
+      "statement": "Many countries are experiencing high rates of unemployment among young adults, affecting economic growth and social stability.",
+      "directive": "What are the main causes, and what measures can be taken to address them?",
+      "instruction": "Support your position with reasons and examples.",
+      "time_minutes": 20,
+      "word_range": [
+        200,
+        300
+      ],
+      "id": "youth-unemployment-01"
+    },
+    {
+      "type": "problem_solution",
+      "topic": "declining_reading_habits",
+      "statement": "Adolescents are reading fewer books than previous generations, preferring digital entertainment.",
+      "directive": "What are the main causes, and what measures can be taken to address them?",
+      "instruction": "Support your position with reasons and examples.",
+      "time_minutes": 20,
+      "word_range": [
+        200,
+        300
+      ],
+      "id": "declining-reading-habits-01"
+    }
+  ]
+}
