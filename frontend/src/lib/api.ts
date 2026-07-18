@@ -2,6 +2,7 @@ import type {
   BookInfo,
   ChapterDocument,
   ChapterIndexItem,
+  EssayAttempt,
   EssayFeedback,
   EssayPrompt,
   LessonEnrichment,
@@ -45,7 +46,12 @@ export const api = {
     get<ChapterDocument>(`/books/${slug}/chapters/${n}`),
   enrichment: (slug: string, n: number) =>
     get<LessonEnrichment>(`/books/${slug}/chapters/${n}/enrichment`),
-  essayFeedback: (slug: string, n: number, prompt: string, essay: string) =>
-    post<EssayFeedback>(`/books/${slug}/chapters/${n}/essay-feedback`, { prompt, essay }),
+  essayFeedback: (slug: string, n: number, prompt: string, essay: string, promptType?: string) =>
+    post<EssayFeedback>(`/books/${slug}/chapters/${n}/essay-feedback`, {
+      prompt,
+      essay,
+      prompt_type: promptType ?? null,
+    }),
   essayPrompts: () => get<EssayPrompt[]>('/essay-prompts'),
+  essayAttempts: (slug: string) => get<EssayAttempt[]>(`/books/${slug}/essay-attempts`),
 }

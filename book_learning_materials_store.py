@@ -298,6 +298,64 @@ def chapters_with_enrichment(session: Session, book_slug: str) -> list[int]:
 
 
 # --------------------------------------------------------------------------- #
+# Essay practice attempts (the "Track" layer) — a scored practice essay is saved
+# the moment feedback succeeds, so learners can see progress over time.
+# --------------------------------------------------------------------------- #
+
+class EssayAttempt(Base):
+    __tablename__ = "essay_attempts"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    book_slug: Mapped[str] = mapped_column(String, index=True)
+    chapter_number: Mapped[int] = mapped_column(Integer)
+    prompt_type: Mapped[str | None] = mapped_column(String, nullable=True)
+    prompt_text: Mapped[str] = mapped_column(Text)
+    essay_text: Mapped[str] = mapped_column(Text)
+    word_count: Mapped[int] = mapped_column(Integer)
+    raw_total: Mapped[int] = mapped_column(Integer)
+    max_raw_total: Mapped[int] = mapped_column(Integer)
+    feedback: Mapped[str] = mapped_column(Text)  # the full feedback JSON
+    created_at: Mapped[str] = mapped_column(String)
+
+
+def save_essay_attempt(
+    session: Session,
+    *,
+    book_slug: str,
+    chapter_number: int,
+    prompt_text: str,
+    essay_text: str,
+    feedback: dict[str, Any],
+    prompt_type: str | None = None,
+) -> EssayAttempt:
+    record = EssayAttempt(
+        book_slug=book_slug,
+        chapter_number=chapter_number,
+        prompt_type=prompt_type,
+        prompt_text=prompt_text,
+        essay_text=essay_text,
+        word_count=int(feedback.get("word_count") or 0),
+        raw_total=int(feedback.get("raw_total") or 0),
+        max_raw_total=int(feedback.get("max_raw_total") or 0),
+        feedback=json.dumps(feedback, ensure_ascii=False),
+        created_at=now_iso(),
+    )
+    session.add(record)
+    session.flush()
+    return record
+
+
+def list_essay_attempts(
+    session: Session, book_slug: str | None = None, limit: int = 100
+) -> list[EssayAttempt]:
+    stmt = select(EssayAttempt)
+    if book_slug:
+        stmt = stmt.where(EssayAttempt.book_slug == book_slug)
+    stmt = stmt.order_by(EssayAttempt.id.desc()).limit(limit)
+    return list(session.scalars(stmt))
+
+
+# --------------------------------------------------------------------------- #
 # CLI
 # --------------------------------------------------------------------------- #
 

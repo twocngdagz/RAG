@@ -160,6 +160,18 @@ export interface EssayPrompt {
   word_range: [number, number]
 }
 
+export interface EssayAttempt {
+  id: number
+  chapter_number: number
+  prompt_type: string | null
+  prompt_excerpt: string
+  raw_total: number
+  max_raw_total: number
+  word_count: number
+  created_at: string
+  traits: { name: string; score: number; max: number }[]
+}
+
 /** Read the text of a field that is a grounded object or (legacy) a bare string. */
 export function textOf(value: Grounded | string | null | undefined): string | null {
   if (value == null) return null

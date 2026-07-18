@@ -2,7 +2,9 @@ import { useEffect, useRef, useState } from 'react'
 import {
   AlertTriangle,
   CheckCircle2,
+  ChevronDown,
   Clock,
+  History,
   Loader2,
   PenLine,
   RotateCcw,
@@ -10,7 +12,7 @@ import {
 } from 'lucide-react'
 import { api } from '../lib/api'
 import { useAsync } from '../lib/useAsync'
-import type { EssayFeedback } from '../lib/types'
+import type { EssayAttempt, EssayFeedback } from '../lib/types'
 
 const TRAIT_LABEL: Record<string, string> = {
   content: 'Content',
@@ -54,12 +56,27 @@ export function EssayPractice({ slug, number }: { slug: string; number: number }
   const bank = useAsync(() => api.essayPrompts(), [])
   const prompts = bank.data ?? []
 
-  const [choice, setChoice] = useState('') // prompt id, or CUSTOM
-  const [customPrompt, setCustomPrompt] = useState('')
-  const [essay, setEssay] = useState('')
+  // Draft persistence: while writing (before feedback) the essay lives in
+  // localStorage, so a refresh never loses it. Cleared once it's scored + saved.
+  const draftKey = `essay-draft:${slug}:${number}`
+  const draft0 = (() => {
+    try {
+      return JSON.parse(localStorage.getItem(draftKey) || '{}')
+    } catch {
+      return {}
+    }
+  })()
+
+  const [choice, setChoice] = useState<string>(draft0.choice || '') // prompt id, or CUSTOM
+  const [customPrompt, setCustomPrompt] = useState<string>(draft0.customPrompt || '')
+  const [essay, setEssay] = useState<string>(draft0.essay || '')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [result, setResult] = useState<EssayFeedback | null>(null)
+
+  // History (scored attempts, DB-backed). Re-fetched after each new score.
+  const [historyVersion, setHistoryVersion] = useState(0)
+  const history = useAsync(() => api.essayAttempts(slug), [slug, historyVersion])
 
   const [seconds, setSeconds] = useState(EXAM_SECONDS)
   const [running, setRunning] = useState(false)
@@ -69,6 +86,15 @@ export function EssayPractice({ slug, number }: { slug: string; number: number }
   useEffect(() => {
     if (prompts.length && !choice) setChoice(prompts[0].id)
   }, [prompts, choice])
+
+  // Persist the draft while writing (debounced). Stops once a result is shown.
+  useEffect(() => {
+    if (result) return
+    const t = setTimeout(() => {
+      localStorage.setItem(draftKey, JSON.stringify({ choice, customPrompt, essay }))
+    }, 400)
+    return () => clearTimeout(t)
+  }, [draftKey, choice, customPrompt, essay, result])
 
   useEffect(() => {
     if (!running) return
@@ -102,7 +128,10 @@ export function EssayPractice({ slug, number }: { slug: string; number: number }
     setResult(null)
     setRunning(false)
     try {
-      setResult(await api.essayFeedback(slug, number, promptText, essay.trim()))
+      const fb = await api.essayFeedback(slug, number, promptText, essay.trim(), selected?.type)
+      setResult(fb)
+      localStorage.removeItem(draftKey) // it's a saved attempt now, not a draft
+      setHistoryVersion((v) => v + 1) // pull the new attempt into history
     } catch (e) {
       setError(e instanceof Error ? e.message : String(e))
     } finally {
@@ -116,6 +145,7 @@ export function EssayPractice({ slug, number }: { slug: string; number: number }
     setEssay('')
     setSeconds(EXAM_SECONDS)
     setRunning(false)
+    localStorage.removeItem(draftKey)
   }
 
   return (
@@ -238,6 +268,94 @@ export function EssayPractice({ slug, number }: { slug: string; number: number }
       )}
 
       {result && <FeedbackReport r={result} onRetry={reset} />}
+
+      <HistorySection attempts={history.data ?? []} />
+    </div>
+  )
+}
+
+const shortDate = (iso: string) => {
+  // created_at is ISO; show a compact local date-time without pulling in a lib.
+  const d = iso.replace('T', ' ').slice(0, 16)
+  return d || iso
+}
+
+/** Progress history — hidden by default; expands to a score trend + attempt list. */
+function HistorySection({ attempts }: { attempts: EssayAttempt[] }) {
+  const [open, setOpen] = useState(false)
+  if (attempts.length === 0) return null
+
+  // Oldest -> newest for the trend line.
+  const series = [...attempts].reverse()
+  const max = series[0]?.max_raw_total || 26
+  const best = Math.max(...attempts.map((a) => a.raw_total))
+  const latest = attempts[0]
+
+  return (
+    <div className="mt-8 border-t border-slate-200 pt-5">
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        className="flex w-full items-center justify-between rounded-lg px-1 py-1 text-left hover:bg-slate-50"
+        aria-expanded={open}
+      >
+        <span className="inline-flex items-center gap-2 text-sm font-semibold text-slate-700">
+          <History className="size-4 text-slate-400" aria-hidden="true" />
+          Your history
+          <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-500">
+            {attempts.length}
+          </span>
+        </span>
+        <span className="inline-flex items-center gap-3 text-xs text-slate-400">
+          <span>latest {latest.raw_total}/{latest.max_raw_total} · best {best}/{max}</span>
+          <ChevronDown className={`size-4 transition-transform ${open ? 'rotate-180' : ''}`} aria-hidden="true" />
+        </span>
+      </button>
+
+      {open && (
+        <div className="mt-4 space-y-4">
+          {series.length > 1 && <Sparkline series={series.map((a) => a.raw_total)} max={max} />}
+          <ul className="space-y-2">
+            {attempts.map((a) => (
+              <li key={a.id} className="flex items-center gap-3 rounded-lg border border-slate-200 bg-white p-3">
+                <span className="flex w-12 shrink-0 flex-col items-center rounded-md bg-brand-50 py-1 text-brand-700">
+                  <span className="text-sm font-bold tabular-nums">{a.raw_total}</span>
+                  <span className="text-[10px] text-brand-400">/{a.max_raw_total}</span>
+                </span>
+                <span className="min-w-0 flex-1">
+                  <span className="block truncate text-sm text-slate-700">{a.prompt_excerpt}</span>
+                  <span className="text-xs text-slate-400">
+                    {shortDate(a.created_at)} · {a.word_count} words
+                    {a.prompt_type ? ` · ${a.prompt_type.replace(/_/g, ' ')}` : ''}
+                  </span>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  )
+}
+
+/** Tiny inline score-trend line, no charting library. */
+function Sparkline({ series, max }: { series: number[]; max: number }) {
+  const w = 100
+  const h = 28
+  const n = series.length
+  const pts = series
+    .map((v, i) => {
+      const x = n === 1 ? 0 : (i / (n - 1)) * w
+      const y = h - (Math.max(0, Math.min(v, max)) / max) * h
+      return `${x.toFixed(1)},${y.toFixed(1)}`
+    })
+    .join(' ')
+  return (
+    <div className="rounded-lg bg-slate-50 p-3 ring-1 ring-slate-200/60">
+      <p className="mb-1 text-xs font-medium text-slate-500">Score trend (oldest → newest)</p>
+      <svg viewBox={`0 0 ${w} ${h}`} className="h-10 w-full" preserveAspectRatio="none" aria-hidden="true">
+        <polyline points={pts} fill="none" stroke="currentColor" className="text-brand-500" strokeWidth="1.5" vectorEffect="non-scaling-stroke" />
+      </svg>
     </div>
   )
 }

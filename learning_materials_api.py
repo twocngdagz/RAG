@@ -75,6 +75,7 @@ class ChapterIndexItem(BaseModel):
 class EssayFeedbackRequest(BaseModel):
     prompt: str = Field(min_length=1, max_length=2000)
     essay: str = Field(min_length=1, max_length=8000)
+    prompt_type: str | None = None
 
 
 def create_app(engine: Engine | None = None) -> FastAPI:
@@ -175,18 +176,57 @@ def create_app(engine: Engine | None = None) -> FastAPI:
 
     @app.post("/books/{slug}/chapters/{chapter_number}/essay-feedback")
     def post_essay_feedback(
-        slug: str, chapter_number: int, body: EssayFeedbackRequest
+        slug: str,
+        chapter_number: int,
+        body: EssayFeedbackRequest,
+        session: Session = Depends(get_session),
     ) -> dict[str, Any]:
         """Live scoring: assess a learner's essay against the PTE rubric via the
-        hosted model. The app's only non-read endpoint; nothing is stored."""
+        hosted model, then persist the scored attempt so progress can be tracked."""
         try:
-            return essay_feedback.score_essay(body.prompt, body.essay)
+            feedback = essay_feedback.score_essay(body.prompt, body.essay)
         except RuntimeError as exc:  # OLLAMA_API_KEY not configured on the server
             raise HTTPException(status_code=503, detail=str(exc))
         except httpx.HTTPError as exc:
             raise HTTPException(status_code=502, detail=f"Scoring model error: {exc}")
         except (ValueError, json.JSONDecodeError) as exc:
             raise HTTPException(status_code=502, detail=f"Could not parse model output: {exc}")
+
+        store.save_essay_attempt(
+            session,
+            book_slug=slug,
+            chapter_number=chapter_number,
+            prompt_text=body.prompt,
+            essay_text=body.essay,
+            feedback=feedback,
+            prompt_type=body.prompt_type,
+        )
+        session.commit()
+        return feedback
+
+    @app.get("/books/{slug}/essay-attempts")
+    def get_essay_attempts(
+        slug: str, session: Session = Depends(get_session)
+    ) -> list[dict[str, Any]]:
+        """Scored essay attempts for a book, newest first — the practice history."""
+        out = []
+        for rec in store.list_essay_attempts(session, slug):
+            fb = json.loads(rec.feedback)
+            out.append({
+                "id": rec.id,
+                "chapter_number": rec.chapter_number,
+                "prompt_type": rec.prompt_type,
+                "prompt_excerpt": (rec.prompt_text[:90] + "…") if len(rec.prompt_text) > 90 else rec.prompt_text,
+                "raw_total": rec.raw_total,
+                "max_raw_total": rec.max_raw_total,
+                "word_count": rec.word_count,
+                "created_at": rec.created_at,
+                "traits": [
+                    {"name": t.get("name"), "score": t.get("score"), "max": t.get("max")}
+                    for t in fb.get("traits", [])
+                ],
+            })
+        return out
 
     return app
 
