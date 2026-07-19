@@ -16,7 +16,7 @@ import {
 } from 'lucide-react'
 import { api } from '../lib/api'
 import { useAsync } from '../lib/useAsync'
-import type { EssayAttempt, EssayFeedback } from '../lib/types'
+import type { EssayAttempt, EssayError, EssayFeedback } from '../lib/types'
 
 const TRAIT_LABEL: Record<string, string> = {
   content: 'Content',
@@ -272,7 +272,7 @@ export function EssayPractice({ slug, number }: { slug: string; number: number }
         </div>
       )}
 
-      {result && <FeedbackReport r={result} onRetry={reset} />}
+      {result && <FeedbackReport r={result} essay={essay} onRetry={reset} />}
 
       <HistorySection attempts={history.data ?? []} onSelect={setSelectedAttempt} />
       {selectedAttempt != null && (
@@ -516,7 +516,7 @@ function AttemptModal({ slug, id, onClose }: { slug: string; id: number; onClose
                 {detail.data.essay_text}
               </div>
             </div>
-            <FeedbackBody r={detail.data.feedback} />
+            <FeedbackBody r={detail.data.feedback} essay={detail.data.essay_text} />
           </div>
         ) : (
           <p className="py-10 text-sm text-rose-600">Couldn’t load this attempt. {detail.error}</p>
@@ -526,10 +526,10 @@ function AttemptModal({ slug, id, onClose }: { slug: string; id: number; onClose
   )
 }
 
-function FeedbackReport({ r, onRetry }: { r: EssayFeedback; onRetry: () => void }) {
+function FeedbackReport({ r, essay, onRetry }: { r: EssayFeedback; essay?: string; onRetry: () => void }) {
   return (
     <div className="mt-6 space-y-5">
-      <FeedbackBody r={r} />
+      <FeedbackBody r={r} essay={essay} />
       <button
         type="button"
         onClick={onRetry}
@@ -541,9 +541,9 @@ function FeedbackReport({ r, onRetry }: { r: EssayFeedback; onRetry: () => void 
   )
 }
 
-/** The score header + trait breakdown + priorities, reused by the live result
- * and the history-detail modal. */
-function FeedbackBody({ r }: { r: EssayFeedback }) {
+/** The score header + trait breakdown + inline corrections + priorities, reused
+ * by the live result and the history-detail modal. */
+function FeedbackBody({ r, essay }: { r: EssayFeedback; essay?: string }) {
   const pct = r.max_raw_total ? Math.round((100 * r.raw_total) / r.max_raw_total) : 0
   return (
     <div className="space-y-5">
@@ -627,6 +627,64 @@ function FeedbackBody({ r }: { r: EssayFeedback }) {
           </ol>
         </div>
       )}
+
+      {essay && r.errors && r.errors.length > 0 && <Corrections essay={essay} errors={r.errors} />}
+    </div>
+  )
+}
+
+/** Inline error corrections: the essay is shown with each flagged span struck
+ * through and its fix beside it, plus a scannable list grouped by type. */
+function Corrections({ essay, errors }: { essay: string; errors: EssayError[] }) {
+  // Walk the essay, wrapping each error's exact span in place (errors arrive in
+  // order of appearance). Spans that can't be located are still listed below.
+  const nodes: React.ReactNode[] = []
+  let cursor = 0
+  errors.forEach((e, i) => {
+    if (!e.wrong) return
+    const idx = essay.indexOf(e.wrong, cursor)
+    if (idx === -1) return
+    if (idx > cursor) nodes.push(<span key={`t${i}`}>{essay.slice(cursor, idx)}</span>)
+    nodes.push(
+      <span key={`e${i}`}>
+        <span className="rounded-sm bg-rose-100 px-0.5 text-rose-700 line-through decoration-rose-400">
+          {e.wrong}
+        </span>
+        <span className="rounded-sm bg-emerald-100 px-0.5 font-medium text-emerald-800">{e.correct}</span>
+      </span>,
+    )
+    cursor = idx + e.wrong.length
+  })
+  if (cursor < essay.length) nodes.push(<span key="tail">{essay.slice(cursor)}</span>)
+
+  return (
+    <div>
+      <div className="mb-2 flex items-center gap-3">
+        <h3 className="font-display text-sm font-semibold text-slate-900">Corrections</h3>
+        <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-500">
+          {errors.length}
+        </span>
+        <span className="ml-auto text-xs text-slate-400">
+          <span className="text-rose-600 line-through">as written</span> ·{' '}
+          <span className="text-emerald-700">suggested</span>
+        </span>
+      </div>
+      <p className="whitespace-pre-wrap rounded-xl border border-slate-200 bg-white p-4 text-sm leading-relaxed text-slate-700">
+        {nodes}
+      </p>
+      <ul className="mt-3 flex flex-wrap gap-2">
+        {errors.map((e, i) => (
+          <li
+            key={i}
+            className="inline-flex items-center gap-1 rounded-lg bg-slate-50 px-2 py-1 text-xs ring-1 ring-slate-200/70"
+            title={e.type.replace(/_/g, ' ')}
+          >
+            <span className="text-rose-600 line-through">{e.wrong}</span>
+            <span className="text-slate-400">→</span>
+            <span className="font-medium text-emerald-700">{e.correct}</span>
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }

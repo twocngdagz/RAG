@@ -160,6 +160,15 @@ them" where the argument needs "should not"). If you find one, quote it in the
 evidence for Content and/or Development, structure and coherence, and lower
 those trait scores accordingly. Do not silently ignore a contradiction.
 
+SURFACE ERRORS
+In "errors", list up to 25 concrete, correctable surface errors in the essay —
+spelling, grammar, punctuation, and clear word-choice mistakes. For each, "wrong"
+MUST be the exact text as it appears in the essay (a short span, so it can be
+located and highlighted), and "correct" is the minimal corrected version. Set
+"type" to one of: spelling, grammar, punctuation, word_choice. List them in the
+order they appear. Do not include stylistic preferences or rewrites of whole
+sentences; only genuine errors a reader would mark.
+
 WORD COUNT
 Count the words yourself. Do not trust a word count supplied by the user.
 
@@ -194,6 +203,7 @@ Use exactly this structure:
   ],
   "raw_total": <integer from 0 to 26>,
   "max_raw_total": 26,
+  "errors": [{"type": "<spelling|grammar|punctuation|word_choice>", "wrong": "<exact text as written in the essay>", "correct": "<corrected version>"}],
   "top_priorities": ["<one to three highest-impact improvements>"],
   "one_line_verdict": "<one encouraging but honest sentence>"
 }"""

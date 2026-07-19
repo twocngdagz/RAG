@@ -139,12 +139,19 @@ export interface EssayTrait {
   fix: string
 }
 
+export interface EssayError {
+  type: string // spelling | grammar | punctuation | word_choice
+  wrong: string
+  correct: string
+}
+
 export interface EssayFeedback {
   word_count: number
   gating_applied: boolean
   traits: EssayTrait[]
   raw_total: number
   max_raw_total: number
+  errors?: EssayError[]
   top_priorities: string[]
   one_line_verdict: string
 }
