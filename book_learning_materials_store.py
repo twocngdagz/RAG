@@ -152,11 +152,22 @@ def blocking_contract_errors(audit: dict[str, Any]) -> list[dict[str, Any]]:
     ]
 
 
+def _ensure_column(engine, table: str, column: str, ddl: str) -> None:
+    """Additive migration: create_all() won't add a column to an existing table.
+    Adds it with a default so existing rows keep working (no data is touched)."""
+    with engine.begin() as conn:
+        existing = [row[1] for row in conn.exec_driver_sql(f"PRAGMA table_info({table})")]
+        if existing and column not in existing:
+            conn.exec_driver_sql(f"ALTER TABLE {table} ADD COLUMN {column} {ddl}")
+
+
 def create_db(db_url: str = DEFAULT_DB_URL):
     if db_url.startswith("sqlite:///") and not db_url.endswith(":memory:"):
         Path(db_url[len("sqlite:///"):]).parent.mkdir(parents=True, exist_ok=True)
     engine = create_engine(db_url)
     Base.metadata.create_all(engine)
+    # Attempts predating multi-task support are essays.
+    _ensure_column(engine, "essay_attempts", "task_type", "VARCHAR DEFAULT 'write_essay'")
     return engine
 
 
@@ -303,11 +314,16 @@ def chapters_with_enrichment(session: Session, book_slug: str) -> list[int]:
 # --------------------------------------------------------------------------- #
 
 class EssayAttempt(Base):
+    """A scored writing-practice attempt. Despite the table name (kept so existing
+    rows are preserved), task_type distinguishes write_essay from other writing
+    tasks such as summarize_written_text."""
+
     __tablename__ = "essay_attempts"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
     book_slug: Mapped[str] = mapped_column(String, index=True)
     chapter_number: Mapped[int] = mapped_column(Integer)
+    task_type: Mapped[str] = mapped_column(String, index=True, default="write_essay")
     prompt_type: Mapped[str | None] = mapped_column(String, nullable=True)
     prompt_text: Mapped[str] = mapped_column(Text)
     essay_text: Mapped[str] = mapped_column(Text)
@@ -327,10 +343,12 @@ def save_essay_attempt(
     essay_text: str,
     feedback: dict[str, Any],
     prompt_type: str | None = None,
+    task_type: str = "write_essay",
 ) -> EssayAttempt:
     record = EssayAttempt(
         book_slug=book_slug,
         chapter_number=chapter_number,
+        task_type=task_type,
         prompt_type=prompt_type,
         prompt_text=prompt_text,
         essay_text=essay_text,
@@ -346,11 +364,16 @@ def save_essay_attempt(
 
 
 def list_essay_attempts(
-    session: Session, book_slug: str | None = None, limit: int = 100
+    session: Session,
+    book_slug: str | None = None,
+    limit: int = 100,
+    task_type: str | None = None,
 ) -> list[EssayAttempt]:
     stmt = select(EssayAttempt)
     if book_slug:
         stmt = stmt.where(EssayAttempt.book_slug == book_slug)
+    if task_type:
+        stmt = stmt.where(EssayAttempt.task_type == task_type)
     stmt = stmt.order_by(EssayAttempt.id.desc()).limit(limit)
     return list(session.scalars(stmt))
 

@@ -167,9 +167,21 @@ export interface EssayPrompt {
   word_range: [number, number]
 }
 
+export interface SwtPassage {
+  id: string
+  topic: string
+  title: string
+  passage: string
+  word_count: number
+  time_minutes: number
+  summary_word_range: [number, number]
+  central_claim?: string
+}
+
 export interface EssayAttempt {
   id: number
   chapter_number: number
+  task_type?: string
   prompt_type: string | null
   prompt_excerpt: string
   raw_total: number

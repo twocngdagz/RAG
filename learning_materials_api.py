@@ -40,6 +40,7 @@ except ImportError:
 
 import book_learning_materials_store as store
 import essay_feedback
+import swt_feedback
 
 # Sections the frontend can request individually, mapped to how they sit in the
 # chapter object. All are lists except the two chapter-level scalars.
@@ -78,6 +79,12 @@ class EssayFeedbackRequest(BaseModel):
     prompt_type: str | None = None
 
 
+class SwtFeedbackRequest(BaseModel):
+    passage: str = Field(min_length=1, max_length=4000)
+    summary: str = Field(min_length=1, max_length=1500)
+    passage_id: str | None = None
+
+
 def create_app(engine: Engine | None = None) -> FastAPI:
     engine = engine or store.create_db(os.getenv("LEARNING_MATERIALS_DB_URL", store.DEFAULT_DB_URL))
 
@@ -99,6 +106,15 @@ def create_app(engine: Engine | None = None) -> FastAPI:
     @app.get("/health")
     def health() -> dict[str, str]:
         return {"status": "ok"}
+
+    @app.get("/swt-passages")
+    def get_swt_passages() -> list[dict[str, Any]]:
+        """The validated Summarize Written Text source-passage bank."""
+        path = Path(os.getenv("SWT_PASSAGES_FILE", "output/swt_passages.json"))
+        if not path.exists():
+            return []
+        data = json.loads(path.read_text(encoding="utf-8"))
+        return data.get("passages", data) if isinstance(data, dict) else data
 
     @app.get("/essay-prompts")
     def get_essay_prompts() -> list[dict[str, Any]]:
@@ -200,6 +216,37 @@ def create_app(engine: Engine | None = None) -> FastAPI:
             essay_text=body.essay,
             feedback=feedback,
             prompt_type=body.prompt_type,
+            task_type="write_essay",
+        )
+        session.commit()
+        return feedback
+
+    @app.post("/books/{slug}/chapters/{chapter_number}/swt-feedback")
+    def post_swt_feedback(
+        slug: str,
+        chapter_number: int,
+        body: SwtFeedbackRequest,
+        session: Session = Depends(get_session),
+    ) -> dict[str, Any]:
+        """Live scoring for Summarize Written Text, then persist the attempt."""
+        try:
+            feedback = swt_feedback.score_summary(body.passage, body.summary)
+        except RuntimeError as exc:
+            raise HTTPException(status_code=503, detail=str(exc))
+        except httpx.HTTPError as exc:
+            raise HTTPException(status_code=502, detail=f"Scoring model error: {exc}")
+        except (ValueError, json.JSONDecodeError) as exc:
+            raise HTTPException(status_code=502, detail=f"Could not parse model output: {exc}")
+
+        store.save_essay_attempt(
+            session,
+            book_slug=slug,
+            chapter_number=chapter_number,
+            prompt_text=body.passage,
+            essay_text=body.summary,
+            feedback=feedback,
+            prompt_type=body.passage_id,
+            task_type="summarize_written_text",
         )
         session.commit()
         return feedback
@@ -224,15 +271,19 @@ def create_app(engine: Engine | None = None) -> FastAPI:
 
     @app.get("/books/{slug}/essay-attempts")
     def get_essay_attempts(
-        slug: str, session: Session = Depends(get_session)
+        slug: str,
+        task_type: str | None = None,
+        session: Session = Depends(get_session),
     ) -> list[dict[str, Any]]:
-        """Scored essay attempts for a book, newest first — the practice history."""
+        """Scored writing attempts for a book, newest first — the practice history.
+        Optionally filtered to one task (write_essay, summarize_written_text)."""
         out = []
-        for rec in store.list_essay_attempts(session, slug):
+        for rec in store.list_essay_attempts(session, slug, task_type=task_type):
             fb = json.loads(rec.feedback)
             out.append({
                 "id": rec.id,
                 "chapter_number": rec.chapter_number,
+                "task_type": rec.task_type,
                 "prompt_type": rec.prompt_type,
                 "prompt_excerpt": (rec.prompt_text[:90] + "…") if len(rec.prompt_text) > 90 else rec.prompt_text,
                 "raw_total": rec.raw_total,

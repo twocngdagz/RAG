@@ -21,6 +21,7 @@ import { Section } from '../components/Section'
 import { GroundedText } from '../components/GroundedText'
 import { CoachView } from '../components/CoachView'
 import { EssayPractice } from '../components/EssayPractice'
+import { SwtPractice } from '../components/SwtPractice'
 import { ErrorBoundary } from '../components/ErrorBoundary'
 
 export function ChapterReader({ chapters }: { chapters: ChapterIndexItem[] }) {
@@ -38,7 +39,8 @@ export function ChapterReader({ chapters }: { chapters: ChapterIndexItem[] }) {
   // Writing tasks get a live practice+feedback tab; the essay prompt bank is
   // served separately (validated by essay_prompts.py), so the tab just needs to
   // know this is an essay lesson.
-  const canPractice = enrich.data?.task_type === 'write_essay'
+  const taskType = enrich.data?.task_type
+  const canPractice = taskType === 'write_essay' || taskType === 'summarize_written_text'
 
   const [view, setView] = useState<'lesson' | 'coach' | 'practice'>('lesson')
   useEffect(() => {
@@ -98,7 +100,11 @@ export function ChapterReader({ chapters }: { chapters: ChapterIndexItem[] }) {
     return (
       <>
         {tabs}
-        <EssayPractice slug={slug} number={number} />
+        {taskType === 'summarize_written_text' ? (
+          <SwtPractice slug={slug} number={number} />
+        ) : (
+          <EssayPractice slug={slug} number={number} />
+        )}
       </>
     )
   }

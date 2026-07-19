@@ -6,6 +6,7 @@ import type {
   EssayAttemptDetail,
   EssayFeedback,
   EssayPrompt,
+  SwtPassage,
   LessonEnrichment,
 } from './types'
 
@@ -54,7 +55,17 @@ export const api = {
       prompt_type: promptType ?? null,
     }),
   essayPrompts: () => get<EssayPrompt[]>('/essay-prompts'),
-  essayAttempts: (slug: string) => get<EssayAttempt[]>(`/books/${slug}/essay-attempts`),
+  essayAttempts: (slug: string, taskType?: string) =>
+    get<EssayAttempt[]>(
+      `/books/${slug}/essay-attempts${taskType ? `?task_type=${encodeURIComponent(taskType)}` : ''}`,
+    ),
+  swtPassages: () => get<SwtPassage[]>('/swt-passages'),
+  swtFeedback: (slug: string, n: number, passage: string, summary: string, passageId?: string) =>
+    post<EssayFeedback>(`/books/${slug}/chapters/${n}/swt-feedback`, {
+      passage,
+      summary,
+      passage_id: passageId ?? null,
+    }),
   essayAttempt: (slug: string, id: number) =>
     get<EssayAttemptDetail>(`/books/${slug}/essay-attempts/${id}`),
 }

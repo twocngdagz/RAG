@@ -26,3 +26,4 @@ input/pdfs/*.pdf
 extracted/*.json
 extracted/*.txt
 !output/essay_prompts.json
+!output/swt_passages.json

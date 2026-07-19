@@ -18,13 +18,15 @@ import { api } from '../lib/api'
 import { useAsync } from '../lib/useAsync'
 import type { EssayAttempt, EssayError, EssayFeedback } from '../lib/types'
 
-const TRAIT_LABEL: Record<string, string> = {
+// Covers both writing tasks; names are unique across rubrics.
+export const TRAIT_LABEL: Record<string, string> = {
   content: 'Content',
   form: 'Form',
   development_structure_coherence: 'Development, structure & coherence',
   grammar: 'Grammar',
   general_linguistic_range: 'General linguistic range',
   vocabulary_range: 'Vocabulary range',
+  vocabulary: 'Vocabulary',
   spelling: 'Spelling',
 }
 
@@ -80,7 +82,7 @@ export function EssayPractice({ slug, number }: { slug: string; number: number }
 
   // History (scored attempts, DB-backed). Re-fetched after each new score.
   const [historyVersion, setHistoryVersion] = useState(0)
-  const history = useAsync(() => api.essayAttempts(slug), [slug, historyVersion])
+  const history = useAsync(() => api.essayAttempts(slug, 'write_essay'), [slug, historyVersion])
   const [selectedAttempt, setSelectedAttempt] = useState<number | null>(null)
 
   const [seconds, setSeconds] = useState(EXAM_SECONDS)
@@ -290,7 +292,7 @@ const shortDate = (iso: string) => {
 
 /** Progress history — hidden by default; expands to a score trend + attempt list.
  * Each attempt opens its full evaluation in a modal. */
-function HistorySection({
+export function HistorySection({
   attempts,
   onSelect,
 }: {
@@ -383,27 +385,20 @@ function Sparkline({ series, max }: { series: number[]; max: number }) {
   )
 }
 
-const TRAIT_MAX: Record<string, number> = {
-  content: 6,
-  form: 2,
-  development_structure_coherence: 6,
-  grammar: 2,
-  general_linguistic_range: 6,
-  vocabulary_range: 2,
-  spelling: 2,
-}
-const TRAIT_ORDER = Object.keys(TRAIT_MAX)
-
-/** Per-trait progress: for each of the seven traits, a mini trend + latest score
- * + direction, so a learner sees which specific weakness is improving or stuck. */
+/** Per-trait progress: for each trait, a mini trend + latest score + direction,
+ * so a learner sees which specific weakness is improving or stuck. Trait order
+ * and maxima are read from the data, so this works for any task type. */
 function TraitProgress({ attempts }: { attempts: EssayAttempt[] }) {
   const series = [...attempts].reverse() // oldest -> newest
-  const rows = TRAIT_ORDER.map((name) => {
-    const scores = series
-      .map((a) => a.traits.find((t) => t.name === name)?.score)
-      .filter((v): v is number => typeof v === 'number')
-    return { name, scores, max: TRAIT_MAX[name] }
-  }).filter((r) => r.scores.length > 0)
+  const template = attempts[0]?.traits ?? []
+  const rows = template
+    .map((t) => {
+      const scores = series
+        .map((a) => a.traits.find((x) => x.name === t.name)?.score)
+        .filter((v): v is number => typeof v === 'number')
+      return { name: t.name, scores, max: t.max || 1 }
+    })
+    .filter((r) => r.scores.length > 0)
 
   if (rows.length === 0) return null
 
@@ -462,7 +457,7 @@ function TrendArrow({ delta }: { delta: number }) {
 
 /** Full evaluation of a past attempt, shown in a modal: prompt, the essay you
  * wrote, and the complete trait breakdown. */
-function AttemptModal({ slug, id, onClose }: { slug: string; id: number; onClose: () => void }) {
+export function AttemptModal({ slug, id, onClose }: { slug: string; id: number; onClose: () => void }) {
   const detail = useAsync(() => api.essayAttempt(slug, id), [slug, id])
 
   useEffect(() => {
@@ -543,7 +538,7 @@ function FeedbackReport({ r, essay, onRetry }: { r: EssayFeedback; essay?: strin
 
 /** The score header + trait breakdown + inline corrections + priorities, reused
  * by the live result and the history-detail modal. */
-function FeedbackBody({ r, essay }: { r: EssayFeedback; essay?: string }) {
+export function FeedbackBody({ r, essay }: { r: EssayFeedback; essay?: string }) {
   const pct = r.max_raw_total ? Math.round((100 * r.raw_total) / r.max_raw_total) : 0
   return (
     <div className="space-y-5">
