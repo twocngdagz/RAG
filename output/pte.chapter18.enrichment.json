@@ -1,0 +1,461 @@
+{
+  "schema_version": "pte_lesson_enrichment.v1",
+  "task_type": "summarize_group_discussion",
+  "lesson_title": "Lesson 18: Summarize Group Discussion",
+  "source_label": "pte:ch18",
+  "modality": "speaking",
+  "overview": {
+    "what_it_is": "A speaking task where you listen to a 2.5‑3 minute academic group discussion among three speakers, take notes, and deliver a concise 2‑minute oral summary covering the whole conversation.",
+    "format_facts": [
+      {
+        "label": "Number of speakers",
+        "value": "Three"
+      },
+      {
+        "label": "Audio length",
+        "value": "2.5–3 minutes, plays once only"
+      },
+      {
+        "label": "Preparation time",
+        "value": "10 seconds"
+      },
+      {
+        "label": "Response time",
+        "value": "Up to 2 minutes"
+      },
+      {
+        "label": "Added to exam",
+        "value": "Permanent from 7 Aug 2025"
+      }
+    ],
+    "scoring_factors": [
+      {
+        "name": "Content",
+        "what_it_measures": "Accuracy, completeness and relevance of the summary"
+      },
+      {
+        "name": "Oral Fluency",
+        "what_it_measures": "Smoothness, pace and lack of hesitation"
+      },
+      {
+        "name": "Pronunciation",
+        "what_it_measures": "Clarity of individual sounds and intonation"
+      }
+    ],
+    "critical_rules": [
+      "Summarise the whole discussion, not a transcript.",
+      "Attribute ideas to the correct speaker.",
+      "Use academic linking words; avoid filler phrases.",
+      "Do not add information that was not said.",
+      "Cover all main ideas within the 2‑minute limit."
+    ]
+  },
+  "learning_goals": [
+    "Develop a reliable note‑taking system for group discussions.",
+    "Identify topic, main ideas and supporting details quickly.",
+    "Structure a coherent 2‑minute spoken summary.",
+    "Use academic linking language to show relationships.",
+    "Manage the 10‑second prep and 2‑minute delivery efficiently."
+  ],
+  "core_method": {
+    "name": "T‑MI‑S1/S2/S3 → Mini‑Outline → Fluent Summary",
+    "summary": "Capture Topic, Main Ideas and each Speaker’s contribution, turn notes into a brief outline, then speak fluently using linking language.",
+    "steps": [
+      {
+        "step": "Listen & Note",
+        "detail": "Write T, MI and S1‑S3 points in shorthand as you hear the discussion."
+      },
+      {
+        "step": "10‑sec Prep",
+        "detail": "Review notes, decide order of ideas, and choose linking phrases."
+      },
+      {
+        "step": "Outline",
+        "detail": "Create a 3‑line outline: intro, body (each MI), conclusion."
+      },
+      {
+        "step": "Speak",
+        "detail": "Deliver the summary, keeping eye contact with the mic, using the outline as a guide."
+      }
+    ],
+    "formula": null
+  },
+  "techniques": [
+    {
+      "name": "T‑MI‑S1/S2/S3 Note Format",
+      "purpose": "Organise information quickly and avoid confusion between speakers.",
+      "how_to": [
+        "Write ‘T:’ followed by the topic.",
+        "Under ‘MI1’, ‘MI2’, etc., list each main idea.",
+        "Beneath each MI, note S1, S2, S3 points with brief keywords."
+      ],
+      "example": "T: Renewable energy. MI1: Benefits – S1: lower emissions, S2: job creation, S3: energy security.",
+      "why_it_matters": "Ensures every main idea is captured and speakers are correctly attributed, boosting Content score.",
+      "common_error": "Mixing up speaker labels or writing full sentences that waste time."
+    },
+    {
+      "name": "Chunking & Paraphrasing",
+      "purpose": "Transform raw notes into concise academic language.",
+      "how_to": [
+        "Group related keywords into a single clause.",
+        "Replace spoken phrases with academic equivalents (e.g., ‘a lot of’ → ‘significant’)."
+      ],
+      "example": "Original note: ‘S1 says it’s cheaper.’ Paraphrased: ‘Speaker 1 argues that renewable technologies are cost‑effective.’",
+      "why_it_matters": "Improves fluency and demonstrates lexical range.",
+      "common_error": "Leaving notes word‑for‑word, leading to a stilted, transcript‑like response."
+    },
+    {
+      "name": "Linking Word Bank",
+      "purpose": "Show logical relationships between ideas.",
+      "how_to": [
+        "Keep a personal list of connectors for addition, contrast, cause, result, and exemplification.",
+        "Select the most appropriate connector during the 10‑second prep."
+      ],
+      "example": "‘Furthermore’, ‘however’, ‘as a result’, ‘for instance’.",
+      "why_it_matters": "Creates cohesion, a key criterion for Content and Fluency.",
+      "common_error": "Over‑using the same connector (e.g., ‘and’) which makes the summary sound flat."
+    },
+    {
+      "name": "Time‑Boxed Practice",
+      "purpose": "Build confidence in the 10‑second prep and 2‑minute delivery limits.",
+      "how_to": [
+        "Use a stopwatch for every practice round.",
+        "If you exceed 2 minutes, cut the least essential detail."
+      ],
+      "example": "After a 2‑minute run, you notice you spent 30 seconds repeating an idea – next time you omit it.",
+      "why_it_matters": "Prevents penalties for speaking too long or too short.",
+      "common_error": "Rushing at the end and losing clarity."
+    },
+    {
+      "name": "Active Listening Cues",
+      "purpose": "Help your brain segment the discussion into logical parts.",
+      "how_to": [
+        "Listen for signal words like ‘firstly’, ‘on the other hand’, ‘in conclusion’.",
+        "Mark a vertical line in your notes when a new speaker starts."
+      ],
+      "example": "When Speaker 2 says ‘however’, you know a contrasting point is beginning.",
+      "why_it_matters": "Facilitates accurate attribution and smoother transitions.",
+      "common_error": "Failing to notice speaker changes, leading to mis‑attribution."
+    },
+    {
+      "name": "Pronunciation Warm‑up",
+      "purpose": "Ensure clear articulation of academic vocabulary.",
+      "how_to": [
+        "Spend 2 minutes before each practice repeating key terms (e.g., ‘sustainability’, ‘mitigation’).",
+        "Record yourself and compare to a native model."
+      ],
+      "example": "‘Mitigation’ pronounced /ˌmɪtɪˈɡeɪʃən/.",
+      "why_it_matters": "Directly influences the Pronunciation score.",
+      "common_error": "Neglecting pronunciation practice, leading to mis‑understood words."
+    },
+    {
+      "name": "Filler‑Elimination Drill",
+      "purpose": "Increase fluency by reducing hesitation sounds.",
+      "how_to": [
+        "Identify common fillers (um, like, you know).",
+        "Replace them with a brief pause or a linking word."
+      ],
+      "example": "Instead of ‘um, the study…’, say ‘Consequently, the study…’",
+      "why_it_matters": "A smoother delivery boosts Oral Fluency.",
+      "common_error": "Over‑compensating and speaking in a monotone."
+    }
+  ],
+  "worked_examples": [
+    {
+      "title": "Renewable Energy Debate",
+      "input": "Three speakers discuss the advantages and challenges of renewable energy. Speaker 1 praises environmental benefits, Speaker 2 worries about reliability, and Speaker 3 suggests policy solutions.",
+      "decoding": "Identify the topic (renewable energy), three main ideas (environmental benefit, reliability concern, policy recommendation), and note each speaker’s stance.",
+      "plan": "Intro → MI1 (environmental benefit – S1) → MI2 (reliability issue – S2) → MI3 (policy solutions – S3) → Conclusion linking all ideas.",
+      "model_answer": "The discussion centres on renewable energy. Firstly, Speaker 1 argues that renewable sources dramatically reduce carbon emissions and help combat climate change, citing recent statistics on emission drops. Secondly, Speaker 2 counters that the intermittent nature of wind and solar poses reliability challenges for national grids, emphasizing the need for storage solutions. Finally, Speaker 3 proposes that governments should incentivise research into battery technology and implement clear regulatory frameworks to facilitate a smoother transition. In summary, while all three agree that renewable energy is essential for a sustainable future, they differ on the immediacy of its deployment, with Speaker 2 urging caution and Speaker 3 urging proactive policy action.",
+      "annotations": [
+        {
+          "part": "Intro",
+          "comment": "States topic and signals overview."
+        },
+        {
+          "part": "MI1",
+          "comment": "Uses ‘Firstly’ and attributes benefit to Speaker 1."
+        },
+        {
+          "part": "MI2",
+          "comment": "Contrast connector ‘Secondly’ and cites Speaker 2’s concern."
+        },
+        {
+          "part": "MI3",
+          "comment": "Introduces policy suggestion with ‘Finally’ and credits Speaker 3."
+        },
+        {
+          "part": "Conclusion",
+          "comment": "Links all ideas with ‘In summary’ and highlights agreement/disagreement."
+        }
+      ]
+    },
+    {
+      "title": "Online Learning Effectiveness",
+      "input": "Speakers discuss whether online learning can replace traditional classrooms. Speaker 1 is enthusiastic about flexibility, Speaker 2 doubts student engagement, Speaker 3 mentions hybrid models as a compromise.",
+      "decoding": "Topic = online learning. Main ideas = flexibility, engagement concerns, hybrid solution. Keep speaker attribution clear.",
+      "plan": "Intro → Flexibility (S1) → Engagement issue (S2) → Hybrid model (S3) → Overall synthesis.",
+      "model_answer": "The conversation focuses on the effectiveness of online learning. Speaker 1 highlights the flexibility it offers, noting that students can access materials anytime, which particularly benefits working professionals. In contrast, Speaker 2 raises concerns about reduced interaction and lower motivation, arguing that face‑to‑face contact is crucial for deep learning. Speaker 3 proposes a hybrid approach, suggesting that combining online modules with periodic in‑person sessions can capture the benefits of both methods while mitigating drawbacks. Overall, the panel agrees that technology will shape education, but they differ on how quickly a full shift can occur.",
+      "annotations": [
+        {
+          "part": "Flexibility",
+          "comment": "Uses ‘highlights’ to attribute positive view to S1."
+        },
+        {
+          "part": "Engagement",
+          "comment": "Contrast signaled by ‘In contrast’ for S2."
+        },
+        {
+          "part": "Hybrid",
+          "comment": "Introduces compromise with ‘proposes’ and credits S3."
+        },
+        {
+          "part": "Overall",
+          "comment": "Summarises agreement on impact, disagreement on pace."
+        }
+      ]
+    },
+    {
+      "title": "Urban Green Spaces",
+      "input": "Three urban planners discuss the role of green spaces in city health. Speaker 1 stresses mental health benefits, Speaker 2 focuses on biodiversity, Speaker 3 worries about land cost and suggests vertical gardens.",
+      "decoding": "Topic = urban green spaces. Main ideas = mental health, biodiversity, cost/vertical gardens. Keep speaker tags.",
+      "plan": "Intro → Mental health (S1) → Biodiversity (S2) → Cost & vertical gardens (S3) → Closing link.",
+      "model_answer": "The panel examines the importance of urban green spaces. Speaker 1 emphasizes that access to parks and trees improves mental well‑being, reducing stress and encouraging physical activity among residents. Speaker 2 adds that these areas serve as habitats for native species, enhancing urban biodiversity and ecosystem services. Meanwhile, Speaker 3 points out the high land prices in city centres, proposing vertical gardens and rooftop greenery as cost‑effective alternatives. In conclusion, while all agree that green spaces are vital for sustainable cities, they differ on the primary benefit—mental health versus ecological value—and on the most feasible implementation strategy.",
+      "annotations": [
+        {
+          "part": "Mental health",
+          "comment": "Uses ‘emphasizes’ to attribute to S1."
+        },
+        {
+          "part": "Biodiversity",
+          "comment": "Connects with ‘adds’ for S2."
+        },
+        {
+          "part": "Cost",
+          "comment": "Introduces contrast with ‘meanwhile’ for S3."
+        },
+        {
+          "part": "Conclusion",
+          "comment": "Highlights both agreement and differing priorities."
+        }
+      ]
+    }
+  ],
+  "useful_language": [
+    {
+      "category": "Linking words – addition",
+      "items": [
+        {
+          "item": "Furthermore",
+          "when_to_use": "Introduce an extra supporting point."
+        },
+        {
+          "item": "In addition",
+          "when_to_use": "Add another idea after the first."
+        },
+        {
+          "item": "Moreover",
+          "when_to_use": "Emphasise a further benefit or argument."
+        }
+      ]
+    },
+    {
+      "category": "Linking words – contrast",
+      "items": [
+        {
+          "item": "However",
+          "when_to_use": "Show a differing opinion or limitation."
+        },
+        {
+          "item": "On the other hand",
+          "when_to_use": "Present an alternative perspective."
+        },
+        {
+          "item": "Nevertheless",
+          "when_to_use": "Acknowledge a point but maintain your stance."
+        }
+      ]
+    },
+    {
+      "category": "Linking words – cause & effect",
+      "items": [
+        {
+          "item": "Consequently",
+          "when_to_use": "Explain a result of a previously mentioned idea."
+        },
+        {
+          "item": "As a result",
+          "when_to_use": "Summarise the outcome of a discussion point."
+        },
+        {
+          "item": "Therefore",
+          "when_to_use": "Draw a logical conclusion."
+        }
+      ]
+    },
+    {
+      "category": "Reporting verbs",
+      "items": [
+        {
+          "item": "argues",
+          "when_to_use": "When a speaker presents a strong opinion."
+        },
+        {
+          "item": "suggests",
+          "when_to_use": "When a speaker offers a proposal or idea."
+        },
+        {
+          "item": "contends",
+          "when_to_use": "When a speaker defends a position against opposition."
+        }
+      ]
+    },
+    {
+      "category": "Opinion & evaluation phrases",
+      "items": [
+        {
+          "item": "In my view",
+          "when_to_use": "Briefly state your own stance in the conclusion."
+        },
+        {
+          "item": "It appears that",
+          "when_to_use": "Introduce an observation drawn from the discussion."
+        },
+        {
+          "item": "Overall",
+          "when_to_use": "Signal the final summary of all points."
+        }
+      ]
+    }
+  ],
+  "common_mistakes": [
+    {
+      "mistake": "Listing speakers in chronological order",
+      "why_it_hurts": "Turns the response into a transcript, losing cohesion.",
+      "fix": "Group ideas by main theme, not by speaker order."
+    },
+    {
+      "mistake": "Repeating exact phrases from the audio",
+      "why_it_hurts": "Reduces lexical variety and may breach copyright.",
+      "fix": "Paraphrase using academic synonyms."
+    },
+    {
+      "mistake": "Omitting attribution",
+      "why_it_hurts": "Content score drops because examiners cannot see who said what.",
+      "fix": "Always tag each point with S1, S2 or S3 in your notes and mention the speaker in the summary."
+    },
+    {
+      "mistake": "Running out of time",
+      "why_it_hurts": "You lose points for incomplete coverage.",
+      "fix": "Practice with a stopwatch and cut the least essential detail if needed."
+    },
+    {
+      "mistake": "Using too many filler words",
+      "why_it_hurts": "Fluency score suffers.",
+      "fix": "Replace fillers with brief pauses or linking words."
+    },
+    {
+      "mistake": "Mispronouncing key academic terms",
+      "why_it_hurts": "Pronunciation score drops.",
+      "fix": "Warm‑up with a pronunciation list before each practice."
+    },
+    {
+      "mistake": "Over‑loading the summary with minor details",
+      "why_it_hurts": "Main ideas become buried, hurting Content.",
+      "fix": "Focus on the three to four central ideas only."
+    },
+    {
+      "mistake": "Using informal language (e.g., ‘cool’, ‘stuff’)",
+      "why_it_hurts": "Reduces academic register.",
+      "fix": "Replace with formal equivalents such as ‘significant’, ‘aspects’."
+    }
+  ],
+  "practice_plan": {
+    "time_budget": [
+      {
+        "phase": "Warm‑up (Listening & Pronunciation)",
+        "minutes": "15",
+        "focus": "Activate listening ear and clear key vocabulary."
+      },
+      {
+        "phase": "Note‑taking drills",
+        "minutes": "25",
+        "focus": "Practice T‑MI‑S1/S2/S3 format with short audio clips."
+      },
+      {
+        "phase": "Full‑length simulation",
+        "minutes": "30",
+        "focus": "Complete 2‑minute summary under timed conditions."
+      },
+      {
+        "phase": "Feedback & Revision",
+        "minutes": "20",
+        "focus": "Review recordings, correct mis‑attributions and pronunciation."
+      },
+      {
+        "phase": "Fluency polishing",
+        "minutes": "10",
+        "focus": "Run filler‑elimination and linking‑word drills."
+      }
+    ],
+    "drills": [
+      {
+        "name": "Signal‑Word Hunt",
+        "instructions": "Listen to a 1‑minute clip and write down every ‘firstly’, ‘however’, ‘therefore’ you hear."
+      },
+      {
+        "name": "T‑MI‑S Quick Capture",
+        "instructions": "Play a 2‑minute discussion and stop every 30 seconds to write the next T, MI or S point."
+      },
+      {
+        "name": "Paraphrase Sprint",
+        "instructions": "Take a note line and rewrite it in three different academic ways within 45 seconds."
+      },
+      {
+        "name": "Linker Swap",
+        "instructions": "Replace generic connectors in a sample summary with more precise academic linkers."
+      },
+      {
+        "name": "2‑Minute Countdown",
+        "instructions": "Deliver a full summary while a timer counts down from 2:00, aiming to finish just before zero."
+      },
+      {
+        "name": "Pronunciation Mirror",
+        "instructions": "Record yourself saying five key terms, then compare to a native model and adjust."
+      }
+    ],
+    "routine": "Start with a 2‑minute warm‑up audio, note using T‑MI‑S format, pause for 10‑second prep, deliver a 2‑minute summary, immediately replay the recording, note any filler or mis‑pronunciation, and repeat the cycle three times."
+  },
+  "mastery_checklist": [
+    "Can identify the overall topic within the first 10 seconds of listening.",
+    "Accurately records three main ideas using the MI headings.",
+    "Correctly attributes each supporting detail to Speaker 1, 2 or 3.",
+    "Uses at least two academic linking words in the summary.",
+    "Paraphrases every speaker’s point without copying exact phrasing.",
+    "Keeps the spoken response between 1:45 and 2:00 minutes.",
+    "Delivers the summary with clear, natural intonation and stress.",
+    "Avoids filler words (um, you know) for more than two seconds total.",
+    "Pronounces all academic terms (e.g., ‘mitigation’, ‘biodiversity’) correctly.",
+    "Shows contrast or agreement between speakers using appropriate connectors.",
+    "Ends with a concise conclusion that synthesises all main ideas.",
+    "Receives a Content score of 4 or higher in a mock test."
+  ],
+  "strategy_notes": [
+    "Treat the 10‑second prep as a mental rehearsal; silently picture the outline before speaking.",
+    "If you miss a detail, it is better to omit it than to guess – accuracy outweighs completeness.",
+    "Linking words should reflect the relationship you are describing; avoid random insertion."
+  ],
+  "metadata": {
+    "difficulty": "Intermediate‑Advanced",
+    "estimated_study_time": "About 2 hours, including timed practice with recorded discussions.",
+    "tags": [
+      "speaking",
+      "summarize",
+      "group discussion",
+      "note‑taking",
+      "academic"
+    ],
+    "provenance_note": "This lesson is NOT from the course book, which predates this question type. It is built from Pearson's official published guidance for the two question types added to PTE Academic on 7 August 2025 ('Prepare for the two new question types', V4 July 2025, and pearsonpte.com). Format facts, timings, do/don't advice and the sample answer come from that guidance; the method, techniques, drills and practice plan are teaching support built on top of it."
+  },
+  "source_kind": "pearson_official"
+}

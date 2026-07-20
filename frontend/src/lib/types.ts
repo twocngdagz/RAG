@@ -98,6 +98,9 @@ export interface Drill { name: string; instructions: string }
 export interface LessonEnrichment {
   schema_version: string
   task_type: string
+  /** 'pearson_official' marks a lesson built from Pearson guidance rather than
+   * the course book (which predates some current task types). */
+  source_kind?: string
   lesson_title: string
   source_label: string
   modality: string

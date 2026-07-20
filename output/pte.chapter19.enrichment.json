@@ -1,0 +1,517 @@
+{
+  "schema_version": "pte_lesson_enrichment.v1",
+  "task_type": "respond_to_a_situation",
+  "lesson_title": "Lesson 19: Respond to a Situation",
+  "source_label": "pte:ch19",
+  "modality": "speaking",
+  "overview": {
+    "what_it_is": "You listen to a short audio describing a real‑world or academic scenario and then speak a direct, polite response as if you were addressing the people in the situation.",
+    "format_facts": [
+      {
+        "label": "Prompt",
+        "value": "A short situation you both read and hear; the audio plays once."
+      },
+      {
+        "label": "Note‑taking window",
+        "value": "Allowed while listening (no extra time)"
+      },
+      {
+        "label": "Preparation time",
+        "value": "10 seconds after the audio stops"
+      },
+      {
+        "label": "Response time",
+        "value": "40 seconds"
+      }
+    ],
+    "scoring_factors": [
+      {
+        "name": "Content",
+        "what_it_measures": "Coverage of all key points, relevance, and appropriateness of tone"
+      },
+      {
+        "name": "Oral Fluency",
+        "what_it_measures": "Smoothness, rhythm, and lack of hesitation"
+      },
+      {
+        "name": "Pronunciation",
+        "what_it_measures": "Clarity of individual sounds, stress, and intonation"
+      }
+    ],
+    "critical_rules": [
+      "Mention every piece of information required by the prompt.",
+      "Speak in the first person and use a natural conversational opening.",
+      "Maintain a polite but assertive tone appropriate to the relationship.",
+      "Do NOT change dates, quantities, or any factual detail from the prompt.",
+      "Avoid memorised stock phrases; adapt language to the specific situation."
+    ]
+  },
+  "learning_goals": [
+    "Identify and extract all required information from a spoken prompt within the limited listening window.",
+    "Organise those points quickly into a logical spoken response.",
+    "Use natural spoken English (contractions, polite formulas) while staying within the 40‑second limit.",
+    "Demonstrate the three scoring criteria – Content, Fluency, Pronunciation – in practice recordings."
+  ],
+  "core_method": {
+    "name": "4‑Step Structured Response",
+    "summary": "Listen → Note → Plan → Speak, with a quick self‑check before the timer starts.",
+    "steps": [
+      {
+        "step": "Listen & Note",
+        "detail": "Focus on keywords (who, what, when, why). Jot short symbols or abbreviations; no full sentences."
+      },
+      {
+        "step": "Plan",
+        "detail": "Use the 10‑second prep to order your notes: opening, request, deadline, polite close."
+      },
+      {
+        "step": "Speak",
+        "detail": "Deliver the response in a natural tone, using contractions and linking words."
+      },
+      {
+        "step": "Self‑Check",
+        "detail": "During the first few seconds of speaking, mentally verify that you have hit every point."
+      }
+    ],
+    "formula": "Content + Fluency + Pronunciation"
+  },
+  "techniques": [
+    {
+      "name": "Active Note‑Taking",
+      "purpose": "Capture essential details fast without losing comprehension.",
+      "how_to": [
+        "Write only nouns and numbers (e.g., \"slides, info, Fri, email\").",
+        "Use arrows → to show relationships (info → email).",
+        "Underline any deadline or required action."
+      ],
+      "example": "Group project → slides → need info → by Friday EOD → email to me.",
+      "why_it_matters": "Ensures no key point is forgotten when you plan your response.",
+      "common_error": "Writing full sentences, which wastes listening time and overloads memory."
+    },
+    {
+      "name": "Chunking Information",
+      "purpose": "Group related ideas so they flow naturally in speech.",
+      "how_to": [
+        "Cluster \"who\" and \"what\" (who needs to do what).",
+        "Group time constraints together."
+      ],
+      "example": "Opening → willingness → request → deadline → closing.",
+      "why_it_matters": "Creates a clear, logical structure that listeners can follow.",
+      "common_error": "Mixing unrelated points, leading to a rambling answer."
+    },
+    {
+      "name": "Polite Opening & Closing",
+      "purpose": "Set a friendly tone and end with a clear call‑to‑action.",
+      "how_to": [
+        "Start with \"Hi everyone\" or \"Excuse me\" depending on formality.",
+        "Close with \"Does that work for you?\" or \"Thanks for your help!\""
+      ],
+      "example": "Hi team, ... Thanks, looking forward to your replies!",
+      "why_it_matters": "Shows interpersonal competence, a key part of the Content score.",
+      "common_error": "Skipping openings/closings, making the response sound abrupt."
+    },
+    {
+      "name": "Use of Contractions",
+      "purpose": "Increase naturalness and help meet fluency targets.",
+      "how_to": [
+        "Replace \"I will\" with \"I'll\".",
+        "Replace \"you are\" with \"you're\"."
+      ],
+      "example": "I'll need the info by Friday.",
+      "why_it_matters": "Speakers who sound scripted lose fluency points.",
+      "common_error": "Over‑formal language like \"I shall\" which sounds stiff."
+    },
+    {
+      "name": "Controlled Pace & Pausing",
+      "purpose": "Fit the 40‑second window without rushing or trailing.",
+      "how_to": [
+        "Practice a 40‑second timer with a metronome (≈ 150 wpm).",
+        "Insert brief pauses after each chunk."
+      ],
+      "example": "Hi everyone, (pause) I'm happy to create the slides, (pause) but I need your content by Friday, (pause) please email it to me, (pause) thanks!",
+      "why_it_matters": "Helps maintain intelligibility for the Pronunciation scorer.",
+      "common_error": "Speaking too fast, causing mispronunciations and omitted points."
+    },
+    {
+      "name": "Priority Mapping",
+      "purpose": "Guarantee that the most important points are spoken first.",
+      "how_to": [
+        "Identify the core request (deadline) and place it early.",
+        "Add supporting politeness after the core."
+      ],
+      "example": "I can make the slides, but I need the info by Friday.",
+      "why_it_matters": "If time runs out, the essential request is still delivered.",
+      "common_error": "Saving the deadline for the end and running out of time."
+    },
+    {
+      "name": "Self‑Check Phrase",
+      "purpose": "Quickly verify coverage while speaking.",
+      "how_to": [
+        "Silently run through a checklist: willingness, info needed, deadline, polite close."
+      ],
+      "example": "Before I finish, let me recap: I'm happy to do the slides, I need your material by Friday, please email me, thanks!",
+      "why_it_matters": "Reduces the chance of missing a point, boosting the Content score.",
+      "common_error": "Skipping the mental checklist and forgetting a requirement."
+    }
+  ],
+  "worked_examples": [
+    {
+      "title": "Group‑Project Slide Request",
+      "input": "You are doing a group project for a class. The other members of your group have asked you to prepare the slides for the presentation. You are willing to do the slides but need them to give you all the information that you have to include before the weekend. What would you say to them?",
+      "decoding": "Key points: (1) volunteer to make slides, (2) need all content, (3) deadline is before the weekend, (4) polite request for delivery method.",
+      "plan": "Opening → willingness → specific request (all info) → deadline (by Friday EOD) → delivery method (email) → friendly close.",
+      "model_answer": "Hi everyone! I'm happy to put together the slides for our presentation. To make sure they're ready on time, I'll need each of you to send me all the information you've gathered before the weekend – preferably by the end of day Friday. You can email the material to me, and I'll confirm once I've received everything. Does that work for you? Thanks!",
+      "annotations": [
+        {
+          "part": "Opening",
+          "comment": "Sets a friendly tone with \"Hi everyone\"."
+        },
+        {
+          "part": "Willingness",
+          "comment": "Explicitly states the speaker will create the slides."
+        },
+        {
+          "part": "Request",
+          "comment": "Clearly asks for all information."
+        },
+        {
+          "part": "Deadline",
+          "comment": "Specifies \"before the weekend\" as \"by the end of day Friday\"."
+        },
+        {
+          "part": "Delivery method",
+          "comment": "Mentions email as the preferred channel."
+        },
+        {
+          "part": "Close",
+          "comment": "Polite check‑in and gratitude."
+        }
+      ]
+    },
+    {
+      "title": "Lab‑Partner Equipment Borrow Request",
+      "input": "Your lab partner needs a microscope for tomorrow's experiment, but you only have one spare that you can lend if they return it by Thursday evening. How do you respond?",
+      "decoding": "Points: (1) agree to lend, (2) condition – return by Thursday evening, (3) confirm hand‑over time, (4) polite tone.",
+      "plan": "Greeting → agreement → condition (return by Thursday) → hand‑over details → friendly close.",
+      "model_answer": "Hey Sam, I can lend you my spare microscope for tomorrow's experiment. Just make sure you bring it back by Thursday evening so I can use it for my own work. We can meet in the lab at 9 am to hand it over. Let me know if that works. Thanks!",
+      "annotations": [
+        {
+          "part": "Greeting",
+          "comment": "Informal but appropriate for a lab partner."
+        },
+        {
+          "part": "Agreement",
+          "comment": "Offers the microscope."
+        },
+        {
+          "part": "Condition",
+          "comment": "Sets the return deadline."
+        },
+        {
+          "part": "Logistics",
+          "comment": "Specifies time and place for hand‑over."
+        },
+        {
+          "part": "Close",
+          "comment": "Polite confirmation request."
+        }
+      ]
+    },
+    {
+      "title": "Customer Service Refund Clarification",
+      "input": "A customer complains that the refund they were promised hasn't arrived. You need to apologise, confirm the refund was processed yesterday, and tell them it may take 3‑5 business days to appear. Respond.",
+      "decoding": "Key points: (1) apologise, (2) confirm processing date, (3) give realistic timeline, (4) reassure.",
+      "plan": "Apology → confirmation of processing → timeline → reassurance → closing.",
+      "model_answer": "I’m really sorry for the inconvenience. I can confirm that we processed your refund yesterday, and it should appear in your account within three to five business days. If you don’t see it by then, please let us know and we’ll investigate further. Thank you for your patience.",
+      "annotations": [
+        {
+          "part": "Apology",
+          "comment": "Shows empathy."
+        },
+        {
+          "part": "Confirmation",
+          "comment": "Provides the exact processing date."
+        },
+        {
+          "part": "Timeline",
+          "comment": "Gives a clear 3‑5 day window."
+        },
+        {
+          "part": "Reassurance",
+          "comment": "Offers next steps if the issue persists."
+        },
+        {
+          "part": "Closing",
+          "comment": "Ends with gratitude."
+        }
+      ]
+    }
+  ],
+  "useful_language": [
+    {
+      "category": "Openings",
+      "items": [
+        {
+          "item": "Hi everyone!",
+          "when_to_use": "When addressing a small group of peers."
+        },
+        {
+          "item": "Excuse me,",
+          "when_to_use": "When you need to get someone's attention in a formal setting."
+        },
+        {
+          "item": "Hey [Name],",
+          "when_to_use": "Informal one‑to‑one or familiar colleague."
+        },
+        {
+          "item": "Good morning/afternoon,",
+          "when_to_use": "When you want a slightly more formal greeting."
+        }
+      ]
+    },
+    {
+      "category": "Polite Requests",
+      "items": [
+        {
+          "item": "Could you please send me…",
+          "when_to_use": "Standard polite request."
+        },
+        {
+          "item": "I’d appreciate it if you could…",
+          "when_to_use": "When you want to sound grateful in advance."
+        },
+        {
+          "item": "Would it be possible to…",
+          "when_to_use": "When the request is a bit stronger but still courteous."
+        },
+        {
+          "item": "Please make sure to…",
+          "when_to_use": "When the request is essential and you need firmness."
+        }
+      ]
+    },
+    {
+      "category": "Time Expressions",
+      "items": [
+        {
+          "item": "by the end of day Friday",
+          "when_to_use": "Specifying a clear deadline."
+        },
+        {
+          "item": "before the weekend",
+          "when_to_use": "When the prompt uses a broader timeframe."
+        },
+        {
+          "item": "as soon as possible",
+          "when_to_use": "When urgency is implied but no exact time is given."
+        },
+        {
+          "item": "within three to five business days",
+          "when_to_use": "When giving a realistic processing window."
+        }
+      ]
+    },
+    {
+      "category": "Closing Phrases",
+      "items": [
+        {
+          "item": "Does that work for everyone?",
+          "when_to_use": "When you need confirmation from a group."
+        },
+        {
+          "item": "Thanks for your help!",
+          "when_to_use": "General gratitude after a request."
+        },
+        {
+          "item": "Let me know if you have any questions.",
+          "when_to_use": "Inviting follow‑up."
+        },
+        {
+          "item": "Looking forward to hearing from you.",
+          "when_to_use": "Polite sign‑off in a semi‑formal email‑style request."
+        }
+      ]
+    },
+    {
+      "category": "Emphatic Connectors",
+      "items": [
+        {
+          "item": "so that",
+          "when_to_use": "Explaining purpose of a request."
+        },
+        {
+          "item": "however",
+          "when_to_use": "Introducing a condition or limitation."
+        },
+        {
+          "item": "therefore",
+          "when_to_use": "Linking cause and effect."
+        },
+        {
+          "item": "and",
+          "when_to_use": "Simple conjunction to join ideas smoothly."
+        }
+      ]
+    }
+  ],
+  "common_mistakes": [
+    {
+      "mistake": "Leaving out the deadline.",
+      "why_it_hurts": "Content score drops because a key requirement is missing.",
+      "fix": "Always double‑check the prompt for any time‑related information and include it."
+    },
+    {
+      "mistake": "Repeating the same phrase three times.",
+      "why_it_hurts": "Fluency suffers due to lack of lexical variety.",
+      "fix": "Use synonyms or re‑phrase the request once you have covered the point."
+    },
+    {
+      "mistake": "Speaking in the third person.",
+      "why_it_hurts": "Content loses relevance; the task expects a direct response.",
+      "fix": "Use first‑person pronouns (I, we) and address the listeners directly."
+    },
+    {
+      "mistake": "Over‑politeness (e.g., \"Would you possibly consider…\").",
+      "why_it_hurts": "Makes the request sound weak and may affect the persuasive tone required.",
+      "fix": "Match the tone to the situation – be politely firm when the prompt calls for a clear request."
+    },
+    {
+      "mistake": "Changing a factual detail (e.g., saying \"Saturday\" instead of \"Friday\").",
+      "why_it_hurts": "Content error leads to a zero on the expert review.",
+      "fix": "Copy dates and numbers exactly as given; only re‑phrase surrounding language."
+    },
+    {
+      "mistake": "Running out of time before covering all points.",
+      "why_it_hurts": "Incomplete content and rushed delivery hurt both Content and Fluency.",
+      "fix": "Prioritise points; if time is tight, state the most critical information first."
+    },
+    {
+      "mistake": "Monotone delivery with no intonation.",
+      "why_it_hurts": "Pronunciation score drops; listeners perceive it as unnatural.",
+      "fix": "Practice natural rise and fall, especially at openings and question tags."
+    },
+    {
+      "mistake": "Reading the prompt verbatim.",
+      "why_it_hurts": "Leads to a robotic response and may miss the required tone.",
+      "fix": "Paraphrase using your own words while keeping the meaning intact."
+    },
+    {
+      "mistake": "Using overly formal language for a casual scenario.",
+      "why_it_hurts": "Tone mismatch can lower the Content rating.",
+      "fix": "Match formality to the relationship described in the prompt."
+    },
+    {
+      "mistake": "Skipping the 10‑second planning window.",
+      "why_it_hurts": "Leads to disorganised speech and missing points.",
+      "fix": "Always use the preparation seconds to organise notes into a quick mental outline."
+    },
+    {
+      "mistake": "Speaking too fast to fit everything.",
+      "why_it_hurts": "Pronunciation errors increase and intelligibility drops.",
+      "fix": "Control pace; use brief pauses to breathe and articulate."
+    },
+    {
+      "mistake": "Leaving out a polite closing.",
+      "why_it_hurts": "Makes the response feel abrupt and can affect overall impression.",
+      "fix": "End with a short courteous phrase such as \"Thanks!\" or a confirmation question."
+    }
+  ],
+  "practice_plan": {
+    "time_budget": [
+      {
+        "phase": "Warm‑up (Listening & Note‑taking)",
+        "minutes": "10",
+        "focus": "Practice extracting keywords from short prompts."
+      },
+      {
+        "phase": "Planning Drill",
+        "minutes": "5",
+        "focus": "Use the 10‑second window to organise notes into a 4‑step outline."
+      },
+      {
+        "phase": "Timed Speaking",
+        "minutes": "30",
+        "focus": "Record 6 full responses, each with the 40‑second limit."
+      },
+      {
+        "phase": "Self‑Review & Peer Feedback",
+        "minutes": "15",
+        "focus": "Check content checklist, fluency, and pronunciation using the rubric."
+      },
+      {
+        "phase": "Focused Re‑practice",
+        "minutes": "20",
+        "focus": "Target the three most frequent mistakes identified."
+      }
+    ],
+    "drills": [
+      {
+        "name": "Keyword Sprint",
+        "instructions": "Listen to a 15‑second prompt and write down only nouns, numbers, and dates. Check against a transcript."
+      },
+      {
+        "name": "10‑Second Outline",
+        "instructions": "After the prompt, set a timer for 10 seconds and verbally list your four‑step plan before speaking."
+      },
+      {
+        "name": "40‑Second Countdown",
+        "instructions": "Record yourself responding while a visible 40‑second timer runs. Replay to see if you stopped early or ran over."
+      },
+      {
+        "name": "Contraction Swap",
+        "instructions": "Take a written script of your response and rewrite every possible phrase using contractions. Practice aloud."
+      },
+      {
+        "name": "Politeness Tone Match",
+        "instructions": "Listen to two sample recordings—one overly polite, one appropriately firm. Identify which matches the prompt’s required tone."
+      },
+      {
+        "name": "Peer Role‑Play",
+        "instructions": "Partner reads the prompt aloud; you respond. Partner gives instant feedback on missing points and tone."
+      },
+      {
+        "name": "Pronunciation Mirror",
+        "instructions": "Record a short sentence, then listen and repeat trying to match stress and intonation."
+      },
+      {
+        "name": "Content Checklist Race",
+        "instructions": "Create a checklist of the prompt’s required points. After each practice response, tick off items quickly."
+      }
+    ],
+    "routine": "Start with a 2‑minute warm‑up, run through a Keyword Sprint, do the 10‑Second Outline, record a 40‑second response, review with the checklist, repeat with a new prompt, and finish with a 5‑minute cool‑down reflection."
+  },
+  "mastery_checklist": [
+    "All key points from the prompt are mentioned.",
+    "The response opens with an appropriate greeting.",
+    "Uses first‑person language throughout.",
+    "Requests are phrased politely but assertively.",
+    "Every deadline or date matches the prompt exactly.",
+    "Response stays within the 40‑second limit.",
+    "Uses at least three different linking words or connectors.",
+    "Pronunciation is clear with correct stress on content words.",
+    "No filler repetitions (e.g., \"I would like… I would like…\").",
+    "Contractions are used naturally.",
+    "Ends with a courteous closing or confirmation question.",
+    "Self‑check confirms no missing point before speaking."
+  ],
+  "strategy_notes": [
+    "Treat the 10‑second prep as a mental storyboard, not a full script.",
+    "Prioritise the deadline; if you run out of time, the request still lands.",
+    "Match formality: a peer group gets a casual tone, a supervisor needs a slightly more formal opening.",
+    "Record in a quiet environment; background noise can affect pronunciation scoring.",
+    "After each recording, listen for monotone delivery and re‑record with varied intonation."
+  ],
+  "metadata": {
+    "difficulty": "Intermediate",
+    "estimated_study_time": "About 1.5 hours, including timed spoken practice.",
+    "tags": [
+      "speaking",
+      "respond_to_a_situation",
+      "PTE",
+      "communication",
+      "fluency"
+    ],
+    "provenance_note": "This lesson is NOT from the course book, which predates this question type. It is built from Pearson's official published guidance for the two question types added to PTE Academic on 7 August 2025 ('Prepare for the two new question types', V4 July 2025, and pearsonpte.com). Format facts, timings, do/don't advice and the sample answer come from that guidance; the method, techniques, drills and practice plan are teaching support built on top of it."
+  },
+  "source_kind": "pearson_official"
+}

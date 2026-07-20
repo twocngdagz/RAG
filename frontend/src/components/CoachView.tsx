@@ -114,6 +114,18 @@ export function CoachView({ e }: { e: LessonEnrichment }) {
 
   return (
     <article className="reading mx-auto max-w-3xl px-5 py-8 sm:px-8">
+      {/* Provenance: this lesson isn't from the course book. Say so up front. */}
+      {e.source_kind === 'pearson_official' && (
+        <p className="mb-5 flex items-start gap-2.5 rounded-xl border border-amber-300 bg-amber-50 p-4 text-sm text-amber-900">
+          <Info className="mt-0.5 size-4 shrink-0 text-amber-500" aria-hidden="true" />
+          <span>
+            <strong>Not from the course book.</strong> This question type was added to PTE Academic on
+            7 August 2025, after the book was written, so the book has no material on it. This lesson
+            is built from Pearson’s official published guidance instead.
+          </span>
+        </p>
+      )}
+
       {/* Method hero */}
       <header className="animate-rise rounded-2xl bg-gradient-to-br from-brand-700 to-brand-900 p-6 text-white sm:p-8">
         <span className="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3 py-1 text-xs font-medium">

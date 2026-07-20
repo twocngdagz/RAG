@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, BookOpenCheck, ShieldCheck, Sparkles } from 'lucide-react'
+import { ArrowRight, BookOpenCheck, Info, ShieldCheck, Sparkles } from 'lucide-react'
 import type { ChapterIndexItem } from '../lib/types'
 import { bookLabel } from '../components/Sidebar'
 
@@ -20,6 +20,15 @@ export function Home({ slug, chapters }: { slug: string; chapters: ChapterIndexI
         <p className="mt-4 max-w-xl text-lg leading-relaxed text-slate-600">
           {chapters.length} lessons built from the official course — every explanation is traceable
           back to the source text, so you always know what’s fact and what’s practice.
+        </p>
+        <p className="mt-4 flex max-w-xl items-start gap-2.5 rounded-xl border border-amber-300 bg-amber-50 p-3.5 text-sm text-amber-900">
+          <Info className="mt-0.5 size-4 shrink-0 text-amber-500" aria-hidden="true" />
+          <span>
+            <strong>Coverage note:</strong> the course book predates two question types added to PTE
+            Academic on 7 August 2025 — <em>Summarize Group Discussion</em> and{' '}
+            <em>Respond to a Situation</em>. Lessons 18 and 19 cover them, built from Pearson’s
+            official guidance rather than the book, and are labelled as such.
+          </span>
         </p>
         {first && (
           <Link
