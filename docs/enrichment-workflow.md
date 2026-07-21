@@ -58,6 +58,54 @@ Notes:
 - Failures save the raw reply to `output/_lessonNN.reply.txt` and are reported at
   the end (`FAILED: [...]`) for a targeted re-run.
 
+## Fact audit (checking the exam facts against Pearson)
+
+The enrichment layer's value comes precisely from facts added *beyond* the book —
+timings, word counts, scoring traits — so nothing in the grounded pipeline can
+verify it. `audit_enrichment_facts.py` checks those facts against the official
+Pearson Score Guide PDF.
+
+```bash
+python test_audit_sensitivity.py          # FIRST — is the audit awake?
+python audit_enrichment_facts.py          # then audit all lessons
+python audit_enrichment_facts.py --chapters 7 15
+```
+
+**Run the sensitivity test first, and read a clean audit as meaningless without
+it.** It plants claims whose truth is already known and asserts the verdicts. The
+audit has quietly done nothing three separate times:
+
+| Defect | Effect |
+|---|---|
+| Evidence truncated at 9K chars while the report printed the full page list | Judged lessons on a third less rulebook than claimed; invented a contradiction against Write Essay |
+| `scoring_factors` rolled into "this task is scored on these traits: …" | Tested a claim the lesson never made; every combined lesson failed it |
+| Trait list read from p.15, which names *every* task's traits | Masked genuinely wrong trait names |
+
+### What is judged vs. what is code
+
+The model judge handles open-ended wording. Anything mechanical is deterministic,
+because the judge proved unreliable at it:
+
+- `check_trait_vocabulary` — a lesson may describe scoring in its own teaching
+  words ("Main-idea coverage"); those are unfalsifiable and ignored. But if it
+  uses one of Pearson's **actual** trait names, that trait must belong to the
+  task. The judge would not treat the guide's "Traits scored" list as closed no
+  matter how the prompt was worded, and forcing it destabilised every other
+  verdict.
+- `check_word_range` — where the guide gates Form on a word range, the lesson
+  must **state** that range. Lesson 15 shipped telling learners to "verify
+  word-count compliance" while never saying what the count was; a check that only
+  compares stated numbers would have passed it, because the bug was an absence.
+
+Measured: at `temperature 0` the judge returned `NOT_IN_GUIDE` for a plainly
+contradicted word range in **3 of 4 runs**, a different case each time. Those
+verdicts are reported but advisory — they do not decide the test's exit code, and
+`check_word_range` covers the same class of error 5/5. Do not move a check back
+onto the judge without re-measuring.
+
+`NOT_IN_GUIDE` is not a defect — the guide does not state every timing — but it
+marks a claim as unverified, which is worth knowing.
+
 ## Plan limits (this can and did restrict the account)
 
 Each lesson is a **30–60K-character generation** — a full book (with retries) can

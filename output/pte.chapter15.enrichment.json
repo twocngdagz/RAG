@@ -16,6 +16,10 @@
         "value": "You write a concise summary that communicates the topic, central message, and most important supporting points."
       },
       {
+        "label": "Summarize spoken text length",
+        "value": "Your summary must be 50-70 words. This is scored as Form: 50-70 words scores 2, 40-49 or 71-100 words scores 1, and under 40 or over 100 words scores 0. Form is a gating trait - a Form of 0 drives the whole response to zero no matter how accurate the content is."
+      },
+      {
         "label": "Highlight correct summary input",
         "value": "You hear a recording and then compare several written summary options."
       },
@@ -59,6 +63,7 @@
       }
     ],
     "critical_rules": [
+      "Keep the written summary between 50 and 70 words - going under 40 or over 100 scores 0 for Form and collapses the whole response.",
       "Listen for the topic and lecture structure before trying to record individual details.",
       "Write key words and short phrases rather than complete word-for-word sentences.",
       "Treat signpost expressions such as \"first,\" \"however,\" \"the main point,\" and \"finally\" as clues to importance and organization.",
@@ -66,7 +71,7 @@
       "Do not add background knowledge, assumptions, or opinions that were not stated in the recording.",
       "For Highlight correct summary, listen and take notes before studying the options in detail so that the options do not control or distort your understanding.",
       "Eliminate an option when it contradicts the recording, introduces unsupported information, or focuses mainly on a minor detail.",
-      "Before submitting a written summary, verify content, word-count compliance, grammar, spelling, capitalization, and punctuation."
+      "Before submitting a written summary, verify content, the 50-70 word range, grammar, spelling, capitalization, and punctuation."
     ]
   },
   "learning_goals": [
@@ -636,6 +641,6 @@
       "integrated skills",
       "timed practice"
     ],
-    "provenance_note": "Teaching-first enrichment based on the supplied Chapter 15 lesson material, including its learning objectives, terminology, source teaching points, worked examples, misconceptions, practice items, and self-check statements. Original mini lectures, response models, annotations, drills, and option-analysis examples were added to make the lesson directly teachable and suitable for independent practice."
+    "provenance_note": "Teaching-first enrichment based on the supplied Chapter 15 lesson material, including its learning objectives, terminology, source teaching points, worked examples, misconceptions, practice items, and self-check statements. Original mini lectures, response models, annotations, drills, and option-analysis examples were added to make the lesson directly teachable and suitable for independent practice. Word-count and Form banding for Summarize spoken text are taken from the official Pearson PTE Academic Score Guide (p.42), not from the course book."
   }
 }

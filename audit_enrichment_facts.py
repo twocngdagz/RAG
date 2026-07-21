@@ -88,7 +88,14 @@ def _flat(s: str) -> str:
     return re.sub(r"\s+", " ", s).lower()
 
 
-def guide_text_for(task_type: str, pages: list[str], max_chars: int = 24000) -> tuple[str, list[int]]:
+# p.15 lists every question type in one human-review note. It matches every task
+# and carries trait names belonging to *other* tasks, so it is useful context for
+# the judge but must never be read as this task's rubric.
+GENERIC_MENTION_PAGE = 15
+
+
+def guide_text_for(task_type: str, pages: list[str], max_chars: int = 24000,
+                   *, rubric_only: bool = False) -> tuple[str, list[int]]:
     """The guide pages that mention this question type, plus their page numbers so
     the report can cite them. Falls back to the scoring-overview pages."""
     names = TASK_ALIASES.get(task_type, [])
@@ -101,11 +108,115 @@ def guide_text_for(task_type: str, pages: list[str], max_chars: int = 24000) -> 
     # Page 15 only *mentions* question types (the human-review note); real rubric
     # pages matter more, so order them first — truncation must never drop the
     # rubric and leave the mention, which produced a false contradiction.
-    hits.sort(key=lambda h: (h[0] == 15, h[0]))
+    hits.sort(key=lambda h: (h[0] == GENERIC_MENTION_PAGE, h[0]))
+    if rubric_only:
+        hits = [h for h in hits if h[0] != GENERIC_MENTION_PAGE]
     if not hits:
         hits = [(i + 1, t) for i, t in enumerate(pages) if "scoring" in _flat(t)][:4]
     text = "\n\n".join(t for _, t in hits)
     return text[:max_chars], [n for n, _ in hits], matched
+
+
+# --------------------------------------------------------------------------- #
+# Deterministic check: official trait vocabulary
+# --------------------------------------------------------------------------- #
+
+# Pearson's own trait names. A lesson is free to describe scoring in its own
+# teaching words ("Main-idea coverage"), and those are not checkable here. But
+# when a lesson uses one of Pearson's ACTUAL trait names, that name has to belong
+# to the task — claiming a writing task is scored on Oral Fluency is a defect.
+#
+# This is deterministic on purpose. The model judge would not treat the guide's
+# "Traits scored" list as closed no matter how the prompt was worded, and tuning
+# the prompt to force it swung the whole audit between "flags everything" and
+# "flags nothing". Mechanical checks belong in code.
+OFFICIAL_TRAITS = (
+    "content", "form", "grammar", "vocabulary", "spelling",
+    "oral fluency", "pronunciation", "appropriacy",
+    "development, structure and coherence", "general linguistic range",
+    "vocabulary range", "linguistic range",
+)
+
+_TRAIT_HEADING_RE = re.compile(
+    r"\b(" + "|".join(re.escape(t) for t in OFFICIAL_TRAITS) + r")\s*:", re.IGNORECASE
+)
+
+
+def guide_traits(evidence: str) -> set[str]:
+    """Official trait names the guide heads a scoring band with, e.g. 'Form:'."""
+    flat = re.sub(r"\s+", " ", evidence)
+    return {m.group(1).lower() for m in _TRAIT_HEADING_RE.finditer(flat)}
+
+
+def check_trait_vocabulary(doc: dict[str, Any], evidence: str) -> list[dict[str, str]]:
+    """Lesson scoring factors that borrow an official trait name the guide does
+    not list for this task. Teaching-level paraphrases are ignored."""
+    listed = guide_traits(evidence)
+    if not listed:
+        return []
+    defects = []
+    for s in (doc.get("overview") or {}).get("scoring_factors") or []:
+        if not isinstance(s, dict) or not s.get("name"):
+            continue
+        name = str(s["name"]).strip().lower()
+        if name in OFFICIAL_TRAITS and name not in listed:
+            defects.append({
+                "factor": str(s["name"]),
+                "reason": (
+                    f"'{s['name']}' is an official PTE trait name, but the guide's "
+                    f"traits for this task are: {', '.join(sorted(listed))}."
+                ),
+            })
+    return defects
+
+
+# --------------------------------------------------------------------------- #
+# Deterministic check: the word range that gates Form
+# --------------------------------------------------------------------------- #
+
+# Guide wordings: "2 Length is between 200 and 300 words" / "2 Contains 50-70 words".
+_FORM_BAND_RE = re.compile(r"Form:\s*2\s*(.{0,80}?)(?=\s+1\s)", re.IGNORECASE)
+# Lessons write ranges several ways: "50-70 words", "between 200 and 300 words",
+# "200 to 300 words", "the required 200-to-300-word range". Missing the last form
+# made this check report a lesson that stated the range perfectly well.
+_RANGE_RE = re.compile(
+    r"(\d{1,4})\s*(?:[-–]\s*to\s*[-–]?|[-–]|to|and)\s*(\d{1,4})[-\s]*words?",
+    re.IGNORECASE,
+)
+
+
+def guide_word_range(rubric_evidence: str) -> tuple[int, int] | None:
+    """The word range that earns full Form credit, if the task has one."""
+    flat = re.sub(r"\s+", " ", rubric_evidence)
+    band = _FORM_BAND_RE.search(flat)
+    if not band:
+        return None
+    m = _RANGE_RE.search(band.group(1))
+    return (int(m.group(1)), int(m.group(2))) if m else None
+
+
+def check_word_range(doc: dict[str, Any], rubric_evidence: str) -> list[dict[str, str]]:
+    """Where the guide gates Form on a word range, the lesson has to state that
+    range. Lesson 15 shipped telling learners to 'verify word-count compliance'
+    without ever saying what the count was — a missing number, which no
+    compare-the-numbers check would ever have caught."""
+    rng = guide_word_range(rubric_evidence)
+    if not rng:
+        return []
+    ov = doc.get("overview") or {}
+    hay = " ".join(
+        [str(f.get("value", "")) for f in ov.get("format_facts") or [] if isinstance(f, dict)]
+        + [str(r) for r in ov.get("critical_rules") or []]
+    )
+    if any((int(a), int(b)) == rng for a, b in _RANGE_RE.findall(hay)):
+        return []
+    return [{
+        "range": f"{rng[0]}-{rng[1]}",
+        "reason": (
+            f"The guide gives full Form credit for {rng[0]}-{rng[1]} words, and Form "
+            f"gates the whole response. The lesson never states this range."
+        ),
+    }]
 
 
 # --------------------------------------------------------------------------- #
@@ -123,12 +234,20 @@ def extract_claims(doc: dict[str, Any]) -> list[dict[str, str]]:
                 "kind": "format_fact",
                 "text": f"{f.get('label')}: {f.get('value')}",
             })
-    names = [s.get("name") for s in (ov.get("scoring_factors") or []) if isinstance(s, dict)]
-    if names:
-        claims.append({
-            "kind": "scoring_traits",
-            "text": "This task is scored on these traits: " + ", ".join(str(n) for n in names) + ".",
-        })
+    # scoring_factors are teaching-level descriptions of what the scoring cares
+    # about — NOT a claim to reproduce Pearson's official trait names. Rolling
+    # them into "this task is scored on these traits: ..." invented a stronger
+    # claim than the lesson makes, and every combined lesson (one chapter, two
+    # question types) failed it. Judge each factor on its own, as asserted.
+    for s in ov.get("scoring_factors") or []:
+        if isinstance(s, dict) and s.get("name"):
+            claims.append({
+                "kind": "scoring_factor",
+                "text": (
+                    f"Scoring for this task takes into account "
+                    f"{s.get('name')}: {s.get('what_it_measures')}"
+                ),
+            })
     for r in ov.get("critical_rules") or []:
         if isinstance(r, str) and NUM_RE.search(r):
             claims.append({"kind": "critical_rule", "text": r})
@@ -155,6 +274,24 @@ Be strict about numbers: if the claim gives a figure (a count, a time, a word
 range, a score range) and the excerpt gives a different figure for the same thing,
 that is CONTRADICTED, not NOT_IN_GUIDE. If the excerpt simply does not mention the
 figure, that is NOT_IN_GUIDE.
+
+CONTRADICTED means incompatible, not merely different. Do NOT use it for a claim
+that is a paraphrase, is worded differently, lists the same items in a different
+order, or is narrower or broader than the excerpt while remaining consistent with
+it. Those are SUPPORTED. Reserve CONTRADICTED for claims the excerpt rules out.
+
+One lesson may cover more than one question type. A claim that plainly belongs to
+a different question type than the one the excerpt describes is NOT_IN_GUIDE, not
+CONTRADICTED.
+
+Where the excerpt gives a COMPLETE enumeration — a "Traits scored" list, a table
+of score bands — treat it as closed for that question type. A claim asserting a
+trait or band outside that list is CONTRADICTED, not NOT_IN_GUIDE.
+
+Scoring tables are statements. If a claim restates what a band says, that is
+SUPPORTED — do not downgrade it to NOT_IN_GUIDE merely because the claim is
+phrased as advice ("must", "should", "keep it") while the excerpt is phrased as a
+band ("2 Contains 50-70 words"). Judge the substance, not the wording.
 
 Quote the exact words of the excerpt you relied on; leave the quote empty for
 NOT_IN_GUIDE.
@@ -199,7 +336,10 @@ def judge(claims: list[dict[str, str]], evidence: str, *, model: str, attempts: 
                         {"role": "user", "content": user},
                     ],
                     "stream": False,
-                    "options": {"temperature": 0.1},
+                    # 0, not 0.1: at 0.1 the same planted claim flipped between
+                    # CONTRADICTED and NOT_IN_GUIDE across runs, which makes
+                    # any single clean report unreproducible.
+                    "options": {"temperature": 0},
                 },
                 timeout=300.0,
             )
@@ -279,6 +419,11 @@ def main(argv: list[str] | None = None) -> int:
         except Exception as exc:
             print(f"L{n}: audit failed — {exc}", file=sys.stderr)
             continue
+        # Trait names must come from this task's own rubric pages — p.15 names
+        # traits belonging to other tasks and would mask a real mismatch.
+        rubric_ev, _, _ = guide_text_for(task, pages, rubric_only=True)
+        trait_defects = check_trait_vocabulary(doc, rubric_ev)
+        trait_defects += check_word_range(doc, rubric_ev)
         counts = {k: sum(1 for j in judged if j["verdict"] == k) for k in totals}
         for k in totals:
             totals[k] += counts[k]
@@ -291,8 +436,12 @@ def main(argv: list[str] | None = None) -> int:
             if j["verdict"] == "CONTRADICTED":
                 print(f"     !! {j['text'][:88]}")
                 print(f"        guide says: {j['quote'][:88]}")
+        for d in trait_defects:
+            print(f"     !! {d.get('factor') or ('missing word range ' + d.get('range',''))}")
+            print(f"        {d['reason'][:96]}")
         report.append({"chapter": n, "task_type": task, "guide_pages": ev_pages,
-                       "claims": judged, "counts": counts})
+                       "claims": judged, "counts": counts,
+                       "trait_defects": trait_defects})
 
     print(f"\n{'='*60}\nTotals: {totals}")
     if skipped:
@@ -300,13 +449,23 @@ def main(argv: list[str] | None = None) -> int:
     contradicted = [
         (r["chapter"], c) for r in report for c in r["claims"] if c["verdict"] == "CONTRADICTED"
     ]
-    if contradicted:
-        print(f"\n{len(contradicted)} CONTRADICTED claim(s) — these are defects to fix:")
+    trait_defects = [(r["chapter"], d) for r in report for d in r["trait_defects"]]
+    if contradicted or trait_defects:
+        total = len(contradicted) + len(trait_defects)
+        print(f"\n{total} defect(s) to fix:")
         for n, c in contradicted:
             print(f"  L{n}: {c['text'][:90]}")
+        for n, d in trait_defects:
+            what = (f"wrong trait name '{d['factor']}'" if d.get("factor")
+                    else f"never states the {d['range']} word range that gates Form")
+            print(f"  L{n}: {what}")
+    else:
+        print("\nNo defects. (Only meaningful if test_audit_sensitivity.py passes.)")
     Path(args.output).parent.mkdir(parents=True, exist_ok=True)
     Path(args.output).write_text(
-        json.dumps({"totals": totals, "lessons": report, "skipped": skipped}, indent=2, ensure_ascii=False) + "\n",
+        json.dumps({"totals": totals,
+                    "trait_defects": [{"chapter": n, **d} for n, d in trait_defects],
+                    "lessons": report, "skipped": skipped}, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",
     )
     print(f"\nFull report -> {args.output}")
