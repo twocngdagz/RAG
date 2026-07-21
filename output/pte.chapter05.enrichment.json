@@ -34,20 +34,12 @@
     ],
     "scoring_factors": [
       {
-        "name": "Final-answer accuracy",
-        "what_it_measures": "Whether the selected ending in Select Missing Word correctly completes the speaker's meaning."
+        "name": "Select Missing Word — correct/incorrect",
+        "what_it_measures": "Scored correct or incorrect only: 1 point for the correct option, 0 for an incorrect one. The official Score Guide lists no separate scoring traits for this item type."
       },
       {
-        "name": "Contextual prediction",
-        "what_it_measures": "The ability to use topic, collocation, grammar, tone, and discourse direction to anticipate missing language."
-      },
-      {
-        "name": "Mismatch identification",
-        "what_it_measures": "The ability to detect exact differences between spoken words and the written transcript in Highlight Incorrect Words."
-      },
-      {
-        "name": "Selection control",
-        "what_it_measures": "The ability to avoid clicking uncertain words, because unsupported selections can damage performance."
+        "name": "Highlight Incorrect Words — partial credit",
+        "what_it_measures": "Scored per word with partial credit: you gain credit for each correctly identified word, and points are deducted for words you select incorrectly. The official Score Guide lists no separate scoring traits for this item type."
       }
     ],
     "critical_rules": [
@@ -571,6 +563,6 @@
       "word discrimination",
       "test strategy"
     ],
-    "provenance_note": "Teaching-first enrichment based on the supplied Chapter 5 lesson material covering Select Missing Word and Highlight Incorrect Words, including source objectives, format details, prediction strategies, sentence-stress practice, transcript comparison, worked examples, misconceptions, practice questions, and self-check outcomes."
+    "provenance_note": "Teaching-first enrichment based on the supplied Chapter 5 lesson material covering Select Missing Word and Highlight Incorrect Words, including source objectives, format details, prediction strategies, sentence-stress practice, transcript comparison, worked examples, misconceptions, practice questions, and self-check outcomes. Correction: an earlier version of this lesson named four scoring traits (\"Final-answer accuracy\", \"Contextual prediction\", \"Mismatch identification\", \"Selection control\") that do not exist. The official Score Guide (p.44) lists \"Not applicable\" for traits on both item types; they are scored correct/incorrect and per-word partial credit respectively. Fixed by the enrichment fact audit."
   }
 }

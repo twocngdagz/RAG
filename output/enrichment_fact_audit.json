@@ -1,0 +1,1190 @@
+{
+  "totals": {
+    "SUPPORTED": 23,
+    "CONTRADICTED": 3,
+    "NOT_IN_GUIDE": 101
+  },
+  "skipped": [
+    {
+      "chapter": 8,
+      "task_type": "recap_lesson_1",
+      "reason": "no guide question type"
+    },
+    {
+      "chapter": 17,
+      "task_type": "recap_lessons_8_15",
+      "reason": "no guide question type"
+    }
+  ],
+  "lessons": [
+    {
+      "chapter": 1,
+      "task_type": "answer_short_question",
+      "guide_pages": [
+        24
+      ],
+      "claims": [
+        {
+          "kind": "format_fact",
+          "text": "Input: A short spoken question",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Excerpt does not describe the input format."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Response: A brief spoken answer, often one word or a few words",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Excerpt does not specify response length."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Skills assessed: Listening and speaking",
+          "verdict": "CONTRADICTED",
+          "quote": "Listening",
+          "note": "Excerpt lists only Listening as the skill, not Speaking."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Writing required: None",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "No mention of writing requirements."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Practice target: Recognize the question and answer within 10 seconds or less",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "No time‑target information provided."
+        },
+        {
+          "kind": "scoring_traits",
+          "text": "This task is scored on these traits: Content correctness, Response appropriacy.",
+          "verdict": "SUPPORTED",
+          "quote": "Correct/ incorrect ... Vocabulary: 1 Appropriate word choice in response",
+          "note": "Excerpt shows scoring on correctness and appropriate word choice."
+        }
+      ],
+      "counts": {
+        "SUPPORTED": 1,
+        "CONTRADICTED": 1,
+        "NOT_IN_GUIDE": 4
+      }
+    },
+    {
+      "chapter": 2,
+      "task_type": "read_aloud_repeat_sentence",
+      "guide_pages": [
+        15,
+        16,
+        17
+      ],
+      "claims": [
+        {
+          "kind": "format_fact",
+          "text": "Read Aloud input: A written academic text of up to 60 words",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Excerpt does not mention input length or word count."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Read Aloud preparation: Usually 30–40 seconds to inspect and prepare the text",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "No preparation time specified."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Read Aloud response time: Varies according to the length of the text",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Response time not addressed."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Read Aloud practice set: Typically 6–7 questions in the current test format",
+          "verdict": "SUPPORTED",
+          "quote": "Read Aloud 6-7",
+          "note": "Matches claim of 6–7 questions."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Repeat Sentence input: One recorded sentence lasting approximately 3–9 seconds",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "No duration for input sentence given."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Repeat Sentence response time: 15 seconds",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Response time not mentioned."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Repeat Sentence practice set: Typically 10–12 questions in the current test format",
+          "verdict": "SUPPORTED",
+          "quote": "Repeat Sentence 10-12",
+          "note": "Matches claim of 10–12 questions."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Recording rule: The prompt or recording is presented once, and the spoken response can be recorded only once",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Recording rule not covered."
+        },
+        {
+          "kind": "scoring_traits",
+          "text": "This task is scored on these traits: Content, Oral fluency, Pronunciation.",
+          "verdict": "SUPPORTED",
+          "quote": "Content:\nPronunciation:\nOral Fluency:",
+          "note": "Traits listed for the task include Content, Oral Fluency, Pronunciation."
+        }
+      ],
+      "counts": {
+        "SUPPORTED": 3,
+        "CONTRADICTED": 0,
+        "NOT_IN_GUIDE": 6
+      }
+    },
+    {
+      "chapter": 3,
+      "task_type": "reading_fill_in_the_blanks",
+      "guide_pages": [
+        40,
+        44
+      ],
+      "claims": [
+        {
+          "kind": "format_fact",
+          "text": "Reading: Fill in the blanks: A shared word bank is used to complete a short reading text.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Excerpt does not mention shared word bank."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Reading text length: Up to 80 words.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "No text length specified."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Reading blanks: Three to five blanks.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Number of blanks not provided."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Reading word bank: Six to eight words, including three more words than the number of blanks.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Word bank size not mentioned."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Reading & writing: Fill in the blanks: Each blank has its own set of multiple-choice options.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "No detail on per‑blank options."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Reading & writing text length: Up to 300 words.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "No text length for reading & writing."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Reading & writing blanks: Up to six blanks.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "No limit on blanks given."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Choices per blank: Up to five answer choices.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "No information on choices per blank."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Answer rule: Each blank has one correct answer.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Answer rule not described."
+        },
+        {
+          "kind": "scoring_traits",
+          "text": "This task is scored on these traits: Per-blank accuracy, Grammatical fit, Lexical fit, Contextual fit, Integrated reading and writing control.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Scoring traits not listed in excerpt."
+        }
+      ],
+      "counts": {
+        "SUPPORTED": 0,
+        "CONTRADICTED": 0,
+        "NOT_IN_GUIDE": 10
+      }
+    },
+    {
+      "chapter": 4,
+      "task_type": "reading_multiple_choice",
+      "guide_pages": [
+        40,
+        44
+      ],
+      "claims": [
+        {
+          "kind": "format_fact",
+          "text": "Item type 1: Multiple-choice, choose single answer requires the test taker to select one best response from several options.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Excerpt lists question type but does not describe selection requirement."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Item type 2: Multiple-choice, choose multiple answers requires the test taker to select all options that are supported by the passage.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Excerpt lists multiple‑answer type but does not state selection rule."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Item components: A typical item contains instructions, a reading passage, a prompt, and a set of answer options.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "No description of item components in excerpt."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Prompt styles: Prompts may use wh-questions, such as why, how, what, or which, or may ask the learner to complete a sentence.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Prompt style details not mentioned."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Reading demands: Questions may test the main idea, specific details, writer purpose, tone, attitude, organization, inference, vocabulary in context, or supporting examples.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Reading demand categories not covered."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Answer relationship: Correct options often paraphrase the passage rather than repeat its exact wording.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "No statement about paraphrasing of correct options."
+        },
+        {
+          "kind": "scoring_traits",
+          "text": "This task is scored on these traits: Single-answer accuracy, Multiple-answer precision, Main-idea comprehension, Detailed comprehension, Inference and purpose, Contextual vocabulary.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Specific scoring traits not listed in excerpt."
+        }
+      ],
+      "counts": {
+        "SUPPORTED": 0,
+        "CONTRADICTED": 0,
+        "NOT_IN_GUIDE": 7
+      }
+    },
+    {
+      "chapter": 5,
+      "task_type": "select_missing_word_and_highlight_incorrect_words",
+      "guide_pages": [
+        44
+      ],
+      "claims": [
+        {
+          "kind": "format_fact",
+          "text": "Select Missing Word input: You listen to a recording that usually lasts about 20–70 seconds, with the final word or short ending replaced by a sound.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Excerpt does not mention input duration or sound replacement."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Select Missing Word response: You choose one answer from several options to complete the speaker's final idea.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "No description of response format in excerpt."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Select Missing Word scoring: The response is scored as correct or incorrect, so one final selection must be made.",
+          "verdict": "SUPPORTED",
+          "quote": "Select Missing Word ... Correct/ incorrect ... 1 Correct response 0 Incorrect response",
+          "note": "Scoring is described as correct/incorrect."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Highlight Incorrect Words input: You read a transcript on screen while listening to the corresponding recording.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "No input description for Highlight Incorrect Words."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Highlight Incorrect Words response: You click the written words that do not match what the speaker actually says.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "No response description for Highlight Incorrect Words."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Listening condition: The recording should be treated as a one-listen task, so preparation, continuous tracking, and immediate decisions are essential.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "No listening condition details provided."
+        },
+        {
+          "kind": "scoring_traits",
+          "text": "This task is scored on these traits: Final-answer accuracy, Contextual prediction, Mismatch identification, Selection control.",
+          "verdict": "CONTRADICTED",
+          "quote": "Select Missing Word ... Traits scored Not applicable",
+          "note": "Excerpt states traits scored are 'Not applicable', contradicting claim."
+        }
+      ],
+      "counts": {
+        "SUPPORTED": 1,
+        "CONTRADICTED": 1,
+        "NOT_IN_GUIDE": 5
+      }
+    },
+    {
+      "chapter": 6,
+      "task_type": "summarize_written_text",
+      "guide_pages": [
+        15,
+        32,
+        33
+      ],
+      "claims": [
+        {
+          "kind": "format_fact",
+          "text": "Source text: A reading passage of up to 300 words.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Excerpt does not mention source text length."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Response format: One sentence only.",
+          "verdict": "SUPPORTED",
+          "quote": "Is written in one, single, complete sentence",
+          "note": "Matches claim about one‑sentence response."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Time available: 10 minutes for each item.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "No timing information for individual items in excerpt."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Main purpose: Communicate the passage's main topic, central claim, and essential supporting ideas without adding personal opinion.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Excerpt describes content criteria but does not state the main purpose as given."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Expected style: Formal, objective, concise, and written mainly in the simple present tense.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Style expectations not mentioned in excerpt."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Final check: Confirm sentence count, meaning, grammar, punctuation, spelling, vocabulary, and the permitted response length before submitting.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "No guidance on final checklist in excerpt."
+        },
+        {
+          "kind": "scoring_traits",
+          "text": "This task is scored on these traits: Content, Form, Grammar, Vocabulary.",
+          "verdict": "SUPPORTED",
+          "quote": "Content: ... Form: ... Grammar: ... Vocabulary: ...",
+          "note": "Traits listed match the claim."
+        }
+      ],
+      "counts": {
+        "SUPPORTED": 2,
+        "CONTRADICTED": 0,
+        "NOT_IN_GUIDE": 5
+      }
+    },
+    {
+      "chapter": 7,
+      "task_type": "write_essay",
+      "guide_pages": [
+        15,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39
+      ],
+      "claims": [
+        {
+          "kind": "format_fact",
+          "text": "Task purpose: Write a persuasive or argumentative essay that directly responds to the topic and requirement words in the prompt.",
+          "verdict": "SUPPORTED",
+          "quote": "The essay fully addresses the prompt in depth... The argument is supported convincingly...",
+          "note": "Excerpt describes essay addressing prompt with argument"
+        },
+        {
+          "kind": "format_fact",
+          "text": "Time limit: The response must be planned, written, and checked within 20 minutes.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "No time limit mentioned"
+        },
+        {
+          "kind": "format_fact",
+          "text": "Response form: The answer should be a complete academic essay with an introduction, logically developed body paragraphs, and a conclusion.",
+          "verdict": "SUPPORTED",
+          "quote": "A well-developed introduction and conclusion are present. Ideas are organised cohesively into paragraphs",
+          "note": "Excerpt specifies intro, body paragraphs, conclusion"
+        },
+        {
+          "kind": "format_fact",
+          "text": "Recommended length: Aim for approximately 200-300 words while following the response-length requirement displayed in the test.",
+          "verdict": "SUPPORTED",
+          "quote": "Length is between 200 and 300 words",
+          "note": "Matches recommended length range"
+        },
+        {
+          "kind": "format_fact",
+          "text": "Typical prompt types: Common prompts ask for agreement or disagreement, the extent of agreement, advantages and disadvantages, causes and solutions, or discussion of two views.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Prompt types not described in excerpt"
+        },
+        {
+          "kind": "format_fact",
+          "text": "Primary skill: Writing is the main communicative skill, supported by reading skills used to decode the prompt accurately.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Excerpt notes Writing as scored skill but does not mention reading support"
+        },
+        {
+          "kind": "scoring_traits",
+          "text": "This task is scored on these traits: Content, Development, structure and coherence, Form, Range of language, Grammar usage and mechanics, Vocabulary, Spelling.",
+          "verdict": "CONTRADICTED",
+          "quote": "Content: ... Development, Structure and Coherence: ... Form: ... General Linguistic Range: ... Grammar:",
+          "note": "Excerpt lists different trait names; Vocabulary and Spelling not included"
+        }
+      ],
+      "counts": {
+        "SUPPORTED": 3,
+        "CONTRADICTED": 1,
+        "NOT_IN_GUIDE": 3
+      }
+    },
+    {
+      "chapter": 9,
+      "task_type": "describe_image",
+      "guide_pages": [
+        7,
+        8,
+        15,
+        18,
+        19,
+        20
+      ],
+      "claims": [
+        {
+          "kind": "format_fact",
+          "text": "Preparation time: 25 seconds to inspect the image and prepare brief speaking notes.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Excerpt does not mention preparation time."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Speaking time: 40 seconds to record the spoken description.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Excerpt does not specify speaking time."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Response mode: The response is spoken into a microphone and should begin promptly after recording starts.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "No description of response mode in excerpt."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Typical image types: Line graphs, bar charts, pie charts, tables, maps, processes, diagrams, and photographs.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Typical image types not listed."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Primary objective: Communicate the image's overall message and its most significant supporting details clearly and fluently.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Primary objective not stated."
+        },
+        {
+          "kind": "scoring_traits",
+          "text": "This task is scored on these traits: Content, Oral fluency, Pronunciation.",
+          "verdict": "SUPPORTED",
+          "quote": "Content:\n...\nPronunciation:\n...\nOral Fluency:",
+          "note": "Excerpt lists Content, Pronunciation, and Oral Fluency as traits for Describe Image."
+        },
+        {
+          "kind": "critical_rule",
+          "text": "Use the 25 seconds to identify the image type, topic, labels, units, major features, and a logical speaking order rather than writing complete sentences.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "No rule about 25‑second identification in excerpt."
+        }
+      ],
+      "counts": {
+        "SUPPORTED": 1,
+        "CONTRADICTED": 0,
+        "NOT_IN_GUIDE": 6
+      }
+    },
+    {
+      "chapter": 10,
+      "task_type": "re_order_paragraphs",
+      "guide_pages": [
+        40
+      ],
+      "claims": [
+        {
+          "kind": "format_fact",
+          "text": "Passage length: The source lesson describes passages of up to approximately 150 words.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Excerpt does not mention passage length."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Number of items: The source lesson indicates that test takers may encounter two to three Re-order Paragraphs items.",
+          "verdict": "SUPPORTED",
+          "quote": "Reorder \n Paragraph 2-3",
+          "note": "Number of Reorder Paragraph items matches 2-3."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Response method: Move the text boxes until they form one coherent academic paragraph.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "No response method described."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Correct sequence: Each item has one intended order based on meaning, grammar, reference, and discourse structure.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "No details on intended order criteria."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Timing: The reading section is timed as a whole, so this item is not normally timed separately.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Timing of the item not addressed."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Text style: Passages commonly follow academic patterns such as general-to-specific explanation, chronological development, cause and effect, comparison, classification, or problem and solution.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Passage style patterns not mentioned."
+        },
+        {
+          "kind": "scoring_traits",
+          "text": "This task is scored on these traits: Correct adjacent pairs, Sequence reconstruction, Reading comprehension, Cohesion recognition.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Scoring traits beyond adjacent pairs not listed."
+        }
+      ],
+      "counts": {
+        "SUPPORTED": 1,
+        "CONTRADICTED": 0,
+        "NOT_IN_GUIDE": 6
+      }
+    },
+    {
+      "chapter": 11,
+      "task_type": "listening_fill_in_the_blanks_and_write_from_dictation",
+      "guide_pages": [
+        40,
+        44
+      ],
+      "claims": [
+        {
+          "kind": "format_fact",
+          "text": "Listening: Fill in the blanks response: Type the missing word or words directly into the blanks in the displayed transcription.",
+          "verdict": "SUPPORTED",
+          "quote": "Fill in the Blanks (Type In)",
+          "note": "Task name indicates typed response."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Fill in the blanks preparation: The instructions and transcription are visible before the recording begins, allowing the learner to preview the surrounding language.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "No mention of pre‑recording visibility of instructions or transcription."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Fill in the blanks countdown: A seven-second countdown occurs before the recording starts automatically.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Countdown length not specified."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Fill in the blanks quantity: A transcription may contain several blanks, with the source lesson describing up to seven missing-word positions.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "No information on number of blanks per transcription."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Write from dictation response: Listen to one sentence and type the sentence in the response box exactly as heard.",
+          "verdict": "SUPPORTED",
+          "quote": "Write from Dictation",
+          "note": "Task name and scoring per word imply typing the heard sentence."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Write from dictation playback: The sentence is heard once, so the learner must listen, retain the sequence, and reconstruct as much as possible.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "No detail on how many times the sentence is played."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Input method: Responses are typed, so keyboard accuracy and efficient correction support listening performance.",
+          "verdict": "SUPPORTED",
+          "quote": "Fill in the Blanks (Type In); Write from Dictation",
+          "note": "Both tasks require typed responses."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Review stage: After entering the response, use grammar, meaning, and spelling to identify likely errors before moving on.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "No description of a review stage after response entry."
+        },
+        {
+          "kind": "scoring_traits",
+          "text": "This task is scored on these traits: Correct words, Spelling accuracy, Sequence accuracy, Grammatical fit, Completeness, Word discrimination.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Traits listed are not mentioned in the excerpt."
+        }
+      ],
+      "counts": {
+        "SUPPORTED": 3,
+        "CONTRADICTED": 0,
+        "NOT_IN_GUIDE": 6
+      }
+    },
+    {
+      "chapter": 12,
+      "task_type": "reading_multiple_choice",
+      "guide_pages": [
+        40,
+        44
+      ],
+      "claims": [
+        {
+          "kind": "format_fact",
+          "text": "Item types: The lesson covers both choose single answer and choose multiple answers.",
+          "verdict": "SUPPORTED",
+          "quote": "\"Multiple Choice, Multiple Answers\" and \"Multiple Choice, Single Answer\"",
+          "note": "Excerpt lists both single‑answer and multiple‑answer question types."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Single-answer response: Only one option should be selected, so the chosen answer must be better supported than every alternative.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Excerpt does not state that the chosen answer must be better supported than every alternative."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Multiple-answer response: More than one option may be correct, so each option must be judged independently against the passage.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Excerpt mentions partial credit for each correct response but does not require independent judgement of each option."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Prompt variety: Prompts may ask about gist, writer’s purpose, organization, inference, explicit information, implicit information, categorization, or the contextual meaning of a word.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "No mention of prompt types such as gist, purpose, inference, etc."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Evidence source: Correct answers may rest on one sentence, several connected sentences, or the overall meaning and attitude of the passage.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Excerpt does not discuss evidence sources for correct answers."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Time pressure: The reading section is managed as a whole, so learners must balance accuracy with efficient prompt reading, evidence location, and option elimination.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "No reference to time‑pressure or overall management of the reading section."
+        },
+        {
+          "kind": "scoring_traits",
+          "text": "This task is scored on these traits: Answer accuracy, Prompt alignment, Evidence-based selection, Option discipline, Multiple-answer control.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Traits listed in excerpt are generic (e.g., \"Reading:\"), not the specific traits claimed."
+        }
+      ],
+      "counts": {
+        "SUPPORTED": 1,
+        "CONTRADICTED": 0,
+        "NOT_IN_GUIDE": 6
+      }
+    },
+    {
+      "chapter": 13,
+      "task_type": "listening_multiple_choice",
+      "guide_pages": [
+        40,
+        44
+      ],
+      "claims": [
+        {
+          "kind": "format_fact",
+          "text": "Item types: The lesson covers Listening: Multiple-choice, choose single answer and Listening: Multiple-choice, choose multiple answers.",
+          "verdict": "SUPPORTED",
+          "quote": "Multiple Choice, Multiple Answers ... Multiple Choice, Single Answer",
+          "note": "Both item types listed under Part 3 Listening"
+        },
+        {
+          "kind": "format_fact",
+          "text": "Preparation time: There are 7 seconds before the recording begins. Use this time primarily to understand the prompt and identify the listening purpose.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "No mention of 7‑second preparation time"
+        },
+        {
+          "kind": "format_fact",
+          "text": "Audio playback: The recording is normally heard once, so concentration, selective note-taking and recovery after missed information are essential.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "No information about playback frequency"
+        },
+        {
+          "kind": "format_fact",
+          "text": "Single-answer response: Only one option is correct. Select the option that best answers the exact prompt.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Only the single‑answer type is listed; selection instruction not covered"
+        },
+        {
+          "kind": "format_fact",
+          "text": "Multiple-answer response: More than one option may be correct. Evaluate every option separately and select only those supported by the recording.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Multiple‑answer type listed, but evaluation guidance not covered"
+        },
+        {
+          "kind": "format_fact",
+          "text": "Prompt focus: Prompts may test gist, detailed information, speaker purpose, organization, inference, attitude, feelings or degree of certainty.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Prompt focus categories not mentioned"
+        },
+        {
+          "kind": "format_fact",
+          "text": "Note-taking: Notes should contain brief key words, symbols and abbreviations rather than complete sentences.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Note‑taking advice not in excerpt"
+        },
+        {
+          "kind": "scoring_traits",
+          "text": "This task is scored on these traits: Answer accuracy, Prompt control, Evidence discrimination, Selection discipline.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Specific scoring traits not listed"
+        },
+        {
+          "kind": "critical_rule",
+          "text": "Use the 7-second preparation period mainly to decide what information you need to hear.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "No rule about 7‑second preparation period"
+        }
+      ],
+      "counts": {
+        "SUPPORTED": 1,
+        "CONTRADICTED": 0,
+        "NOT_IN_GUIDE": 8
+      }
+    },
+    {
+      "chapter": 14,
+      "task_type": "retell_lecture",
+      "guide_pages": [
+        7,
+        15,
+        21,
+        22,
+        23,
+        24
+      ],
+      "claims": [
+        {
+          "kind": "format_fact",
+          "text": "Item type: A long-answer speaking task based on a recorded academic lecture.",
+          "verdict": "SUPPORTED",
+          "quote": "Some tasks such as Describe Image and Retell Lecture always require a human review of Content",
+          "note": "Retell Lecture is a speaking task based on a recorded lecture."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Recording start: The lecture begins automatically after a short three-second preview period.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "No information about a three‑second preview period."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Image support: Some items include an image that may help the learner predict the topic before the lecture begins.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "No mention of image support for this task."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Preparation time: After the lecture finishes, the learner has 10 seconds to review notes and prepare the opening.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Preparation time not specified."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Response time: The microphone opens automatically and the learner has up to 40 seconds to speak.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Response time not mentioned."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Listening condition: The lecture should be treated as a one-play recording, so attention and efficient note taking are essential.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "One‑play listening condition not addressed."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Response goal: Retell the topic, main supporting ideas, important relationships, and any conclusion or implication.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Guideline does not detail retelling relationships or conclusions."
+        },
+        {
+          "kind": "scoring_traits",
+          "text": "This task is scored on these traits: Content, Oral Fluency, Pronunciation.",
+          "verdict": "SUPPORTED",
+          "quote": "quality of the response (e.g., fluency and pronunciation in the question type Retell Lecture).",
+          "note": "Retell Lecture is scored on Content, Fluency (Oral Fluency) and Pronunciation."
+        },
+        {
+          "kind": "critical_rule",
+          "text": "Use the 10-second preparation period to choose an opening sentence and arrange the notes into a logical order.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "No rule about a 10‑second preparation period."
+        }
+      ],
+      "counts": {
+        "SUPPORTED": 2,
+        "CONTRADICTED": 0,
+        "NOT_IN_GUIDE": 7
+      }
+    },
+    {
+      "chapter": 15,
+      "task_type": "summarize_spoken_text_and_highlight_correct_summary",
+      "guide_pages": [
+        15,
+        41,
+        42,
+        43,
+        44
+      ],
+      "claims": [
+        {
+          "kind": "format_fact",
+          "text": "Summarize spoken text input: You hear an academic talk or lecture and take notes while listening.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Excerpt does not describe the input format for Summarize Spoken Text."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Summarize spoken text response: You write a concise summary that communicates the topic, central message, and most important supporting points.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Excerpt does not specify the expected response content beyond scoring criteria."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Highlight correct summary input: You hear a recording and then compare several written summary options.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "No description of the Highlight Correct Summary input in excerpt."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Highlight correct summary response: You select the one paragraph that best matches the recording as a whole.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Excerpt does not detail the response process for Highlight Correct Summary."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Listening priority: The recording should be approached through topic recognition, lecture structure, signpost words, repeated ideas, stressed vocabulary, and speaker attitude.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Listening priority guidelines are not mentioned in excerpt."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Final quality control: For a written summary, check content coverage, task length, grammar, spelling, and punctuation; for a selection task, check that the chosen option is accurate, complete, and free from unsupported information.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Final quality‑control checklist not covered in excerpt."
+        },
+        {
+          "kind": "scoring_traits",
+          "text": "This task is scored on these traits: Content accuracy, Main-idea coverage, Supporting-point selection, Organization and coherence, Language control, Option discrimination.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Traits listed differ from those in excerpt (Content, Form, Grammar, Vocabulary, Spelling)."
+        }
+      ],
+      "counts": {
+        "SUPPORTED": 0,
+        "CONTRADICTED": 0,
+        "NOT_IN_GUIDE": 7
+      }
+    },
+    {
+      "chapter": 16,
+      "task_type": "write_essay",
+      "guide_pages": [
+        15,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39
+      ],
+      "claims": [
+        {
+          "kind": "format_fact",
+          "text": "Response type: A formal academic essay that directly answers the question or instruction in the prompt.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Excerpt does not specify response type as a formal academic essay."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Time limit: The learner has 20 minutes to analyze the prompt, plan, write, and edit the essay.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "No time limit mentioned in excerpt."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Target length: A complete response should normally remain within the required 200-to-300-word range.",
+          "verdict": "SUPPORTED",
+          "quote": "Length is between 200 and 300 words",
+          "note": "Guide defines 200‑300 words as the optimal length range."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Basic structure: Use an introduction, logically developed body paragraphs, and a conclusion.",
+          "verdict": "SUPPORTED",
+          "quote": "A well-developed introduction and conclusion are present. Ideas are organised cohesively into paragraphs, and paragraphs are clear and logically sequenced.",
+          "note": "Guide describes required structure with intro, body paragraphs, and conclusion."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Position: The introduction should state a clear main opinion that directly addresses the task.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Guide does not state that the introduction must state a clear main opinion."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Development: Each body paragraph should present one main reason and develop it with explanation, evidence, consequences, or an example.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Guide does not prescribe paragraph‑level development details."
+        },
+        {
+          "kind": "scoring_traits",
+          "text": "This task is scored on these traits: Content, Form, Development, structure, and coherence, Grammar, General linguistic range, Vocabulary range, Spelling and mechanics.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Guide lists Content, Form, Development, Structure and Coherence, Grammar, General Linguistic Range; does not mention Vocabulary range or Spelling and mechanics."
+        }
+      ],
+      "counts": {
+        "SUPPORTED": 2,
+        "CONTRADICTED": 0,
+        "NOT_IN_GUIDE": 5
+      }
+    },
+    {
+      "chapter": 18,
+      "task_type": "summarize_group_discussion",
+      "guide_pages": [
+        15,
+        25,
+        26,
+        27,
+        28
+      ],
+      "claims": [
+        {
+          "kind": "format_fact",
+          "text": "Number of speakers: Three",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Excerpt does not specify number of speakers."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Audio length: 2.5–3 minutes, plays once only",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Audio length and playback frequency not mentioned."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Preparation time: 10 seconds",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Preparation time not addressed."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Response time: Up to 2 minutes",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Response time not provided."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Added to exam: Permanent from 7 Aug 2025",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "No information about addition date to exam."
+        },
+        {
+          "kind": "scoring_traits",
+          "text": "This task is scored on these traits: Content, Oral Fluency, Pronunciation.",
+          "verdict": "SUPPORTED",
+          "quote": "Content:\n...\nPronunciation:\n...\nOral Fluency:",
+          "note": "Excerpt lists Content, Pronunciation and Oral Fluency as traits scored for Summarize Group Discussion."
+        },
+        {
+          "kind": "critical_rule",
+          "text": "Cover all main ideas within the 2‑minute limit.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "No rule about covering all main ideas within a 2‑minute limit is given."
+        }
+      ],
+      "counts": {
+        "SUPPORTED": 1,
+        "CONTRADICTED": 0,
+        "NOT_IN_GUIDE": 6
+      }
+    },
+    {
+      "chapter": 19,
+      "task_type": "respond_to_a_situation",
+      "guide_pages": [
+        15,
+        29,
+        30,
+        31
+      ],
+      "claims": [
+        {
+          "kind": "format_fact",
+          "text": "Prompt: A short situation you both read and hear; the audio plays once.",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Excerpt does not describe the prompt format or audio playback."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Note‑taking window: Allowed while listening (no extra time)",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "No mention of a note‑taking window in the excerpt."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Preparation time: 10 seconds after the audio stops",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Preparation time is not addressed in the excerpt."
+        },
+        {
+          "kind": "format_fact",
+          "text": "Response time: 40 seconds",
+          "verdict": "NOT_IN_GUIDE",
+          "quote": "",
+          "note": "Response time is not specified in the excerpt."
+        },
+        {
+          "kind": "scoring_traits",
+          "text": "This task is scored on these traits: Content, Oral Fluency, Pronunciation.",
+          "verdict": "SUPPORTED",
+          "quote": "Content:\n...\nPronunciation:\n5 Highly proficient ...\nOral Fluency:\n5 Highly proficient ...",
+          "note": "Excerpt lists Content, Pronunciation, and Oral Fluency as traits scored for Respond to a Situation."
+        }
+      ],
+      "counts": {
+        "SUPPORTED": 1,
+        "CONTRADICTED": 0,
+        "NOT_IN_GUIDE": 4
+      }
+    }
+  ]
+}
