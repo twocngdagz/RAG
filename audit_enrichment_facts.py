@@ -88,7 +88,7 @@ def _flat(s: str) -> str:
     return re.sub(r"\s+", " ", s).lower()
 
 
-def guide_text_for(task_type: str, pages: list[str], max_chars: int = 9000) -> tuple[str, list[int]]:
+def guide_text_for(task_type: str, pages: list[str], max_chars: int = 24000) -> tuple[str, list[int]]:
     """The guide pages that mention this question type, plus their page numbers so
     the report can cite them. Falls back to the scoring-overview pages."""
     names = TASK_ALIASES.get(task_type, [])
@@ -98,6 +98,10 @@ def guide_text_for(task_type: str, pages: list[str], max_chars: int = 9000) -> t
         if names and any(_flat(n) in _flat(t) for n in names)
     ]
     matched = bool(hits)
+    # Page 15 only *mentions* question types (the human-review note); real rubric
+    # pages matter more, so order them first — truncation must never drop the
+    # rubric and leave the mention, which produced a false contradiction.
+    hits.sort(key=lambda h: (h[0] == 15, h[0]))
     if not hits:
         hits = [(i + 1, t) for i, t in enumerate(pages) if "scoring" in _flat(t)][:4]
     text = "\n\n".join(t for _, t in hits)
