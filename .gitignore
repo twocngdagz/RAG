@@ -27,3 +27,4 @@ extracted/*.json
 extracted/*.txt
 !output/essay_prompts.json
 !output/swt_passages.json
+!output/describe_image_items.json

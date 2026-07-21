@@ -1,0 +1,364 @@
+{
+  "items": [
+    {
+      "id": "renewable-electricity-genera-01",
+      "chart_type": "bar",
+      "title": "Renewable Energy Production by Source, 2023",
+      "subject": "Renewable electricity generation",
+      "x_label": "Source",
+      "y_label": "Generation",
+      "unit": "GWh",
+      "points": [
+        {
+          "label": "Solar",
+          "value": 4500
+        },
+        {
+          "label": "Wind",
+          "value": 6200
+        },
+        {
+          "label": "Hydro",
+          "value": 7800
+        },
+        {
+          "label": "Biomass",
+          "value": 1200
+        },
+        {
+          "label": "Geothermal",
+          "value": 300
+        }
+      ],
+      "facts": [
+        {
+          "key": "overview",
+          "importance": "essential",
+          "text": "The bar chart shows Renewable electricity generation, measured in GWh."
+        },
+        {
+          "key": "highest",
+          "importance": "essential",
+          "text": "Hydro is the highest at 7800 GWh."
+        },
+        {
+          "key": "lowest",
+          "importance": "essential",
+          "text": "Geothermal is the lowest at 300 GWh."
+        },
+        {
+          "key": "comparison",
+          "importance": "essential",
+          "text": "Hydro exceeds Geothermal by 7500 GWh — about 26.0 times as much."
+        },
+        {
+          "key": "total",
+          "importance": "supporting",
+          "text": "The categories total 20000 GWh."
+        },
+        {
+          "key": "range",
+          "importance": "supporting",
+          "text": "Values range from 300 GWh to 7800 GWh."
+        }
+      ],
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 640 400\" width=\"100%\" role=\"img\" style=\"background:#fff\"><text x=\"320\" y=\"26\" font-size=\"15\" font-weight=\"600\" fill=\"#0f172a\" text-anchor=\"middle\">Renewable Energy Production by Source, 2023</text><line x1=\"64\" y1=\"48\" x2=\"64\" y2=\"336\" stroke=\"#94a3b8\"/><line x1=\"64\" y1=\"336\" x2=\"616\" y2=\"336\" stroke=\"#94a3b8\"/><line x1=\"64\" y1=\"336.0\" x2=\"616\" y2=\"336.0\" stroke=\"#e2e8f0\"/><text x=\"56\" y=\"340.0\" font-size=\"11\" fill=\"#64748b\" text-anchor=\"end\">0</text><line x1=\"64\" y1=\"192.0\" x2=\"616\" y2=\"192.0\" stroke=\"#e2e8f0\"/><text x=\"56\" y=\"196.0\" font-size=\"11\" fill=\"#64748b\" text-anchor=\"end\">5000</text><line x1=\"64\" y1=\"48.0\" x2=\"616\" y2=\"48.0\" stroke=\"#e2e8f0\"/><text x=\"56\" y=\"52.0\" font-size=\"11\" fill=\"#64748b\" text-anchor=\"end\">10000</text><text x=\"16\" y=\"192\" font-size=\"12\" fill=\"#475569\" text-anchor=\"middle\" transform=\"rotate(-90 16 192)\">Generation</text><text x=\"340\" y=\"388\" font-size=\"12\" fill=\"#475569\" text-anchor=\"middle\">Source</text><rect x=\"86.1\" y=\"206.4\" width=\"66.2\" height=\"129.6\" fill=\"#0f766e\" rx=\"3\"/><text x=\"119.2\" y=\"200.4\" font-size=\"11\" fill=\"#0f172a\" text-anchor=\"middle\">4500</text><text x=\"119.2\" y=\"354\" font-size=\"11\" fill=\"#475569\" text-anchor=\"middle\">Solar</text><rect x=\"196.5\" y=\"157.4\" width=\"66.2\" height=\"178.6\" fill=\"#0891b2\" rx=\"3\"/><text x=\"229.6\" y=\"151.4\" font-size=\"11\" fill=\"#0f172a\" text-anchor=\"middle\">6200</text><text x=\"229.6\" y=\"354\" font-size=\"11\" fill=\"#475569\" text-anchor=\"middle\">Wind</text><rect x=\"306.9\" y=\"111.4\" width=\"66.2\" height=\"224.6\" fill=\"#7c3aed\" rx=\"3\"/><text x=\"340.0\" y=\"105.4\" font-size=\"11\" fill=\"#0f172a\" text-anchor=\"middle\">7800</text><text x=\"340.0\" y=\"354\" font-size=\"11\" fill=\"#475569\" text-anchor=\"middle\">Hydro</text><rect x=\"417.3\" y=\"301.4\" width=\"66.2\" height=\"34.6\" fill=\"#c2410c\" rx=\"3\"/><text x=\"450.4\" y=\"295.4\" font-size=\"11\" fill=\"#0f172a\" text-anchor=\"middle\">1200</text><text x=\"450.4\" y=\"354\" font-size=\"11\" fill=\"#475569\" text-anchor=\"middle\">Biomass</text><rect x=\"527.7\" y=\"327.4\" width=\"66.2\" height=\"8.6\" fill=\"#65a30d\" rx=\"3\"/><text x=\"560.8\" y=\"321.4\" font-size=\"11\" fill=\"#0f172a\" text-anchor=\"middle\">300</text><text x=\"560.8\" y=\"354\" font-size=\"11\" fill=\"#475569\" text-anchor=\"middle\">Geothermal</text></svg>",
+      "prep_seconds": 25,
+      "speak_seconds": 40
+    },
+    {
+      "id": "enrollment-rate-02",
+      "chart_type": "line",
+      "title": "Primary School Enrollment Rates, 2015-2022",
+      "subject": "Enrollment rate",
+      "x_label": "Year",
+      "y_label": "Enrollment",
+      "unit": "%",
+      "points": [
+        {
+          "label": "2015",
+          "value": 92
+        },
+        {
+          "label": "2016",
+          "value": 91
+        },
+        {
+          "label": "2017",
+          "value": 93
+        },
+        {
+          "label": "2018",
+          "value": 94
+        },
+        {
+          "label": "2019",
+          "value": 95
+        },
+        {
+          "label": "2020",
+          "value": 88
+        },
+        {
+          "label": "2021",
+          "value": 90
+        },
+        {
+          "label": "2022",
+          "value": 93
+        }
+      ],
+      "facts": [
+        {
+          "key": "overview",
+          "importance": "essential",
+          "text": "The line chart shows Enrollment rate, measured in %."
+        },
+        {
+          "key": "highest",
+          "importance": "essential",
+          "text": "2019 is the highest at 95%."
+        },
+        {
+          "key": "lowest",
+          "importance": "essential",
+          "text": "2020 is the lowest at 88%."
+        },
+        {
+          "key": "overall_trend",
+          "importance": "essential",
+          "text": "Overall the figure rose from 92% in 2015 to 93% in 2022, a change of 1%."
+        },
+        {
+          "key": "biggest_change",
+          "importance": "supporting",
+          "text": "The sharpest decrease is between 2019 and 2020 (7%)."
+        },
+        {
+          "key": "peak",
+          "importance": "supporting",
+          "text": "The series peaks at 2019 before falling back."
+        },
+        {
+          "key": "range",
+          "importance": "supporting",
+          "text": "Values range from 88% to 95%."
+        }
+      ],
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 640 400\" width=\"100%\" role=\"img\" style=\"background:#fff\"><text x=\"320\" y=\"26\" font-size=\"15\" font-weight=\"600\" fill=\"#0f172a\" text-anchor=\"middle\">Primary School Enrollment Rates, 2015-2022</text><line x1=\"64\" y1=\"48\" x2=\"64\" y2=\"336\" stroke=\"#94a3b8\"/><line x1=\"64\" y1=\"336\" x2=\"616\" y2=\"336\" stroke=\"#94a3b8\"/><line x1=\"64\" y1=\"336.0\" x2=\"616\" y2=\"336.0\" stroke=\"#e2e8f0\"/><text x=\"56\" y=\"340.0\" font-size=\"11\" fill=\"#64748b\" text-anchor=\"end\">85</text><line x1=\"64\" y1=\"240.0\" x2=\"616\" y2=\"240.0\" stroke=\"#e2e8f0\"/><text x=\"56\" y=\"244.0\" font-size=\"11\" fill=\"#64748b\" text-anchor=\"end\">90</text><line x1=\"64\" y1=\"144.0\" x2=\"616\" y2=\"144.0\" stroke=\"#e2e8f0\"/><text x=\"56\" y=\"148.0\" font-size=\"11\" fill=\"#64748b\" text-anchor=\"end\">95</text><line x1=\"64\" y1=\"48.0\" x2=\"616\" y2=\"48.0\" stroke=\"#e2e8f0\"/><text x=\"56\" y=\"52.0\" font-size=\"11\" fill=\"#64748b\" text-anchor=\"end\">100</text><text x=\"56\" y=\"36\" font-size=\"10\" fill=\"#94a3b8\" text-anchor=\"end\">axis starts at 85</text><text x=\"16\" y=\"192\" font-size=\"12\" fill=\"#475569\" text-anchor=\"middle\" transform=\"rotate(-90 16 192)\">Enrollment</text><text x=\"340\" y=\"388\" font-size=\"12\" fill=\"#475569\" text-anchor=\"middle\">Year</text><polyline points=\"64.0,201.6 142.9,220.8 221.7,182.4 300.6,163.2 379.4,144.0 458.3,278.4 537.1,240.0 616.0,182.4\" fill=\"none\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><circle cx=\"64.0\" cy=\"201.6\" r=\"4\" fill=\"#0f766e\"/><text x=\"64.0\" y=\"191.6\" font-size=\"11\" fill=\"#0f172a\" text-anchor=\"middle\">92</text><text x=\"64.0\" y=\"354\" font-size=\"11\" fill=\"#475569\" text-anchor=\"middle\">2015</text><circle cx=\"142.9\" cy=\"220.8\" r=\"4\" fill=\"#0f766e\"/><text x=\"142.9\" y=\"210.8\" font-size=\"11\" fill=\"#0f172a\" text-anchor=\"middle\">91</text><text x=\"142.9\" y=\"354\" font-size=\"11\" fill=\"#475569\" text-anchor=\"middle\">2016</text><circle cx=\"221.7\" cy=\"182.4\" r=\"4\" fill=\"#0f766e\"/><text x=\"221.7\" y=\"172.4\" font-size=\"11\" fill=\"#0f172a\" text-anchor=\"middle\">93</text><text x=\"221.7\" y=\"354\" font-size=\"11\" fill=\"#475569\" text-anchor=\"middle\">2017</text><circle cx=\"300.6\" cy=\"163.2\" r=\"4\" fill=\"#0f766e\"/><text x=\"300.6\" y=\"153.2\" font-size=\"11\" fill=\"#0f172a\" text-anchor=\"middle\">94</text><text x=\"300.6\" y=\"354\" font-size=\"11\" fill=\"#475569\" text-anchor=\"middle\">2018</text><circle cx=\"379.4\" cy=\"144.0\" r=\"4\" fill=\"#0f766e\"/><text x=\"379.4\" y=\"134.0\" font-size=\"11\" fill=\"#0f172a\" text-anchor=\"middle\">95</text><text x=\"379.4\" y=\"354\" font-size=\"11\" fill=\"#475569\" text-anchor=\"middle\">2019</text><circle cx=\"458.3\" cy=\"278.4\" r=\"4\" fill=\"#0f766e\"/><text x=\"458.3\" y=\"268.4\" font-size=\"11\" fill=\"#0f172a\" text-anchor=\"middle\">88</text><text x=\"458.3\" y=\"354\" font-size=\"11\" fill=\"#475569\" text-anchor=\"middle\">2020</text><circle cx=\"537.1\" cy=\"240.0\" r=\"4\" fill=\"#0f766e\"/><text x=\"537.1\" y=\"230.0\" font-size=\"11\" fill=\"#0f172a\" text-anchor=\"middle\">90</text><text x=\"537.1\" y=\"354\" font-size=\"11\" fill=\"#475569\" text-anchor=\"middle\">2021</text><circle cx=\"616.0\" cy=\"182.4\" r=\"4\" fill=\"#0f766e\"/><text x=\"616.0\" y=\"172.4\" font-size=\"11\" fill=\"#0f172a\" text-anchor=\"middle\">93</text><text x=\"616.0\" y=\"354\" font-size=\"11\" fill=\"#475569\" text-anchor=\"middle\">2022</text></svg>",
+      "prep_seconds": 25,
+      "speak_seconds": 40
+    },
+    {
+      "id": "commute-mode-share-03",
+      "chart_type": "pie",
+      "title": "Modal Share of Commuter Trips in City X, 2024",
+      "subject": "Commute mode share",
+      "x_label": "Mode",
+      "y_label": "Share",
+      "unit": "%",
+      "points": [
+        {
+          "label": "Car",
+          "value": 55
+        },
+        {
+          "label": "Public",
+          "value": 25
+        },
+        {
+          "label": "Bicycle",
+          "value": 12
+        },
+        {
+          "label": "Walking",
+          "value": 8
+        }
+      ],
+      "facts": [
+        {
+          "key": "overview",
+          "importance": "essential",
+          "text": "The pie chart shows Commute mode share, measured in %."
+        },
+        {
+          "key": "highest",
+          "importance": "essential",
+          "text": "Car is the highest at 55%."
+        },
+        {
+          "key": "lowest",
+          "importance": "essential",
+          "text": "Walking is the lowest at 8%."
+        },
+        {
+          "key": "comparison",
+          "importance": "essential",
+          "text": "Car exceeds Walking by 47% — about 6.9 times as much."
+        },
+        {
+          "key": "share",
+          "importance": "essential",
+          "text": "Car accounts for 55% of the total."
+        },
+        {
+          "key": "top_two",
+          "importance": "supporting",
+          "text": "Car and Public together make up 80% of the total."
+        },
+        {
+          "key": "range",
+          "importance": "supporting",
+          "text": "Values range from 8% to 55%."
+        }
+      ],
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 640 400\" width=\"100%\" role=\"img\" style=\"background:#fff\"><text x=\"320\" y=\"26\" font-size=\"15\" font-weight=\"600\" fill=\"#0f172a\" text-anchor=\"middle\">Modal Share of Commuter Trips in City X, 2024</text><path d=\"M 320.0 210.0 L 320.0 90.0 A 120 120 0 1 1 282.9 324.1 Z\" fill=\"#0f766e\" stroke=\"#fff\" stroke-width=\"2\"/><text x=\"397.0\" y=\"222.2\" font-size=\"12\" fill=\"#fff\" font-weight=\"600\" text-anchor=\"middle\">55%</text><path d=\"M 320.0 210.0 L 282.9 324.1 A 120 120 0 0 1 205.9 172.9 Z\" fill=\"#0891b2\" stroke=\"#fff\" stroke-width=\"2\"/><text x=\"250.5\" y=\"245.4\" font-size=\"12\" fill=\"#fff\" font-weight=\"600\" text-anchor=\"middle\">25%</text><path d=\"M 320.0 210.0 L 205.9 172.9 A 120 120 0 0 1 262.2 104.8 Z\" fill=\"#7c3aed\" stroke=\"#fff\" stroke-width=\"2\"/><text x=\"259.9\" y=\"160.3\" font-size=\"12\" fill=\"#fff\" font-weight=\"600\" text-anchor=\"middle\">12%</text><path d=\"M 320.0 210.0 L 262.2 104.8 A 120 120 0 0 1 320.0 90.0 Z\" fill=\"#c2410c\" stroke=\"#fff\" stroke-width=\"2\"/><text x=\"300.6\" y=\"134.5\" font-size=\"12\" fill=\"#fff\" font-weight=\"600\" text-anchor=\"middle\">8%</text><rect x=\"490\" y=\"51\" width=\"10\" height=\"10\" fill=\"#0f766e\"/><text x=\"506\" y=\"60\" font-size=\"11\" fill=\"#334155\">Car</text><rect x=\"490\" y=\"69\" width=\"10\" height=\"10\" fill=\"#0891b2\"/><text x=\"506\" y=\"78\" font-size=\"11\" fill=\"#334155\">Public</text><rect x=\"490\" y=\"87\" width=\"10\" height=\"10\" fill=\"#7c3aed\"/><text x=\"506\" y=\"96\" font-size=\"11\" fill=\"#334155\">Bicycle</text><rect x=\"490\" y=\"105\" width=\"10\" height=\"10\" fill=\"#c2410c\"/><text x=\"506\" y=\"114\" font-size=\"11\" fill=\"#334155\">Walking</text></svg>",
+      "prep_seconds": 25,
+      "speak_seconds": 40
+    },
+    {
+      "id": "admissions-04",
+      "chart_type": "bar",
+      "title": "Top Causes of Hospital Admissions, 2022",
+      "subject": "Admissions",
+      "x_label": "Cause",
+      "y_label": "Number of cases",
+      "unit": "thousand",
+      "points": [
+        {
+          "label": "Respiratory",
+          "value": 180
+        },
+        {
+          "label": "Cardiac",
+          "value": 210
+        },
+        {
+          "label": "Injuries",
+          "value": 95
+        },
+        {
+          "label": "Infectious",
+          "value": 70
+        },
+        {
+          "label": "MentalHealth",
+          "value": 45
+        }
+      ],
+      "facts": [
+        {
+          "key": "overview",
+          "importance": "essential",
+          "text": "The bar chart shows Admissions, measured in thousand."
+        },
+        {
+          "key": "highest",
+          "importance": "essential",
+          "text": "Cardiac is the highest at 210 thousand."
+        },
+        {
+          "key": "lowest",
+          "importance": "essential",
+          "text": "MentalHealth is the lowest at 45 thousand."
+        },
+        {
+          "key": "comparison",
+          "importance": "essential",
+          "text": "Cardiac exceeds MentalHealth by 165 thousand — about 4.7 times as much."
+        },
+        {
+          "key": "total",
+          "importance": "supporting",
+          "text": "The categories total 600 thousand."
+        },
+        {
+          "key": "range",
+          "importance": "supporting",
+          "text": "Values range from 45 thousand to 210 thousand."
+        }
+      ],
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 640 400\" width=\"100%\" role=\"img\" style=\"background:#fff\"><text x=\"320\" y=\"26\" font-size=\"15\" font-weight=\"600\" fill=\"#0f172a\" text-anchor=\"middle\">Top Causes of Hospital Admissions, 2022</text><line x1=\"64\" y1=\"48\" x2=\"64\" y2=\"336\" stroke=\"#94a3b8\"/><line x1=\"64\" y1=\"336\" x2=\"616\" y2=\"336\" stroke=\"#94a3b8\"/><line x1=\"64\" y1=\"336.0\" x2=\"616\" y2=\"336.0\" stroke=\"#e2e8f0\"/><text x=\"56\" y=\"340.0\" font-size=\"11\" fill=\"#64748b\" text-anchor=\"end\">0</text><line x1=\"64\" y1=\"240.0\" x2=\"616\" y2=\"240.0\" stroke=\"#e2e8f0\"/><text x=\"56\" y=\"244.0\" font-size=\"11\" fill=\"#64748b\" text-anchor=\"end\">100</text><line x1=\"64\" y1=\"144.0\" x2=\"616\" y2=\"144.0\" stroke=\"#e2e8f0\"/><text x=\"56\" y=\"148.0\" font-size=\"11\" fill=\"#64748b\" text-anchor=\"end\">200</text><line x1=\"64\" y1=\"48.0\" x2=\"616\" y2=\"48.0\" stroke=\"#e2e8f0\"/><text x=\"56\" y=\"52.0\" font-size=\"11\" fill=\"#64748b\" text-anchor=\"end\">300</text><text x=\"16\" y=\"192\" font-size=\"12\" fill=\"#475569\" text-anchor=\"middle\" transform=\"rotate(-90 16 192)\">Number of cases</text><text x=\"340\" y=\"388\" font-size=\"12\" fill=\"#475569\" text-anchor=\"middle\">Cause</text><rect x=\"86.1\" y=\"163.2\" width=\"66.2\" height=\"172.8\" fill=\"#0f766e\" rx=\"3\"/><text x=\"119.2\" y=\"157.2\" font-size=\"11\" fill=\"#0f172a\" text-anchor=\"middle\">180</text><text x=\"119.2\" y=\"354\" font-size=\"11\" fill=\"#475569\" text-anchor=\"middle\">Respiratory</text><rect x=\"196.5\" y=\"134.4\" width=\"66.2\" height=\"201.6\" fill=\"#0891b2\" rx=\"3\"/><text x=\"229.6\" y=\"128.4\" font-size=\"11\" fill=\"#0f172a\" text-anchor=\"middle\">210</text><text x=\"229.6\" y=\"354\" font-size=\"11\" fill=\"#475569\" text-anchor=\"middle\">Cardiac</text><rect x=\"306.9\" y=\"244.8\" width=\"66.2\" height=\"91.2\" fill=\"#7c3aed\" rx=\"3\"/><text x=\"340.0\" y=\"238.8\" font-size=\"11\" fill=\"#0f172a\" text-anchor=\"middle\">95</text><text x=\"340.0\" y=\"354\" font-size=\"11\" fill=\"#475569\" text-anchor=\"middle\">Injuries</text><rect x=\"417.3\" y=\"268.8\" width=\"66.2\" height=\"67.2\" fill=\"#c2410c\" rx=\"3\"/><text x=\"450.4\" y=\"262.8\" font-size=\"11\" fill=\"#0f172a\" text-anchor=\"middle\">70</text><text x=\"450.4\" y=\"354\" font-size=\"11\" fill=\"#475569\" text-anchor=\"middle\">Infectious</text><rect x=\"527.7\" y=\"292.8\" width=\"66.2\" height=\"43.2\" fill=\"#65a30d\" rx=\"3\"/><text x=\"560.8\" y=\"286.8\" font-size=\"11\" fill=\"#0f172a\" text-anchor=\"middle\">45</text><text x=\"560.8\" y=\"354\" font-size=\"11\" fill=\"#475569\" text-anchor=\"middle\">MentalHealth</text></svg>",
+      "prep_seconds": 25,
+      "speak_seconds": 40
+    },
+    {
+      "id": "pm2-5-concentration-05",
+      "chart_type": "line",
+      "title": "Average Annual PM2.5 Levels, 2013-2020",
+      "subject": "PM2.5 concentration",
+      "x_label": "Year",
+      "y_label": "Concentration",
+      "unit": "µg/m³",
+      "points": [
+        {
+          "label": "2013",
+          "value": 28
+        },
+        {
+          "label": "2014",
+          "value": 27
+        },
+        {
+          "label": "2015",
+          "value": 24
+        },
+        {
+          "label": "2016",
+          "value": 22
+        },
+        {
+          "label": "2017",
+          "value": 20
+        },
+        {
+          "label": "2018",
+          "value": 22
+        },
+        {
+          "label": "2019",
+          "value": 21
+        },
+        {
+          "label": "2020",
+          "value": 19
+        }
+      ],
+      "facts": [
+        {
+          "key": "overview",
+          "importance": "essential",
+          "text": "The line chart shows PM2.5 concentration, measured in µg/m³."
+        },
+        {
+          "key": "highest",
+          "importance": "essential",
+          "text": "2013 is the highest at 28 µg/m³."
+        },
+        {
+          "key": "lowest",
+          "importance": "essential",
+          "text": "2020 is the lowest at 19 µg/m³."
+        },
+        {
+          "key": "overall_trend",
+          "importance": "essential",
+          "text": "Overall the figure fell from 28 µg/m³ in 2013 to 19 µg/m³ in 2020, a change of 9 µg/m³."
+        },
+        {
+          "key": "biggest_change",
+          "importance": "supporting",
+          "text": "The sharpest decrease is between 2014 and 2015 (3 µg/m³)."
+        },
+        {
+          "key": "range",
+          "importance": "supporting",
+          "text": "Values range from 19 µg/m³ to 28 µg/m³."
+        }
+      ],
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 640 400\" width=\"100%\" role=\"img\" style=\"background:#fff\"><text x=\"320\" y=\"26\" font-size=\"15\" font-weight=\"600\" fill=\"#0f172a\" text-anchor=\"middle\">Average Annual PM2.5 Levels, 2013-2020</text><line x1=\"64\" y1=\"48\" x2=\"64\" y2=\"336\" stroke=\"#94a3b8\"/><line x1=\"64\" y1=\"336\" x2=\"616\" y2=\"336\" stroke=\"#94a3b8\"/><line x1=\"64\" y1=\"336.0\" x2=\"616\" y2=\"336.0\" stroke=\"#e2e8f0\"/><text x=\"56\" y=\"340.0\" font-size=\"11\" fill=\"#64748b\" text-anchor=\"end\">15</text><line x1=\"64\" y1=\"264.0\" x2=\"616\" y2=\"264.0\" stroke=\"#e2e8f0\"/><text x=\"56\" y=\"268.0\" font-size=\"11\" fill=\"#64748b\" text-anchor=\"end\">20</text><line x1=\"64\" y1=\"192.0\" x2=\"616\" y2=\"192.0\" stroke=\"#e2e8f0\"/><text x=\"56\" y=\"196.0\" font-size=\"11\" fill=\"#64748b\" text-anchor=\"end\">25</text><line x1=\"64\" y1=\"120.0\" x2=\"616\" y2=\"120.0\" stroke=\"#e2e8f0\"/><text x=\"56\" y=\"124.0\" font-size=\"11\" fill=\"#64748b\" text-anchor=\"end\">30</text><line x1=\"64\" y1=\"48.0\" x2=\"616\" y2=\"48.0\" stroke=\"#e2e8f0\"/><text x=\"56\" y=\"52.0\" font-size=\"11\" fill=\"#64748b\" text-anchor=\"end\">35</text><text x=\"56\" y=\"36\" font-size=\"10\" fill=\"#94a3b8\" text-anchor=\"end\">axis starts at 15</text><text x=\"16\" y=\"192\" font-size=\"12\" fill=\"#475569\" text-anchor=\"middle\" transform=\"rotate(-90 16 192)\">Concentration</text><text x=\"340\" y=\"388\" font-size=\"12\" fill=\"#475569\" text-anchor=\"middle\">Year</text><polyline points=\"64.0,148.8 142.9,163.2 221.7,206.4 300.6,235.2 379.4,264.0 458.3,235.2 537.1,249.6 616.0,278.4\" fill=\"none\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><circle cx=\"64.0\" cy=\"148.8\" r=\"4\" fill=\"#0f766e\"/><text x=\"64.0\" y=\"138.8\" font-size=\"11\" fill=\"#0f172a\" text-anchor=\"middle\">28</text><text x=\"64.0\" y=\"354\" font-size=\"11\" fill=\"#475569\" text-anchor=\"middle\">2013</text><circle cx=\"142.9\" cy=\"163.2\" r=\"4\" fill=\"#0f766e\"/><text x=\"142.9\" y=\"153.2\" font-size=\"11\" fill=\"#0f172a\" text-anchor=\"middle\">27</text><text x=\"142.9\" y=\"354\" font-size=\"11\" fill=\"#475569\" text-anchor=\"middle\">2014</text><circle cx=\"221.7\" cy=\"206.4\" r=\"4\" fill=\"#0f766e\"/><text x=\"221.7\" y=\"196.4\" font-size=\"11\" fill=\"#0f172a\" text-anchor=\"middle\">24</text><text x=\"221.7\" y=\"354\" font-size=\"11\" fill=\"#475569\" text-anchor=\"middle\">2015</text><circle cx=\"300.6\" cy=\"235.2\" r=\"4\" fill=\"#0f766e\"/><text x=\"300.6\" y=\"225.2\" font-size=\"11\" fill=\"#0f172a\" text-anchor=\"middle\">22</text><text x=\"300.6\" y=\"354\" font-size=\"11\" fill=\"#475569\" text-anchor=\"middle\">2016</text><circle cx=\"379.4\" cy=\"264.0\" r=\"4\" fill=\"#0f766e\"/><text x=\"379.4\" y=\"254.0\" font-size=\"11\" fill=\"#0f172a\" text-anchor=\"middle\">20</text><text x=\"379.4\" y=\"354\" font-size=\"11\" fill=\"#475569\" text-anchor=\"middle\">2017</text><circle cx=\"458.3\" cy=\"235.2\" r=\"4\" fill=\"#0f766e\"/><text x=\"458.3\" y=\"225.2\" font-size=\"11\" fill=\"#0f172a\" text-anchor=\"middle\">22</text><text x=\"458.3\" y=\"354\" font-size=\"11\" fill=\"#475569\" text-anchor=\"middle\">2018</text><circle cx=\"537.1\" cy=\"249.6\" r=\"4\" fill=\"#0f766e\"/><text x=\"537.1\" y=\"239.6\" font-size=\"11\" fill=\"#0f172a\" text-anchor=\"middle\">21</text><text x=\"537.1\" y=\"354\" font-size=\"11\" fill=\"#475569\" text-anchor=\"middle\">2019</text><circle cx=\"616.0\" cy=\"278.4\" r=\"4\" fill=\"#0f766e\"/><text x=\"616.0\" y=\"268.4\" font-size=\"11\" fill=\"#0f172a\" text-anchor=\"middle\">19</text><text x=\"616.0\" y=\"354\" font-size=\"11\" fill=\"#475569\" text-anchor=\"middle\">2020</text></svg>",
+      "prep_seconds": 25,
+      "speak_seconds": 40
+    }
+  ]
+}
