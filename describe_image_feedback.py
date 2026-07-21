@@ -233,6 +233,19 @@ def _reconcile(result: dict[str, Any], item: dict[str, Any], response: str) -> d
     result["accuracy"] = check_numbers(response, item)
     result["gating_applied"] = result["content_score"] == 0
     result["not_scored"] = ["Oral Fluency", "Pronunciation"]
+    # Shared shape so the stored-attempt history, trend and per-trait progress
+    # components work for this task without special-casing.
+    result["raw_total"] = result["content_score"]
+    result["max_raw_total"] = MAX_CONTENT
+    result["traits"] = [
+        {
+            "name": "content",
+            "score": result["content_score"],
+            "max": MAX_CONTENT,
+            "evidence": result.get("band_reason", ""),
+            "fix": (result.get("top_priorities") or [""])[0],
+        }
+    ]
     return result
 
 

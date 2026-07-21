@@ -7,6 +7,8 @@ import type {
   EssayFeedback,
   EssayPrompt,
   SwtPassage,
+  DescribeImageItem,
+  DescribeImageFeedback,
   LessonEnrichment,
 } from './types'
 
@@ -60,6 +62,12 @@ export const api = {
       `/books/${slug}/essay-attempts${taskType ? `?task_type=${encodeURIComponent(taskType)}` : ''}`,
     ),
   swtPassages: () => get<SwtPassage[]>('/swt-passages'),
+  describeImageItems: () => get<DescribeImageItem[]>('/describe-image-items'),
+  describeImageFeedback: (slug: string, n: number, itemId: string, response: string) =>
+    post<DescribeImageFeedback>(`/books/${slug}/chapters/${n}/describe-image-feedback`, {
+      item_id: itemId,
+      response,
+    }),
   swtFeedback: (slug: string, n: number, passage: string, summary: string, passageId?: string) =>
     post<EssayFeedback>(`/books/${slug}/chapters/${n}/swt-feedback`, {
       passage,

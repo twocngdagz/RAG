@@ -39,6 +39,7 @@ except ImportError:
     pass
 
 import book_learning_materials_store as store
+import describe_image_feedback
 import essay_feedback
 import swt_feedback
 
@@ -79,6 +80,11 @@ class EssayFeedbackRequest(BaseModel):
     prompt_type: str | None = None
 
 
+class DescribeImageFeedbackRequest(BaseModel):
+    item_id: str = Field(min_length=1, max_length=120)
+    response: str = Field(min_length=1, max_length=4000)
+
+
 class SwtFeedbackRequest(BaseModel):
     passage: str = Field(min_length=1, max_length=4000)
     summary: str = Field(min_length=1, max_length=1500)
@@ -106,6 +112,15 @@ def create_app(engine: Engine | None = None) -> FastAPI:
     @app.get("/health")
     def health() -> dict[str, str]:
         return {"status": "ok"}
+
+    @app.get("/describe-image-items")
+    def get_describe_image_items() -> list[dict[str, Any]]:
+        """The Describe Image practice bank (chart SVG + computed ground truth)."""
+        path = Path(os.getenv("DESCRIBE_IMAGE_ITEMS_FILE", "output/describe_image_items.json"))
+        if not path.exists():
+            return []
+        data = json.loads(path.read_text(encoding="utf-8"))
+        return data.get("items", data) if isinstance(data, dict) else data
 
     @app.get("/swt-passages")
     def get_swt_passages() -> list[dict[str, Any]]:
@@ -247,6 +262,40 @@ def create_app(engine: Engine | None = None) -> FastAPI:
             feedback=feedback,
             prompt_type=body.passage_id,
             task_type="summarize_written_text",
+        )
+        session.commit()
+        return feedback
+
+    @app.post("/books/{slug}/chapters/{chapter_number}/describe-image-feedback")
+    def post_describe_image_feedback(
+        slug: str,
+        chapter_number: int,
+        body: DescribeImageFeedbackRequest,
+        session: Session = Depends(get_session),
+    ) -> dict[str, Any]:
+        """Score a Describe Image response against its item's computed facts."""
+        try:
+            item = describe_image_feedback.get_item(body.item_id)
+        except KeyError as exc:
+            raise HTTPException(status_code=404, detail=str(exc))
+        try:
+            feedback = describe_image_feedback.score_response(item, body.response)
+        except RuntimeError as exc:
+            raise HTTPException(status_code=503, detail=str(exc))
+        except httpx.HTTPError as exc:
+            raise HTTPException(status_code=502, detail=f"Scoring model error: {exc}")
+        except (ValueError, json.JSONDecodeError) as exc:
+            raise HTTPException(status_code=502, detail=f"Could not parse model output: {exc}")
+
+        store.save_essay_attempt(
+            session,
+            book_slug=slug,
+            chapter_number=chapter_number,
+            prompt_text=f"{item['title']} ({item['chart_type']} chart)",
+            essay_text=body.response,
+            feedback=feedback,
+            prompt_type=item["id"],
+            task_type="describe_image",
         )
         session.commit()
         return feedback

@@ -181,6 +181,43 @@ export interface SwtPassage {
   central_claim?: string
 }
 
+export interface DescribeImageItem {
+  id: string
+  chart_type: string
+  title: string
+  subject: string
+  x_label: string
+  y_label: string
+  unit: string
+  points: { label: string; value: number }[]
+  facts: { key: string; importance: string; text: string }[]
+  svg: string
+  prep_seconds: number
+  speak_seconds: number
+}
+
+export interface DescribeImageFeedback {
+  word_count: number
+  content_score: number
+  max_content: number
+  gating_applied: boolean
+  band_reason: string
+  facts: { key: string; importance: string; text: string; covered: string; note: string }[]
+  coverage: {
+    essential_covered: number
+    essential_total: number
+    supporting_covered: number
+    supporting_total: number
+  }
+  structure: Record<string, boolean>
+  accuracy: { numbers_said: number[]; unsupported: number[] }
+  inaccuracies?: string[]
+  errors?: EssayError[]
+  top_priorities: string[]
+  one_line_verdict: string
+  not_scored: string[]
+}
+
 export interface EssayAttempt {
   id: number
   chapter_number: number

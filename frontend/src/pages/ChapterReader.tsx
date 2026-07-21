@@ -22,6 +22,7 @@ import { GroundedText } from '../components/GroundedText'
 import { CoachView } from '../components/CoachView'
 import { EssayPractice } from '../components/EssayPractice'
 import { SwtPractice } from '../components/SwtPractice'
+import { DescribeImagePractice } from '../components/DescribeImagePractice'
 import { ErrorBoundary } from '../components/ErrorBoundary'
 
 export function ChapterReader({ chapters }: { chapters: ChapterIndexItem[] }) {
@@ -40,7 +41,10 @@ export function ChapterReader({ chapters }: { chapters: ChapterIndexItem[] }) {
   // served separately (validated by essay_prompts.py), so the tab just needs to
   // know this is an essay lesson.
   const taskType = enrich.data?.task_type
-  const canPractice = taskType === 'write_essay' || taskType === 'summarize_written_text'
+  const canPractice =
+    taskType === 'write_essay' ||
+    taskType === 'summarize_written_text' ||
+    taskType === 'describe_image'
 
   const [view, setView] = useState<'lesson' | 'coach' | 'practice'>('lesson')
   useEffect(() => {
@@ -102,6 +106,8 @@ export function ChapterReader({ chapters }: { chapters: ChapterIndexItem[] }) {
         {tabs}
         {taskType === 'summarize_written_text' ? (
           <SwtPractice slug={slug} number={number} />
+        ) : taskType === 'describe_image' ? (
+          <DescribeImagePractice slug={slug} number={number} />
         ) : (
           <EssayPractice slug={slug} number={number} />
         )}
