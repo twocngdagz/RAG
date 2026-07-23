@@ -1,0 +1,377 @@
+[
+  {
+    "id": "rmc-001-gene-editing",
+    "mode": "single",
+    "task_type": "reading_multiple_choice",
+    "topic": "Gene Editing",
+    "title": "CRISPR Applications in Agriculture",
+    "passage": "CRISPR-Cas systems, originally identified as a bacterial adaptive immune mechanism, have been repurposed to edit plant genomes with unprecedented precision. By introducing targeted double‑strand breaks, researchers can either knock out undesirable genes or insert traits that confer resistance to pests, drought, or nutrient deficiencies. Field trials of edited wheat varieties have demonstrated yield increases of up to 12 percent under water‑limited conditions. Nevertheless, regulatory frameworks differ markedly across regions; some jurisdictions treat edited crops as conventional breeding products, while others require extensive safety assessments akin to genetically modified organisms. Public perception adds another layer of complexity, with consumer groups expressing concern over unforeseen ecological impacts. Proponents argue that the technology can reduce reliance on chemical inputs, thereby mitigating runoff and greenhouse gas emissions. Ongoing studies aim to map off‑target effects and improve delivery methods, such as ribonucleoprotein complexes that degrade quickly within the plant cell. The convergence of scientific advances, policy debate, and societal attitudes will determine the extent to which CRISPR reshapes global agriculture.",
+    "word_count": 165,
+    "question": "What is the main idea of the passage?",
+    "skill": "main idea",
+    "options": [
+      {
+        "key": "A",
+        "text": "The historical discovery of CRISPR in bacteria."
+      },
+      {
+        "key": "B",
+        "text": "Ethical controversies surrounding human gene therapy."
+      },
+      {
+        "key": "C",
+        "text": "Potential benefits and regulatory challenges of using CRISPR in crop improvement."
+      },
+      {
+        "key": "D",
+        "text": "A comparison between CRISPR and conventional breeding techniques."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": {
+      "A": "The passage mentions bacterial origins only as background and does not focus on them.",
+      "B": "Human gene therapy is not discussed; the focus is on agriculture.",
+      "C": "The passage outlines advantages for crops, regulatory differences, and societal issues, matching the main idea.",
+      "D": "While conventional breeding is mentioned, the passage does not mainly compare the two methods."
+    },
+    "max_score": 1
+  },
+  {
+    "id": "rmc-002-inflation",
+    "mode": "single",
+    "task_type": "reading_multiple_choice",
+    "topic": "Inflation",
+    "title": "Monetary Policy Responses to Stagflation",
+    "passage": "In the early 1970s several advanced economies confronted a rare combination of stagnant growth and rising price levels, a phenomenon later termed stagflation. Central banks, tasked with maintaining price stability, responded by tightening monetary conditions: policy rates were raised sharply, and open market operations were used to withdraw liquidity from the banking system. These actions aimed to curb inflation expectations, even though higher rates risked deepening the slowdown in output and employment. Fiscal authorities, by contrast, pursued modest stimulus measures, attempting to offset the contractionary impact of monetary tightening. While inflation began to recede after two years, unemployment remained elevated, prompting a debate among policymakers about the relative weight of price stability versus labor market health. Over time, the experience led to a more explicit dual mandate in several jurisdictions, where central banks were required to balance both objectives, though the priority given to each varied across countries.",
+    "word_count": 148,
+    "question": "What can be inferred about the central bank's stance during the period described?",
+    "skill": "inference",
+    "options": [
+      {
+        "key": "A",
+        "text": "It prioritized price stability over employment."
+      },
+      {
+        "key": "B",
+        "text": "It adopted a neutral stance, avoiding drastic measures."
+      },
+      {
+        "key": "C",
+        "text": "It pursued expansionary policy despite rising prices."
+      },
+      {
+        "key": "D",
+        "text": "It coordinated closely with fiscal authorities to cut taxes."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": {
+      "A": "The passage notes that the banks raised rates sharply to curb inflation, indicating a focus on price stability.",
+      "B": "The description of sharp rate hikes contradicts a neutral stance.",
+      "C": "Raising rates is contractionary, not expansionary.",
+      "D": "The passage mentions modest fiscal stimulus, not tax cuts coordinated with the central bank."
+    },
+    "max_score": 1
+  },
+  {
+    "id": "rmc-003-coral-bleaching",
+    "mode": "single",
+    "task_type": "reading_multiple_choice",
+    "topic": "Coral Bleaching",
+    "title": "Thermal Stress and Reef Resilience",
+    "passage": "Coral reefs worldwide have experienced increasingly frequent bleaching events as sea surface temperatures climb beyond the thermal tolerance of their symbiotic algae. When temperatures exceed a critical threshold, the algae are expelled, depriving corals of essential nutrients and causing the characteristic whitening. Recent longitudinal studies have documented that some reef systems demonstrate partial recovery within a few years, particularly where local stressors such as overfishing and pollution are mitigated. Genetic analyses suggest that certain coral genotypes possess greater heat‑tolerance, and these may become more prevalent under continued warming. Nevertheless, the speed of climate change often outpaces the natural adaptive capacity of many species, leading to widespread mortality in the most vulnerable regions. Conservation strategies now emphasize both global emission reductions and targeted interventions, such as assisted gene flow, to enhance resilience. The complex interplay between environmental forcing and biological response underscores the importance of integrating ecological research with policy actions.",
+    "word_count": 150,
+    "question": "What is the author's primary purpose in writing this passage?",
+    "skill": "author's purpose",
+    "options": [
+      {
+        "key": "A",
+        "text": "To argue that coral reefs cannot recover once bleached."
+      },
+      {
+        "key": "B",
+        "text": "To describe mechanisms of bleaching and highlight potential for adaptation."
+      },
+      {
+        "key": "C",
+        "text": "To present a historical account of reef formation."
+      },
+      {
+        "key": "D",
+        "text": "To compare reef health across different oceans."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": {
+      "A": "The passage mentions instances of recovery, contradicting an argument that reefs cannot recover.",
+      "B": "It explains bleaching mechanisms, notes genetic tolerance, and discusses adaptation strategies.",
+      "C": "Historical formation of reefs is not covered.",
+      "D": "No comparative analysis of different oceans is provided."
+    },
+    "max_score": 1
+  },
+  {
+    "id": "rmc-004-quantum-computing",
+    "mode": "single",
+    "task_type": "reading_multiple_choice",
+    "topic": "Quantum Computing",
+    "title": "Error Correction in Noisy Intermediate-Scale Quantum Devices",
+    "passage": "Current quantum processors, often described as noisy intermediate-scale quantum (NISQ) devices, operate with a limited number of qubits that suffer from decoherence and gate errors. To make useful computations feasible, researchers have developed error‑mitigation techniques that do not require the full overhead of fault‑tolerant error correction. One such approach involves extrapolating results obtained at different noise levels to estimate the zero‑noise limit. Another strategy employs probabilistic error cancellation, wherein the effect of noise is counteracted by applying carefully calibrated inverse operations. Experimental demonstrations on superconducting qubit platforms have shown that these methods can improve the fidelity of quantum chemistry simulations by up to 30 percent. While promising, the techniques remain sensitive to calibration drift and require extensive classical post‑processing. Ongoing efforts aim to combine mitigation with emerging error‑correcting codes, anticipating a gradual transition toward truly fault‑tolerant quantum computing as hardware quality improves.",
+    "word_count": 142,
+    "question": "What tone does the author adopt toward the prospects of quantum error mitigation?",
+    "skill": "tone",
+    "options": [
+      {
+        "key": "A",
+        "text": "Cautiously optimistic"
+      },
+      {
+        "key": "B",
+        "text": "Pessimistic"
+      },
+      {
+        "key": "C",
+        "text": "Indifferent"
+      },
+      {
+        "key": "D",
+        "text": "Alarmist"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": {
+      "A": "The passage acknowledges challenges but highlights measurable improvements and ongoing progress, reflecting cautious optimism.",
+      "B": "The author does not express a bleak outlook; improvements are emphasized.",
+      "C": "The detailed discussion of techniques and results shows engagement, not indifference.",
+      "D": "The language is measured, lacking sensationalism typical of an alarmist tone."
+    },
+    "max_score": 1
+  },
+  {
+    "id": "rmc-005-urban-migration",
+    "mode": "single",
+    "task_type": "reading_multiple_choice",
+    "topic": "Urban Migration",
+    "title": "Push‑Pull Factors in Contemporary Megacities",
+    "passage": "Rapid urbanization in the twenty‑first century has produced megacities whose populations exceed ten million inhabitants. Push factors such as limited employment opportunities, inadequate public services, and environmental degradation in rural regions compel individuals to seek better prospects elsewhere. Simultaneously, pull factors in large cities—higher wages, diverse cultural amenities, and access to advanced education—attract migrants, especially young professionals and recent graduates. The influx intensifies demand for housing, often outstripping the supply of affordable units. Consequently, rental prices rise sharply, and informal settlements expand on city peripheries. While the concentration of talent can stimulate innovation and economic growth, the pressure on infrastructure and the growing disparity between affluent neighborhoods and underserved districts pose significant governance challenges. Policymakers therefore explore solutions ranging from inclusive zoning reforms to investments in public transit that can distribute population density more evenly across metropolitan areas.",
+    "word_count": 138,
+    "question": "According to the passage, which factor most directly contributes to housing shortages in megacities?",
+    "skill": "detail",
+    "options": [
+      {
+        "key": "A",
+        "text": "Rural unemployment"
+      },
+      {
+        "key": "B",
+        "text": "Influx of young professionals"
+      },
+      {
+        "key": "C",
+        "text": "Decline in birth rates"
+      },
+      {
+        "key": "D",
+        "text": "Increased agricultural output"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": {
+      "A": "Rural unemployment is a push factor, not directly linked to housing shortages within cities.",
+      "B": "The passage states that the arrival of young professionals intensifies demand for housing, leading to shortages.",
+      "C": "Birth rate trends are not discussed in relation to housing.",
+      "D": "Agricultural output is unrelated to urban housing markets in the passage."
+    },
+    "max_score": 1
+  },
+  {
+    "id": "rmc-006-coastal-migration",
+    "mode": "multiple",
+    "task_type": "reading_multiple_choice",
+    "topic": "Coastal Migration",
+    "title": "Shifting Populations on the Edge",
+    "passage": "Rising sea levels, driven by thermal expansion and glacial melt, have accelerated the displacement of coastal communities over the past two decades. Recent estimates indicate that roughly 12 million inhabitants of low‑lying deltaic regions have relocated inland since 2000, with the majority moving to urban peripheries within 150 km of their former homes. This migration pattern has produced a dual pressure: receiving municipalities experience rapid demand for housing and public services, while origin towns confront declining tax bases and aging infrastructure. Governments have responded with a mixture of relocation assistance, such as subsidised transport vouchers, and resilience investments, including the construction of elevated flood barriers. However, the effectiveness of these measures varies. In the Mekong Delta, for example, barrier projects have reduced seasonal inundation by 30 percent but have not halted the outflow of residents, who cite limited employment opportunities as a decisive factor. Conversely, in the Netherlands, comprehensive land‑use planning coupled with targeted vocational training has succeeded in retaining 70 percent of at‑risk households. Critics argue that the focus on physical infrastructure overlooks the social dimensions of migration, such as community cohesion and mental health. The passage concludes that an integrated approach, marrying engineering solutions with socio‑economic policies, offers the most sustainable pathway for managing coastal population shifts. Policy analysts emphasize that early engagement with affected communities can improve the design of relocation packages, noting that trust-building measures such as participatory planning workshops have yielded higher satisfaction rates in pilot studies. Moreover, insurance schemes that link premium reductions to the adoption of resilient building practices are being trialled in several hotspot regions, indicating a shift toward risk‑sharing mechanisms that complement direct public investment.",
+    "word_count": 274,
+    "question": "Which of the following statements are supported by the passage?",
+    "skill": "detail",
+    "options": [
+      {
+        "key": "A",
+        "text": "Flood barriers in the Mekong Delta have completely eliminated seasonal flooding."
+      },
+      {
+        "key": "B",
+        "text": "Relocation assistance includes subsidised transport vouchers."
+      },
+      {
+        "key": "C",
+        "text": "The Netherlands has retained fewer than half of its at‑risk households."
+      },
+      {
+        "key": "D",
+        "text": "The passage argues that integrating engineering solutions with socio‑economic policies offers the most sustainable pathway."
+      },
+      {
+        "key": "E",
+        "text": "Urban peripheries within 150 km receive no additional public services despite population influx."
+      }
+    ],
+    "correct": [
+      "B",
+      "D"
+    ],
+    "rationale": {
+      "A": "The passage states the barriers reduced flooding by 30 percent, not eliminated it.",
+      "B": "The passage explicitly mentions subsidised transport vouchers as part of relocation assistance.",
+      "C": "The passage reports a 70 percent retention rate in the Netherlands, which is more than half.",
+      "D": "The passage concludes that an integrated approach of engineering and socio‑economic policies is the most sustainable.",
+      "E": "The passage notes that receiving municipalities experience rapid demand for public services, indicating additional services are needed."
+    },
+    "max_score": 2
+  },
+  {
+    "id": "rmc-007-ai-ethics",
+    "mode": "multiple",
+    "task_type": "reading_multiple_choice",
+    "topic": "AI Ethics",
+    "title": "Moral Challenges of Autonomous Systems",
+    "passage": "The deployment of autonomous decision‑making systems in sectors ranging from transportation to healthcare has raised profound ethical questions. Central among these is the allocation of responsibility when an algorithmic error results in harm; legal scholars debate whether liability should rest with the manufacturer, the data scientist, or the end user. Another concern concerns bias, as machine‑learning models trained on historical datasets can reproduce discriminatory patterns, leading to unequal treatment in credit scoring, law‑enforcement profiling, and hiring practices. To address these issues, several nations have introduced regulatory proposals that require transparency reports, mandatory impact assessments, and the establishment of audit trails for high‑risk applications. The passage emphasizes that such measures aim to ensure that autonomous systems align with societal values and do not exacerbate existing inequities. Proponents of stricter oversight argue that accountability mechanisms are essential for maintaining public trust, especially as systems become capable of operating with minimal human intervention. Critics, however, warn that overly prescriptive rules may stifle innovation and impede the competitive advantage of firms that invest heavily in artificial intelligence research. The author concludes that a balanced policy framework—one that enforces ethical standards while preserving room for technological advancement—offers the most viable route to responsibly integrating autonomous technologies into everyday life. In 2024, the International Telecommunication Union convened a summit of policymakers, industry leaders, and civil‑society representatives to draft a set of global guidelines for trustworthy AI. The resulting framework outlines three core principles: transparency, which mandates that decision logic be explainable to affected individuals; fairness, requiring systematic testing for disparate impact across demographic groups; and accountability, calling for a clear chain of responsibility that survives hand‑over between developers and operators. While the document remains non‑binding, its adoption by several major economies signals a growing consensus that ethical safeguards must evolve alongside rapid technological progress.",
+    "word_count": 298,
+    "question": "What does the author aim to achieve with this passage?",
+    "skill": "author's purpose",
+    "options": [
+      {
+        "key": "A",
+        "text": "To inform readers about recent technical advances in AI hardware."
+      },
+      {
+        "key": "B",
+        "text": "To persuade policymakers to adopt stricter accountability standards for autonomous systems."
+      },
+      {
+        "key": "C",
+        "text": "To illustrate how bias can emerge in algorithmic decision‑making."
+      },
+      {
+        "key": "D",
+        "text": "To criticize the feasibility of any regulation of AI."
+      },
+      {
+        "key": "E",
+        "text": "To summarize historical milestones in artificial intelligence research."
+      }
+    ],
+    "correct": [
+      "B",
+      "C"
+    ],
+    "rationale": {
+      "A": "The passage focuses on ethical and regulatory issues, not on hardware advances.",
+      "B": "The passage explicitly calls for regulatory proposals and accountability mechanisms, aiming to persuade policymakers.",
+      "C": "The discussion of bias in machine‑learning models shows the author is illustrating how bias can arise.",
+      "D": "The passage does not argue that regulation is infeasible; it advocates for balanced regulation.",
+      "E": "Historical milestones are not the focus; the passage deals with current ethical challenges."
+    },
+    "max_score": 2
+  },
+  {
+    "id": "rmc-008-soil-microbiology",
+    "mode": "multiple",
+    "task_type": "reading_multiple_choice",
+    "topic": "Soil Microbiology",
+    "title": "Microbial Drivers of Soil Carbon Sequestration",
+    "passage": "Soil microbes constitute a complex consortium that drives the transformation of organic matter into stable carbon compounds, thereby influencing the global carbon budget. Recent metagenomic surveys have revealed that bacterial phyla such as Actinobacteria and Proteobacteria dominate the upper 10 cm of temperate soils, while fungal hyphae penetrate deeper horizons, linking surface litter to mineral layers. These organisms mediate the decomposition of plant residues through enzymatic pathways that release carbon dioxide, yet a fraction of the liberated carbon is re‑incorporated into humus via microbial necromass. Experiments with isotopically labelled substrates demonstrate that microbial efficiency—the proportion of assimilated carbon that becomes necromass—varies with nutrient availability, temperature, and moisture. In nutrient‑rich conditions, microbes allocate more carbon to growth, enhancing necromass formation, whereas under drought stress they shift toward respiration, reducing carbon sequestration potential. Land‑use change further modulates these dynamics; conversion of native grassland to intensive agriculture typically lowers microbial diversity and diminishes the capacity for long‑term carbon storage. Conversely, the adoption of no‑till practices and the addition of organic amendments have been shown to boost microbial biomass and increase the residence time of carbon in soil. The passage suggests that harnessing microbial processes, through management strategies that maintain soil moisture and supply balanced nutrients, could serve as a nature‑based solution to mitigate atmospheric CO₂ concentrations while sustaining agricultural productivity. Future research aims to identify keystone microbial taxa whose metabolic pathways are especially efficient at transforming labile carbon into stable polymers. By integrating genomic insights with field‑scale manipulations, scientists hope to develop inoculation techniques that could be applied during crop rotation cycles. Policymakers are beginning to recognize the climate mitigation potential of such approaches, with several national soil strategies now allocating funding for microbial‑focused carbon accounting. If these initiatives succeed, the contribution of soils to net‑zero targets could rival that of afforestation projects, underscoring the strategic importance of below‑ground biodiversity.",
+    "word_count": 307,
+    "question": "Which word best describes the tone of the passage?",
+    "skill": "tone",
+    "options": [
+      {
+        "key": "A",
+        "text": "objective"
+      },
+      {
+        "key": "B",
+        "text": "skeptical"
+      },
+      {
+        "key": "C",
+        "text": "hopeful"
+      },
+      {
+        "key": "D",
+        "text": "alarmist"
+      },
+      {
+        "key": "E",
+        "text": "indifferent"
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "rationale": {
+      "A": "The passage presents data and research findings in a neutral, fact‑based manner.",
+      "B": "There is no expression of doubt or questioning beyond standard scientific caution.",
+      "C": "The discussion of potential climate‑mitigation benefits conveys a hopeful outlook.",
+      "D": "The language does not use exaggerated or fear‑inducing terms.",
+      "E": "The passage actively engages with the topic, showing interest rather than indifference."
+    },
+    "max_score": 2
+  },
+  {
+    "id": "rmc-009-space-collaboration",
+    "mode": "multiple",
+    "task_type": "reading_multiple_choice",
+    "topic": "Space Collaboration",
+    "title": "International Collaboration on Lunar Exploration",
+    "passage": "The renewed interest in lunar exploration during the 2020s has been marked by an unprecedented level of international cooperation. Under the umbrella of the Artemis program, NASA has signed agreements with the European Space Agency (ESA), the Japan Aerospace Exploration Agency (JAXA), and the Canadian Space Agency (CSA) to share launch services, scientific payloads, and crew‑training facilities. These partnerships are structured around a cost‑sharing model, whereby participating nations contribute financial resources proportionate to the scope of their scientific payloads, thereby reducing the overall expenditure required for each mission. In addition to governmental entities, private enterprises such as SpaceX and Blue Origin have secured contracts to provide lunar landers, creating a hybrid public‑private framework that further dilutes individual fiscal burdens. The passage notes that while the collaborative model promotes resource efficiency, it also introduces strategic complexities. Divergent national security priorities can lead to disagreements over data access, and the reliance on a limited number of launch providers raises concerns about supply‑chain resilience. Moreover, the legal status of lunar resources remains ambiguous under the Outer Space Treaty, prompting some states to advocate for a multilateral regime that would allocate extraction rights based on contribution levels. Analysts predict that the success of the current cooperative approach will hinge on the ability to balance collective scientific goals with the protection of sovereign interests. If managed effectively, the joint effort could establish a sustainable presence on the Moon, serving as a testbed for future missions to Mars and beyond. Looking ahead, the participating agencies have proposed a governance charter that would codify data‑sharing protocols, define joint decision‑making bodies, and outline mechanisms for resolving disputes over intellectual property. Such a charter aims to institutionalise cooperation beyond individual missions, creating a durable framework that could be extended to asteroid mining ventures and deep‑space habitat construction.",
+    "word_count": 298,
+    "question": "Which of the following can be inferred from the passage?",
+    "skill": "inference",
+    "options": [
+      {
+        "key": "A",
+        "text": "All participating nations have equal decision‑making authority in the Artemis program."
+      },
+      {
+        "key": "B",
+        "text": "Resource pooling reduces the overall cost for individual countries."
+      },
+      {
+        "key": "C",
+        "text": "The passage suggests that geopolitical rivalry may hinder long‑term cooperation."
+      },
+      {
+        "key": "D",
+        "text": "Private companies are excluded from any lunar activities under the described agreements."
+      },
+      {
+        "key": "E",
+        "text": "The program plans to establish a permanent human settlement by 2025."
+      }
+    ],
+    "correct": [
+      "B",
+      "C"
+    ],
+    "rationale": {
+      "A": "The passage mentions divergent security priorities, indicating decision‑making is not equal for all nations.",
+      "B": "The cost‑sharing model described explicitly reduces the overall expenditure for each participating nation.",
+      "C": "The passage notes strategic complexities and rival security interests that could impede sustained cooperation.",
+      "D": "Private firms such as SpaceX and Blue Origin are explicitly included in the collaboration.",
+      "E": "The passage does not provide a specific timeline for a permanent settlement; it only speaks of a sustainable presence."
+    },
+    "max_score": 2
+  }
+]
