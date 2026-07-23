@@ -9,6 +9,8 @@ import type {
   SwtPassage,
   DescribeImageItem,
   DescribeImageFeedback,
+  ReadingMcqItem,
+  ReadingMcqFeedback,
   LessonEnrichment,
 } from './types'
 
@@ -62,6 +64,12 @@ export const api = {
       `/books/${slug}/essay-attempts${taskType ? `?task_type=${encodeURIComponent(taskType)}` : ''}`,
     ),
   swtPassages: () => get<SwtPassage[]>('/swt-passages'),
+  readingMcqItems: () => get<ReadingMcqItem[]>('/reading-mcq-items'),
+  readingMcqAnswer: (slug: string, n: number, itemId: string, chosen: string[]) =>
+    post<ReadingMcqFeedback>(`/books/${slug}/chapters/${n}/reading-mcq-answer`, {
+      item_id: itemId,
+      chosen,
+    }),
   describeImageItems: () => get<DescribeImageItem[]>('/describe-image-items'),
   describeImageFeedback: (slug: string, n: number, itemId: string, response: string) =>
     post<DescribeImageFeedback>(`/books/${slug}/chapters/${n}/describe-image-feedback`, {

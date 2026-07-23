@@ -28,6 +28,14 @@ export const TRAIT_LABEL: Record<string, string> = {
   vocabulary_range: 'Vocabulary range',
   vocabulary: 'Vocabulary',
   spelling: 'Spelling',
+  // Reading multiple choice reports the reading skill the question tested,
+  // so progress shows which kind of question is still costing marks.
+  'main idea': 'Main idea',
+  detail: 'Detail',
+  inference: 'Inference',
+  "author's purpose": "Author's purpose",
+  tone: 'Tone',
+  reading: 'Reading',
 }
 
 const TYPE_LABEL: Record<string, string> = {

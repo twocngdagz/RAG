@@ -23,6 +23,7 @@ import { CoachView } from '../components/CoachView'
 import { EssayPractice } from '../components/EssayPractice'
 import { SwtPractice } from '../components/SwtPractice'
 import { DescribeImagePractice } from '../components/DescribeImagePractice'
+import { ReadingMcqPractice } from '../components/ReadingMcqPractice'
 import { ErrorBoundary } from '../components/ErrorBoundary'
 
 export function ChapterReader({ chapters }: { chapters: ChapterIndexItem[] }) {
@@ -44,7 +45,8 @@ export function ChapterReader({ chapters }: { chapters: ChapterIndexItem[] }) {
   const canPractice =
     taskType === 'write_essay' ||
     taskType === 'summarize_written_text' ||
-    taskType === 'describe_image'
+    taskType === 'describe_image' ||
+    taskType === 'reading_multiple_choice'
 
   const [view, setView] = useState<'lesson' | 'coach' | 'practice'>('lesson')
   useEffect(() => {
@@ -104,7 +106,9 @@ export function ChapterReader({ chapters }: { chapters: ChapterIndexItem[] }) {
     return (
       <>
         {tabs}
-        {taskType === 'summarize_written_text' ? (
+        {taskType === 'reading_multiple_choice' ? (
+          <ReadingMcqPractice slug={slug} number={number} />
+        ) : taskType === 'summarize_written_text' ? (
           <SwtPractice slug={slug} number={number} />
         ) : taskType === 'describe_image' ? (
           <DescribeImagePractice slug={slug} number={number} />

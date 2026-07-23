@@ -218,6 +218,49 @@ export interface DescribeImageFeedback {
   not_scored: string[]
 }
 
+// ---- Reading multiple choice (marked in code, no model involved) ------------
+
+export interface McqOption {
+  key: string
+  text: string
+}
+
+/** The bank as served: the answer key and explanations are withheld until the
+ * learner submits, so they can't be read out of the page. */
+export interface ReadingMcqItem {
+  id: string
+  mode: 'single' | 'multiple'
+  topic: string
+  title: string
+  passage: string
+  word_count: number
+  question: string
+  skill: string
+  options: McqOption[]
+  max_score: number
+}
+
+export interface ReadingMcqFeedback {
+  score: number
+  max_score: number
+  correct_keys: string[]
+  chosen_keys: string[]
+  hits: string[]
+  missed: string[]
+  wrong: string[]
+  /** True when wrong ticks cancelled the right ones out to zero. */
+  floored: boolean
+  rationale: Record<string, string>
+  mode: string
+  question: string
+  options: McqOption[]
+  skill?: string
+  raw_total: number
+  max_raw_total: number
+  traits: EssayTrait[]
+  one_line_verdict: string
+}
+
 export interface EssayAttempt {
   id: number
   chapter_number: number

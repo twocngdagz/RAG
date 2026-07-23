@@ -41,6 +41,7 @@ except ImportError:
 import book_learning_materials_store as store
 import describe_image_feedback
 import essay_feedback
+import reading_mcq_items
 import swt_feedback
 
 # Sections the frontend can request individually, mapped to how they sit in the
@@ -85,10 +86,39 @@ class DescribeImageFeedbackRequest(BaseModel):
     response: str = Field(min_length=1, max_length=4000)
 
 
+class ReadingMcqAnswerRequest(BaseModel):
+    item_id: str = Field(min_length=1, max_length=120)
+    chosen: list[str] = Field(default_factory=list, max_length=8)
+
+
+def _load_mcq_bank() -> list[dict[str, Any]]:
+    path = Path(os.getenv("READING_MCQ_ITEMS_FILE", "output/reading_mcq_items.json"))
+    if not path.exists():
+        return []
+    data = json.loads(path.read_text(encoding="utf-8"))
+    return data.get("items", data) if isinstance(data, dict) else data
+
+
 class SwtFeedbackRequest(BaseModel):
     passage: str = Field(min_length=1, max_length=4000)
     summary: str = Field(min_length=1, max_length=1500)
     passage_id: str | None = None
+
+
+def _mcq_verdict(result: dict[str, Any], item: dict[str, Any]) -> str:
+    """One plain sentence a learner can act on."""
+    if result["score"] == result["max_score"]:
+        return "Correct."
+    if item["mode"] == "single":
+        return f"Not quite — the answer was {result['correct_keys'][0]}."
+    parts = []
+    if result["wrong"]:
+        parts.append(f"you chose {', '.join(result['wrong'])} which the passage does not support")
+    if result["missed"]:
+        parts.append(f"you missed {', '.join(result['missed'])}")
+    tail = "; ".join(parts) if parts else "review the explanations below"
+    floored = " Choosing wrong options costs marks, so this scored 0." if result["floored"] else ""
+    return f"{result['score']} of {result['max_score']} — {tail}.{floored}"
 
 
 def create_app(engine: Engine | None = None) -> FastAPI:
@@ -121,6 +151,18 @@ def create_app(engine: Engine | None = None) -> FastAPI:
             return []
         data = json.loads(path.read_text(encoding="utf-8"))
         return data.get("items", data) if isinstance(data, dict) else data
+
+    @app.get("/reading-mcq-items")
+    def get_reading_mcq_items() -> list[dict[str, Any]]:
+        """The Reading Multiple-Choice bank, with the answers stripped out.
+
+        The key and the per-option explanations are deliberately withheld until
+        the learner submits — otherwise the answers sit in the page source and
+        the practice is worthless."""
+        return [
+            {k: v for k, v in item.items() if k not in ("correct", "rationale")}
+            for item in _load_mcq_bank()
+        ]
 
     @app.get("/swt-passages")
     def get_swt_passages() -> list[dict[str, Any]]:
@@ -296,6 +338,56 @@ def create_app(engine: Engine | None = None) -> FastAPI:
             feedback=feedback,
             prompt_type=item["id"],
             task_type="describe_image",
+        )
+        session.commit()
+        return feedback
+
+    @app.post("/books/{slug}/chapters/{chapter_number}/reading-mcq-answer")
+    def post_reading_mcq_answer(
+        slug: str,
+        chapter_number: int,
+        body: ReadingMcqAnswerRequest,
+        session: Session = Depends(get_session),
+    ) -> dict[str, Any]:
+        """Mark a Reading Multiple-Choice answer and record it in the history.
+
+        No model is involved: the marking is the official rule applied in code,
+        so the same answer always earns the same mark."""
+        item = next((i for i in _load_mcq_bank() if i.get("id") == body.item_id), None)
+        if item is None:
+            raise HTTPException(status_code=404, detail=f"Item {body.item_id} not found.")
+
+        result = reading_mcq_items.score_answer(item, body.chosen)
+        # Shaped like the other feedback payloads so one history list, one detail
+        # view and one progress chart can cover every task type.
+        feedback = {
+            **result,
+            "word_count": 0,
+            "gating_applied": False,
+            "raw_total": result["score"],
+            "max_raw_total": result["max_score"],
+            "mode": item["mode"],
+            "question": item["question"],
+            "options": item["options"],
+            "skill": item.get("skill"),
+            "traits": [{
+                "name": item.get("skill") or "reading",
+                "score": result["score"],
+                "max": result["max_score"],
+                "evidence": "", "fix": "",
+            }],
+            "top_priorities": [],
+            "one_line_verdict": _mcq_verdict(result, item),
+        }
+        store.save_essay_attempt(
+            session,
+            book_slug=slug,
+            chapter_number=chapter_number,
+            prompt_text=f"{item['title']} — {item['question']}",
+            essay_text=", ".join(result["chosen_keys"]) or "(no answer)",
+            feedback=feedback,
+            prompt_type=item["id"],
+            task_type="reading_multiple_choice",
         )
         session.commit()
         return feedback

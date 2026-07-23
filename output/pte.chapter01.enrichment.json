@@ -7,15 +7,36 @@
   "overview": {
     "what_it_is": "Answer Short Question is a listening-and-speaking task. You hear a short question and give a brief, accurate spoken answer. The answer is normally one word or a short phrase rather than a complete explanation.",
     "format_facts": [
-      { "label": "Input", "value": "A short spoken question" },
-      { "label": "Response", "value": "A brief spoken answer, often one word or a few words" },
-      { "label": "Skills assessed", "value": "Listening and speaking" },
-      { "label": "Writing required", "value": "None" },
-      { "label": "Practice target", "value": "Recognize the question and answer within 10 seconds or less" }
+      {
+        "label": "Input",
+        "value": "A short spoken question"
+      },
+      {
+        "label": "Response",
+        "value": "A brief spoken answer, often one word or a few words"
+      },
+      {
+        "label": "Skills assessed",
+        "value": "Listening and speaking. You listen to the question and say the answer aloud. Pearson's official score chart records this task under Listening only, but you still have to speak your answer clearly."
+      },
+      {
+        "label": "Writing required",
+        "value": "None"
+      },
+      {
+        "label": "Practice target",
+        "value": "Recognize the question and answer within 10 seconds or less"
+      }
     ],
     "scoring_factors": [
-      { "name": "Content correctness", "what_it_measures": "Whether the spoken answer gives the expected information." },
-      { "name": "Response appropriacy", "what_it_measures": "Whether the answer directly fits the question and uses a suitable word or short phrase." }
+      {
+        "name": "Content correctness",
+        "what_it_measures": "Whether the spoken answer gives the expected information."
+      },
+      {
+        "name": "Response appropriacy",
+        "what_it_measures": "Whether the answer directly fits the question and uses a suitable word or short phrase."
+      }
     ],
     "critical_rules": [
       "Give one clear answer rather than a long explanation.",
@@ -39,10 +60,22 @@
     "name": "Cue → Type → Key → Answer",
     "summary": "First identify the question cue, then predict the answer category, catch the key content words or choices, and finally give one short spoken answer.",
     "steps": [
-      { "step": "Cue", "detail": "Listen for the question word or opening phrase, such as who, where, when, which, what, how many, or what do you call." },
-      { "step": "Type", "detail": "Predict the answer category immediately. For example, who predicts a person, where predicts a place, and how many predicts a number." },
-      { "step": "Key", "detail": "Focus on the main nouns, verbs, descriptions, and any choices that identify the exact answer." },
-      { "step": "Answer", "detail": "Say only the required word or short phrase with clear stress. Do not explain unless an explanation is requested." }
+      {
+        "step": "Cue",
+        "detail": "Listen for the question word or opening phrase, such as who, where, when, which, what, how many, or what do you call."
+      },
+      {
+        "step": "Type",
+        "detail": "Predict the answer category immediately. For example, who predicts a person, where predicts a place, and how many predicts a number."
+      },
+      {
+        "step": "Key",
+        "detail": "Focus on the main nouns, verbs, descriptions, and any choices that identify the exact answer."
+      },
+      {
+        "step": "Answer",
+        "detail": "Say only the required word or short phrase with clear stress. Do not explain unless an explanation is requested."
+      }
     ],
     "formula": "QUESTION CUE + KEY CONTENT WORDS OR OPTIONS → ANSWER TYPE → SHORT ANSWER"
   },
@@ -140,9 +173,18 @@
       "plan": "Choose the profession connected with treating fears. Reject \"philosopher\" and repeat only the correct profession.",
       "model_answer": "A / PSYCHOLOGIST.",
       "annotations": [
-        { "part": "A", "comment": "The article makes the short noun phrase sound natural, but the answer would still be understandable as \"psychologist\"." },
-        { "part": "PSYCHOLOGIST", "comment": "This is the essential content word, so it receives the strongest stress." },
-        { "part": "Length", "comment": "The answer is direct and contains no unnecessary explanation." }
+        {
+          "part": "A",
+          "comment": "The article makes the short noun phrase sound natural, but the answer would still be understandable as \"psychologist\"."
+        },
+        {
+          "part": "PSYCHOLOGIST",
+          "comment": "This is the essential content word, so it receives the strongest stress."
+        },
+        {
+          "part": "Length",
+          "comment": "The answer is direct and contains no unnecessary explanation."
+        }
       ]
     },
     {
@@ -152,9 +194,18 @@
       "plan": "Compare the two choices using geographical knowledge and state only the correct country.",
       "model_answer": "AUSTRALIA.",
       "annotations": [
-        { "part": "AUSTRALIA", "comment": "One word completely answers the question." },
-        { "part": "Stress", "comment": "The answer word is spoken clearly with firm stress." },
-        { "part": "No extra sentence", "comment": "There is no need to say \"Australia is in the southern hemisphere\" because the question asks only which country." }
+        {
+          "part": "AUSTRALIA",
+          "comment": "One word completely answers the question."
+        },
+        {
+          "part": "Stress",
+          "comment": "The answer word is spoken clearly with firm stress."
+        },
+        {
+          "part": "No extra sentence",
+          "comment": "There is no need to say \"Australia is in the southern hemisphere\" because the question asks only which country."
+        }
       ]
     },
     {
@@ -164,9 +215,18 @@
       "plan": "Recall the broad science that studies living organisms and give its standard subject name.",
       "model_answer": "BIOLOGY.",
       "annotations": [
-        { "part": "BIOLOGY", "comment": "This is the expected academic field and is sufficiently precise." },
-        { "part": "Pronunciation", "comment": "Keep the word smooth rather than separating every syllable unnaturally." },
-        { "part": "Response form", "comment": "A complete sentence is unnecessary because the answer is a subject name." }
+        {
+          "part": "BIOLOGY",
+          "comment": "This is the expected academic field and is sufficiently precise."
+        },
+        {
+          "part": "Pronunciation",
+          "comment": "Keep the word smooth rather than separating every syllable unnaturally."
+        },
+        {
+          "part": "Response form",
+          "comment": "A complete sentence is unnecessary because the answer is a subject name."
+        }
       ]
     },
     {
@@ -176,9 +236,18 @@
       "plan": "Name the common place where historical or scientific exhibits are displayed.",
       "model_answer": "A / MUSEUM.",
       "annotations": [
-        { "part": "A", "comment": "The article creates a natural noun phrase." },
-        { "part": "MUSEUM", "comment": "This is the key answer and receives the main stress." },
-        { "part": "Would", "comment": "The question uses \"would\" because it asks about the suitable place in a hypothetical situation." }
+        {
+          "part": "A",
+          "comment": "The article creates a natural noun phrase."
+        },
+        {
+          "part": "MUSEUM",
+          "comment": "This is the key answer and receives the main stress."
+        },
+        {
+          "part": "Would",
+          "comment": "The question uses \"would\" because it asks about the suitable place in a hypothetical situation."
+        }
       ]
     },
     {
@@ -188,9 +257,18 @@
       "plan": "Compare the normal purpose of each place. A café mainly sells food and drinks, and a book store mainly sells books, while a supermarket sells products from many categories.",
       "model_answer": "A / SUPERMARKET.",
       "annotations": [
-        { "part": "A SUPERMARKET", "comment": "The response repeats only the correct option." },
-        { "part": "SUPERMARKET", "comment": "The main noun carries the strongest stress." },
-        { "part": "Probably", "comment": "The question asks for the most likely answer, not an absolute rule about every individual shop." }
+        {
+          "part": "A SUPERMARKET",
+          "comment": "The response repeats only the correct option."
+        },
+        {
+          "part": "SUPERMARKET",
+          "comment": "The main noun carries the strongest stress."
+        },
+        {
+          "part": "Probably",
+          "comment": "The question asks for the most likely answer, not an absolute rule about every individual shop."
+        }
       ]
     },
     {
@@ -200,9 +278,18 @@
       "plan": "Choose the season that normally has the least snow and give the answer as a short prepositional phrase.",
       "model_answer": "IN / SUMMER.",
       "annotations": [
-        { "part": "IN", "comment": "The preposition matches the wording of the question and creates a natural answer." },
-        { "part": "SUMMER", "comment": "The season is the essential information and receives the strongest stress." },
-        { "part": "Least likely", "comment": "The question asks for the least probable season, so listening to the negative comparison is essential." }
+        {
+          "part": "IN",
+          "comment": "The preposition matches the wording of the question and creates a natural answer."
+        },
+        {
+          "part": "SUMMER",
+          "comment": "The season is the essential information and receives the strongest stress."
+        },
+        {
+          "part": "Least likely",
+          "comment": "The question asks for the least probable season, so listening to the negative comparison is essential."
+        }
       ]
     },
     {
@@ -212,9 +299,18 @@
       "plan": "Recall the number of days in a leap year and answer with the number only.",
       "model_answer": "THREE HUNDRED AND SIXTY-SIX.",
       "annotations": [
-        { "part": "THREE HUNDRED AND SIXTY-SIX", "comment": "The spoken number directly satisfies the question." },
-        { "part": "Answer category", "comment": "Because the question begins with \"how many\", a place, person, or explanation would be the wrong response type." },
-        { "part": "Delivery", "comment": "Say the number steadily as one meaningful unit rather than hesitating between parts." }
+        {
+          "part": "THREE HUNDRED AND SIXTY-SIX",
+          "comment": "The spoken number directly satisfies the question."
+        },
+        {
+          "part": "Answer category",
+          "comment": "Because the question begins with \"how many\", a place, person, or explanation would be the wrong response type."
+        },
+        {
+          "part": "Delivery",
+          "comment": "Say the number steadily as one meaningful unit rather than hesitating between parts."
+        }
       ]
     },
     {
@@ -224,9 +320,18 @@
       "plan": "Connect the function of measuring temperature with the correct instrument.",
       "model_answer": "A / THERMOMETER.",
       "annotations": [
-        { "part": "A THERMOMETER", "comment": "This is a complete short noun phrase." },
-        { "part": "THERMOMETER", "comment": "The answer word should be clear, with the main stress easy for the listener to recognize." },
-        { "part": "Function clue", "comment": "The verb \"measure\" and the noun \"temperature\" are enough to identify the instrument." }
+        {
+          "part": "A THERMOMETER",
+          "comment": "This is a complete short noun phrase."
+        },
+        {
+          "part": "THERMOMETER",
+          "comment": "The answer word should be clear, with the main stress easy for the listener to recognize."
+        },
+        {
+          "part": "Function clue",
+          "comment": "The verb \"measure\" and the noun \"temperature\" are enough to identify the instrument."
+        }
       ]
     }
   ],
@@ -234,90 +339,273 @@
     {
       "category": "Answer Shapes by Question Cue",
       "items": [
-        { "item": "Who → a person or profession", "when_to_use": "Use this prediction when the question asks who performs an action or who should be consulted." },
-        { "item": "Where → a place", "when_to_use": "Use this when the question asks for a location, building, country, or institution." },
-        { "item": "When → a time, date, period, or season", "when_to_use": "Use this when the answer must identify when something happens." },
-        { "item": "How many → a number", "when_to_use": "Use this when counting people, objects, days, units, or events." },
-        { "item": "How much → an amount, price, or uncountable quantity", "when_to_use": "Use this when the answer involves money, weight, volume, or another amount." },
-        { "item": "Which → one item from a known group", "when_to_use": "Use this when the question limits the answer to a category or provides choices." },
-        { "item": "What do you call → a name or technical term", "when_to_use": "Use this when the question describes something and asks for its label." },
-        { "item": "Why → a reason", "when_to_use": "Use this when a short cause or purpose is required." },
-        { "item": "How → a method or process", "when_to_use": "Use this when the question asks the way something is done." }
+        {
+          "item": "Who → a person or profession",
+          "when_to_use": "Use this prediction when the question asks who performs an action or who should be consulted."
+        },
+        {
+          "item": "Where → a place",
+          "when_to_use": "Use this when the question asks for a location, building, country, or institution."
+        },
+        {
+          "item": "When → a time, date, period, or season",
+          "when_to_use": "Use this when the answer must identify when something happens."
+        },
+        {
+          "item": "How many → a number",
+          "when_to_use": "Use this when counting people, objects, days, units, or events."
+        },
+        {
+          "item": "How much → an amount, price, or uncountable quantity",
+          "when_to_use": "Use this when the answer involves money, weight, volume, or another amount."
+        },
+        {
+          "item": "Which → one item from a known group",
+          "when_to_use": "Use this when the question limits the answer to a category or provides choices."
+        },
+        {
+          "item": "What do you call → a name or technical term",
+          "when_to_use": "Use this when the question describes something and asks for its label."
+        },
+        {
+          "item": "Why → a reason",
+          "when_to_use": "Use this when a short cause or purpose is required."
+        },
+        {
+          "item": "How → a method or process",
+          "when_to_use": "Use this when the question asks the way something is done."
+        }
       ]
     },
     {
       "category": "Natural Short-Answer Frames",
       "items": [
-        { "item": "A / MUSEUM.", "when_to_use": "Use an article plus a singular countable place or object." },
-        { "item": "A / PSYCHOLOGIST.", "when_to_use": "Use an article plus a profession." },
-        { "item": "IN / SUMMER.", "when_to_use": "Use a short prepositional phrase for a season or period." },
-        { "item": "AT / A UNIVERSITY.", "when_to_use": "Use a suitable preposition when the place phrase sounds more natural with one." },
-        { "item": "BY / TRAIN.", "when_to_use": "Use this shape when answering how someone travels." },
-        { "item": "BECAUSE OF / GRAVITY.", "when_to_use": "Use this only when a why-question clearly requires a short reason." }
+        {
+          "item": "A / MUSEUM.",
+          "when_to_use": "Use an article plus a singular countable place or object."
+        },
+        {
+          "item": "A / PSYCHOLOGIST.",
+          "when_to_use": "Use an article plus a profession."
+        },
+        {
+          "item": "IN / SUMMER.",
+          "when_to_use": "Use a short prepositional phrase for a season or period."
+        },
+        {
+          "item": "AT / A UNIVERSITY.",
+          "when_to_use": "Use a suitable preposition when the place phrase sounds more natural with one."
+        },
+        {
+          "item": "BY / TRAIN.",
+          "when_to_use": "Use this shape when answering how someone travels."
+        },
+        {
+          "item": "BECAUSE OF / GRAVITY.",
+          "when_to_use": "Use this only when a why-question clearly requires a short reason."
+        }
       ]
     },
     {
       "category": "Chunking Patterns",
       "items": [
-        { "item": "Who would you consult / to treat a fear of crowded places?", "when_to_use": "Keep the question phrase and purpose phrase in separate meaningful groups." },
-        { "item": "A philosopher / or a psychologist?", "when_to_use": "Separate alternatives so each option is easy to hear and remember." },
-        { "item": "The classification of living things", "when_to_use": "Keep a connected noun phrase together." },
-        { "item": "Would probably have / the widest range of products", "when_to_use": "Keep the verb phrase together and separate it from the object phrase." }
+        {
+          "item": "Who would you consult / to treat a fear of crowded places?",
+          "when_to_use": "Keep the question phrase and purpose phrase in separate meaningful groups."
+        },
+        {
+          "item": "A philosopher / or a psychologist?",
+          "when_to_use": "Separate alternatives so each option is easy to hear and remember."
+        },
+        {
+          "item": "The classification of living things",
+          "when_to_use": "Keep a connected noun phrase together."
+        },
+        {
+          "item": "Would probably have / the widest range of products",
+          "when_to_use": "Keep the verb phrase together and separate it from the object phrase."
+        }
       ]
     },
     {
       "category": "Stress and Intonation",
       "items": [
-        { "item": "A / MUSEUM.", "when_to_use": "Keep the article weak and stress the answer noun." },
-        { "item": "IN / SUMMER.", "when_to_use": "Keep the preposition light and stress the time word." },
-        { "item": "THREE HUNDRED AND SIXTY-SIX.", "when_to_use": "Say the number as one controlled unit with clear final stress." },
-        { "item": "Falling intonation at the end", "when_to_use": "Use a clear falling tone to show that the answer is complete and confident." }
+        {
+          "item": "A / MUSEUM.",
+          "when_to_use": "Keep the article weak and stress the answer noun."
+        },
+        {
+          "item": "IN / SUMMER.",
+          "when_to_use": "Keep the preposition light and stress the time word."
+        },
+        {
+          "item": "THREE HUNDRED AND SIXTY-SIX.",
+          "when_to_use": "Say the number as one controlled unit with clear final stress."
+        },
+        {
+          "item": "Falling intonation at the end",
+          "when_to_use": "Use a clear falling tone to show that the answer is complete and confident."
+        }
       ]
     },
     {
       "category": "Language to Avoid",
       "items": [
-        { "item": "Um, maybe it is...", "when_to_use": "Avoid this because fillers waste time and make the answer sound uncertain." },
-        { "item": "I think the answer could possibly be...", "when_to_use": "Avoid this because the task rewards a direct response, not an explanation of your uncertainty." },
-        { "item": "It is either Australia or Canada.", "when_to_use": "Avoid giving both choices when the question requires one correct option." },
-        { "item": "Let me explain why...", "when_to_use": "Avoid this because an explanation is normally unnecessary." }
+        {
+          "item": "Um, maybe it is...",
+          "when_to_use": "Avoid this because fillers waste time and make the answer sound uncertain."
+        },
+        {
+          "item": "I think the answer could possibly be...",
+          "when_to_use": "Avoid this because the task rewards a direct response, not an explanation of your uncertainty."
+        },
+        {
+          "item": "It is either Australia or Canada.",
+          "when_to_use": "Avoid giving both choices when the question requires one correct option."
+        },
+        {
+          "item": "Let me explain why...",
+          "when_to_use": "Avoid this because an explanation is normally unnecessary."
+        }
       ]
     }
   ],
   "common_mistakes": [
-    { "mistake": "Answering with the wrong information type", "why_it_hurts": "A fact may be related to the topic but still fail to answer the question. For example, a where-question requires a place, not a person.", "fix": "Identify the question cue first and name the answer category before selecting the answer." },
-    { "mistake": "Giving a long explanation", "why_it_hurts": "Extra language creates more opportunities for hesitation, grammar errors, or incorrect information.", "fix": "Use one word or one short phrase unless the question specifically requires more." },
-    { "mistake": "Ignoring choices inside the question", "why_it_hurts": "You may search for an answer from memory even though the correct answer has already been spoken.", "fix": "When you hear alternatives, hold them in memory and choose between them." },
-    { "mistake": "Repeating the whole question", "why_it_hurts": "It wastes response time and may cause you to forget or distort the actual answer.", "fix": "Repeat only the answer word or short answer phrase." },
-    { "mistake": "Pausing between every word", "why_it_hurts": "Word-by-word speech sounds unnatural and can make the meaning difficult to follow.", "fix": "Speak in meaningful chunks, keeping articles, nouns, phrasal verbs, and connected phrases together." },
-    { "mistake": "Stopping mentally at an unfamiliar word", "why_it_hurts": "While trying to translate one word, you may miss the rest of the question and its most useful clues.", "fix": "Continue listening and infer the meaning from the question word, content words, examples, and choices." },
-    { "mistake": "Confusing \"would\" with \"will\"", "why_it_hurts": "\"Would\" often introduces a hypothetical or suitable choice, while \"will\" commonly refers to a future event or prediction.", "fix": "Treat questions such as \"Where would you go?\" as asking for the appropriate place in that situation." },
-    { "mistake": "Missing negative or comparison words", "why_it_hurts": "Words such as \"least\", \"not\", \"except\", and \"widest\" can reverse or narrow the required answer.", "fix": "Give special attention to comparison and negative words before choosing the answer." },
-    { "mistake": "Giving two possible answers", "why_it_hurts": "One correct answer combined with an incorrect alternative can make the response unacceptable or unclear.", "fix": "Choose one final answer and say only that answer." },
-    { "mistake": "Speaking too quietly or allowing the answer to fade", "why_it_hurts": "A correct answer may not be clearly captured or understood.", "fix": "Use a normal speaking volume, stress the answer word, and finish the final sound clearly." }
+    {
+      "mistake": "Answering with the wrong information type",
+      "why_it_hurts": "A fact may be related to the topic but still fail to answer the question. For example, a where-question requires a place, not a person.",
+      "fix": "Identify the question cue first and name the answer category before selecting the answer."
+    },
+    {
+      "mistake": "Giving a long explanation",
+      "why_it_hurts": "Extra language creates more opportunities for hesitation, grammar errors, or incorrect information.",
+      "fix": "Use one word or one short phrase unless the question specifically requires more."
+    },
+    {
+      "mistake": "Ignoring choices inside the question",
+      "why_it_hurts": "You may search for an answer from memory even though the correct answer has already been spoken.",
+      "fix": "When you hear alternatives, hold them in memory and choose between them."
+    },
+    {
+      "mistake": "Repeating the whole question",
+      "why_it_hurts": "It wastes response time and may cause you to forget or distort the actual answer.",
+      "fix": "Repeat only the answer word or short answer phrase."
+    },
+    {
+      "mistake": "Pausing between every word",
+      "why_it_hurts": "Word-by-word speech sounds unnatural and can make the meaning difficult to follow.",
+      "fix": "Speak in meaningful chunks, keeping articles, nouns, phrasal verbs, and connected phrases together."
+    },
+    {
+      "mistake": "Stopping mentally at an unfamiliar word",
+      "why_it_hurts": "While trying to translate one word, you may miss the rest of the question and its most useful clues.",
+      "fix": "Continue listening and infer the meaning from the question word, content words, examples, and choices."
+    },
+    {
+      "mistake": "Confusing \"would\" with \"will\"",
+      "why_it_hurts": "\"Would\" often introduces a hypothetical or suitable choice, while \"will\" commonly refers to a future event or prediction.",
+      "fix": "Treat questions such as \"Where would you go?\" as asking for the appropriate place in that situation."
+    },
+    {
+      "mistake": "Missing negative or comparison words",
+      "why_it_hurts": "Words such as \"least\", \"not\", \"except\", and \"widest\" can reverse or narrow the required answer.",
+      "fix": "Give special attention to comparison and negative words before choosing the answer."
+    },
+    {
+      "mistake": "Giving two possible answers",
+      "why_it_hurts": "One correct answer combined with an incorrect alternative can make the response unacceptable or unclear.",
+      "fix": "Choose one final answer and say only that answer."
+    },
+    {
+      "mistake": "Speaking too quietly or allowing the answer to fade",
+      "why_it_hurts": "A correct answer may not be clearly captured or understood.",
+      "fix": "Use a normal speaking volume, stress the answer word, and finish the final sound clearly."
+    }
   ],
   "practice_plan": {
     "time_budget": [
-      { "phase": "Understand the task", "minutes": "15", "focus": "Review the format, response length, scoring, and critical rules." },
-      { "phase": "Build the question-cue map", "minutes": "20", "focus": "Classify questions as person, place, time, number, object, reason, method, or choice." },
-      { "phase": "Content-word listening", "minutes": "20", "focus": "Identify the verbs, nouns, descriptions, comparisons, and negatives that control the answer." },
-      { "phase": "Choice-question training", "minutes": "15", "focus": "Hold two or three options in memory and select the correct one." },
-      { "phase": "Vocabulary inference", "minutes": "15", "focus": "Use surrounding clues when one word is unfamiliar." },
-      { "phase": "Chunking and pronunciation", "minutes": "15", "focus": "Group phrases naturally and stress the essential answer word." },
-      { "phase": "Timed speaking rounds", "minutes": "15", "focus": "Answer mixed questions within 10 seconds or less." },
-      { "phase": "Feedback and error log", "minutes": "5", "focus": "Classify errors and choose the next drill." }
+      {
+        "phase": "Understand the task",
+        "minutes": "15",
+        "focus": "Review the format, response length, scoring, and critical rules."
+      },
+      {
+        "phase": "Build the question-cue map",
+        "minutes": "20",
+        "focus": "Classify questions as person, place, time, number, object, reason, method, or choice."
+      },
+      {
+        "phase": "Content-word listening",
+        "minutes": "20",
+        "focus": "Identify the verbs, nouns, descriptions, comparisons, and negatives that control the answer."
+      },
+      {
+        "phase": "Choice-question training",
+        "minutes": "15",
+        "focus": "Hold two or three options in memory and select the correct one."
+      },
+      {
+        "phase": "Vocabulary inference",
+        "minutes": "15",
+        "focus": "Use surrounding clues when one word is unfamiliar."
+      },
+      {
+        "phase": "Chunking and pronunciation",
+        "minutes": "15",
+        "focus": "Group phrases naturally and stress the essential answer word."
+      },
+      {
+        "phase": "Timed speaking rounds",
+        "minutes": "15",
+        "focus": "Answer mixed questions within 10 seconds or less."
+      },
+      {
+        "phase": "Feedback and error log",
+        "minutes": "5",
+        "focus": "Classify errors and choose the next drill."
+      }
     ],
     "drills": [
-      { "name": "Cue-to-Category Sprint", "instructions": "Listen to or read 20 question openings. Do not answer the full question. Say only the expected category, such as \"person\", \"place\", \"number\", or \"reason\"." },
-      { "name": "Key-Word Extraction", "instructions": "For 10 questions, write or say only the two to four content words that control the answer. Then answer the question." },
-      { "name": "Choice Memory Drill", "instructions": "Use questions containing two or three options. After hearing each question once, repeat only the correct option. Gradually increase the length of the description before the choices." },
-      { "name": "One-Word Reduction", "instructions": "Answer each question first with a complete sentence. Then reduce the same answer to the shortest natural form without losing accuracy." },
-      { "name": "Unknown-Word Survival Drill", "instructions": "Use questions containing one unfamiliar academic word. Continue listening, identify the answer category, and use the surrounding clues to choose an answer." },
-      { "name": "Negative-Word Drill", "instructions": "Practise questions containing \"not\", \"least\", \"except\", \"lowest\", and \"most unlikely\". Repeat the controlling word before answering until you stop reversing the meaning." },
-      { "name": "Chunk-and-Echo", "instructions": "Mark slashes in each question, listen to a model, and repeat it using the same chunks. Then give the short answer with stress on the main word." },
-      { "name": "Record and Compare", "instructions": "Record 20 short answers. Check whether each response began promptly, used a suitable length, stressed the key word, and finished clearly." },
-      { "name": "Ten-Second Mixed Round", "instructions": "Answer 15 mixed questions with a maximum practice target of 10 seconds per question. Play or read each question once only." },
-      { "name": "Error-Source Review", "instructions": "Label each wrong response as a cue error, content-word error, vocabulary error, knowledge gap, choice-memory error, or speaking error. Repeat only the weak category." }
+      {
+        "name": "Cue-to-Category Sprint",
+        "instructions": "Listen to or read 20 question openings. Do not answer the full question. Say only the expected category, such as \"person\", \"place\", \"number\", or \"reason\"."
+      },
+      {
+        "name": "Key-Word Extraction",
+        "instructions": "For 10 questions, write or say only the two to four content words that control the answer. Then answer the question."
+      },
+      {
+        "name": "Choice Memory Drill",
+        "instructions": "Use questions containing two or three options. After hearing each question once, repeat only the correct option. Gradually increase the length of the description before the choices."
+      },
+      {
+        "name": "One-Word Reduction",
+        "instructions": "Answer each question first with a complete sentence. Then reduce the same answer to the shortest natural form without losing accuracy."
+      },
+      {
+        "name": "Unknown-Word Survival Drill",
+        "instructions": "Use questions containing one unfamiliar academic word. Continue listening, identify the answer category, and use the surrounding clues to choose an answer."
+      },
+      {
+        "name": "Negative-Word Drill",
+        "instructions": "Practise questions containing \"not\", \"least\", \"except\", \"lowest\", and \"most unlikely\". Repeat the controlling word before answering until you stop reversing the meaning."
+      },
+      {
+        "name": "Chunk-and-Echo",
+        "instructions": "Mark slashes in each question, listen to a model, and repeat it using the same chunks. Then give the short answer with stress on the main word."
+      },
+      {
+        "name": "Record and Compare",
+        "instructions": "Record 20 short answers. Check whether each response began promptly, used a suitable length, stressed the key word, and finished clearly."
+      },
+      {
+        "name": "Ten-Second Mixed Round",
+        "instructions": "Answer 15 mixed questions with a maximum practice target of 10 seconds per question. Play or read each question once only."
+      },
+      {
+        "name": "Error-Source Review",
+        "instructions": "Label each wrong response as a cue error, content-word error, vocabulary error, knowledge gap, choice-memory error, or speaking error. Repeat only the weak category."
+      }
     ],
     "routine": "Complete three rounds. Round 1 is untimed and focuses on identifying the cue and answer category. Round 2 is recorded and focuses on short, clearly stressed responses. Round 3 uses mixed questions under a 10-second practice target. After each round, review incorrect answers and repeat them until you can explain which cue and content words reveal the answer."
   },
