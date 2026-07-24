@@ -31,9 +31,15 @@ def _essay(with_range: bool) -> dict:
     rules = ["Take a clear position."]
     if with_range:
         rules.append("Keep the essay within the required 200 to 300 words.")
-    return {"task_type": "write_essay", "overview": {
-        "format_facts": [], "critical_rules": rules,
-        "scoring_factors": [{"name": "Content", "what_it_measures": "x"}]}}
+    return {
+        "task_type": "write_essay",
+        "overview": {"format_facts": [], "critical_rules": rules,
+                     "scoring_factors": [{"name": "Content", "what_it_measures": "x"}]},
+        # A lesson must carry the minimum worked examples (PTE floor is 3), or the
+        # worked_example_count check rightly rejects it and this fixture would be
+        # testing the wrong thing.
+        "worked_examples": [{"title": f"Example {i}", "model_answer": "x"} for i in (1, 2, 3)],
+    }
 
 
 print("a clean lesson needs zero rounds and is accepted immediately")
