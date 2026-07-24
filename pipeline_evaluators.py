@@ -43,6 +43,8 @@ import reading_mcq_items as reading
 import describe_image_items as di
 import enrichment_evaluators as enrich
 import swt_feedback
+import math_evaluators
+import domain_packs
 
 ROOT = Path(__file__).resolve().parent
 
@@ -62,6 +64,9 @@ class Evaluator:
     # must stay silent. Both the live run and the self-test call findings_fn, so a
     # broken check cannot pass its self-test while doing nothing in production.
     self_tests: list[tuple[Any, bool]]
+    # Which domain pack(s) this check belongs to. A PTE check must not be run
+    # against a maths lesson: it would find nothing and read as a pass.
+    domains: tuple[str, ...] = ("pte",)
 
     def run(self, payload: Any) -> EvaluatorResult:
         healthy, note = self_check(self.name)
@@ -284,6 +289,7 @@ REGISTRY: dict[str, Evaluator] = {
         ),
         findings_fn=_extraction_findings,
         self_tests=[(_DAMAGED_CHUNK, True), (_CLEAN_CHUNK, False)],
+        domains=("pte", "math5a"),   # extraction damage is subject-agnostic
     ),
     "reading_item_shape": Evaluator(
         name="reading_item_shape",
@@ -329,6 +335,23 @@ REGISTRY: dict[str, Evaluator] = {
             (_SWT_TWO_SENTENCES, True), (_SWT_ONE_SENTENCE, False),
         ],
     ),
+    "math_arithmetic": Evaluator(
+        name="math_arithmetic",
+        artifact="enrichment_lesson",
+        kind="deterministic",
+        domains=("math5a",),
+        description=(
+            "Checks every calculation in a maths lesson is actually TRUE. Splits "
+            "each '=' chain, evaluates every side exactly (fractions, mixed "
+            "numbers, operator precedence) and requires them to agree, so "
+            "multi-step working like '78 x 30 = 78 x 3 x 10 = 2340' is verified "
+            "rather than misread. Blanks the pupil fills in are skipped, never "
+            "flagged. Unlike the PTE checks this needs no evidence lookup and no "
+            "judge — arithmetic is computable."
+        ),
+        findings_fn=math_evaluators.arithmetic_findings,
+        self_tests=math_evaluators.SELF_TESTS,
+    ),
     "reading_answer_key": Evaluator(
         name="reading_answer_key",
         artifact="reading_item",
@@ -354,6 +377,7 @@ for _name, _ev in enrich.REGISTRY.items():
         description=_ev.description,
         findings_fn=_ev.findings_fn,
         self_tests=_ev.self_tests,
+        domains=("pte",),
     )
 
 
@@ -401,12 +425,21 @@ def by_artifact(artifact: str) -> list[str]:
 
 def evaluate(artifact: str, payload: Any, *, include_model: bool = False) -> list[EvaluatorResult]:
     """Run every applicable evaluator for an artifact. Model checks are skipped
-    unless include_model, so the fast deterministic gate stays fast by default."""
+    unless include_model, so the fast deterministic gate stays fast by default.
+
+    For enrichment lessons the domain pack decides which checks apply: running the
+    PTE checks against a maths lesson would find nothing and read as a pass."""
+    slug = None
+    if artifact == "enrichment_lesson" and isinstance(payload, dict):
+        slug = domain_packs.slug_of(payload)
     out = []
     for name in by_artifact(artifact):
-        if REGISTRY[name].kind == "model" and not include_model:
+        ev = REGISTRY[name]
+        if ev.kind == "model" and not include_model:
             continue
-        out.append(REGISTRY[name].run(payload))
+        if slug is not None and slug not in ev.domains:
+            continue
+        out.append(ev.run(payload))
     return out
 
 

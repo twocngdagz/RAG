@@ -146,3 +146,44 @@ Register it in `pipeline_evaluators.py` with an `artifact`, a `kind`, a
 (one that must flag, one that must not). It joins the server automatically and
 inherits the honesty gate. Keep mechanical judgement in code; reserve the model
 for open-ended wording, and treat those verdicts as advisory.
+
+## Domain packs — adding a subject that isn't PTE
+
+`domain_packs.py` declares everything that changes when the book changes: the
+slug, the audience, the file naming, and **which checks apply**. The engine (the
+loop, the contract, the honesty gate, the teaching schema) is subject-agnostic.
+
+The interesting difference between packs is what "correct" is checked *against*:
+
+| Pack | Ground truth | Consequence |
+|---|---|---|
+| `pte` | the official Pearson Score Guide | correctness is a *reading* question — needs evidence lookup, and a model judge for open wording (measured unreliable on anything mechanical) |
+| `math5a` | arithmetic itself | correctness is **computable** — no judge, no evidence lookup, fully deterministic |
+
+Checks declare which domains they belong to, and `evaluate()` filters by the
+lesson's pack. This matters: running the PTE checks against a maths lesson would
+find nothing and **read as a pass**.
+
+### The maths check
+
+`math_evaluators.arithmetic_findings` verifies every calculation in a lesson is
+true. It splits each `=` chain, evaluates every side exactly (`fractions.Fraction`,
+so no float rounding), and requires them to agree.
+
+Chains, not pairs — this is the whole trick. Maths working is written as
+`78 × 30 = 78 × 3 × 10 = 234 × 10 = 2340`; a pairwise `a op b = c` regex reads
+that as "78 × 30 = 78" and screams. Measured against the real textbook, the naive
+version had a **55% false-positive rate**. Blanks (`\square`, `____`) are the
+pupil's answer and are skipped, never flagged.
+
+Validated both ways: 11 planted cases (including the exact multi-step chains the
+naive version got wrong), and a run over the whole parsed Singapore Math 5A book —
+181 equation chains, **0 false positives**.
+
+### Source quality is a hard prerequisite for maths
+
+Generic OCR destroys fractions (`½ × 14` becomes loose digits on separate lines)
+and turns fill-in blanks into junk tokens. Measured on two OCR'd copies of this
+book: ~24% of lines garbled, and at least one wrong answer presented as fact.
+LlamaParse (`agentic` tier) preserves fractions as LaTeX and describes diagrams;
+that is the supported path. See `output/singapore-math-5a.parsed.md`.
