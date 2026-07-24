@@ -112,7 +112,13 @@ Each lesson is a **30–60K-character generation** — a full book (with retries
 consume a day's plan allowance even though the request *rate* looks human. The
 run command mitigates this:
 
-- `--cooldown SECONDS` (default 90) waits between lessons to spread usage.
+- **Every request is paced, not just failures.** `--cooldown` / `--cooldown-max`
+  (default **300–600s, i.e. 5–10 min**) wait after *each* lesson before sending
+  the next. The pause is randomised inside that window rather than fixed, so the
+  cadence isn't a metronome. `--cooldown 0` disables it.
+  Budget the elapsed time: 19 lessons × ~7.5 min average ≈ **~2.5 hours of waiting**
+  plus generation — designed for an unattended overnight run, where wall-clock is
+  free and steady pacing is the point.
 - **Restriction detection**: on any failure the driver scans the page for
   ChatGPT's limit notices ("you've reached your limit", "usage cap", "too many
   requests", …). If found, the batch **stops immediately** — a capped account

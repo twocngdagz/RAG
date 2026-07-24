@@ -33,6 +33,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import random
 import re
 import sys
 import time
@@ -381,6 +382,20 @@ def cmd_load(args) -> int:
     return 0
 
 
+def _pause_seconds(args) -> int:
+    """How long to wait before the next request.
+
+    Randomised inside [--cooldown, --cooldown-max] so the cadence isn't a fixed
+    metronome. `max` is clamped up to the floor, so passing only --cooldown with a
+    value above the default max still works instead of throwing.
+    """
+    lo = max(0, args.cooldown)
+    if lo == 0:
+        return 0  # 0 means disabled; don't let the max turn it back on
+    hi = max(lo, getattr(args, "cooldown_max", lo))
+    return random.randint(lo, hi)
+
+
 def cmd_run(args) -> int:
     stored: list[int] = []
     failed: list[int] = []
@@ -432,11 +447,13 @@ def cmd_run(args) -> int:
                 print(f"  OK  wrote {path.name} + DB <- {rec_id} (task_type={document.get('task_type')})")
                 stored.append(n)
 
-            # Spread requests out: cumulative output volume (each lesson is a
-            # 30–60K-char generation), not raw speed, is what trips plan limits.
+            # Pace EVERY request, not just the ones that failed: each lesson is a
+            # 30–60K-char generation, and it is cumulative volume that trips plan
+            # limits. The run is unattended, so elapsed time costs nothing.
             if args.cooldown > 0 and i < len(args.chapters) - 1:
-                print(f"  cooling down {args.cooldown}s before the next lesson…")
-                time.sleep(args.cooldown)
+                delay = _pause_seconds(args)
+                print(f"  waiting {delay // 60}m {delay % 60}s before the next lesson…")
+                time.sleep(delay)
 
     print(f"\n{'='*48}\nDone: {len(stored)}/{len(args.chapters)} enriched and stored.")
     if stored:
@@ -460,9 +477,19 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     sr.add_argument("--project-url", required=True, help="ChatGPT project URL (ends /project).")
     sr.add_argument("--profile-dir", default=DEFAULT_PROFILE)
     sr.add_argument("--timeout", type=int, default=600)
+    # Every request waits before the next one — not just after a failure. The run
+    # is meant to go unattended overnight, where total elapsed time is free and
+    # a steady human-paced cadence is the whole point. The wait is randomised
+    # inside the window rather than a fixed number, so the gap between requests
+    # isn't a metronome.
     sr.add_argument(
-        "--cooldown", type=int, default=90,
-        help="Seconds to wait between lessons (0 disables). Spreads plan usage on long batches.",
+        "--cooldown", type=int, default=300,
+        help="Minimum seconds to wait after every lesson before sending the next (0 disables).",
+    )
+    sr.add_argument(
+        "--cooldown-max", type=int, default=600,
+        help="Maximum seconds for that wait; the actual pause is random in "
+             "[--cooldown, --cooldown-max]. Default 300-600s (5-10 min).",
     )
     sr.add_argument("--headless", action="store_true")
     sr.add_argument("--stop-on-error", action="store_true", help="Abort the batch on first failure.")
