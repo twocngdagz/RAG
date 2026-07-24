@@ -44,6 +44,12 @@ class DomainPack:
     # single most useful thing in a lesson, and simplifying the prose must not
     # be allowed to quietly cost them (it did: 4.7 -> 2.7 per lesson).
     min_worked_examples: int = 3
+    # Wording used in the PER-LESSON message sent with each chapter. This was
+    # hardcoded to PTE and leaked "PTE LESSON" and PTE task-type examples into a
+    # maths run — the standing project prompt was right, but every message
+    # contradicted it.
+    task_type_examples: str = "'summarize_written_text'"
+    payload_note: str = ""
     # Where this book's files live; {n} is the chapter number.
     base_file: str = "output/{slug}.chapter{n:02d}.book_learning_materials.json"
     enrich_file: str = "output/{slug}.chapter{n:02d}.enrichment.json"
@@ -65,6 +71,15 @@ REGISTRY: dict[str, DomainPack] = {
         evaluators=("word_range", "trait_names", "worked_example_rules"),
         reading_grade_max=None,   # adult test takers; no child-level constraint
         min_worked_examples=3,    # the existing 19 PTE lessons all meet this
+        task_type_examples="'summarize_written_text'",
+        payload_note=(
+            "Adapt content to this task type, but keep the shape identical. For "
+            "non-speaking\ntasks, model_answer may be a written sample or a worked "
+            "selection; still provide\nit as a string. useful_language must be a list "
+            "of {category, items:[{item,\nwhen_to_use}]} — for reading/selection tasks "
+            "use signpost words, linkers, and\noption-elimination phrases rather than "
+            "leaving it empty."
+        ),
         notes=("Scoring facts are checked against the Score Guide. Mechanical checks "
                "are deterministic; the model judge is advisory only, having been "
                "measured unreliable on numeric contradictions."),
@@ -77,6 +92,20 @@ REGISTRY: dict[str, DomainPack] = {
         evaluators=("math_arithmetic", "reading_level"),
         reading_grade_max=6.0,    # 10-11 year olds; grade 5-6 prose
         min_worked_examples=4,    # children learn from demonstrations
+        task_type_examples="'fractions', 'word_problems', 'area_and_perimeter'",
+        payload_note=(
+            "Adapt content to this topic, but keep the shape identical.\n"
+            "- Write EVERY calculation in LaTeX inside dollar signs: $\\frac{3}{4}$, "
+            "$2\\frac{1}{2}$, $12 \\div 4 = 3$. This is checked automatically.\n"
+            "- Division with a remainder: say the remainder — $74 \\div 21 = 3 "
+            "\\text{ r } 11$, never $74 \\div 21 = 3$.\n"
+            "- model_answer is the COMPLETE solution: the full working, step by step, "
+            "then the answer in a sentence.\n"
+            "- useful_language is the maths words a pupil needs (bottom number, "
+            "product, remainder) and when to use each.\n"
+            "- Write for a 10-year-old: about 10 words a sentence, everyday words. "
+            "Name a technical term once, then use plain words."
+        ),
         notes=("Correctness here is computable, so the core check needs no judge and "
                "no evidence lookup. Blanks (the pupil's answer) are skipped, never "
                "flagged. Source text comes from LlamaParse, which preserves fractions "

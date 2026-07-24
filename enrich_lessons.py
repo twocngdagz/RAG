@@ -78,7 +78,8 @@ def build_payload(chapter_number: int, pack: domain_packs.DomainPack) -> str:
     ch = json.loads(path.read_text(encoding="utf-8"))["learning_materials"]["chapters"][0]
 
     out: list[str] = [
-        "PTE LESSON (base learning material) — enrich this into the teaching-first version.",
+        f"{pack.title.upper()} LESSON (base learning material) — "
+        f"enrich this into the teaching-first version.",
         f"source_label: {pack.slug}:ch{chapter_number:02d}",
         f"chapter_number: {ch.get('chapter_number')}",
         f"lesson_title: {ch.get('chapter_title')}",
@@ -146,14 +147,14 @@ def build_payload(chapter_number: int, pack: domain_packs.DomainPack) -> str:
     # Reassert the output contract so a fresh project chat (no prior JSON turns in
     # its history) still returns machine-readable output instead of drifting to
     # prose/markdown tables.
-    out.append(SCHEMA_CONTRACT)
+    out.append(schema_contract(pack))
     return "\n".join(out)
 
 
 # The exact nested shape the frontend renders. The model reliably follows top-level
 # keys but improvises inner field names unless they are spelled out, so pin every
 # nested field explicitly (matches pte_lesson_enrichment.v1 / CoachView).
-SCHEMA_CONTRACT = """
+_SCHEMA_CONTRACT = """
 ---
 OUTPUT CONTRACT (follow EXACTLY). Reply with ONLY one fenced ```json code block:
 a single valid pte_lesson_enrichment.v1 object. No prose, no markdown tables, and
@@ -163,7 +164,7 @@ every list with substantive content (aim for 4+ items each).
 
 {
   "schema_version": "pte_lesson_enrichment.v1",
-  "task_type": "<short string, e.g. 'summarize_written_text'>",
+  "task_type": "<short string, e.g. {task_type_examples}>",
   "lesson_title": "<string>",
   "source_label": "<slug:chNN, exactly as given above>",
   "modality": "<reading|writing|speaking|listening|integrated>",
@@ -208,12 +209,20 @@ every list with substantive content (aim for 4+ items each).
   }
 }
 
-Adapt content to this task type, but keep the shape identical. For non-speaking
-tasks, model_answer may be a written sample or a worked selection; still provide
-it as a string. useful_language must be a list of {category, items:[{item,
-when_to_use}]} — for reading/selection tasks use signpost words, linkers, and
-option-elimination phrases rather than leaving it empty.
+{payload_note}
 """
+
+
+def schema_contract(pack: domain_packs.DomainPack) -> str:
+    """The output contract, worded for THIS book.
+
+    A template rather than a constant because the per-lesson message used to say
+    "PTE LESSON" and give PTE task-type examples regardless of the book, quietly
+    contradicting the project prompt on every single request.
+    """
+    return (_SCHEMA_CONTRACT
+            .replace("{task_type_examples}", pack.task_type_examples)
+            .replace("{payload_note}", pack.payload_note))
 
 
 # --------------------------------------------------------------------------- #
