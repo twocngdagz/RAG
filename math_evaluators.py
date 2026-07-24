@@ -127,12 +127,38 @@ def check_chain(chain: str) -> tuple[bool, str]:
 _MATH_SPAN = re.compile(r"\$\$(.+?)\$\$|\$(.+?)\$", re.DOTALL)
 
 
+# One math block often holds SEVERAL equations, separated by \qquad, a line break
+# or a comma:  "3\frac{5}{8}=\frac{29}{8},\qquad 1\frac{7}{12}=\frac{19}{12}".
+# Treating that as one chain compares the first side against the last and reports
+# a false error — both equations are individually correct. Split them apart first.
+_EQ_SEPARATOR = re.compile(r"\\qquad|\\quad|\\\\|\\newline|;|\n")
+_ALIGN_ENV = re.compile(r"\\(?:begin|end)\{(?:aligned|align\*?|gather\*?|array)\}(?:\{[^}]*\})?")
+
+
+def _split_equations(span: str) -> list[str]:
+    span = _ALIGN_ENV.sub(" ", span).replace("&", "")
+    # Drop thousands separators BEFORE splitting on commas, or "15,000 \div 30"
+    # gets torn into "15" and "000 \div 30". (_normalise does this too, but it
+    # runs later — order matters here.)
+    span = re.sub(r"(?<=\d),(?=\d{3}\b)", "", span)
+    parts = list(_EQ_SEPARATOR.split(span))
+    out: list[str] = []
+    for part in parts:
+        # A comma separates equations only when what remains still holds more than
+        # one '='; otherwise it is ordinary punctuation.
+        if "," in part and part.count("=") > 1:
+            out.extend(x for x in part.split(","))
+        else:
+            out.append(part)
+    return [p for p in out if p.count("=") >= 1]
+
+
 def _chains_in(text: str) -> list[str]:
     out = []
     for m in _MATH_SPAN.finditer(text or ""):
         span = m.group(1) or m.group(2) or ""
         if "=" in span:
-            out.append(span)
+            out.extend(_split_equations(span))
     return out
 
 
@@ -197,4 +223,14 @@ SELF_TESTS: list[tuple[dict[str, Any], bool]] = [
     (_doc(r"\$630 - \$378 = \$\square"), False),
     # Units/words are not evaluable -> must not flag.
     (_doc(r"5 \text{ cm} \times 3 = 15 \text{ cm}"), False),
+    # Several correct equations in ONE block, separated by \qquad / comma / line
+    # break. An earlier version chained them together and compared the first side
+    # against the last, inventing errors in output that was entirely correct —
+    # and it did so more often on the arm that used MORE LaTeX, i.e. it punished
+    # the better output. These must all stay silent.
+    (_doc(r"3\frac{5}{8}=\frac{29}{8},\qquad 1\frac{7}{12}=\frac{19}{12}"), False),
+    (_doc(r"\frac{29}{8}=\frac{87}{24},\qquad \frac{19}{12}=\frac{38}{24}"), False),
+    (_doc(r"\begin{aligned} 3\frac{5}{8}&=\frac{29}{8}\\ 1\frac{1}{4}&=\frac{5}{4} \end{aligned}"), False),
+    # ...but a genuine error inside a multi-equation block must STILL be caught.
+    (_doc(r"\frac{1}{2}=\frac{2}{4},\qquad \frac{1}{3}=\frac{2}{5}"), True),
 ]
