@@ -119,11 +119,18 @@ run command mitigates this:
   Budget the elapsed time: 19 lessons × ~7.5 min average ≈ **~2.5 hours of waiting**
   plus generation — designed for an unattended overnight run, where wall-clock is
   free and steady pacing is the point.
-- **Restriction detection**: on any failure the driver scans the page for
-  ChatGPT's limit notices ("you've reached your limit", "usage cap", "too many
-  requests", …). If found, the batch **stops immediately** — a capped account
-  can't produce anything, so retries only add load — and prints the exact resume
-  command for the remaining lessons.
+- **Every lesson is checked twice before it is stored.** Layer 1 is the
+  structural contract (`validate_enrichment`: all sections present, right shape).
+  Layer 2 is the factual checks (`check_lesson_facts` → word range, trait names,
+  worked-example rules) against the official guide. A lesson must pass BOTH.
+- **A rejected lesson is re-generated, not dropped.** `--max-attempts` (default 3)
+  asks again rather than leaving a hole — an unattended run has no human to
+  re-run a dud. Between attempts it waits the normal 5–10 min pace.
+- **Restriction detection → long backoff, not abort.** If ChatGPT shows a limit
+  notice ("you've reached your limit", "usage cap", …), the run waits
+  `--limit-backoff` (default **1800s = 30 min**) and retries **the same lesson**,
+  instead of ending the batch. A capped account needs time, not another attempt —
+  but an overnight run should survive a cap, not die at 3am.
 
 Budgeting guidance: prefer one book per day; if a batch is interrupted by a cap,
 resume after the limit window resets (per-lesson file+DB checkpointing means

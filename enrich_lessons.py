@@ -382,6 +382,45 @@ def cmd_load(args) -> int:
     return 0
 
 
+class LessonRejected(ValueError):
+    """A lesson that parsed and matched the schema but failed a factual check."""
+
+
+def check_lesson_facts(document: dict[str, Any]) -> list[str]:
+    """Layer 2: the factual checks (word range, trait names, worked examples).
+
+    The structural contract (validate_enrichment) only proves the shape is right.
+    These prove the CONTENT is right against the official guide — the checks that
+    previously ran only by hand, after the fact. Returns a list of problems; an
+    empty list means the lesson is acceptable.
+
+    Degrades safely: if the evaluators can't run at all (no guide PDF on this
+    machine, say) the run is not blocked, but it says so loudly rather than
+    silently skipping the checks and looking like it passed.
+    """
+    try:
+        import pipeline_evaluators as pipeline
+        from evaluation_contract import combine
+    except Exception as exc:  # noqa: BLE001 — never let a missing checker stop a run
+        print(f"  (fact checks unavailable, structure only: {exc})", file=sys.stderr)
+        return []
+
+    try:
+        health = pipeline.health_report()
+        results = pipeline.evaluate("enrichment_lesson", document)
+    except Exception as exc:  # noqa: BLE001
+        print(f"  (fact checks could not run, structure only: {exc})", file=sys.stderr)
+        return []
+
+    if not health["all_healthy"]:
+        broken = [k for k, v in health["evaluators"].items() if v["healthy"] is False]
+        print(f"  (WARNING: fact checks unhealthy {broken}; not trusting them)", file=sys.stderr)
+        return []
+
+    verdict = combine(results)
+    return [f["summary"] for r in verdict["results"] for f in r["findings"]]
+
+
 def _pause_seconds(args) -> int:
     """How long to wait before the next request.
 
@@ -405,37 +444,54 @@ def cmd_run(args) -> int:
         for i, n in enumerate(args.chapters):
             print(f"\n=== Lesson {n} ===")
             payload = build_payload(n)
-            print(f"  payload: {len(payload)} chars -> sending to project (fresh chat)")
-            raw = ""  # reset per-iteration so a failure never saves the prior reply
             document = None
-            # Navigating to the project URL each time yields a fresh, prompt-primed chat.
-            try:
-                reply = d.send_and_wait(args.project_url, payload, timeout_s=args.timeout)
-                raw = scrape_reply_json(d.page) or reply
-                document = normalize_document(strip_citation_artifacts(extract_json_object(raw)))
-                validate_enrichment(document, n)
-            except (ValueError, json.JSONDecodeError, store.StoreError, RuntimeError, PWError) as exc:
-                document = None
-                debug = Path(f"output/_lesson{n:02d}.reply.txt")
-                debug.write_text(raw or "", encoding="utf-8")
-                print(f"  ! chapter {n} FAILED: {exc}\n    raw reply saved to {debug}", file=sys.stderr)
-                failed.append(n)
-                # A capped account can't produce anything — stop the batch instead
-                # of burning more attempts, and say exactly what ChatGPT showed.
-                notice = d.restriction_notice()
-                if notice:
-                    rest = args.chapters[i + 1:]
-                    todo = failed + [m for m in rest if m not in failed]
-                    print(
-                        f"\n!! ChatGPT usage restriction detected: {notice!r}\n"
-                        f"   Stopping the batch — the account is capped, retries would only add load.\n"
-                        f"   Resume when the limit resets:  run … {' '.join(map(str, todo))}",
-                        file=sys.stderr,
-                    )
-                    failed = todo
+
+            # Re-generate this lesson until it passes BOTH check layers, or the
+            # attempts run out. An unattended run can't call a human to re-run a
+            # dud, so a lesson that comes back malformed or factually wrong is
+            # asked for again rather than dropped.
+            for attempt in range(1, args.max_attempts + 1):
+                raw = ""  # reset per attempt so a failure never saves a stale reply
+                label = f"attempt {attempt}/{args.max_attempts}"
+                print(f"  {label}: payload {len(payload)} chars -> project (fresh chat)")
+                try:
+                    # Navigating to the project URL yields a fresh, prompt-primed chat.
+                    reply = d.send_and_wait(args.project_url, payload, timeout_s=args.timeout)
+                    raw = scrape_reply_json(d.page) or reply
+                    candidate = normalize_document(strip_citation_artifacts(extract_json_object(raw)))
+                    validate_enrichment(candidate, n)          # layer 1: structure
+                    problems = check_lesson_facts(candidate)   # layer 2: facts
+                    if problems:
+                        raise LessonRejected("; ".join(problems))
+                    document = candidate
                     break
-                if args.stop_on_error:
-                    break
+                except (ValueError, json.JSONDecodeError, store.StoreError,
+                        RuntimeError, PWError) as exc:
+                    debug = Path(f"output/_lesson{n:02d}.reply.txt")
+                    debug.write_text(raw or "", encoding="utf-8")
+                    print(f"  ! {label} rejected: {exc}\n    raw reply saved to {debug}",
+                          file=sys.stderr)
+
+                    if attempt >= args.max_attempts:
+                        failed.append(n)
+                        break
+
+                    # A usage limit needs a much longer wait than an ordinary dud:
+                    # retrying a capped account immediately just burns attempts.
+                    notice = d.restriction_notice()
+                    if notice:
+                        wait = args.limit_backoff
+                        print(f"  !! usage restriction: {notice!r}\n"
+                              f"     backing off {wait // 60}m before retrying lesson {n}…",
+                              file=sys.stderr)
+                    else:
+                        wait = _pause_seconds(args)
+                        print(f"     retrying lesson {n} in {wait // 60}m {wait % 60}s…")
+                    if wait > 0:
+                        time.sleep(wait)
+
+            if document is None and args.stop_on_error:
+                break
 
             if document is not None:
                 # Persist immediately so a long run is never all-or-nothing.
@@ -490,6 +546,15 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         "--cooldown-max", type=int, default=600,
         help="Maximum seconds for that wait; the actual pause is random in "
              "[--cooldown, --cooldown-max]. Default 300-600s (5-10 min).",
+    )
+    sr.add_argument(
+        "--max-attempts", type=int, default=3,
+        help="Times to re-generate a lesson that fails a check before giving up (default 3).",
+    )
+    sr.add_argument(
+        "--limit-backoff", type=int, default=1800,
+        help="Seconds to wait before retrying after a usage-limit notice (default 1800 = 30 min). "
+             "Much longer than the normal pace: a capped account needs time, not another attempt.",
     )
     sr.add_argument("--headless", action="store_true")
     sr.add_argument("--stop-on-error", action="store_true", help="Abort the batch on first failure.")

@@ -42,6 +42,7 @@ import scan_clean_chunk_damage as extraction
 import reading_mcq_items as reading
 import describe_image_items as di
 import enrichment_evaluators as enrich
+import swt_feedback
 
 ROOT = Path(__file__).resolve().parent
 
@@ -73,6 +74,11 @@ class Evaluator:
             health_note=note,
             advisory={"artifact": self.artifact, "kind": self.kind},
         )
+
+
+def _enrich_rubric(task_type: str) -> tuple[str, bool]:
+    """The task's own rubric pages from the official guide (no generic mention page)."""
+    return enrich._rubric(task_type)
 
 
 # --------------------------------------------------------------------------- #
@@ -182,6 +188,85 @@ def _reading_key_fixtures() -> list[tuple[dict, bool]]:
 
 
 # --------------------------------------------------------------------------- #
+# Stage 3 — the lesson's own worked examples must obey the rules it teaches
+# --------------------------------------------------------------------------- #
+
+# A lesson that tells the learner "write 200-300 words" and then shows a 90-word
+# "model answer" teaches the rule and breaks it in the same breath. Nothing caught
+# that before: the structural contract only checks a model_answer *exists*. This
+# holds the example to the same deterministic rules we grade students by.
+
+def _worked_example_findings(doc: dict[str, Any]) -> list[Finding]:
+    task = doc.get("task_type", "")
+    examples = doc.get("worked_examples") or []
+    if not isinstance(examples, list) or not examples:
+        return []
+
+    evidence, matched = _enrich_rubric(task)
+    rng = enrich.audit.guide_word_range(evidence) if matched else None
+    # Summarize Written Text is scored on being ONE sentence, not a Form-2 band.
+    one_sentence = "summarize_written_text" in task
+
+    out: list[Finding] = []
+    for i, ex in enumerate(examples):
+        if not isinstance(ex, dict):
+            continue
+        answer = ex.get("model_answer")
+        if not isinstance(answer, str) or not answer.strip():
+            continue  # the structural contract already owns "it must exist"
+        label = ex.get("title") or f"worked_examples[{i}]"
+
+        if rng:
+            n = swt_feedback.count_words(answer)
+            # OVER the maximum only. Under-length cannot be judged here: many
+            # worked examples legitimately demonstrate a COMPONENT of the task —
+            # decoding a prompt, an essay plan, a single body paragraph — and a
+            # component is naturally short. Flagging those produced 10 false
+            # positives against the real book. Over-length has no such excuse: no
+            # correct example, whole or partial, exceeds the task's ceiling.
+            # (Judging under-length properly needs the schema to mark which
+            # example is the complete model answer — see the module note.)
+            if n > rng[1]:
+                out.append(Finding(
+                    summary=f"Worked example '{label}' is {n} words; the task's ceiling is {rng[1]}.",
+                    detail=(f"The lesson teaches a {rng[0]}-{rng[1]} word range but its own model "
+                            f"answer runs to {n} words. Cut it to sit inside the range."),
+                    evidence=f"Guide Form band for {task}: {rng[0]}-{rng[1]} words",
+                    fixable=True,
+                ))
+        if one_sentence:
+            s = swt_feedback.sentence_count(answer)
+            if s != 1:
+                out.append(Finding(
+                    summary=f"Worked example '{label}' is {s} sentences; this task requires exactly one.",
+                    detail=("Summarize Written Text scores Form 0 unless the response is a single "
+                            "sentence. The model answer must be one sentence."),
+                    fixable=True,
+                ))
+    return out
+
+
+def _example_doc(task: str, answer: str) -> dict[str, Any]:
+    return {"task_type": task, "overview": {},
+            "worked_examples": [{"title": "t", "model_answer": answer}]}
+
+
+# Fixtures with known-right answers: the guide gives Write Essay 200-300 words.
+_ESSAY_LONG = _example_doc("write_essay", " ".join(["word"] * 400))     # over the ceiling -> must flag
+_ESSAY_OK = _example_doc("write_essay", " ".join(["word"] * 250))       # inside -> must not
+# Regression: a short example is a COMPONENT demo (a plan, one paragraph), not a
+# defect. An earlier version flagged these and produced 10 false positives on the
+# real book. It must stay silent here.
+_ESSAY_COMPONENT = _example_doc("write_essay", " ".join(["word"] * 60))
+_SWT_TWO_SENTENCES = _example_doc(
+    "summarize_written_text",
+    "The study found a clear link between the two variables. It also noted several limits.")
+_SWT_ONE_SENTENCE = _example_doc(
+    "summarize_written_text",
+    "The study found a clear link between the two variables while noting several limits.")
+
+
+# --------------------------------------------------------------------------- #
 # Registry
 # --------------------------------------------------------------------------- #
 
@@ -225,6 +310,24 @@ REGISTRY: dict[str, Evaluator] = {
         ),
         findings_fn=_di_shape_findings,
         self_tests=_di_fixtures(),
+    ),
+    "worked_example_rules": Evaluator(
+        name="worked_example_rules",
+        artifact="enrichment_lesson",
+        kind="deterministic",
+        description=(
+            "Checks the lesson's own WORKED EXAMPLES obey the rules the lesson "
+            "teaches: a model answer must fall inside the word range the official "
+            "guide gives full Form credit for, and a Summarize Written Text model "
+            "answer must be exactly one sentence. Only OVER-length is flagged: a "
+            "short example is often a legitimate component demo (a plan, one "
+            "paragraph), so shortness is not judged here. Call on every lesson."
+        ),
+        findings_fn=_worked_example_findings,
+        self_tests=[
+            (_ESSAY_LONG, True), (_ESSAY_OK, False), (_ESSAY_COMPONENT, False),
+            (_SWT_TWO_SENTENCES, True), (_SWT_ONE_SENTENCE, False),
+        ],
     ),
     "reading_answer_key": Evaluator(
         name="reading_answer_key",
