@@ -18,6 +18,7 @@ checks that have proven — on that run — they still catch a planted error.
 | `pipeline_evaluators.py` | The unified registry: wraps our existing checks (extraction, reading bank, describe-image bank, enrichment) in that shape, each with planted-error self-tests. Adds no checking logic. |
 | `enrichment_evaluators.py` | The enrichment checks, reused by the registry above. |
 | `evaluator_mcp_server.py` | The MCP layer: exposes every stage's checks as tools over stdio. |
+| `enrichment_loop.py` | Closes the loop in code: generate → check → fix → re-check until the checks accept, or escalate, or the cap. |
 | `test_evaluation_contract.py` | Unit test: verdict logic + the honesty gate. No network. |
 | `test_evaluator_mcp.py` | Drives the server over a real stdio client, every stage, end to end. |
 
@@ -108,6 +109,35 @@ model checks; the deterministic ones run without it):
 Then: generate something, ask the model to call the matching check, and have it
 fix whatever comes back `fix` and resubmit until `accepted` — surfacing any
 `escalate` to you rather than looping on it.
+
+## Closing the loop without a human
+
+`enrichment_loop.py` drives the whole cycle in code: a model produces or corrects
+a lesson, the checks judge it, the flagged findings go back to the model, and it
+tries again — until the checks accept it. The guarantees:
+
+- **The stop condition is our verdict, never the model's.** The loop ends only
+  when `combine(...).accepted` is true. The model never declares its own success.
+- **It refuses to start if the checks aren't healthy.** A broken checker would
+  "accept" anything, so `health_report` runs first and an unhealthy check aborts
+  the run (`status: refused`).
+- **It stops, not grinds, on escalate** — a human-judgment finding or a broken
+  check. Looping there would waste calls.
+- **It is capped.** No convergence in `max_rounds` → `status: gave_up`, with the
+  last attempt and the round-by-round history returned.
+
+The fixer is injected, so the control logic is tested with no network
+(`test_enrichment_loop.py`: refuses-when-broken, converges, gives-up-at-cap,
+accepts-clean) and run live with `ollama_fixer()`.
+
+```python
+from enrichment_loop import close_loop, ollama_fixer
+result = close_loop(lesson, fixer=ollama_fixer(), max_rounds=5)
+# result["status"] in {accepted, escalate, refused, gave_up}
+```
+
+Acceptance means no *known* defect remains — the checks we run — not that the
+lesson is excellent. Passing is a floor, not a certificate.
 
 ## Adding an evaluator
 
