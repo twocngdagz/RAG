@@ -1,10 +1,10 @@
 # Evaluators as tools — the MCP server
 
-We built a lot of checks — word ranges, trait names, guide contradictions, blind
-solvers — and for a long time a human ran them by hand and pasted the failures
-back into chat. This server closes that loop: it hands the checks to the LLM as
-tools it can call, so the model verifies and fixes its own output against ground
-truth before a human sees it.
+We built a lot of checks across every stage — extraction damage, question-bank
+shape, chart-item shape, enrichment facts — and for a long time a human ran them
+by hand and pasted the failures back into chat. This server closes that gap: it
+hands the checks to the LLM as tools it can call, so the model verifies and fixes
+its own output against ground truth before a human sees it.
 
 The rule the whole thing turns on: **the model is not the judge.** It chooses
 which checks to call, but whether it passed is our verdict, computed in code, from
@@ -15,83 +15,104 @@ checks that have proven — on that run — they still catch a planted error.
 | File | What it is |
 |---|---|
 | `evaluation_contract.py` | The shared shape every evaluator returns, and the gate that turns findings into one binding verdict. |
-| `enrichment_evaluators.py` | Wraps the existing `audit_enrichment_facts.py` checks in that shape. Adds no checking logic; adds a planted-error self-test to each. |
-| `enrichment_mcp_server.py` | The MCP layer: exposes the evaluators as four tools over stdio. |
-| `test_evaluation_contract.py` | Unit test: the verdict logic and the honesty gate. No network. |
-| `test_enrichment_mcp.py` | Drives the server over a real stdio client, end to end. |
+| `pipeline_evaluators.py` | The unified registry: wraps our existing checks (extraction, reading bank, describe-image bank, enrichment) in that shape, each with planted-error self-tests. Adds no checking logic. |
+| `enrichment_evaluators.py` | The enrichment checks, reused by the registry above. |
+| `evaluator_mcp_server.py` | The MCP layer: exposes every stage's checks as tools over stdio. |
+| `test_evaluation_contract.py` | Unit test: verdict logic + the honesty gate. No network. |
+| `test_evaluator_mcp.py` | Drives the server over a real stdio client, every stage, end to end. |
 
 ## The three verdicts
 
-- **pass** — no known defect. Accept the lesson. (Means "no trap we check for was
-  hit", not "this lesson is excellent".)
-- **fix** — a concrete, mechanical defect the generator can correct. Each finding
-  says exactly what to change. This is the loop: regenerate, resubmit.
-- **escalate** — stop. Either a genuinely ambiguous point that is a human's call
-  (does Answer Short Question test speaking, when the guide's table says only
-  Listening?), or an evaluator that failed its own self-test. Never loop on this.
+- **pass** — no known defect. Accept. (Means "no trap we check for was hit", not
+  "this is excellent".)
+- **fix** — a concrete defect the generator can correct and resubmit. The loop.
+- **escalate** — stop. Either a human-judgment point, a damaged *source* (bad
+  extraction is re-extracted, not reworded around), or a checker that failed its
+  own self-test. Never loop on escalate.
+
+## What is exposed (and what is not)
+
+Checks come in two kinds:
+
+- **deterministic** — pure code, same answer every run. The fast backbone.
+- **model** — uses the model (the reading blind-solver). Slower, advisory; its
+  self-test costs model calls, so it runs only in a *deep* health check.
+
+| Evaluator | Artifact | Kind | Catches |
+|---|---|---|---|
+| `extraction_damage` | clean_chunks | deterministic | empty / gap-garbled extracted text |
+| `reading_item_shape` | reading_item | deterministic | malformed question (options, keys, rationale) |
+| `describe_image_item_shape` | describe_image_item | deterministic | malformed chart (points, values, pie totals) |
+| `reading_answer_key` | reading_item | model | an answer key independent solvers won't agree with |
+| `word_range` | enrichment_lesson | deterministic | a lesson that never states the word range Form gates on |
+| `trait_names` | enrichment_lesson | deterministic | an official trait name attached to the wrong task |
+
+**Deliberately NOT exposed here:** the grounded-base contract validator, the
+claim-support audit, and the targeted evaluation. Those are batch pipelines —
+disk fixtures, checkpoint/resume, long model runs — that do not fit a live
+generate→check→fix loop. Wrapping them as synchronous tools without an honest
+self-test would be exactly the false-confidence trap this design exists to
+prevent. They need an async job interface, tracked as separate work.
 
 ## The honesty gate
 
 Three times in this project a check silently stopped catching anything while still
-printing green. So an evaluator here can only return **pass** if, on the same run,
-it caught its own planted error. `check_health` runs those planted-error tests;
-any evaluator that fails is marked unhealthy, and an unhealthy evaluator's empty
-finding list is reported as **escalate**, never pass.
+printing green. So a checker here can only return **pass** if, on the same run, it
+caught its own planted error. `check_health` runs those planted-error tests; any
+that fails is marked unhealthy, and an unhealthy checker's empty finding list is
+reported as **escalate**, never pass.
 
 This is enforced by making the self-test and the live run call the *same* function
-(`findings_fn`). An earlier version held a separate reference to the check for its
-self-test — so breaking the live path left the self-test passing, and a rotted
-check still certified. The tests pin this: `test_evaluation_contract.py` breaks
-`check_word_range` and asserts the gate turns the result to escalate.
+(`findings_fn`). An earlier version held a separate reference for the self-test —
+so breaking the live path left the self-test passing, and a rotted check still
+certified. `test_evaluation_contract.py` breaks `check_word_range` and asserts the
+gate turns the result to escalate.
 
 ## The tools
 
-- `list_evaluators()` — names + descriptions, so the model can pick what applies.
-- `check_health()` — run every evaluator's planted-error self-test. Call before
-  trusting a run; `all_healthy` is the single signal.
-- `evaluate_lesson(lesson)` — run all applicable checks, return the binding
-  verdict. `lesson` is the enrichment JSON (needs `task_type` and `overview`).
-- `evaluate_with(evaluator_name, lesson)` — run one named check; handy to
-  re-verify just the thing you fixed.
+- `list_evaluators()` — name, artifact, kind, description for each check.
+- `check_health(deep=false)` — planted-error self-tests. deep=true also runs the
+  model checks. `all_healthy` is the single signal.
+- `check_extraction(chunks)` — extracted source chunks.
+- `check_reading_item(item, verify_answer_key=false)` — shape always; the model
+  blind-solver when asked.
+- `check_describe_image_item(item)` — chart item shape.
+- `evaluate_enrichment_lesson(lesson)` — all enrichment checks, binding verdict.
+- `evaluate_with(evaluator_name, payload)` — one named check; re-verify a fix.
 
 ## Run it
 
 ```bash
-# smoke-test the checks and the gate (no network)
-python test_evaluation_contract.py
-
-# drive the server exactly as a client would (spawns it over stdio)
-python test_enrichment_mcp.py
-
-# run the server itself (stdio)
-python enrichment_mcp_server.py
+python test_evaluation_contract.py   # verdict logic + gate, no network
+python test_evaluator_mcp.py         # drive the server over stdio, every stage
+python evaluator_mcp_server.py       # run the server itself (stdio)
 ```
 
 ### Connect it to Claude Desktop
 
 Add to `claude_desktop_config.json` (needs `OLLAMA_API_KEY` in `.env` for the
-guide-contradiction judge; the deterministic checks run without it):
+model checks; the deterministic ones run without it):
 
 ```json
 {
   "mcpServers": {
-    "pte-enrichment-evaluators": {
+    "pte-evaluators": {
       "command": "/Users/roy/Documents/RAG Prototype/.venv/bin/python",
-      "args": ["/Users/roy/Documents/RAG Prototype/enrichment_mcp_server.py"],
+      "args": ["/Users/roy/Documents/RAG Prototype/evaluator_mcp_server.py"],
       "cwd": "/Users/roy/Documents/RAG Prototype"
     }
   }
 }
 ```
 
-Then: generate a lesson, ask the model to call `evaluate_lesson`, and have it fix
-whatever comes back `fix` and resubmit until `accepted` is true — surfacing any
+Then: generate something, ask the model to call the matching check, and have it
+fix whatever comes back `fix` and resubmit until `accepted` — surfacing any
 `escalate` to you rather than looping on it.
 
 ## Adding an evaluator
 
-Register it in `enrichment_evaluators.py` with a `findings_fn(doc) -> [Finding]`
-and at least two planted-error self-tests (one that must flag, one that must not).
-It joins `evaluate_lesson` automatically and inherits the honesty gate. Keep the
-mechanical judgement in code; reserve the model for open-ended wording, and treat
-those verdicts as advisory.
+Register it in `pipeline_evaluators.py` with an `artifact`, a `kind`, a
+`findings_fn(payload) -> [Finding]`, and at least two planted-error self-tests
+(one that must flag, one that must not). It joins the server automatically and
+inherits the honesty gate. Keep mechanical judgement in code; reserve the model
+for open-ended wording, and treat those verdicts as advisory.
