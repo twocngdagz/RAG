@@ -44,6 +44,7 @@ import describe_image_items as di
 import enrichment_evaluators as enrich
 import swt_feedback
 import math_evaluators
+import readability_evaluators
 import domain_packs
 
 ROOT = Path(__file__).resolve().parent
@@ -271,6 +272,14 @@ _SWT_ONE_SENTENCE = _example_doc(
     "The study found a clear link between the two variables while noting several limits.")
 
 
+def _reading_findings(doc: dict[str, Any]) -> list[Finding]:
+    """Readability against the lesson's own domain pack target."""
+    pack = domain_packs.domain_of(doc)
+    if pack.reading_grade_max is None:
+        return []
+    return readability_evaluators.findings_for(doc, max_grade=pack.reading_grade_max)
+
+
 # --------------------------------------------------------------------------- #
 # Registry
 # --------------------------------------------------------------------------- #
@@ -351,6 +360,22 @@ REGISTRY: dict[str, Evaluator] = {
         ),
         findings_fn=math_evaluators.arithmetic_findings,
         self_tests=math_evaluators.SELF_TESTS,
+    ),
+    "reading_level": Evaluator(
+        name="reading_level",
+        artifact="enrichment_lesson",
+        kind="deterministic",
+        description=(
+            "Checks the lesson's PROSE is readable by the age it is written for. "
+            "Computes the Flesch-Kincaid grade over the explanatory text (model "
+            "answers, formulas and LaTeX are excluded — a worked solution is meant "
+            "to contain notation) and compares it against the domain pack's "
+            "reading_grade_max. Reports the longest sentence so the fix is "
+            "concrete. Only applies to packs that declare a limit."
+        ),
+        findings_fn=_reading_findings,
+        self_tests=readability_evaluators.SELF_TESTS,
+        domains=("math5a",),
     ),
     "reading_answer_key": Evaluator(
         name="reading_answer_key",

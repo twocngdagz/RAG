@@ -23,6 +23,12 @@ primary maths teacher
 
 Year 5 / Grade 5 pupils, about 10–11 years old, and the teachers and parents helping them. Write for a child: short sentences, everyday words, one idea at a time. Never assume algebra. Explain *why* a method works, not just the steps.
 
+READING LEVEL — this is measured and enforced. Match the source textbook, which reads at US grade 4:
+- About **10 words per sentence**. One idea per sentence.
+- About **1.33 syllables per word**. This is the part that usually fails.
+- **Do not repeat technical terms.** The real 94-page textbook uses the word "denominator" TWICE in the entire book, and never writes "numerator" or "simplify" at all — it says "simplest form". Name a term once when you introduce it, then use everyday words ("the bottom number", "the top number") or simply show the maths.
+- Prefer the short word every time: *use* not *utilise*, *change* not *convert*, *work out* not *calculate*, *same* not *equivalent*, *make it simpler* not *simplify*.
+
 ## `{{TASK_TYPE_LIST}}`
 
 whole numbers, multiplication and division, fractions, area and perimeter, ratio, decimals, word problems, bar models
@@ -61,46 +67,46 @@ standard definitions, alternative solution methods, and everyday real-world cont
   "source_label": "math5a:ch03",
   "modality": "reading",
   "overview": {
-    "what_it_is": "Adding two fractions whose bottom numbers are different.",
-    "format_facts": [{"label": "Skill", "value": "Add fractions with unlike denominators"}],
+    "what_it_is": "Adding two fractions when the bottom numbers are not the same.",
+    "format_facts": [{"label": "Skill", "value": "Add fractions when the bottoms differ"}],
     "scoring_factors": [{"name": "Correct answer", "what_it_measures": "Whether the arithmetic is right"}],
-    "critical_rules": ["You can only add fractions when the denominators are the same."]
+    "critical_rules": ["You can only add fractions when the bottom numbers match."]
   },
-  "learning_goals": ["You will be able to add two fractions with different denominators."],
+  "learning_goals": ["You will be able to add two fractions when the bottoms differ."],
   "core_method": {
-    "name": "Same Bottom → Add Tops → Simplify",
-    "summary": "Make the denominators match, add the numerators, then simplify.",
-    "steps": [{"step": "Same bottom", "detail": "Find a common denominator."}],
+    "name": "Same Bottom → Add Tops → Make It Simpler",
+    "summary": "Make the bottoms match. Add the tops. Then make it simpler.",
+    "steps": [{"step": "Same bottom", "detail": "Find a bottom number they both share."}],
     "formula": "a/b + c/d → (ad + cb) / bd"
   },
   "techniques": [{
-    "name": "Find the smallest common denominator",
+    "name": "Find the smallest bottom they share",
     "purpose": "Keeps the numbers small.",
-    "how_to": ["List multiples of each denominator.", "Take the first one they share."],
-    "example": "For $\\frac{1}{4}$ and $\\frac{1}{6}$ the common denominator is 12.",
+    "how_to": ["Count up in each bottom number.", "Take the first one they both hit."],
+    "example": "For $\\frac{1}{4}$ and $\\frac{1}{6}$ the shared bottom is 12.",
     "why_it_matters": "Smaller numbers mean fewer mistakes.",
-    "common_error": "Multiplying the denominators together every time."
+    "common_error": "Times the two bottoms together every time."
   }],
   "worked_examples": [{
     "title": "Add one half and one quarter",
     "input": "Work out $\\frac{1}{2} + \\frac{1}{4}$.",
-    "decoding": "The bottoms are different, so they must be made the same first.",
+    "decoding": "The bottoms are not the same. Make them match first.",
     "plan": "Change halves into quarters, then add the tops.",
     "model_answer": "$$\\frac{1}{2} + \\frac{1}{4} = \\frac{2}{4} + \\frac{1}{4} = \\frac{3}{4}$$ The answer is $\\frac{3}{4}$.",
     "annotations": [{"part": "\\frac{2}{4}", "comment": "One half is the same as two quarters."}]
   }],
   "useful_language": [{"category": "Fraction words",
-    "items": [{"item": "denominator", "when_to_use": "The bottom number, how many equal parts there are."}]}],
+    "items": [{"item": "denominator", "when_to_use": "The bottom number. Say it once, then just say bottom number."}]}],
   "common_mistakes": [{"mistake": "Adding the bottoms as well as the tops.",
     "why_it_hurts": "It gives a completely wrong answer.",
-    "fix": "Only the top numbers are added; the bottom stays the same once matched."}],
+    "fix": "Add only the tops. The bottom stays the same."}],
   "practice_plan": {
     "time_budget": [{"phase": "Warm up", "minutes": "5", "focus": "Times tables"}],
-    "drills": [{"name": "Ten quick adds", "instructions": "Add ten pairs of fractions with unlike bottoms."}],
+    "drills": [{"name": "Ten quick adds", "instructions": "Add ten pairs of fractions. The bottoms differ."}],
     "routine": "Ten minutes a day, checking each answer."
   },
-  "mastery_checklist": ["I can find a common denominator."],
-  "strategy_notes": ["Always check whether the answer can be simplified."],
+  "mastery_checklist": ["I can find a bottom number that both fractions share."],
+  "strategy_notes": ["Always check if the answer can be made simpler."],
   "metadata": {
     "difficulty": "beginner",
     "estimated_study_time": "30 minutes",
