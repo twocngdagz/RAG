@@ -154,12 +154,36 @@ def _split_equations(span: str) -> list[str]:
 
 
 def _chains_in(text: str) -> list[str]:
+    """Equation chains, from LaTeX math spans only.
+
+    Deliberately NOT scanning plain prose for arithmetic. Tried, and it produced
+    fragments: it cannot span the "x" in "6 x 105 = 630", so it matched
+    "105 = 630" and reported a false error; and "11 / 4 = 2 remainder 3" is
+    correct integer division it cannot model. That is the same failure as the
+    original pairwise regex, in a new costume.
+
+    The real risk plain-scanning was meant to address — a file whose maths is
+    never checked at all, passing vacuously — is handled honestly instead, by
+    `checkable_chain_count`: absence of verifiable maths is REPORTED rather than
+    guessed at. See build_math_grounded_base.check.
+    """
     out = []
     for m in _MATH_SPAN.finditer(text or ""):
         span = m.group(1) or m.group(2) or ""
         if "=" in span:
             out.extend(_split_equations(span))
     return out
+
+
+def checkable_chain_count(doc: Any) -> int:
+    """How many equations we could actually verify. Zero means the arithmetic
+    check said nothing about this artifact — which callers must not read as a pass."""
+    n = 0
+    for text in _walk_strings(doc):
+        for chain in _chains_in(text):
+            if check_chain(chain)[1] != "nothing checkable":
+                n += 1
+    return n
 
 
 def _walk_strings(value: Any):
@@ -233,4 +257,8 @@ SELF_TESTS: list[tuple[dict[str, Any], bool]] = [
     (_doc(r"\begin{aligned} 3\frac{5}{8}&=\frac{29}{8}\\ 1\frac{1}{4}&=\frac{5}{4} \end{aligned}"), False),
     # ...but a genuine error inside a multi-equation block must STILL be caught.
     (_doc(r"\frac{1}{2}=\frac{2}{4},\qquad \frac{1}{3}=\frac{2}{5}"), True),
+    # Plain prose arithmetic is NOT scanned — see _chains_in for why. These must
+    # stay silent rather than produce the fragment errors that scanning caused.
+    ({"worked_examples": [{"example": "11 / 4 = 2 remainder 3"}]}, False),
+    ({"worked_examples": [{"example": "6 x 105 = 630 and 630 - 378 = 252"}]}, False),
 ]
