@@ -68,17 +68,21 @@ class FakeDriver:
         return "You've reached your limit" if self.sends in self.notice_on else None
 
 
-def run_with(replies, *, notice_on=(), chapters=(7,), **argv_extra):
+def run_with(replies, *, notice_on=(), chapters=(7,), status=None, **argv_extra):
     """Run cmd_run against a fake driver; return (result, sleeps, stored_docs)."""
     sleeps: list[int] = []
     stored: list[dict] = []
     argv = ["run", *[str(c) for c in chapters], "--project-url", "https://x/project"]
     for k, v in argv_extra.items():
-        argv += [f"--{k.replace('_','-')}", str(v)]
+        flag = f"--{k.replace('_','-')}"
+        argv += [flag] if v is None else [flag, str(v)]
     args = E.parse_args(argv)
     driver = FakeDriver(replies, notice_on)
+    # Default: pretend nothing is on disk yet, so tests exercise generation.
+    status_fn = status or (lambda n: ("missing", ["none"]))
 
     with mock.patch.object(E, "ChatGPTDriver", lambda *a, **k: driver), \
+         mock.patch.object(E, "lesson_status", status_fn), \
          mock.patch.object(E, "scrape_reply_json", lambda page: None), \
          mock.patch.object(E.time, "sleep", lambda s: sleeps.append(int(s))), \
          mock.patch.object(E, "build_payload", lambda n: "PAYLOAD"), \
@@ -129,6 +133,29 @@ code, sleeps, stored, drv = run_with([GOOD, GOOD16], chapters=(7, 16))
 check("both lessons stored", len(stored) == 2, str(len(stored)))
 check("one inter-lesson wait, in the 5-10m window",
       len(sleeps) == 1 and 300 <= sleeps[0] <= 600, str(sleeps))
+
+print("\nauto-resume: an already-good lesson is skipped, with no request and no wait")
+# lesson 7 is already done; only 16 gets generated, so 16's own fixture is the reply
+code, sleeps, stored, drv = run_with([GOOD16], chapters=(7, 16),
+                                     status=lambda n: ("ok", []) if n == 7 else ("missing", []))
+check("no request for the finished lesson", drv.sends == 1, str(drv.sends))
+check("only the missing one was written", len(stored) == 1, str(len(stored)))
+check("skipping cost no wait", sleeps == [], str(sleeps))
+
+print("\nauto-resume: a lesson that exists but NO LONGER passes is regenerated")
+code, sleeps, stored, drv = run_with([GOOD], chapters=(7,),
+                                     status=lambda n: ("stale", ["trait name wrong"]))
+check("regenerated the stale lesson", drv.sends == 1 and len(stored) == 1, str(drv.sends))
+
+print("\nauto-resume: --force regenerates even a passing lesson")
+code, sleeps, stored, drv = run_with([GOOD], chapters=(7,),
+                                     status=lambda n: ("ok", []), force=None)
+check("forced a request anyway", drv.sends == 1 and len(stored) == 1, str(drv.sends))
+
+print("\neverything already done -> no requests at all")
+code, sleeps, stored, drv = run_with([GOOD], chapters=(7, 16), status=lambda n: ("ok", []))
+check("zero requests sent", drv.sends == 0, str(drv.sends))
+check("exit code is success", code == 0, str(code))
 
 print("\n" + "=" * 58)
 print(f"{len(fails)} FAILED: {fails}" if fails else "unattended run behaviour holds")

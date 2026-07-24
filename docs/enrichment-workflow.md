@@ -41,9 +41,18 @@ python chatgpt_browser_driver.py login
 # inspect the message that would be sent for a lesson (no browser)
 python enrich_lessons.py payload 8
 
-# enrich one or more lessons: drive ChatGPT → scrape → validate → store
+# enrich the WHOLE book — safe to launch blind, any night. Lessons already done
+# and still passing are skipped without sending a request.
+caffeinate -is python enrich_lessons.py run \
+  --project-url "https://chatgpt.com/g/g-p-6a4c9da8…-pte/project"
+
+# …or name specific lessons
 caffeinate -is python enrich_lessons.py run \
   --project-url "https://chatgpt.com/g/g-p-6a4c9da8…-pte/project" 5 6 7
+
+# regenerate even lessons that already pass (e.g. after improving the prompt)
+caffeinate -is python enrich_lessons.py run --force \
+  --project-url "https://chatgpt.com/g/g-p-6a4c9da8…-pte/project"
 
 # load an enrichment JSON already produced by hand
 python enrich_lessons.py load 8
@@ -56,7 +65,16 @@ Notes:
 - Point `--project-url` at the **project** URL (ends `/project`) so each lesson
   gets a fresh, prompt-primed chat (no cross-lesson context bleed).
 - Failures save the raw reply to `output/_lessonNN.reply.txt` and are reported at
-  the end (`FAILED: [...]`) for a targeted re-run.
+  the end. Just re-run the same command — it retries only what is still missing.
+- **Auto-resume.** "Done" means *the file exists AND still passes both check
+  layers*, not merely "a file is there". A lesson written before a check existed
+  would otherwise stay broken forever, invisibly; instead every run re-verifies
+  what it has and regenerates whatever no longer passes. Re-checking is free — the
+  enrichment checks are plain code, no request and no model call — so the whole
+  book is verified in seconds before a single request is sent.
+- Only chapters with a grounded base are enrichable this way. Lessons 18-19 were
+  drafted from Pearson guidance rather than the book, so they are not in the
+  auto-discovered set.
 
 ## Fact audit (checking the exam facts against Pearson)
 

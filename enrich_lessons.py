@@ -421,6 +421,40 @@ def check_lesson_facts(document: dict[str, Any]) -> list[str]:
     return [f["summary"] for r in verdict["results"] for f in r["findings"]]
 
 
+def all_chapter_numbers() -> list[int]:
+    """Every chapter that has a grounded base available to enrich."""
+    found = []
+    for p in Path("output").glob("pte.chapter*.book_learning_materials.json"):
+        m = re.search(r"chapter(\d+)", p.name)
+        if m:
+            found.append(int(m.group(1)))
+    return sorted(found)
+
+
+def lesson_status(n: int) -> tuple[str, list[str]]:
+    """Is lesson n already done AND still correct? -> ('ok'|'stale'|'missing', why)
+
+    "Done" deliberately means *exists and still passes both check layers*, not
+    merely "a file is there". A lesson written before a check existed would
+    otherwise stay broken forever, invisibly. Re-checking is free — the enrichment
+    checks are plain code, no request and no model call — so every run re-verifies
+    what it already has and repairs whatever no longer passes.
+    """
+    path = Path(ENRICH_FILE.format(n=n))
+    if not path.exists():
+        return "missing", ["no enrichment file yet"]
+    try:
+        document = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        return "stale", [f"file unreadable: {exc}"]
+    try:
+        validate_enrichment(document, n)
+    except (ValueError, store.StoreError) as exc:
+        return "stale", [str(exc)]
+    problems = check_lesson_facts(document)
+    return ("stale", problems) if problems else ("ok", [])
+
+
 def _pause_seconds(args) -> int:
     """How long to wait before the next request.
 
@@ -440,11 +474,38 @@ def cmd_run(args) -> int:
     failed: list[int] = []
     engine = store.create_db(args.db_url)
     # headless is fine for send once you've logged in via the driver's `login`.
+    skipped: list[int] = []
+    repaired: list[int] = []
+    sent_before = False  # pace only between actual requests; a skip sends nothing
+
     with ChatGPTDriver(args.profile_dir, headless=args.headless) as d:
         for i, n in enumerate(args.chapters):
             print(f"\n=== Lesson {n} ===")
+
+            # Already done and still correct? Don't spend a request on it. This is
+            # what makes the same command safe to launch blind, every night: it
+            # converges on a complete book instead of redoing finished work.
+            if not args.force:
+                status, why = lesson_status(n)
+                if status == "ok":
+                    print("  already enriched and still passes both checks — skipping")
+                    skipped.append(n)
+                    continue
+                if status == "stale":
+                    print(f"  existing lesson no longer passes: {'; '.join(why)[:140]}")
+                    print("  regenerating it")
+                    repaired.append(n)
+
+            # Pace before sending, not after: a skipped lesson costs no wait, and
+            # the run doesn't idle for 5-10 min after the final request.
+            if sent_before and args.cooldown > 0:
+                delay = _pause_seconds(args)
+                print(f"  waiting {delay // 60}m {delay % 60}s before this request…")
+                time.sleep(delay)
+
             payload = build_payload(n)
             document = None
+            sent_before = True
 
             # Re-generate this lesson until it passes BOTH check layers, or the
             # attempts run out. An unattended run can't call a human to re-run a
@@ -503,19 +564,16 @@ def cmd_run(args) -> int:
                 print(f"  OK  wrote {path.name} + DB <- {rec_id} (task_type={document.get('task_type')})")
                 stored.append(n)
 
-            # Pace EVERY request, not just the ones that failed: each lesson is a
-            # 30–60K-char generation, and it is cumulative volume that trips plan
-            # limits. The run is unattended, so elapsed time costs nothing.
-            if args.cooldown > 0 and i < len(args.chapters) - 1:
-                delay = _pause_seconds(args)
-                print(f"  waiting {delay // 60}m {delay % 60}s before the next lesson…")
-                time.sleep(delay)
-
-    print(f"\n{'='*48}\nDone: {len(stored)}/{len(args.chapters)} enriched and stored.")
+    done = len(stored) + len(skipped)
+    print(f"\n{'='*48}\nBook: {done}/{len(args.chapters)} lessons enriched and passing.")
+    if skipped:
+        print(f"  already good (no request sent): {skipped}")
+    if repaired:
+        print(f"  regenerated because they no longer passed: {repaired}")
     if stored:
-        print(f"  stored: {stored}")
+        print(f"  written this run: {stored}")
     if failed:
-        print(f"  FAILED: {failed}  (re-run just these: run … {' '.join(map(str, failed))})")
+        print(f"  STILL FAILING: {failed}  — re-run the same command; it retries only these.")
     return 0 if not failed else 1
 
 
@@ -529,7 +587,12 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     sp.set_defaults(func=cmd_payload)
 
     sr = sub.add_parser("run", help="Drive ChatGPT, scrape, validate, store.")
-    sr.add_argument("chapters", type=int, nargs="+")
+    sr.add_argument(
+        "chapters", type=int, nargs="*",
+        help="Chapters to enrich. Omit to do the WHOLE book — every chapter with a "
+             "grounded base. Lessons already enriched and still passing are skipped, "
+             "so the same command can be re-run any time and just fills the gaps.",
+    )
     sr.add_argument("--project-url", required=True, help="ChatGPT project URL (ends /project).")
     sr.add_argument("--profile-dir", default=DEFAULT_PROFILE)
     sr.add_argument("--timeout", type=int, default=600)
@@ -556,6 +619,11 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         help="Seconds to wait before retrying after a usage-limit notice (default 1800 = 30 min). "
              "Much longer than the normal pace: a capped account needs time, not another attempt.",
     )
+    sr.add_argument(
+        "--force", action="store_true",
+        help="Regenerate even lessons that already exist and pass (e.g. after "
+             "improving the prompt). Default is to skip them.",
+    )
     sr.add_argument("--headless", action="store_true")
     sr.add_argument("--stop-on-error", action="store_true", help="Abort the batch on first failure.")
     sr.set_defaults(func=cmd_run)
@@ -569,6 +637,12 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
 
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
+    if args.command == "run" and not args.chapters:
+        args.chapters = all_chapter_numbers()
+        if not args.chapters:
+            print("No grounded-base chapters found in output/.", file=sys.stderr)
+            return 1
+        print(f"No chapters given — doing the whole book: {args.chapters}")
     return args.func(args)
 
 
