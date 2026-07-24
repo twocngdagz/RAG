@@ -80,14 +80,18 @@ def run_with(replies, *, notice_on=(), chapters=(7,), status=None, **argv_extra)
     driver = FakeDriver(replies, notice_on)
     # Default: pretend nothing is on disk yet, so tests exercise generation.
     status_fn = status or (lambda n: ("missing", ["none"]))
+    # The real functions now take the domain pack too; the mocks must match or
+    # they would be testing a signature that no longer exists.
+    status_mock = lambda n, pack: status_fn(n)
 
     with mock.patch.object(E, "ChatGPTDriver", lambda *a, **k: driver), \
-         mock.patch.object(E, "lesson_status", status_fn), \
+         mock.patch.object(E, "lesson_status", status_mock), \
          mock.patch.object(E, "scrape_reply_json", lambda page: None), \
          mock.patch.object(E.time, "sleep", lambda s: sleeps.append(int(s))), \
-         mock.patch.object(E, "build_payload", lambda n: "PAYLOAD"), \
+         mock.patch.object(E, "build_payload", lambda n, pack: "PAYLOAD"), \
          mock.patch.object(E, "write_enrichment_file",
-                           lambda doc, n: (stored.append(doc), Path(f"/tmp/l{n}.json"))[1]), \
+                           lambda doc, n, pack: (stored.append(doc),
+                                                 Path(f"/tmp/l{n}.json"))[1]), \
          mock.patch.object(E.store, "create_db", lambda url: None), \
          mock.patch.object(E, "Session", lambda e: mock.MagicMock()), \
          mock.patch.object(E.store, "load_enrichment_file",

@@ -46,6 +46,11 @@ python enrich_lessons.py payload 8
 caffeinate -is python enrich_lessons.py run \
   --project-url "https://chatgpt.com/g/g-p-6a4c9da8…-pte/project"
 
+# a different book: --book picks the domain pack, which owns the slug and the
+# file names. Defaults to pte, so every existing command is unchanged.
+caffeinate -is python enrich_lessons.py run --book math5a \
+  --project-url "https://chatgpt.com/g/…/project"
+
 # …or name specific lessons
 caffeinate -is python enrich_lessons.py run \
   --project-url "https://chatgpt.com/g/g-p-6a4c9da8…-pte/project" 5 6 7
@@ -72,6 +77,9 @@ Notes:
   what it has and regenerates whatever no longer passes. Re-checking is free — the
   enrichment checks are plain code, no request and no model call — so the whole
   book is verified in seconds before a single request is sent.
+- **Nothing is hardwired to PTE.** `--book` selects a domain pack
+  (`domain_packs.py`), which owns the slug, the audience, the file naming and
+  which checks apply. Adding a book is adding a pack, not editing the pipeline.
 - Only chapters with a grounded base are enrichable this way. Lessons 18-19 were
   drafted from Pearson guidance rather than the book, so they are not in the
   auto-discovered set.

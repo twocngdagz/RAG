@@ -44,11 +44,13 @@ from playwright.sync_api import Error as PWError
 from sqlalchemy.orm import Session
 
 import book_learning_materials_store as store
+import domain_packs
 from chatgpt_browser_driver import DEFAULT_PROFILE, ChatGPTDriver
 
-BOOK_SLUG = "pte"
-BASE_FILE = "output/pte.chapter{n:02d}.book_learning_materials.json"
-ENRICH_FILE = "output/pte.chapter{n:02d}.enrichment.json"
+# Which book is being enriched comes from a domain pack (domain_packs.py), which
+# owns the slug and the file naming. Nothing here is hardwired to PTE any more;
+# `--book` selects the pack and defaults to pte so existing commands are unchanged.
+DEFAULT_BOOK = domain_packs.DEFAULT_SLUG
 
 
 # --------------------------------------------------------------------------- #
@@ -64,20 +66,20 @@ def _text(value: Any) -> str:
     return ""
 
 
-def build_payload(chapter_number: int) -> str:
+def build_payload(chapter_number: int, pack: domain_packs.DomainPack) -> str:
     """Render one chapter's grounded material as clean text for enrichment.
 
     Drops source_chunks and grounding bookkeeping -- the project only needs the
     teaching content, and the enrichment prompt synthesises the teaching layer.
     """
-    path = Path(BASE_FILE.format(n=chapter_number))
+    path = Path(pack.base_path(chapter_number))
     if not path.exists():
         raise FileNotFoundError(f"No grounded base for chapter {chapter_number}: {path}")
     ch = json.loads(path.read_text(encoding="utf-8"))["learning_materials"]["chapters"][0]
 
     out: list[str] = [
         "PTE LESSON (base learning material) — enrich this into the teaching-first version.",
-        f"source_label: {BOOK_SLUG}:ch{chapter_number:02d}",
+        f"source_label: {pack.slug}:ch{chapter_number:02d}",
         f"chapter_number: {ch.get('chapter_number')}",
         f"lesson_title: {ch.get('chapter_title')}",
     ]
@@ -303,13 +305,14 @@ def normalize_document(document: dict[str, Any]) -> dict[str, Any]:
     return document
 
 
-def validate_enrichment(document: dict[str, Any], chapter_number: int) -> None:
+def validate_enrichment(document: dict[str, Any], chapter_number: int,
+                        pack: domain_packs.DomainPack) -> None:
     """Fail loudly before writing/storing if the reply is off-contract."""
     meta = store.extract_enrichment_metadata(document)  # checks schema + source_label
-    if meta["book_slug"] != BOOK_SLUG or meta["chapter_number"] != chapter_number:
+    if meta["book_slug"] != pack.slug or meta["chapter_number"] != chapter_number:
         raise ValueError(
             f"Enrichment identifies as {meta['source_label']!r} but we asked for "
-            f"{BOOK_SLUG}:ch{chapter_number:02d}. Refusing to store a mismatch."
+            f"{pack.slug}:ch{chapter_number:02d}. Refusing to store a mismatch."
         )
     missing = REQUIRED_TOP_LEVEL_KEYS - set(document)
     if missing:
@@ -339,8 +342,9 @@ def validate_enrichment(document: dict[str, Any], chapter_number: int) -> None:
 # 3. Persist: file + DB.
 # --------------------------------------------------------------------------- #
 
-def write_enrichment_file(document: dict[str, Any], chapter_number: int) -> Path:
-    path = Path(ENRICH_FILE.format(n=chapter_number))
+def write_enrichment_file(document: dict[str, Any], chapter_number: int,
+                          pack: domain_packs.DomainPack) -> Path:
+    path = Path(pack.enrich_path(chapter_number))
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(document, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return path
@@ -360,17 +364,19 @@ def load_into_db(paths: list[Path], *, db_url: str) -> None:
 # --------------------------------------------------------------------------- #
 
 def cmd_payload(args) -> int:
+    pack = domain_packs.get(args.book)
     for n in args.chapters:
-        payload = build_payload(n)
+        payload = build_payload(n, pack)
         print(f"\n===== chapter {n} payload ({len(payload)} chars) =====\n")
         print(payload)
     return 0
 
 
 def cmd_load(args) -> int:
+    pack = domain_packs.get(args.book)
     paths = []
     for n in args.chapters:
-        p = Path(ENRICH_FILE.format(n=n))
+        p = Path(pack.enrich_path(n))
         if not p.exists():
             print(f"! chapter {n}: {p} not found — skipping", file=sys.stderr)
             continue
@@ -421,17 +427,18 @@ def check_lesson_facts(document: dict[str, Any]) -> list[str]:
     return [f["summary"] for r in verdict["results"] for f in r["findings"]]
 
 
-def all_chapter_numbers() -> list[int]:
-    """Every chapter that has a grounded base available to enrich."""
+def all_chapter_numbers(pack: domain_packs.DomainPack) -> list[int]:
+    """Every chapter of THIS book that has a grounded base available to enrich."""
     found = []
-    for p in Path("output").glob("pte.chapter*.book_learning_materials.json"):
+    pattern = Path(pack.base_path(0)).name.replace("chapter00", "chapter*")
+    for p in Path("output").glob(pattern):
         m = re.search(r"chapter(\d+)", p.name)
         if m:
             found.append(int(m.group(1)))
     return sorted(found)
 
 
-def lesson_status(n: int) -> tuple[str, list[str]]:
+def lesson_status(n: int, pack: domain_packs.DomainPack) -> tuple[str, list[str]]:
     """Is lesson n already done AND still correct? -> ('ok'|'stale'|'missing', why)
 
     "Done" deliberately means *exists and still passes both check layers*, not
@@ -440,7 +447,7 @@ def lesson_status(n: int) -> tuple[str, list[str]]:
     checks are plain code, no request and no model call — so every run re-verifies
     what it already has and repairs whatever no longer passes.
     """
-    path = Path(ENRICH_FILE.format(n=n))
+    path = Path(pack.enrich_path(n))
     if not path.exists():
         return "missing", ["no enrichment file yet"]
     try:
@@ -448,7 +455,7 @@ def lesson_status(n: int) -> tuple[str, list[str]]:
     except (OSError, json.JSONDecodeError) as exc:
         return "stale", [f"file unreadable: {exc}"]
     try:
-        validate_enrichment(document, n)
+        validate_enrichment(document, n, pack)
     except (ValueError, store.StoreError) as exc:
         return "stale", [str(exc)]
     problems = check_lesson_facts(document)
@@ -470,6 +477,8 @@ def _pause_seconds(args) -> int:
 
 
 def cmd_run(args) -> int:
+    pack = domain_packs.get(args.book)
+    print(f"book: {pack.slug} — {pack.title}")
     stored: list[int] = []
     failed: list[int] = []
     engine = store.create_db(args.db_url)
@@ -486,7 +495,7 @@ def cmd_run(args) -> int:
             # what makes the same command safe to launch blind, every night: it
             # converges on a complete book instead of redoing finished work.
             if not args.force:
-                status, why = lesson_status(n)
+                status, why = lesson_status(n, pack)
                 if status == "ok":
                     print("  already enriched and still passes both checks — skipping")
                     skipped.append(n)
@@ -503,7 +512,7 @@ def cmd_run(args) -> int:
                 print(f"  waiting {delay // 60}m {delay % 60}s before this request…")
                 time.sleep(delay)
 
-            payload = build_payload(n)
+            payload = build_payload(n, pack)
             document = None
             sent_before = True
 
@@ -520,7 +529,7 @@ def cmd_run(args) -> int:
                     reply = d.send_and_wait(args.project_url, payload, timeout_s=args.timeout)
                     raw = scrape_reply_json(d.page) or reply
                     candidate = normalize_document(strip_citation_artifacts(extract_json_object(raw)))
-                    validate_enrichment(candidate, n)          # layer 1: structure
+                    validate_enrichment(candidate, n, pack)    # layer 1: structure
                     problems = check_lesson_facts(candidate)   # layer 2: facts
                     if problems:
                         raise LessonRejected("; ".join(problems))
@@ -556,7 +565,7 @@ def cmd_run(args) -> int:
 
             if document is not None:
                 # Persist immediately so a long run is never all-or-nothing.
-                path = write_enrichment_file(document, n)
+                path = write_enrichment_file(document, n, pack)
                 with Session(engine) as s:
                     rec = store.load_enrichment_file(s, path)
                     s.commit()
@@ -584,6 +593,11 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
 
     sp = sub.add_parser("payload", help="Print the base payload (no browser).")
     sp.add_argument("chapters", type=int, nargs="+")
+    sp.add_argument(
+        "--book", default=DEFAULT_BOOK, choices=sorted(domain_packs.REGISTRY),
+        help=f"Which domain pack / book to work on (default {DEFAULT_BOOK}). "
+             f"Decides the slug and the output file names.",
+    )
     sp.set_defaults(func=cmd_payload)
 
     sr = sub.add_parser("run", help="Drive ChatGPT, scrape, validate, store.")
@@ -626,10 +640,20 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     )
     sr.add_argument("--headless", action="store_true")
     sr.add_argument("--stop-on-error", action="store_true", help="Abort the batch on first failure.")
+    sr.add_argument(
+        "--book", default=DEFAULT_BOOK, choices=sorted(domain_packs.REGISTRY),
+        help=f"Which domain pack / book to work on (default {DEFAULT_BOOK}). "
+             f"Decides the slug and the output file names.",
+    )
     sr.set_defaults(func=cmd_run)
 
     sl = sub.add_parser("load", help="Load existing enrichment files into the DB.")
     sl.add_argument("chapters", type=int, nargs="+")
+    sl.add_argument(
+        "--book", default=DEFAULT_BOOK, choices=sorted(domain_packs.REGISTRY),
+        help=f"Which domain pack / book to work on (default {DEFAULT_BOOK}). "
+             f"Decides the slug and the output file names.",
+    )
     sl.set_defaults(func=cmd_load)
 
     return p.parse_args(argv)
@@ -638,9 +662,10 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
     if args.command == "run" and not args.chapters:
-        args.chapters = all_chapter_numbers()
+        args.chapters = all_chapter_numbers(domain_packs.get(args.book))
         if not args.chapters:
-            print("No grounded-base chapters found in output/.", file=sys.stderr)
+            print(f"No grounded-base chapters found for book {args.book!r} in output/.",
+                  file=sys.stderr)
             return 1
         print(f"No chapters given — doing the whole book: {args.chapters}")
     return args.func(args)
