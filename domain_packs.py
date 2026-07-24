@@ -40,6 +40,10 @@ class DomainPack:
     # audiences). A children's book that reads at grade 9 has failed regardless
     # of how correct its content is.
     reading_grade_max: float | None = None
+    # Fewest worked examples a lesson may ship with. Worked examples are the
+    # single most useful thing in a lesson, and simplifying the prose must not
+    # be allowed to quietly cost them (it did: 4.7 -> 2.7 per lesson).
+    min_worked_examples: int = 3
     # Where this book's files live; {n} is the chapter number.
     base_file: str = "output/{slug}.chapter{n:02d}.book_learning_materials.json"
     enrich_file: str = "output/{slug}.chapter{n:02d}.enrichment.json"
@@ -60,6 +64,7 @@ REGISTRY: dict[str, DomainPack] = {
         ground_truth="the official Pearson PTE Academic Score Guide (PDF)",
         evaluators=("word_range", "trait_names", "worked_example_rules"),
         reading_grade_max=None,   # adult test takers; no child-level constraint
+        min_worked_examples=3,    # the existing 19 PTE lessons all meet this
         notes=("Scoring facts are checked against the Score Guide. Mechanical checks "
                "are deterministic; the model judge is advisory only, having been "
                "measured unreliable on numeric contradictions."),
@@ -71,6 +76,7 @@ REGISTRY: dict[str, DomainPack] = {
         ground_truth="arithmetic itself — every calculation is evaluated exactly",
         evaluators=("math_arithmetic", "reading_level"),
         reading_grade_max=6.0,    # 10-11 year olds; grade 5-6 prose
+        min_worked_examples=4,    # children learn from demonstrations
         notes=("Correctness here is computable, so the core check needs no judge and "
                "no evidence lookup. Blanks (the pupil's answer) are skipped, never "
                "flagged. Source text comes from LlamaParse, which preserves fractions "

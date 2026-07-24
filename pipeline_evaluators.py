@@ -272,6 +272,23 @@ _SWT_ONE_SENTENCE = _example_doc(
     "The study found a clear link between the two variables while noting several limits.")
 
 
+def _example_count_findings(doc: dict[str, Any]) -> list[Finding]:
+    """Enough worked demonstrations to actually teach from."""
+    pack = domain_packs.domain_of(doc)
+    examples = doc.get("worked_examples")
+    n = len(examples) if isinstance(examples, list) else 0
+    if n >= pack.min_worked_examples:
+        return []
+    return [Finding(
+        summary=f"Only {n} worked example(s); this lesson needs at least "
+                f"{pack.min_worked_examples}.",
+        detail=("Worked examples are the most useful part of a lesson. Add more "
+                "fully-worked demonstrations. Keeping the language simple is not a "
+                "reason to include fewer — do both."),
+        fixable=True,
+    )]
+
+
 def _reading_findings(doc: dict[str, Any]) -> list[Finding]:
     """Readability against the lesson's own domain pack target."""
     pack = domain_packs.domain_of(doc)
@@ -360,6 +377,25 @@ REGISTRY: dict[str, Evaluator] = {
         ),
         findings_fn=math_evaluators.arithmetic_findings,
         self_tests=math_evaluators.SELF_TESTS,
+    ),
+    "worked_example_count": Evaluator(
+        name="worked_example_count",
+        artifact="enrichment_lesson",
+        kind="deterministic",
+        description=(
+            "Checks the lesson ships enough fully-worked demonstrations — the "
+            "single most useful thing in it. The floor comes from the domain pack "
+            "(PTE 3, maths 4). Exists because tightening the prose for readability "
+            "quietly halved the example count; both matter, so both are checked."
+        ),
+        findings_fn=_example_count_findings,
+        self_tests=[
+            ({"source_label": "math5a:c", "worked_examples": [{}, {}]}, True),      # 2 < 4
+            ({"source_label": "math5a:c", "worked_examples": [{}, {}, {}, {}]}, False),
+            ({"source_label": "pte:ch07", "worked_examples": [{}, {}, {}]}, False),  # PTE floor is 3
+            ({"source_label": "pte:ch07", "worked_examples": []}, True),
+        ],
+        domains=("pte", "math5a"),
     ),
     "reading_level": Evaluator(
         name="reading_level",

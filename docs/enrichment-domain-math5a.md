@@ -49,6 +49,7 @@ standard definitions, alternative solution methods, and everyday real-world cont
 
 - Every calculation you write MUST be arithmetically correct. This is checked automatically; a wrong sum is a defect, not a typo.
 - Show the full working, every step, the way a pupil should write it — not just the answer.
+- **At least FOUR worked examples**, and this is checked. Simple language is not a reason to give fewer — write four demonstrations AND keep the words easy. Vary them: one straightforward, one with a twist, one word problem, one showing a common mistake being corrected.
 - Write maths in LaTeX: `$\frac{3}{4}$`, `$2\frac{1}{2}$`, `$\times$`, `$\div$`. Never write a fraction as loose digits.
 - For word problems, show the **bar model** in words before the arithmetic — this book teaches through bar models.
 - `worked_examples.model_answer` is the complete solution with working and the final answer stated in a sentence ("There are 22 stamps altogether.").
