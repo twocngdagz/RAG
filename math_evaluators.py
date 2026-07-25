@@ -175,11 +175,20 @@ def _chains_in(text: str) -> list[str]:
     return out
 
 
+# Fields that quote a PROBLEM or a wrong belief, not the lesson's asserted maths.
+# A "find and correct the mistake" worked example must contain a false equation in
+# its `input`, and `common_mistakes[].mistake` / `misconception` are wrong by
+# definition. Scanning these flags the very error the lesson is teaching pupils to
+# catch — so the arithmetic check reads only what the lesson ASSERTS as true
+# (model_answer, example, formula, the final working), never the stimulus.
+_STIMULUS_KEYS = frozenset({"input", "mistake", "misconception"})
+
+
 def checkable_chain_count(doc: Any) -> int:
     """How many equations we could actually verify. Zero means the arithmetic
     check said nothing about this artifact — which callers must not read as a pass."""
     n = 0
-    for text in _walk_strings(doc):
+    for text in _walk_asserted(doc):
         for chain in _chains_in(text):
             if check_chain(chain)[1] != "nothing checkable":
                 n += 1
@@ -198,11 +207,25 @@ def _walk_strings(value: Any):
             yield from _walk_strings(v)
 
 
+def _walk_asserted(value: Any):
+    """Strings the lesson asserts as true — skips the problem-statement and
+    labelled-mistake fields where wrong maths is deliberate (see _STIMULUS_KEYS)."""
+    if isinstance(value, str):
+        yield value
+    elif isinstance(value, dict):
+        for k, v in value.items():
+            if k not in _STIMULUS_KEYS:
+                yield from _walk_asserted(v)
+    elif isinstance(value, list):
+        for v in value:
+            yield from _walk_asserted(v)
+
+
 def arithmetic_findings(doc: dict[str, Any]) -> list[Finding]:
-    """Every false arithmetic statement in the lesson."""
+    """Every false arithmetic statement the lesson ASSERTS as true."""
     out: list[Finding] = []
     seen: set[str] = set()
-    for text in _walk_strings(doc):
+    for text in _walk_asserted(doc):
         for chain in _chains_in(text):
             key = re.sub(r"\s+", " ", chain).strip()
             if key in seen:
@@ -261,4 +284,12 @@ SELF_TESTS: list[tuple[dict[str, Any], bool]] = [
     # stay silent rather than produce the fragment errors that scanning caused.
     ({"worked_examples": [{"example": "11 / 4 = 2 remainder 3"}]}, False),
     ({"worked_examples": [{"example": "6 x 105 = 630 and 630 - 378 = 252"}]}, False),
+    # A "find the mistake" example has a deliberately WRONG equation in its input.
+    # That is the exercise, not a defect — the stimulus fields must be skipped.
+    # (Lesson 3 looped forever because this was flagged.)
+    ({"worked_examples": [{"input": r"A pupil writes $\frac{1}{3}+\frac{1}{2}=\frac{2}{5}$.",
+                           "model_answer": r"The answer is $\frac{5}{6}$."}]}, False),
+    ({"common_mistakes": [{"mistake": r"They write $2 	imes 3 = 5$."}]}, False),
+    # ...but the SAME wrong equation ASSERTED in the solution must still be caught.
+    ({"worked_examples": [{"model_answer": r"$\frac{1}{3}+\frac{1}{2}=\frac{2}{5}$"}]}, True),
 ]

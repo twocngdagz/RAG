@@ -99,6 +99,15 @@ def longest_sentences(text: str, n: int = 3) -> list[str]:
     return sorted(sents, key=lambda s: -len(s.split()))[:n]
 
 
+# A hard cutoff at exactly max_grade thrashes: a lesson that sits at grade 6.0-6.1
+# flips across regenerations and loops forever, even though its sentences are
+# short and the residual is forced subject vocabulary (a fractions chapter must
+# name numerator/denominator/quotient/divisor). Sentence length is the lever the
+# writer controls; grade is allowed a small tolerance above it so a marginal
+# overshoot with short sentences passes, while genuinely hard prose still fails.
+GRADE_TOLERANCE = 0.5
+
+
 def findings_for(doc: dict[str, Any], *, max_grade: float,
                  max_words_per_sentence: float = 14.0) -> list[Finding]:
     """Flag a lesson that reads above its audience's level.
@@ -112,7 +121,7 @@ def findings_for(doc: dict[str, Any], *, max_grade: float,
         return []
 
     out: list[Finding] = []
-    if m["grade"] > max_grade:
+    if m["grade"] > max_grade + GRADE_TOLERANCE:
         # Name the lever that is ACTUALLY out of range. Telling a writer to
         # "split long sentences" when their sentences already average 11 words
         # is advice they cannot act on — measured against the real Singapore
