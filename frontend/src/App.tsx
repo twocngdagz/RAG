@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Navigate, Route, Routes, useParams } from 'react-router-dom'
 import { GraduationCap, Menu } from 'lucide-react'
 import { api } from './lib/api'
@@ -36,6 +36,12 @@ function Shell({ books }: { books: BookInfo[] }) {
   const { slug = books[0].slug } = useParams()
   const chapters = useAsync(() => api.chapterIndex(slug), [slug])
   const [navOpen, setNavOpen] = useState(false)
+
+  // The browser tab reflects the open book, matching the sidebar brand — the
+  // title was hardcoded "PTE Learn", which lied once a second book existed.
+  useEffect(() => {
+    document.title = `${bookLabel(slug)} Learn — Grounded study materials`
+  }, [slug])
 
   // Unknown book in the URL → bounce to the first one.
   if (!books.some((b) => b.slug === slug)) {
