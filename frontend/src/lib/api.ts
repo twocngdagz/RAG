@@ -11,6 +11,8 @@ import type {
   DescribeImageFeedback,
   ReadingMcqItem,
   ReadingMcqFeedback,
+  MathPracticeItem,
+  MathPracticeFeedback,
   LessonEnrichment,
 } from './types'
 
@@ -65,6 +67,12 @@ export const api = {
     ),
   swtPassages: () => get<SwtPassage[]>('/swt-passages'),
   readingMcqItems: () => get<ReadingMcqItem[]>('/reading-mcq-items'),
+  mathPracticeItems: () => get<MathPracticeItem[]>('/math-practice-items'),
+  mathPracticeAnswer: (slug: string, n: number, itemId: string, answer: string) =>
+    post<MathPracticeFeedback>(`/books/${slug}/chapters/${n}/math-practice-answer`, {
+      item_id: itemId,
+      answer,
+    }),
   readingMcqAnswer: (slug: string, n: number, itemId: string, chosen: string[]) =>
     post<ReadingMcqFeedback>(`/books/${slug}/chapters/${n}/reading-mcq-answer`, {
       item_id: itemId,

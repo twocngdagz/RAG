@@ -41,6 +41,7 @@ except ImportError:
 import book_learning_materials_store as store
 import describe_image_feedback
 import essay_feedback
+import math_practice_items
 import reading_mcq_items
 import swt_feedback
 
@@ -97,6 +98,19 @@ def _load_mcq_bank() -> list[dict[str, Any]]:
         return []
     data = json.loads(path.read_text(encoding="utf-8"))
     return data.get("items", data) if isinstance(data, dict) else data
+
+
+def _load_math_practice_bank() -> list[dict[str, Any]]:
+    path = Path(os.getenv("MATH_PRACTICE_ITEMS_FILE", "output/math_practice_items.json"))
+    if not path.exists():
+        return []
+    data = json.loads(path.read_text(encoding="utf-8"))
+    return data.get("items", data) if isinstance(data, dict) else data
+
+
+class MathPracticeAnswerRequest(BaseModel):
+    item_id: str = Field(min_length=1, max_length=120)
+    answer: str = Field(default="", max_length=60)
 
 
 class SwtFeedbackRequest(BaseModel):
@@ -162,6 +176,20 @@ def create_app(engine: Engine | None = None) -> FastAPI:
         return [
             {k: v for k, v in item.items() if k not in ("correct", "rationale")}
             for item in _load_mcq_bank()
+        ]
+
+    @app.get("/math-practice-items")
+    def get_math_practice_items() -> list[dict[str, Any]]:
+        """The maths practice bank, with the computed answer withheld.
+
+        The answer is revealed only on submit — otherwise it sits in the page
+        source. This is the first slice of the V2 study tool: every item's answer
+        is computed by code, so marking is deterministic and no model runs."""
+        withheld = {"answer_num", "answer_den", "answer_tex", "answer_plain",
+                    "answer_is_reduced"}
+        return [
+            {k: v for k, v in item.items() if k not in withheld}
+            for item in _load_math_practice_bank()
         ]
 
     @app.get("/swt-passages")
@@ -338,6 +366,55 @@ def create_app(engine: Engine | None = None) -> FastAPI:
             feedback=feedback,
             prompt_type=item["id"],
             task_type="describe_image",
+        )
+        session.commit()
+        return feedback
+
+    @app.post("/books/{slug}/chapters/{chapter_number}/math-practice-answer")
+    def post_math_practice_answer(
+        slug: str,
+        chapter_number: int,
+        body: MathPracticeAnswerRequest,
+        session: Session = Depends(get_session),
+    ) -> dict[str, Any]:
+        """Mark a maths practice answer and record it in the history.
+
+        No model is involved: the answer was computed by code and the learner's
+        answer is checked exactly (equal value AND simplest form). The V2
+        'correct is computable' principle, made a feature."""
+        item = next((i for i in _load_math_practice_bank() if i.get("id") == body.item_id), None)
+        if item is None:
+            raise HTTPException(status_code=404, detail=f"Item {body.item_id} not found.")
+
+        result = math_practice_items.check_answer(item, body.answer)
+        score = 1 if result["correct"] else 0
+        feedback = {
+            **result,
+            "word_count": 0,
+            "gating_applied": False,
+            "raw_total": score,
+            "max_raw_total": 1,
+            "skill": item.get("skill"),
+            "skill_title": item.get("skill_title"),
+            "capability": item.get("capability"),
+            "prompt": item.get("prompt"),
+            # capability-scored, matching the V2 evaluation model
+            "traits": [{
+                "name": item.get("capability") or "application",
+                "score": score, "max": 1, "evidence": "", "fix": "",
+            }],
+            "top_priorities": [],
+            "one_line_verdict": result["message"],
+        }
+        store.save_essay_attempt(
+            session,
+            book_slug=slug,
+            chapter_number=chapter_number,
+            prompt_text=f"{item.get('skill_title', 'Maths')}: {item['prompt_inline']}",
+            essay_text=(body.answer or "(no answer)"),
+            feedback=feedback,
+            prompt_type=item["id"],
+            task_type="math_practice",
         )
         session.commit()
         return feedback

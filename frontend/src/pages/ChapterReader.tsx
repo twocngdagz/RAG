@@ -24,6 +24,7 @@ import { EssayPractice } from '../components/EssayPractice'
 import { SwtPractice } from '../components/SwtPractice'
 import { DescribeImagePractice } from '../components/DescribeImagePractice'
 import { ReadingMcqPractice } from '../components/ReadingMcqPractice'
+import { MathPractice } from '../components/MathPractice'
 import { ErrorBoundary } from '../components/ErrorBoundary'
 
 export function ChapterReader({ chapters }: { chapters: ChapterIndexItem[] }) {
@@ -42,11 +43,18 @@ export function ChapterReader({ chapters }: { chapters: ChapterIndexItem[] }) {
   // served separately (validated by essay_prompts.py), so the tab just needs to
   // know this is an essay lesson.
   const taskType = enrich.data?.task_type
+  // Maths lessons carry subject task_types (fractions, whole_numbers, …) rather
+  // than the PTE set, and they get the computed-answer practice loop.
+  const isMathTask = (t: string | undefined) =>
+    !!t &&
+    !['write_essay', 'summarize_written_text', 'describe_image', 'reading_multiple_choice'].includes(t) &&
+    (enrich.data?.source_label?.startsWith('math5a') ?? false)
   const canPractice =
     taskType === 'write_essay' ||
     taskType === 'summarize_written_text' ||
     taskType === 'describe_image' ||
-    taskType === 'reading_multiple_choice'
+    taskType === 'reading_multiple_choice' ||
+    isMathTask(taskType)
 
   const [view, setView] = useState<'lesson' | 'coach' | 'practice'>('lesson')
   useEffect(() => {
@@ -106,7 +114,9 @@ export function ChapterReader({ chapters }: { chapters: ChapterIndexItem[] }) {
     return (
       <>
         {tabs}
-        {taskType === 'reading_multiple_choice' ? (
+        {isMathTask(taskType) ? (
+          <MathPractice slug={slug} number={number} />
+        ) : taskType === 'reading_multiple_choice' ? (
           <ReadingMcqPractice slug={slug} number={number} />
         ) : taskType === 'summarize_written_text' ? (
           <SwtPractice slug={slug} number={number} />

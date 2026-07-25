@@ -261,6 +261,31 @@ export interface ReadingMcqFeedback {
   one_line_verdict: string
 }
 
+export interface MathPracticeItem {
+  id: string
+  skill: string
+  skill_title: string
+  capability: string
+  prompt: string
+  prompt_inline: string
+}
+
+export interface MathPracticeFeedback {
+  correct: boolean
+  equal: boolean
+  not_simplest: boolean
+  parsed: string | null
+  answer_tex: string
+  answer_plain: string
+  message: string
+  skill_title?: string
+  capability?: string
+  raw_total: number
+  max_raw_total: number
+  traits: EssayTrait[]
+  one_line_verdict: string
+}
+
 export interface EssayAttempt {
   id: number
   chapter_number: number
