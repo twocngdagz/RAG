@@ -1,0 +1,1542 @@
+{
+  "schema_version": "book_learning_materials.v2",
+  "book": {
+    "slug": "math5a",
+    "title": "Singapore Math Primary Mathematics 5A",
+    "source_pdf": "Singapore Math 5A Textbook"
+  },
+  "generation": {
+    "backend": "ollama",
+    "model": "gpt-oss:120b",
+    "note": "extracted from the LlamaParse output; teaching layer added downstream"
+  },
+  "learning_materials": {
+    "chapters": [
+      {
+        "chapter_number": 7,
+        "chapter_title": "6 Angles",
+        "estimated_study_time": {
+          "text": "2 hours",
+          "claim_kind": "source_statement",
+          "origin": "source_grounded",
+          "source_chunk_ids": [
+            "math5a:p81",
+            "math5a:p82",
+            "math5a:p83",
+            "math5a:p84",
+            "math5a:p85",
+            "math5a:p86"
+          ],
+          "grounded_in_source_chunk_ids": [
+            "math5a:p81",
+            "math5a:p82",
+            "math5a:p83",
+            "math5a:p84",
+            "math5a:p85",
+            "math5a:p86"
+          ],
+          "evidence_spans": [],
+          "reason": null
+        },
+        "chapter_summary": {
+          "text": "This chapter teaches how to measure angles with a protractor, how to use the properties of vertical angles, straight‑line angles and angles around a point, and how to find unknown angles using these ideas.",
+          "claim_kind": "source_statement",
+          "origin": "source_grounded",
+          "source_chunk_ids": [
+            "math5a:p81",
+            "math5a:p82",
+            "math5a:p83",
+            "math5a:p84",
+            "math5a:p85",
+            "math5a:p86"
+          ],
+          "grounded_in_source_chunk_ids": [
+            "math5a:p81",
+            "math5a:p82",
+            "math5a:p83",
+            "math5a:p84",
+            "math5a:p85",
+            "math5a:p86"
+          ],
+          "evidence_spans": [],
+          "reason": null
+        },
+        "learning_objectives": [
+          {
+            "text": "Measure an angle using a protractor.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p81",
+              "math5a:p82",
+              "math5a:p83",
+              "math5a:p84",
+              "math5a:p85",
+              "math5a:p86"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p81",
+              "math5a:p82",
+              "math5a:p83",
+              "math5a:p84",
+              "math5a:p85",
+              "math5a:p86"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "Identify and use vertically opposite angles.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p81",
+              "math5a:p82",
+              "math5a:p83",
+              "math5a:p84",
+              "math5a:p85",
+              "math5a:p86"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p81",
+              "math5a:p82",
+              "math5a:p83",
+              "math5a:p84",
+              "math5a:p85",
+              "math5a:p86"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "Apply the rule that angles on a straight line add to $180^\\circ$.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p81",
+              "math5a:p82",
+              "math5a:p83",
+              "math5a:p84",
+              "math5a:p85",
+              "math5a:p86"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p81",
+              "math5a:p82",
+              "math5a:p83",
+              "math5a:p84",
+              "math5a:p85",
+              "math5a:p86"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "Apply the rule that angles at a point add to $360^\\circ$.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p81",
+              "math5a:p82",
+              "math5a:p83",
+              "math5a:p84",
+              "math5a:p85",
+              "math5a:p86"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p81",
+              "math5a:p82",
+              "math5a:p83",
+              "math5a:p84",
+              "math5a:p85",
+              "math5a:p86"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "Calculate unknown angles by subtraction from $90^\\circ$, $180^\\circ$ or $360^\\circ$.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p81",
+              "math5a:p82",
+              "math5a:p83",
+              "math5a:p84",
+              "math5a:p85",
+              "math5a:p86"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p81",
+              "math5a:p82",
+              "math5a:p83",
+              "math5a:p84",
+              "math5a:p85",
+              "math5a:p86"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          }
+        ],
+        "key_terms": [
+          {
+            "term": "Angle",
+            "meaning": {
+              "text": "The space between two lines that meet at a point, measured in degrees.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "term": "Protractor",
+            "meaning": {
+              "text": "A tool used to measure the size of an angle.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "term": "Vertically opposite angles",
+            "meaning": {
+              "text": "Two angles that are opposite each other when two lines cross; they are equal.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "term": "Straight line angle",
+            "meaning": {
+              "text": "Angles that lie on the same line; together they total $180^\\circ$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "term": "Angle at a point",
+            "meaning": {
+              "text": "Angles that share a common vertex; together they total $360^\\circ$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "term": "Right angle",
+            "meaning": {
+              "text": "An angle that measures $90^\\circ$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "term": "Full rotation",
+            "meaning": {
+              "text": "A turn of $360^\\circ$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "core_lessons": [
+          {
+            "title": "Measuring Angles",
+            "explanation": {
+              "text": "The book shows how to line up the base of a protractor with one side of the angle, read the degree marking where the other side meets the scale, and record the measurement. It also shows using a compass‑rose to work out turns between directions.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "title": "Finding Unknown Angles",
+            "explanation": {
+              "text": "The book explains that vertically opposite angles are equal, that the angles on a straight line add to $180^\\circ$, and that the angles around a point add to $360^\\circ$. Unknown angles are found by subtracting the known angles from these totals.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "worked_examples": [
+          {
+            "title": "Subtracting from a right angle",
+            "example": {
+              "text": "$\\angle p = 90^\\circ - 42^\\circ = 48^\\circ$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "A right angle is $90^\\circ$. Removing the given $42^\\circ$ leaves $48^\\circ$ for the unknown angle.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "title": "Subtracting from a straight line",
+            "example": {
+              "text": "$\\angle q = 180^\\circ - 37^\\circ = 143^\\circ$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "Angles on a straight line total $180^\\circ$. Taking away $37^\\circ$ leaves $143^\\circ$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "title": "Subtracting from a full rotation",
+            "example": {
+              "text": "$\\angle r = 360^\\circ - 15^\\circ = 345^\\circ$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "A full turn is $360^\\circ$. Removing $15^\\circ$ gives the remaining angle $345^\\circ$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "title": "Turning using a compass rose",
+            "example": {
+              "text": "(a) $\\text{North} \\rightarrow \\text{South‑East}$ clockwise $= 135^\\circ$\\\n(b) $\\text{West} \\rightarrow \\text{South‑West}$ counter‑clockwise $= 45^\\circ$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "Each main direction is $90^\\circ$ apart. South‑East is halfway between South ($180^\\circ$) and East ($90^\\circ$), so it is $135^\\circ$ from North. West to South‑West is a $45^\\circ$ turn.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "title": "Finding an angle on a straight line (DBE)",
+            "example": {
+              "text": "$\\angle DBE = 180^\\circ - 35^\\circ - 55^\\circ = 90^\\circ$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "Angles on a straight line add to $180^\\circ$. Subtract the two given angles to get the remaining angle.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "title": "Finding an angle at a point (x)",
+            "example": {
+              "text": "$\\angle x = 360^\\circ - 90^\\circ - 80^\\circ - 155^\\circ = 35^\\circ$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "All angles around a point total $360^\\circ$. Remove the three known angles to leave $35^\\circ$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "title": "Finding an interior angle (COB)",
+            "example": {
+              "text": "$\\angle COB = 180^\\circ - 105^\\circ - 50^\\circ = 25^\\circ$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "A straight line through O gives $180^\\circ$. Subtract the two adjacent angles to get the remaining angle.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "common_misconceptions": [
+          {
+            "misconception": {
+              "text": "Thinking that the angles on a straight line add to $360^\\circ$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "Angles on a straight line always add to $180^\\circ$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "misconception": {
+              "text": "Assuming vertically opposite angles are different.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "Vertically opposite angles are always equal.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "practice_questions": [
+          {
+            "question": {
+              "text": "What angle do you turn through when you start facing north and turn clockwise to south‑east?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$135^\\circ$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "What angle do you turn through when you start facing west and turn counter‑clockwise to south‑west?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$45^\\circ$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "If you start facing north‑west and turn clockwise $90^\\circ$, which direction are you now facing?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "North‑East",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "After turning counter‑clockwise $225^\\circ$ you end up facing east. Which direction were you facing at the start?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "North‑West",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Find the unknown angle $\\angle p$ in a right‑angle diagram where the other angle is $42^\\circ$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$48^\\circ$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Find the unknown angle $\\angle q$ in a straight‑line diagram where the other angle is $37^\\circ$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$143^\\circ$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Find the unknown angle $\\angle r$ when it is a full rotation minus $15^\\circ$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$345^\\circ$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "In the figure where $\\angle w = 46^\\circ$, what is $\\angle x$ (the vertically opposite angle)?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$46^\\circ$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "In the figure with $\\angle AOC = 105^\\circ$ and $\\angle COD = 50^\\circ$, find $\\angle COB$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$25^\\circ$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Calculate $\\angle DBE$ given $\\angle ABD = 35^\\circ$ and $\\angle EBC = 55^\\circ$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$90^\\circ$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Find $\\angle x$ in the diagram where the other angles are $90^\\circ$, $80^\\circ$ and $155^\\circ$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$35^\\circ$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p81",
+                "math5a:p82",
+                "math5a:p83",
+                "math5a:p84",
+                "math5a:p85",
+                "math5a:p86"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "review_checklist": [
+          {
+            "text": "I can measure an angle with a protractor.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p81",
+              "math5a:p82",
+              "math5a:p83",
+              "math5a:p84",
+              "math5a:p85",
+              "math5a:p86"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p81",
+              "math5a:p82",
+              "math5a:p83",
+              "math5a:p84",
+              "math5a:p85",
+              "math5a:p86"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can identify vertically opposite angles and state that they are equal.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p81",
+              "math5a:p82",
+              "math5a:p83",
+              "math5a:p84",
+              "math5a:p85",
+              "math5a:p86"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p81",
+              "math5a:p82",
+              "math5a:p83",
+              "math5a:p84",
+              "math5a:p85",
+              "math5a:p86"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can use the $180^\\circ$ rule for angles on a straight line.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p81",
+              "math5a:p82",
+              "math5a:p83",
+              "math5a:p84",
+              "math5a:p85",
+              "math5a:p86"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p81",
+              "math5a:p82",
+              "math5a:p83",
+              "math5a:p84",
+              "math5a:p85",
+              "math5a:p86"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can use the $360^\\circ$ rule for angles around a point.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p81",
+              "math5a:p82",
+              "math5a:p83",
+              "math5a:p84",
+              "math5a:p85",
+              "math5a:p86"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p81",
+              "math5a:p82",
+              "math5a:p83",
+              "math5a:p84",
+              "math5a:p85",
+              "math5a:p86"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can find an unknown angle by subtracting known angles from $90^\\circ$, $180^\\circ$ or $360^\\circ$.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p81",
+              "math5a:p82",
+              "math5a:p83",
+              "math5a:p84",
+              "math5a:p85",
+              "math5a:p86"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p81",
+              "math5a:p82",
+              "math5a:p83",
+              "math5a:p84",
+              "math5a:p85",
+              "math5a:p86"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          }
+        ]
+      }
+    ]
+  },
+  "source_chunks": [
+    {
+      "node_id": "math5a:p81",
+      "text": "# Angles\n\n## Measuring Angles\n\nWhat is the size of $\\angle m$?\n\nDiagram showing an angle m being measured with a protractor. Two characters, John and Nancy, are shown with thought bubbles. John's bubble says \"∠m = 180° + 45°\". Nancy's bubble says \"∠m = 360° - 135°\". Below them, another diagram shows an angle n being measured with a protractor, and a third character has a thought bubble asking \"Which method shall I use?\".\nJohn icon\nNancy icon\nThird character icon\n\nNancy\n\nMeasure $\\angle n$.\n\nWhich method shall I use?"
+    },
+    {
+      "node_id": "math5a:p82",
+      "text": "1. Estimate and then find each of the following marked angles by measurement.\n\nAngle x\n\nAngle y\n\nAngle z\n\nWorkbook Exercise 39\n\n2.\nCompass rose diagram showing north, north-east, east, south-east, south, south-west, west, and north-west with a 45° angle marked between north and north-east.\n\n(a) You start facing north and turn clockwise to south-east.\nWhat angle do you turn through?\n\n(b) You start facing west and turn counterclockwise to south-west.\nWhat angle do you turn through?\n\n3. (a) You start facing north-west and turn clockwise through 90°.\nWhich direction are you facing?\n\n(b) After turning counterclockwise through 225°, you end up facing east.\nWhich direction were you facing at the start?"
+    },
+    {
+      "node_id": "math5a:p83",
+      "text": "# Finding Unknown Angles\n\nWhen two straight lines cross, they form two pairs of **vertically opposite angles**.\n\n> $\\angle a$ and $\\angle c$ are vertically opposite angles.\n> $\\angle b$ and $\\angle d$ are also vertically opposite angles.\n\nMeasure the unknown angles.\n\n$\\angle a = 34^\\circ$\n\n$\\angle b =     ^\\circ$\n\n$\\angle c =     ^\\circ$\n\n$\\angle d =     ^\\circ$\n\nIllustration of a girl thinking\n\nVertically opposite angles are equal."
+    },
+    {
+      "node_id": "math5a:p84",
+      "text": "$\\angle p$, $\\angle q$ and $\\angle r$ are angles on a straight line. Measure the unknown angles.\n\n$\\angle p = 50^\\circ$\n$\\angle q =     ^\\circ$\n$\\angle r =     ^\\circ$\n\n$\\angle p + \\angle q + \\angle r =     ^\\circ$\n\nDiagram showing angles p, q, and r on a straight line AOB\n\nIllustration of a boy saying \"AOB is a straight line.\"\n\n> The sum of the angles on a straight line is $180^\\circ$.\n\n$\\angle x$, $\\angle y$ and $\\angle z$ are angles at a point. Measure the unknown angles.\n\n$\\angle x = 60^\\circ$\n$\\angle y =     ^\\circ$\n$\\angle z =     ^\\circ$\n\n$\\angle x + \\angle y + \\angle z =     ^\\circ$\n\nDiagram showing angles x, y, and z meeting at a common point\n\nIllustration of a girl saying \"The 3 marked angles meet at a common point.\"\n\n> The sum of the angles at a point is $360^\\circ$."
+    },
+    {
+      "node_id": "math5a:p85",
+      "text": "1. Find the unknown marked angle in each of the following:\n\n(a)\nRight angle diagram with unknown angle p and given angle 42°\n\n$$\\angle p = 90^\\circ - 42^\\circ =     ^\\circ$$\n\n(b)\nStraight line diagram with unknown angle q and given angle 37°\n\n$$\\angle q = 180^\\circ - 37^\\circ =     ^\\circ$$\n\n(c)\nDiagram showing unknown angle r as a full rotation minus 15°\n\n$$\\angle r = 360^\\circ - 15^\\circ =     ^\\circ$$\n\n2. The figure shows 4 angles formed by two straight lines.\nIf $\\angle w = 46^\\circ$, find $\\angle x$, $\\angle y$ and $\\angle z$.\n\nTwo intersecting straight lines forming angles w, x, y, and z\n\n3. In the figure, AOB and COD are straight lines. Find $\\angle COB$.\n\nDiagram with intersecting lines AOB and COD, and ray OE, showing angles 105° and 50°"
+    },
+    {
+      "node_id": "math5a:p86",
+      "text": "4. In the figure, ABC is a straight line. $\\angle$ABD = 35° and $\\angle$EBC = 55°. Find $\\angle$DBE.\n\nDiagram of a straight line ABC with rays BD and BE forming angles of 35° and 55° respectively.\n\n$\\angle$DBE = 180° - 35° - 55°\n\nIllustration of a boy thinking.\n\n5. In the figure, find $\\angle$x.\n\nDiagram of intersecting lines with angles 80°, 155°, a right angle, and angle x.\n\n$\\angle$x = 360° - 90° - 80° - 155°\n\nIllustration of a girl thinking.\n\n6. In the figure, find $\\angle$m and $\\angle$n.\n\nDiagram of intersecting lines with a 50° angle, a right angle, and angles m and n.\n\n$\\angle$m and $\\angle$n are vertically opposite angles.\n\nIllustration of a boy thinking.\n\n7. Find the unknown marked angles.\n\nThree diagrams showing intersecting lines with various given angles (75°, 76°, 60°, 65°, 40°, 125°) and unknown angles a, b, and c."
+    }
+  ],
+  "audit": {
+    "status": "extracted",
+    "checks": []
+  }
+}

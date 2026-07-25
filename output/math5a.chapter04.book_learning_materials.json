@@ -1,0 +1,4612 @@
+{
+  "schema_version": "book_learning_materials.v2",
+  "book": {
+    "slug": "math5a",
+    "title": "Singapore Math Primary Mathematics 5A",
+    "source_pdf": "Singapore Math 5A Textbook"
+  },
+  "generation": {
+    "backend": "ollama",
+    "model": "gpt-oss:120b",
+    "note": "extracted from the LlamaParse output; teaching layer added downstream"
+  },
+  "learning_materials": {
+    "chapters": [
+      {
+        "chapter_number": 4,
+        "chapter_title": "REVIEW A",
+        "estimated_study_time": {
+          "text": "2 hours",
+          "claim_kind": "source_statement",
+          "origin": "source_grounded",
+          "source_chunk_ids": [
+            "math5a:p59",
+            "math5a:p60",
+            "math5a:p61",
+            "math5a:p62"
+          ],
+          "grounded_in_source_chunk_ids": [
+            "math5a:p59",
+            "math5a:p60",
+            "math5a:p61",
+            "math5a:p62"
+          ],
+          "evidence_spans": [],
+          "reason": null
+        },
+        "chapter_summary": {
+          "text": "This chapter reviews place‑value, rounding, estimation, factors, multiples, whole‑number operations, and fractions for Year 5.",
+          "claim_kind": "source_statement",
+          "origin": "source_grounded",
+          "source_chunk_ids": [
+            "math5a:p59",
+            "math5a:p60",
+            "math5a:p61",
+            "math5a:p62"
+          ],
+          "grounded_in_source_chunk_ids": [
+            "math5a:p59",
+            "math5a:p60",
+            "math5a:p61",
+            "math5a:p62"
+          ],
+          "evidence_spans": [],
+          "reason": null
+        },
+        "learning_objectives": [
+          {
+            "text": "Read and write numbers in figures and in words",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p59",
+              "math5a:p60",
+              "math5a:p61",
+              "math5a:p62"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p59",
+              "math5a:p60",
+              "math5a:p61",
+              "math5a:p62"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "Identify the value of a digit in a large number",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p59",
+              "math5a:p60",
+              "math5a:p61",
+              "math5a:p62"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p59",
+              "math5a:p60",
+              "math5a:p61",
+              "math5a:p62"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "Round numbers to the nearest thousand",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p59",
+              "math5a:p60",
+              "math5a:p61",
+              "math5a:p62"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p59",
+              "math5a:p60",
+              "math5a:p61",
+              "math5a:p62"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "Estimate the results of addition, subtraction, multiplication and division",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p59",
+              "math5a:p60",
+              "math5a:p61",
+              "math5a:p62"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p59",
+              "math5a:p60",
+              "math5a:p61",
+              "math5a:p62"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "Find a common factor and a common multiple of two numbers",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p59",
+              "math5a:p60",
+              "math5a:p61",
+              "math5a:p62"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p59",
+              "math5a:p60",
+              "math5a:p61",
+              "math5a:p62"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "Simplify fractions and change between mixed numbers and improper fractions",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p59",
+              "math5a:p60",
+              "math5a:p61",
+              "math5a:p62"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p59",
+              "math5a:p60",
+              "math5a:p61",
+              "math5a:p62"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "Compare and order fractions",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p59",
+              "math5a:p60",
+              "math5a:p61",
+              "math5a:p62"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p59",
+              "math5a:p60",
+              "math5a:p61",
+              "math5a:p62"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "Solve word problems involving whole numbers and fractions",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p59",
+              "math5a:p60",
+              "math5a:p61",
+              "math5a:p62"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p59",
+              "math5a:p60",
+              "math5a:p61",
+              "math5a:p62"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          }
+        ],
+        "key_terms": [
+          {
+            "term": "place value",
+            "meaning": {
+              "text": "the value a digit has because of its position in a number",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "term": "rounding",
+            "meaning": {
+              "text": "replacing a number by a nearby number that is easier to work with",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "term": "estimate",
+            "meaning": {
+              "text": "find an approximate answer using rounding",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "term": "common factor",
+            "meaning": {
+              "text": "a number that can be divided into two numbers without a remainder",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "term": "common multiple",
+            "meaning": {
+              "text": "a number that both numbers can be multiplied into",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "term": "mixed number",
+            "meaning": {
+              "text": "a whole number together with a fraction",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "term": "improper fraction",
+            "meaning": {
+              "text": "a fraction where the top number is larger than the bottom",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "term": "simplify",
+            "meaning": {
+              "text": "reduce a fraction to its smallest equivalent form",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "core_lessons": [],
+        "worked_examples": [],
+        "common_misconceptions": [],
+        "practice_questions": [
+          {
+            "question": {
+              "text": "Write in figures: Five hundred fifteen thousand, four hundred seven.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$515{,}407$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Write in words: $872{,}520$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Eight hundred seventy‑two thousand five hundred twenty",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "What is the value of the digit 9 in $9{,}364{,}000$?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$9{,}000{,}000$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Which number has the digit 6 in the ten‑thousands place? 6,541,000; 640,059; 546,109; 5,164,000.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$5{,}164{,}000$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Round $437{,}549$ to the nearest $1000$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$438{,}000$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Round $42{,}652\\text{ km}$ to the nearest $1000\\text{ km}$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$43{,}000\\text{ km}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Round the population $280{,}524$ to the nearest $1000$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$281{,}000$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Write a common factor of $24$ and $32$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$8$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Write a common multiple of $8$ and $10$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$40$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Estimate $3472+1607$ by rounding each to the nearest $1000$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$5{,}000$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Estimate $29{,}074+5{,}872$ by rounding each to the nearest $1000$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$35{,}000$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Estimate $9{,}035-5{,}712$ by rounding each to the nearest $1000$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$3{,}000$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Estimate $14{,}236-6{,}223$ by rounding each to the nearest $1000$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$8{,}000$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Find the missing number: $3600,\\;\\_,\\;4800,\\;5400$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$4{,}200$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Estimate $3268\\times7$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$21{,}000$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Estimate $4825\\times63$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$300{,}000$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Estimate $4312\\div6$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$667$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Estimate $7134\\div82$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$88$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "$2650\\times600$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$1{,}590{,}000$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "$1245\\times4000$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$4{,}980{,}000$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "$34{,}400\\times80$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$2{,}752{,}000$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "$1280\\div80$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$16$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "$1290\\div80$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$16\\frac{1}{8}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "$84{,}000\\div7000$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$12$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "$36\\times28$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$1{,}008$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "$52\\times75$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$3{,}900$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "$615\\times32$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$19{,}680$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "$994\\div71$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$14$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "$864\\div36$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$24$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "$301\\div24$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$12\\frac{13}{24}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "$2\\times(28+36)-49$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$79$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "$78+21\\div3-(6+25)$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$84$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "$50-(225\\div15+13)$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$22$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "$29+(300\\div10-3\\times9)$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$32$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "$28+19-24$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$23$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "$12-9\\times5\\div15$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$9$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "$(42+14)\\div7\\times5$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$40$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "$(59+13)\\div(4\\times2)$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$9$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Simplify $\\frac{6}{8}$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{3}{4}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Simplify $\\frac{9}{15}$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{3}{5}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Simplify $\\frac{16}{24}$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{2}{3}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Simplify $\\frac{32}{40}$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{4}{5}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Write $5\\frac{3}{8}$ as an improper fraction.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{43}{8}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Write $3\\frac{7}{11}$ as an improper fraction.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{40}{11}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Write $4\\frac{5}{9}$ as an improper fraction.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{41}{9}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Write $2\\frac{3}{4}$ as an improper fraction.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{11}{4}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Express $\\frac{20}{6}$ as a mixed number in simplest form.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$3\\frac{1}{3}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Express $\\frac{18}{4}$ as a mixed number in simplest form.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$4\\frac{1}{2}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Express $\\frac{33}{3}$ as a whole number.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$11$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Express $\\frac{30}{8}$ as a mixed number in simplest form.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$3\\frac{3}{4}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "$8\\div12$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{2}{3}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "$15\\div54$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{5}{18}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "$63\\div18$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{7}{2}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "$100\\div35$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{20}{7}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Which is greater: $\\frac{3}{2}$ or $\\frac{5}{4}$?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{3}{2}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Which is greater: $2\\frac{1}{2}$ or $2\\frac{1}{7}$?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$2\\frac{1}{2}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Which is greater: $3\\frac{8}{9}$ or $4$?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$4$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Which is greater: $1\\frac{6}{7}$ or $\\frac{12}{7}$?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$1\\frac{6}{7}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Which is greater: $4\\frac{2}{3}$ or $\\frac{9}{2}$?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$4\\frac{2}{3}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Which is greater: $3\\frac{1}{6}$ or $\\frac{16}{5}$?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{16}{5}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Arrange from smallest: $1\\frac{3}{4},\\;\\frac{9}{4},\\;1\\frac{5}{8},\\;\\frac{9}{2}$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$1\\frac{5}{8},\\;1\\frac{3}{4},\\;\\frac{9}{4},\\;\\frac{9}{2}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Arrange from smallest: $1\\frac{2}{8},\\;\\frac{36}{5},\\;1\\frac{2}{3},\\;\\frac{8}{2}$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$1\\frac{2}{8},\\;1\\frac{2}{3},\\;\\frac{8}{2},\\;\\frac{36}{5}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "What number must be added to $4\\frac{2}{9}$ to make $5$?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{7}{9}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "How many quarters are there in $3\\frac{1}{4}$?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$13$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "$\\frac{5}{6}+\\frac{3}{4}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{19}{12}=1\\frac{7}{12}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "$\\frac{3\\frac{3}{8}}{\\ }+\\frac{5}{12}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{91}{24}=3\\frac{19}{24}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "$\\frac{2\\frac{1}{2}}{\\ }+\\frac{5\\frac{4}{5}}{\\ }$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{83}{10}=8\\frac{3}{10}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "$6-\\frac{6}{7}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{36}{7}=5\\frac{1}{7}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "$4\\frac{3}{4}-\\frac{2}{3}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{49}{12}=4\\frac{1}{12}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "$6\\frac{1}{3}-2\\frac{3}{5}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{56}{15}=3\\frac{11}{15}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "$\\frac{7}{20}\\times4$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{7}{5}=1\\frac{2}{5}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "$24\\times\\frac{5}{8}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$15$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "$35\\times\\frac{2}{5}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$14$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "$\\frac{3}{4}\\times\\frac{8}{9}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{2}{3}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "$\\frac{5}{8}\\times\\frac{14}{15}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{7}{12}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "$\\frac{8}{12}\\times\\frac{16}{20}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{8}{15}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "$\\frac{3}{5}\\div3$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{1}{5}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "$\\frac{7}{8}\\div2$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{7}{16}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "$\\frac{4}{7}\\div12$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{1}{21}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Convert $3\\frac{3}{5}\\text{ m}$ to centimetres.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$360\\text{ cm}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Express $1\\frac{7}{10}\\text{ kg}$ as kilograms and grams.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$1\\text{ kg }700\\text{ g}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Express $2\\frac{3}{4}\\text{ lb}$ as pounds and ounces.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$2\\text{ lb }12\\text{ oz}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Express $4\\text{ months}$ as a fraction of $1$ year.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{1}{3}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Express $48\\text{ minutes}$ as a fraction of $1\\frac{1}{2}$ hours.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{8}{15}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Express $1\\text{ pt}$ as a fraction of $3\\frac{1}{2}$ quarts.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{1}{7}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Ashley packed $600$ cookies into packets of $24$. How many packets?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$25$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "There are $2204$ children, $925$ are girls. How many more boys than girls?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$354$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Three pieces of ribbon $85\\text{ cm}$ each are cut from $3\\text{ m}$. Length of remaining piece?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$45\\text{ cm}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Peter, John and Dan shared $\\$1458$ equally. Peter spent part and had $\\$139$ left. Cost of the bicycle?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\$347$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Oranges are packed in a box: $4$ layers, $6$ rows per layer, $8$ oranges per row. Total oranges?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$192$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Mrs. McCall sells $1400$ tarts at $80$ cents each. Money received?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\$1120$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Haley answered $28$ out of $32$ problems correctly. Fraction correct?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{7}{8}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Bonita bought $2\\frac{1}{5}$ kg potatoes and $1\\frac{1}{2}$ kg carrots. How much more potatoes?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{7}{10}\\text{ kg}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "$42$ students, $\\frac{3}{7}$ wear glasses. How many wear glasses?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$18$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Danny bought $6$ packets of drink, each $\\frac{1}{4}$ L. Total drink?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{3}{2}\\text{ L}=1.5\\text{ L}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Mrs. Meier had $\\frac{3}{5}$ kg sugar, used $\\frac{1}{4}$ of it. Sugar used?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{3}{20}\\text{ kg}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Mrs. Law bought $\\frac{1}{2}$ of a cake and cut it into $4$ equal pieces. Size of each piece?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{1}{8}$ of the whole cake",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Mr. Ricci spent $\\frac{1}{3}$ of his salary on food and $\\frac{2}{5}$ of the remainder on transport. (a) Fraction of salary left.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{2}{5}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "(b) If $\\$600$ was left, what was his salary?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\$1500$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Nicole bought $6$ m cloth. Used $1\\frac{3}{4}$ m for a skirt and $\\frac{3}{4}$ m for each of two shirts. Cloth left?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$2\\frac{3}{4}\\text{ m}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "David had $1280$ eggs. Sold $\\frac{3}{5}$ on Saturday and $\\frac{1}{4}$ of the remainder on Sunday. Total eggs sold?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$896$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p59",
+                "math5a:p60",
+                "math5a:p61",
+                "math5a:p62"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "review_checklist": [
+          {
+            "text": "I can write numbers correctly in figures and in words.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p59",
+              "math5a:p60",
+              "math5a:p61",
+              "math5a:p62"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p59",
+              "math5a:p60",
+              "math5a:p61",
+              "math5a:p62"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can identify the value of any digit in a large number.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p59",
+              "math5a:p60",
+              "math5a:p61",
+              "math5a:p62"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p59",
+              "math5a:p60",
+              "math5a:p61",
+              "math5a:p62"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can round numbers to the nearest thousand.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p59",
+              "math5a:p60",
+              "math5a:p61",
+              "math5a:p62"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p59",
+              "math5a:p60",
+              "math5a:p61",
+              "math5a:p62"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can estimate the result of addition, subtraction, multiplication and division.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p59",
+              "math5a:p60",
+              "math5a:p61",
+              "math5a:p62"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p59",
+              "math5a:p60",
+              "math5a:p61",
+              "math5a:p62"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can find a common factor and a common multiple of two numbers.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p59",
+              "math5a:p60",
+              "math5a:p61",
+              "math5a:p62"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p59",
+              "math5a:p60",
+              "math5a:p61",
+              "math5a:p62"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can simplify fractions and change between mixed numbers and improper fractions.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p59",
+              "math5a:p60",
+              "math5a:p61",
+              "math5a:p62"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p59",
+              "math5a:p60",
+              "math5a:p61",
+              "math5a:p62"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can compare and order fractions.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p59",
+              "math5a:p60",
+              "math5a:p61",
+              "math5a:p62"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p59",
+              "math5a:p60",
+              "math5a:p61",
+              "math5a:p62"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can solve word problems that involve whole numbers and fractions.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p59",
+              "math5a:p60",
+              "math5a:p61",
+              "math5a:p62"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p59",
+              "math5a:p60",
+              "math5a:p61",
+              "math5a:p62"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          }
+        ]
+      }
+    ]
+  },
+  "source_chunks": [
+    {
+      "node_id": "math5a:p59",
+      "text": "# REVIEW A\n\n1. Write the following in figures.\n   \n\n   (a) Five hundred fifteen thousand, four hundred seven\n   \n\n   (b) Four million, six hundred thousand\n\n2. Write the following in words.\n   \n\n   (a) 872,520\n   \n\n   (b) 1,034,000\n   \n\n   (c) 4,500,000\n   \n\n   (d) 162,003\n\n3. What is the value of the digit 9 in 9,364,000?\n\n4. Which one of the following numbers has the digit 6 in the ten thousands place?\n   \n\n   6,541,000, 640,059, 546,109, 5,164,000\n\n5. (a) Round off $437,549 to the nearest $1000.\n   \n\n   (b) Round off 42,652 km to the nearest 1000 km.\n\n6. The population of Marina Town is 280,524. Round off the number to the nearest 1000.\n\n7. A house is sold for about $2,400,000. Which one of the following could be the actual selling price of the house?\n   $2,356,000 $2,299,000 $2,460,000 $2,310,000\n\n8. (a) Write down a common factor of 24 and 32.\n   \n\n   (b) Write down a common multiple of 8 and 10.\n\n9. Round each number to the nearest 1000.\n   \n\n   Then estimate the value of\n   \n\n   (a) 3472 + 1607\n   \n\n   (b) 29,074 + 5872\n   \n\n   (c) 9035 - 5712\n   \n\n   (d) 14,236 - 6223\n\n10. What is the missing number in each      ?\n    \n\n    3600,     , 4800, 5400,     \n\n11. Estimate the value of\n    \n\n    (a) 3268 × 7\n    \n\n    (b) 4825 × 63\n    \n\n    (c) 4312 ÷ 6\n    \n\n    (d) 7134 ÷ 82\n\n12. Multiply or divide.\n    \n\n    (a) 2650 × 600\n    \n\n    (b) 1245 × 4000\n    \n\n    (c) 34,400 × 80\n    \n\n    (d) 1280 ÷ 80\n    \n\n    (e) 1290 ÷ 80\n    \n\n    (f) 84,000 ÷ 7000"
+    },
+    {
+      "node_id": "math5a:p60",
+      "text": "13. Multiply or divide.\n\n(a) $36 \\times 28$\n\n(b) $52 \\times 75$\n\n(c) $615 \\times 32$\n\n(d) $994 \\div 71$\n\n(e) $864 \\div 36$\n\n(f) $301 \\div 24$\n\n23\n\n24.\n\n14. Find the value of each of the following:\n\n(a) $2 \\times (28 + 36) - 49$\n\n(b) $78 + 21 \\div 3 - (6 + 25)$\n\n(c) $50 - (225 \\div 15 + 13)$\n\n(d) $29 + (300 \\div 10 - 3 \\times 9)$\n\n(e) $28 + 19 - 24$\n\n(f) $12 - 9 \\times 5 \\div 15$\n\n(g) $(42 + 14) \\div 7 \\times 5$\n\n(h) $(59 + 13) \\div (4 \\times 2)$\n\n15. Write each fraction in its simplest form.\n\n(a) $\\frac{6}{8}$\n\n(b) $\\frac{9}{15}$\n\n(c) $\\frac{16}{24}$\n\n(d) $\\frac{32}{40}$\n\n16. Express each of the following as an improper fraction.\n\n(a) $5 \\frac{3}{8}$\n\n(b) $3 \\frac{7}{11}$\n\n(c) $4 \\frac{5}{9}$\n\n(d) $2 \\frac{3}{4}$\n\n26.\n\n17. Express each of the following as a whole number or a mixed number in its simplest form.\n\n(a) $\\frac{20}{6}$\n\n(b) $\\frac{18}{4}$\n\n(c) $\\frac{33}{3}$\n\n(d) $\\frac{30}{8}$\n\n18. Name two equivalent fractions for each of these fractions.\n\n(a) $\\frac{3}{4}$\n\n(b) $\\frac{2}{6}$\n\n(c) $\\frac{5}{9}$\n\n(d) $\\frac{11}{14}$\n\n27.\n\n19. Divide. Express each answer as a fraction in its simplest form.\n\n(a) $8 \\div 12$\n\n(b) $15 \\div 54$\n\n(c) $63 \\div 18$\n\n(d) $100 \\div 35$\n\n20. Which is greater?\n\n(a) $\\frac{3}{2}$ or $\\frac{5}{4}$\n\n(b) $2 \\frac{1}{2}$ or $2 \\frac{1}{7}$\n\n(c) $3 \\frac{8}{9}$ or 4\n\n(d) $1 \\frac{6}{7}$ or $\\frac{12}{7}$\n\n(e) $4 \\frac{2}{3}$ or $\\frac{9}{2}$\n\n(f) $3 \\frac{1}{6}$ or $\\frac{16}{5}$\n\n<!-- layout: 28. -->\n28.\n\n<!-- layout: 29. -->\n29.\n\n21. Arrange the fractions in order, beginning with the smallest.\n\n(a) $1 \\frac{3}{4}, \\frac{9}{4}, 1 \\frac{5}{8}, \\frac{9}{2}$\n\n(b) $1 \\frac{2}{8}, \\frac{36}{5}, 1 \\frac{2}{3}, \\frac{8}{2}$\n\n<!-- layout: 30. -->\n30.\n\n31.\n\n22. What number must be added to $4 \\frac{2}{9}$ to make 5?"
+    },
+    {
+      "node_id": "math5a:p61",
+      "text": "23. How many quarters are there in 3<sup>1</sup>/<sub>4</sub>?\n\n24. Add or subtract. Give each answer in its simplest form.\n\n(a) <sup>5</sup>/<sub>6</sub> + <sup>3</sup>/<sub>4</sub>\n\n(b) 3<sup>3</sup>/<sub>8</sub> + <sup>5</sup>/<sub>12</sub>\n\n(c) 2<sup>1</sup>/<sub>2</sub> + 5<sup>4</sup>/<sub>5</sub>\n\n(d) 6 - <sup>6</sup>/<sub>7</sub>\n\n(e) 4<sup>3</sup>/<sub>4</sub> - <sup>2</sup>/<sub>3</sub>\n\n(f) 6<sup>1</sup>/<sub>3</sub> - 2<sup>3</sup>/<sub>5</sub>\n\n25. Multiply or divide.\n\n(a) <sup>7</sup>/<sub>20</sub> × 4\n\n(b) 24 × <sup>5</sup>/<sub>8</sub>\n\n(c) 35 × <sup>2</sup>/<sub>5</sub>\n\n(d) <sup>3</sup>/<sub>4</sub> × <sup>8</sup>/<sub>9</sub>\n\n(e) <sup>5</sup>/<sub>8</sub> × <sup>14</sup>/<sub>15</sub>\n\n(f) <sup>8</sup>/<sub>12</sub> × <sup>16</sup>/<sub>20</sub>\n\n(g) <sup>3</sup>/<sub>5</sub> ÷ 3\n\n(h) <sup>7</sup>/<sub>8</sub> ÷ 2\n\n(i) <sup>4</sup>/<sub>7</sub> ÷ 12\n\n26. (a) Express 3<sup>3</sup>/<sub>5</sub> m in centimeters.\n\n(b) Express 1<sup>7</sup>/<sub>10</sub> kg in kilograms and grams.\n\n(c) Express 2<sup>3</sup>/<sub>4</sub> lb in pounds and ounces.\n\n27. (a) Express 4 months as a fraction of 1 year.\n\n(b) Express 48 minutes as a fraction of 1<sup>1</sup>/<sub>2</sub> hours.\n\n(c) Express 1 pt as a fraction of 3<sup>1</sup>/<sub>2</sub> qt.\n\n28. Ashley had 600 cookies. She packed them into packets of 24. How many packets of cookies did she get?\n\n29. There are 2204 children in a school. 925 of them are girls. How many more boys than girls are there?\n\n30. 3 pieces of ribbon, each 85 cm long, are cut from a length of ribbon 3 m long. What is the length of the remaining piece of ribbon?\n\n31. Peter, John and Dan shared $1458 equally. Peter used part of his share to buy a bicycle and had $139 left. What was the cost of the bicycle?"
+    },
+    {
+      "node_id": "math5a:p62",
+      "text": "1\n\n32. Oranges are packed in a box in 4 layers. Each layer has 6 rows of oranges with 8 oranges in each row. How many oranges are there in the box?\n\n33. Mrs. McCall has 1400 tarts. If she sells all of them at 80 cents each, how much money will she receive?\n\n34. Haley answered 28 out of 32 problems correctly. What fraction of the problems did she answer correctly?\n\n35. Bonita bought 2<sup>1</sup>/<sub>5</sub> kg of potatoes and 1<sup>1</sup>/<sub>2</sub> kg of carrots. How much more potatoes than carrots did she buy?\n\n36. There are 42 students in Miss Brown's class. <sup>3</sup>/<sub>7</sub> of them wear glasses. How many students wear glasses?\n\n37. Danny bought 6 packets of drink. Each packet contained <sup>1</sup>/<sub>4</sub> liter of drink. Find the total amount of drink in liters.\n\n38. Mrs. Meier had <sup>3</sup>/<sub>5</sub> kg of sugar. She used <sup>1</sup>/<sub>4</sub> of it to make cookies. How much sugar did she use to make the cookies?\n\n39. Mrs. Law bought <sup>1</sup>/<sub>2</sub> of a cake. She cut it into 4 equal pieces. What fraction of the whole cake is each piece?\n\n40. Mr. Ricci spent <sup>1</sup>/<sub>3</sub> of his salary on food and <sup>2</sup>/<sub>5</sub> of the remainder on transport.\n\n(a) What fraction of his salary did he have left?\n\n(b) If he had $600 left, find his salary.\n\n41. Nicole bought 6 m of cloth to make a skirt and 3 shirts. She used 1<sup>3</sup>/<sub>4</sub> m for the skirt and <sup>3</sup>/<sub>4</sub> m for each shirt. How much cloth did she have left?\n\n42. David had 1280 eggs. He sold <sup>3</sup>/<sub>5</sub> of them on Saturday and <sup>1</sup>/<sub>4</sub> of the remainder on Sunday. Find the total number of eggs sold on the two days."
+    }
+  ],
+  "audit": {
+    "status": "extracted",
+    "checks": []
+  }
+}

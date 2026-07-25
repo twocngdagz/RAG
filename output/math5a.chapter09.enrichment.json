@@ -1,0 +1,662 @@
+{
+  "schema_version": "pte_lesson_enrichment.v1",
+  "task_type": "measurement_review",
+  "lesson_title": "REVIEW C",
+  "source_label": "math5a:ch09",
+  "modality": "reading",
+  "overview": {
+    "what_it_is": "This review joins measurement, fractions, ratio, shapes, and arithmetic.",
+    "format_facts": [
+      {
+        "label": "Main skills",
+        "value": "Rounding, unit changes, fractions, ratio, area, and volume"
+      },
+      {
+        "label": "Units used",
+        "value": "Miles, yards, feet, inches, pounds, ounces, gallons, quarts, and cups"
+      },
+      {
+        "label": "Study time",
+        "value": "About 2.5 hours"
+      },
+      {
+        "label": "Question types",
+        "value": "Short sums, unit questions, shape problems, and word problems"
+      },
+      {
+        "label": "Best tools",
+        "value": "Unit facts, bar models, diagrams, and careful checking"
+      }
+    ],
+    "scoring_factors": [
+      {
+        "name": "Correct method",
+        "what_it_measures": "Whether the right steps were chosen."
+      },
+      {
+        "name": "Correct units",
+        "what_it_measures": "Whether the answer uses the needed unit."
+      },
+      {
+        "name": "Accurate arithmetic",
+        "what_it_measures": "Whether each number step is correct."
+      },
+      {
+        "name": "Complete working",
+        "what_it_measures": "Whether important steps are clearly shown."
+      },
+      {
+        "name": "Reasonable answer",
+        "what_it_measures": "Whether the answer fits the question."
+      }
+    ],
+    "critical_rules": [
+      "Change quantities into matching units before comparing them.",
+      "Write square units for area and cubic units for volume.",
+      "Carry extra small units into the larger unit.",
+      "Change mixed units into one small unit before dividing.",
+      "Use the same ratio order as the question.",
+      "Read the rounding place before checking the next digit.",
+      "State the final answer with its unit."
+    ]
+  },
+  "learning_goals": [
+    "You will round whole numbers to the nearest hundred.",
+    "You will round decimals to one decimal place.",
+    "You will change yards, feet, and inches.",
+    "You will change pounds and ounces.",
+    "You will change gallons, quarts, and cups.",
+    "You will find a fraction of a quantity.",
+    "You will find a whole from a known fraction.",
+    "You will solve ratio problems with rectangles.",
+    "You will find perimeter, area, and volume.",
+    "You will multiply and divide compound units."
+  ],
+  "core_method": {
+    "name": "Read → Recall → Match units → Model → Work → Rename → Check",
+    "summary": "First read the unit. Then make units match. Work carefully.",
+    "steps": [
+      {
+        "step": "Read",
+        "detail": "Underline the numbers, units, and question words."
+      },
+      {
+        "step": "Recall",
+        "detail": "Write the unit fact needed for the problem."
+      },
+      {
+        "step": "Match units",
+        "detail": "Change all amounts into useful matching units."
+      },
+      {
+        "step": "Model",
+        "detail": "Draw bars or a shape when relationships matter."
+      },
+      {
+        "step": "Work",
+        "detail": "Complete one clear arithmetic step at a time."
+      },
+      {
+        "step": "Rename",
+        "detail": "Change the result into the requested compound unit."
+      },
+      {
+        "step": "Check",
+        "detail": "Check size, unit, and each operation."
+      }
+    ],
+    "formula": "$\\text{Read} \\rightarrow \\text{Recall} \\rightarrow \\text{Match units} \\rightarrow \\text{Model} \\rightarrow \\text{Work} \\rightarrow \\text{Rename} \\rightarrow \\text{Check}$"
+  },
+  "techniques": [
+    {
+      "name": "Build a unit ladder",
+      "purpose": "It helps you move between linked units.",
+      "how_to": [
+        "Write the unit fact before starting.",
+        "Multiply when changing into smaller units.",
+        "Divide when changing into larger units.",
+        "Rename any leftover part carefully."
+      ],
+      "example": "$3\\text{ yd}=3\\times3\\text{ ft}=9\\text{ ft}$.",
+      "why_it_matters": "It stops you from using the wrong operation.",
+      "common_error": "Dividing when changing to a smaller unit."
+    },
+    {
+      "name": "Use one small unit",
+      "purpose": "It makes compound-unit arithmetic much easier.",
+      "how_to": [
+        "Choose the smaller unit shown.",
+        "Change every part into that unit.",
+        "Do the multiplication or division.",
+        "Change the answer back when asked."
+      ],
+      "example": "$2\\text{ ft }8\\text{ in}=24\\text{ in}+8\\text{ in}=32\\text{ in}$, then $32\\text{ in}\\div4=8\\text{ in}$.",
+      "why_it_matters": "One unit avoids carrying errors during division.",
+      "common_error": "Dividing feet and inches separately."
+    },
+    {
+      "name": "Find a fraction of an amount",
+      "purpose": "It finds a chosen part of a quantity.",
+      "how_to": [
+        "Divide by the bottom number first.",
+        "Multiply by the top number next.",
+        "Keep the unit with the answer.",
+        "Check whether the answer is sensible."
+      ],
+      "example": "$\\frac{4}{5}\\text{ of }35\\text{ in}=35\\div5\\times4=7\\times4=28\\text{ in}$.",
+      "why_it_matters": "Dividing first often keeps numbers small.",
+      "common_error": "Multiplying by both fraction numbers."
+    },
+    {
+      "name": "Find the whole amount",
+      "purpose": "It finds a total from one known fraction.",
+      "how_to": [
+        "Draw equal bars for the bottom number.",
+        "Mark how many bars are known.",
+        "Find the amount in one bar.",
+        "Multiply by the total number of bars."
+      ],
+      "example": "If $\\frac{2}{3}$ is $6\\text{ c}$, then $6\\div2=3\\text{ c}$ and $3\\times3=9\\text{ c}$.",
+      "why_it_matters": "The bar model shows why each step works.",
+      "common_error": "Finding another fraction instead of the whole."
+    },
+    {
+      "name": "Use ratio units",
+      "purpose": "It finds missing lengths from a ratio.",
+      "how_to": [
+        "Draw bars in the given ratio.",
+        "Match the known amount to its bars.",
+        "Find the value of one ratio unit.",
+        "Find each missing amount."
+      ],
+      "example": "For length to width $5:2$, $30\\text{ yd}\\div5=6\\text{ yd}$ per unit.",
+      "why_it_matters": "It keeps the ratio order clear.",
+      "common_error": "Switching the length and width parts."
+    },
+    {
+      "name": "Separate shape formulas",
+      "purpose": "It prevents mixing perimeter, area, and volume.",
+      "how_to": [
+        "Decide what the question asks.",
+        "Use lengths for perimeter.",
+        "Use square units for area.",
+        "Use cubic units for volume."
+      ],
+      "example": "A cube with side $6\\text{ in}$ has volume $6\\times6\\times6=216\\text{ in}^3$.",
+      "why_it_matters": "Each measure describes a different feature.",
+      "common_error": "Writing square units for a volume answer."
+    },
+    {
+      "name": "Round using the next digit",
+      "purpose": "It gives the requested nearby value.",
+      "how_to": [
+        "Find the digit in the rounding place.",
+        "Look at the digit just after it.",
+        "Keep the digit if the next is below five.",
+        "Raise it by one if the next is five or more."
+      ],
+      "example": "$258.76\\text{ lb}\\approx258.8\\text{ lb}$ to one decimal place.",
+      "why_it_matters": "Only the next digit decides the rounding.",
+      "common_error": "Checking the wrong digit."
+    },
+    {
+      "name": "Compare using one unit",
+      "purpose": "It makes unlike measurements easy to order.",
+      "how_to": [
+        "Choose one shared unit.",
+        "Change every amount into that unit.",
+        "Compare the new numbers.",
+        "Give the answer in its original form."
+      ],
+      "example": "$2.5\\text{ ft}=30\\text{ in}$ and $0.5\\text{ yd}=18\\text{ in}$, so $37\\text{ in}$ is greatest.",
+      "why_it_matters": "The numbers cannot be compared fairly before conversion.",
+      "common_error": "Comparing only the printed numbers."
+    }
+  ],
+  "worked_examples": [
+    {
+      "title": "Share cloth using feet and inches",
+      "input": "Share $5\\text{ yd}$ of cloth equally among $12$ napkins.",
+      "decoding": "The answer must be in feet and inches.",
+      "plan": "Change yards to feet. Divide. Rename the fraction of a foot.",
+      "model_answer": "The bar model has $12$ equal parts. The whole bar is $5\\text{ yd}$. First change yards into feet: $5\\text{ yd}=5\\times3\\text{ ft}=15\\text{ ft}$. Share the cloth: $15\\text{ ft}\\div12=1\\frac{3}{12}\\text{ ft}=1\\frac{1}{4}\\text{ ft}$. Now change $\\frac{1}{4}\\text{ ft}$ into inches: $12\\text{ in}\\div4=3\\text{ in}$. Each napkin used $1\\text{ ft }3\\text{ in}$ of cloth.",
+      "annotations": [
+        {
+          "part": "$5\\text{ yd}=15\\text{ ft}$",
+          "comment": "Feet are easier to share than yards."
+        },
+        {
+          "part": "$15\\div12=1\\frac{1}{4}$",
+          "comment": "The result includes one whole foot."
+        },
+        {
+          "part": "$\\frac{1}{4}\\text{ ft}=3\\text{ in}$",
+          "comment": "One foot has twelve inches."
+        },
+        {
+          "part": "$1\\text{ ft }3\\text{ in}$",
+          "comment": "The answer uses the requested compound unit."
+        }
+      ]
+    },
+    {
+      "title": "Find one share in ounces",
+      "input": "An $8\\text{ lb}$ crate is divided into $12$ equal shares.",
+      "decoding": "Pounds must change into ounces before dividing.",
+      "plan": "Change the whole weight into ounces. Then share equally.",
+      "model_answer": "The bar model has $12$ equal parts. The whole bar weighs $8\\text{ lb}$. Change pounds into ounces: $8\\text{ lb}=8\\times16\\text{ oz}=128\\text{ oz}$. Divide by the number of shares: $128\\text{ oz}\\div12=10\\text{ r }8\\text{ oz}$. The remainder is $8\\text{ oz}$ out of another group of $12\\text{ oz}$, so it is $\\frac{8}{12}\\text{ oz}=\\frac{2}{3}\\text{ oz}$. Each share weighs $10\\frac{2}{3}\\text{ oz}$.",
+      "annotations": [
+        {
+          "part": "$8\\times16=128$",
+          "comment": "Changing to ounces gives one useful unit."
+        },
+        {
+          "part": "$128\\div12=10\\text{ r }8$",
+          "comment": "The remainder must not be lost."
+        },
+        {
+          "part": "$\\frac{8}{12}=\\frac{2}{3}$",
+          "comment": "The leftover part is written in simplest form."
+        },
+        {
+          "part": "$10\\frac{2}{3}\\text{ oz}$",
+          "comment": "The answer is a mixed number."
+        }
+      ]
+    },
+    {
+      "title": "Find a rectangle from its ratio",
+      "input": "A field has length to width ratio $5:2$. Its length is $30\\text{ yd}$.",
+      "decoding": "Five ratio parts represent the known length.",
+      "plan": "Find one ratio unit. Then find width, perimeter, and area.",
+      "model_answer": "The bar model has $5$ length parts and $2$ width parts. The $5$ length parts total $30\\text{ yd}$. One ratio unit is $30\\text{ yd}\\div5=6\\text{ yd}$. The width is $2\\times6\\text{ yd}=12\\text{ yd}$. The perimeter is $2\\times(30\\text{ yd}+12\\text{ yd})=2\\times42\\text{ yd}=84\\text{ yd}$. The area is $30\\text{ yd}\\times12\\text{ yd}=360\\text{ yd}^2$. The field has perimeter $84\\text{ yd}$ and area $360\\text{ yd}^2$.",
+      "annotations": [
+        {
+          "part": "$30\\div5=6$",
+          "comment": "This finds one equal ratio part."
+        },
+        {
+          "part": "$2\\times6=12$",
+          "comment": "The width uses two ratio parts."
+        },
+        {
+          "part": "$2\\times(30+12)=84$",
+          "comment": "Perimeter measures all four sides."
+        },
+        {
+          "part": "$30\\times12=360$",
+          "comment": "Area measures the space inside."
+        }
+      ]
+    },
+    {
+      "title": "Multiply gallons and quarts",
+      "input": "Work out $4\\text{ gal }3\\text{ qt}\\times5$.",
+      "decoding": "Multiply both parts. Then carry groups of four quarts.",
+      "plan": "Multiply gallons and quarts. Rename extra quarts as gallons.",
+      "model_answer": "Multiply the gallons: $4\\text{ gal}\\times5=20\\text{ gal}$. Multiply the quarts: $3\\text{ qt}\\times5=15\\text{ qt}$. Rename the quarts: $15\\text{ qt}=3\\text{ gal }3\\text{ qt}$ because $4\\text{ qt}=1\\text{ gal}$. Add the gallon parts: $20\\text{ gal}+3\\text{ gal }3\\text{ qt}=23\\text{ gal }3\\text{ qt}$. The answer is $23\\text{ gal }3\\text{ qt}$.",
+      "annotations": [
+        {
+          "part": "$3\\times5=15\\text{ qt}$",
+          "comment": "The small-unit part is multiplied too."
+        },
+        {
+          "part": "$15\\text{ qt}=3\\text{ gal }3\\text{ qt}$",
+          "comment": "Every four quarts makes one gallon."
+        },
+        {
+          "part": "$20\\text{ gal}+3\\text{ gal }3\\text{ qt}$",
+          "comment": "The carried gallons join the first product."
+        },
+        {
+          "part": "$23\\text{ gal }3\\text{ qt}$",
+          "comment": "The small part is less than one gallon."
+        }
+      ]
+    },
+    {
+      "title": "Find a whole jug from two thirds",
+      "input": "$\\frac{2}{3}$ of a jug contains $6\\text{ c}$. Find the whole amount.",
+      "decoding": "Two equal parts hold six cups. Three parts make the whole.",
+      "plan": "Find one bar part. Then find all three parts.",
+      "model_answer": "The bar model has $3$ equal parts. Two parts total $6\\text{ c}$. One part is $6\\text{ c}\\div2=3\\text{ c}$. The whole has three parts: $3\\text{ c}\\times3=9\\text{ c}$. The jug holds $9\\text{ c}$ of water.",
+      "annotations": [
+        {
+          "part": "$6\\div2=3$",
+          "comment": "This finds the amount in one part."
+        },
+        {
+          "part": "$3\\times3=9$",
+          "comment": "The whole contains three equal parts."
+        },
+        {
+          "part": "$9\\text{ c}$",
+          "comment": "The answer is larger than the known fraction."
+        },
+        {
+          "part": "Bar model",
+          "comment": "The bars show why division comes first."
+        }
+      ]
+    },
+    {
+      "title": "Correct a gallon and cup mistake",
+      "input": "Express $2\\frac{1}{4}\\text{ gal}$ in gallons and cups.",
+      "decoding": "Only the fractional gallon must change into cups.",
+      "plan": "Keep two gallons. Change one quarter gallon into cups.",
+      "model_answer": "Keep the whole part as $2\\text{ gal}$. One gallon equals $4\\text{ qt}$, and one quart equals $4\\text{ c}$. Therefore, $1\\text{ gal}=4\\times4\\text{ c}=16\\text{ c}$. Find one quarter of a gallon: $\\frac{1}{4}\\times16\\text{ c}=4\\text{ c}$. So $2\\frac{1}{4}\\text{ gal}=2\\text{ gal }4\\text{ c}$. The correct answer is $2\\text{ gal }4\\text{ c}$.",
+      "annotations": [
+        {
+          "part": "$1\\text{ gal}=16\\text{ c}$",
+          "comment": "This joins the two capacity facts."
+        },
+        {
+          "part": "$\\frac{1}{4}\\times16=4$",
+          "comment": "One quarter gallon is four cups."
+        },
+        {
+          "part": "$2\\text{ gal }4\\text{ c}$",
+          "comment": "The whole gallons stay unchanged."
+        },
+        {
+          "part": "Corrected result",
+          "comment": "One cup would be only one sixteenth gallon."
+        }
+      ]
+    },
+    {
+      "title": "Find Ashley's weight",
+      "input": "Three children weigh $243\\text{ lb}$. Morgan is $30\\text{ lb}$ heavier than Emily. Ashley is $6\\text{ lb}$ heavier than Emily.",
+      "decoding": "Each weight can be built from Emily's weight.",
+      "plan": "Remove the extra parts. Divide the equal parts by three.",
+      "model_answer": "The bar model gives Emily one equal bar. Ashley has the same bar plus $6\\text{ lb}$. Morgan has the same bar plus $30\\text{ lb}$. Remove the extra weights: $243\\text{ lb}-30\\text{ lb}-6\\text{ lb}=207\\text{ lb}$. These are three equal base bars. Emily weighs $207\\text{ lb}\\div3=69\\text{ lb}$. Ashley weighs $69\\text{ lb}+6\\text{ lb}=75\\text{ lb}$. Ashley weighs $75\\text{ lb}$.",
+      "annotations": [
+        {
+          "part": "$30\\text{ lb}$",
+          "comment": "This is Morgan's extra part."
+        },
+        {
+          "part": "$6\\text{ lb}$",
+          "comment": "This is Ashley's extra part."
+        },
+        {
+          "part": "$207\\div3=69$",
+          "comment": "The remaining weight forms three equal bars."
+        },
+        {
+          "part": "$69+6=75$",
+          "comment": "Ashley has Emily's weight plus six pounds."
+        }
+      ]
+    }
+  ],
+  "useful_language": [
+    {
+      "category": "Operation words",
+      "items": [
+        {
+          "item": "product",
+          "when_to_use": "Use it for an answer found by multiplying."
+        },
+        {
+          "item": "quotient",
+          "when_to_use": "Use it for an answer found by dividing."
+        },
+        {
+          "item": "remainder",
+          "when_to_use": "Use it for an amount left after division."
+        },
+        {
+          "item": "total",
+          "when_to_use": "Use it when amounts must be added."
+        }
+      ]
+    },
+    {
+      "category": "Fraction words",
+      "items": [
+        {
+          "item": "top number",
+          "when_to_use": "It shows how many equal parts are chosen."
+        },
+        {
+          "item": "denominator",
+          "when_to_use": "It is the bottom number showing all equal parts."
+        },
+        {
+          "item": "mixed number",
+          "when_to_use": "Use it for a whole amount and a fraction."
+        },
+        {
+          "item": "simplest form",
+          "when_to_use": "Use it when the fraction cannot be reduced more."
+        }
+      ]
+    },
+    {
+      "category": "Measurement words",
+      "items": [
+        {
+          "item": "convert",
+          "when_to_use": "It means change a measure into another unit."
+        },
+        {
+          "item": "compound unit",
+          "when_to_use": "Use it for measures like feet and inches."
+        },
+        {
+          "item": "capacity",
+          "when_to_use": "Use it for how much liquid a container holds."
+        },
+        {
+          "item": "weight",
+          "when_to_use": "Use it for pounds and ounces."
+        }
+      ]
+    },
+    {
+      "category": "Shape words",
+      "items": [
+        {
+          "item": "perimeter",
+          "when_to_use": "Use it for the distance around a shape."
+        },
+        {
+          "item": "area",
+          "when_to_use": "Use it for the space inside a flat shape."
+        },
+        {
+          "item": "volume",
+          "when_to_use": "Use it for space inside a solid shape."
+        },
+        {
+          "item": "cubic unit",
+          "when_to_use": "Use it when writing a volume answer."
+        }
+      ]
+    },
+    {
+      "category": "Problem-solving words",
+      "items": [
+        {
+          "item": "equally",
+          "when_to_use": "It tells you to divide into equal shares."
+        },
+        {
+          "item": "of",
+          "when_to_use": "With fractions, it usually means multiply."
+        },
+        {
+          "item": "lighter than",
+          "when_to_use": "It shows one amount is smaller by a difference."
+        },
+        {
+          "item": "ratio",
+          "when_to_use": "Use it to compare amounts in a fixed order."
+        }
+      ]
+    }
+  ],
+  "common_mistakes": [
+    {
+      "mistake": "Comparing feet, inches, and yards without changing units.",
+      "why_it_hurts": "The printed numbers do not show equal-sized units.",
+      "fix": "Change every length into one shared unit first."
+    },
+    {
+      "mistake": "Dividing both parts of a compound measure separately.",
+      "why_it_hurts": "Small units may need regrouping before division.",
+      "fix": "Change the whole amount into the smaller unit."
+    },
+    {
+      "mistake": "Forgetting to carry extra ounces, inches, or quarts.",
+      "why_it_hurts": "The small-unit part becomes too large.",
+      "fix": "Trade each full group for one larger unit."
+    },
+    {
+      "mistake": "Using square units for volume.",
+      "why_it_hurts": "Square units measure area, not solid space.",
+      "fix": "Use cubic units after multiplying three lengths."
+    },
+    {
+      "mistake": "Using cubic units for perimeter.",
+      "why_it_hurts": "Perimeter is only a length around a shape.",
+      "fix": "Write a plain length unit for perimeter."
+    },
+    {
+      "mistake": "Switching the order of a ratio.",
+      "why_it_hurts": "The bars then represent the wrong quantities.",
+      "fix": "Write labels above the ratio parts."
+    },
+    {
+      "mistake": "Rounding from the wrong digit.",
+      "why_it_hurts": "The answer may round to the wrong place.",
+      "fix": "Circle the rounding place and check the next digit."
+    },
+    {
+      "mistake": "Dropping a remainder after division.",
+      "why_it_hurts": "Part of the measured amount disappears.",
+      "fix": "Write the remainder as a fraction of one share."
+    },
+    {
+      "mistake": "Treating $\\frac{1}{4}\\text{ gal}$ as $1\\text{ c}$.",
+      "why_it_hurts": "A gallon contains $16\\text{ c}$, not $4\\text{ c}$.",
+      "fix": "Work out $16\\text{ c}\\div4=4\\text{ c}$."
+    }
+  ],
+  "practice_plan": {
+    "time_budget": [
+      {
+        "phase": "Unit facts",
+        "minutes": "20",
+        "focus": "Recall length, weight, and capacity facts."
+      },
+      {
+        "phase": "Quick conversions",
+        "minutes": "25",
+        "focus": "Change between linked measurement units."
+      },
+      {
+        "phase": "Fractions and ratio",
+        "minutes": "30",
+        "focus": "Use bars to find parts and wholes."
+      },
+      {
+        "phase": "Shapes",
+        "minutes": "25",
+        "focus": "Find perimeter, area, and volume."
+      },
+      {
+        "phase": "Compound units",
+        "minutes": "30",
+        "focus": "Multiply, divide, carry, and rename units."
+      },
+      {
+        "phase": "Mixed review",
+        "minutes": "20",
+        "focus": "Solve word problems and check all answers."
+      }
+    ],
+    "drills": [
+      {
+        "name": "Unit fact cards",
+        "instructions": "Write one unit fact on each card. Test both directions."
+      },
+      {
+        "name": "One-unit race",
+        "instructions": "Change ten compound measures into their smaller units."
+      },
+      {
+        "name": "Fraction bars",
+        "instructions": "Draw bars for four fraction-of-quantity questions."
+      },
+      {
+        "name": "Find the whole",
+        "instructions": "Solve four problems where one fraction is known."
+      },
+      {
+        "name": "Shape check",
+        "instructions": "Label each answer as length, square units, or cubic units."
+      },
+      {
+        "name": "Carry and rename",
+        "instructions": "Multiply six compound measures. Rename every oversized part."
+      },
+      {
+        "name": "Compare fairly",
+        "instructions": "Change five mixed-unit choices into one shared unit."
+      },
+      {
+        "name": "Error detective",
+        "instructions": "Find and fix four wrong measurement solutions."
+      }
+    ],
+    "routine": "Recall the unit fact. Draw when needed. Work carefully. Check units."
+  },
+  "mastery_checklist": [
+    "I can round a whole number to the nearest hundred.",
+    "I can round a decimal to one decimal place.",
+    "I can change yards, feet, and inches.",
+    "I can change pounds and ounces.",
+    "I can change gallons, quarts, and cups.",
+    "I can compare measures by using one unit.",
+    "I can find a fraction of a quantity.",
+    "I can find a whole from a known fraction.",
+    "I can use ratio bars to find a missing length.",
+    "I can find perimeter and use length units.",
+    "I can find area and use square units.",
+    "I can find volume and use cubic units.",
+    "I can multiply compound measures and carry units.",
+    "I can divide compound measures using one small unit.",
+    "I can state each final answer with its unit."
+  ],
+  "strategy_notes": [
+    "Write the needed unit fact beside each question.",
+    "Estimate the answer before completing long working.",
+    "Use inches, ounces, or cups when division is difficult.",
+    "Draw ratio bars before using the given length.",
+    "Circle whether the question asks perimeter, area, or volume.",
+    "Check that a small-unit remainder stays below one large unit.",
+    "For comparisons, ignore the choices until units match.",
+    "Read the requested answer unit before starting.",
+    "Use inverse operations to check multiplication and division.",
+    "Check that a fraction of an amount has a sensible size."
+  ],
+  "metadata": {
+    "difficulty": "intermediate",
+    "estimated_study_time": "2.5 hours",
+    "tags": [
+      "measurement",
+      "unit_conversion",
+      "fractions",
+      "ratio",
+      "perimeter",
+      "area",
+      "volume",
+      "compound_units",
+      "rounding",
+      "word_problems"
+    ],
+    "provenance_note": "The teaching follows the supplied Review C material. Extra bar-model steps, checks, and drills were added. The supplied answer for $2\\frac{1}{4}\\text{ gal}$ was corrected: $\\frac{1}{4}\\text{ gal}=4\\text{ c}$, so the result is $2\\text{ gal }4\\text{ c}$. Role and output guidance came from."
+  }
+}

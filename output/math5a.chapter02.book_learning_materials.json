@@ -1,0 +1,2398 @@
+{
+  "schema_version": "book_learning_materials.v2",
+  "book": {
+    "slug": "math5a",
+    "title": "Singapore Math Primary Mathematics 5A",
+    "source_pdf": "Singapore Math 5A Textbook"
+  },
+  "generation": {
+    "backend": "ollama",
+    "model": "gpt-oss:120b",
+    "note": "extracted from the LlamaParse output; teaching layer added downstream"
+  },
+  "learning_materials": {
+    "chapters": [
+      {
+        "chapter_number": 2,
+        "chapter_title": "2 Multiplication and Division by a 2-digit Whole Number",
+        "estimated_study_time": {
+          "text": "3 hours",
+          "claim_kind": "source_statement",
+          "origin": "source_grounded",
+          "source_chunk_ids": [
+            "math5a:p24",
+            "math5a:p25",
+            "math5a:p26",
+            "math5a:p27",
+            "math5a:p28",
+            "math5a:p29",
+            "math5a:p30"
+          ],
+          "grounded_in_source_chunk_ids": [
+            "math5a:p24",
+            "math5a:p25",
+            "math5a:p26",
+            "math5a:p27",
+            "math5a:p28",
+            "math5a:p29",
+            "math5a:p30"
+          ],
+          "evidence_spans": [],
+          "reason": null
+        },
+        "chapter_summary": {
+          "text": "This chapter teaches how to multiply and divide whole numbers by two‑digit numbers. It shows step‑by‑step methods, estimation of quotients and how to write remainders.",
+          "claim_kind": "source_statement",
+          "origin": "source_grounded",
+          "source_chunk_ids": [
+            "math5a:p24",
+            "math5a:p25",
+            "math5a:p26",
+            "math5a:p27",
+            "math5a:p28",
+            "math5a:p29",
+            "math5a:p30"
+          ],
+          "grounded_in_source_chunk_ids": [
+            "math5a:p24",
+            "math5a:p25",
+            "math5a:p26",
+            "math5a:p27",
+            "math5a:p28",
+            "math5a:p29",
+            "math5a:p30"
+          ],
+          "evidence_spans": [],
+          "reason": null
+        },
+        "learning_objectives": [
+          {
+            "text": "Multiply a whole number by a two‑digit number using different methods.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p24",
+              "math5a:p25",
+              "math5a:p26",
+              "math5a:p27",
+              "math5a:p28",
+              "math5a:p29",
+              "math5a:p30"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p24",
+              "math5a:p25",
+              "math5a:p26",
+              "math5a:p27",
+              "math5a:p28",
+              "math5a:p29",
+              "math5a:p30"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "Divide a whole number by a two‑digit number and write the remainder.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p24",
+              "math5a:p25",
+              "math5a:p26",
+              "math5a:p27",
+              "math5a:p28",
+              "math5a:p29",
+              "math5a:p30"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p24",
+              "math5a:p25",
+              "math5a:p26",
+              "math5a:p27",
+              "math5a:p28",
+              "math5a:p29",
+              "math5a:p30"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "Estimate the size of the quotient before doing long division.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p24",
+              "math5a:p25",
+              "math5a:p26",
+              "math5a:p27",
+              "math5a:p28",
+              "math5a:p29",
+              "math5a:p30"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p24",
+              "math5a:p25",
+              "math5a:p26",
+              "math5a:p27",
+              "math5a:p28",
+              "math5a:p29",
+              "math5a:p30"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "Check and correct an estimated quotient that is too big or too small.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p24",
+              "math5a:p25",
+              "math5a:p26",
+              "math5a:p27",
+              "math5a:p28",
+              "math5a:p29",
+              "math5a:p30"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p24",
+              "math5a:p25",
+              "math5a:p26",
+              "math5a:p27",
+              "math5a:p28",
+              "math5a:p29",
+              "math5a:p30"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          }
+        ],
+        "key_terms": [
+          {
+            "term": "product",
+            "meaning": {
+              "text": "the answer you get when you multiply numbers",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "term": "quotient",
+            "meaning": {
+              "text": "the answer you get when you divide numbers",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "term": "remainder",
+            "meaning": {
+              "text": "what is left over after division when it does not go exactly",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "term": "estimated quotient",
+            "meaning": {
+              "text": "a guess of the answer before you do the full division",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "term": "two‑digit whole number",
+            "meaning": {
+              "text": "a number from 10 to 99",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "core_lessons": [
+          {
+            "title": "Method 1 – Multiply by breaking into factors",
+            "explanation": {
+              "text": "First multiply by the non‑zero digit, then add the zero(s). Example: $78 \\times 30 = 78 \\times 3 \\times 10 = 234 \\times 10 = 2340$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "title": "Method 2 – Multiply directly",
+            "explanation": {
+              "text": "Write the two‑digit multiplier under the number and multiply as in the standard algorithm. Example: $78 \\times 30$ written as a column gives $2340$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "title": "Method 1 – Division by cancelling zeros",
+            "explanation": {
+              "text": "If both numbers end in zero, cross the zeros out first. Example: $140 \\div 20 = 7$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "title": "Method 2 – Long division with estimation",
+            "explanation": {
+              "text": "Estimate how many times the divisor fits into the first part of the dividend, write the estimate, multiply, subtract, and adjust the estimate if it is too big or too small.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "title": "Estimating the quotient",
+            "explanation": {
+              "text": "Look at the first digit(s) of the dividend and divisor to guess the size of the answer, then check by multiplication.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "worked_examples": [
+          {
+            "title": "Multiply 78 by 30 (Method 1)",
+            "example": {
+              "text": "$78 \\times 30 = 78 \\times 3 \\times 10 = 234 \\times 10 = 2340$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "First multiply 78 by 3 to get 234, then add the zero (multiply by 10) to get 2340.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "title": "Multiply 78 by 30 (Method 2)",
+            "example": {
+              "text": "$\\begin{array}{r}\\ 78\\\\ \\times\\ 30\\\\ \\hline\\ 2340\\end{array}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "Write the numbers in a column and multiply directly, giving the same product 2340.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "title": "Divide 140 by 20 (Method 1)",
+            "example": {
+              "text": "$140 \\div 20 = 7$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "Both numbers end in zero, so remove the zeros and divide 14 by 2.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "title": "Divide 150 by 20 (Method 2)",
+            "example": {
+              "text": "$\\begin{array}{r}7\\\\20\\enclose{longdiv}{150}\\\\\\underline{140}\\\\10\\end{array}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "Estimate 7, multiply 7 × 20 = 140, subtract to get remainder 10.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "title": "Divide 74 by 21",
+            "example": {
+              "text": "$\\begin{array}{r}3\\\\21\\enclose{longdiv}{74}\\\\\\underline{63}\\\\11\\end{array}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "Estimate 3, 3 × 21 = 63, subtract to leave remainder 11.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "title": "Divide 285 by 33 (adjusting estimate)",
+            "example": {
+              "text": "$\\begin{array}{r}9\\\\33\\enclose{longdiv}{285}\\\\297\\\\\\hline\\end{array} \\Rightarrow \\begin{array}{r}8\\\\33\\enclose{longdiv}{285}\\\\264\\\\\\hline\\ 21\\end{array}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "First estimate 9 (too big), then try 8 which works, leaving remainder 21.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "common_misconceptions": [
+          {
+            "misconception": {
+              "text": "If there is a remainder, the division is wrong.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "A remainder simply means the divisor does not go into the dividend exactly; the correct answer includes the remainder.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "misconception": {
+              "text": "The first estimate of the quotient is always correct.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "You must check the estimate by multiplication; if the product is too big or too small, adjust the estimate.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "practice_questions": [
+          {
+            "question": {
+              "text": "407 × 84",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$34188$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "690 × 49",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$33810$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "941 × 73",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$68693$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "5395 × 51",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$275145$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "7404 × 85",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$629340$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "3092 × 63",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$194796$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "89 ÷ 24",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$3 \\text{ r } 17$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "92 ÷ 33",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$2 \\text{ r } 26$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "56 ÷ 18",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$3 \\text{ r } 2$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "848 ÷ 16",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$53$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "403 ÷ 67",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$6 \\text{ r } 1$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "505 ÷ 53",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$9 \\text{ r } 28$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "722 ÷ 38",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$19$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "895 ÷ 23",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$38 \\text{ r } 21$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "999 ÷ 42",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$23 \\text{ r } 33$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "7684 ÷ 78",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$98 \\text{ r } 40$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "1340 ÷ 23",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$58 \\text{ r } 6$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "9670 ÷ 54",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$179 \\text{ r } 4$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "A baker uses 12 eggs to bake a cake. How many eggs does he need for 36 cakes?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$432$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "A car travels 15 km per litre. How many litres are needed for 240 km?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$16$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "1064 balloons are shared equally among 38 students. How many each?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$28$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "96 tarts are sold in boxes of 12 for $7 each. How much money is earned?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$56$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Each installment is $827. After 72 installments $280 is still owed. What is the car cost?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$59824$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "2034 tickets at $16 each and 840 programs at $3 each. Total money collected?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$35064$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "70 students are divided into 14 teams with 2 girls per team. How many boys?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$42$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "840 cookies are packed in packets of 24 and sold for $3 each. Money received?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$105$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p24",
+                "math5a:p25",
+                "math5a:p26",
+                "math5a:p27",
+                "math5a:p28",
+                "math5a:p29",
+                "math5a:p30"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "review_checklist": [
+          {
+            "text": "I can multiply a number by a two‑digit number using the factor method.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p24",
+              "math5a:p25",
+              "math5a:p26",
+              "math5a:p27",
+              "math5a:p28",
+              "math5a:p29",
+              "math5a:p30"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p24",
+              "math5a:p25",
+              "math5a:p26",
+              "math5a:p27",
+              "math5a:p28",
+              "math5a:p29",
+              "math5a:p30"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can multiply a number by a two‑digit number using the standard column method.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p24",
+              "math5a:p25",
+              "math5a:p26",
+              "math5a:p27",
+              "math5a:p28",
+              "math5a:p29",
+              "math5a:p30"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p24",
+              "math5a:p25",
+              "math5a:p26",
+              "math5a:p27",
+              "math5a:p28",
+              "math5a:p29",
+              "math5a:p30"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can divide a number by a two‑digit number and write the remainder.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p24",
+              "math5a:p25",
+              "math5a:p26",
+              "math5a:p27",
+              "math5a:p28",
+              "math5a:p29",
+              "math5a:p30"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p24",
+              "math5a:p25",
+              "math5a:p26",
+              "math5a:p27",
+              "math5a:p28",
+              "math5a:p29",
+              "math5a:p30"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can estimate a quotient before doing long division.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p24",
+              "math5a:p25",
+              "math5a:p26",
+              "math5a:p27",
+              "math5a:p28",
+              "math5a:p29",
+              "math5a:p30"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p24",
+              "math5a:p25",
+              "math5a:p26",
+              "math5a:p27",
+              "math5a:p28",
+              "math5a:p29",
+              "math5a:p30"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can check my estimate and adjust it if it is too big or too small.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p24",
+              "math5a:p25",
+              "math5a:p26",
+              "math5a:p27",
+              "math5a:p28",
+              "math5a:p29",
+              "math5a:p30"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p24",
+              "math5a:p25",
+              "math5a:p26",
+              "math5a:p27",
+              "math5a:p28",
+              "math5a:p29",
+              "math5a:p30"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          }
+        ]
+      }
+    ]
+  },
+  "source_chunks": [
+    {
+      "node_id": "math5a:p24",
+      "text": "1\n\n2\n\n# icon Multiplication\n\n(a) Multiply 78 by 30.\n\n3\n\n## Method 1:\n\n$78 \\times 30 = 78 \\times 3 \\times 10$\n$= 234 \\times 10$\n$= 2340$\n\n> Multiply 78 by 3 first.\n>\n> 78\n> $\\times$ 3\n> \\_\\_\\_\\_\n> 234\n\nIllustration of a girl thinking\n\n## Method 2:\n\n78\n$\\times$ 30\n\\_\\_\\_\\_\n2340\n\n4.\n\n5.\n\n(b) Multiply 650 by 40.\n\n650\n$\\times$ 40\n\\_\\_\\_\\_\\_\n26000\n\n6."
+    },
+    {
+      "node_id": "math5a:p25",
+      "text": "1. Multiply.\n\n(a) 53\n$\\times$ 60\ngray box\n\n(b) 247\n$\\times$ 80\ngray box\n\n2. Multiply.\n\n(a) 58 $\\times$ 80\n(b) 46 $\\times$ 50\n(c) 27 $\\times$ 90\n(d) 207 $\\times$ 60\n(e) 739 $\\times$ 40\n(f) 641 $\\times$ 70\n\n3. Multiply.\n\n(a) 24\n$\\times$ 13\n72 $\\leftarrow$ 24 $\\times$ 3\n240 $\\leftarrow$ 24 $\\times$ 10\n312\n\n(b) 52\n$\\times$ 47\n    \n\n(c) 325\n$\\times$ 54\n1300 $\\leftarrow$ 325 $\\times$ 4\n16250 $\\leftarrow$ 325 $\\times$ 50\n    \n\n(d) 618\n$\\times$ 72\n    \n\n4. Multiply.\n\n(a) 67 $\\times$ 44\n(b) 53 $\\times$ 48\n(c) 29 $\\times$ 96\n(d) 236 $\\times$ 82\n(e) 457 $\\times$ 35\n(f) 606 $\\times$ 47\n\n5. Multiply.\n\n(a) 4635\n$\\times$ 26\ngray box\n\n(b) 8247\n$\\times$ 38\n    \n\n6. Multiply.\n\n(a) 3059 $\\times$ 53\n(b) 7105 $\\times$ 62\n(c) 2537 $\\times$ 48\n(d) 3860 $\\times$ 69\n(e) 6394 $\\times$ 57\n(f) 5482 $\\times$ 74"
+    },
+    {
+      "node_id": "math5a:p26",
+      "text": "# 2 Division\n\n(a) Divide 140 by 20.\n\n## Method 1:\n\n140 ÷ 20 = 7\n\nIllustration of a girl thinking \"140 ÷ 20\" with the zeros crossed out\n\n## Method 2:\n\n$$ \\begin{array}{r} 7 \\\\ 20 \\enclose{longdiv}{140} \\\\ \\underline{140} \\\\ 0 \\end{array} $$\n\nIllustration of a boy thinking \"7 × 20 = 140\"\n\n(b) Divide 150 by 20.\n\n$$ \\begin{array}{r} 7 \\\\ 20 \\enclose{longdiv}{150} \\\\ \\underline{140} \\\\ 10 \\end{array} $$\n\nIllustration of a boy thinking \"150 ÷ 20\" with the zeros crossed out, and the text: \"I cannot divide 15 by 2 exactly. So I use method 2.\""
+    },
+    {
+      "node_id": "math5a:p27",
+      "text": "1. Divide.\n\n(a)     30)70\n\n(b)     60)430\n\n(c)     20)89\n\n(d)     70)625\n\n2. Divide.\n\n(a) 90 ÷ 50\n\n(b) 79 ÷ 40\n\n(c) 85 ÷ 30\n\n(d) 540 ÷ 70\n\n(e) 613 ÷ 90\n\n(f) 438 ÷ 60\n\n3. Divide 74 by 21.\n\n      **3**21)74     63     11\n\nIllustration of a boy thinking about a division problem: 3 / 20)74. The thought bubble says \"The estimated quotient is 3.\"\n\n4. Divide 256 by 47.\n\n      **5**47)256     235      21\n\nIllustration of a boy thinking about a division problem: 5 / 50)256. The thought bubble says \"The estimated quotient is 5.\"\n\n5. Divide.\n\n(a) 63 ÷ 17\n\n(b) 48 ÷ 23\n\n(c) 85 ÷ 38\n\n(d) 76 ÷ 34\n\n(e) 94 ÷ 43\n\n(f) 57 ÷ 29\n\n(g) 149 ÷ 67\n\n(h) 509 ÷ 84\n\n(i) 756 ÷ 95\n\n(j) 668 ÷ 72\n\n(k) 279 ÷ 56\n\n(l) 183 ÷ 44\n\n6. Divide 89 by 24.\n\nIllustration of a girl thinking about a division problem: 4 / 20)89. The thought bubble says \"The estimated quotient is 4.\"\n\n      **4**24)89     96\n\n      **3**24)89     72     17\n\nThe estimated quotient is too big. Try 3."
+    },
+    {
+      "node_id": "math5a:p28",
+      "text": "7. Divide 78 by 26.\n\n> $$ \\begin{array}{r} 2 \\\\ 30 \\overline{) 78 } \\end{array} $$\n> The estimated quotient is 2.\n\nIllustration of a girl thinking\n\n$$ \\begin{array}{r} 2 \\\\ 26 \\overline{) 78 } \\\\ 52 \\\\ \\hline 26 \\end{array} \\quad \\Rightarrow \\quad \\begin{array}{r} 3 \\\\ 26 \\overline{) 78 } \\\\ 78 \\\\ \\hline 0 \\end{array} $$\n\nThe estimated quotient is too small. Try 3.\n\n8. Divide.\n\n(a) $68 \\div 17$\n(b) $77 \\div 25$\n(c) $94 \\div 33$\n13.\n\n(d) $83 \\div 21$\n(e) $84 \\div 43$\n(f) $75 \\div 15$\n\n9. Divide 285 by 33.\n\n> $$ \\begin{array}{r} 9 \\\\ 30 \\overline{) 285 } \\end{array} $$\n> The estimated quotient is 9.\n\n$$ \\begin{array}{r} 9 \\\\ 33 \\overline{) 285 } \\\\ 297 \\\\ \\hline \\end{array} \\quad \\Rightarrow \\quad \\begin{array}{r} 8 \\\\ 33 \\overline{) 285 } \\\\ 264 \\\\ \\hline 21 \\end{array} $$\n\nThe estimated quotient is too big. Try 8.\n\n14.\n\n10. Divide 473 by 78.\n\n> $$ \\begin{array}{r} 5 \\\\ 80 \\overline{) 473 } \\end{array} $$\n> The estimated quotient is 5.\n\n$$ \\begin{array}{r} 5 \\\\ 78 \\overline{) 473 } \\\\ 390 \\\\ \\hline 83 \\end{array} \\quad \\Rightarrow \\quad \\begin{array}{r} 6 \\\\ 78 \\overline{) 473 } \\\\ 468 \\\\ \\hline 5 \\end{array} $$\n\nThe estimated quotient is too small. Try 6.\n\n15.\n\n11. Divide.\n(a) $207 \\div 23$\n(b) $236 \\div 39$\n(c) $474 \\div 79$\n16.\n\n(d) $572 \\div 64$\n(e) $464 \\div 58$\n(f) $640 \\div 93$"
+    },
+    {
+      "node_id": "math5a:p29",
+      "text": "12. Divide 570 by 16.\n\n$$\n\\begin{array}{r}\n3 \\\\\n16 \\overline{) 570} \\\\\n\\underline{48} \\\\\n9\n\\end{array}\n$$\n\nDivide 57 tens by 16.\n\n$$\n\\begin{array}{r}\n35 \\\\\n16 \\overline{) 570} \\\\\n\\underline{48} \\\\\n90 \\\\\n\\underline{80} \\\\\n10\n\\end{array}\n$$\n\nDivide 90 by 16.\n\n13. Divide.\n\n(a)\n$$\n\\begin{array}{r}\n25 \\\\\n34 \\overline{) 870} \\\\\n\\underline{68} \\\\\n190 \\\\\n\\underline{170} \\\\\n20\n\\end{array}\n$$\n\n(b)\n$$\n\\begin{array}{r}\n30 \\\\\n28 \\overline{) 862} \\\\\n\\underline{84} \\\\\n22\n\\end{array}\n$$\n\n(c)\n$$\n\\begin{array}{r}\n\\text{    } \\\\\n47 \\overline{) 703}\n\\end{array}\n$$\n\n(d)\n$$\n\\begin{array}{r}\n\\text{    } \\\\\n15 \\overline{) 612}\n\\end{array}\n$$\n\n14. Divide.\n\n(a) $552 \\div 24$\n\n(b) $660 \\div 29$\n\n(c) $925 \\div 46$\n\n(d) $399 \\div 31$\n\n(e) $708 \\div 67$\n\n(f) $374 \\div 18$\n\n15. Divide.\n\n(a)\n$$\n\\begin{array}{r}\n234 \\\\\n28 \\overline{) 6552} \\\\\n\\underline{56} \\\\\n95 \\\\\n\\underline{84} \\\\\n112 \\\\\n\\underline{112} \\\\\n0\n\\end{array}\n$$\n\n(b)\n$$\n\\begin{array}{r}\n83 \\\\\n52 \\overline{) 4328} \\\\\n\\underline{416} \\\\\n168 \\\\\n\\underline{156} \\\\\n12\n\\end{array}\n$$\n\n(c)\n$$\n\\begin{array}{r}\n\\text{    } \\\\\n64 \\overline{) 6820}\n\\end{array}\n$$\n\n(d)\n$$\n\\begin{array}{r}\n\\text{    } \\\\\n45 \\overline{) 3185}\n\\end{array}\n$$\n\n16. Divide.\n\n(a) $6692 \\div 28$\n\n(b) $2409 \\div 18$\n\n(c) $1495 \\div 45$\n\n(d) $6008 \\div 56$\n\n(e) $1054 \\div 37$\n\n(f) $9864 \\div 29$"
+    },
+    {
+      "node_id": "math5a:p30",
+      "text": "# PRACTICE 2A\n\ndecorative page element\n\nMultiply.\n\n<table>\n  <thead>\n    <tr>\n        <th> </th>\n        <th>(a)</th>\n        <th>(b)</th>\n        <th>(c)</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n        <td>1.</td>\n        <td>407 × 84</td>\n        <td>690 × 49</td>\n        <td>941 × 73</td>\n    </tr>\n    <tr>\n        <td>2.</td>\n        <td>5395 × 51</td>\n        <td>7404 × 85</td>\n        <td>3092 × 63</td>\n    </tr>\n  </tbody>\n</table>\n\nDivide.\n\n<table>\n  <thead>\n    <tr>\n        <th> </th>\n        <th>(a)</th>\n        <th>(b)</th>\n        <th>(c)</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n        <td>3.</td>\n        <td>89 ÷ 24</td>\n        <td>92 ÷ 33</td>\n        <td>56 ÷ 18</td>\n    </tr>\n    <tr>\n        <td>4.</td>\n        <td>848 ÷ 16</td>\n        <td>403 ÷ 67</td>\n        <td>505 ÷ 53</td>\n    </tr>\n    <tr>\n        <td>5.</td>\n        <td>722 ÷ 38</td>\n        <td>895 ÷ 23</td>\n        <td>999 ÷ 42</td>\n    </tr>\n    <tr>\n        <td>6.</td>\n        <td>7684 ÷ 78</td>\n        <td>1340 ÷ 23</td>\n        <td>9670 ÷ 54</td>\n    </tr>\n  </tbody>\n</table>\n\n7. A baker uses 12 eggs to bake a cake. How many eggs does he need if he wants to bake 36 cakes?\n\n8. Mr. Hill has to drive to a city which is 240 km from Portland. If his car can travel 15 km on 1 liter of gas, how many liters of gas does he need for the trip?\n\n9. 1064 balloons were shared equally among 38 students. How many balloons did each student receive?\n\n10. Mrs. Garcia sold 96 tarts at a food fair. The tarts were sold in boxes of 12 tarts each. She sold all the tarts at $7 per box. How much money did she receive?\n\n11. Mr. Kent buys a car and pays by installments. Each installment is $827. If he still has to pay $280 after paying 72 installments, how much does the car cost?\n\n12. Miss Lee sold 2034 concert tickets at $16 per ticket. She also sold 840 programs at $3 each. How much money did she collect altogether?\n\n13. 70 students were divided into 14 teams. In each team there were 2 girls. How many boys were there altogether?\n\n14. Mrs. Ward baked 840 cookies. She sold them in packets of 24 cookies each. How much money did she receive if the selling price per packet was $3?"
+    }
+  ],
+  "audit": {
+    "status": "extracted",
+    "checks": []
+  }
+}

@@ -1,0 +1,710 @@
+{
+  "schema_version": "pte_lesson_enrichment.v1",
+  "task_type": "mixed_math_review",
+  "lesson_title": "REVIEW A",
+  "source_label": "math5a:ch04",
+  "modality": "reading",
+  "overview": {
+    "what_it_is": "This lesson reviews whole numbers, operations, factors, and fractions. It joins many earlier skills in one practice set.",
+    "format_facts": [
+      {
+        "label": "Level",
+        "value": "Year 5 whole-number and fraction review"
+      },
+      {
+        "label": "Study time",
+        "value": "About 2 hours"
+      },
+      {
+        "label": "Main sections",
+        "value": "Place value, operations, factors, fractions, and word problems"
+      },
+      {
+        "label": "Answer style",
+        "value": "Show each step, then write a clear answer sentence"
+      },
+      {
+        "label": "Checking",
+        "value": "Use estimation, inverse operations, and sensible units"
+      }
+    ],
+    "scoring_factors": [
+      {
+        "name": "Correct answer",
+        "what_it_measures": "Whether the final number is right."
+      },
+      {
+        "name": "Clear working",
+        "what_it_measures": "Whether each maths step can be followed."
+      },
+      {
+        "name": "Method choice",
+        "what_it_measures": "Whether the chosen method fits the question."
+      },
+      {
+        "name": "Units",
+        "what_it_measures": "Whether money, length, mass, or time is named."
+      },
+      {
+        "name": "Reasonable check",
+        "what_it_measures": "Whether the answer makes sense for the question."
+      }
+    ],
+    "critical_rules": [
+      "Read every place value from right to left.",
+      "For rounding, check the digit just to the right.",
+      "Estimate before long multiplication or long division.",
+      "Do brackets before multiplication, division, addition, and subtraction.",
+      "Make fraction bottom numbers match before adding or subtracting.",
+      "Make each fraction as simple as possible.",
+      "For whole-number division, always state any remainder.",
+      "Use a bar model before solving a word problem."
+    ]
+  },
+  "learning_goals": [
+    "You will read large numbers in figures and words.",
+    "You will find a digit's value in a large number.",
+    "You will round numbers to the nearest thousand.",
+    "You will estimate sums, differences, products, and quotients.",
+    "You will find factors and multiples shared by two numbers.",
+    "You will use the correct order of operations.",
+    "You will change mixed numbers and improper fractions.",
+    "You will compare, order, add, subtract, multiply, and divide fractions.",
+    "You will solve one-step and multi-step word problems."
+  ],
+  "core_method": {
+    "name": "Read → Picture → Choose → Work → Answer → Check",
+    "summary": "First read the task. Choose one fitting method. Show the steps. Then check the answer.",
+    "steps": [
+      {
+        "step": "Read",
+        "detail": "Circle the numbers, units, and task words."
+      },
+      {
+        "step": "Picture",
+        "detail": "Use a place chart, number line, or bar model."
+      },
+      {
+        "step": "Choose",
+        "detail": "Pick the rule that matches the question."
+      },
+      {
+        "step": "Work",
+        "detail": "Write one clear maths step at a time."
+      },
+      {
+        "step": "Answer",
+        "detail": "State the result with the correct unit."
+      },
+      {
+        "step": "Check",
+        "detail": "Estimate or use the opposite operation."
+      }
+    ],
+    "formula": "$\\text{Read} \\rightarrow \\text{Picture} \\rightarrow \\text{Choose} \\rightarrow \\text{Work} \\rightarrow \\text{Answer} \\rightarrow \\text{Check}$"
+  },
+  "techniques": [
+    {
+      "name": "Build a place-value chart",
+      "purpose": "Shows what each digit is worth.",
+      "how_to": [
+        "Start with the ones place on the right.",
+        "Move left through tens, hundreds, and thousands.",
+        "Put each digit in one place only.",
+        "Read each three-digit group from left to right."
+      ],
+      "example": "In $9{,}364{,}000$, the digit $9$ means $9{,}000{,}000$.",
+      "why_it_matters": "A digit changes value when its place changes.",
+      "common_error": "Reading the digit itself, not its place value."
+    },
+    {
+      "name": "Round with the next digit",
+      "purpose": "Finds a nearby number quickly.",
+      "how_to": [
+        "Find the place named in the question.",
+        "Look at the digit just to its right.",
+        "Keep the digit if the next digit is small.",
+        "Raise it by one if the next digit is five or more."
+      ],
+      "example": "$437{,}549 \\approx 438{,}000$ to the nearest $1{,}000$.",
+      "why_it_matters": "Rounding helps you estimate and check answers.",
+      "common_error": "Looking at the wrong digit when deciding."
+    },
+    {
+      "name": "Use friendly numbers",
+      "purpose": "Makes an estimate easy to work out.",
+      "how_to": [
+        "Round each number to a useful place.",
+        "Choose numbers that work well together.",
+        "Do the easier operation.",
+        "Write the estimate sign, not an equals sign."
+      ],
+      "example": "$4{,}825 \\times 63 \\approx 5{,}000 \\times 60 = 300{,}000$.",
+      "why_it_matters": "The estimate tells you the answer's likely size.",
+      "common_error": "Treating an estimate as the exact answer."
+    },
+    {
+      "name": "List factors and multiples",
+      "purpose": "Finds numbers shared by two number sets.",
+      "how_to": [
+        "List factor pairs for each number.",
+        "Circle the factors found in both lists.",
+        "For multiples, count up in each number.",
+        "Stop at the first or any shared multiple."
+      ],
+      "example": "$8$ is a common factor of $24$ and $32$. Also, $40$ is a common multiple of $8$ and $10$.",
+      "why_it_matters": "Shared factors help make fractions simpler.",
+      "common_error": "Mixing up factors with multiples."
+    },
+    {
+      "name": "Follow operation order",
+      "purpose": "Keeps mixed calculations in the right order.",
+      "how_to": [
+        "Work inside brackets first.",
+        "Do multiplication and division from left to right.",
+        "Do addition and subtraction from left to right.",
+        "Check by reading the expression again."
+      ],
+      "example": "$2 \\times (28 + 36) - 49 = 2 \\times 64 - 49 = 128 - 49 = 79$.",
+      "why_it_matters": "Changing the order can change the answer.",
+      "common_error": "Always working from left to right."
+    },
+    {
+      "name": "Change fraction forms",
+      "purpose": "Moves between mixed numbers and top-heavy fractions.",
+      "how_to": [
+        "For a mixed number, multiply whole by bottom.",
+        "Add the top number.",
+        "Keep the same bottom number.",
+        "For the reverse, divide top by bottom."
+      ],
+      "example": "$5\\frac{3}{8} = \\frac{5 \\times 8 + 3}{8} = \\frac{43}{8}$.",
+      "why_it_matters": "Some fraction operations are easier in one form.",
+      "common_error": "Adding the whole number straight to the top."
+    },
+    {
+      "name": "Make shared bottoms",
+      "purpose": "Lets you compare, add, or subtract fractions.",
+      "how_to": [
+        "Find a bottom number both fractions can use.",
+        "Change each fraction without changing its value.",
+        "Work with the top numbers.",
+        "Make the final fraction simpler."
+      ],
+      "example": "$\\frac{5}{6} + \\frac{3}{4} = \\frac{10}{12} + \\frac{9}{12} = \\frac{19}{12} = 1\\frac{7}{12}$.",
+      "why_it_matters": "Equal-sized parts are needed before combining them.",
+      "common_error": "Adding the two bottom numbers."
+    },
+    {
+      "name": "Draw a bar model",
+      "purpose": "Shows parts, wholes, and what is unknown.",
+      "how_to": [
+        "Draw one bar for the whole amount.",
+        "Split it into the parts named.",
+        "Label known parts and the unknown part.",
+        "Choose operations from the picture."
+      ],
+      "example": "For $600$ cookies in groups of $24$, draw equal groups. Then use $600 \\div 24 = 25$.",
+      "why_it_matters": "The picture stops you choosing the wrong operation.",
+      "common_error": "Using every number before knowing its job."
+    }
+  ],
+  "worked_examples": [
+    {
+      "title": "Round a large number",
+      "input": "Round $437{,}549$ to the nearest $1{,}000$.",
+      "decoding": "The answer must be a whole number of thousands.",
+      "plan": "Find the thousands digit. Then check the hundreds digit.",
+      "model_answer": "The thousands digit is $7$. The hundreds digit is $5$. A $5$ means round up. So $437{,}549 \\approx 438{,}000$. The rounded number is $438{,}000$.",
+      "annotations": [
+        {
+          "part": "$7$",
+          "comment": "This digit is in the thousands place."
+        },
+        {
+          "part": "$5$",
+          "comment": "This digit decides whether we round up."
+        },
+        {
+          "part": "$\\approx$",
+          "comment": "This sign means the value is close."
+        },
+        {
+          "part": "$438{,}000$",
+          "comment": "All places after thousands become zero."
+        }
+      ]
+    },
+    {
+      "title": "Estimate a product",
+      "input": "Estimate $4{,}825 \\times 63$.",
+      "decoding": "The word estimate asks for a nearby answer.",
+      "plan": "Round both numbers to friendly values, then multiply.",
+      "model_answer": "Round $4{,}825$ to $5{,}000$. Round $63$ to $60$. Then $5{,}000 \\times 60 = 300{,}000$. So $4{,}825 \\times 63 \\approx 300{,}000$. The estimated product is $300{,}000$.",
+      "annotations": [
+        {
+          "part": "$5{,}000$",
+          "comment": "This is close to $4{,}825$."
+        },
+        {
+          "part": "$60$",
+          "comment": "This is close to $63$."
+        },
+        {
+          "part": "$300{,}000$",
+          "comment": "This gives the likely size of the answer."
+        },
+        {
+          "part": "$\\approx$",
+          "comment": "Use this sign because the answer is estimated."
+        }
+      ]
+    },
+    {
+      "title": "Correct the operation order",
+      "input": "Work out $78 + 21 \\div 3 - (6 + 25)$.",
+      "decoding": "Brackets and division must happen before the final sums.",
+      "plan": "Do brackets. Do division. Then work left to right.",
+      "model_answer": "First, $(6 + 25) = 31$. Next, $21 \\div 3 = 7$. Now work left to right: $78 + 7 - 31 = 85 - 31 = 54$. The value of the expression is $54$.",
+      "annotations": [
+        {
+          "part": "$(6 + 25) = 31$",
+          "comment": "Brackets are completed first."
+        },
+        {
+          "part": "$21 \\div 3 = 7$",
+          "comment": "Division comes before addition and subtraction."
+        },
+        {
+          "part": "$85 - 31$",
+          "comment": "The last two operations go left to right."
+        },
+        {
+          "part": "$54$",
+          "comment": "A quick estimate confirms this is sensible."
+        }
+      ]
+    },
+    {
+      "title": "Divide with a remainder",
+      "input": "Work out $301 \\div 24$.",
+      "decoding": "The groups may not divide exactly.",
+      "plan": "Find the largest multiple of $24$ below $301$.",
+      "model_answer": "We know $24 \\times 12 = 288$. Subtract to find what remains: $301 - 288 = 13$. So $301 \\div 24 = 12 \\text{ r } 13$. As a mixed number, this is $12\\frac{13}{24}$. The quotient is $12$ with remainder $13$.",
+      "annotations": [
+        {
+          "part": "$24 \\times 12 = 288$",
+          "comment": "This is the largest fitting multiple."
+        },
+        {
+          "part": "$301 - 288 = 13$",
+          "comment": "This finds the amount left over."
+        },
+        {
+          "part": "$12 \\text{ r } 13$",
+          "comment": "The remainder is stated clearly."
+        },
+        {
+          "part": "$12\\frac{13}{24}$",
+          "comment": "The remainder can also form a fraction."
+        }
+      ]
+    },
+    {
+      "title": "Change to a mixed number",
+      "input": "Write $\\frac{20}{6}$ as a mixed number in simplest form.",
+      "decoding": "Divide the top number by the bottom number.",
+      "plan": "Find the whole groups, write the remainder, then reduce.",
+      "model_answer": "Divide: $20 \\div 6 = 3 \\text{ r } 2$. So $\\frac{20}{6} = 3\\frac{2}{6}$. The fraction part can be reduced: $\\frac{2}{6} = \\frac{1}{3}$. Therefore, $\\frac{20}{6} = 3\\frac{1}{3}$. The mixed number is $3\\frac{1}{3}$.",
+      "annotations": [
+        {
+          "part": "$3$",
+          "comment": "There are three complete groups of six."
+        },
+        {
+          "part": "$2$",
+          "comment": "Two parts remain after the division."
+        },
+        {
+          "part": "$\\frac{2}{6}$",
+          "comment": "The remainder goes over the old bottom."
+        },
+        {
+          "part": "$\\frac{1}{3}$",
+          "comment": "Both numbers were divided by two."
+        }
+      ]
+    },
+    {
+      "title": "Add fractions with different bottoms",
+      "input": "Work out $\\frac{5}{6} + \\frac{3}{4}$.",
+      "decoding": "The bottom numbers differ, so make them match.",
+      "plan": "Use twelfths, add the tops, then change the form.",
+      "model_answer": "The smallest shared bottom is $12$. Change both fractions: $\\frac{5}{6} = \\frac{10}{12}$ and $\\frac{3}{4} = \\frac{9}{12}$. Add: $\\frac{10}{12} + \\frac{9}{12} = \\frac{19}{12}$. Change the form: $19 \\div 12 = 1 \\text{ r } 7$. So $\\frac{19}{12} = 1\\frac{7}{12}$. The sum is $1\\frac{7}{12}$.",
+      "annotations": [
+        {
+          "part": "$12$",
+          "comment": "Both sixths and quarters can become twelfths."
+        },
+        {
+          "part": "$\\frac{10}{12}$",
+          "comment": "The top and bottom were both doubled."
+        },
+        {
+          "part": "$\\frac{9}{12}$",
+          "comment": "The top and bottom were both tripled."
+        },
+        {
+          "part": "$1\\frac{7}{12}$",
+          "comment": "The answer is written as a mixed number."
+        }
+      ]
+    },
+    {
+      "title": "Order four fractions",
+      "input": "Arrange $1\\frac{3}{4}$, $\\frac{9}{4}$, $1\\frac{5}{8}$, and $\\frac{9}{2}$ from smallest.",
+      "decoding": "Change each value into an easy form for comparison.",
+      "plan": "Compare whole parts first. Then compare fraction parts.",
+      "model_answer": "Change the top-heavy fractions: $\\frac{9}{4} = 2\\frac{1}{4}$ and $\\frac{9}{2} = 4\\frac{1}{2}$. Compare the two numbers near $1$: $1\\frac{3}{4} = 1\\frac{6}{8}$. Since $1\\frac{5}{8} < 1\\frac{6}{8}$, it comes first. Therefore, $1\\frac{5}{8} < 1\\frac{3}{4} < \\frac{9}{4} < \\frac{9}{2}$. This is the order from smallest to greatest.",
+      "annotations": [
+        {
+          "part": "$2\\frac{1}{4}$",
+          "comment": "This shows $\\frac{9}{4}$ is more than two."
+        },
+        {
+          "part": "$4\\frac{1}{2}$",
+          "comment": "This is clearly the largest value."
+        },
+        {
+          "part": "$1\\frac{6}{8}$",
+          "comment": "Eighths make the close pair easy to compare."
+        },
+        {
+          "part": "$<$",
+          "comment": "This sign means the left value is smaller."
+        }
+      ]
+    },
+    {
+      "title": "Solve an equal-group word problem",
+      "input": "Ashley packs $600$ cookies into packets of $24$. How many packets are made?",
+      "decoding": "The total and each group size are known.",
+      "plan": "Bar model: one bar shows $600$ cookies. Split it into equal parts of $24$ cookies.",
+      "model_answer": "The number of packets is $600 \\div 24$. Since $24 \\times 25 = 600$, we get $600 \\div 24 = 25$. Ashley makes $25$ packets.",
+      "annotations": [
+        {
+          "part": "one bar",
+          "comment": "The bar stands for all $600$ cookies."
+        },
+        {
+          "part": "equal parts",
+          "comment": "Each packet contains the same number."
+        },
+        {
+          "part": "$600 \\div 24$",
+          "comment": "Division finds how many equal groups fit."
+        },
+        {
+          "part": "$25$ packets",
+          "comment": "The answer includes the correct item name."
+        }
+      ]
+    },
+    {
+      "title": "Solve a multi-step fraction problem",
+      "input": "David had $1{,}280$ eggs. He sold $\\frac{3}{5}$ on Saturday. He sold $\\frac{1}{4}$ of the remainder on Sunday. How many eggs did he sell altogether?",
+      "decoding": "Sunday's fraction is taken from the new remainder.",
+      "plan": "Bar model: split the whole into fifths. Remove three fifths. Then split the remaining part into quarters.",
+      "model_answer": "Saturday sales were $\\frac{3}{5} \\times 1{,}280 = 3 \\times 256 = 768$ eggs. The remainder was $1{,}280 - 768 = 512$ eggs. Sunday sales were $\\frac{1}{4} \\times 512 = 128$ eggs. Total sales were $768 + 128 = 896$ eggs. David sold $896$ eggs altogether.",
+      "annotations": [
+        {
+          "part": "$\\frac{3}{5} \\times 1{,}280$",
+          "comment": "This finds Saturday's sales."
+        },
+        {
+          "part": "$512$",
+          "comment": "Sunday's fraction uses this remainder."
+        },
+        {
+          "part": "$\\frac{1}{4} \\times 512$",
+          "comment": "This finds Sunday's sales."
+        },
+        {
+          "part": "$896$ eggs",
+          "comment": "Both days are added for the total."
+        }
+      ]
+    }
+  ],
+  "useful_language": [
+    {
+      "category": "Place-value words",
+      "items": [
+        {
+          "item": "digit",
+          "when_to_use": "Name one symbol from zero to nine."
+        },
+        {
+          "item": "place value",
+          "when_to_use": "Say what a digit is worth in its place."
+        },
+        {
+          "item": "rounding",
+          "when_to_use": "Replace a number with a nearby easy number."
+        },
+        {
+          "item": "estimate",
+          "when_to_use": "Give a close answer before exact working."
+        }
+      ]
+    },
+    {
+      "category": "Operation words",
+      "items": [
+        {
+          "item": "sum",
+          "when_to_use": "Name the answer from addition."
+        },
+        {
+          "item": "difference",
+          "when_to_use": "Name the answer from subtraction."
+        },
+        {
+          "item": "product",
+          "when_to_use": "Name the answer from multiplication."
+        },
+        {
+          "item": "quotient",
+          "when_to_use": "Name the main answer from division."
+        }
+      ]
+    },
+    {
+      "category": "Division words",
+      "items": [
+        {
+          "item": "remainder",
+          "when_to_use": "Name what is left after equal grouping."
+        },
+        {
+          "item": "divisible",
+          "when_to_use": "Say a number divides with nothing left."
+        },
+        {
+          "item": "equal groups",
+          "when_to_use": "Describe sets with the same amount."
+        },
+        {
+          "item": "inverse check",
+          "when_to_use": "Multiply after division to check the result."
+        }
+      ]
+    },
+    {
+      "category": "Fraction words",
+      "items": [
+        {
+          "item": "top number",
+          "when_to_use": "Count how many parts are being used."
+        },
+        {
+          "item": "denominator",
+          "when_to_use": "Name the bottom number once, then say bottom."
+        },
+        {
+          "item": "mixed number",
+          "when_to_use": "Write a whole number with a fraction."
+        },
+        {
+          "item": "improper fraction",
+          "when_to_use": "Write a fraction with top larger than bottom."
+        }
+      ]
+    },
+    {
+      "category": "Problem-solving words",
+      "items": [
+        {
+          "item": "altogether",
+          "when_to_use": "Look for a total, often found by adding."
+        },
+        {
+          "item": "how many more",
+          "when_to_use": "Find the difference between two amounts."
+        },
+        {
+          "item": "of",
+          "when_to_use": "Multiply when finding a fraction of an amount."
+        },
+        {
+          "item": "left",
+          "when_to_use": "Subtract used, sold, or removed parts."
+        }
+      ]
+    }
+  ],
+  "common_mistakes": [
+    {
+      "mistake": "Reading a digit without using its place.",
+      "why_it_hurts": "The value can be thousands or millions larger.",
+      "fix": "Name the place first, then write the value."
+    },
+    {
+      "mistake": "Rounding from the wrong nearby digit.",
+      "why_it_hurts": "The rounded number moves in the wrong direction.",
+      "fix": "Look only one place to the right."
+    },
+    {
+      "mistake": "Writing an equals sign for an estimate.",
+      "why_it_hurts": "An estimate is close, but not always exact.",
+      "fix": "Use $\\approx$ when numbers were rounded."
+    },
+    {
+      "mistake": "Calling a multiple a factor.",
+      "why_it_hurts": "The two number lists follow different rules.",
+      "fix": "Factors divide in. Multiples count up."
+    },
+    {
+      "mistake": "Doing addition before division.",
+      "why_it_hurts": "The operation order changes the result.",
+      "fix": "Do brackets, multiplication, and division first."
+    },
+    {
+      "mistake": "Hiding a remainder in whole-number division.",
+      "why_it_hurts": "The written answer becomes incomplete.",
+      "fix": "Write it like $74 \\div 21 = 3 \\text{ r } 11$."
+    },
+    {
+      "mistake": "Adding fraction bottom numbers.",
+      "why_it_hurts": "The parts no longer have the right size.",
+      "fix": "Make bottoms match, then add only the tops."
+    },
+    {
+      "mistake": "Leaving a fraction in a larger form.",
+      "why_it_hurts": "The value is right but not fully finished.",
+      "fix": "Divide top and bottom by a shared factor."
+    },
+    {
+      "mistake": "Using the original whole after some was removed.",
+      "why_it_hurts": "A later fraction may use the remainder instead.",
+      "fix": "Draw a new bar for the amount left."
+    },
+    {
+      "mistake": "Forgetting units in the final sentence.",
+      "why_it_hurts": "The reader cannot tell what the number means.",
+      "fix": "Write dollars, metres, eggs, packets, or another unit."
+    }
+  ],
+  "practice_plan": {
+    "time_budget": [
+      {
+        "phase": "Warm-up",
+        "minutes": "10 minutes",
+        "focus": "Times tables and easy fraction facts"
+      },
+      {
+        "phase": "Place value",
+        "minutes": "15 minutes",
+        "focus": "Reading, value, rounding, and estimates"
+      },
+      {
+        "phase": "Whole-number operations",
+        "minutes": "25 minutes",
+        "focus": "Exact work, remainders, and operation order"
+      },
+      {
+        "phase": "Fractions",
+        "minutes": "30 minutes",
+        "focus": "Forms, comparisons, and operations"
+      },
+      {
+        "phase": "Word problems",
+        "minutes": "25 minutes",
+        "focus": "Bar models and multi-step reasoning"
+      },
+      {
+        "phase": "Final check",
+        "minutes": "15 minutes",
+        "focus": "Correct errors and explain two answers"
+      }
+    ],
+    "drills": [
+      {
+        "name": "Place-value sprint",
+        "instructions": "Write four large numbers in words. Then name one digit's value."
+      },
+      {
+        "name": "Rounding ladder",
+        "instructions": "Round six numbers to the nearest $1{,}000$."
+      },
+      {
+        "name": "Estimate first",
+        "instructions": "Estimate four operations before finding exact answers."
+      },
+      {
+        "name": "Factor and multiple pairs",
+        "instructions": "Find one common factor and multiple for four pairs."
+      },
+      {
+        "name": "Order challenge",
+        "instructions": "Solve six mixed expressions using the correct order."
+      },
+      {
+        "name": "Fraction form swap",
+        "instructions": "Change four mixed numbers and four improper fractions."
+      },
+      {
+        "name": "Fraction operation set",
+        "instructions": "Do two adds, two subtracts, two products, and two divisions."
+      },
+      {
+        "name": "Bar-model stories",
+        "instructions": "Draw bars for three word problems before using numbers."
+      }
+    ],
+    "routine": "Work in short sets. Check each set at once. Redo every wrong item without looking."
+  },
+  "mastery_checklist": [
+    "I can write large numbers in figures and words.",
+    "I can state the value of any digit.",
+    "I can round to the nearest thousand.",
+    "I can choose friendly numbers for an estimate.",
+    "I can find a shared factor or multiple.",
+    "I can multiply and divide large whole numbers.",
+    "I can state a division remainder clearly.",
+    "I can follow the correct operation order.",
+    "I can change between both fraction forms.",
+    "I can compare and order fractions.",
+    "I can work with fractions in all four operations.",
+    "I can use a bar model for word problems."
+  ],
+  "strategy_notes": [
+    "Underline what the question asks before working.",
+    "Estimate first when the exact numbers are large.",
+    "Write one maths step on each new line.",
+    "Check division by multiplying the quotient back.",
+    "Check fraction answers are in the simplest form.",
+    "Compare whole parts before comparing fraction parts.",
+    "Keep units beside numbers during word problems.",
+    "When a problem says remainder, use the new amount.",
+    "Do not copy a listed answer without checking it.",
+    "Save five minutes to review signs, units, and remainders."
+  ],
+  "metadata": {
+    "difficulty": "intermediate",
+    "estimated_study_time": "2 hours",
+    "tags": [
+      "year_5",
+      "whole_numbers",
+      "place_value",
+      "rounding",
+      "estimation",
+      "factors",
+      "multiples",
+      "operations",
+      "fractions",
+      "word_problems"
+    ],
+    "provenance_note": "The lesson follows the supplied Review A material. Extra teaching steps, bar-model wording, checks, and fresh examples were added. One listed source result was corrected: $78 + 21 \\div 3 - (6 + 25) = 54$, not $84$. Source role and mission:"
+  }
+}

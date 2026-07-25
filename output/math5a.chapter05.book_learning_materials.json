@@ -1,0 +1,445 @@
+{
+  "schema_version": "book_learning_materials.v2",
+  "book": {
+    "slug": "math5a",
+    "title": "Singapore Math Primary Mathematics 5A",
+    "source_pdf": "Singapore Math 5A Textbook"
+  },
+  "generation": {
+    "backend": "ollama",
+    "model": "gpt-oss:120b",
+    "note": "extracted from the LlamaParse output; teaching layer added downstream"
+  },
+  "learning_materials": {
+    "chapters": [
+      {
+        "chapter_number": 5,
+        "chapter_title": "4 Area of Triangle",
+        "estimated_study_time": {
+          "text": "2 hours",
+          "claim_kind": "source_statement",
+          "origin": "source_grounded",
+          "source_chunk_ids": [
+            "math5a:p63",
+            "math5a:p64",
+            "math5a:p65",
+            "math5a:p66",
+            "math5a:p67",
+            "math5a:p68"
+          ],
+          "grounded_in_source_chunk_ids": [
+            "math5a:p63",
+            "math5a:p64",
+            "math5a:p65",
+            "math5a:p66",
+            "math5a:p67",
+            "math5a:p68"
+          ],
+          "evidence_spans": [],
+          "reason": null
+        },
+        "chapter_summary": {
+          "text": "This chapter shows how to find the area of a triangle using the formula \\(\\frac{1}{2}\\times\\text{base}\\times\\text{height}\\) and by comparing the triangle with its related rectangle.",
+          "claim_kind": "source_statement",
+          "origin": "source_grounded",
+          "source_chunk_ids": [
+            "math5a:p63",
+            "math5a:p64",
+            "math5a:p65",
+            "math5a:p66",
+            "math5a:p67",
+            "math5a:p68"
+          ],
+          "grounded_in_source_chunk_ids": [
+            "math5a:p63",
+            "math5a:p64",
+            "math5a:p65",
+            "math5a:p66",
+            "math5a:p67",
+            "math5a:p68"
+          ],
+          "evidence_spans": [],
+          "reason": null
+        },
+        "learning_objectives": [
+          {
+            "text": "Calculate the area of a triangle when the base and height are given.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p63",
+              "math5a:p64",
+              "math5a:p65",
+              "math5a:p66",
+              "math5a:p67",
+              "math5a:p68"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p63",
+              "math5a:p64",
+              "math5a:p65",
+              "math5a:p66",
+              "math5a:p67",
+              "math5a:p68"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "Use the relationship between a triangle and its surrounding rectangle to find the triangle’s area.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p63",
+              "math5a:p64",
+              "math5a:p65",
+              "math5a:p66",
+              "math5a:p67",
+              "math5a:p68"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p63",
+              "math5a:p64",
+              "math5a:p65",
+              "math5a:p66",
+              "math5a:p67",
+              "math5a:p68"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          }
+        ],
+        "key_terms": [],
+        "core_lessons": [
+          {
+            "title": "Finding the Area of a Triangle",
+            "explanation": {
+              "text": "The book teaches that the area of a triangle is half the area of a rectangle that has the same base and height: \\(\\text{Area of triangle}=\\frac{1}{2}\\times\\text{Base}\\times\\text{Height}\\). It also states the shortcut \\(\\text{Area of triangle}=\\frac{1}{2}\\times\\text{Area of related rectangle}\\).",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p63",
+                "math5a:p64",
+                "math5a:p65",
+                "math5a:p66",
+                "math5a:p67",
+                "math5a:p68"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p63",
+                "math5a:p64",
+                "math5a:p65",
+                "math5a:p66",
+                "math5a:p67",
+                "math5a:p68"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "worked_examples": [
+          {
+            "title": "Area of a related rectangle (6 × 5)",
+            "example": {
+              "text": "$6 \\times 5 = 30$ square units",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p63",
+                "math5a:p64",
+                "math5a:p65",
+                "math5a:p66",
+                "math5a:p67",
+                "math5a:p68"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p63",
+                "math5a:p64",
+                "math5a:p65",
+                "math5a:p66",
+                "math5a:p67",
+                "math5a:p68"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "Multiply the length (6) by the width (5) to get the rectangle’s area.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p63",
+                "math5a:p64",
+                "math5a:p65",
+                "math5a:p66",
+                "math5a:p67",
+                "math5a:p68"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p63",
+                "math5a:p64",
+                "math5a:p65",
+                "math5a:p66",
+                "math5a:p67",
+                "math5a:p68"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "title": "Area of a related rectangle (6 × 6)",
+            "example": {
+              "text": "$6 \\times 6 = 36$ square units",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p63",
+                "math5a:p64",
+                "math5a:p65",
+                "math5a:p66",
+                "math5a:p67",
+                "math5a:p68"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p63",
+                "math5a:p64",
+                "math5a:p65",
+                "math5a:p66",
+                "math5a:p67",
+                "math5a:p68"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "Multiply the length (6) by the width (6) to get the rectangle’s area.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p63",
+                "math5a:p64",
+                "math5a:p65",
+                "math5a:p66",
+                "math5a:p67",
+                "math5a:p68"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p63",
+                "math5a:p64",
+                "math5a:p65",
+                "math5a:p66",
+                "math5a:p67",
+                "math5a:p68"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "title": "Area of a related rectangle (4 × 6)",
+            "example": {
+              "text": "$4 \\times 6 = 24$ square units",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p63",
+                "math5a:p64",
+                "math5a:p65",
+                "math5a:p66",
+                "math5a:p67",
+                "math5a:p68"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p63",
+                "math5a:p64",
+                "math5a:p65",
+                "math5a:p66",
+                "math5a:p67",
+                "math5a:p68"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "Multiply the length (4) by the width (6) to get the rectangle’s area.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p63",
+                "math5a:p64",
+                "math5a:p65",
+                "math5a:p66",
+                "math5a:p67",
+                "math5a:p68"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p63",
+                "math5a:p64",
+                "math5a:p65",
+                "math5a:p66",
+                "math5a:p67",
+                "math5a:p68"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "title": "Area of a right‑angled triangle (base 6 cm, height 8 cm)",
+            "example": {
+              "text": "$\\frac{1}{2} \\times 6 \\times 8$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p63",
+                "math5a:p64",
+                "math5a:p65",
+                "math5a:p66",
+                "math5a:p67",
+                "math5a:p68"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p63",
+                "math5a:p64",
+                "math5a:p65",
+                "math5a:p66",
+                "math5a:p67",
+                "math5a:p68"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "Take half of the product of the base and the height.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p63",
+                "math5a:p64",
+                "math5a:p65",
+                "math5a:p66",
+                "math5a:p67",
+                "math5a:p68"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p63",
+                "math5a:p64",
+                "math5a:p65",
+                "math5a:p66",
+                "math5a:p67",
+                "math5a:p68"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "common_misconceptions": [],
+        "practice_questions": [],
+        "review_checklist": [
+          {
+            "text": "I can identify the base and height of a triangle.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p63",
+              "math5a:p64",
+              "math5a:p65",
+              "math5a:p66",
+              "math5a:p67",
+              "math5a:p68"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p63",
+              "math5a:p64",
+              "math5a:p65",
+              "math5a:p66",
+              "math5a:p67",
+              "math5a:p68"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can write the formula \\(\\frac{1}{2}\\times\\text{base}\\times\\text{height}\\).",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p63",
+              "math5a:p64",
+              "math5a:p65",
+              "math5a:p66",
+              "math5a:p67",
+              "math5a:p68"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p63",
+              "math5a:p64",
+              "math5a:p65",
+              "math5a:p66",
+              "math5a:p67",
+              "math5a:p68"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can calculate a triangle’s area by halving the area of its related rectangle.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p63",
+              "math5a:p64",
+              "math5a:p65",
+              "math5a:p66",
+              "math5a:p67",
+              "math5a:p68"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p63",
+              "math5a:p64",
+              "math5a:p65",
+              "math5a:p66",
+              "math5a:p67",
+              "math5a:p68"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          }
+        ]
+      }
+    ]
+  },
+  "source_chunks": [
+    {
+      "node_id": "math5a:p63",
+      "text": "# 4 Area of Triangle\n\n## 1 Finding the Area of a Triangle\n\nFind the area of each shaded triangle and its related rectangle.\n\nDiagram showing three shaded triangles (A, B, and C) on a grid, each inscribed within or related to a rectangle, with labels for 'base' and 'height'.\n\n> Compare the area of each triangle with the area of its related rectangle.\n\nIllustration of a girl in a speech bubble."
+    },
+    {
+      "node_id": "math5a:p64",
+      "text": "Full page illustration showing geometric area problems for triangles A, B, and C on grid paper.\n\n<table>\n  <thead>\n    <tr>\n        <th>Grid X</th>\n        <th>Grid Y</th>\n        <th>Content</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n        <td>0</td>\n        <td>0</td>\n        <td>Top-left corner of rectangle and triangle</td>\n    </tr>\n    <tr>\n        <td>6</td>\n        <td>0</td>\n        <td>Top-right corner of rectangle</td>\n    </tr>\n    <tr>\n        <td>0</td>\n        <td>5</td>\n        <td>Bottom-left corner of rectangle and triangle</td>\n    </tr>\n    <tr>\n        <td>6</td>\n        <td>5</td>\n        <td>Bottom-right corner of rectangle and triangle</td>\n    </tr>\n  </tbody>\n</table>\n\nArea of related rectangle\n$= 6 \\times 5 = 30$ square units\n\nArea of triangle A\n$=     $ square units\n\nDiagram showing triangle B on a 6x6 grid, with an arrow pointing to a second grid where the top of the triangle is folded down to form a rectangle.\n\nArea of related rectangle $= 6 \\times 6 = 36$ square units\nArea of triangle B $=     $ square units\n\n<table>\n  <thead>\n    <tr>\n        <th>Grid X</th>\n        <th>Grid Y</th>\n        <th>Content</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n        <td>0</td>\n        <td>0</td>\n        <td>Top-left of rectangle</td>\n    </tr>\n    <tr>\n        <td>4</td>\n        <td>0</td>\n        <td>Top-right of rectangle</td>\n    </tr>\n    <tr>\n        <td>0</td>\n        <td>6</td>\n        <td>Bottom-left of rectangle and triangle</td>\n    </tr>\n    <tr>\n        <td>4</td>\n        <td>6</td>\n        <td>Bottom-right of rectangle and triangle</td>\n    </tr>\n    <tr>\n        <td>8</td>\n        <td>0</td>\n        <td>Apex of triangle C</td>\n    </tr>\n  </tbody>\n</table>\n\nArea of related rectangle $= 4 \\times 6 = 24$ square units\nArea of triangle C $=     $ square units\n\n1."
+    },
+    {
+      "node_id": "math5a:p65",
+      "text": "Illustration of a girl thinking\n\n$$ \\text{Area of triangle} = \\frac{1}{2} \\times \\text{Area of related rectangle} $$\n\n> Area of triangle = $$ \\frac{1}{2} \\times \\text{Base} \\times \\text{Height} $$\n\n1. Find the area of each triangle.\n\n(a)\nRight-angled triangle with height 8 cm and base 6 cm\n\nArea of the triangle\n\n= $$ \\frac{1}{2} \\times 6 \\times 8 $$\n\n=      cm<sup>2</sup>\n\n(b)\nIsosceles triangle with base 10 cm and height 8 cm\n\nArea of the triangle\n\n= $$ \\frac{1}{2} \\times 10 \\times 8 $$\n\n=      cm<sup>2</sup>\n\n(c)\nObtuse triangle with base 10 cm and external height 12 cm\n\nArea of the triangle\n\n= $$ \\frac{1}{2} \\times 10 \\times 12 $$\n\n=      cm<sup>2</sup>"
+    },
+    {
+      "node_id": "math5a:p66",
+      "text": "2. Find the area of each shaded triangle.\n\n(a) Triangle with base 10 cm and height 4 cm\n\n(b) Right-angled triangle with legs 9 in. and 12 in.\n\n(c) Obtuse triangle with base 7 m and height 9 m\n\n(d) Triangle with base 20 ft and height 22 ft\n\nWorkbook Exercises 30 to 32\n\n3. Find the area of each shaded triangle.\n\n(a) Triangle with base 48 yd + 15 yd and height 20 yd\n\n(b) Right-angled triangle with legs 16 cm and 12 cm and hypotenuse 20 cm\n\n(c) Triangle with base 10 m + 4 m and height 6 m\n\n(d) Obtuse triangle with base 6 cm and height 5 cm"
+    },
+    {
+      "node_id": "math5a:p67",
+      "text": "4. Find the shaded area of each rectangle.\n\nDiagram (a) showing a rectangle of 20 cm by 12 cm with a shaded triangle inside.\n\nDiagram (b) showing a rectangle of 18 m length with a shaded triangle of height 4 m.\n\n5. Find the shaded area of each rectangle.\n\nDiagram (a) showing a rectangle of 12 cm by 8 cm with a shaded region. A vertical segment of 7 cm is marked.\n\n> In each figure, the unshaded part is a triangle.\n>\n> Find the area of the triangle first.\nIllustration of a girl thinking.\n\nDiagram (b) showing a rectangle of 20 m by 16 m with a shaded region. A top segment of 10 m is marked.\n\nDiagram (c) showing a rectangle of 14 cm by 20 cm with a shaded region. An unshaded triangle at the bottom has a height of 8 cm."
+    },
+    {
+      "node_id": "math5a:p68",
+      "text": "# PRACTICE 4A\n\n1. Find the area of each shaded triangle.\n\nDiagram of shaded triangle A with base 14 cm and height 3 cm\n\nDiagram of shaded triangle B with base 4 cm and height 11 cm\n\nDiagram of shaded triangle C with base 9 m and height 8 m\n\nDiagram of shaded triangle D with base 14 m and height 7 m\n\n2. The perimeter of the shaded triangle is 60 cm. Find its area.\n\nDiagram of a shaded triangle with sides 20 cm and 15 cm, and a height of 12 cm\n\n3. This figure is made up of 8 triangles. The base of each triangle is 6 cm and the height is 6 cm. What is the area of the figure?\n\nGeometric figure composed of 8 identical shaded triangles arranged in a star-like pattern\n\n4. Find the area of each shaded figure.\n\n(a)\nDiagram of a shaded concave quadrilateral with a base of 18 cm and heights of 7 cm and 5 cm\n\n(b)\nDiagram of a shaded quadrilateral with side lengths 66 m, 88 m, 110 m and a height of 40 m"
+    }
+  ],
+  "audit": {
+    "status": "extracted",
+    "checks": []
+  }
+}

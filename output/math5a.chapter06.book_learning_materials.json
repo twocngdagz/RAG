@@ -1,0 +1,2076 @@
+{
+  "schema_version": "book_learning_materials.v2",
+  "book": {
+    "slug": "math5a",
+    "title": "Singapore Math Primary Mathematics 5A",
+    "source_pdf": "Singapore Math 5A Textbook"
+  },
+  "generation": {
+    "backend": "ollama",
+    "model": "gpt-oss:120b",
+    "note": "extracted from the LlamaParse output; teaching layer added downstream"
+  },
+  "learning_materials": {
+    "chapters": [
+      {
+        "chapter_number": 6,
+        "chapter_title": "5 Ratio",
+        "estimated_study_time": {
+          "text": "3 hours",
+          "claim_kind": "source_statement",
+          "origin": "source_grounded",
+          "source_chunk_ids": [
+            "math5a:p69",
+            "math5a:p70",
+            "math5a:p71",
+            "math5a:p72",
+            "math5a:p73",
+            "math5a:p74",
+            "math5a:p75",
+            "math5a:p76",
+            "math5a:p77",
+            "math5a:p78",
+            "math5a:p79",
+            "math5a:p80"
+          ],
+          "grounded_in_source_chunk_ids": [
+            "math5a:p69",
+            "math5a:p70",
+            "math5a:p71",
+            "math5a:p72",
+            "math5a:p73",
+            "math5a:p74",
+            "math5a:p75",
+            "math5a:p76",
+            "math5a:p77",
+            "math5a:p78",
+            "math5a:p79",
+            "math5a:p80"
+          ],
+          "evidence_spans": [],
+          "reason": null
+        },
+        "chapter_summary": {
+          "text": "The chapter teaches what a ratio is, how to write ratios for two quantities, how to find equivalent ratios and simplify them, and how to compare three quantities using ratios.",
+          "claim_kind": "source_statement",
+          "origin": "source_grounded",
+          "source_chunk_ids": [
+            "math5a:p69",
+            "math5a:p70",
+            "math5a:p71",
+            "math5a:p72",
+            "math5a:p73",
+            "math5a:p74",
+            "math5a:p75",
+            "math5a:p76",
+            "math5a:p77",
+            "math5a:p78",
+            "math5a:p79",
+            "math5a:p80"
+          ],
+          "grounded_in_source_chunk_ids": [
+            "math5a:p69",
+            "math5a:p70",
+            "math5a:p71",
+            "math5a:p72",
+            "math5a:p73",
+            "math5a:p74",
+            "math5a:p75",
+            "math5a:p76",
+            "math5a:p77",
+            "math5a:p78",
+            "math5a:p79",
+            "math5a:p80"
+          ],
+          "evidence_spans": [],
+          "reason": null
+        },
+        "learning_objectives": [
+          {
+            "text": "Read and write a ratio of two quantities.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p69",
+              "math5a:p70",
+              "math5a:p71",
+              "math5a:p72",
+              "math5a:p73",
+              "math5a:p74",
+              "math5a:p75",
+              "math5a:p76",
+              "math5a:p77",
+              "math5a:p78",
+              "math5a:p79",
+              "math5a:p80"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p69",
+              "math5a:p70",
+              "math5a:p71",
+              "math5a:p72",
+              "math5a:p73",
+              "math5a:p74",
+              "math5a:p75",
+              "math5a:p76",
+              "math5a:p77",
+              "math5a:p78",
+              "math5a:p79",
+              "math5a:p80"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "Write the reverse ratio correctly.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p69",
+              "math5a:p70",
+              "math5a:p71",
+              "math5a:p72",
+              "math5a:p73",
+              "math5a:p74",
+              "math5a:p75",
+              "math5a:p76",
+              "math5a:p77",
+              "math5a:p78",
+              "math5a:p79",
+              "math5a:p80"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p69",
+              "math5a:p70",
+              "math5a:p71",
+              "math5a:p72",
+              "math5a:p73",
+              "math5a:p74",
+              "math5a:p75",
+              "math5a:p76",
+              "math5a:p77",
+              "math5a:p78",
+              "math5a:p79",
+              "math5a:p80"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "Find equivalent ratios and simplify them to their simplest form.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p69",
+              "math5a:p70",
+              "math5a:p71",
+              "math5a:p72",
+              "math5a:p73",
+              "math5a:p74",
+              "math5a:p75",
+              "math5a:p76",
+              "math5a:p77",
+              "math5a:p78",
+              "math5a:p79",
+              "math5a:p80"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p69",
+              "math5a:p70",
+              "math5a:p71",
+              "math5a:p72",
+              "math5a:p73",
+              "math5a:p74",
+              "math5a:p75",
+              "math5a:p76",
+              "math5a:p77",
+              "math5a:p78",
+              "math5a:p79",
+              "math5a:p80"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "Use a ratio to find missing quantities in a real‑world problem.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p69",
+              "math5a:p70",
+              "math5a:p71",
+              "math5a:p72",
+              "math5a:p73",
+              "math5a:p74",
+              "math5a:p75",
+              "math5a:p76",
+              "math5a:p77",
+              "math5a:p78",
+              "math5a:p79",
+              "math5a:p80"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p69",
+              "math5a:p70",
+              "math5a:p71",
+              "math5a:p72",
+              "math5a:p73",
+              "math5a:p74",
+              "math5a:p75",
+              "math5a:p76",
+              "math5a:p77",
+              "math5a:p78",
+              "math5a:p79",
+              "math5a:p80"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "Compare three quantities using a ratio of three numbers.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p69",
+              "math5a:p70",
+              "math5a:p71",
+              "math5a:p72",
+              "math5a:p73",
+              "math5a:p74",
+              "math5a:p75",
+              "math5a:p76",
+              "math5a:p77",
+              "math5a:p78",
+              "math5a:p79",
+              "math5a:p80"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p69",
+              "math5a:p70",
+              "math5a:p71",
+              "math5a:p72",
+              "math5a:p73",
+              "math5a:p74",
+              "math5a:p75",
+              "math5a:p76",
+              "math5a:p77",
+              "math5a:p78",
+              "math5a:p79",
+              "math5a:p80"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          }
+        ],
+        "key_terms": [
+          {
+            "term": "ratio",
+            "meaning": {
+              "text": "A way of comparing two amounts, written with a colon, e.g. 3 : 2 means \"3 to 2\".",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "term": "equivalent ratios",
+            "meaning": {
+              "text": "Different ratios that represent the same relationship, such as 8 : 12, 4 : 6 and 2 : 3.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "term": "simplest form",
+            "meaning": {
+              "text": "A ratio where the two numbers have no common factor larger than 1.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "term": "unit",
+            "meaning": {
+              "text": "One part of a ratio; the same number of units in each quantity represent the same amount.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "core_lessons": [
+          {
+            "title": "Finding Ratio",
+            "explanation": {
+              "text": "The book shows how to count the items in each group and write the numbers with a colon, reading it as \"to\". Examples use bottles of ink, boxes of pens, cans of paint, etc.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "title": "Equivalent Ratios",
+            "explanation": {
+              "text": "The book groups objects into equal‑size units to show that 8 : 12 can be written as 4 : 6 or 2 : 3. It then teaches dividing both numbers by their greatest common factor to reach the simplest form.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "title": "Comparing Three Quantities",
+            "explanation": {
+              "text": "The book extends the idea of a ratio to three numbers, showing how to write and simplify ratios like 12 : 6 : 4 and how to use them to find a part of a total.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "worked_examples": [
+          {
+            "title": "Write a ratio in simplest form",
+            "example": {
+              "text": "$4 : 10 = 2 : 5$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "Both numbers share a factor of 2. Dividing each by 2 gives the simplest ratio $2 : 5$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "title": "Write a ratio in simplest form",
+            "example": {
+              "text": "$12 : 18 = 2 : 3$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "Both numbers share a factor of 6. Dividing each by 6 gives $2 : 3$, the simplest form.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "title": "Simplify a three‑quantity ratio",
+            "example": {
+              "text": "$12 : 6 : 4 = 6 : 3 : 2$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "All three numbers share a factor of 2. Dividing each by 2 gives $6 : 3 : 2$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "title": "Find a missing length using a ratio",
+            "example": {
+              "text": "7 units = 21 m ⇒ $1$ unit $= \\frac{21}{7}=3$ m; $4$ units $= 4\\times3=12$ m.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "First find the value of one unit, then multiply by the required number of units.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "title": "Find a missing amount of money using a ratio",
+            "example": {
+              "text": "7 units = $35 ⇒ 1$ unit $= \\frac{35}{7}=5$; $4$ units $= 4\\times5=20$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "Convert the total into unit values, then calculate the share needed.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "title": "Find total weight from a ratio",
+            "example": {
+              "text": "5 units = 40 kg ⇒ $1$ unit $= \\frac{40}{5}=8$ kg; $8$ units $= 8\\times8=64$ kg.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "Find the weight of one unit and then multiply by the total number of units.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "title": "Find volume in a bucket from a three‑part ratio",
+            "example": {
+              "text": "10 units = 20 L ⇒ $1$ unit $= \\frac{20}{10}=2$ L; $5$ units $= 5\\times2=10$ L.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "Convert the total volume to unit value, then multiply by the number of units for the required bucket.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "common_misconceptions": [
+          {
+            "misconception": {
+              "text": "Mixing up the order of the numbers in a ratio (e.g., writing the ratio of white paint to red paint as 3 : 1 instead of 1 : 3).",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "The first number always refers to the first quantity mentioned; the second number refers to the second quantity.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "misconception": {
+              "text": "Thinking that a ratio must be written with the larger number first.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "A ratio reflects the actual relationship, not size order. It can be written as 1 : 3 if the first quantity is smaller.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "practice_questions": [
+          {
+            "question": {
+              "text": "The ratio of the number of ducks to the number of chickens is $15 : 12$. Write this ratio in its simplest form.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$5 : 4$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "There are 40 students, 25 are boys. Write the ratio of boys to girls in simplest form.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$5 : 3$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Ribbon A is 21 m long and the ratio of A to B is $7 : 4$. Find the length of Ribbon B.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$12$ m",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Siti and Mary share $35 in the ratio $4 : 3$. How much does Siti receive?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$20$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "The ratio of the length of a rectangle to its width is $3 : 4$. If the length is 12 cm, what is the width?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$16$ cm",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "20 litres of water are poured into three buckets in the ratio $2 : 3 : 5$. How many litres are in bucket C?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$10$ L",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "In a school there are 24 female teachers and 10 male teachers. What is the ratio of male teachers to female teachers?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$10 : 24$ or simplified $5 : 12$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "The ratio of the weight of Package X to Package Y is $5 : 3$. If Package X weighs 40 kg, what is the total weight of both packages?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$64$ kg",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p69",
+                "math5a:p70",
+                "math5a:p71",
+                "math5a:p72",
+                "math5a:p73",
+                "math5a:p74",
+                "math5a:p75",
+                "math5a:p76",
+                "math5a:p77",
+                "math5a:p78",
+                "math5a:p79",
+                "math5a:p80"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "review_checklist": [
+          {
+            "text": "I can read a ratio as \"to\".",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p69",
+              "math5a:p70",
+              "math5a:p71",
+              "math5a:p72",
+              "math5a:p73",
+              "math5a:p74",
+              "math5a:p75",
+              "math5a:p76",
+              "math5a:p77",
+              "math5a:p78",
+              "math5a:p79",
+              "math5a:p80"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p69",
+              "math5a:p70",
+              "math5a:p71",
+              "math5a:p72",
+              "math5a:p73",
+              "math5a:p74",
+              "math5a:p75",
+              "math5a:p76",
+              "math5a:p77",
+              "math5a:p78",
+              "math5a:p79",
+              "math5a:p80"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can write the ratio of one quantity to another.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p69",
+              "math5a:p70",
+              "math5a:p71",
+              "math5a:p72",
+              "math5a:p73",
+              "math5a:p74",
+              "math5a:p75",
+              "math5a:p76",
+              "math5a:p77",
+              "math5a:p78",
+              "math5a:p79",
+              "math5a:p80"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p69",
+              "math5a:p70",
+              "math5a:p71",
+              "math5a:p72",
+              "math5a:p73",
+              "math5a:p74",
+              "math5a:p75",
+              "math5a:p76",
+              "math5a:p77",
+              "math5a:p78",
+              "math5a:p79",
+              "math5a:p80"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can reverse a ratio correctly.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p69",
+              "math5a:p70",
+              "math5a:p71",
+              "math5a:p72",
+              "math5a:p73",
+              "math5a:p74",
+              "math5a:p75",
+              "math5a:p76",
+              "math5a:p77",
+              "math5a:p78",
+              "math5a:p79",
+              "math5a:p80"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p69",
+              "math5a:p70",
+              "math5a:p71",
+              "math5a:p72",
+              "math5a:p73",
+              "math5a:p74",
+              "math5a:p75",
+              "math5a:p76",
+              "math5a:p77",
+              "math5a:p78",
+              "math5a:p79",
+              "math5a:p80"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can find equivalent ratios by multiplying or dividing both numbers by the same factor.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p69",
+              "math5a:p70",
+              "math5a:p71",
+              "math5a:p72",
+              "math5a:p73",
+              "math5a:p74",
+              "math5a:p75",
+              "math5a:p76",
+              "math5a:p77",
+              "math5a:p78",
+              "math5a:p79",
+              "math5a:p80"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p69",
+              "math5a:p70",
+              "math5a:p71",
+              "math5a:p72",
+              "math5a:p73",
+              "math5a:p74",
+              "math5a:p75",
+              "math5a:p76",
+              "math5a:p77",
+              "math5a:p78",
+              "math5a:p79",
+              "math5a:p80"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can simplify a ratio to its simplest form.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p69",
+              "math5a:p70",
+              "math5a:p71",
+              "math5a:p72",
+              "math5a:p73",
+              "math5a:p74",
+              "math5a:p75",
+              "math5a:p76",
+              "math5a:p77",
+              "math5a:p78",
+              "math5a:p79",
+              "math5a:p80"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p69",
+              "math5a:p70",
+              "math5a:p71",
+              "math5a:p72",
+              "math5a:p73",
+              "math5a:p74",
+              "math5a:p75",
+              "math5a:p76",
+              "math5a:p77",
+              "math5a:p78",
+              "math5a:p79",
+              "math5a:p80"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can use a ratio to find an unknown amount in a real‑world problem.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p69",
+              "math5a:p70",
+              "math5a:p71",
+              "math5a:p72",
+              "math5a:p73",
+              "math5a:p74",
+              "math5a:p75",
+              "math5a:p76",
+              "math5a:p77",
+              "math5a:p78",
+              "math5a:p79",
+              "math5a:p80"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p69",
+              "math5a:p70",
+              "math5a:p71",
+              "math5a:p72",
+              "math5a:p73",
+              "math5a:p74",
+              "math5a:p75",
+              "math5a:p76",
+              "math5a:p77",
+              "math5a:p78",
+              "math5a:p79",
+              "math5a:p80"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can compare three quantities using a three‑part ratio and simplify it.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p69",
+              "math5a:p70",
+              "math5a:p71",
+              "math5a:p72",
+              "math5a:p73",
+              "math5a:p74",
+              "math5a:p75",
+              "math5a:p76",
+              "math5a:p77",
+              "math5a:p78",
+              "math5a:p79",
+              "math5a:p80"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p69",
+              "math5a:p70",
+              "math5a:p71",
+              "math5a:p72",
+              "math5a:p73",
+              "math5a:p74",
+              "math5a:p75",
+              "math5a:p76",
+              "math5a:p77",
+              "math5a:p78",
+              "math5a:p79",
+              "math5a:p80"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          }
+        ]
+      }
+    ]
+  },
+  "source_chunks": [
+    {
+      "node_id": "math5a:p69",
+      "text": "# 5 Ratio\n\n# 1 Finding Ratio\n\nDavid and John visited an art supply store. David bought 3 bottles of blue ink and 2 bottles of red ink.\n\nblue ink bottle blue ink bottle blue ink bottle red ink bottle red ink bottle\n\nThe **ratio** of the number of bottles of blue ink to the number of bottles of red ink is 3 : 2.\n\n> We read the ratio 3 : 2 as **3 to 2**. character illustration\n\nJohn bought 5 boxes of blue pens and 2 boxes of red pens.\n\n5 boxes of blue pens 2 boxes of red pens\n\n> 5 boxes to 2 boxes character illustration\n\nThe **ratio** of the number of blue pens to the number of red pens is 5 : 2."
+    },
+    {
+      "node_id": "math5a:p70",
+      "text": "1. Ricardo mixed 3 cans of red paint with 1 can of white paint.\n\nThree cans of red paint and one can of white paint\n\nThe ratio of the amount of red paint to the amount of white paint is 3 : 1.\n\nThe ratio of the amount of white paint to the amount of red paint is      :     .\n\n2. Three boxes of jam jars and two boxes of jelly jars\n\nThe ratio of the number of jars of jam to the number of jars of jelly is 3 : 2.\n\nThe ratio of the number of jars of jelly to the number of jars of jam is      :     .\n\n5.\n\n3. Two packets of chocolate milk and five packets of strawberry milk\n\nThe ratio of the number of packets of chocolate milk to the number of packets of strawberry milk is      :     .\n\nThe ratio of the number of packets of strawberry milk to the number of packets of chocolate milk is      :     ."
+    },
+    {
+      "node_id": "math5a:p71",
+      "text": "4. Illustration showing 9 buckets grouped in threes and 6 shovels grouped in threes. A bracket over the first three buckets is labeled \"1 unit\". A speech bubble from a girl says \"3 units to 2 units\".\n\nThe ratio of the number of buckets to the number of shovels is      :     .\n\n5. Illustration showing two bars, P and Q. Bar P is 3 units long (shaded) and bar Q is 7 units long (unshaded). A bracket over the first unit of P is labeled \"1 unit\". A speech bubble from a boy says \"3 units to 7 units\".\n\nThe ratio of the length of P to the length of Q is      :     .\n\n6. A grid of squares showing a rectangle that is 3 units wide and 4 units long.\n\nThe ratio of the length of the rectangle to its width is      :     ."
+    },
+    {
+      "node_id": "math5a:p72",
+      "text": "7.\n\nDiagram showing two 1 liter containers, X and Y, filled with different amounts of sand. Container X is filled to the 4th mark, and Container Y is filled to the 6th mark.\n\nThe ratio of the volume of sand in Container X to the volume of sand in Container Y is      :     .\n\n8.\n\nDiagram showing two solids made of cubes. Solid A is a 3x1x1 block of 3 cubes. Solid B is a 2x2x2 block of 8 cubes.\nSolid B\n\nThe ratio of the volume of Solid A to the volume of Solid B is      :     .\n\n9.\n\nDiagram showing two packages, C and D, on weighing scales. Scale C shows a weight of 5 kg. Scale D shows a weight of 7 kg.\nPackage D on scale\n\nThe ratio of the weight of Package C to the weight of Package D is      :     ."
+    },
+    {
+      "node_id": "math5a:p73",
+      "text": "# 2 Equivalent Ratios\n\nJohn has 8 cents and Peter has 12 cents.\n\nIllustration showing John with 8 individual 1-cent coins and Peter with 12 individual 1-cent coins\n\nThe ratio of John's money to Peter's money is 8 : 12.\n\nIllustration showing John's 8 coins grouped into 4 units of 2 coins each and Peter's 12 coins grouped into 6 units of 2 coins each, with a thought bubble saying \"4 units to 6 units\"\n\nThe ratio of John's money to Peter's money is 4 : 6.\n\nIllustration showing John's 8 coins grouped into 2 units of 4 coins each and Peter's 12 coins grouped into 3 units of 4 coins each, with a thought bubble saying \"2 units to 3 units\"\n\nThe ratio of John's money to Peter's money is 2 : 3.\n\n8 : 12, 4 : 6 and 2 : 3 are **equivalent ratios**.\n\n2 : 3 is a ratio in its simplest form."
+    },
+    {
+      "node_id": "math5a:p74",
+      "text": "1. Write each ratio in its simplest form.\n\n(a) 4 : 10\n\n4 : 10 =      :     \n\n> 2 is a common factor of 4 and 10.\n> Divide 4 and 10 by 2.\n\n> 4 : 10\n> <sub>2</sub> <sub>5</sub>\n\nIllustration of a girl thinking\n\n(b) 12 : 18\n\n12 : 18 =      :     \n\n> 6 is a common factor of 12 and 18.\n> Divide 12 and 18 by 6.\n\n> 12 : 18\n> <sub>2</sub> <sub>3</sub>\n\nIllustration of a girl thinking\n\n2. Write each ratio in its simplest form.\n\n(a) 8 : 10 (b) 10 : 6\n\n(c) 6 : 24 (d) 21 : 14\n\n3. There are 15 ducks and 12 chickens in a farm. Find the ratio of the number of ducks to the number of chickens.\n\n15 : 12 =      :     \n\n> Write the ratio 15 : 12 in its simplest form.\n\nIllustration of a boy thinking\n\nThe ratio of the number of ducks to the number of chickens is      :     ."
+    },
+    {
+      "node_id": "math5a:p75",
+      "text": "4. There are 40 students in a class. 25 of them are boys.\nFind the ratio of the number of boys to the number of girls in the class.\n\nNumber of girls = 40 - 25 = 15\n\nNumber of boys = 25\n\nIllustration of a boy thinking: \"Write the ratio 25 : 15 in its simplest form.\"\n\n25 : 15 =      :     \n\nThe ratio of the number of boys to the number of girls is      :     .\n\n5. The ratio of the length of Ribbon A to the length of Ribbon B is 7 : 4.\nIf Ribbon A is 21 m long, find the length of Ribbon B.\n\nBar model showing Ribbon A with 7 units labeled 21 m and Ribbon B with 4 units labeled with a question mark.\n\nIllustration of a girl thinking: \"7 : 4 means 7 units to 4 units.\"\n\n7 units = 21 m\n\n1 unit =      m\n\n4 units =      m\n\nThe length of Ribbon B is      m."
+    },
+    {
+      "node_id": "math5a:p76",
+      "text": "6. Siti and Mary shared $35 in the ratio 4 : 3.\nHow much money did Siti receive?\n\nBar model showing Siti with 4 units and Mary with 3 units, with a total bracket of $35 and a question mark over Siti's units.\n\n7 units = $35\n\n1 unit = $    \n\n4 units = $    \n\nSiti received $    .\n\n7. The ratio of the weight of Package X to the weight of Package Y is 5 : 3. If the weight of Package X is 40 kg, find the total weight of the two packages.\n\nBar model showing Package X with 5 units labeled as 40 kg and Package Y with 3 units, with a total bracket marked with a question mark.\n\n5 units = 40 kg\n\n1 unit =      kg\n\n8 units =      kg\n\nThe total weight is      kg."
+    },
+    {
+      "node_id": "math5a:p77",
+      "text": "# PRACTICE 5A\n\n1. Illustration of various geometric shapes: circles, triangles, and squares inside a rectangle.\n\n(a) Find the ratio of the number of circles to the number of triangles.\n\n(b) Find the ratio of the number of triangles to the number of squares.\n\n2. The length of a rectangle is 16 cm and its width is 12 cm. Find the ratio of the length of the rectangle to its width.\n\n3. Ali won a cash prize of $50. He saved $35 and spent the rest. Find the ratio of the amount of money he saved to the amount of money he spent.\n\n4. Brianne made pineapple drinks by mixing pineapple syrup and water in the ratio 2 : 7. If she used 4 liters of pineapple syrup, how much water did she use?\n\n5. David cuts a rope 60 m long into two pieces in the ratio 2 : 3. What is the length of the shorter piece of rope?\n\n6. The ratio of Adam's weight to John's weight is 6 : 5. If Adam weighs 48 kg, find John's weight.\n\n7. The ratio of the number of boys to the number of girls is 2 : 5. If there are 100 boys, how many children are there altogether?"
+    },
+    {
+      "node_id": "math5a:p78",
+      "text": "# 3 Comparing Three Quantities\n\nThere are 12 triangles, 6 squares and 4 circles.\n\n(a) Find the ratio of the number of triangles to the number of squares.\n\nIllustration showing 12 triangles grouped in two boxes of 6, and 6 squares grouped in three boxes of 2. A character thinks \"2 units to 1 unit\".\n\nThe ratio of the number of triangles to the number of squares is      :     .\n\n(b) Find the ratio of the number of triangles to the number of squares to the number of circles.\n\nIllustration showing 12 triangles grouped in six boxes of 2, 6 squares grouped in three boxes of 2, and 4 circles grouped in two boxes of 2. A character thinks \"6 units to 3 units to 2 units\".\n\nThe ratio of the number of triangles to the number of squares to the number of circles is      :      :     ."
+    },
+    {
+      "node_id": "math5a:p79",
+      "text": "1. Write each ratio in its simplest form.\n\n(a) 12 : 6 : 4\n\n12 : 6 : 4 =      :      :     \n\n> 2 is a common factor of 12, 6 and 4.\n> Divide 12, 6 and 4 by 2.\n\n12 : 6 : 4\n6 3 2\n\nIllustration of a boy thinking\n\n(b) 20 : 10 : 15\n\n20 : 10 : 15 =      :      :     \n\n> 5 is a common factor of 20, 10 and 15.\n> Divide 20, 10 and 15 by 5.\n\n20 : 10 : 15\n4 2 3\n\nIllustration of a boy thinking\n\n2. 20 liters of water are poured into 3 buckets A, B and C in the ratio 2 : 3 : 5.\n\nFind the volume of water in Bucket C.\n\nBar model showing buckets A, B, and C with units 2, 3, and 5 respectively, totaling 20 liters\n\n10 units = 20 liters\n\n1 unit =      liters\n\n5 units =      liters\n\nThe volume of water in Bucket C is      liters."
+    },
+    {
+      "node_id": "math5a:p80",
+      "text": "# PRACTICE 5B\n\n1. In a school, there are 24 female teachers and 10 male teachers.\nWhat is the ratio of the number of male teachers to the number of female teachers?\n\n2. In a fruit orchard, there are 60 peach trees, 20 plum trees and 35 apricot trees.\nWhat is the ratio of the number of peach trees to the number of plum trees to the number of apricot trees?\n\n3. Mrs. Bates cooked oatmeal by adding water to oatmeal in the ratio 3 : 1.\nIf she used 12 cups of water, how many cups of oatmeal did she use?\n\n4. In a swimming club, the ratio of the number of boys to the number of girls is 7 : 4.\nIf there are 121 children in the swimming club, how many boys are there?\n\n5. William has $120. Steve has $20 less than William. What is the ratio of Steve's money to William's money?\n\n6. A pole, 90 cm long, is painted green, white and black in the ratio 3 : 4 : 2.\n(a) What length of the pole is painted green?\n(b) What length of the pole is painted black?\n\n7. Cement, sand and stone chippings are mixed in the ratio 1 : 2 : 4.\nThe total volume of sand and stone chippings used is 24 m<sup>3</sup>.\n(a) Find the volume of cement in the mixture.\n(b) Find the volume of sand in the mixture.\n\n8. The ratio of David's weight to Ryan's weight to Ali's weight is 8 : 5 : 4.\nIf Ryan weighs 30 kg, find the total weight of the 3 boys.\n\n9. 3 boys share a sum of money in the ratio 5 : 3 : 2. If the smallest share is $30, find the biggest share."
+    }
+  ],
+  "audit": {
+    "status": "extracted",
+    "checks": []
+  }
+}

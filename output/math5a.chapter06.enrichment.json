@@ -1,0 +1,645 @@
+{
+  "schema_version": "pte_lesson_enrichment.v1",
+  "task_type": "ratio",
+  "lesson_title": "5 Ratio",
+  "source_label": "math5a:ch06",
+  "modality": "reading",
+  "overview": {
+    "what_it_is": "A ratio compares amounts using the same-sized parts.",
+    "format_facts": [
+      {
+        "label": "Main skill",
+        "value": "Compare two or three amounts using ratios."
+      },
+      {
+        "label": "Ratio sign",
+        "value": "Use a colon between each number."
+      },
+      {
+        "label": "Reading",
+        "value": "Read the colon as the word \"to\"."
+      },
+      {
+        "label": "Order",
+        "value": "Write amounts in the order named."
+      },
+      {
+        "label": "Study time",
+        "value": "About three hours with short practice breaks."
+      }
+    ],
+    "scoring_factors": [
+      {
+        "name": "Correct order",
+        "what_it_measures": "Whether each number matches the named amount."
+      },
+      {
+        "name": "Equal changes",
+        "what_it_measures": "Whether every ratio part changes by the same factor."
+      },
+      {
+        "name": "Correct working",
+        "what_it_measures": "Whether each unit step is clearly shown."
+      },
+      {
+        "name": "Clear answer",
+        "what_it_measures": "Whether the answer includes the correct unit."
+      }
+    ],
+    "critical_rules": [
+      "The first number matches the first amount named.",
+      "The larger amount does not always come first.",
+      "Multiply every ratio part by the same number.",
+      "Divide every ratio part by the same number.",
+      "Use a common factor for all three parts.",
+      "Add ratio parts before sharing a total."
+    ]
+  },
+  "learning_goals": [
+    "You will read a ratio using the word \"to\".",
+    "You will write ratios in the correct order.",
+    "You will reverse a ratio without changing its meaning.",
+    "You will find ratios that show the same comparison.",
+    "You will write ratios in their simplest form.",
+    "You will find missing amounts using unit parts.",
+    "You will compare three amounts with one ratio."
+  ],
+  "core_method": {
+    "name": "Name → Match → Make Units → Find",
+    "summary": "Name each amount. Match the parts. Find one unit.",
+    "steps": [
+      {
+        "step": "Name",
+        "detail": "Underline the amounts in the order given."
+      },
+      {
+        "step": "Match",
+        "detail": "Match each amount to its ratio number."
+      },
+      {
+        "step": "Check order",
+        "detail": "Make sure the first amount comes first."
+      },
+      {
+        "step": "Find units",
+        "detail": "Count the ratio parts linked to the known amount."
+      },
+      {
+        "step": "Find one",
+        "detail": "Divide the known amount by its unit count."
+      },
+      {
+        "step": "Find the answer",
+        "detail": "Multiply one unit by the needed units."
+      },
+      {
+        "step": "Check",
+        "detail": "Check the size, order, and measurement unit."
+      }
+    ],
+    "formula": "Known amount $\\div$ known units $=$ one unit; one unit $\\times$ needed units $=$ answer."
+  },
+  "techniques": [
+    {
+      "name": "Keep the named order",
+      "purpose": "Stops the two ratio numbers being reversed.",
+      "how_to": [
+        "Read the two amounts from left to right.",
+        "Write the first amount above the first number.",
+        "Write the second amount above the second number.",
+        "Check both labels before doing any working."
+      ],
+      "example": "For white to red, $1 : 3$ means one white part and three red parts.",
+      "why_it_matters": "A reversed ratio answers a different question.",
+      "common_error": "Writing the bigger number first without checking names."
+    },
+    {
+      "name": "Reverse both parts",
+      "purpose": "Finds the ratio in the opposite order.",
+      "how_to": [
+        "Read the new order in the question.",
+        "Swap the first and second ratio numbers.",
+        "Do not add or subtract the numbers.",
+        "Read the new ratio aloud to check."
+      ],
+      "example": "If cats to dogs is $2 : 5$, dogs to cats is $5 : 2$.",
+      "why_it_matters": "The comparison changes when the order changes.",
+      "common_error": "Keeping $2 : 5$ after the names are reversed."
+    },
+    {
+      "name": "Make the same ratio",
+      "purpose": "Creates ratios with the same relationship.",
+      "how_to": [
+        "Choose one whole-number factor.",
+        "Multiply every part by that factor.",
+        "Or divide every part by that factor.",
+        "Check that all parts changed equally."
+      ],
+      "example": "$2 : 3 = 4 : 6 = 8 : 12$.",
+      "why_it_matters": "The amounts grow, but their comparison stays unchanged.",
+      "common_error": "Changing only one number in the ratio."
+    },
+    {
+      "name": "Reach the simplest form",
+      "purpose": "Writes the ratio using the smallest whole numbers.",
+      "how_to": [
+        "List factors shared by every ratio number.",
+        "Choose the greatest common factor.",
+        "Divide every number by that factor.",
+        "Check that no larger common factor remains."
+      ],
+      "example": "$12 : 18 = 2 : 3$ because $12 \\div 6 = 2$ and $18 \\div 6 = 3$.",
+      "why_it_matters": "Small numbers make the relationship easier to see.",
+      "common_error": "Dividing each part by a different number."
+    },
+    {
+      "name": "Find one unit",
+      "purpose": "Finds a missing amount from a known amount.",
+      "how_to": [
+        "Match the known amount to its ratio units.",
+        "Divide the amount by those units.",
+        "This gives the value of one unit.",
+        "Multiply by the units you need."
+      ],
+      "example": "If $7$ units equal $21$ m, then $1$ unit equals $21 \\div 7 = 3$ m.",
+      "why_it_matters": "One unit links the ratio to real measurements.",
+      "common_error": "Multiplying before finding one unit."
+    },
+    {
+      "name": "Share a total",
+      "purpose": "Splits one total using two or three ratio parts.",
+      "how_to": [
+        "Add all ratio numbers first.",
+        "The sum is the total unit count.",
+        "Divide the total by that count.",
+        "Multiply by the required ratio part."
+      ],
+      "example": "For $2 : 3 : 5$, total units are $2 + 3 + 5 = 10$.",
+      "why_it_matters": "The total belongs to all ratio parts together.",
+      "common_error": "Dividing the total by only one ratio number."
+    }
+  ],
+  "worked_examples": [
+    {
+      "title": "Write a ratio in simplest form",
+      "input": "Write $15 : 12$ in its simplest form.",
+      "decoding": "Both numbers count birds. Find their greatest common factor.",
+      "plan": "Divide both numbers by the same greatest factor.",
+      "model_answer": "The common factors include $1$ and $3$. The greatest common factor is $3$. Divide both parts by $3$. $15 \\div 3 = 5$. $12 \\div 3 = 4$. Therefore, $15 : 12 = 5 : 4$. The simplest ratio is $5 : 4$.",
+      "annotations": [
+        {
+          "part": "Greatest common factor",
+          "comment": "Using the largest factor finishes in one step."
+        },
+        {
+          "part": "$15 \\div 3 = 5$",
+          "comment": "The first ratio part is divided by $3$."
+        },
+        {
+          "part": "$12 \\div 3 = 4$",
+          "comment": "The second part uses the same divisor."
+        },
+        {
+          "part": "$5 : 4$",
+          "comment": "The two numbers share no larger common factor."
+        }
+      ]
+    },
+    {
+      "title": "Find boys to girls",
+      "input": "There are $40$ students. There are $25$ boys. Write boys to girls in simplest form.",
+      "decoding": "The number of girls is not given directly.",
+      "plan": "Find the girls first. Then write and reduce the ratio.",
+      "model_answer": "First find the number of girls. $40 - 25 = 15$. There are $15$ girls. Boys to girls is $25 : 15$. Both numbers share a factor of $5$. $25 \\div 5 = 5$. $15 \\div 5 = 3$. Therefore, $25 : 15 = 5 : 3$. The ratio of boys to girls is $5 : 3$.",
+      "annotations": [
+        {
+          "part": "$40 - 25 = 15$",
+          "comment": "Subtract boys from all students to find girls."
+        },
+        {
+          "part": "$25 : 15$",
+          "comment": "Boys come first because boys are named first."
+        },
+        {
+          "part": "$25 \\div 5 = 5$",
+          "comment": "Both ratio parts must use the same divisor."
+        },
+        {
+          "part": "$5 : 3$",
+          "comment": "This is the ratio in its simplest form."
+        }
+      ]
+    },
+    {
+      "title": "Find a missing ribbon length",
+      "input": "Ribbon A is $21$ m long. The ratio of A to B is $7 : 4$. Find Ribbon B.",
+      "decoding": "Ribbon A matches $7$ units. Ribbon B matches $4$ units.",
+      "plan": "Find one unit from Ribbon A. Then find four units.",
+      "model_answer": "Bar model: Ribbon A has $7$ equal parts. Ribbon B has $4$ equal parts. Ribbon A measures $21$ m. Find one part. $21 \\div 7 = 3$ m. Ribbon B has $4$ parts. $4 \\times 3 = 12$ m. Ribbon B is $12$ m long.",
+      "annotations": [
+        {
+          "part": "Bar model",
+          "comment": "The equal parts show what each ratio number means."
+        },
+        {
+          "part": "$21 \\div 7 = 3$ m",
+          "comment": "This finds the length of one equal part."
+        },
+        {
+          "part": "$4 \\times 3 = 12$ m",
+          "comment": "Ribbon B contains four equal parts."
+        },
+        {
+          "part": "$12$ m",
+          "comment": "The final answer includes the correct length unit."
+        }
+      ]
+    },
+    {
+      "title": "Share money using a ratio",
+      "input": "Siti and Mary share $\\$35$ in the ratio $4 : 3$. How much does Siti receive?",
+      "decoding": "The whole amount covers both shares together.",
+      "plan": "Add the units. Find one unit. Then find Siti's share.",
+      "model_answer": "Bar model: Siti has $4$ equal parts. Mary has $3$ equal parts. Together, they have $4 + 3 = 7$ parts. The total is $\\$35$. One part is $\\$35 \\div 7 = \\$5$. Siti has $4$ parts. Her share is $4 \\times \\$5 = \\$20$. Siti receives $\\$20$.",
+      "annotations": [
+        {
+          "part": "$4 + 3 = 7$",
+          "comment": "All ratio parts make the complete money amount."
+        },
+        {
+          "part": "$\\$35 \\div 7 = \\$5$",
+          "comment": "Dividing finds the value of one part."
+        },
+        {
+          "part": "$4 \\times \\$5 = \\$20$",
+          "comment": "Siti receives four equal parts."
+        },
+        {
+          "part": "$\\$20$",
+          "comment": "The answer uses the money sign."
+        }
+      ]
+    },
+    {
+      "title": "Find a rectangle width",
+      "input": "Length to width is $3 : 4$. The length is $12$ cm. Find the width.",
+      "decoding": "The length matches $3$ units. The width matches $4$ units.",
+      "plan": "Use the length to find one unit. Then find four units.",
+      "model_answer": "Bar model: The length has $3$ equal parts. The width has $4$ equal parts. The length is $12$ cm. One part is $12 \\div 3 = 4$ cm. The width has $4$ parts. $4 \\times 4 = 16$ cm. The rectangle is $16$ cm wide.",
+      "annotations": [
+        {
+          "part": "$3 : 4$",
+          "comment": "The first number matches the rectangle's length."
+        },
+        {
+          "part": "$12 \\div 3 = 4$ cm",
+          "comment": "This gives the size of one equal part."
+        },
+        {
+          "part": "$4 \\times 4 = 16$ cm",
+          "comment": "The width uses four equal parts."
+        },
+        {
+          "part": "$16$ cm",
+          "comment": "The answer is larger because four parts exceed three."
+        }
+      ]
+    },
+    {
+      "title": "Split water into three buckets",
+      "input": "$20$ L of water is shared in the ratio $2 : 3 : 5$. Find bucket C.",
+      "decoding": "Bucket C is the third amount. It matches $5$ units.",
+      "plan": "Add all units. Find one unit. Then find five units.",
+      "model_answer": "Bar model: Bucket A has $2$ parts. Bucket B has $3$ parts. Bucket C has $5$ parts. Total units are $2 + 3 + 5 = 10$. One unit is $20 \\div 10 = 2$ L. Bucket C has $5$ units. $5 \\times 2 = 10$ L. Bucket C contains $10$ L.",
+      "annotations": [
+        {
+          "part": "$2 + 3 + 5 = 10$",
+          "comment": "All three parts belong to the total volume."
+        },
+        {
+          "part": "$20 \\div 10 = 2$ L",
+          "comment": "This finds the volume in one ratio unit."
+        },
+        {
+          "part": "$5 \\times 2 = 10$ L",
+          "comment": "Bucket C matches the third ratio number."
+        },
+        {
+          "part": "$10$ L",
+          "comment": "The result is half of the total water."
+        }
+      ]
+    },
+    {
+      "title": "Correct a reversed ratio",
+      "input": "There are $24$ female teachers and $10$ male teachers. Mia writes male to female as $24 : 10$. Correct her answer.",
+      "decoding": "Male teachers are named first. Their number must come first.",
+      "plan": "Correct the order. Then write the simplest form.",
+      "model_answer": "Mia reversed the two amounts. There are $10$ male teachers and $24$ female teachers. Male to female is $10 : 24$. Both numbers share a factor of $2$. $10 \\div 2 = 5$. $24 \\div 2 = 12$. Therefore, $10 : 24 = 5 : 12$. The correct simplest ratio is $5 : 12$.",
+      "annotations": [
+        {
+          "part": "$10 : 24$",
+          "comment": "Male comes first because male is named first."
+        },
+        {
+          "part": "$10 \\div 2 = 5$",
+          "comment": "The first part is reduced using $2$."
+        },
+        {
+          "part": "$24 \\div 2 = 12$",
+          "comment": "The second part uses the same divisor."
+        },
+        {
+          "part": "$5 : 12$",
+          "comment": "The ratio now has correct order and form."
+        }
+      ]
+    },
+    {
+      "title": "Find the total package weight",
+      "input": "Package X to Package Y is $5 : 3$. Package X weighs $40$ kg. Find their total weight.",
+      "decoding": "Package X matches $5$ units. Both packages use $8$ units.",
+      "plan": "Find one unit. Then multiply by all eight units.",
+      "model_answer": "Bar model: Package X has $5$ parts. Package Y has $3$ parts. Package X weighs $40$ kg. One part is $40 \\div 5 = 8$ kg. Both packages have $5 + 3 = 8$ parts. Their total weight is $8 \\times 8 = 64$ kg. Both packages weigh $64$ kg altogether.",
+      "annotations": [
+        {
+          "part": "$40 \\div 5 = 8$ kg",
+          "comment": "This finds the weight of one ratio part."
+        },
+        {
+          "part": "$5 + 3 = 8$",
+          "comment": "The total includes both packages."
+        },
+        {
+          "part": "$8 \\times 8 = 64$ kg",
+          "comment": "Eight parts each weigh eight kilograms."
+        },
+        {
+          "part": "$64$ kg",
+          "comment": "The answer states the total weight clearly."
+        }
+      ]
+    }
+  ],
+  "useful_language": [
+    {
+      "category": "Ratio words",
+      "items": [
+        {
+          "item": "ratio",
+          "when_to_use": "Use it when comparing two or more amounts."
+        },
+        {
+          "item": "to",
+          "when_to_use": "Say this word when reading the colon."
+        },
+        {
+          "item": "ratio part",
+          "when_to_use": "Use it for one number in a ratio."
+        },
+        {
+          "item": "three-part ratio",
+          "when_to_use": "Use it when comparing three different amounts."
+        }
+      ]
+    },
+    {
+      "category": "Order words",
+      "items": [
+        {
+          "item": "first amount",
+          "when_to_use": "Match it to the first ratio number."
+        },
+        {
+          "item": "second amount",
+          "when_to_use": "Match it to the second ratio number."
+        },
+        {
+          "item": "third amount",
+          "when_to_use": "Match it to the third ratio number."
+        },
+        {
+          "item": "reverse ratio",
+          "when_to_use": "Use it when the named order changes."
+        }
+      ]
+    },
+    {
+      "category": "Same-value words",
+      "items": [
+        {
+          "item": "equivalent ratios",
+          "when_to_use": "Use it for ratios showing the same relationship."
+        },
+        {
+          "item": "same factor",
+          "when_to_use": "Use it when changing every ratio part."
+        },
+        {
+          "item": "common factor",
+          "when_to_use": "Use it for a number dividing every part."
+        },
+        {
+          "item": "simplest form",
+          "when_to_use": "Use it when no larger common factor remains."
+        }
+      ]
+    },
+    {
+      "category": "Unit words",
+      "items": [
+        {
+          "item": "unit",
+          "when_to_use": "Use it for one equal part of a ratio."
+        },
+        {
+          "item": "known amount",
+          "when_to_use": "Use it for the amount already given."
+        },
+        {
+          "item": "missing amount",
+          "when_to_use": "Use it for the amount you must find."
+        },
+        {
+          "item": "total units",
+          "when_to_use": "Use it after adding all ratio numbers."
+        }
+      ]
+    },
+    {
+      "category": "Answer units",
+      "items": [
+        {
+          "item": "metres",
+          "when_to_use": "Use it when the question measures length."
+        },
+        {
+          "item": "kilograms",
+          "when_to_use": "Use it when the question measures weight."
+        },
+        {
+          "item": "litres",
+          "when_to_use": "Use it when the question measures volume."
+        },
+        {
+          "item": "dollars",
+          "when_to_use": "Use it when the question involves money."
+        }
+      ]
+    }
+  ],
+  "common_mistakes": [
+    {
+      "mistake": "Writing the larger number first.",
+      "why_it_hurts": "Ratio order follows names, not number size.",
+      "fix": "Underline the amounts and keep their named order."
+    },
+    {
+      "mistake": "Reversing the two ratio numbers.",
+      "why_it_hurts": "The answer then compares the amounts backwards.",
+      "fix": "Label each ratio number before writing the answer."
+    },
+    {
+      "mistake": "Changing only one ratio part.",
+      "why_it_hurts": "The new ratio no longer shows the same relationship.",
+      "fix": "Multiply or divide every part by one factor."
+    },
+    {
+      "mistake": "Using different divisors for each part.",
+      "why_it_hurts": "The ratio changes into a different comparison.",
+      "fix": "Choose one common factor for every ratio number."
+    },
+    {
+      "mistake": "Stopping before the simplest form.",
+      "why_it_hurts": "The ratio still uses larger numbers than needed.",
+      "fix": "Check whether all parts share another common factor."
+    },
+    {
+      "mistake": "Using the total as one ratio part.",
+      "why_it_hurts": "The total often covers all parts together.",
+      "fix": "Add the ratio numbers before dividing the total."
+    },
+    {
+      "mistake": "Multiplying before finding one unit.",
+      "why_it_hurts": "The real value of each equal part stays unknown.",
+      "fix": "Divide the known amount by its ratio units first."
+    },
+    {
+      "mistake": "Leaving out the measurement unit.",
+      "why_it_hurts": "The number alone does not fully answer the question.",
+      "fix": "Write metres, litres, kilograms, or dollars."
+    }
+  ],
+  "practice_plan": {
+    "time_budget": [
+      {
+        "phase": "Warm-up",
+        "minutes": "15",
+        "focus": "Recall factors and basic division facts."
+      },
+      {
+        "phase": "Read ratios",
+        "minutes": "25",
+        "focus": "Read ratios and match each named amount."
+      },
+      {
+        "phase": "Same ratios",
+        "minutes": "30",
+        "focus": "Multiply and divide every part equally."
+      },
+      {
+        "phase": "Simplest form",
+        "minutes": "30",
+        "focus": "Use common factors to reduce ratios."
+      },
+      {
+        "phase": "Unit method",
+        "minutes": "40",
+        "focus": "Find one unit before missing amounts."
+      },
+      {
+        "phase": "Three-part ratios",
+        "minutes": "25",
+        "focus": "Add units and split a total."
+      },
+      {
+        "phase": "Mixed check",
+        "minutes": "15",
+        "focus": "Solve mixed questions and explain each answer."
+      }
+    ],
+    "drills": [
+      {
+        "name": "Name and match",
+        "instructions": "Label both amounts in ten short ratio questions."
+      },
+      {
+        "name": "Reverse it",
+        "instructions": "Write the reverse of eight given ratios."
+      },
+      {
+        "name": "Build same ratios",
+        "instructions": "Make three matching ratios from each starting ratio."
+      },
+      {
+        "name": "Factor hunt",
+        "instructions": "Find the greatest common factor for ten number pairs."
+      },
+      {
+        "name": "Simplest form sprint",
+        "instructions": "Reduce ten ratios and check each common factor."
+      },
+      {
+        "name": "One-unit practice",
+        "instructions": "Find one unit in six short word problems."
+      },
+      {
+        "name": "Bar model words",
+        "instructions": "Describe ratio bars before doing any arithmetic."
+      },
+      {
+        "name": "Three-part sharing",
+        "instructions": "Split five totals using three-part ratios."
+      }
+    ],
+    "routine": "Read the question twice. Label the ratio. Draw equal parts. Show each step. Check the order and unit."
+  },
+  "mastery_checklist": [
+    "I can read the colon as \"to\".",
+    "I can match each number to its amount.",
+    "I can write a ratio in the named order.",
+    "I can reverse a ratio correctly.",
+    "I can make ratios with the same value.",
+    "I can write a ratio in simplest form.",
+    "I can find the value of one unit.",
+    "I can use units to find missing amounts.",
+    "I can share a total using ratio parts.",
+    "I can compare three amounts with one ratio.",
+    "I can include the correct measurement unit."
+  ],
+  "strategy_notes": [
+    "Circle words showing the order of the amounts.",
+    "Write small labels above each ratio number.",
+    "Estimate whether the missing amount should be larger.",
+    "Draw a bar when the words feel confusing.",
+    "Use the greatest common factor when you know it.",
+    "Check that every ratio part changed equally.",
+    "For totals, add all ratio parts before dividing.",
+    "Read your final answer as a full sentence."
+  ],
+  "metadata": {
+    "difficulty": "intermediate",
+    "estimated_study_time": "3 hours",
+    "tags": [
+      "ratio",
+      "equivalent_ratios",
+      "simplest_form",
+      "unit_method",
+      "bar_models",
+      "word_problems",
+      "three_part_ratios",
+      "year_5_math"
+    ],
+    "provenance_note": "The lesson follows the supplied ratio chapter. Extra teaching steps, bar-model wording, drills, and checks were added using standard Year 5 methods. The teaching style follows the uploaded lesson-enrichment mission."
+  }
+}

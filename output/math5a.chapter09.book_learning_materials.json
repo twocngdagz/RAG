@@ -1,0 +1,2262 @@
+{
+  "schema_version": "book_learning_materials.v2",
+  "book": {
+    "slug": "math5a",
+    "title": "Singapore Math Primary Mathematics 5A",
+    "source_pdf": "Singapore Math 5A Textbook"
+  },
+  "generation": {
+    "backend": "ollama",
+    "model": "gpt-oss:120b",
+    "note": "extracted from the LlamaParse output; teaching layer added downstream"
+  },
+  "learning_materials": {
+    "chapters": [
+      {
+        "chapter_number": 9,
+        "chapter_title": "REVIEW C",
+        "estimated_study_time": {
+          "text": "2.5 hours",
+          "claim_kind": "source_statement",
+          "origin": "source_grounded",
+          "source_chunk_ids": [
+            "math5a:p91",
+            "math5a:p92",
+            "math5a:p93",
+            "math5a:p94"
+          ],
+          "grounded_in_source_chunk_ids": [
+            "math5a:p91",
+            "math5a:p92",
+            "math5a:p93",
+            "math5a:p94"
+          ],
+          "evidence_spans": [],
+          "reason": null
+        },
+        "chapter_summary": {
+          "text": "This chapter reviews measurement conversions, fractions, ratios, geometry, and arithmetic with compound units for Year 5.",
+          "claim_kind": "source_statement",
+          "origin": "source_grounded",
+          "source_chunk_ids": [
+            "math5a:p91",
+            "math5a:p92",
+            "math5a:p93",
+            "math5a:p94"
+          ],
+          "grounded_in_source_chunk_ids": [
+            "math5a:p91",
+            "math5a:p92",
+            "math5a:p93",
+            "math5a:p94"
+          ],
+          "evidence_spans": [],
+          "reason": null
+        },
+        "learning_objectives": [
+          {
+            "text": "Round numbers to the nearest hundred or decimal place.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p91",
+              "math5a:p92",
+              "math5a:p93",
+              "math5a:p94"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p91",
+              "math5a:p92",
+              "math5a:p93",
+              "math5a:p94"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "Convert between different units of length, weight, volume and capacity.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p91",
+              "math5a:p92",
+              "math5a:p93",
+              "math5a:p94"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p91",
+              "math5a:p92",
+              "math5a:p93",
+              "math5a:p94"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "Work with fractions of quantities and mixed numbers.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p91",
+              "math5a:p92",
+              "math5a:p93",
+              "math5a:p94"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p91",
+              "math5a:p92",
+              "math5a:p93",
+              "math5a:p94"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "Calculate perimeter, area and volume of simple shapes.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p91",
+              "math5a:p92",
+              "math5a:p93",
+              "math5a:p94"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p91",
+              "math5a:p92",
+              "math5a:p93",
+              "math5a:p94"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "Perform multiplication and division with compound units.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p91",
+              "math5a:p92",
+              "math5a:p93",
+              "math5a:p94"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p91",
+              "math5a:p92",
+              "math5a:p93",
+              "math5a:p94"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          }
+        ],
+        "key_terms": [
+          {
+            "term": "foot",
+            "meaning": {
+              "text": "A unit of length equal to 12 inches.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "term": "yard",
+            "meaning": {
+              "text": "A unit of length equal to 3 feet.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "term": "inch",
+            "meaning": {
+              "text": "A small unit of length; 12 inches make a foot.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "term": "pound",
+            "meaning": {
+              "text": "A unit of weight; 16 ounces make a pound.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "term": "ounce",
+            "meaning": {
+              "text": "A small unit of weight.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "term": "gallon",
+            "meaning": {
+              "text": "A unit of capacity; 4 quarts make a gallon.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "term": "quart",
+            "meaning": {
+              "text": "A unit of capacity; 4 cups make a quart.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "term": "cup",
+            "meaning": {
+              "text": "A unit of capacity; 16 cups make a gallon.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "term": "ratio",
+            "meaning": {
+              "text": "A way to compare two quantities, written as a:b.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "term": "mixed number",
+            "meaning": {
+              "text": "A whole number together with a fraction, e.g., 1 ½.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "core_lessons": [],
+        "worked_examples": [],
+        "common_misconceptions": [],
+        "practice_questions": [
+          {
+            "question": {
+              "text": "1. Round 5840 mi to the nearest 100 mi.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$5800$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "2. David is 17 lb lighter than Pablo. Their total weight is 259 lb. Find David's weight.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$121\\text{ lb}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "3. Water is poured equally into 4 containers. Each container has 5 c of water. How many quarts of water are there in the four containers?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$5\\text{ qt}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "4. Mrs. Anderson bought 5 yd of cloth. She used the cloth to make 12 napkins of the same size. How much cloth did she use for each napkin? (Give the answer in feet.)",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$1\\text{ ft }3\\text{ in}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "5. Adam poured 4 qt of milk equally into 5 jugs. How much milk was there in each jug? (Give the answer in quarts.)",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{4}{5}\\text{ qt}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "6. A crate of strawberries weighing 8 lb was divided into 12 equal shares. What was the weight of each share? (Give the answer in ounces as a mixed fraction.)",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$10\\frac{2}{3}\\text{ oz}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "7. How many cubic inches are there in a cubic foot?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$1728\\text{ in}^3$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "8a. What fraction of 3 lb is 8 oz?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{1}{6}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "8b. What fraction of 2 gal is 3 qt?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{3}{8}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "8c. What fraction of 2 qt is 4 c?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{1}{2}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "9. A ribbon is $\\frac{3}{4}$ ft long. Express $\\frac{3}{4}$ ft in inches.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$9\\text{ in}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "10. Mrs. Garcia had 6 lb of flour. She used $\\frac{1}{5}$ of it to make bread. How much flour was left? (Give the answer in pounds.)",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$4\\frac{4}{5}\\text{ lb}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "11. The ratio of the length of a rectangular field to its width is 5 : 2. The length of the field is 30 yd. Find its perimeter and area.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Perimeter $=84\\text{ yd}$, Area $=360\\text{ yd}^2$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "13. A cook used $2\\frac{1}{4}$ gal of oil last week. Express $2\\frac{1}{4}$ gal in gallons and cups.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$2\\text{ gal }1\\text{ cup}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "14. Mrs. Goldberg used 8.7 ft of lace for 5 pillow cases. If she used an equal length of lace for each pillow case, how much lace did she use for each pillow case? (Give the answer in feet.)",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$1.74\\text{ ft}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "15. The area of a square is $81\\text{ in}^2$. Find its perimeter.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$36\\text{ in}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "16. Emily bought a bag of candies which weighed 1 lb 11 oz. She gave away 15 oz of candy. How many ounces of candy was left?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$12\\text{ oz}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "17a. Write 18 in. in feet and inches.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$1\\text{ ft }6\\text{ in}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "17b. Write 28 in. in feet and inches.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$2\\text{ ft }4\\text{ in}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "17c. Write 57 in. in feet and inches.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$4\\text{ ft }9\\text{ in}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "18. Find the volume of a cube of length 6 in.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$216\\text{ in}^3$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "19. A cuboid measures 12 ft long, 6 ft wide and 7 ft high. Find its volume.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$504\\text{ ft}^3$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "20. $\\frac{2}{3}$ of a jug of water is 6 c. Find the total number of cups of water in the jug.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$9\\text{ c}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "21. Ryan drinks 2 c of milk a day. How much milk does he drink in three weeks? (Give the answer in quarts and cups.)",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$10\\text{ qt }2\\text{ c}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "22a. $3\\text{ yd }2\\text{ ft} \\times 7 = $",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$25\\text{ yd }2\\text{ ft}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "22b. $5\\text{ lb }14\\text{ oz} \\times 3 = $",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$17\\text{ lb }10\\text{ oz}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "22c. $4\\text{ gal }3\\text{ qt} \\times 5 = $",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$23\\text{ gal }3\\text{ qt}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "22d. $2\\text{ ft }11\\text{ in} \\times 2 = $",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$5\\text{ ft }10\\text{ in}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "23a. $3\\text{ yd }1\\text{ ft} \\div 2 = $",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$1\\text{ yd }2\\text{ ft}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "23b. $2\\text{ lb }10\\text{ oz} \\div 6 = $",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$7\\text{ oz}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "23c. $6\\text{ gal }3\\text{ qt} \\div 3 = $",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$2\\text{ gal }1\\text{ qt}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "23d. $2\\text{ ft }8\\text{ in} \\div 4 = $",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$8\\text{ in}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "24. A rope was cut into three equal pieces. Each piece was 1 ft 6 in. long. What was the length of the rope? (Give the answer in feet and inches.)",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$4\\text{ ft }6\\text{ in}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "25a. $\\frac{1}{3}$ of 24 yd",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$8\\text{ yd}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "25b. $\\frac{4}{5}$ of 35 in.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$28\\text{ in}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "25c. $1\\frac{1}{2}$ of 14 oz",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$21\\text{ oz}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "25d. $\\frac{5}{6}$ of 12 gal",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$10\\text{ gal}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "26. A basket weighs 12 oz. A watermelon weighing 7 lb 9 oz is added to the basket. What is the total weight of the basket and watermelon? (Give the answer in pounds and ounces.)",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$8\\text{ lb }5\\text{ oz}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "27. Mitchell jogged 2.2 mi on Friday. He jogged 0.7 mi less on Saturday than on Friday. What was the total distance he jogged on the two days?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$3.7\\text{ mi}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "28. The total weight of 5 bars of chocolate and a bag of sugar is 3.4 lb. If the weight of the bag of sugar is 1.1 lb, find the weight of each bar of chocolate.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$0.46\\text{ lb}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "29. Mrs. Campbell bought $1\\frac{1}{2}$ lb of beef at $\\$3.50$ per lb and 2 lb of chicken at $\\$1.95$ per lb. How much did she spend?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\$9.15$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "30. Round off 258.76 lb to 1 decimal place.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$258.8\\text{ lb}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "31. Which is greatest? 2.5 ft, 37 in., 25 in., 2.25 ft, 0.5 yd",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$37\\text{ in}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "32. The total weight of Morgan, Emily and Ashley is 243 lb. Morgan is 30 lb heavier than Emily. Emily is 6 lb lighter than Ashley. What is Ashley's weight?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$75\\text{ lb}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p91",
+                "math5a:p92",
+                "math5a:p93",
+                "math5a:p94"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "review_checklist": [
+          {
+            "text": "I can round numbers to the nearest hundred or decimal place.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p91",
+              "math5a:p92",
+              "math5a:p93",
+              "math5a:p94"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p91",
+              "math5a:p92",
+              "math5a:p93",
+              "math5a:p94"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can convert between feet, yards, inches, pounds, ounces, gallons, quarts and cups.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p91",
+              "math5a:p92",
+              "math5a:p93",
+              "math5a:p94"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p91",
+              "math5a:p92",
+              "math5a:p93",
+              "math5a:p94"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can work out fractions of a quantity and express answers as mixed numbers.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p91",
+              "math5a:p92",
+              "math5a:p93",
+              "math5a:p94"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p91",
+              "math5a:p92",
+              "math5a:p93",
+              "math5a:p94"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can find perimeter, area and volume of simple shapes.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p91",
+              "math5a:p92",
+              "math5a:p93",
+              "math5a:p94"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p91",
+              "math5a:p92",
+              "math5a:p93",
+              "math5a:p94"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can multiply and divide using compound units.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p91",
+              "math5a:p92",
+              "math5a:p93",
+              "math5a:p94"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p91",
+              "math5a:p92",
+              "math5a:p93",
+              "math5a:p94"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          }
+        ]
+      }
+    ]
+  },
+  "source_chunks": [
+    {
+      "node_id": "math5a:p91",
+      "text": "# REVIEW C\n\n1. A plane traveled 5840 mi.\nRound off this distance to the nearest 100 mi.\n\n2. David is 17 lb lighter than Pablo. Their total weight is 259 lb.\nFind David's weight.\n\n3. Water is poured equally into 4 containers. Each container has 5 c of\nwater. How many quarts of water are there in the four containers?\n\n4. Mrs. Anderson bought 5 yd of cloth. She used the cloth to make 12\nnapkins of the same size. How much cloth did she use for each napkin?\n(Give the answer in feet.)\n\n5. Adam poured 4 qt of milk equally into 5 jugs.\nHow much milk was there in each jug?\n(Give the answer in quarts.)\n\n6. A crate of strawberries weighing 8 lb was divided into 12 equal\nshares. What was the weight of each share?\n(Give the answer in ounces as a mixed fraction.)\n\n7. How many cubic inches are there in a cubic foot?\n\n8. (a) What fraction of 3 lb is 8 oz?\n(b) What fraction of 2 gal is 3 qt?\n(c) What fraction of 2 qt is 4 c?\n\n9. A ribbon is $\\frac{3}{4}$ ft long. Express $\\frac{3}{4}$ ft in inches.\n\n10. Mrs. Garcia had 6 lb of flour. She used $\\frac{1}{5}$ of it to make bread.\nHow much flour was left?\n(Give the answer in pounds.)\n\n11. The ratio of the length of a rectangular field to its width is 5 : 2. The\nlength of the field is 30 yd. Find its perimeter and area."
+    },
+    {
+      "node_id": "math5a:p92",
+      "text": "12. Find the perimeter and area of each figure.\n(All the angles are right angles.)\n\nGeometric figure (a) with dimensions: top segments 3 ft and 3 ft, right side segments 3 ft and 5 ft, bottom 10 ft.\n\nGeometric figure (b) with dimensions: top right segment 3 in., right side segments 5 in. and 3 in., bottom segments 4 in. and 8 in.\n\n13. A cook used 2<sup>1</sup>/<sub>4</sub> gal of oil last week. Express 2<sup>1</sup>/<sub>4</sub> gal in gallons and cups.\n\n14. Mrs. Goldberg used 8.7 ft of lace for 5 pillow cases. If she used an equal length of lace for each pillow case, how much lace did she use for each pillow case?\n(Give the answer in feet.)\n\n15. The area of a square is 81 in.<sup>2</sup>\nFind its perimeter.\n\n16. Emily bought a bag of candies which weighed 1 lb 11 oz.\nShe gave away 15 oz of candy.\nHow many ounces of candy was left?\n\n17. Write in feet and inches.\n(a) 18 in. (b) 28 in. (c) 57 in.\n\n18. Find the volume of a cube of length 6 in.\n\nA cube with side lengths labeled as 6 in."
+    },
+    {
+      "node_id": "math5a:p93",
+      "text": "19. A cuboid measures 12 ft long, 6 ft wide and 7 ft high. Find its volume.\n\nDiagram of a cuboid with dimensions 12 ft, 6 ft, and 7 ft\n\n20. $\\frac{2}{3}$ of a jug of water is 6 c.\nFind the total number of cups of water in the jug.\n\n21. Ryan drinks 2 c of milk a day.\nHow much milk does he drink in three weeks?\n(Give the answer in quarts and cups.)\n\n22. Multiply in compound units. Give the answer in compound units.\n\n(a) 3 yd 2 ft $\\times$ 7 =      yd      ft\n\n(b) 5 lb 14 oz $\\times$ 3 =      lb      oz\n\n(c) 4 gal 3 qt $\\times$ 5 =      gal      qt\n\n(d) 2 ft 11 in. $\\times$ 2 =      ft      in.\n\n23. Divide in compound units.\n\n(a) 3 yd 1 ft $\\div$ 2 =      yd      ft\n\n(b) 2 lb 10 oz $\\div$ 6 =      lb      oz\n\n(c) 6 gal 3 qt $\\div$ 3 =      gal      qt\n\n(d) 2 ft 8 in. $\\div$ 4 =      ft      in.\n\n24. A rope was cut into three equal pieces. Each piece was 1 ft 6 in. long.\nWhat was the length of the rope?\n(Give the answer in feet and inches.)\n\n25. Find the value of the following:\n\n(a) $\\frac{1}{3}$ of 24 yd\n\n(b) $\\frac{4}{5}$ of 35 in.\n\n(c) $1 \\frac{1}{2}$ of 14 oz\n\n(d) $\\frac{5}{6}$ of 12 gal"
+    },
+    {
+      "node_id": "math5a:p94",
+      "text": "26. A basket weighs 12 oz. A watermelon weighing 7 lb 9 oz is added to the basket. What is the total weight of the basket and watermelon? (Give the answer in pounds and ounces.)\n\n27. Mitchell jogged 2.2 mi on Friday. He jogged 0.7 mi less on Saturday than on Friday. What was the total distance he jogged on the two days?\n\n28. The total weight of 5 bars of chocolate and a bag of sugar is 3.4 lb. If the weight of the bag of sugar is 1.1 lb, find the weight of each bar of chocolate.\n\n29.\n\n<table>\n  <tbody>\n    <tr>\n        <td>Beef</td>\n        <td>$3.50 per lb</td>\n    </tr>\n    <tr>\n        <td>Chicken</td>\n        <td>$1.95 per lb</td>\n    </tr>\n  </tbody>\n</table>\n\nMrs. Campbell bought 1 <sup>1</sup>/<sub>2</sub> lb of beef and 2 lb of chicken. How much did she spend?\n\n30. Round off 258.76 lb to 1 decimal place.\n\n31. Which is greatest?\n2.5 ft, 37 in., 25 in., 2.25 ft, 0.5 yd\n\n32. The total weight of Morgan, Emily and Ashley is 243 lb. Morgan is 30 lb heavier than Emily. Emily is 6 lb lighter than Ashley. What is Ashley's weight?"
+    }
+  ],
+  "audit": {
+    "status": "extracted",
+    "checks": []
+  }
+}

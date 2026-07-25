@@ -1,0 +1,1848 @@
+{
+  "schema_version": "book_learning_materials.v2",
+  "book": {
+    "slug": "math5a",
+    "title": "Singapore Math Primary Mathematics 5A",
+    "source_pdf": "Singapore Math 5A Textbook"
+  },
+  "generation": {
+    "backend": "ollama",
+    "model": "gpt-oss:120b",
+    "note": "extracted from the LlamaParse output; teaching layer added downstream"
+  },
+  "learning_materials": {
+    "chapters": [
+      {
+        "chapter_number": 8,
+        "chapter_title": "REVIEW B",
+        "estimated_study_time": {
+          "text": "2 hours",
+          "claim_kind": "source_statement",
+          "origin": "source_grounded",
+          "source_chunk_ids": [
+            "math5a:p87",
+            "math5a:p88",
+            "math5a:p89",
+            "math5a:p90"
+          ],
+          "grounded_in_source_chunk_ids": [
+            "math5a:p87",
+            "math5a:p88",
+            "math5a:p89",
+            "math5a:p90"
+          ],
+          "evidence_spans": [],
+          "reason": null
+        },
+        "chapter_summary": {
+          "text": "This chapter provides a mixed review of place‑value subtraction, rounding, multiplication and division by powers of ten, fraction and unit conversions, money word problems, ratios, and basic geometry (area, perimeter, angles).",
+          "claim_kind": "source_statement",
+          "origin": "source_grounded",
+          "source_chunk_ids": [
+            "math5a:p87",
+            "math5a:p88",
+            "math5a:p89",
+            "math5a:p90"
+          ],
+          "grounded_in_source_chunk_ids": [
+            "math5a:p87",
+            "math5a:p88",
+            "math5a:p89",
+            "math5a:p90"
+          ],
+          "evidence_spans": [],
+          "reason": null
+        },
+        "learning_objectives": [
+          {
+            "text": "Subtract a given number from a larger number.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p87",
+              "math5a:p88",
+              "math5a:p89",
+              "math5a:p90"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p87",
+              "math5a:p88",
+              "math5a:p89",
+              "math5a:p90"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "Round numbers to the nearest thousand.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p87",
+              "math5a:p88",
+              "math5a:p89",
+              "math5a:p90"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p87",
+              "math5a:p88",
+              "math5a:p89",
+              "math5a:p90"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "Multiply and divide whole numbers by 10, 100 and 1 000.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p87",
+              "math5a:p88",
+              "math5a:p89",
+              "math5a:p90"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p87",
+              "math5a:p88",
+              "math5a:p89",
+              "math5a:p90"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "Convert between different units (litres ↔ millilitres, metres ↔ centimetres, hours ↔ minutes).",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p87",
+              "math5a:p88",
+              "math5a:p89",
+              "math5a:p90"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p87",
+              "math5a:p88",
+              "math5a:p89",
+              "math5a:p90"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "Express quantities as fractions and simplify them.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p87",
+              "math5a:p88",
+              "math5a:p89",
+              "math5a:p90"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p87",
+              "math5a:p88",
+              "math5a:p89",
+              "math5a:p90"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "Solve word problems involving fractions, ratios and proportional reasoning.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p87",
+              "math5a:p88",
+              "math5a:p89",
+              "math5a:p90"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p87",
+              "math5a:p88",
+              "math5a:p89",
+              "math5a:p90"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "Calculate area and perimeter of rectangles and composite shapes.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p87",
+              "math5a:p88",
+              "math5a:p89",
+              "math5a:p90"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p87",
+              "math5a:p88",
+              "math5a:p89",
+              "math5a:p90"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "Find missing angles in simple geometric diagrams.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p87",
+              "math5a:p88",
+              "math5a:p89",
+              "math5a:p90"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p87",
+              "math5a:p88",
+              "math5a:p89",
+              "math5a:p90"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          }
+        ],
+        "key_terms": [
+          {
+            "term": "nearest thousand",
+            "meaning": {
+              "text": "The whole‑thousand value that is closest to the given number.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "term": "ratio",
+            "meaning": {
+              "text": "A way of comparing two quantities by showing how many times one value contains the other.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "term": "area",
+            "meaning": {
+              "text": "The amount of space inside a shape, measured in square units.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "term": "perimeter",
+            "meaning": {
+              "text": "The total distance around the edge of a shape.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "term": "fraction",
+            "meaning": {
+              "text": "A part of a whole, written as a numerator over a denominator.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "term": "unit conversion",
+            "meaning": {
+              "text": "Changing a measurement from one unit to another (e.g., metres to centimetres).",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "core_lessons": [],
+        "worked_examples": [],
+        "common_misconceptions": [],
+        "practice_questions": [
+          {
+            "question": {
+              "text": "What number is 1000 less than 20,000?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$20{,}000 - 1{,}000 = 19{,}000$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Juan bought a car for $42,680. Round off this amount of money to the nearest $1000.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$42{,}680 \\approx 43{,}000$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "(a) $670 \\times 10$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$670 \\times 10 = 6{,}700$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "(b) $728 \\times 100$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$728 \\times 100 = 72{,}800$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "(c) $350 \\times 1000$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$350 \\times 1000 = 350{,}000$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "(d) $4300 \\div 10$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$4300 \\div 10 = 430$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "(e) $58{,}000 \\div 100$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$58{,}000 \\div 100 = 580$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "(f) $628{,}000 \\div 1000$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$628{,}000 \\div 1000 = 628$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "If ☆☆☆☆☆ represent 60, what number do ☆☆ represent?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{60}{5}=12$ per star, so $2$ stars $= 2\\times12 = 24$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "What fraction of 3 ℓ is 800 ml?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$3\\text{ ℓ}=3000\\text{ ml};\\; \\frac{800}{3000}=\\frac{4}{15}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Steven had 24 pineapples. He sold 6 of them. What fraction of the pineapples did he sell?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{6}{24}=\\frac{1}{4}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "An examination lasted $2\\frac{1}{4}$ hours. Express $2\\frac{1}{4}$ hours in hours and minutes.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$2\\frac{1}{4}\\text{ h}=2\\text{ h }15\\text{ min}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "A necklace is $\\frac{3}{5}$ m long. Express $\\frac{3}{5}$ m in centimetres.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{3}{5}\\text{ m}=\\frac{3}{5}\\times100=60\\text{ cm}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Lily has $25. Mary has $10 more than Lily. Amber has 3 times as much money as Mary.\n(a) How much money does Amber have?\n(b) How much more money than Lily does Amber have?\n(c) How much money do the 3 girls have altogether?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "(a) $Amber = 3\\times(25+10)=3\\times35=105$;\n(b) $105-25=80$;\n(c) $25+35+105=165$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Lynn bought 8 m of string. She used $\\frac{5}{8}$ of the string to make a flower‑pot hanger. How much of the string did she have left?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\text{Left}=8\\times\\left(1-\\frac{5}{8}\\right)=8\\times\\frac{3}{8}=3\\text{ m}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Natalie cuts a raffia $\\frac{4}{5}$ m long into 8 pieces of equal length. What is the length of each piece of raffia? Give the answer in metres.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{\\frac{4}{5}}{8}=\\frac{4}{5}\\times\\frac{1}{8}=\\frac{4}{40}=\\frac{1}{10}\\text{ m}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Matthew had 64 watermelons. He sold $\\frac{3}{4}$ of them. How many watermelons did he sell?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$64\\times\\frac{3}{4}=48$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Mrs. Gray had 2 kg of flour. She used $\\frac{2}{5}$ of it to make buns. How much flour did she have left? Give the answer in kilograms.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\text{Left}=2\\times\\left(1-\\frac{2}{5}\\right)=2\\times\\frac{3}{5}=\\frac{6}{5}=1.2\\text{ kg}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "There are 1500 workers in a factory. $\\frac{5}{6}$ of them are men. $\\frac{3}{10}$ of the men are single. How many single male workers are there in the factory?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$1500\\times\\frac{5}{6}=1250$ men; $1250\\times\\frac{3}{10}=375$ single men",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Lauren spent $\\frac{3}{5}$ of her money on a refrigerator. The refrigerator cost $756. How much money did she have left?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{3}{5}\\text{ of total}=756\\Rightarrow\\text{total}=756\\times\\frac{5}{3}=1260$;\n left $=1260-756=504$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Dan saved twice as much as Brett. Maria saved $60 more than Brett. If they saved $600 altogether, how much did Maria save?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Let Brett = $x$; then Dan = $2x$, Maria = $x+60$.\n$x+2x+(x+60)=600\\Rightarrow4x=540\\Rightarrow x=135$.\nMaria $=135+60=195$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Brett picked 257 cherries from one tree and 493 from another. He sold all the cherries at 50 for $3. How much money did he receive?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Total cherries $=257+493=750$;\n groups of 50 $=750\\div50=15$;\n money $=15\\times3=45$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Charles bought 40 boxes of oranges for $258. There were 24 oranges in each box. He threw away 15 rotten oranges and sold the rest at 3 for $1. How much money did he make?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Total oranges $=40\\times24=960$;\n left $=960-15=945$;\n groups of 3 $=945\\div3=315$;\n money $=315\\times1=315$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "John and Peter share $180 in the ratio 3 : 2. How much more money does John receive than Peter?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Each part $=180\\div5=36$;\n John $=3\\times36=108$, Peter $=2\\times36=72$;\n difference $=108-72=36$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "The ratio of the length of a rectangular field to its width is 4 : 3. The length of the field is 20 m. Find its area and perimeter.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Width $=20\\times\\frac{3}{4}=15$ m;\n Area $=20\\times15=300\\text{ m}^2$;\n Perimeter $=2(20+15)=70\\text{ m}$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Sean, Ryan and John shared a sum of money in the ratio 3 : 4 : 5. If Sean received $30, what was the sum of money shared?",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Sean’s part $=3$; each part $=30\\div3=10$;\n total $= (3+4+5)\\times10 = 12\\times10 = 120$",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Find the area and the perimeter of the shaded figure.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Refer to the diagram in the textbook for measurements.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Find the perimeter and area of each figure. (All the angles are right angles.) (a) ... (b) ...",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Refer to the diagrams for side lengths; compute using $\\text{Perimeter}=2(l+w)$ and $\\text{Area}=l\\times w$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Estimate and then find the marked angles by measurement.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Use a protractor on the diagram; the measured values are given in the textbook.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "In each of the following figures, not drawn to scale, find $\\angle x$. (a) ... (b) ...",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Apply the fact that angles on a straight line sum to $180^{\\circ}$; the solutions are shown in the textbook.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Find the area of each shaded triangle. (a) ... (b) ... (c) ...",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Use $\\text{Area}=\\frac{1}{2}\\times\\text{base}\\times\\text{height}$ with the dimensions given in each diagram.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "The perimeter of the triangle is 36 m. Find the area of the triangle. (Right‑angled triangle with height 9 m and hypotenuse 15 m.)",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "With $9\\text{ m}$ as one leg and $\\sqrt{15^2-9^2}=12\\text{ m}$ as the other leg, area $=\\frac{1}{2}\\times9\\times12=54\\text{ m}^2$.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          },
+          {
+            "question": {
+              "text": "Find the shaded area of each rectangle. (a) ... (b) ... (c) ... (d) ...",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "Calculate total rectangle area then subtract the area of the unshaded part as shown in each diagram.",
+              "claim_kind": "source_statement",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p87",
+                "math5a:p88",
+                "math5a:p89",
+                "math5a:p90"
+              ],
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "review_checklist": [
+          {
+            "text": "I can subtract a thousand from a larger number.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p87",
+              "math5a:p88",
+              "math5a:p89",
+              "math5a:p90"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p87",
+              "math5a:p88",
+              "math5a:p89",
+              "math5a:p90"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can round a number to the nearest thousand.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p87",
+              "math5a:p88",
+              "math5a:p89",
+              "math5a:p90"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p87",
+              "math5a:p88",
+              "math5a:p89",
+              "math5a:p90"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can multiply and divide by 10, 100 and 1 000.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p87",
+              "math5a:p88",
+              "math5a:p89",
+              "math5a:p90"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p87",
+              "math5a:p88",
+              "math5a:p89",
+              "math5a:p90"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can change between litres, millilitres, metres, centimetres, hours and minutes.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p87",
+              "math5a:p88",
+              "math5a:p89",
+              "math5a:p90"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p87",
+              "math5a:p88",
+              "math5a:p89",
+              "math5a:p90"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can simplify fractions and work with parts of a whole.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p87",
+              "math5a:p88",
+              "math5a:p89",
+              "math5a:p90"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p87",
+              "math5a:p88",
+              "math5a:p89",
+              "math5a:p90"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can solve word problems that involve fractions, ratios and money.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p87",
+              "math5a:p88",
+              "math5a:p89",
+              "math5a:p90"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p87",
+              "math5a:p88",
+              "math5a:p89",
+              "math5a:p90"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can find the area and perimeter of rectangles and composite shapes.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p87",
+              "math5a:p88",
+              "math5a:p89",
+              "math5a:p90"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p87",
+              "math5a:p88",
+              "math5a:p89",
+              "math5a:p90"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can determine missing angles in simple diagrams.",
+            "claim_kind": "source_statement",
+            "origin": "source_grounded",
+            "source_chunk_ids": [
+              "math5a:p87",
+              "math5a:p88",
+              "math5a:p89",
+              "math5a:p90"
+            ],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p87",
+              "math5a:p88",
+              "math5a:p89",
+              "math5a:p90"
+            ],
+            "evidence_spans": [],
+            "reason": null
+          }
+        ]
+      }
+    ]
+  },
+  "source_chunks": [
+    {
+      "node_id": "math5a:p87",
+      "text": "# REVIEW B\n\n1. What number is 1000 less than 20,000?\n\n2. Juan bought a car for $42,680.\nRound off this amount of money to the nearest $1000.\n\n3. Find the value of each of the following:\n\n<table>\n  <tbody>\n    <tr>\n        <td>(a) 670 × 10</td>\n        <td>(b) 728 × 100</td>\n        <td>(c) 350 × 1000</td>\n    </tr>\n    <tr>\n        <td>(d) 4300 ÷ 10</td>\n        <td>(e) 58,000 ÷ 100</td>\n        <td>(f) 628,000 ÷ 1000</td>\n    </tr>\n  </tbody>\n</table>\n\n4. If ☆☆☆☆☆ represent 60, what number do ☆☆ represent?\n\n5. What fraction of 3 ℓ is 800 ml?\n\n6. Steven had 24 pineapples. He sold 6 of them. What fraction of the pineapples did he sell?\n\n7. An examination lasted 2 <sup>1</sup>/<sub>4</sub> hours.\nExpress 2 <sup>1</sup>/<sub>4</sub> hours in hours and minutes.\n\n8. A necklace is <sup>3</sup>/<sub>5</sub> m long. Express <sup>3</sup>/<sub>5</sub> m in centimeters.\n\n9. Lily has $25. Mary has $10 more than Lily. Amber has 3 times as much money as Mary.\n\n(a) How much money does Amber have?\n\n(b) How much more money than Lily does Amber have?\n\n(c) How much money do the 3 girls have altogether?\n\n10. Lynn bought 8 m of string. She used <sup>5</sup>/<sub>8</sub> of the string to make a flower-pot hanger. How much of the string did she have left?"
+    },
+    {
+      "node_id": "math5a:p88",
+      "text": "11. Natalie cuts a raffia $\\frac{4}{5}$ m long into 8 pieces of equal length. What is the length of each piece of raffia? Give the answer in meters.\n\n12. Matthew had 64 watermelons. He sold $\\frac{3}{4}$ of them. How many watermelons did he sell?\n\n13. Mrs. Gray had 2 kg of flour. She used $\\frac{2}{5}$ of it to make buns. How much flour did she have left? Give the answer in kilograms.\n\n\n\n14. There are 1500 workers in a factory. $\\frac{5}{6}$ of them are men. $\\frac{3}{10}$ of the men are single. How many single male workers are there in the factory?\n\n15. Lauren spent $\\frac{3}{5}$ of her money on a refrigerator. The refrigerator cost $756. How much money did she have left?\n\n16. Dan saved twice as much as Brett. Maria saved $60 more than Brett. If they saved $600 altogether, how much did Maria save?\n\n17. Brett picked 257 cherries from one tree and 493 from another. He sold all the cherries at 50 for $3. How much money did he receive?\n\n\n\n18. Charles bought 40 boxes of oranges for $258. There were 24 oranges in each box. He threw away 15 rotten oranges and sold the rest at 3 for $1. How much money did he make?\n\n19. John and Peter share $180 in the ratio 3 : 2. How much more money does John receive than Peter?\n\n20. The ratio of the length of a rectangular field to its width is 4 : 3. The length of the field is 20 m. Find its area and perimeter.\n\n21. Sean, Ryan and John shared a sum of money in the ratio 3 : 4 : 5. If Sean received $30, what was the sum of money shared?"
+    },
+    {
+      "node_id": "math5a:p89",
+      "text": "22. Find the area and the perimeter of the shaded figure.\n\nA shaded figure on a grid where each square is 1 cm by 1 cm.\n\n23. Find the perimeter and area of each figure. (All the angles are right angles.)\n\n(a)\nA rectilinear figure with dimensions: top side 12 m, right side 6 m and 2 m, bottom segments 3 m and 3 m.\n\n(b)\nA rectilinear figure with dimensions: top side 10 cm, right side segments 5 cm, 5 cm, and 4 cm, bottom segments 10 cm and 5 cm.\n\n24. Estimate and then find the marked angles by measurement.\n\nTwo angles labeled 'a' and 'b' for measurement."
+    },
+    {
+      "node_id": "math5a:p90",
+      "text": "25. In each of the following figures, not drawn to scale, find $\\angle x$.\n\n(a)\n\nGeometric diagram showing intersecting lines with a right angle and an angle of 63 degrees. Angle x is to be found.\n\n(b)\n\nGeometric diagram showing intersecting lines with a right angle and an angle of 43 degrees. Angle x is to be found.\n\n26. Find the area of each shaded triangle.\n\n(a)\n\nRight-angled triangle with side lengths 10 cm and 15 cm.\n\n(b)\n\nTriangle with base 12 cm, height 7 cm, and one side 8 cm.\n\n(c)\n\nRight-angled triangle with a shaded portion. Dimensions shown are 6 cm for the base, and heights of 3 cm and 6 cm.\n\n27. The perimeter of the triangle is 36 m. Find the area of the triangle.\n\nRight-angled triangle with height 9 m and hypotenuse 15 m.\n\n28. Find the shaded area of each rectangle.\n\n(a)\n\nRectangle with total length 20 cm and height 8 cm. A shaded triangle is inside with base segments of 10 cm and 4 cm.\n\n(b)\n\nRectangle with length 10 cm and height 5 cm containing a shaded triangle.\n\n(c)\n\nRectangle with length 24 cm and heights of 8 cm and 12 cm, containing a shaded quadrilateral.\n\n(d)\n\nRectangle with length 10 cm and height segments of 4 cm and 2 cm, containing a shaded triangle."
+    }
+  ],
+  "audit": {
+    "status": "extracted",
+    "checks": []
+  }
+}

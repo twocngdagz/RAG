@@ -1,0 +1,521 @@
+{
+  "schema_version": "pte_lesson_enrichment.v1",
+  "task_type": "two_digit_multiplication_and_division",
+  "lesson_title": "2 Multiplication and Division by a 2-digit Whole Number",
+  "source_label": "math5a:ch02",
+  "modality": "reading",
+  "overview": {
+    "what_it_is": "This lesson teaches multiplication and division with two-digit numbers. You will estimate, work carefully, and check each answer.",
+    "format_facts": [
+      {
+        "label": "Main skills",
+        "value": "Multiply and divide whole numbers by two-digit numbers."
+      },
+      {
+        "label": "Number range",
+        "value": "A two-digit whole number is from $10$ to $99$."
+      },
+      {
+        "label": "Written work",
+        "value": "Show each step in neat place-value columns."
+      },
+      {
+        "label": "Answer form",
+        "value": "Write a remainder when division is not exact."
+      }
+    ],
+    "scoring_factors": [
+      {
+        "name": "Correct method",
+        "what_it_measures": "Whether the steps match the operation."
+      },
+      {
+        "name": "Place value",
+        "what_it_measures": "Whether digits stay in the correct columns."
+      },
+      {
+        "name": "Accurate arithmetic",
+        "what_it_measures": "Whether each product and subtraction is correct."
+      },
+      {
+        "name": "Complete answer",
+        "what_it_measures": "Whether the quotient and remainder are both written."
+      }
+    ],
+    "critical_rules": [
+      "A tens digit means groups of ten.",
+      "Line up ones, tens, hundreds, and thousands.",
+      "Check each quotient guess by multiplying.",
+      "The remainder must be smaller than the divisor.",
+      "Use the question context to name the final answer."
+    ]
+  },
+  "learning_goals": [
+    "You will multiply using factors and place value.",
+    "You will multiply using the column method.",
+    "You will divide by cancelling matching ending zeros.",
+    "You will estimate each quotient digit before dividing.",
+    "You will adjust a quotient guess after checking.",
+    "You will write and check division remainders."
+  ],
+  "core_method": {
+    "name": "Estimate → Work → Check",
+    "summary": "Estimate first. Complete the written method. Check using the opposite operation.",
+    "steps": [
+      {
+        "step": "Read",
+        "detail": "Choose multiplication or division from the question."
+      },
+      {
+        "step": "Estimate",
+        "detail": "Round nearby numbers to predict the answer size."
+      },
+      {
+        "step": "Set out",
+        "detail": "Place digits in their correct value columns."
+      },
+      {
+        "step": "Work",
+        "detail": "Complete one small multiplication or division step."
+      },
+      {
+        "step": "Adjust",
+        "detail": "Change a quotient guess when its product fails."
+      },
+      {
+        "step": "Check",
+        "detail": "Use the opposite operation to test the result."
+      }
+    ],
+    "formula": "$\\text{dividend} = \\text{divisor} \\times \\text{quotient} + \\text{remainder}$"
+  },
+  "techniques": [
+    {
+      "name": "Break a tens number into factors",
+      "purpose": "Use known facts before adding the place-value zero.",
+      "how_to": [
+        "Ignore the ending zero for one step.",
+        "Multiply by the non-zero digit first.",
+        "Multiply that result by ten.",
+        "Check the answer using an estimate."
+      ],
+      "example": "$78 \\times 30 = 78 \\times 3 \\times 10 = 2340$.",
+      "why_it_matters": "It shows why the ending zero appears.",
+      "common_error": "Adding a zero before finishing the first product."
+    },
+    {
+      "name": "Use two partial products",
+      "purpose": "Show what each multiplier digit contributes.",
+      "how_to": [
+        "Write the multiplier under the first number.",
+        "Multiply by the ones digit first.",
+        "Multiply by the tens digit next.",
+        "Add both partial products carefully."
+      ],
+      "example": "$407 \\times 84 = 407 \\times 4 + 407 \\times 80 = 1628 + 32560 = 34188$.",
+      "why_it_matters": "Each row keeps its correct place value.",
+      "common_error": "Forgetting the zero in the tens partial product."
+    },
+    {
+      "name": "Cancel matching ending zeros",
+      "purpose": "Make some division questions much easier.",
+      "how_to": [
+        "Check whether both numbers end in zero.",
+        "Remove one ending zero from each number.",
+        "Divide the smaller numbers.",
+        "Check by multiplying the original divisor."
+      ],
+      "example": "$140 \\div 20 = 14 \\div 2 = 7$.",
+      "why_it_matters": "Both numbers were divided by the same ten.",
+      "common_error": "Removing a zero from only one number."
+    },
+    {
+      "name": "Estimate each quotient digit",
+      "purpose": "Choose a sensible starting digit in long division.",
+      "how_to": [
+        "Look at the first useful dividend digits.",
+        "Use a nearby easier divisor number.",
+        "Choose a quotient digit that seems close.",
+        "Multiply and compare before keeping it."
+      ],
+      "example": "For $285 \\div 33$, try $9$, then check $9 \\times 33 = 297$.",
+      "why_it_matters": "A quick check prevents a wrong quotient.",
+      "common_error": "Keeping the first guess without checking."
+    },
+    {
+      "name": "Check division with multiplication",
+      "purpose": "Prove that the quotient and remainder fit.",
+      "how_to": [
+        "Multiply the divisor by the quotient.",
+        "Add the remainder to that product.",
+        "Compare the result with the dividend.",
+        "Check that the remainder is smaller."
+      ],
+      "example": "$21 \\times 3 + 11 = 74$, so $74 \\div 21 = 3 \\text{ r } 11$.",
+      "why_it_matters": "The check uses every part of the answer.",
+      "common_error": "Forgetting to add the remainder during checking."
+    }
+  ],
+  "worked_examples": [
+    {
+      "title": "Multiply by a multiple of ten",
+      "input": "Work out $78 \\times 30$ using factors.",
+      "decoding": "The number $30$ means three groups of ten.",
+      "plan": "Multiply by $3$, then multiply by $10$.",
+      "model_answer": "First work out $78 \\times 3 = 234$. Then use the tens value: $234 \\times 10 = 2340$. Therefore, $78 \\times 30 = 2340$. The product is $2340$.",
+      "annotations": [
+        {
+          "part": "$30 = 3 \\times 10$",
+          "comment": "This breaks the multiplier into easy factors."
+        },
+        {
+          "part": "$78 \\times 3 = 234$",
+          "comment": "This uses a known one-digit multiplication."
+        },
+        {
+          "part": "$234 \\times 10 = 2340$",
+          "comment": "Each digit moves one place left."
+        },
+        {
+          "part": "The product is $2340$.",
+          "comment": "The final sentence names the answer."
+        }
+      ]
+    },
+    {
+      "title": "Multiply using partial products",
+      "input": "Work out $407 \\times 84$ using columns.",
+      "decoding": "The multiplier has four ones and eight tens.",
+      "plan": "Multiply by $4$, then by $80$, then add.",
+      "model_answer": "First partial product: $407 \\times 4 = 1628$. Second partial product: $407 \\times 80 = 32560$. Add the rows: $1628 + 32560 = 34188$. Therefore, $407 \\times 84 = 34188$. The product is $34188$.",
+      "annotations": [
+        {
+          "part": "$407 \\times 4 = 1628$",
+          "comment": "This row comes from the ones digit."
+        },
+        {
+          "part": "$407 \\times 80 = 32560$",
+          "comment": "This row comes from eight tens."
+        },
+        {
+          "part": "$1628 + 32560 = 34188$",
+          "comment": "Adding both parts gives the full product."
+        },
+        {
+          "part": "The product is $34188$.",
+          "comment": "The answer matches the question's operation."
+        }
+      ]
+    },
+    {
+      "title": "Divide and write a remainder",
+      "input": "Work out $150 \\div 20$.",
+      "decoding": "Find how many full groups of $20$ fit.",
+      "plan": "Estimate the quotient, multiply, then subtract.",
+      "model_answer": "Estimate $7$ groups. Check: $7 \\times 20 = 140$. Subtract: $150 - 140 = 10$. The remainder $10$ is smaller than $20$. Therefore, $150 \\div 20 = 7 \\text{ r } 10$. The answer is $7$ remainder $10$.",
+      "annotations": [
+        {
+          "part": "$7 \\times 20 = 140$",
+          "comment": "This checks the estimated quotient."
+        },
+        {
+          "part": "$150 - 140 = 10$",
+          "comment": "The subtraction finds what remains."
+        },
+        {
+          "part": "$10 < 20$",
+          "comment": "A valid remainder is smaller than the divisor."
+        },
+        {
+          "part": "$150 \\div 20 = 7 \\text{ r } 10$",
+          "comment": "The answer includes the required remainder."
+        }
+      ]
+    },
+    {
+      "title": "Correct an estimate that is too big",
+      "input": "Work out $285 \\div 33$.",
+      "decoding": "Estimate how many groups of $33$ fit into $285$.",
+      "plan": "Try a close quotient, then lower it if needed.",
+      "model_answer": "First try $9$. Check: $9 \\times 33 = 297$. This is greater than $285$, so $9$ is too big. Try $8$. Check: $8 \\times 33 = 264$. Subtract: $285 - 264 = 21$. The remainder $21$ is smaller than $33$. Therefore, $285 \\div 33 = 8 \\text{ r } 21$. The answer is $8$ remainder $21$.",
+      "annotations": [
+        {
+          "part": "$9 \\times 33 = 297$",
+          "comment": "The product is too large."
+        },
+        {
+          "part": "Try $8$.",
+          "comment": "Lower the quotient by one."
+        },
+        {
+          "part": "$285 - 264 = 21$",
+          "comment": "This gives the remaining amount."
+        },
+        {
+          "part": "$285 \\div 33 = 8 \\text{ r } 21$",
+          "comment": "The corrected quotient now works."
+        }
+      ]
+    },
+    {
+      "title": "Find litres needed for a journey",
+      "input": "A car travels $15$ km per litre. How many litres are needed for $240$ km?",
+      "decoding": "The total distance is shared into groups of $15$ km.",
+      "plan": "Bar model: one whole bar is $240$ km. Each equal part is $15$ km. Find the number of parts.",
+      "model_answer": "Use division because each litre covers the same distance. Work out $240 \\div 15$. Since $15 \\times 10 = 150$ and $15 \\times 6 = 90$, then $150 + 90 = 240$. So $15 \\times 16 = 240$. Therefore, $240 \\div 15 = 16$. The car needs $16$ litres.",
+      "annotations": [
+        {
+          "part": "One whole bar is $240$ km.",
+          "comment": "The bar shows the total distance."
+        },
+        {
+          "part": "Each part is $15$ km.",
+          "comment": "Each part represents one litre."
+        },
+        {
+          "part": "$15 \\times 16 = 240$",
+          "comment": "Multiplication checks the division."
+        },
+        {
+          "part": "The car needs $16$ litres.",
+          "comment": "The unit makes the answer clear."
+        }
+      ]
+    },
+    {
+      "title": "Pack and sell cookies",
+      "input": "$840$ cookies are packed in packets of $24$. Each packet sells for $3$. Find the money received.",
+      "decoding": "First find packet count. Then find total money.",
+      "plan": "Bar model: one bar shows $840$ cookies. Split it into parts of $24$. Then multiply packet count by $3$.",
+      "model_answer": "First find the packets: $840 \\div 24 = 35$ because $24 \\times 35 = 840$. Then find the money: $35 \\times 3 = 105$. Therefore, the seller receives $105$.",
+      "annotations": [
+        {
+          "part": "$840 \\div 24 = 35$",
+          "comment": "Division finds the number of packets."
+        },
+        {
+          "part": "$24 \\times 35 = 840$",
+          "comment": "This checks the packet count."
+        },
+        {
+          "part": "$35 \\times 3 = 105$",
+          "comment": "Multiplication finds the total money."
+        },
+        {
+          "part": "The seller receives $105$.",
+          "comment": "The final answer uses money units."
+        }
+      ]
+    }
+  ],
+  "useful_language": [
+    {
+      "category": "Multiplication words",
+      "items": [
+        {
+          "item": "product",
+          "when_to_use": "Use it for a multiplication answer."
+        },
+        {
+          "item": "factor",
+          "when_to_use": "Use it for numbers being multiplied."
+        },
+        {
+          "item": "partial product",
+          "when_to_use": "Use it for one row in column multiplication."
+        },
+        {
+          "item": "multiplier",
+          "when_to_use": "Use it for the number multiplying another number."
+        }
+      ]
+    },
+    {
+      "category": "Division words",
+      "items": [
+        {
+          "item": "quotient",
+          "when_to_use": "Use it for the main division answer."
+        },
+        {
+          "item": "remainder",
+          "when_to_use": "Use it for the amount left over."
+        },
+        {
+          "item": "dividend",
+          "when_to_use": "Use it for the whole amount being divided."
+        },
+        {
+          "item": "divisor",
+          "when_to_use": "Use it for the size of each group."
+        }
+      ]
+    },
+    {
+      "category": "Checking words",
+      "items": [
+        {
+          "item": "estimate",
+          "when_to_use": "Use it for a close answer before working."
+        },
+        {
+          "item": "too big",
+          "when_to_use": "Use it when the checked product passes the dividend."
+        },
+        {
+          "item": "too small",
+          "when_to_use": "Use it when another full group still fits."
+        },
+        {
+          "item": "check",
+          "when_to_use": "Use it when testing with the opposite operation."
+        }
+      ]
+    },
+    {
+      "category": "Word problem clues",
+      "items": [
+        {
+          "item": "each",
+          "when_to_use": "It often shows equal groups."
+        },
+        {
+          "item": "shared equally",
+          "when_to_use": "It usually tells you to divide."
+        },
+        {
+          "item": "total",
+          "when_to_use": "It asks for the whole amount."
+        },
+        {
+          "item": "per",
+          "when_to_use": "It shows one equal rate or group."
+        }
+      ]
+    }
+  ],
+  "common_mistakes": [
+    {
+      "mistake": "Forgetting the tens place in multiplication.",
+      "why_it_hurts": "The second partial product becomes ten times too small.",
+      "fix": "Write a zero before multiplying the tens digit."
+    },
+    {
+      "mistake": "Removing a zero from only one division number.",
+      "why_it_hurts": "The division value changes.",
+      "fix": "Remove matching zeros from both numbers only."
+    },
+    {
+      "mistake": "Keeping the first quotient estimate.",
+      "why_it_hurts": "The checked product may be too large.",
+      "fix": "Multiply the guess, compare, and adjust."
+    },
+    {
+      "mistake": "Leaving out a valid remainder.",
+      "why_it_hurts": "The answer no longer matches the dividend.",
+      "fix": "Write the quotient and the amount left."
+    },
+    {
+      "mistake": "Writing a remainder larger than the divisor.",
+      "why_it_hurts": "Another full group can still be made.",
+      "fix": "Increase the quotient and subtract again."
+    },
+    {
+      "mistake": "Using one operation for a two-step problem.",
+      "why_it_hurts": "Only part of the question gets answered.",
+      "fix": "Draw a bar model and mark both steps."
+    }
+  ],
+  "practice_plan": {
+    "time_budget": [
+      {
+        "phase": "Warm-up",
+        "minutes": "15",
+        "focus": "Recall multiplication facts up to twelve."
+      },
+      {
+        "phase": "Factor method",
+        "minutes": "30",
+        "focus": "Multiply by multiples of ten."
+      },
+      {
+        "phase": "Column multiplication",
+        "minutes": "40",
+        "focus": "Build and add two partial products."
+      },
+      {
+        "phase": "Long division",
+        "minutes": "45",
+        "focus": "Estimate, multiply, subtract, and adjust."
+      },
+      {
+        "phase": "Word problems",
+        "minutes": "35",
+        "focus": "Draw bar models and choose operations."
+      },
+      {
+        "phase": "Review",
+        "minutes": "15",
+        "focus": "Check errors and explain each correction."
+      }
+    ],
+    "drills": [
+      {
+        "name": "Tens factor sprint",
+        "instructions": "Solve eight questions like $46 \\times 30$."
+      },
+      {
+        "name": "Partial product rows",
+        "instructions": "Write both rows for six two-digit multipliers."
+      },
+      {
+        "name": "Zero cancelling check",
+        "instructions": "Decide when matching ending zeros may be removed."
+      },
+      {
+        "name": "Quotient estimate cards",
+        "instructions": "Choose the best first digit before dividing."
+      },
+      {
+        "name": "Remainder check",
+        "instructions": "Test ten answers using multiplication and addition."
+      },
+      {
+        "name": "Bar model stories",
+        "instructions": "Draw bars for four two-step word problems."
+      }
+    ],
+    "routine": "Estimate first. Show every step. Check with the opposite operation. Correct one mistake before starting the next question."
+  },
+  "mastery_checklist": [
+    "I can multiply by a multiple of ten.",
+    "I can build two correct partial products.",
+    "I can line up place-value columns.",
+    "I can cancel matching ending zeros.",
+    "I can estimate a quotient digit.",
+    "I can lower a guess that is too big.",
+    "I can write a correct remainder.",
+    "I can check division using multiplication and addition."
+  ],
+  "strategy_notes": [
+    "Estimate before written work to catch large errors.",
+    "Cover later digits while choosing each quotient digit.",
+    "Say the place value of each multiplier digit.",
+    "Circle the remainder before writing the final answer.",
+    "Use bar models before solving word problems.",
+    "Check the final unit, such as litres or dollars."
+  ],
+  "metadata": {
+    "difficulty": "intermediate",
+    "estimated_study_time": "3 hours",
+    "tags": [
+      "whole_numbers",
+      "two_digit_multiplication",
+      "long_division",
+      "estimation",
+      "remainders",
+      "bar_models"
+    ],
+    "provenance_note": "The methods and source examples follow the base lesson. Added bar-model wording, checking steps, and extra teaching detail use standard Year 5 maths facts."
+  }
+}

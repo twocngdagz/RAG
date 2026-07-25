@@ -1,0 +1,640 @@
+{
+  "schema_version": "pte_lesson_enrichment.v1",
+  "task_type": "whole_numbers",
+  "lesson_title": "1 Whole Numbers",
+  "source_label": "math5a:ch01",
+  "modality": "reading",
+  "overview": {
+    "what_it_is": "This lesson builds strong skills with large whole numbers. You will read, round, multiply, divide, and solve problems.",
+    "format_facts": [
+      {
+        "label": "Number range",
+        "value": "Whole numbers up to $9{,}999{,}999$"
+      },
+      {
+        "label": "Main skills",
+        "value": "Place value, rounding, estimating, multiplying, and dividing"
+      },
+      {
+        "label": "Operations",
+        "value": "Addition, subtraction, multiplication, and division"
+      },
+      {
+        "label": "Problem model",
+        "value": "Use bar models to show known and unknown amounts"
+      }
+    ],
+    "scoring_factors": [
+      {
+        "name": "Place-value accuracy",
+        "what_it_measures": "Whether each digit has the correct value"
+      },
+      {
+        "name": "Correct method",
+        "what_it_measures": "Whether the right steps and operations are used"
+      },
+      {
+        "name": "Accurate working",
+        "what_it_measures": "Whether every written calculation is correct"
+      },
+      {
+        "name": "Reasonable answer",
+        "what_it_measures": "Whether an estimate supports the final answer"
+      }
+    ],
+    "critical_rules": [
+      "A digit changes value when its place changes.",
+      "For rounding, look one place to the right.",
+      "A right-hand digit of five or more rounds up.",
+      "Multiplication and division come before addition and subtraction.",
+      "Do multiplication and division from left to right.",
+      "State the answer with the correct unit or label."
+    ]
+  },
+  "learning_goals": [
+    "You will read numbers up to the millions.",
+    "You will write large numbers in words and figures.",
+    "You will find the value of any digit.",
+    "You will round to tens, hundreds, and thousands.",
+    "You will use estimates to check exact answers.",
+    "You will multiply and divide using place value.",
+    "You will follow the correct order of operations.",
+    "You will solve word problems using bar models."
+  ],
+  "core_method": {
+    "name": "Read → Choose → Model → Work → Check → Answer",
+    "summary": "Read the number carefully. Choose the skill. Show each step. Check whether the answer makes sense.",
+    "steps": [
+      {
+        "step": "Read",
+        "detail": "Find the important digits, words, and number places."
+      },
+      {
+        "step": "Choose",
+        "detail": "Choose place value, rounding, or an operation."
+      },
+      {
+        "step": "Model",
+        "detail": "Use a place chart or bar model when helpful."
+      },
+      {
+        "step": "Work",
+        "detail": "Show each calculation in the correct order."
+      },
+      {
+        "step": "Check",
+        "detail": "Use place value, inverse operations, or an estimate."
+      },
+      {
+        "step": "Answer",
+        "detail": "Write a clear sentence with the correct unit."
+      }
+    ],
+    "formula": "$\\text{Read} \\rightarrow \\text{Choose} \\rightarrow \\text{Model} \\rightarrow \\text{Work} \\rightarrow \\text{Check} \\rightarrow \\text{Answer}$"
+  },
+  "techniques": [
+    {
+      "name": "Build a place-value chart",
+      "purpose": "Shows the value held by each digit.",
+      "how_to": [
+        "Draw columns from ones to millions.",
+        "Write one digit inside each correct column.",
+        "Find the column holding the chosen digit.",
+        "Write the digit times its place value."
+      ],
+      "example": "In $72{,}845$, the digit $8$ is in the hundreds place. Its value is $8 \\times 100 = 800$.",
+      "why_it_matters": "It stops digits from being read in the wrong place.",
+      "common_error": "Calling the digit itself its value, such as saying $8$."
+    },
+    {
+      "name": "Read numbers in three-digit groups",
+      "purpose": "Makes large numbers easier to read and write.",
+      "how_to": [
+        "Split the number into groups of three digits.",
+        "Read the left group first.",
+        "Say million or thousand after its group.",
+        "Read the last group without adding a group name."
+      ],
+      "example": "$435{,}672$ becomes $435$ thousand and $672$. It is four hundred thirty-five thousand, six hundred seventy-two.",
+      "why_it_matters": "Three-digit groups keep number names in the correct order.",
+      "common_error": "Skipping a place that contains zero."
+    },
+    {
+      "name": "Use the rounding neighbour",
+      "purpose": "Finds the closest ten, hundred, or thousand.",
+      "how_to": [
+        "Find the place being rounded.",
+        "Look one digit to its right.",
+        "Keep the place if that digit is below five.",
+        "Raise the place by one if it is five or more.",
+        "Change all digits to the right into zeros."
+      ],
+      "example": "For $4{,}865$ to the nearest hundred, look at $6$. Since $6 \\geq 5$, $4{,}865 \\approx 4{,}900$.",
+      "why_it_matters": "Only one nearby digit decides the rounding direction.",
+      "common_error": "Looking at every digit to the right."
+    },
+    {
+      "name": "Estimate with friendly numbers",
+      "purpose": "Gives a quick answer for checking exact work.",
+      "how_to": [
+        "Round each number to a nearby friendly number.",
+        "Keep the rounded numbers close to the originals.",
+        "Work out the easier calculation.",
+        "Compare the estimate with the exact answer."
+      ],
+      "example": "$702 \\times 19 \\approx 700 \\times 20 = 14{,}000$.",
+      "why_it_matters": "A very different exact answer may show an error.",
+      "common_error": "Rounding so much that the estimate becomes unhelpful."
+    },
+    {
+      "name": "Shift places when multiplying",
+      "purpose": "Uses place value for tens, hundreds, and thousands.",
+      "how_to": [
+        "Find how many zeros are in the multiplier.",
+        "Move every digit left by that many places.",
+        "Use zero as a place holder when needed.",
+        "Read the result using the place-value chart."
+      ],
+      "example": "$43 \\times 100 = 4{,}300$ because each digit moves two places left.",
+      "why_it_matters": "It explains why the number becomes ten times larger.",
+      "common_error": "Adding zeros without thinking about each digit."
+    },
+    {
+      "name": "Break apart a multiple of ten",
+      "purpose": "Makes multiplication and division easier to manage.",
+      "how_to": [
+        "Split the number into a basic fact and ten.",
+        "Complete the basic multiplication or division.",
+        "Complete the remaining factor of ten.",
+        "Check using the inverse operation."
+      ],
+      "example": "$16 \\times 70 = 16 \\times 7 \\times 10 = 112 \\times 10 = 1{,}120$.",
+      "why_it_matters": "Known number facts can solve larger calculations.",
+      "common_error": "Forgetting the final factor of ten."
+    },
+    {
+      "name": "Follow operation priority",
+      "purpose": "Keeps mixed calculations in the correct order.",
+      "how_to": [
+        "Look for multiplication and division first.",
+        "Work from left to right between equal operations.",
+        "Then complete addition and subtraction.",
+        "Check each line before moving forward."
+      ],
+      "example": "$9 + 3 \\times 6 = 9 + 18 = 27$.",
+      "why_it_matters": "Changing the order can change the answer.",
+      "common_error": "Working only from left to right."
+    },
+    {
+      "name": "Draw a bar model",
+      "purpose": "Shows the parts and the unknown amount.",
+      "how_to": [
+        "Draw one bar for the whole amount.",
+        "Split the bar into equal or known parts.",
+        "Label every amount from the question.",
+        "Mark the missing part with a question mark.",
+        "Choose operations that match the bar."
+      ],
+      "example": "For profit, show sales as the whole bar. Split it into cost and profit.",
+      "why_it_matters": "The picture shows which operation should be used.",
+      "common_error": "Choosing an operation before understanding the story."
+    }
+  ],
+  "worked_examples": [
+    {
+      "title": "Read a number and find a digit value",
+      "input": "Write $435{,}672$ in words. Find the value of $5$.",
+      "decoding": "Split the number into $435$ thousand and $672$. The digit $5$ is in the thousands place.",
+      "plan": "Read each three-digit group. Then multiply $5$ by its place.",
+      "model_answer": "First split the number: $435{,}672 = 435{,}000 + 672$. Read the first group as four hundred thirty-five thousand. Read the last group as six hundred seventy-two. The full number is four hundred thirty-five thousand, six hundred seventy-two. The digit $5$ is in the thousands place. Its value is $5 \\times 1{,}000 = 5{,}000$. Therefore, the value of $5$ is $5{,}000$.",
+      "annotations": [
+        {
+          "part": "$435{,}000 + 672$",
+          "comment": "This separates the thousands group from the last group."
+        },
+        {
+          "part": "four hundred thirty-five thousand",
+          "comment": "The word thousand belongs after the first group."
+        },
+        {
+          "part": "six hundred seventy-two",
+          "comment": "The last group does not need another group name."
+        },
+        {
+          "part": "$5 \\times 1{,}000 = 5{,}000$",
+          "comment": "The multiplication shows the full value of the digit."
+        }
+      ]
+    },
+    {
+      "title": "Round and estimate a product",
+      "input": "Round $4{,}865$ to the nearest hundred. Estimate $702 \\times 19$.",
+      "decoding": "The first task needs the tens digit. The second task needs friendly nearby numbers.",
+      "plan": "Use $6$ to round the first number. Round the factors before multiplying.",
+      "model_answer": "For $4{,}865$, the hundreds digit is $8$. The digit to its right is $6$. Since $6 \\geq 5$, raise the hundreds digit by one. So, $4{,}865 \\approx 4{,}900$. For the product, round $702$ to $700$. Round $19$ to $20$. Then $702 \\times 19 \\approx 700 \\times 20 = 14{,}000$. The estimated product is $14{,}000$.",
+      "annotations": [
+        {
+          "part": "the digit to its right is $6$",
+          "comment": "The tens digit decides the nearest hundred."
+        },
+        {
+          "part": "$6 \\geq 5$",
+          "comment": "Five or more means the rounding place increases."
+        },
+        {
+          "part": "$702 \\approx 700$",
+          "comment": "This keeps the rounded number close to the original."
+        },
+        {
+          "part": "$19 \\approx 20$",
+          "comment": "Twenty makes the multiplication quick."
+        },
+        {
+          "part": "$700 \\times 20 = 14{,}000$",
+          "comment": "This is the estimate, not the exact product."
+        }
+      ]
+    },
+    {
+      "title": "Multiply and divide using tens",
+      "input": "Work out $16 \\times 70$ and $15{,}000 \\div 30$.",
+      "decoding": "Both calculations contain a multiple of ten. Break each one into smaller factors.",
+      "plan": "Use $70 = 7 \\times 10$. Use $30 = 10 \\times 3$.",
+      "model_answer": "First work out $16 \\times 70$. Break $70$ into $7 \\times 10$. Then $16 \\times 70 = 16 \\times 7 \\times 10$. Work out $16 \\times 7 = 112$. Then $112 \\times 10 = 1{,}120$. So, $16 \\times 70 = 1{,}120$. Next work out $15{,}000 \\div 30$. Break $30$ into $10 \\times 3$. Then $15{,}000 \\div 30 = 15{,}000 \\div 10 \\div 3$. Work out $15{,}000 \\div 10 = 1{,}500$. Then $1{,}500 \\div 3 = 500$. Therefore, $15{,}000 \\div 30 = 500$.",
+      "annotations": [
+        {
+          "part": "$70 = 7 \\times 10$",
+          "comment": "This turns the problem into two easier multiplications."
+        },
+        {
+          "part": "$16 \\times 7 = 112$",
+          "comment": "Complete the basic fact before multiplying by ten."
+        },
+        {
+          "part": "$30 = 10 \\times 3$",
+          "comment": "This lets the division happen in two steps."
+        },
+        {
+          "part": "$15{,}000 \\div 10 = 1{,}500$",
+          "comment": "Each digit moves one place right."
+        },
+        {
+          "part": "$1{,}500 \\div 3 = 500$",
+          "comment": "This completes the second part of the divisor."
+        }
+      ]
+    },
+    {
+      "title": "Use the correct operation order",
+      "input": "Work out $9 + 3 \\times 6$.",
+      "decoding": "The expression contains addition and multiplication. Multiplication must be completed first.",
+      "plan": "Work out $3 \\times 6$. Then add $9$.",
+      "model_answer": "Multiplication comes before addition. First work out $3 \\times 6 = 18$. Replace the multiplication part with $18$. Then $9 + 3 \\times 6 = 9 + 18$. Finally, $9 + 18 = 27$. Therefore, the value of the expression is $27$.",
+      "annotations": [
+        {
+          "part": "$3 \\times 6 = 18$",
+          "comment": "The multiplication is completed before the addition."
+        },
+        {
+          "part": "$9 + 18$",
+          "comment": "The multiplication part is replaced by its value."
+        },
+        {
+          "part": "$9 + 18 = 27$",
+          "comment": "Addition is completed after multiplication."
+        },
+        {
+          "part": "$27$",
+          "comment": "This differs from adding the first two numbers first."
+        }
+      ]
+    },
+    {
+      "title": "Find profit from mango sales",
+      "input": "Alicia has $420$ mangoes. She packs $4$ mangoes in each bag. She sells each bag for $6$. The mangoes cost $378$. Find her profit.",
+      "decoding": "First find the number of bags. Then find total sales. Profit is sales minus cost.",
+      "plan": "Use three steps: divide, multiply, then subtract.",
+      "model_answer": "Bar model in words: One bar shows all $420$ mangoes. Split it into equal groups of $4$ mangoes. A second bar shows all sales money. Split the sales bar into the cost part and profit part. First find the number of bags: $420 \\div 4 = 105$. Alicia has $105$ bags. Next find the sales money: $105 \\times 6 = 630$. Alicia receives $630$. Finally find the profit: $630 - 378 = 252$. Therefore, Alicia makes a profit of $252$.",
+      "annotations": [
+        {
+          "part": "split it into equal groups of $4$ mangoes",
+          "comment": "Equal groups show that division is needed."
+        },
+        {
+          "part": "$420 \\div 4 = 105$",
+          "comment": "This finds how many bags Alicia can fill."
+        },
+        {
+          "part": "$105 \\times 6 = 630$",
+          "comment": "This finds the total money from all bags."
+        },
+        {
+          "part": "$630 - 378 = 252$",
+          "comment": "Subtracting the cost gives the profit."
+        },
+        {
+          "part": "profit of $252$",
+          "comment": "The final sentence states the answer and its meaning."
+        }
+      ]
+    },
+    {
+      "title": "Correct a halfway rounding mistake",
+      "input": "A pupil says $16{,}500$ rounds to $16{,}000$ to the nearest thousand. Correct the mistake.",
+      "decoding": "The number is halfway between two thousands. The hundreds digit is exactly $5$.",
+      "plan": "Use the rule that five or more rounds upward.",
+      "model_answer": "The thousands digit in $16{,}500$ is $6$. The digit to its right is $5$. A right-hand digit of $5$ or more rounds up. Raise the thousands digit from $6$ to $7$. Change the digits to its right into zeros. Therefore, $16{,}500 \\approx 17{,}000$ to the nearest thousand. The pupil should round up, not down.",
+      "annotations": [
+        {
+          "part": "the digit to its right is $5$",
+          "comment": "The hundreds digit decides the nearest thousand."
+        },
+        {
+          "part": "$5$ or more rounds up",
+          "comment": "This rule includes numbers exactly halfway."
+        },
+        {
+          "part": "from $6$ to $7$",
+          "comment": "Only the rounding-place digit increases."
+        },
+        {
+          "part": "$16{,}500 \\approx 17{,}000$",
+          "comment": "The approximation sign shows this is a rounded value."
+        }
+      ]
+    }
+  ],
+  "useful_language": [
+    {
+      "category": "Place-value words",
+      "items": [
+        {
+          "item": "digit",
+          "when_to_use": "Use it for one symbol from $0$ to $9$."
+        },
+        {
+          "item": "place value",
+          "when_to_use": "Use it for a digit's value in its position."
+        },
+        {
+          "item": "ones place",
+          "when_to_use": "Use it for the first place from the right."
+        },
+        {
+          "item": "thousands place",
+          "when_to_use": "Use it for a digit worth groups of $1{,}000$."
+        }
+      ]
+    },
+    {
+      "category": "Rounding words",
+      "items": [
+        {
+          "item": "nearest",
+          "when_to_use": "Use it when choosing the closest target number."
+        },
+        {
+          "item": "round up",
+          "when_to_use": "Use it when the next digit is $5$ or more."
+        },
+        {
+          "item": "round down",
+          "when_to_use": "Use it when the next digit is below $5$."
+        },
+        {
+          "item": "estimate",
+          "when_to_use": "Use it for a quick answer near the exact answer."
+        }
+      ]
+    },
+    {
+      "category": "Operation words",
+      "items": [
+        {
+          "item": "sum",
+          "when_to_use": "Use it for the answer to an addition."
+        },
+        {
+          "item": "difference",
+          "when_to_use": "Use it for the answer to a subtraction."
+        },
+        {
+          "item": "product",
+          "when_to_use": "Use it for the answer to a multiplication."
+        },
+        {
+          "item": "quotient",
+          "when_to_use": "Use it for the answer to a division."
+        }
+      ]
+    },
+    {
+      "category": "Division words",
+      "items": [
+        {
+          "item": "dividend",
+          "when_to_use": "Use it for the number being divided."
+        },
+        {
+          "item": "divisor",
+          "when_to_use": "Use it for the number you divide by."
+        },
+        {
+          "item": "remainder",
+          "when_to_use": "Use it for the amount left after equal sharing."
+        },
+        {
+          "item": "equal groups",
+          "when_to_use": "Use it when sharing into groups of the same size."
+        }
+      ]
+    },
+    {
+      "category": "Problem-solving words",
+      "items": [
+        {
+          "item": "altogether",
+          "when_to_use": "It often tells you to add amounts."
+        },
+        {
+          "item": "how many more",
+          "when_to_use": "It often asks for the difference."
+        },
+        {
+          "item": "each",
+          "when_to_use": "It often shows equal groups or equal prices."
+        },
+        {
+          "item": "profit",
+          "when_to_use": "Use it for sales money minus the cost."
+        }
+      ]
+    }
+  ],
+  "common_mistakes": [
+    {
+      "mistake": "Giving the digit instead of its full value.",
+      "why_it_hurts": "The digit's place may make it worth much more.",
+      "fix": "Write the digit times its place value."
+    },
+    {
+      "mistake": "Reading large numbers without three-digit groups.",
+      "why_it_hurts": "Thousands and millions may be placed incorrectly.",
+      "fix": "Split the number into groups from the right."
+    },
+    {
+      "mistake": "Rounding down when the next digit is $5$.",
+      "why_it_hurts": "Five belongs to the round-up group.",
+      "fix": "Use zero to four down, five to nine up."
+    },
+    {
+      "mistake": "Changing digits on the left while rounding.",
+      "why_it_hurts": "Only the rounding place may increase.",
+      "fix": "Keep all places left of it unchanged."
+    },
+    {
+      "mistake": "Adding zeros without using place value.",
+      "why_it_hurts": "This rule fails when decimals or place holders appear.",
+      "fix": "Think about each digit moving between places."
+    },
+    {
+      "mistake": "Forgetting the zero in $70$ or $300$.",
+      "why_it_hurts": "The answer becomes ten or one hundred times too small.",
+      "fix": "Break the number into factors before working."
+    },
+    {
+      "mistake": "Adding before multiplying in a mixed expression.",
+      "why_it_hurts": "It changes the value of the expression.",
+      "fix": "Complete multiplication and division first."
+    },
+    {
+      "mistake": "Choosing an operation from one word only.",
+      "why_it_hurts": "The story may use that word in another way.",
+      "fix": "Draw a bar model and check the whole story."
+    }
+  ],
+  "practice_plan": {
+    "time_budget": [
+      {
+        "phase": "Place-value warm-up",
+        "minutes": "30 minutes",
+        "focus": "Read numbers and name digit values"
+      },
+      {
+        "phase": "Number words",
+        "minutes": "35 minutes",
+        "focus": "Change between figures and written words"
+      },
+      {
+        "phase": "Rounding practice",
+        "minutes": "40 minutes",
+        "focus": "Round to tens, hundreds, and thousands"
+      },
+      {
+        "phase": "Estimate and check",
+        "minutes": "30 minutes",
+        "focus": "Use friendly numbers before exact work"
+      },
+      {
+        "phase": "Multiply and divide",
+        "minutes": "45 minutes",
+        "focus": "Use place shifts and factor breaking"
+      },
+      {
+        "phase": "Operation order",
+        "minutes": "25 minutes",
+        "focus": "Complete mixed calculations correctly"
+      },
+      {
+        "phase": "Word problems",
+        "minutes": "25 minutes",
+        "focus": "Draw bar models and show full working"
+      },
+      {
+        "phase": "Mastery check",
+        "minutes": "10 minutes",
+        "focus": "Correct mistakes and explain methods"
+      }
+    ],
+    "drills": [
+      {
+        "name": "Digit value hunt",
+        "instructions": "Write six large numbers. Circle one digit. State its value."
+      },
+      {
+        "name": "Words and figures swap",
+        "instructions": "Write four numbers in words. Change four words into figures."
+      },
+      {
+        "name": "Rounding ladder",
+        "instructions": "Round six numbers to the nearest ten, hundred, and thousand."
+      },
+      {
+        "name": "Estimate first",
+        "instructions": "Estimate five products. Then find each exact answer."
+      },
+      {
+        "name": "Place-shift cards",
+        "instructions": "Multiply and divide number cards by $10$, $100$, and $1{,}000$."
+      },
+      {
+        "name": "Order race",
+        "instructions": "Solve six mixed expressions. Underline the first operation."
+      },
+      {
+        "name": "Bar-model stories",
+        "instructions": "Draw a bar model for four short word problems."
+      },
+      {
+        "name": "Explain the error",
+        "instructions": "Correct four wrong answers. Explain each mistake aloud."
+      }
+    ],
+    "routine": "Study one skill at a time. Model one example. Try four questions. Check each answer. Explain one method aloud. Review mistakes before starting the next skill."
+  },
+  "mastery_checklist": [
+    "I can read whole numbers up to the millions.",
+    "I can write large numbers using words and figures.",
+    "I can state the full value of any digit.",
+    "I can use zero as a place holder.",
+    "I can round to the nearest ten.",
+    "I can round to the nearest hundred.",
+    "I can round to the nearest thousand.",
+    "I can make useful estimates before exact work.",
+    "I can multiply by $10$, $100$, and $1{,}000$.",
+    "I can divide by $10$, $100$, and $1{,}000$.",
+    "I can break apart multiples such as $70$ and $300$.",
+    "I can follow the correct order of operations.",
+    "I can draw a bar model for a word problem.",
+    "I can check whether my final answer is reasonable."
+  ],
+  "strategy_notes": [
+    "Cover the digits to the right when reading place value.",
+    "Mark the rounding place before looking beside it.",
+    "Say the rounding rule quietly before changing digits.",
+    "Estimate before exact work when numbers are large.",
+    "Use inverse operations to check multiplication and division.",
+    "Underline multiplication and division in mixed expressions.",
+    "Draw the bar model before choosing an operation.",
+    "Write one calculation on each clear line.",
+    "Keep labels such as dollars, bags, or mangoes.",
+    "Correct mistakes by naming the broken rule."
+  ],
+  "metadata": {
+    "difficulty": "intermediate",
+    "estimated_study_time": "4 hours",
+    "tags": [
+      "whole numbers",
+      "place value",
+      "number words",
+      "rounding",
+      "estimation",
+      "multiplication",
+      "division",
+      "order of operations",
+      "bar models",
+      "word problems"
+    ],
+    "provenance_note": "The lesson follows the supplied chapter facts and examples. Extra drills, bar-model wording, checking methods, and corrected arithmetic were added as standard Year 5 teaching support. The teaching style follows the uploaded Lesson Enrichment role and mission."
+  }
+}

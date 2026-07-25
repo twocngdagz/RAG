@@ -1,0 +1,644 @@
+{
+  "schema_version": "pte_lesson_enrichment.v1",
+  "task_type": "mixed_review",
+  "lesson_title": "REVIEW B",
+  "source_label": "math5a:ch08",
+  "modality": "reading",
+  "overview": {
+    "what_it_is": "A mixed review of number, fractions, ratio, measures, money, shapes, and angles.",
+    "format_facts": [
+      {
+        "label": "Lesson type",
+        "value": "Mixed review across earlier Year 5 topics"
+      },
+      {
+        "label": "Study time",
+        "value": "$2$ hours"
+      },
+      {
+        "label": "Main skills",
+        "value": "Number, measures, fractions, ratio, money, and geometry"
+      },
+      {
+        "label": "Answer style",
+        "value": "Show each step, then write a clear sentence"
+      },
+      {
+        "label": "Useful tools",
+        "value": "Ruler, protractor, pencil, and squared paper"
+      }
+    ],
+    "scoring_factors": [
+      {
+        "name": "Correct method",
+        "what_it_measures": "Whether the right maths rule was chosen."
+      },
+      {
+        "name": "Correct working",
+        "what_it_measures": "Whether each step follows from the last."
+      },
+      {
+        "name": "Correct units",
+        "what_it_measures": "Whether answers use dollars, metres, or square units."
+      },
+      {
+        "name": "Clear answer",
+        "what_it_measures": "Whether the final sentence answers the question."
+      },
+      {
+        "name": "Reasonable check",
+        "what_it_measures": "Whether the answer fits the size of the problem."
+      }
+    ],
+    "critical_rules": [
+      "Read the question twice before choosing a method.",
+      "Change measurements into the same unit before comparing.",
+      "For a fraction of an amount, multiply by the top number.",
+      "For a ratio, find the value of one part first.",
+      "Area uses square units. Perimeter uses ordinary length units.",
+      "Angles on a straight line total $180^\\circ$.",
+      "Write every final answer with its correct unit."
+    ]
+  },
+  "learning_goals": [
+    "You will subtract thousands from larger whole numbers.",
+    "You will round whole numbers to the nearest thousand.",
+    "You will multiply and divide by $10$, $100$, and $1{,}000$.",
+    "You will change litres, millilitres, metres, centimetres, and time.",
+    "You will write parts of amounts as fractions.",
+    "You will solve money problems with several steps.",
+    "You will use fractions to find used and leftover amounts.",
+    "You will share amounts using two-part and three-part ratios.",
+    "You will find area, perimeter, and missing angles."
+  ],
+  "core_method": {
+    "name": "Read → Sort → Plan → Work → Check",
+    "summary": "First find the topic. Then choose one clear method.",
+    "steps": [
+      {
+        "step": "Read",
+        "detail": "Read every word and circle the needed answer."
+      },
+      {
+        "step": "Sort",
+        "detail": "Name the topic: number, fraction, ratio, measure, or shape."
+      },
+      {
+        "step": "Plan",
+        "detail": "Write the rule or bar model before calculating."
+      },
+      {
+        "step": "Work",
+        "detail": "Show one small step on each line."
+      },
+      {
+        "step": "Label",
+        "detail": "Add the correct unit to the answer."
+      },
+      {
+        "step": "Check",
+        "detail": "Estimate or use the inverse operation."
+      }
+    ],
+    "formula": "READ + CHOOSE THE TOPIC + SHOW STEPS + CHECK"
+  },
+  "techniques": [
+    {
+      "name": "Use place value for powers of ten",
+      "purpose": "Multiply or divide without long working.",
+      "how_to": [
+        "Find how many zeros are in the power of ten.",
+        "Move each digit left when multiplying.",
+        "Move each digit right when dividing.",
+        "Check that the answer grows or becomes smaller."
+      ],
+      "example": "$58{,}000 \\div 100 = 580$ because digits move two places right.",
+      "why_it_matters": "Place value explains the change, not a zero trick.",
+      "common_error": "Removing zeros without checking the place values."
+    },
+    {
+      "name": "Round with the halfway digit",
+      "purpose": "Find the nearest thousand quickly.",
+      "how_to": [
+        "Find the thousands digit.",
+        "Look at the hundreds digit beside it.",
+        "Round up when that digit is $5$ or more.",
+        "Round down when that digit is $4$ or less."
+      ],
+      "example": "$42{,}680 \\approx 43{,}000$ because the hundreds digit is $6$.",
+      "why_it_matters": "Rounding gives a useful estimate before exact work.",
+      "common_error": "Looking at the tens digit instead of hundreds."
+    },
+    {
+      "name": "Make units match first",
+      "purpose": "Compare or form fractions from measurements.",
+      "how_to": [
+        "Choose the smaller unit for both amounts.",
+        "Use $1\\text{ L} = 1{,}000\\text{ mL}$.",
+        "Use $1\\text{ m} = 100\\text{ cm}$.",
+        "Then form the fraction or complete the operation."
+      ],
+      "example": "$3\\text{ L} = 3{,}000\\text{ mL}$, so $\\frac{800}{3{,}000} = \\frac{4}{15}$.",
+      "why_it_matters": "A fraction only compares amounts in matching units.",
+      "common_error": "Writing $\\frac{800}{3}$ before changing litres."
+    },
+    {
+      "name": "Draw a bar model for fraction problems",
+      "purpose": "Show the whole, used part, and leftover part.",
+      "how_to": [
+        "Draw one bar for the whole amount.",
+        "Split it into equal parts from the bottom number.",
+        "Mark the used parts from the top number.",
+        "Count the unmarked parts for what remains."
+      ],
+      "example": "For $\\frac{5}{8}$ used, mark $5$ of $8$ parts. Then $3$ parts remain.",
+      "why_it_matters": "The picture stops used and leftover parts being mixed.",
+      "common_error": "Finding the used amount when the question asks what remains."
+    },
+    {
+      "name": "Find one ratio part",
+      "purpose": "Share or scale an amount fairly.",
+      "how_to": [
+        "Add all ratio numbers.",
+        "Divide the total amount by that sum.",
+        "Multiply one part by each ratio number.",
+        "Check that all shares add to the total."
+      ],
+      "example": "$180 \\div (3 + 2) = 36$, so the shares are $108$ and $72$.",
+      "why_it_matters": "One part links the ratio to the real amount.",
+      "common_error": "Dividing the total by only one ratio number."
+    },
+    {
+      "name": "Split composite shapes",
+      "purpose": "Find area and perimeter of joined rectangles.",
+      "how_to": [
+        "Split the shape into simple rectangles.",
+        "Find each rectangle area.",
+        "Add areas without counting overlap twice.",
+        "Trace only the outside edges for perimeter."
+      ],
+      "example": "$6\\text{ cm} \\times 4\\text{ cm} + 3\\text{ cm} \\times 2\\text{ cm} = 30\\text{ cm}^2$.",
+      "why_it_matters": "Small rectangles are easier than one odd shape.",
+      "common_error": "Adding an inside edge to the perimeter."
+    },
+    {
+      "name": "Use angle totals",
+      "purpose": "Find an unknown angle without measuring.",
+      "how_to": [
+        "Name the angle rule shown.",
+        "Write the full angle total.",
+        "Add the known angles.",
+        "Subtract that sum from the full total."
+      ],
+      "example": "$x = 180^\\circ - 127^\\circ = 53^\\circ$.",
+      "why_it_matters": "The rule gives an exact answer.",
+      "common_error": "Using $360^\\circ$ for angles on a straight line."
+    }
+  ],
+  "worked_examples": [
+    {
+      "title": "Round and use place value",
+      "input": "Round $42{,}680$ to the nearest thousand. Then work out $728 \\times 100$.",
+      "decoding": "The first part uses rounding. The second uses place value.",
+      "plan": "Check the hundreds digit. Then move digits two places left.",
+      "model_answer": "For rounding, the thousands digit is $2$. The hundreds digit is $6$. Since $6 \\ge 5$, round up. So $42{,}680 \\approx 43{,}000$. For multiplication, each digit moves two places left. Thus $728 \\times 100 = 72{,}800$. The answers are $43{,}000$ and $72{,}800$.",
+      "annotations": [
+        {
+          "part": "$6 \\ge 5$",
+          "comment": "This tells us to round the thousands up."
+        },
+        {
+          "part": "$42{,}680 \\approx 43{,}000$",
+          "comment": "The sign shows an estimate, not an exact equality."
+        },
+        {
+          "part": "$728 \\times 100$",
+          "comment": "Multiplying by $100$ changes each place value."
+        },
+        {
+          "part": "$72{,}800$",
+          "comment": "The answer is one hundred times larger."
+        }
+      ]
+    },
+    {
+      "title": "Find a fraction of a measurement",
+      "input": "What fraction of $3\\text{ L}$ is $800\\text{ mL}$?",
+      "decoding": "Both amounts must use the same unit first.",
+      "plan": "Change litres to millilitres. Form the fraction. Make it simplest.",
+      "model_answer": "$3\\text{ L} = 3 \\times 1{,}000\\text{ mL} = 3{,}000\\text{ mL}$. The fraction is $\\frac{800}{3{,}000}$. Divide the top and bottom by $200$: $\\frac{800 \\div 200}{3{,}000 \\div 200} = \\frac{4}{15}$. Therefore, $800\\text{ mL}$ is $\\frac{4}{15}$ of $3\\text{ L}$.",
+      "annotations": [
+        {
+          "part": "$3\\text{ L} = 3{,}000\\text{ mL}$",
+          "comment": "The units now match."
+        },
+        {
+          "part": "$\\frac{800}{3{,}000}$",
+          "comment": "The part goes on top. The whole goes below."
+        },
+        {
+          "part": "$\\div 200$",
+          "comment": "Both numbers are divided by the same value."
+        },
+        {
+          "part": "$\\frac{4}{15}$",
+          "comment": "This fraction is in simplest form."
+        }
+      ]
+    },
+    {
+      "title": "Find money left from a fraction",
+      "input": "Lauren spent $\\frac{3}{5}$ of her money on a refrigerator costing $756$. How much money remained?",
+      "decoding": "The price is $3$ equal parts. The whole amount is $5$ parts.",
+      "plan": "Bar model: draw $5$ equal parts. Mark $3$ parts as $756$. Find one part, then find $2$ parts left.",
+      "model_answer": "Bar model: $5$ equal parts show all her money. The refrigerator uses $3$ parts. First find one part: $756 \\div 3 = 252$. The money left is $2$ parts: $252 \\times 2 = 504$. Check the whole: $252 \\times 5 = 1{,}260$. Also, $1{,}260 - 756 = 504$. Lauren had $504$ dollars left.",
+      "annotations": [
+        {
+          "part": "$756 \\div 3 = 252$",
+          "comment": "This finds the value of one equal part."
+        },
+        {
+          "part": "$252 \\times 2 = 504$",
+          "comment": "Two of the five parts were not spent."
+        },
+        {
+          "part": "$252 \\times 5 = 1{,}260$",
+          "comment": "This rebuilds the whole amount."
+        },
+        {
+          "part": "$1{,}260 - 756 = 504$",
+          "comment": "Subtraction checks the result."
+        }
+      ]
+    },
+    {
+      "title": "Use ratio for a rectangular field",
+      "input": "A field has length-to-width ratio $4:3$. Its length is $20\\text{ m}$. Find its area and perimeter.",
+      "decoding": "The length is $4$ parts. The width is $3$ parts.",
+      "plan": "Bar model: draw $4$ parts for length and $3$ for width. Find one part. Then find width, area, and perimeter.",
+      "model_answer": "Bar model: the $20\\text{ m}$ length has $4$ equal parts. One part is $20 \\div 4 = 5\\text{ m}$. The width is $3 \\times 5\\text{ m} = 15\\text{ m}$. Area: $20\\text{ m} \\times 15\\text{ m} = 300\\text{ m}^2$. Perimeter: $2 \\times (20\\text{ m} + 15\\text{ m}) = 2 \\times 35\\text{ m} = 70\\text{ m}$. The field has area $300\\text{ m}^2$ and perimeter $70\\text{ m}$.",
+      "annotations": [
+        {
+          "part": "$20 \\div 4 = 5\\text{ m}$",
+          "comment": "This finds one ratio part."
+        },
+        {
+          "part": "$3 \\times 5\\text{ m} = 15\\text{ m}$",
+          "comment": "The width has three equal parts."
+        },
+        {
+          "part": "$300\\text{ m}^2$",
+          "comment": "Area uses square metres."
+        },
+        {
+          "part": "$70\\text{ m}$",
+          "comment": "Perimeter uses metres, not square metres."
+        }
+      ]
+    },
+    {
+      "title": "Find area from a triangle perimeter",
+      "input": "A right triangle has perimeter $36\\text{ m}$, height $9\\text{ m}$, and longest side $15\\text{ m}$. Find its area.",
+      "decoding": "Use the perimeter to find the missing base first.",
+      "plan": "Subtract the two known sides from the perimeter. Then use half base times height.",
+      "model_answer": "The missing base is $36\\text{ m} - 9\\text{ m} - 15\\text{ m} = 12\\text{ m}$. The triangle area is $\\frac{1}{2} \\times 12\\text{ m} \\times 9\\text{ m} = 6\\text{ m} \\times 9\\text{ m} = 54\\text{ m}^2$. The area of the triangle is $54\\text{ m}^2$.",
+      "annotations": [
+        {
+          "part": "$36\\text{ m}$",
+          "comment": "This is the total of all three sides."
+        },
+        {
+          "part": "$12\\text{ m}$",
+          "comment": "This is the missing base."
+        },
+        {
+          "part": "$\\frac{1}{2} \\times 12\\text{ m} \\times 9\\text{ m}$",
+          "comment": "A triangle is half a matching rectangle."
+        },
+        {
+          "part": "$54\\text{ m}^2$",
+          "comment": "Area needs square units."
+        }
+      ]
+    },
+    {
+      "title": "Find a missing angle",
+      "input": "Two angles lie on a straight line. One angle is $127^\\circ$. Find the other angle, $x$.",
+      "decoding": "Angles on a straight line add to $180^\\circ$.",
+      "plan": "Subtract the known angle from $180^\\circ$.",
+      "model_answer": "Angles on a straight line total $180^\\circ$. So $x + 127^\\circ = 180^\\circ$. Therefore, $x = 180^\\circ - 127^\\circ = 53^\\circ$. The missing angle is $53^\\circ$.",
+      "annotations": [
+        {
+          "part": "$180^\\circ$",
+          "comment": "This is the full straight-line angle."
+        },
+        {
+          "part": "$x + 127^\\circ = 180^\\circ$",
+          "comment": "The two neighbouring angles make the line."
+        },
+        {
+          "part": "$180^\\circ - 127^\\circ$",
+          "comment": "Subtract to find the missing part."
+        },
+        {
+          "part": "$53^\\circ$",
+          "comment": "The answer includes the degree sign."
+        }
+      ]
+    },
+    {
+      "title": "Correct a leftover-fraction mistake",
+      "input": "Lynn had $8\\text{ m}$ of string. She used $\\frac{5}{8}$. A pupil answered $5\\text{ m}$ left. Correct the mistake.",
+      "decoding": "The fraction given is the used part, not the leftover part.",
+      "plan": "Bar model: split the whole into $8$ parts. Mark $5$ used. Count the $3$ parts left.",
+      "model_answer": "Bar model: $8$ equal parts show the whole string. Lynn used $5$ parts, so $8 - 5 = 3$ parts remain. The leftover fraction is $1 - \\frac{5}{8} = \\frac{3}{8}$. Now find $\\frac{3}{8}$ of $8\\text{ m}$: $8\\text{ m} \\times \\frac{3}{8} = 3\\text{ m}$. The pupil found the used amount. Lynn had $3\\text{ m}$ left.",
+      "annotations": [
+        {
+          "part": "$\\frac{5}{8}$",
+          "comment": "This is the used fraction."
+        },
+        {
+          "part": "$\\frac{3}{8}$",
+          "comment": "This is the fraction that remains."
+        },
+        {
+          "part": "$8\\text{ m} \\times \\frac{3}{8} = 3\\text{ m}$",
+          "comment": "The fraction is applied to the whole length."
+        },
+        {
+          "part": "$3\\text{ m}$",
+          "comment": "This answers what was left."
+        }
+      ]
+    }
+  ],
+  "useful_language": [
+    {
+      "category": "Number words",
+      "items": [
+        {
+          "item": "place value",
+          "when_to_use": "Use it when digits move after multiplying or dividing."
+        },
+        {
+          "item": "nearest thousand",
+          "when_to_use": "Use it when rounding to a whole thousand."
+        },
+        {
+          "item": "estimate",
+          "when_to_use": "Use it for a close answer before exact work."
+        },
+        {
+          "item": "inverse",
+          "when_to_use": "Use the opposite operation to check an answer."
+        }
+      ]
+    },
+    {
+      "category": "Operation words",
+      "items": [
+        {
+          "item": "product",
+          "when_to_use": "Use it for the answer to multiplication."
+        },
+        {
+          "item": "quotient",
+          "when_to_use": "Use it for the answer to division."
+        },
+        {
+          "item": "remainder",
+          "when_to_use": "Use it for what is left after division."
+        },
+        {
+          "item": "difference",
+          "when_to_use": "Use it for the answer to subtraction."
+        }
+      ]
+    },
+    {
+      "category": "Fraction words",
+      "items": [
+        {
+          "item": "top number",
+          "when_to_use": "It shows how many equal parts are chosen."
+        },
+        {
+          "item": "bottom number",
+          "when_to_use": "It shows how many equal parts make the whole."
+        },
+        {
+          "item": "fraction of an amount",
+          "when_to_use": "Multiply the whole by the given fraction."
+        },
+        {
+          "item": "simplest form",
+          "when_to_use": "Use it when no common factor remains."
+        }
+      ]
+    },
+    {
+      "category": "Ratio words",
+      "items": [
+        {
+          "item": "ratio",
+          "when_to_use": "Use it to compare equal-sized parts."
+        },
+        {
+          "item": "one part",
+          "when_to_use": "Find this before working out each share."
+        },
+        {
+          "item": "share",
+          "when_to_use": "Use it for one person's part of a total."
+        },
+        {
+          "item": "altogether",
+          "when_to_use": "Add all parts or amounts."
+        }
+      ]
+    },
+    {
+      "category": "Measurement words",
+      "items": [
+        {
+          "item": "unit conversion",
+          "when_to_use": "Use it when changing one measure unit to another."
+        },
+        {
+          "item": "millilitre",
+          "when_to_use": "Use it for a small amount of liquid."
+        },
+        {
+          "item": "centimetre",
+          "when_to_use": "Use it for a short length."
+        },
+        {
+          "item": "square unit",
+          "when_to_use": "Use it for area answers."
+        }
+      ]
+    },
+    {
+      "category": "Geometry words",
+      "items": [
+        {
+          "item": "area",
+          "when_to_use": "Use it for space inside a shape."
+        },
+        {
+          "item": "perimeter",
+          "when_to_use": "Use it for distance around a shape."
+        },
+        {
+          "item": "right angle",
+          "when_to_use": "Use it for an angle of $90^\\circ$."
+        },
+        {
+          "item": "straight line",
+          "when_to_use": "Use it when neighbouring angles total $180^\\circ$."
+        }
+      ]
+    }
+  ],
+  "common_mistakes": [
+    {
+      "mistake": "Rounding from the wrong digit.",
+      "why_it_hurts": "It may change the answer by a whole thousand.",
+      "fix": "For nearest thousand, check the hundreds digit."
+    },
+    {
+      "mistake": "Adding zeros without thinking about place value.",
+      "why_it_hurts": "This fails when a number ends with zeros.",
+      "fix": "Move each digit by the needed number of places."
+    },
+    {
+      "mistake": "Comparing litres directly with millilitres.",
+      "why_it_hurts": "The fraction compares unlike units.",
+      "fix": "Change both amounts into the same unit first."
+    },
+    {
+      "mistake": "Using the given fraction as the leftover fraction.",
+      "why_it_hurts": "The question may give the used part instead.",
+      "fix": "Find the missing fraction with $1 - \\text{used fraction}$."
+    },
+    {
+      "mistake": "Dividing a ratio total by one ratio number.",
+      "why_it_hurts": "The total belongs to all ratio parts.",
+      "fix": "Add every ratio number before dividing."
+    },
+    {
+      "mistake": "Using square units for perimeter.",
+      "why_it_hurts": "Perimeter is a length, not an area.",
+      "fix": "Use metres or centimetres for perimeter."
+    },
+    {
+      "mistake": "Counting inside edges in a composite perimeter.",
+      "why_it_hurts": "Only outside edges form the boundary.",
+      "fix": "Trace the outside with a finger before adding."
+    },
+    {
+      "mistake": "Measuring an angle when an exact rule is given.",
+      "why_it_hurts": "A drawing may not be to scale.",
+      "fix": "Use $90^\\circ$, $180^\\circ$, or $360^\\circ$ rules first."
+    }
+  ],
+  "practice_plan": {
+    "time_budget": [
+      {
+        "phase": "Number warm-up",
+        "minutes": "$15$ minutes",
+        "focus": "Rounding and powers of ten"
+      },
+      {
+        "phase": "Measures and fractions",
+        "minutes": "$25$ minutes",
+        "focus": "Unit changes and fraction work"
+      },
+      {
+        "phase": "Word problems",
+        "minutes": "$30$ minutes",
+        "focus": "Bar models, money, and leftover amounts"
+      },
+      {
+        "phase": "Ratio and geometry",
+        "minutes": "$30$ minutes",
+        "focus": "One-part method, area, perimeter, and angles"
+      },
+      {
+        "phase": "Check and correct",
+        "minutes": "$20$ minutes",
+        "focus": "Find errors and explain each fix"
+      }
+    ],
+    "drills": [
+      {
+        "name": "Powers of ten sprint",
+        "instructions": "Solve $12$ mixed questions using $\\times 10$, $\\times 100$, $\\div 10$, and $\\div 1{,}000$."
+      },
+      {
+        "name": "Round and check",
+        "instructions": "Round $10$ numbers to the nearest thousand. Mark the hundreds digit each time."
+      },
+      {
+        "name": "Unit match cards",
+        "instructions": "Match $8$ litre, millilitre, metre, centimetre, hour, and minute pairs."
+      },
+      {
+        "name": "Fraction bar models",
+        "instructions": "Draw $6$ bars showing a used fraction and the part left."
+      },
+      {
+        "name": "Ratio one-part drill",
+        "instructions": "Solve $6$ sharing problems. Write the value of one part first."
+      },
+      {
+        "name": "Shape trace",
+        "instructions": "Trace $5$ composite shapes. Mark outside edges before finding perimeter."
+      },
+      {
+        "name": "Angle rule sort",
+        "instructions": "Sort $9$ diagrams into $90^\\circ$, $180^\\circ$, or $360^\\circ$ rules."
+      }
+    ],
+    "routine": "Work for $20$ minutes. Check for $5$ minutes. Correct every mistake in a new line."
+  },
+  "mastery_checklist": [
+    "I can subtract $1{,}000$ from a larger number.",
+    "I can round a number to the nearest thousand.",
+    "I can multiply and divide by $10$, $100$, and $1{,}000$.",
+    "I can change litres and millilitres.",
+    "I can change metres and centimetres.",
+    "I can change hours and minutes.",
+    "I can find and reduce a fraction of a whole.",
+    "I can solve fraction and money word problems.",
+    "I can find one ratio part and each share.",
+    "I can find area, perimeter, and missing angles."
+  ],
+  "strategy_notes": [
+    "Start with questions you can identify quickly.",
+    "Underline words like left, altogether, more, and each.",
+    "Write units beside numbers during the working.",
+    "Estimate money and whole-number answers before exact work.",
+    "Draw a bar model when several amounts are linked.",
+    "For ratio, write the total number of parts first.",
+    "For diagrams, mark known lengths and angle totals.",
+    "Use the textbook diagram for questions needing measured lengths or angles."
+  ],
+  "metadata": {
+    "difficulty": "intermediate",
+    "estimated_study_time": "$2$ hours",
+    "tags": [
+      "whole_numbers",
+      "rounding",
+      "powers_of_ten",
+      "unit_conversion",
+      "fractions",
+      "money",
+      "ratio",
+      "area",
+      "perimeter",
+      "angles"
+    ],
+    "provenance_note": "This lesson follows the supplied Review B facts and examples. Added teaching steps, bar-model wording, checks, and fresh practice examples use standard Year 5 maths. Diagram-only source questions still need the textbook diagrams. Role guidance source:"
+  }
+}
