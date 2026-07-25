@@ -113,8 +113,12 @@ def run_batch(d: ChatGPTDriver, ids: list[int], n: int, *, dry_run: bool) -> boo
     sent = json.loads(sent_path.read_text())
     print(f"   prompt built ({prompt_path.stat().st_size:,} bytes, {len(sent)} rows)", flush=True)
 
-    print("   asking ChatGPT…", flush=True)
-    reply = d.send_and_wait(CHAT_URL, prompt_path.read_text(), timeout_s=900)
+    # Scale the wait with the batch. 5 items took about 150s, so allow ~60s an
+    # item with a floor. A fixed 900s killed a 100-item batch that was still
+    # generating at 887s — the prompt was fine and the wait was not.
+    budget = max(900, 60 * len(sent))
+    print(f"   asking ChatGPT… (allowing up to {budget // 60} min)", flush=True)
+    reply = d.send_and_wait(CHAT_URL, prompt_path.read_text(), timeout_s=budget)
     notice = d.restriction_notice()
     if notice:
         print(f"   ChatGPT refused: {notice}")
