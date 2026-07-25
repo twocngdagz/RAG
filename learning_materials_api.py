@@ -43,6 +43,8 @@ import book_learning_materials_store as store
 import describe_image_feedback
 import essay_feedback
 import math_practice_items
+import math_reasoning_feedback
+import math_reasoning_items
 import reading_mcq_items
 import spaced_repetition
 import swt_feedback
@@ -110,9 +112,22 @@ def _load_math_practice_bank() -> list[dict[str, Any]]:
     return data.get("items", data) if isinstance(data, dict) else data
 
 
+def _load_math_reasoning_bank() -> list[dict[str, Any]]:
+    path = Path(os.getenv("MATH_REASONING_ITEMS_FILE", "output/math_reasoning_items.json"))
+    if not path.exists():
+        return []
+    data = json.loads(path.read_text(encoding="utf-8"))
+    return data.get("items", data) if isinstance(data, dict) else data
+
+
 class MathPracticeAnswerRequest(BaseModel):
     item_id: str = Field(min_length=1, max_length=120)
     answer: str = Field(default="", max_length=60)
+
+
+class MathReasoningAnswerRequest(BaseModel):
+    item_id: str = Field(min_length=1, max_length=120)
+    response: str = Field(default="", max_length=3000)
 
 
 class SwtFeedbackRequest(BaseModel):
@@ -212,6 +227,31 @@ def create_app(engine: Engine | None = None) -> FastAPI:
         if item_id is None:
             return {"item": None, "reason": reason, "progress": summary}
         return {"item": _public_item(by_id[item_id]), "reason": reason, "progress": summary}
+
+    def _public_reasoning_item(item: dict[str, Any]) -> dict[str, Any]:
+        """Everything that would give the reasoning away is withheld until submit —
+        the answer, the working values, the worked example and the rubric."""
+        withheld = {"answer_num", "answer_den", "answer_plain", "working_tokens",
+                    "working_min", "question_values", "rubric", "model_answer"}
+        return {k: v for k, v in item.items() if k not in withheld}
+
+    @app.get("/books/{slug}/math-reasoning-next")
+    def get_math_reasoning_next(
+        slug: str, after: str | None = None, session: Session = Depends(get_session)
+    ) -> dict[str, Any]:
+        """The next reasoning item the scheduler chooses, plus progress.
+
+        Reasoning items share the one Learning Engine and the one state table with
+        the quick practice — same scheduling rules, a different kind of question."""
+        bank = _load_math_reasoning_bank()
+        by_id = {i["id"]: i for i in bank}
+        states = store.load_math_states(session)
+        now = time.time()
+        item_id, reason = spaced_repetition.pick_next(states, list(by_id), now, avoid=after)
+        summary = spaced_repetition.summary(states, list(by_id), now)
+        if item_id is None:
+            return {"item": None, "reason": reason, "progress": summary}
+        return {"item": _public_reasoning_item(by_id[item_id]), "reason": reason, "progress": summary}
 
     @app.get("/swt-passages")
     def get_swt_passages() -> list[dict[str, Any]]:
@@ -448,6 +488,98 @@ def create_app(engine: Engine | None = None) -> FastAPI:
             feedback=feedback,
             prompt_type=item["id"],
             task_type="math_practice",
+        )
+        session.commit()
+        return feedback
+
+    @app.post("/books/{slug}/chapters/{chapter_number}/math-reasoning-answer")
+    def post_math_reasoning_answer(
+        slug: str,
+        chapter_number: int,
+        body: MathReasoningAnswerRequest,
+        session: Session = Depends(get_session),
+    ) -> dict[str, Any]:
+        """Mark an open reasoning response: code decides, the model only advises.
+
+        The split is the point of this endpoint. Code owns the mark (right answer,
+        working shown) and the schedule. The model's read on the *explanation* is
+        attached alongside, flagged advisory, and is allowed to fail — if the coach
+        is down the learner is still marked, because advisory means non-essential.
+        """
+        item = next((i for i in _load_math_reasoning_bank() if i.get("id") == body.item_id), None)
+        if item is None:
+            raise HTTPException(status_code=404, detail=f"Item {body.item_id} not found.")
+
+        det = math_reasoning_items.check_working(item, body.response)
+        score = int(det["answer_shown"]) + int(det["working_shown"])
+
+        # The schedule moves on the deterministic verdict only. An advisory opinion
+        # must never decide when a child sees a question again.
+        now = time.time()
+        states = store.load_math_states(session)
+        state = states.get(item["id"]) or spaced_repetition.ItemState(item_id=item["id"])
+        spaced_repetition.update(state, correct=det["correct"], now=now)
+        store.save_math_state(session, state)
+        states[item["id"]] = state
+        progress = spaced_repetition.summary(
+            states, [i["id"] for i in _load_math_reasoning_bank()], now
+        )
+
+        advisory: dict[str, Any] | None = None
+        advisory_error: str | None = None
+        try:
+            advisory = math_reasoning_feedback.score_reasoning(item, body.response, det)
+        except RuntimeError:
+            advisory_error = "The explanation coach is not set up yet, so only the maths was checked."
+        except httpx.HTTPError:
+            advisory_error = "The explanation coach could not be reached, so only the maths was checked."
+        except (ValueError, json.JSONDecodeError):
+            advisory_error = "The explanation coach replied in a form I could not read, so only the maths was checked."
+
+        traits: list[dict[str, Any]] = [
+            # advisory is stated, not implied by absence, so the UI can never
+            # render a model's opinion as if it were a mark
+            {"name": "right_answer", "score": int(det["answer_shown"]), "max": 1,
+             "evidence": "", "fix": "", "advisory": False},
+            {"name": "working_shown", "score": int(det["working_shown"]), "max": 1,
+             "evidence": "", "fix": "", "advisory": False},
+        ]
+        if advisory:
+            traits.extend(advisory["traits"])
+
+        feedback = {
+            **det,
+            "word_count": len((body.response or "").split()),
+            "gating_applied": False,
+            # the mark is the deterministic part, and only the deterministic part
+            "raw_total": score,
+            "max_raw_total": 2,
+            "marking": "computed; explanation feedback is advisory",
+            "kind": "reasoning",
+            "skill": item.get("skill"),
+            "skill_title": item.get("skill_title"),
+            "capability": item.get("capability"),
+            "question": item.get("question"),
+            # revealed only now that they have answered
+            "rubric": item.get("rubric", []),
+            "model_answer": item.get("model_answer"),
+            "traits": traits,
+            "advisory": advisory,
+            "advisory_error": advisory_error,
+            "top_priorities": [advisory["next_step"]] if advisory else [],
+            "one_line_verdict": det["message"],
+            "progress": progress,
+            "mastered_now": state.is_mastered,
+        }
+        store.save_essay_attempt(
+            session,
+            book_slug=slug,
+            chapter_number=chapter_number,
+            prompt_text=f"{item.get('skill_title', 'Reasoning')}: {item['question']}",
+            essay_text=(body.response or "(no response)"),
+            feedback=feedback,
+            prompt_type=item["id"],
+            task_type="math_reasoning",
         )
         session.commit()
         return feedback

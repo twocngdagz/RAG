@@ -36,6 +36,13 @@ export const TRAIT_LABEL: Record<string, string> = {
   "author's purpose": "Author's purpose",
   tone: 'Tone',
   reading: 'Reading',
+  // Maths reasoning: the first two are checked by code and carry the mark; the
+  // rest are the AI coach's advisory read on the explanation (flagged per trait).
+  right_answer: 'Right answer',
+  working_shown: 'Working shown',
+  explains_why: 'Says why (advice)',
+  clear_steps: 'Clear steps (advice)',
+  maths_language: 'Maths words (advice)',
 }
 
 const TYPE_LABEL: Record<string, string> = {

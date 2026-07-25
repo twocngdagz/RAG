@@ -302,6 +302,61 @@ export interface MathPracticeFeedback {
   mastered_now?: boolean
 }
 
+// ---- Maths reasoning (open response: code marks, a model advises) -----------
+
+export interface MathReasoningItem {
+  id: string
+  kind: 'reasoning'
+  skill: string
+  skill_title: string
+  capability: string
+  question: string
+}
+
+export interface MathReasoningNext {
+  item: MathReasoningItem | null
+  reason: 'new' | 'due' | 'review' | 'all_mastered'
+  progress: MathProgress
+}
+
+/** The model's read on the explanation. Never a mark — see `advisory: true`. */
+export interface MathAdvisory {
+  traits: (EssayTrait & { advisory: true })[]
+  advisory_total: number
+  advisory_max: number
+  strength: string
+  next_step: string
+  coach_note: string
+  advisory: true
+  graded_by: 'model'
+}
+
+export interface MathReasoningFeedback {
+  correct: boolean
+  answer_shown: boolean
+  working_shown: boolean
+  working_hits: string[]
+  working_needed: number
+  answer_plain: string
+  message: string
+  kind: 'reasoning'
+  skill_title?: string
+  capability?: string
+  question?: string
+  rubric: string[]
+  model_answer?: string
+  raw_total: number
+  max_raw_total: number
+  traits: (EssayTrait & { advisory?: boolean })[]
+  one_line_verdict: string
+  /** null when the coach was unavailable — the maths is still marked. */
+  advisory: MathAdvisory | null
+  advisory_error: string | null
+  top_priorities: string[]
+  progress?: MathProgress
+  mastered_now?: boolean
+}
+
 export interface EssayAttempt {
   id: number
   chapter_number: number

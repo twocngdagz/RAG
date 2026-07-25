@@ -13,6 +13,9 @@ import type {
   ReadingMcqFeedback,
   MathPracticeItem,
   MathPracticeFeedback,
+  MathPracticeNext,
+  MathReasoningNext,
+  MathReasoningFeedback,
   LessonEnrichment,
 } from './types'
 
@@ -74,6 +77,15 @@ export const api = {
     post<MathPracticeFeedback>(`/books/${slug}/chapters/${n}/math-practice-answer`, {
       item_id: itemId,
       answer,
+    }),
+  mathReasoningNext: (slug: string, after?: string) =>
+    get<MathReasoningNext>(
+      `/books/${slug}/math-reasoning-next${after ? `?after=${encodeURIComponent(after)}` : ''}`,
+    ),
+  mathReasoningAnswer: (slug: string, n: number, itemId: string, response: string) =>
+    post<MathReasoningFeedback>(`/books/${slug}/chapters/${n}/math-reasoning-answer`, {
+      item_id: itemId,
+      response,
     }),
   readingMcqAnswer: (slug: string, n: number, itemId: string, chosen: string[]) =>
     post<ReadingMcqFeedback>(`/books/${slug}/chapters/${n}/reading-mcq-answer`, {

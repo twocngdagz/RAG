@@ -1,16 +1,70 @@
 import { useCallback, useEffect, useState } from 'react'
-import { AlertTriangle, CheckCircle2, Info, Loader2, RotateCcw, Send, Sparkles, XCircle } from 'lucide-react'
+import {
+  AlertTriangle, CheckCircle2, Info, Loader2, MessageCircleHeart, RotateCcw,
+  Send, Sparkles, XCircle, Zap,
+} from 'lucide-react'
 import { api } from '../lib/api'
 import { useAsync } from '../lib/useAsync'
 import type { MathPracticeFeedback, MathPracticeItem, MathProgress } from '../lib/types'
 import { MathText } from './MathText'
 import { AttemptModal, HistorySection } from './EssayPractice'
+import { MathReasoning } from './MathReasoning'
 
 const TASK = 'math_practice'
 
-/** The first slice of the V2 study tool: maths practice where the answer is
- * computed by code and checked exactly, and a spaced-repetition scheduler (the
- * deterministic Learning Engine) chooses which item to study next. */
+type Mode = 'quick' | 'explain'
+
+/** Maths practice, in two modes that sit either side of the V2 marking boundary.
+ *
+ * 'quick' is the computable half: the answer is worked out by code and checked
+ * exactly. 'explain' is the open-response half, where code can only check the
+ * answer and whether working was shown, and a model advises on the explanation.
+ * Both feed the same spaced-repetition scheduler. */
+export function MathPracticeTabs({ slug, number }: { slug: string; number: number }) {
+  const [mode, setMode] = useState<Mode>('quick')
+  return (
+    <div>
+      <div className="mx-auto flex max-w-3xl gap-2 px-5 pt-6 sm:px-8">
+        <ModeButton active={mode === 'quick'} onClick={() => setMode('quick')} icon={Zap}
+          label="Quick practice" hint="answers, marked instantly" />
+        <ModeButton active={mode === 'explain'} onClick={() => setMode('explain')} icon={MessageCircleHeart}
+          label="Explain your thinking" hint="show how you know" />
+      </div>
+      {mode === 'quick' ? <MathPractice slug={slug} number={number} /> : <MathReasoning slug={slug} number={number} />}
+    </div>
+  )
+}
+
+function ModeButton({
+  active, onClick, icon: Icon, label, hint,
+}: {
+  active: boolean
+  onClick: () => void
+  icon: typeof Zap
+  label: string
+  hint: string
+}) {
+  return (
+    <button
+      onClick={onClick}
+      aria-pressed={active}
+      className={`flex-1 rounded-xl border px-4 py-3 text-left transition ${
+        active
+          ? 'border-brand-300 bg-brand-50 ring-1 ring-brand-200'
+          : 'border-slate-200 bg-white hover:bg-slate-50'
+      }`}
+    >
+      <span className="flex items-center gap-2 text-sm font-semibold text-slate-800">
+        <Icon className={`size-4 ${active ? 'text-brand-600' : 'text-slate-400'}`} aria-hidden="true" />
+        {label}
+      </span>
+      <span className="mt-0.5 block text-xs text-slate-500">{hint}</span>
+    </button>
+  )
+}
+
+/** The computable half: every answer is worked out by code and checked exactly,
+ * and the spaced-repetition scheduler chooses which item to study next. */
 export function MathPractice({ slug, number }: { slug: string; number: number }) {
   const [item, setItem] = useState<MathPracticeItem | null>(null)
   const [reason, setReason] = useState<string>('new')

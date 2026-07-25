@@ -24,7 +24,7 @@ import { EssayPractice } from '../components/EssayPractice'
 import { SwtPractice } from '../components/SwtPractice'
 import { DescribeImagePractice } from '../components/DescribeImagePractice'
 import { ReadingMcqPractice } from '../components/ReadingMcqPractice'
-import { MathPractice } from '../components/MathPractice'
+import { MathPracticeTabs } from '../components/MathPractice'
 import { ErrorBoundary } from '../components/ErrorBoundary'
 
 export function ChapterReader({ chapters }: { chapters: ChapterIndexItem[] }) {
@@ -115,7 +115,7 @@ export function ChapterReader({ chapters }: { chapters: ChapterIndexItem[] }) {
       <>
         {tabs}
         {isMathTask(taskType) ? (
-          <MathPractice slug={slug} number={number} />
+          <MathPracticeTabs slug={slug} number={number} />
         ) : taskType === 'reading_multiple_choice' ? (
           <ReadingMcqPractice slug={slug} number={number} />
         ) : taskType === 'summarize_written_text' ? (
