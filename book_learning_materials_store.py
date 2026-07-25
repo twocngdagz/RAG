@@ -218,6 +218,44 @@ def load_chapter_file(
     return record, []
 
 
+def register_chapter_file(
+    session: Session, book_file: str | Path, *, contract_status: str = "extracted"
+) -> tuple[ChapterRecord | None, list[str]]:
+    """Store a grounded chapter WITHOUT the full provenance contract.
+
+    The lighter path for books that aren't built by the extract->resolve->audit
+    chain. PTE's grounded base carries evidence spans tracing every claim to a
+    source chunk, and load_chapter_file audits all of that. The maths base is an
+    honest but simpler extraction: it names the pages a claim came from, but not
+    the span-level provenance that contract demands, so it fails 2700+ of its
+    rules. Rather than fake that rigor, this stores the document as what it is —
+    contract_status defaults to "extracted", never "PASS".
+
+    Still refuses structurally broken input: the document must have exactly one
+    chapter with an integer number, a book slug, and some grounded content. That
+    is a real gate (a garbage file is rejected), just not the provenance audit.
+
+    Returns (record, problems). A non-empty problems list means nothing was stored.
+    """
+    document = json.loads(Path(book_file).read_text(encoding="utf-8"))
+    problems: list[str] = []
+    try:
+        extract_metadata(document)  # raises on bad top-level shape / missing slug
+    except StoreError as exc:
+        return None, [str(exc)]
+
+    chapter = document["learning_materials"]["chapters"][0]
+    content_fields = ("learning_objectives", "core_lessons", "worked_examples",
+                      "practice_questions", "key_terms")
+    if not any(chapter.get(f) for f in content_fields):
+        problems.append("chapter has no learning content (all content lists empty)")
+    if problems:
+        return None, problems
+
+    record = upsert_chapter(session, document, contract_status=contract_status)
+    return record, []
+
+
 def list_chapters(session: Session, book_slug: str | None = None) -> list[ChapterRecord]:
     stmt = select(ChapterRecord)
     if book_slug:
