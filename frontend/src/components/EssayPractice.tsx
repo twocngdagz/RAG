@@ -18,7 +18,7 @@ import {
 } from 'lucide-react'
 import { api } from '../lib/api'
 import { useAsync } from '../lib/useAsync'
-import type { EssayAttempt, EssayError, EssayFeedback } from '../lib/types'
+import type { EssayAttempt, EssayError, EssayFeedback, EssayTrait } from '../lib/types'
 
 // Covers both writing tasks; names are unique across rubrics.
 export const TRAIT_LABEL: Record<string, string> = {
@@ -567,6 +567,58 @@ const REPEATABILITY: Record<number, { moved: number; runs: number }> = {
   6: { moved: 1, runs: 6 },
 }
 
+/** The two traits that judge what the writer actually argued. Everything else in
+ * these rubrics judges the English it was written in, and rewards neat, correct,
+ * on-length prose whatever it says. */
+const IDEA_TRAITS = new Set(['content', 'development_structure_coherence'])
+
+type ScorePart = { score: number; max: number }
+
+/** Split a rubric into "what you said" and "how you wrote it". Returns null when
+ * the task has only one kind of trait (maths, reading) and the split is meaningless.
+ * Advisory traits are excluded — they score nothing. */
+function splitScore(traits: EssayTrait[]): { ideas: ScorePart; language: ScorePart } | null {
+  const counted = (traits ?? []).filter((t) => !t.advisory)
+  const add = (list: EssayTrait[]): ScorePart => ({
+    score: list.reduce((a, t) => a + (t.score ?? 0), 0),
+    max: list.reduce((a, t) => a + (t.max ?? 0), 0),
+  })
+  const ideas = add(counted.filter((t) => IDEA_TRAITS.has(t.name)))
+  const language = add(counted.filter((t) => !IDEA_TRAITS.has(t.name)))
+  if (!ideas.max || !language.max) return null
+  return { ideas, language }
+}
+
+/** True when neat writing is doing the work: ideas below half, and well behind
+ * the language marks. Not fired on a zero score — the gating banner covers that. */
+function carriedByWriting(s: { ideas: ScorePart; language: ScorePart }): boolean {
+  const ideasPct = s.ideas.score / s.ideas.max
+  const langPct = s.language.score / s.language.max
+  return s.language.score > 0 && ideasPct < 0.5 && langPct - ideasPct >= 0.25
+}
+
+function SplitBar({ label, part }: { label: string; part: ScorePart }) {
+  const pct = part.max ? (100 * part.score) / part.max : 0
+  const thin = pct < 50
+  return (
+    <div>
+      <div className="flex items-baseline justify-between text-sm">
+        <span className="text-brand-50/90">{label}</span>
+        <span className="tabular-nums font-semibold">
+          {part.score}
+          <span className="text-brand-100/80">/{part.max}</span>
+        </span>
+      </div>
+      <div className="mt-1 h-1.5 overflow-hidden rounded-full bg-white/20">
+        <div
+          className={`h-full rounded-full ${thin ? 'bg-amber-300' : 'bg-white'}`}
+          style={{ width: `${pct}%` }}
+        />
+      </div>
+    </div>
+  )
+}
+
 /** Who decided this score. A rubric mark and a machine's opinion look identical
  * on screen, so any task where a model sets the numbers has to say so — otherwise
  * the confidence of the layout does the arguing. */
@@ -636,6 +688,7 @@ function TraitSource({ scoredBy, advisory }: { scoredBy?: 'model' | 'code'; advi
  * by the live result and the history-detail modal. */
 export function FeedbackBody({ r, essay }: { r: EssayFeedback; essay?: string }) {
   const pct = r.max_raw_total ? Math.round((100 * r.raw_total) / r.max_raw_total) : 0
+  const split = splitScore(r.traits)
   return (
     <div className="space-y-5">
       {/* Score header */}
@@ -652,7 +705,30 @@ export function FeedbackBody({ r, essay }: { r: EssayFeedback; essay?: string })
           <div className="text-right text-sm text-brand-50/85">{r.word_count} words</div>
         </div>
         <p className="mt-3 text-brand-50/95">{r.one_line_verdict}</p>
+
+        {/* One total hides two very different things: what you said, and how
+         * neatly you wrote it. A tidy essay about nothing keeps most of the
+         * language marks, so the total alone reads far kinder than it should. */}
+        {split && (
+          <div className="mt-4 space-y-2 border-t border-white/15 pt-4">
+            <SplitBar label="What you said" part={split.ideas} />
+            <SplitBar label="How you wrote it" part={split.language} />
+          </div>
+        )}
       </div>
+
+      {split && carriedByWriting(split) && (
+        <p className="flex items-start gap-2 rounded-xl border-l-3 border-amber-400 bg-amber-50 p-4 text-sm text-amber-900">
+          <AlertTriangle className="mt-0.5 size-4 shrink-0 text-amber-500" aria-hidden="true" />
+          <span>
+            <strong>Most of your marks came from how you wrote, not what you said.</strong> Your
+            spelling, grammar and sentences scored {split.language.score} out of {split.language.max},
+            but your ideas only scored {split.ideas.score} out of {split.ideas.max}. Neat writing
+            carries a score a long way. The marks you&rsquo;re missing are for taking a clear position
+            and giving real reasons for it &mdash; add an example or a consequence to each reason.
+          </span>
+        </p>
+      )}
 
       <ScoredByNote scoredBy={r.scored_by} outOf={r.max_raw_total} />
 
