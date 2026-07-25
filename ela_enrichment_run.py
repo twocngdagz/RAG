@@ -113,10 +113,11 @@ def run_batch(d: ChatGPTDriver, ids: list[int], n: int, *, dry_run: bool) -> boo
     sent = json.loads(sent_path.read_text())
     print(f"   prompt built ({prompt_path.stat().st_size:,} bytes, {len(sent)} rows)", flush=True)
 
-    # Scale the wait with the batch. 5 items took about 150s, so allow ~60s an
-    # item with a floor. A fixed 900s killed a 100-item batch that was still
-    # generating at 887s — the prompt was fine and the wait was not.
-    budget = max(900, 60 * len(sent))
+    # A 100-item batch normally finishes in 10-15 minutes, so allow roughly
+    # double that and no more. The timeout is a ceiling, not a wait — a good batch
+    # returns as soon as its reply stops changing — but too generous a ceiling
+    # means a genuinely stuck session burns an hour before anyone notices.
+    budget = max(900, int(20 * len(sent)))
     print(f"   asking ChatGPT… (allowing up to {budget // 60} min)", flush=True)
     reply = d.send_and_wait(CHAT_URL, prompt_path.read_text(), timeout_s=budget)
     notice = d.restriction_notice()
@@ -165,6 +166,8 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--batches", type=int, help="stop after this many")
     ap.add_argument("--dry-run", action="store_true", help="fetch and validate, do not import")
     ap.add_argument("--start", type=int, default=0, help="skip this many batches")
+    ap.add_argument("--delay-min", type=float, default=60, help="shortest gap between batches, seconds")
+    ap.add_argument("--delay-max", type=float, default=150, help="longest gap between batches, seconds")
     args = ap.parse_args(argv)
 
     ids = [int(x) for x in Path(args.ids_file).read_text().split() if x.strip().isdigit()]
@@ -183,7 +186,7 @@ def main(argv: list[str] | None = None) -> int:
             return 1
         for n, chunk in enumerate(chunks, start=1):
             if n > 1:
-                pause = random.uniform(25, 60)
+                pause = random.uniform(args.delay_min, args.delay_max)
                 print(f"   (waiting {pause:.0f}s)", flush=True)
                 time.sleep(pause)
             try:
