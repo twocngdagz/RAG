@@ -16,6 +16,7 @@ import {
 } from 'lucide-react'
 import type { LangCategory, LessonEnrichment } from '../lib/types'
 import { Section } from './Section'
+import { MathText } from './MathText'
 
 /** Safe-array: tolerate fields the model sometimes omits or shapes differently,
  * so a single lesson can never crash the view. */
@@ -58,7 +59,7 @@ function LanguageGrid({ cats }: { cats: LangCategory[] }) {
             {A(cat.items).map((it, ii) => (
               <li key={ii} className="text-sm">
                 <span className="font-medium text-slate-800">{it.item}</span>
-                <span className="block text-xs text-slate-500">{it.when_to_use}</span>
+                <span className="block text-xs text-slate-500"><MathText>{it.when_to_use}</MathText></span>
               </li>
             ))}
           </ul>
@@ -83,7 +84,7 @@ function TemplatePattern({ formula }: { formula: string }) {
           {tok.slice(1, -1)}
         </span>
       ) : (
-        <span key={i}>{tok}</span>
+        <span key={i}><MathText>{tok}</MathText></span>
       ),
     )
 
@@ -132,10 +133,10 @@ export function CoachView({ e }: { e: LessonEnrichment }) {
           <Compass className="size-3.5" aria-hidden="true" /> The method
         </span>
         <h1 className="mt-3 font-display text-2xl font-bold sm:text-3xl">{e.core_method?.name}</h1>
-        <p className="mt-2 max-w-xl text-brand-50/90">{e.core_method?.summary}</p>
+        <p className="mt-2 max-w-xl text-brand-50/90"><MathText>{e.core_method?.summary}</MathText></p>
         {formula && !hasTemplate && (
           <div className="mt-4 rounded-lg bg-white/10 px-4 py-3 text-center text-sm font-semibold tracking-wide ring-1 ring-white/15">
-            {formula}
+            <MathText>{formula}</MathText>
           </div>
         )}
         {A(e.core_method?.steps).length > 0 && (
@@ -147,7 +148,7 @@ export function CoachView({ e }: { e: LessonEnrichment }) {
                 </span>
                 <span>
                   <span className="font-semibold">{s.step}</span>
-                  <span className="block text-sm text-brand-50/85">{s.detail}</span>
+                  <span className="block text-sm text-brand-50/85"><MathText>{s.detail}</MathText></span>
                 </span>
               </li>
             ))}
@@ -182,13 +183,13 @@ export function CoachView({ e }: { e: LessonEnrichment }) {
 
         {/* Overview */}
         <Section icon={Info} title="What this task is" purpose="Format, scoring, and the rules that matter.">
-          <p>{e.overview?.what_it_is}</p>
+          <p><MathText>{e.overview?.what_it_is}</MathText></p>
           {A(e.overview?.format_facts).length > 0 && (
             <dl className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
               {A(e.overview?.format_facts).map((f, i) => (
                 <div key={i} className="rounded-xl bg-white p-3 ring-1 ring-slate-200/70">
                   <dt className="text-xs font-medium uppercase tracking-wide text-slate-400">{f.label}</dt>
-                  <dd className="mt-0.5 text-sm font-semibold text-slate-800">{f.value}</dd>
+                  <dd className="mt-0.5 text-sm font-semibold text-slate-800"><MathText>{f.value}</MathText></dd>
                 </div>
               ))}
             </dl>
@@ -199,7 +200,7 @@ export function CoachView({ e }: { e: LessonEnrichment }) {
               <ul className="space-y-1.5">
                 {A(e.overview?.scoring_factors).map((s, i) => (
                   <li key={i} className="text-sm text-slate-600">
-                    <span className="font-medium text-slate-800">{s.name}:</span> {s.what_it_measures}
+                    <span className="font-medium text-slate-800">{s.name}:</span> <MathText>{s.what_it_measures}</MathText>
                   </li>
                 ))}
               </ul>
@@ -210,7 +211,7 @@ export function CoachView({ e }: { e: LessonEnrichment }) {
               {A(e.overview?.critical_rules).map((r, i) => (
                 <li key={i} className="flex gap-2 text-sm text-amber-900">
                   <AlertTriangle className="mt-0.5 size-4 shrink-0 text-amber-500" aria-hidden="true" />
-                  {r}
+                  <MathText>{r}</MathText>
                 </li>
               ))}
             </ul>
@@ -223,7 +224,7 @@ export function CoachView({ e }: { e: LessonEnrichment }) {
               {A(e.learning_goals).map((g, i) => (
                 <li key={i} className="flex gap-3">
                   <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-brand-600" aria-hidden="true" />
-                  <span>{g}</span>
+                  <span><MathText>{g}</MathText></span>
                 </li>
               ))}
             </ul>
@@ -251,18 +252,18 @@ export function CoachView({ e }: { e: LessonEnrichment }) {
                         {A(t.how_to).map((h, hi) => (
                           <li key={hi} className="flex gap-2">
                             <span className="mt-1 size-1.5 shrink-0 rounded-full bg-brand-400" />
-                            <span>{h}</span>
+                            <span><MathText>{h}</MathText></span>
                           </li>
                         ))}
                       </ol>
                     )}
                     {t.example && (
                       <p className="rounded-lg bg-slate-50 p-3 text-slate-700 ring-1 ring-slate-200/60">
-                        <span className="font-medium text-slate-500">Example — </span>{t.example}
+                        <span className="font-medium text-slate-500">Example — </span><MathText>{t.example}</MathText>
                       </p>
                     )}
-                    {t.why_it_matters && <p className="text-slate-600"><span className="font-medium text-brand-700">Why it matters:</span> {t.why_it_matters}</p>}
-                    {t.common_error && <p className="text-slate-600"><span className="font-medium text-rose-600">Watch out:</span> {t.common_error}</p>}
+                    {t.why_it_matters && <p className="text-slate-600"><span className="font-medium text-brand-700">Why it matters:</span> <MathText>{t.why_it_matters}</MathText></p>}
+                    {t.common_error && <p className="text-slate-600"><span className="font-medium text-rose-600">Watch out:</span> <MathText>{t.common_error}</MathText></p>}
                   </div>
                 </details>
               ))}
@@ -284,22 +285,29 @@ export function CoachView({ e }: { e: LessonEnrichment }) {
                   <h3 className="font-display text-base font-semibold text-slate-900">{w.title}</h3>
                   <div className="mt-2 rounded-lg bg-slate-50 p-3 text-[15px] text-slate-700 ring-1 ring-slate-200/60">
                     <span className="text-xs font-medium uppercase tracking-wide text-slate-400">Question</span>
-                    <p className="mt-0.5">{w.input}</p>
+                    <p className="mt-0.5"><MathText>{w.input}</MathText></p>
                   </div>
-                  {w.decoding && <p className="mt-3 text-sm text-slate-600"><span className="font-medium text-slate-700">Decode: </span>{w.decoding}</p>}
-                  {w.plan && <p className="mt-1.5 text-sm text-slate-600"><span className="font-medium text-slate-700">Plan: </span>{w.plan}</p>}
+                  {w.decoding && <p className="mt-3 text-sm text-slate-600"><span className="font-medium text-slate-700">Decode: </span><MathText>{w.decoding}</MathText></p>}
+                  {w.plan && <p className="mt-1.5 text-sm text-slate-600"><span className="font-medium text-slate-700">Plan: </span><MathText>{w.plan}</MathText></p>}
                   {typeof w.model_answer === 'string' && w.model_answer && (
                     <div className="mt-3 flex items-center gap-2 rounded-lg bg-emerald-50/70 px-3 py-2.5 ring-1 ring-emerald-200/60">
                       <MessageSquareQuote className="size-4 shrink-0 text-emerald-600" aria-hidden="true" />
-                      <ModelAnswer text={w.model_answer} />
+                      {/* Maths answers are LaTeX; the "/"-and-CAPS ModelAnswer renderer
+                          is for PTE speaking scripts and would mangle them. Route by
+                          content: a "$" means maths. */}
+                      {w.model_answer.includes('$') ? (
+                        <span className="font-medium text-slate-800"><MathText>{w.model_answer}</MathText></span>
+                      ) : (
+                        <ModelAnswer text={w.model_answer} />
+                      )}
                     </div>
                   )}
                   {A(w.annotations).length > 0 && (
                     <ul className="mt-3 grid gap-2 sm:grid-cols-3">
                       {A(w.annotations).map((a, ai) => (
                         <li key={ai} className="rounded-lg bg-slate-50 p-2.5 text-xs ring-1 ring-slate-200/50">
-                          <span className="font-semibold text-brand-700">{a.part}</span>
-                          <span className="mt-0.5 block text-slate-500">{a.comment}</span>
+                          <span className="font-semibold text-brand-700"><MathText>{a.part}</MathText></span>
+                          <span className="mt-0.5 block text-slate-500"><MathText>{a.comment}</MathText></span>
                         </li>
                       ))}
                     </ul>
@@ -328,13 +336,13 @@ export function CoachView({ e }: { e: LessonEnrichment }) {
                   <div className="flex gap-3 bg-rose-50/70 p-3.5">
                     <AlertTriangle className="mt-0.5 size-4 shrink-0 text-rose-500" aria-hidden="true" />
                     <div>
-                      <p className="font-medium text-slate-800">{m.mistake}</p>
-                      <p className="mt-0.5 text-sm text-slate-500">{m.why_it_hurts}</p>
+                      <p className="font-medium text-slate-800"><MathText>{m.mistake}</MathText></p>
+                      <p className="mt-0.5 text-sm text-slate-500"><MathText>{m.why_it_hurts}</MathText></p>
                     </div>
                   </div>
                   <div className="flex gap-3 border-t border-slate-200 bg-emerald-50/60 p-3.5">
                     <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-600" aria-hidden="true" />
-                    <p className="text-sm text-slate-700"><span className="font-medium text-emerald-700">Fix: </span>{m.fix}</p>
+                    <p className="text-sm text-slate-700"><span className="font-medium text-emerald-700">Fix: </span><MathText>{m.fix}</MathText></p>
                   </div>
                 </div>
               ))}
@@ -369,7 +377,7 @@ export function CoachView({ e }: { e: LessonEnrichment }) {
                     <summary className="cursor-pointer p-3 text-sm font-medium text-slate-800 [&::-webkit-details-marker]:hidden">
                       {d.name}
                     </summary>
-                    <p className="border-t border-slate-100 p-3 pt-2 text-sm text-slate-600">{d.instructions}</p>
+                    <p className="border-t border-slate-100 p-3 pt-2 text-sm text-slate-600"><MathText>{d.instructions}</MathText></p>
                   </details>
                 ))}
               </div>
@@ -377,7 +385,7 @@ export function CoachView({ e }: { e: LessonEnrichment }) {
           )}
           {e.practice_plan?.routine && (
             <p className="mt-4 rounded-lg bg-slate-50 p-3 text-sm text-slate-600 ring-1 ring-slate-200/60">
-              <span className="font-medium text-slate-700">Routine: </span>{e.practice_plan.routine}
+              <span className="font-medium text-slate-700">Routine: </span><MathText>{e.practice_plan.routine}</MathText>
             </p>
           )}
         </Section>
@@ -399,7 +407,7 @@ export function CoachView({ e }: { e: LessonEnrichment }) {
               {A(e.strategy_notes).map((s, i) => (
                 <li key={i} className="flex gap-3 text-slate-600">
                   <span className="mt-2 size-1.5 shrink-0 rounded-full bg-brand-400" />
-                  <span>{s}</span>
+                  <span><MathText>{s}</MathText></span>
                 </li>
               ))}
             </ul>
@@ -408,7 +416,7 @@ export function CoachView({ e }: { e: LessonEnrichment }) {
 
         {e.metadata?.provenance_note && (
           <p className="rounded-xl border border-dashed border-slate-300 bg-slate-50 p-4 text-xs leading-relaxed text-slate-500">
-            <span className="font-medium text-slate-600">How this was made: </span>{e.metadata.provenance_note}
+            <span className="font-medium text-slate-600">How this was made: </span><MathText>{e.metadata.provenance_note}</MathText>
           </p>
         )}
       </div>
@@ -429,7 +437,7 @@ function CheckItem({ text }: { text: string }) {
         <span className={`mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-md border transition-colors ${done ? 'border-brand-600 bg-brand-600 text-white' : 'border-slate-300 bg-white'}`}>
           {done && <ListChecks className="size-3.5" aria-hidden="true" />}
         </span>
-        <span className={done ? 'text-slate-400 line-through' : 'text-slate-700'}>{text}</span>
+        <span className={done ? 'text-slate-400 line-through' : 'text-slate-700'}><MathText>{text}</MathText></span>
       </button>
     </li>
   )

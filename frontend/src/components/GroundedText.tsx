@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { BookOpenCheck, ChevronDown, Sparkles } from 'lucide-react'
 import type { Grounded } from '../lib/types'
+import { MathText } from './MathText'
 
 /**
  * Renders one grounded leaf and surfaces WHERE it came from — the whole point of
@@ -27,7 +28,7 @@ export function GroundedText({
 
   return (
     <div className={className}>
-      <Tag className="text-slate-700">{g.text}</Tag>
+      <Tag className="text-slate-700"><MathText>{g.text}</MathText></Tag>
 
       {sourced && (
         <>
