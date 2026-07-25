@@ -150,12 +150,13 @@ def run_batch(d: ChatGPTDriver, ids: list[int], n: int, *, dry_run: bool) -> boo
     sent = json.loads(sent_path.read_text())
     print(f"   prompt built ({prompt_path.stat().st_size:,} bytes, {len(sent)} rows)", flush=True)
 
-    # A 100-item batch normally finishes in 10-15 minutes, so allow roughly
-    # double that and no more. The timeout is a ceiling, not a wait — a good batch
-    # returns as soon as its reply stops changing — but too generous a ceiling
-    # means a genuinely stuck session burns an hour before anyone notices.
-    budget = max(900, int(20 * len(sent)))
-    print(f"   asking ChatGPT… (allowing up to {budget // 60} min)", flush=True)
+    # This is now how long ChatGPT may go SILENT, not how long the reply may take.
+    # While the page shows it working the wait extends on its own, so a batch that
+    # needs 25 minutes gets 25 minutes. Five different values of a flat ceiling
+    # were each wrong for a different batch; the page knows better than the guess.
+    budget = 300
+    print(f"   asking ChatGPT… (patient while it works; gives up after "
+          f"{budget // 60} min of silence)", flush=True)
     reply = d.send_and_wait(CHAT_URL, prompt_path.read_text(), timeout_s=budget)
     notice = d.restriction_notice()
     if notice:

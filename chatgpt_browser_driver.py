@@ -217,37 +217,61 @@ class ChatGPTDriver:
         self._send_prompt(prompt)
         return self._await_reply(before_count=before, timeout_s=timeout_s)
 
-    def _await_reply(self, *, before_count: int, timeout_s: int) -> str:
-        deadline = time.time() + timeout_s
-        started = time.time()
-        # 1. wait for a new assistant turn (or the stop button) to appear.
-        while time.time() < deadline:
+    def _await_reply(self, *, before_count: int, timeout_s: int, hard_cap_s: int = 5400) -> str:
+        """Wait for the reply, treating visible progress as a reason to keep waiting.
+
+        The old version applied a flat deadline and killed a 50-item batch at 1000s
+        that arrived at 1106s. Tuning that number is a losing game: it was 900s,
+        then 60s an item, then 20s an item, and each was wrong for a different
+        batch. The page already knows the answer — while the stop button is there,
+        ChatGPT is working, and a script that gives up on work in progress is just
+        impatient.
+
+        So `timeout_s` now bounds *silence*, not the whole reply. It resets on any
+        sign of life: the stop button present, or the text growing. `hard_cap_s`
+        is the only absolute limit, for a tab that has genuinely died.
+        """
+        start = time.time()
+        hard_deadline = start + hard_cap_s
+
+        while time.time() < hard_deadline:
             if self.page.locator(ASSISTANT).count() > before_count or self.page.query_selector(STOP_BTN):
                 break
+            if time.time() - start > timeout_s:
+                raise TimeoutError(f"Nothing began within {timeout_s}s.")
             time.sleep(0.4)
 
-        # 2. wait for generation to finish: no stop button AND text stable.
-        last_text, stable, last_log = "", 0, 0.0
-        while time.time() < deadline:
+        last_text, stable, last_log, last_progress = "", 0, 0.0, time.time()
+        while time.time() < hard_deadline:
             generating = self.page.query_selector(STOP_BTN) is not None
             nodes = self.page.locator(ASSISTANT)
             text = nodes.nth(nodes.count() - 1).inner_text() if nodes.count() else ""
+
+            # any sign of life resets the silence clock
+            if generating or text != last_text:
+                last_progress = time.time()
+
             if not generating and text and text == last_text:
                 stable += 1
-                if stable >= 3:  # ~1.5s unchanged after streaming stopped
+                if stable >= 3:          # ~1.5s unchanged after streaming stopped
                     return text.strip()
             else:
                 stable = 0
-            # heartbeat so a long generation never looks like a hang.
+
+            quiet = time.time() - last_progress
+            if quiet > timeout_s:
+                raise TimeoutError(
+                    f"No progress for {int(quiet)}s (got {len(last_text)} chars).")
+
             now = time.time()
             if now - last_log >= 15:
-                print(f"  …waiting for reply ({int(now - started)}s, {len(text)} chars, "
-                      f"{'generating' if generating else 'settling'})")
+                print(f"  …waiting for reply ({int(now - start)}s, {len(text)} chars, "
+                      f"{'generating' if generating else f'quiet {int(quiet)}s'})", flush=True)
                 last_log = now
             last_text = text
             time.sleep(0.5)
 
-        raise TimeoutError(f"No stable reply within {timeout_s}s (got {len(last_text)} chars).")
+        raise TimeoutError(f"Gave up after {hard_cap_s}s (got {len(last_text)} chars).")
 
 
 def parse_args(argv=None):
