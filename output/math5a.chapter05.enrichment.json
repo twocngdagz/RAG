@@ -58,7 +58,7 @@
     "You will check units and spot common errors."
   ],
   "core_method": {
-    "name": "Choose → Check → Multiply → Halve → Label",
+    "name": "Choose → Right angle? → Multiply → Halve → Label",
     "summary": "Choose the base and straight height. Multiply them. Halve the product. Add square units.",
     "steps": [
       {
@@ -66,7 +66,7 @@
         "detail": "Pick a base. Find its straight height."
       },
       {
-        "step": "Check",
+        "step": "Right angle?",
         "detail": "Make sure they meet at a square corner."
       },
       {
