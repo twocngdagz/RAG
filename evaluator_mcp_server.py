@@ -141,7 +141,8 @@ def check_book_contract(book: str, limit: int | None = None) -> dict[str, Any]:
         "lessons": r["lessons"],
         "skills": r["skills"],
         "teachable": r["teachable"],
-        "rejected": r["rejected"],
+        "rejected_skills": r["rejected_skills"],
+        "rejected_lessons": r["rejected_lessons"],
         "accepted": r["accepted"],
         "by_check": dict(r["by_check"]),
         "findings": [

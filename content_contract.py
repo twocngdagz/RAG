@@ -16,13 +16,21 @@ method does not. So a skill declares its `kind` and the required fields differ:
     item       a meaning, at least one natural example that actually uses it,
                and something it is confused with
 
-**Presence is not the test — usefulness is.** This was learned the expensive
-way. ELA's library has 17,631 items and every single one carries a definition, a
-usage note and example sentences, so a required-fields check passes all of them.
-Those items share 34,923 example sentences built from 385 skeletons; 99% come
-from a template reused five or more times, the commonest appearing 6,765 times.
-It produces sentences like "The meeting focused on yacht as a key issue". Every
-field present, no teaching in any of it.
+**Presence is not the test — usefulness is.** Every one of ELA's 17,661 items
+carries a definition and example sentences, so a required-fields check passes all
+of them. About a fifth of the examples are still a template with the word swapped
+in — "The meeting focused on yacht as a key issue" — which no presence check
+would ever notice.
+
+**Measure the live data, not a seeder file.** An earlier version of this docstring
+claimed 99% of those examples were templated. That number came from
+`database/seeders/data/learning-items-merged-v3.json`, which is not what the app
+serves. The live table has 28,318 distinct sentence skeletons where the seeder has
+385, and 20% templated where the seeder has 99%. The seeder is a staging artefact;
+the content that reached the database is far better than it. Reading the file that
+was easy to reach, and reporting it as the state of the app, was wrong — the ELA
+adapter now reads an export of the live table and falls back to the seeder only if
+that is missing.
 
 So the checks below look for circular definitions, examples that do not contain
 the thing they illustrate, worked examples that assert an answer without showing
@@ -233,12 +241,20 @@ def check_book(lessons: list[Lesson], skills: list[Skill]) -> dict[str, Any]:
     findings.extend(check_examples_not_templated(skills))
 
     rejects = [f for f in findings if f.severity == "reject"]
-    bad_skills = {f.where for f in rejects}
+    # Count lessons and skills separately. Lumping them together once reported
+    # "11,905 rejected" out of 17,661 skills, which is not a number that means
+    # anything — most of it was lessons.
+    rejected_ids = {f.where for f in rejects}
+    skill_ids = {s.id for s in skills}
+    lesson_ids = {l.id for l in lessons}
+    bad_skills = rejected_ids & skill_ids
+    bad_lessons = rejected_ids & lesson_ids
     return {
         "lessons": len(lessons),
         "skills": len(skills),
-        "teachable": len(skills) - len([s for s in skills if s.id in bad_skills]),
-        "rejected": len(bad_skills),
+        "teachable": len(skills) - len(bad_skills),
+        "rejected_skills": len(bad_skills),
+        "rejected_lessons": len(bad_lessons),
         "findings": findings,
         "by_check": Counter(f.check for f in findings),
         "accepted": not rejects,
@@ -389,7 +405,13 @@ def self_test() -> int:
 
 def load_book(name: str, limit: int | None = None) -> tuple[list[Lesson], list[Skill]]:
     if name == "ela":
-        p = Path("/Users/roy/Desktop/Work/Ela/database/seeders/data/learning-items-merged-v3.json")
+        # The LIVE database, exported, not the seeder file. Those differ a great
+        # deal — the seeder is 99% templated examples and what is actually in the
+        # app is 20%. Measuring the seeder and calling it the app was an error
+        # made once here already.
+        live = Path("/tmp/ela_live_items.json")
+        p = live if live.exists() else Path(
+            "/Users/roy/Desktop/Work/Ela/database/seeders/data/learning-items-merged-v3.json")
         data = json.loads(p.read_text())
         items = data.get("items", data) if isinstance(data, dict) else data
         return from_ela_items(items, limit)
@@ -417,8 +439,10 @@ def main(argv: list[str] | None = None) -> int:
     lessons, skills = load_book(args.book, args.limit)
     r = check_book(lessons, skills)
     print(f"\n{args.book}: {r['lessons']} lessons, {r['skills']} skills")
-    print(f"  teachable now : {r['teachable']}")
-    print(f"  rejected      : {r['rejected']}")
+    print(f"  teachable skills : {r['teachable']:,} of {r['skills']:,}"
+          f"  ({100*r['teachable']//max(1, r['skills'])}%)")
+    print(f"  rejected skills  : {r['rejected_skills']:,}")
+    print(f"  rejected lessons : {r['rejected_lessons']:,} of {r['lessons']:,}")
     print(f"  verdict       : {'ACCEPTED' if r['accepted'] else 'NOT READY TO TEACH'}")
     if r["by_check"]:
         print("\n  findings by check:")

@@ -94,17 +94,24 @@ This is the part that makes book four cheap, so it is designed before any screen
 ELA's library was measured before writing this, and it is the reason this section
 exists:
 
-- 17,631 vocabulary items, every one carrying a definition, usage note, and
-  example sentences. A presence check passes all of them.
-- Those items share **34,923 example sentences built from 385 distinct
-  skeletons**. 99% come from a template reused five or more times. The most
-  common — "Her notes explain ___ in a practical context" — appears 6,765 times.
-- The results include "The meeting focused on yacht as a key issue", "The final
-  result was privy and easy to understand", and "She badly reviews her notes
-  before class".
+- 17,661 vocabulary items, every one carrying a definition and example sentences.
+  A presence check passes all of them.
+- **About a fifth of the example sentences are a template with the word swapped
+  in.** The commonest, "The meeting focused on ___ as a key issue", appears 225
+  times, producing "The meeting focused on yacht as a key issue".
+- Run against the contract, 13,536 of 17,661 items (76%) are teachable as they
+  stand. 4,125 are not.
 
-The fields are all there. The teaching is not. A contract that only checks for
-presence would wave through a library that teaches a child nonsense.
+The fields are all there. In a fifth of cases the teaching is not, and a contract
+that only checks for presence would wave every one of them through.
+
+**Correction, recorded because it changes the conclusion.** An earlier version of
+this section said 99% of those examples were templated and that the library could
+not be imported at all. That figure came from a seeder file rather than the live
+database. The live table has 28,318 distinct sentence skeletons; the seeder has
+385. The seeder is a staging artefact and the content that actually reached the
+database is far better than it. The lesson is narrow and worth keeping: measure
+what the app serves, not the file that happened to be easy to open.
 
 So the contract carries deterministic quality checks, not just required fields:
 
@@ -206,13 +213,12 @@ ELA's PHP does not port. Its *design* does, and it is good — the loop below is
 essentially ELA's, generalised. But building it twice is the real risk, and this
 decision should be revisited before mobile work starts in earnest.
 
-**Not importing ELA's 17,631 items as they stand.**
-The word list is fine — it is Oxford/COCA. The teaching content around it is
-template-generated and largely wrong. Importing it would put nonsense in front of
-a learner and would also be the first thing to make the contract a lie. The
-options are to regenerate the teaching content through the pipeline with the
-checks turned on, or to start with a small verified subset. Either is honest;
-importing as-is is not.
+**Importing the three quarters of ELA that pass, and regenerating the rest.**
+The word list is fine — it is Oxford/COCA — and so is most of the teaching around
+it. 13,536 items pass the contract today and can come across as they are. The
+4,125 that fail need their examples regenerated, which is a content job with the
+checks turned on, not a blocker. ELA's own import screens already exist for this;
+what was missing was a way to tell which items were worth importing.
 
 ---
 
