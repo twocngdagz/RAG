@@ -17,6 +17,11 @@ otherwise. What can be established without a marker's key is written down here:
 
 Each entry carries `level` (higher is better) and `why`, so a future disagreement
 is a debate about the authored judgement rather than about what was intended.
+
+`level` ranks ARGUMENT QUALITY only. The middling essay also carries planted
+misspellings, which cost it marks on a different axis, so its raw total is not
+comparable with the others' — rank it on Content and Development instead. Mixing
+the two axes measures the plant rather than the grader.
 """
 
 from __future__ import annotations

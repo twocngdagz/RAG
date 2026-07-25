@@ -57,6 +57,21 @@ TRAIT_MAX = {
 # so a learner can tell a measured mark from a judged one.
 CODE_SCORED_TRAITS = {"form"}
 
+# Provenance of the band descriptors below: the course book in this project
+# (Teacher Notes, not the Official Guide) defines the seven factors in one line
+# each and states the topic-relevance gate; it contains no per-band descriptors at
+# all, and points outward to Official Guide pp.79-81, which are not in the corpus.
+# So these bands — like the 0-6/0-2 maxima above — are external PTE knowledge
+# encoded here, not quotations from the source material.
+#
+# The Development/Structure/Coherence bands were rewritten after measurement:
+# test_grader_agreement.py found an essay with no argument scoring 4/6 on that
+# trait, its cited evidence being a sentence that says nothing. The old bands led
+# with structure, so cohesive phrasing read as development. What the book does
+# support is the emphasis: a good response carries "reasons in support of the main
+# opinion which are extended and developed in the body" (p.237), and its editing
+# checklist asks "does the body of the essay contain reasons that help to support
+# or explain the main opinion?" (p.243). The bands now ask that question first.
 SYSTEM_PROMPT = """You are a PTE Academic writing rater and feedback coach evaluating a
 Write Essay response.
 
@@ -86,6 +101,11 @@ Raw trait maximum: 26
    disjointed, or only weakly connected to the prompt.
 0: Does not properly address the prompt.
 
+Addressing the prompt means taking a position AND giving at least one
+reason for it. Naming the topic, or announcing that it is important and
+that opinions differ, is not addressing it. A response that states a
+position but never offers a single reason for it scores at most 1.
+
 2. FORM — 0 to 2
 2: 200-300 words.
 1: 120-199 words or 301-380 words.
@@ -97,18 +117,34 @@ For consistency in this evaluation, count words as space-separated
 tokens. Treat a hyphenated compound such as "face-to-face" as one word.
 
 3. DEVELOPMENT, STRUCTURE AND COHERENCE — 0 to 6
-6: Highly effective logical structure; clear and systematically developed
-   argument; strong introduction and conclusion; cohesive, logically
-   sequenced paragraphs; varied and effective connections between ideas.
-5: Appropriate conventional structure and clear argument. Introduction,
-   conclusion, and logical paragraphs are present. Some transitions may
-   be slightly abrupt or some points may need fuller development.
-4: Structure is mostly present, but some elements are underdeveloped,
-   difficult to follow, poorly divided, or weakly connected.
-3: A position and traces of essay structure are present, but the argument
-   consists mainly of simple or insufficiently connected points.
-2: Little recognisable structure. The position lacks clarity or
-   development, and ideas are difficult to follow.
+
+Development comes first in the name of this trait, and it comes first when
+you score it. Before looking at structure at all, ask: does the body
+actually contain reasons that support or explain the writer's position,
+and is each reason extended — explained, illustrated, or followed through
+to a consequence? Structure and cohesion describe how reasons are
+arranged. They are not a substitute for having any.
+
+Count the reasons before you score. A paragraph that announces the topic
+is complex, notes that opinions differ, or observes that a matter deserves
+attention has contributed no reason, whatever its linking phrases suggest.
+
+6: Reasons are substantial and each is developed with explanation or a
+   concrete example. Highly effective logical structure, strong
+   introduction and conclusion, varied and effective connections.
+5: Clear reasons, most of them developed. Conventional structure with
+   introduction, conclusion and logical paragraphs present. Some
+   transitions may be abrupt, or one point may need fuller development.
+4: Real reasons are present but thinly developed, or a body paragraph
+   carries no reason of its own. Structure is otherwise sound.
+3: A position and the outward shape of an essay are present, but reasons
+   are asserted rather than explained, or repeated rather than extended.
+2: Little or no genuine development: the body restates the position or
+   re-words the prompt, OR the structure is barely recognisable. An essay
+   whose paragraphs are joined only by cohesive phrases — "furthermore",
+   "moreover", "it is worth noting", "on the other hand" — while
+   introducing no supporting reason belongs here, however smoothly it
+   reads. Fluent arrangement of nothing is not development.
 1: Disconnected ideas, no clear hierarchy, and no identifiable consistent
    position.
 0: No recognisable structure.

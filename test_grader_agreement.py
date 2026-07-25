@@ -47,6 +47,7 @@ import swt_feedback as swt
 failures: list[str] = []
 advisory: list[str] = []
 measurements: dict[str, Any] = {}
+notes: list[str] = []   # measured context that is not a pass/fail claim
 
 
 def hard(label: str, cond: bool, detail: str = "") -> None:
@@ -136,12 +137,31 @@ def check_essay(model: str, runs: int) -> None:
     print(f"  scores /26: {scores}")
 
     print("\n  ranking known-quality essays")
+    # Raw totals are only comparable between essays that differ on ONE dimension.
+    # The strong, weak and empty essays are all mechanically clean, so their totals
+    # can be ranked directly. The middling essay cannot join them: it carries five
+    # planted misspellings that cost it Spelling and Vocabulary, which is a
+    # different axis from how well it argues. Comparing its total against the
+    # others' would be measuring the plant, not the grader — an earlier version of
+    # this test did exactly that and passed only because the two happened to tie.
     hard("a developed essay beats a repetitive one", scores["strong"] > scores["weak"],
          f"strong={scores['strong']} weak={scores['weak']}")
     hard("the gap is a real gap, not a rounding difference",
          scores["strong"] - scores["weak"] >= 3, f"gap={scores['strong'] - scores['weak']}")
-    hard("the ladder is monotonic",
-         scores["strong"] >= scores["middling"] >= scores["weak"], str(scores))
+    hard("mechanically clean essays rank by argument quality",
+         scores["strong"] > scores["weak"] > scores["fluent_but_empty"], str(scores))
+
+    # The corpus levels describe argument quality, so the ladder is asserted on the
+    # two traits that judge the argument. This is where the middling essay belongs.
+    argument = {
+        k: trait_map(res).get("content", 0) + trait_map(res).get("development_structure_coherence", 0)
+        for k, res in (("strong", strong), ("middling", r["middling"]),
+                       ("weak", r["weak"]), ("empty", r["empty"]))
+    }
+    print(f"    content + development, out of 12: {argument}")
+    hard("the argument-trait ladder is monotonic across all four levels",
+         argument["strong"] >= argument["middling"] >= argument["weak"] > argument["empty"],
+         str(argument))
 
     print("\n  gating (the one rule with a defined right answer)")
     hard("an off-topic essay scores 0", scores["off_topic"] == 0, str(scores["off_topic"]))
@@ -175,20 +195,33 @@ def check_essay(model: str, runs: int) -> None:
     hard("Form is identical every run — it is computed in code",
          per_trait["form"] == 0, str(per_trait["form"]))
 
-    print("\n  fluency-over-content probe (advisory)")
-    soft("fluent-but-empty scores below a real argument",
-         scores["fluent_but_empty"] < scores["strong"],
-         f"empty={scores['fluent_but_empty']} strong={scores['strong']}")
-    soft("fluent-but-empty does not beat a plain but substantive essay",
-         scores["fluent_but_empty"] <= scores["weak"],
+    print("\n  fluency must not substitute for content")
+    empty_traits = trait_map(r["empty"])
+    empty_dsc = empty_traits.get("development_structure_coherence", 6)
+    hard("an essay with no argument scores below one that has a thin argument",
+         scores["fluent_but_empty"] < scores["weak"],
          f"empty={scores['fluent_but_empty']} weak={scores['weak']}")
-    # Ranking correctly is not the same as scoring sensibly. An essay with no
-    # claim, no example and no position still collects marks for the fluency it
-    # does have, and a learner reading only the percentage would not know that.
-    soft("an essay with no argument scores below half the rubric",
-         scores["fluent_but_empty"] < 13,
-         f"empty={scores['fluent_but_empty']}/26 — fluency alone still earns "
-         f"{round(100 * scores['fluent_but_empty'] / 26)}%")
+    # The specific defect this trait was rewritten for: cohesive phrasing being
+    # read as development. Scored directly, so a regression names itself.
+    hard("...and is not credited with development it does not have",
+         empty_dsc <= 3, f"development/structure/coherence = {empty_dsc}/6")
+    soft("the separation is clear rather than marginal",
+         scores["weak"] - scores["fluent_but_empty"] >= 2,
+         f"gap={scores['weak'] - scores['fluent_but_empty']}")
+
+    # Context, not a verdict. Form, Grammar, Vocabulary, Spelling and Linguistic
+    # Range all reward fluent, well-formed, on-length prose whatever it argues, so
+    # a contentless essay keeps a floor no grader fix can remove. That floor is
+    # the rubric's, and the honest place to address it is how the score is
+    # presented, not by teaching the rater to mark language it can see.
+    mech = ["form", "grammar", "vocabulary_range", "spelling", "general_linguistic_range"]
+    floor = sum(empty_traits.get(n, 0) for n in mech)
+    notes.append(
+        f"a contentless but fluent essay still scores {scores['fluent_but_empty']}/26 "
+        f"({round(100 * scores['fluent_but_empty'] / 26)}%), of which {floor} comes from "
+        f"language traits that do not look at content at all — a rubric floor, not a grader fault"
+    )
+    print(f"    language-only floor: {floor}/18 of a {scores['fluent_but_empty']}/26 total")
 
 
 # --------------------------------------------------------------------------- #
@@ -300,6 +333,10 @@ def main(argv: list[str] | None = None) -> int:
     if not measurements:
         print("  (no repeatability measured for this task selection)")
 
+    if notes:
+        print("\nalso measured (context, not a verdict):")
+        for n in notes:
+            print(f"  · {n}")
     if advisory:
         print(f"\nadvisory ({len(advisory)}) — reported, does not decide the exit code:")
         for a in advisory:
