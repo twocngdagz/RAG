@@ -142,7 +142,11 @@ class ChatGPTDriver:
             composer.click()
             # Re-pasting a large prompt on every retry costs minutes. If it is
             # already in the box, keep it and just try to send again.
-            if len(composer.inner_text() or "") > len(prompt) // 2:
+            try:
+                already_there = len(composer.inner_text() or "") > len(prompt) // 2
+            except Exception:
+                already_there = False   # handle went stale; treat as empty
+            if already_there:
                 print("  prompt already in the composer; retrying the send only", flush=True)
                 self._retry_send(before_user, prompt)
                 if self._wait_until(lambda: self.page.locator(USER).count() > before_user, 20):
@@ -180,35 +184,45 @@ class ChatGPTDriver:
                     print("  sent", flush=True)
                     return
 
-                button = self.page.query_selector(SEND_BTN)
-                if button is not None and button.is_enabled():
-                    try:
-                        button.click()
+                # A locator re-finds the element on every call. An ElementHandle
+                # does not, so it goes stale the moment React re-renders the
+                # composer — which is exactly what happens after a large prompt
+                # lands, and it raised 'Element is not attached to the DOM'.
+                ready = False
+                try:
+                    send = self.page.locator(SEND_BTN).first
+                    ready = send.count() > 0 and send.is_enabled(timeout=1000)
+                    if ready:
+                        send.click(timeout=3000)
                         clicked = True
-                    except Exception:
-                        pass          # it can vanish between the check and the click
-                elif not clicked and time.time() - started > 120:
+                except Exception:
+                    pass              # stale, hidden, or replaced — try again next tick
+
+                if not ready and not clicked and time.time() - started > 120:
                     # the editor never settled; Enter is the fallback, not the plan
                     self.page.keyboard.press("Enter")
 
                 now = time.time()
                 if now - last_note >= 15:
-                    state = "ready" if (button is not None and button.is_enabled()) else "still settling"
-                    print(f"  waiting to send ({int(now - started)}s, {state})", flush=True)
+                    print(f"  waiting to send ({int(now - started)}s, "
+                          f"{'button ready' if ready else 'still settling'})", flush=True)
                     last_note = now
                 time.sleep(0.5)
             print(f"  send attempt {attempt} did not register; retrying…")
         raise RuntimeError("Could not submit the prompt (no user turn appeared after 3 attempts).")
 
     def _retry_send(self, before_user: int, prompt: str) -> None:
-        settle = max(20, min(120, len(prompt) // 4000))
-        if self._wait_until(
-            lambda: (b := self.page.query_selector(SEND_BTN)) is not None and b.is_enabled(),
-            settle,
-        ):
-            self.page.query_selector(SEND_BTN).click()
-        else:
-            self.page.keyboard.press("Enter")
+        deadline = time.time() + max(20, min(120, len(prompt) // 4000))
+        while time.time() < deadline:
+            try:
+                send = self.page.locator(SEND_BTN).first
+                if send.count() > 0 and send.is_enabled(timeout=1000):
+                    send.click(timeout=3000)
+                    return
+            except Exception:
+                pass                  # re-rendered mid-check; look again
+            time.sleep(0.5)
+        self.page.keyboard.press("Enter")
 
     def send_and_wait(self, chat_url: str, prompt: str, *, timeout_s: int = 180) -> str:
         self.page.goto(chat_url, wait_until="domcontentloaded")
