@@ -32,6 +32,7 @@ job interface, tracked separately.
 from __future__ import annotations
 
 import json
+import re
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Callable
@@ -297,6 +298,60 @@ def _reading_findings(doc: dict[str, Any]) -> list[Finding]:
     return readability_evaluators.findings_for(doc, max_grade=pack.reading_grade_max)
 
 
+_ARROW = re.compile(r"→|\\rightarrow")
+
+
+def _banner_step_names(banner: str) -> list[str] | None:
+    """The step names an arrowed banner lists, lowercased — or None if it isn't an
+    arrowed pattern. Strips LaTeX \\text{} and $ so a formula reads like the name."""
+    src = re.sub(r"\\text\{([^}]*)\}", r"\1", banner or "").replace("$", "")
+    if not _ARROW.search(src):
+        return None
+    return [t.strip().lower() for t in _ARROW.split(src) if t.strip()]
+
+
+def _method_consistency_findings(doc: dict[str, Any]) -> list[Finding]:
+    """The method's 'memorise this' banner must not miscount its own steps.
+
+    Only fires when the banner is LITERALLY a list of the step names — every token
+    is an exact step name — but the count differs. That is the maths defect: a
+    banner reading 'Read → Model → Choose → Work → Check' over a seven-step method.
+
+    It deliberately does NOT judge mnemonics. PTE banners like 'Map → Hold → Speak'
+    for a six-step method, or an essay-structure formula, are good teaching, not
+    defects, and their tokens are not the step names — so the exact-name test spares
+    them. Whether a compressed banner is a defect or a design choice is authorial
+    intent, not something code can decide; this check only catches the unambiguous
+    case where the banner claims to be the steps and gets the number wrong.
+    """
+    cm = doc.get("core_method") or {}
+    steps = [s.get("step", "").strip().lower()
+             for s in (cm.get("steps") or []) if isinstance(s, dict) and s.get("step")]
+    if len(steps) < 2:
+        return []
+    step_set = set(steps)
+
+    out: list[Finding] = []
+    seen: set[int] = set()
+    for banner in (cm.get("name"), cm.get("formula")):
+        tokens = _banner_step_names(str(banner or ""))
+        if not tokens:
+            continue
+        if not all(t in step_set for t in tokens):
+            continue  # a mnemonic / descriptive banner, not a step enumeration
+        if len(tokens) != len(steps) and len(tokens) not in seen:
+            seen.add(len(tokens))
+            out.append(Finding(
+                summary=f"The method banner lists {len(tokens)} steps but the method has {len(steps)}.",
+                detail=(f"The banner uses the step names ({' → '.join(tokens)}) so it reads as the "
+                        f"whole method, but the steps list has {len(steps)}. Make the banner match "
+                        f"the steps, or, if it is meant to be a short mnemonic, use words that are "
+                        f"not the exact step names."),
+                fixable=True,
+            ))
+    return out
+
+
 # --------------------------------------------------------------------------- #
 # Registry
 # --------------------------------------------------------------------------- #
@@ -394,6 +449,37 @@ REGISTRY: dict[str, Evaluator] = {
             ({"source_label": "math5a:c", "worked_examples": [{}, {}, {}, {}]}, False),
             ({"source_label": "pte:ch07", "worked_examples": [{}, {}, {}]}, False),  # PTE floor is 3
             ({"source_label": "pte:ch07", "worked_examples": []}, True),
+        ],
+        domains=("pte", "math5a"),
+    ),
+    "method_consistency": Evaluator(
+        name="method_consistency",
+        artifact="enrichment_lesson",
+        kind="deterministic",
+        description=(
+            "Checks the method's memorisable banner does not miscount its own "
+            "steps. Fires only when the banner is literally the step names but the "
+            "count differs (a 5-name banner over a 7-step method). Deliberately "
+            "leaves mnemonics alone — a compressed banner with different words is "
+            "good teaching, not a defect. Applies to any enrichment lesson."
+        ),
+        findings_fn=_method_consistency_findings,
+        self_tests=[
+            # banner names all steps but miscounts -> flag (the maths defect)
+            ({"core_method": {"name": "Read → Model → Choose → Work → Check",
+                              "steps": [{"step": w} for w in
+                                        ["Read","Model","Choose","Match","Work","Check","State"]]}}, True),
+            # banner matches the steps exactly -> silent
+            ({"core_method": {"name": "Read → Work → Check",
+                              "steps": [{"step": w} for w in ["Read","Work","Check"]]}}, False),
+            # a real mnemonic (different words) over more steps -> NOT ours to judge
+            ({"core_method": {"name": "Map → Hold → Speak",
+                              "steps": [{"step": w} for w in
+                                        ["Map the message","Map the chunks","Hold the sequence",
+                                         "Speak once","Check","Recheck"]]}}, False),
+            # no arrowed banner -> silent
+            ({"core_method": {"name": "Prompt-to-Proof Method",
+                              "steps": [{"step": w} for w in ["A","B","C"]]}}, False),
         ],
         domains=("pte", "math5a"),
     ),
