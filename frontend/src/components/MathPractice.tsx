@@ -1,22 +1,23 @@
-import { useEffect, useMemo, useState } from 'react'
-import { AlertTriangle, CheckCircle2, Info, Loader2, RotateCcw, Send, XCircle } from 'lucide-react'
+import { useCallback, useEffect, useState } from 'react'
+import { AlertTriangle, CheckCircle2, Info, Loader2, RotateCcw, Send, Sparkles, XCircle } from 'lucide-react'
 import { api } from '../lib/api'
 import { useAsync } from '../lib/useAsync'
-import type { MathPracticeFeedback, MathPracticeItem } from '../lib/types'
+import type { MathPracticeFeedback, MathPracticeItem, MathProgress } from '../lib/types'
 import { MathText } from './MathText'
 import { AttemptModal, HistorySection } from './EssayPractice'
 
 const TASK = 'math_practice'
 
 /** The first slice of the V2 study tool: maths practice where the answer is
- * computed by code and checked exactly. No model runs at practice time. */
+ * computed by code and checked exactly, and a spaced-repetition scheduler (the
+ * deterministic Learning Engine) chooses which item to study next. */
 export function MathPractice({ slug, number }: { slug: string; number: number }) {
-  const bank = useAsync(() => api.mathPracticeItems(), [])
-  const items = useMemo(() => bank.data ?? [], [bank.data])
-
-  const [i, setI] = useState(0)
+  const [item, setItem] = useState<MathPracticeItem | null>(null)
+  const [reason, setReason] = useState<string>('new')
+  const [progress, setProgress] = useState<MathProgress | null>(null)
   const [answer, setAnswer] = useState('')
   const [loading, setLoading] = useState(false)
+  const [loadingNext, setLoadingNext] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [result, setResult] = useState<MathPracticeFeedback | null>(null)
 
@@ -24,17 +25,34 @@ export function MathPractice({ slug, number }: { slug: string; number: number })
   const history = useAsync(() => api.essayAttempts(slug, TASK), [slug, historyVersion])
   const [selectedAttempt, setSelectedAttempt] = useState<number | null>(null)
 
-  const item: MathPracticeItem | undefined = items[i]
-
   // running tally for this sitting
   const [seen, setSeen] = useState(0)
   const [right, setRight] = useState(0)
 
+  // Ask the scheduler for the next item to study.
+  const loadNext = useCallback(
+    async (after?: string) => {
+      setLoadingNext(true)
+      setError(null)
+      try {
+        const n = await api.mathPracticeNext(slug, after)
+        setItem(n.item)
+        setReason(n.reason)
+        setProgress(n.progress)
+        setAnswer('')
+        setResult(null)
+      } catch (e) {
+        setError(e instanceof Error ? e.message : String(e))
+      } finally {
+        setLoadingNext(false)
+      }
+    },
+    [slug],
+  )
+
   useEffect(() => {
-    setAnswer('')
-    setResult(null)
-    setError(null)
-  }, [i])
+    loadNext()
+  }, [loadNext])
 
   async function submit() {
     if (!item || !answer.trim()) return
@@ -43,6 +61,7 @@ export function MathPractice({ slug, number }: { slug: string; number: number })
     try {
       const fb = await api.mathPracticeAnswer(slug, number, item.id, answer.trim())
       setResult(fb)
+      if (fb.progress) setProgress(fb.progress)
       setSeen((s) => s + 1)
       if (fb.correct) setRight((r) => r + 1)
       setHistoryVersion((v) => v + 1)
@@ -54,7 +73,7 @@ export function MathPractice({ slug, number }: { slug: string; number: number })
   }
 
   function next() {
-    setI((n) => (n + 1) % Math.max(items.length, 1))
+    loadNext(item?.id)
   }
   function retry() {
     setResult(null)
@@ -82,18 +101,33 @@ export function MathPractice({ slug, number }: { slug: string; number: number })
         </p>
       </header>
 
-      {bank.loading && <p className="mt-6 text-sm text-slate-400">Loading questions…</p>}
-      {!bank.loading && !items.length && (
-        <p className="mt-6 rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-800">
-          No practice questions yet. Generate them with{' '}
-          <code className="rounded bg-white/70 px-1">python math_practice_items.py</code>.
-        </p>
+      {progress && <ProgressBar progress={progress} />}
+
+      {loadingNext && !item && <p className="mt-6 text-sm text-slate-400">Loading…</p>}
+
+      {!loadingNext && !item && (
+        <div className="mt-6 rounded-xl border border-emerald-200 bg-emerald-50 p-6 text-center">
+          <Sparkles className="mx-auto size-6 text-emerald-600" aria-hidden="true" />
+          <p className="mt-2 font-display text-lg font-semibold text-emerald-800">
+            {progress && progress.total === 0
+              ? 'No practice questions yet.'
+              : 'You’ve mastered every question here!'}
+          </p>
+          <p className="mt-1 text-sm text-emerald-700">
+            {progress && progress.total === 0
+              ? 'Generate them with python math_practice_items.py.'
+              : 'Come back later — they’ll return for review to keep them fresh.'}
+          </p>
+        </div>
       )}
 
       {item && (
-        <div className="mt-6 space-y-4">
+        <div className="mt-5 space-y-4">
           <div className="flex items-center justify-between text-xs text-slate-500">
-            <span className="rounded-full bg-slate-100 px-2.5 py-1 font-medium">{item.skill_title}</span>
+            <span className="flex items-center gap-2">
+              <span className="rounded-full bg-slate-100 px-2.5 py-1 font-medium">{item.skill_title}</span>
+              <ReasonChip reason={reason} />
+            </span>
             {seen > 0 && (
               <span className="tabular-nums">
                 {right}/{seen} correct this session
@@ -152,6 +186,40 @@ export function MathPractice({ slug, number }: { slug: string; number: number })
       )}
     </div>
   )
+}
+
+/** The spaced-repetition progress: how much is mastered, in progress, and new. */
+function ProgressBar({ progress }: { progress: MathProgress }) {
+  const { total, mastered, in_progress, due } = progress
+  if (total === 0) return null
+  const pct = (n: number) => `${(100 * n) / total}%`
+  return (
+    <div className="mt-5">
+      <div className="mb-1.5 flex items-center justify-between text-xs text-slate-500">
+        <span>
+          <strong className="text-emerald-700">{mastered}</strong> mastered · {in_progress} learning ·{' '}
+          {total - mastered - in_progress} new
+        </span>
+        {due > 0 && <span className="text-amber-600">{due} due now</span>}
+      </div>
+      <div className="flex h-2 overflow-hidden rounded-full bg-slate-100">
+        <div className="bg-emerald-500" style={{ width: pct(mastered) }} />
+        <div className="bg-brand-400" style={{ width: pct(in_progress) }} />
+      </div>
+    </div>
+  )
+}
+
+/** Why the scheduler chose this item — a small, honest window into the engine. */
+function ReasonChip({ reason }: { reason: string }) {
+  const map: Record<string, { label: string; cls: string }> = {
+    new: { label: 'new', cls: 'bg-brand-50 text-brand-700 ring-brand-100' },
+    due: { label: 'review — due', cls: 'bg-amber-50 text-amber-700 ring-amber-200' },
+    review: { label: 'review', cls: 'bg-amber-50 text-amber-700 ring-amber-200' },
+  }
+  const m = map[reason]
+  if (!m) return null
+  return <span className={`rounded-full px-2 py-0.5 text-[11px] font-medium ring-1 ${m.cls}`}>{m.label}</span>
 }
 
 function Marked({

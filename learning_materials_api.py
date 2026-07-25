@@ -20,6 +20,7 @@ drift. Pydantic covers only the light index layer; the body is a passthrough.
 """
 
 import json
+import time
 import os
 from pathlib import Path
 from typing import Any
@@ -43,6 +44,7 @@ import describe_image_feedback
 import essay_feedback
 import math_practice_items
 import reading_mcq_items
+import spaced_repetition
 import swt_feedback
 
 # Sections the frontend can request individually, mapped to how they sit in the
@@ -178,19 +180,38 @@ def create_app(engine: Engine | None = None) -> FastAPI:
             for item in _load_mcq_bank()
         ]
 
+    def _public_item(item: dict[str, Any]) -> dict[str, Any]:
+        withheld = {"answer_num", "answer_den", "answer_tex", "answer_plain",
+                    "answer_is_reduced"}
+        return {k: v for k, v in item.items() if k not in withheld}
+
     @app.get("/math-practice-items")
     def get_math_practice_items() -> list[dict[str, Any]]:
         """The maths practice bank, with the computed answer withheld.
 
         The answer is revealed only on submit — otherwise it sits in the page
-        source. This is the first slice of the V2 study tool: every item's answer
-        is computed by code, so marking is deterministic and no model runs."""
-        withheld = {"answer_num", "answer_den", "answer_tex", "answer_plain",
-                    "answer_is_reduced"}
-        return [
-            {k: v for k, v in item.items() if k not in withheld}
-            for item in _load_math_practice_bank()
-        ]
+        source. Every item's answer is computed by code, so marking is
+        deterministic and no model runs."""
+        return [_public_item(item) for item in _load_math_practice_bank()]
+
+    @app.get("/books/{slug}/math-practice-next")
+    def get_math_practice_next(
+        slug: str, after: str | None = None, session: Session = Depends(get_session)
+    ) -> dict[str, Any]:
+        """The next item the spaced-repetition scheduler chooses, plus progress.
+
+        The Learning Engine (V2) decides this deterministically from the learner's
+        per-item state — due items first (weakest), then new, then study-ahead —
+        never the model. `after` is the item just answered, so it isn't repeated."""
+        bank = _load_math_practice_bank()
+        by_id = {i["id"]: i for i in bank}
+        states = store.load_math_states(session)
+        now = time.time()
+        item_id, reason = spaced_repetition.pick_next(states, list(by_id), now, avoid=after)
+        summary = spaced_repetition.summary(states, list(by_id), now)
+        if item_id is None:
+            return {"item": None, "reason": reason, "progress": summary}
+        return {"item": _public_item(by_id[item_id]), "reason": reason, "progress": summary}
 
     @app.get("/swt-passages")
     def get_swt_passages() -> list[dict[str, Any]]:
@@ -388,6 +409,16 @@ def create_app(engine: Engine | None = None) -> FastAPI:
 
         result = math_practice_items.check_answer(item, body.answer)
         score = 1 if result["correct"] else 0
+
+        # Update the spaced-repetition schedule for this item (the Learning
+        # Engine's state), deterministically, then report the new progress.
+        now = time.time()
+        states = store.load_math_states(session)
+        state = states.get(item["id"]) or spaced_repetition.ItemState(item_id=item["id"])
+        spaced_repetition.update(state, correct=result["correct"], now=now)
+        store.save_math_state(session, state)
+        states[item["id"]] = state
+        progress = spaced_repetition.summary(states, [i["id"] for i in _load_math_practice_bank()], now)
         feedback = {
             **result,
             "word_count": 0,
@@ -405,6 +436,8 @@ def create_app(engine: Engine | None = None) -> FastAPI:
             }],
             "top_priorities": [],
             "one_line_verdict": result["message"],
+            "progress": progress,
+            "mastered_now": state.is_mastered,
         }
         store.save_essay_attempt(
             session,

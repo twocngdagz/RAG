@@ -78,6 +78,32 @@ check("unknown item -> 404",
 hist = c.get("/books/math5a/essay-attempts?task_type=math_practice").json()
 check("both attempts in history", len(hist) == 2, str(len(hist)))
 
+print("\nscheduler: next-item selection, progress, and persistence")
+# fresh app on a fresh DB + tiny bank so the counts are exact
+os.environ["LEARNING_MATERIALS_DB_URL"] = f"sqlite:///{tempfile.mktemp(suffix='.db')}"
+small = mp.build_items(5, seed=3)
+bp2 = Path(tempfile.mktemp(suffix=".json"))
+bp2.write_text(json.dumps(small))
+os.environ["MATH_PRACTICE_ITEMS_FILE"] = str(bp2)
+c2 = TestClient(api.create_app())
+
+n = c2.get("/books/math5a/math-practice-next").json()
+check("first item is new", n["reason"] == "new" and n["item"], n["reason"])
+check("progress starts all-new", n["progress"] == {"total": 5, "mastered": 0, "due": 0, "new": 5, "in_progress": 0}, str(n["progress"]))
+
+item0 = next(x for x in small if x["id"] == n["item"]["id"])
+r = c2.post("/books/math5a/chapters/1/math-practice-answer",
+            json={"item_id": item0["id"], "answer": item0["answer_plain"]}).json()
+check("answer returns updated progress", r["progress"]["new"] == 4 and r["progress"]["in_progress"] == 1, str(r["progress"]))
+
+nxt = c2.get(f"/books/math5a/math-practice-next?after={item0['id']}").json()
+check("scheduler does not repeat the just-answered item", nxt["item"]["id"] != item0["id"])
+
+# state survives a fresh app instance on the same DB
+c3 = TestClient(api.create_app())
+persisted = c3.get("/books/math5a/math-practice-next").json()
+check("state persists across restart", persisted["progress"]["new"] == 4, str(persisted["progress"]))
+
 print("\n" + "=" * 58)
 print(f"{len(fails)} FAILED: {fails}" if fails else "maths practice slice holds")
 raise SystemExit(1 if fails else 0)

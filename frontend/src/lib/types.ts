@@ -261,6 +261,20 @@ export interface ReadingMcqFeedback {
   one_line_verdict: string
 }
 
+export interface MathProgress {
+  total: number
+  mastered: number
+  due: number
+  new: number
+  in_progress: number
+}
+
+export interface MathPracticeNext {
+  item: MathPracticeItem | null
+  reason: 'new' | 'due' | 'review' | 'all_mastered'
+  progress: MathProgress
+}
+
 export interface MathPracticeItem {
   id: string
   skill: string
@@ -284,6 +298,8 @@ export interface MathPracticeFeedback {
   max_raw_total: number
   traits: EssayTrait[]
   one_line_verdict: string
+  progress?: MathProgress
+  mastered_now?: boolean
 }
 
 export interface EssayAttempt {

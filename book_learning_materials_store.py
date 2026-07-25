@@ -372,6 +372,63 @@ class EssayAttempt(Base):
     created_at: Mapped[str] = mapped_column(String)
 
 
+class MathItemState(Base):
+    """Per-learner spaced-repetition state for one maths practice item.
+
+    The Learning Engine's persistent brain (V2). Single-user today, but keyed by
+    a learner slug so multi-user is a filter, not a migration."""
+
+    __tablename__ = "math_item_states"
+    __table_args__ = (UniqueConstraint("learner", "item_id", name="mis_learner_item_unique"),)
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    learner: Mapped[str] = mapped_column(String, index=True, default="local")
+    item_id: Mapped[str] = mapped_column(String, index=True)
+    level: Mapped[int] = mapped_column(Integer, default=0)
+    due_at: Mapped[float | None] = mapped_column(nullable=True)          # epoch seconds
+    introduced_at: Mapped[float | None] = mapped_column(nullable=True)
+    last_studied_at: Mapped[float | None] = mapped_column(nullable=True)
+    times_seen: Mapped[int] = mapped_column(Integer, default=0)
+    times_correct: Mapped[int] = mapped_column(Integer, default=0)
+    streak: Mapped[int] = mapped_column(Integer, default=0)
+    mastered_at: Mapped[float | None] = mapped_column(nullable=True)
+
+
+def load_math_states(session: Session, learner: str = "local") -> dict[str, "Any"]:
+    """All of a learner's item states, keyed by item_id, as scheduler ItemStates."""
+    import spaced_repetition as sr
+
+    out: dict[str, sr.ItemState] = {}
+    for r in session.scalars(select(MathItemState).where(MathItemState.learner == learner)):
+        out[r.item_id] = sr.ItemState(
+            item_id=r.item_id, level=r.level, due_at=r.due_at,
+            introduced_at=r.introduced_at, last_studied_at=r.last_studied_at,
+            times_seen=r.times_seen, times_correct=r.times_correct,
+            streak=r.streak, mastered_at=r.mastered_at,
+        )
+    return out
+
+
+def save_math_state(session: Session, state: "Any", learner: str = "local") -> None:
+    """Upsert one item's scheduler state."""
+    row = session.scalar(
+        select(MathItemState).where(
+            MathItemState.learner == learner, MathItemState.item_id == state.item_id
+        )
+    )
+    if row is None:
+        row = MathItemState(learner=learner, item_id=state.item_id)
+        session.add(row)
+    row.level = state.level
+    row.due_at = state.due_at
+    row.introduced_at = state.introduced_at
+    row.last_studied_at = state.last_studied_at
+    row.times_seen = state.times_seen
+    row.times_correct = state.times_correct
+    row.streak = state.streak
+    row.mastered_at = state.mastered_at
+
+
 def save_essay_attempt(
     session: Session,
     *,

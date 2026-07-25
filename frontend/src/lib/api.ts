@@ -68,6 +68,8 @@ export const api = {
   swtPassages: () => get<SwtPassage[]>('/swt-passages'),
   readingMcqItems: () => get<ReadingMcqItem[]>('/reading-mcq-items'),
   mathPracticeItems: () => get<MathPracticeItem[]>('/math-practice-items'),
+  mathPracticeNext: (slug: string, after?: string) =>
+    get<MathPracticeNext>(`/books/${slug}/math-practice-next${after ? `?after=${encodeURIComponent(after)}` : ''}`),
   mathPracticeAnswer: (slug: string, n: number, itemId: string, answer: string) =>
     post<MathPracticeFeedback>(`/books/${slug}/chapters/${n}/math-practice-answer`, {
       item_id: itemId,
