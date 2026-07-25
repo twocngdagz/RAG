@@ -43,6 +43,25 @@ ELA = Path("/Users/roy/Desktop/Work/Ela")
 IDS_FILE = Path("output/ela_flaky_item_ids.txt")
 WORK = Path("output/ela_enrichment")
 CHAT_URL = "https://chatgpt.com/g/g-p-6a64b2721ff081919d9f7a483d7ee498-english-enrichment/project"
+LEDGER = WORK / "imported.txt"
+
+
+def already_done() -> set[str]:
+    """Batches whose items are already repaired and imported.
+
+    35 batches is most of a day, so it will be interrupted — by a refusal, a
+    dropped connection, or a closed laptop. Without this, re-running spends a
+    fresh ChatGPT call re-fixing items that were fixed yesterday.
+    """
+    if not LEDGER.exists():
+        return set()
+    return {line.strip() for line in LEDGER.read_text().splitlines() if line.strip()}
+
+
+def mark_done(stem: str) -> None:
+    LEDGER.parent.mkdir(parents=True, exist_ok=True)
+    with LEDGER.open("a") as fh:
+        fh.write(stem + "\n")
 
 
 def artisan(*args: str, timeout: int = 300) -> tuple[int, str]:
@@ -102,6 +121,24 @@ def run_batch(d: ChatGPTDriver, ids: list[int], n: int, *, dry_run: bool) -> boo
 
     print(f"\n── batch {n}: {len(ids)} items, ids {ids[0]}–{ids[-1]}", flush=True)
 
+    # A reply already fetched and saved is worth reusing: it cost ten minutes of
+    # ChatGPT time. This is the case where the run died between the reply landing
+    # and the import going through.
+    if out_path.exists() and not dry_run:
+        try:
+            batch = json.loads(out_path.read_text())
+            print(f"   reusing the saved reply ({len(batch)} rows) — skipping ChatGPT", flush=True)
+            code, out = artisan("learning-items:validate-batch", str(out_path), f"--limit={len(batch)}")
+            if code == 0:
+                code, out = artisan("learning-items:import", str(out_path))
+                if code == 0:
+                    mark_done(stem)
+                    print(f"   imported: {out.splitlines()[-1][:110] if out else ''}")
+                    return True
+            print("   saved reply no longer passes; fetching a fresh one")
+        except (ValueError, json.JSONDecodeError):
+            pass
+
     # --inline-json matters: without it the prompt tells ChatGPT to return a
     # downloadable file, and the driver collects the filename instead of the data.
     code, out = artisan("learning-items:prompt-generate", f"--ids-file={ids_path}",
@@ -155,6 +192,8 @@ def run_batch(d: ChatGPTDriver, ids: list[int], n: int, *, dry_run: bool) -> boo
         return True
 
     code, out = artisan("learning-items:import", str(out_path))
+    if code == 0:
+        mark_done(stem)
     print(f"   {'imported' if code == 0 else 'IMPORT FAILED'}: {out.splitlines()[-1][:120] if out else ''}")
     return code == 0
 
@@ -168,6 +207,7 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--start", type=int, default=0, help="skip this many batches")
     ap.add_argument("--delay-min", type=float, default=60, help="shortest gap between batches, seconds")
     ap.add_argument("--delay-max", type=float, default=150, help="longest gap between batches, seconds")
+    ap.add_argument("--force", action="store_true", help="redo batches already recorded as imported")
     args = ap.parse_args(argv)
 
     ids = [int(x) for x in Path(args.ids_file).read_text().split() if x.strip().isdigit()]
@@ -177,7 +217,11 @@ def main(argv: list[str] | None = None) -> int:
     print(f"{len(ids):,} items to repair -> {len(chunks)} batches of {args.size}"
           f"{'  (DRY RUN — nothing will be imported)' if args.dry_run else ''}")
 
-    ok = bad = 0
+    done = set() if args.force else already_done()
+    if done:
+        print(f"{len(done)} batches already imported — skipping them (--force to redo)")
+
+    ok = bad = skipped = 0
     # Headless is served a Cloudflare challenge page that never resolves and looks
     # exactly like being logged out. The window has to be visible.
     with ChatGPTDriver(DEFAULT_PROFILE, headless=False) as d:
@@ -185,7 +229,10 @@ def main(argv: list[str] | None = None) -> int:
             print("Not logged in — run: python chatgpt_browser_driver.py login")
             return 1
         for n, chunk in enumerate(chunks, start=1):
-            if n > 1:
+            if f"repair-{chunk[0]}-{chunk[-1]}" in done:
+                skipped += 1
+                continue
+            if ok or bad:
                 pause = random.uniform(args.delay_min, args.delay_max)
                 print(f"   (waiting {pause:.0f}s)", flush=True)
                 time.sleep(pause)
@@ -200,8 +247,9 @@ def main(argv: list[str] | None = None) -> int:
                 bad += 1
                 print(f"   batch failed: {type(exc).__name__}: {str(exc)[:120]}")
 
-    print(f"\n{ok} batches done, {bad} failed. "
-          f"Failed batches are safe to re-run — nothing partial was imported.")
+    print(f"\n{ok} done, {bad} failed, {skipped} already imported. "
+          f"Re-run the same command to pick up where this stopped — finished batches "
+          f"are skipped and any reply already fetched is reused.")
     return 0 if bad == 0 else 1
 
 
