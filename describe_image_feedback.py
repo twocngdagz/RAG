@@ -244,8 +244,12 @@ def _reconcile(result: dict[str, Any], item: dict[str, Any], response: str) -> d
             "max": MAX_CONTENT,
             "evidence": result.get("band_reason", ""),
             "fix": (result.get("top_priorities") or [""])[0],
+            "scored_by": "model",
         }
     ]
+    # The Content band is the model's call. (result["accuracy"] beside it is the
+    # deterministic number check — code — and is presented separately.)
+    result["scored_by"] = "model"
     return result
 
 

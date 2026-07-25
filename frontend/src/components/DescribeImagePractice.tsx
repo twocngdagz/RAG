@@ -14,7 +14,7 @@ import {
 import { api } from '../lib/api'
 import { useAsync } from '../lib/useAsync'
 import type { DescribeImageFeedback } from '../lib/types'
-import { AttemptModal, HistorySection } from './EssayPractice'
+import { AttemptModal, HistorySection, ScoredByNote } from './EssayPractice'
 
 const TASK = 'describe_image'
 /** A full 40-second spoken answer is roughly this many words. */
@@ -283,6 +283,8 @@ function DescribeImageReport({ r, onRetry }: { r: DescribeImageFeedback; onRetry
         {r.band_reason && <p className="mt-3 text-sm text-brand-50/90">{r.band_reason}</p>}
         <p className="mt-2 text-brand-50/95">{r.one_line_verdict}</p>
       </div>
+
+      <ScoredByNote scoredBy={r.scored_by} />
 
       {r.gating_applied && (
         <p className="flex items-start gap-2 rounded-xl border-l-3 border-rose-400 bg-rose-50 p-4 text-sm text-rose-800">

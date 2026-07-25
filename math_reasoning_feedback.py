@@ -180,9 +180,10 @@ def _reconcile(result: dict[str, Any], det: dict[str, Any]) -> dict[str, Any]:
         "strength": _clean_sentence(result.get("strength"), "You had a go at explaining your thinking."),
         "next_step": _clean_sentence(result.get("next_step"), "Try adding one sentence saying why you did each step."),
         "coach_note": _clean_sentence(result.get("coach_note"), ""),
-        # stated in the payload so the UI can never present this as a mark by accident
+        # stated in the payload so the UI can never present this as a mark by
+        # accident. `written_by`, not `scored_by`: this text scores nothing.
         "advisory": True,
-        "graded_by": "model",
+        "written_by": "model",
     }
 
 

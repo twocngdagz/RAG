@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import {
   AlertTriangle,
+  Bot,
   CheckCircle2,
   ChevronDown,
   Clock,
@@ -10,6 +11,7 @@ import {
   PenLine,
   RotateCcw,
   Send,
+  ShieldCheck,
   TrendingDown,
   TrendingUp,
   X,
@@ -551,6 +553,61 @@ function FeedbackReport({ r, essay, onRetry }: { r: EssayFeedback; essay?: strin
   )
 }
 
+/** Who decided this score. A rubric mark and a machine's opinion look identical
+ * on screen, so any task where a model sets the numbers has to say so — otherwise
+ * the confidence of the layout does the arguing. */
+export function ScoredByNote({ scoredBy }: { scoredBy?: 'model' | 'code' }) {
+  if (scoredBy === 'code') {
+    return (
+      <p className="flex items-start gap-2 rounded-xl border border-emerald-200 bg-emerald-50/70 p-3 text-xs text-emerald-800">
+        <ShieldCheck className="mt-0.5 size-4 shrink-0 text-emerald-600" aria-hidden="true" />
+        <span>
+          <strong>Marked by code.</strong> This was checked against the official rules, so the same
+          answer always gets the same mark.
+        </span>
+      </p>
+    )
+  }
+  if (scoredBy !== 'model') return null
+  return (
+    <p className="flex items-start gap-2 rounded-xl border border-violet-200 bg-violet-50/70 p-3 text-xs text-violet-900">
+      <Bot className="mt-0.5 size-4 shrink-0 text-violet-600" aria-hidden="true" />
+      <span>
+        <strong>Scored by AI.</strong> An AI marked this against the rubric. It&rsquo;s a practice
+        estimate to work from, not an official result &mdash; a human examiner can score
+        differently, and the same response may not score the same twice. Traits marked{' '}
+        <em>checked by code</em> below are measured, not judged.
+      </span>
+    </p>
+  )
+}
+
+/** Per-trait provenance, so the measured parts of a model-scored rubric stand out. */
+function TraitSource({ scoredBy, advisory }: { scoredBy?: 'model' | 'code'; advisory?: boolean }) {
+  if (advisory) {
+    return (
+      <span className="rounded-full bg-violet-50 px-1.5 py-0.5 text-[10px] font-medium text-violet-700 ring-1 ring-violet-200">
+        advice only · doesn’t count
+      </span>
+    )
+  }
+  if (scoredBy === 'code') {
+    return (
+      <span className="rounded-full bg-emerald-50 px-1.5 py-0.5 text-[10px] font-medium text-emerald-700 ring-1 ring-emerald-200">
+        checked by code
+      </span>
+    )
+  }
+  if (scoredBy === 'model') {
+    return (
+      <span className="rounded-full bg-slate-100 px-1.5 py-0.5 text-[10px] font-medium text-slate-500">
+        AI judgement
+      </span>
+    )
+  }
+  return null
+}
+
 /** The score header + trait breakdown + inline corrections + priorities, reused
  * by the live result and the history-detail modal. */
 export function FeedbackBody({ r, essay }: { r: EssayFeedback; essay?: string }) {
@@ -573,6 +630,8 @@ export function FeedbackBody({ r, essay }: { r: EssayFeedback; essay?: string })
         <p className="mt-3 text-brand-50/95">{r.one_line_verdict}</p>
       </div>
 
+      <ScoredByNote scoredBy={r.scored_by} />
+
       {r.gating_applied && (
         <p className="flex items-start gap-2 rounded-xl border-l-3 border-rose-400 bg-rose-50 p-4 text-sm text-rose-800">
           <AlertTriangle className="mt-0.5 size-4 shrink-0 text-rose-500" aria-hidden="true" />
@@ -590,8 +649,9 @@ export function FeedbackBody({ r, essay }: { r: EssayFeedback; essay?: string })
           return (
             <div key={i} className="rounded-xl border border-slate-200 bg-white p-4">
               <div className="flex items-center justify-between gap-3">
-                <h3 className="font-display text-sm font-semibold text-slate-900">
+                <h3 className="flex flex-wrap items-center gap-2 font-display text-sm font-semibold text-slate-900">
                   {TRAIT_LABEL[t.name] ?? t.name}
+                  <TraitSource scoredBy={t.scored_by} advisory={t.advisory} />
                 </h3>
                 <span
                   className={`shrink-0 rounded-md px-2 py-0.5 text-sm font-bold tabular-nums ${

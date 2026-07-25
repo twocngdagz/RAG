@@ -33,6 +33,10 @@ MAX_RAW_TOTAL = 9
 
 TRAIT_MAX = {"content": 4, "form": 1, "grammar": 2, "vocabulary": 2}
 
+# Traits whose score code computes rather than the model — disclosed per trait
+# so a learner can tell a measured mark from a judged one.
+CODE_SCORED_TRAITS = {"form"}
+
 SYSTEM_PROMPT = """You are a PTE Academic rater and feedback coach evaluating a
 Summarize Written Text response: the test taker must summarise the source passage
 in ONE single complete sentence of 5-75 words.
@@ -195,6 +199,8 @@ def _reconcile(result: dict[str, Any], summary: str) -> dict[str, Any]:
 
     for tr in result.get("traits", []):
         name = tr.get("name")
+        # Form is mechanical (computed below); the rest is the model's judgement.
+        tr["scored_by"] = "code" if name in CODE_SCORED_TRAITS else "model"
         cap = TRAIT_MAX.get(name)
         if cap is None:
             continue
@@ -214,6 +220,7 @@ def _reconcile(result: dict[str, Any], summary: str) -> dict[str, Any]:
     else:
         result["raw_total"] = sum(tr.get("score", 0) for tr in result.get("traits", []))
     result["max_raw_total"] = MAX_RAW_TOTAL
+    result["scored_by"] = "model"
     return result
 
 

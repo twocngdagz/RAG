@@ -140,6 +140,10 @@ export interface EssayTrait {
   max: number
   evidence: string
   fix: string
+  /** Who decided this number: measured in code, or judged by a model. */
+  scored_by?: 'model' | 'code'
+  /** True when the number is help only and contributes nothing to the score. */
+  advisory?: boolean
 }
 
 export interface EssayError {
@@ -157,6 +161,8 @@ export interface EssayFeedback {
   errors?: EssayError[]
   top_priorities: string[]
   one_line_verdict: string
+  /** Who decided the score. Model-scored tasks must disclose it to the learner. */
+  scored_by?: 'model' | 'code'
 }
 
 export interface EssayPrompt {
@@ -216,6 +222,8 @@ export interface DescribeImageFeedback {
   top_priorities: string[]
   one_line_verdict: string
   not_scored: string[]
+  /** Content is an AI band judgement; `accuracy` beside it is measured in code. */
+  scored_by?: 'model' | 'code'
 }
 
 // ---- Reading multiple choice (marked in code, no model involved) ------------
@@ -328,7 +336,8 @@ export interface MathAdvisory {
   next_step: string
   coach_note: string
   advisory: true
-  graded_by: 'model'
+  /** Who wrote this text — never who scored anything, because it scores nothing. */
+  written_by: 'model'
 }
 
 export interface MathReasoningFeedback {

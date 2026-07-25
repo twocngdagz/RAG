@@ -136,6 +136,46 @@ class SwtFeedbackRequest(BaseModel):
     passage_id: str | None = None
 
 
+# Which tasks let a model decide the score. Used to disclose grading on attempts
+# saved before `scored_by` existed — the stored feedback blob is opaque JSON, so
+# the task type is the only thing left to derive it from.
+MODEL_SCORED_TASKS = {"write_essay", "summarize_written_text", "describe_image"}
+
+# ...and which traits inside those rubrics code actually computed, so a back-filled
+# attempt is labelled accurately rather than uniformly. Form was measured in code
+# long before this field existed; calling it an AI judgement would be a new untruth
+# told to fix an old silence.
+CODE_SCORED_TRAITS_BY_TASK = {
+    "write_essay": essay_feedback.CODE_SCORED_TRAITS,
+    "summarize_written_text": swt_feedback.CODE_SCORED_TRAITS,
+}
+
+
+def _with_scoring_disclosure(feedback: dict[str, Any], task_type: str | None) -> dict[str, Any]:
+    """Guarantee every feedback payload says who decided the score.
+
+    A learner cannot tell a measured mark from a judged one by looking at it, and
+    the payloads used to be silent about the difference. New payloads set this at
+    the source; this fills it in for everything already in the database.
+    """
+    if not isinstance(feedback, dict):
+        return feedback
+    feedback.setdefault("scored_by", "model" if task_type in MODEL_SCORED_TASKS else "code")
+    default = feedback["scored_by"]
+    code_traits = CODE_SCORED_TRAITS_BY_TASK.get(task_type or "", frozenset())
+    for trait in feedback.get("traits", []) or []:
+        if not isinstance(trait, dict):
+            continue
+        if trait.get("advisory"):
+            # the model's opinion, but it scores nothing — `advisory` carries that
+            trait.setdefault("scored_by", "model")
+        elif trait.get("name") in code_traits:
+            trait.setdefault("scored_by", "code")
+        else:
+            trait.setdefault("scored_by", default)
+    return feedback
+
+
 def _mcq_verdict(result: dict[str, Any], item: dict[str, Any]) -> str:
     """One plain sentence a learner can act on."""
     if result["score"] == result["max_score"]:
@@ -365,7 +405,7 @@ def create_app(engine: Engine | None = None) -> FastAPI:
             task_type="write_essay",
         )
         session.commit()
-        return feedback
+        return _with_scoring_disclosure(feedback, "write_essay")
 
     @app.post("/books/{slug}/chapters/{chapter_number}/swt-feedback")
     def post_swt_feedback(
@@ -395,7 +435,7 @@ def create_app(engine: Engine | None = None) -> FastAPI:
             task_type="summarize_written_text",
         )
         session.commit()
-        return feedback
+        return _with_scoring_disclosure(feedback, "summarize_written_text")
 
     @app.post("/books/{slug}/chapters/{chapter_number}/describe-image-feedback")
     def post_describe_image_feedback(
@@ -429,7 +469,7 @@ def create_app(engine: Engine | None = None) -> FastAPI:
             task_type="describe_image",
         )
         session.commit()
-        return feedback
+        return _with_scoring_disclosure(feedback, "describe_image")
 
     @app.post("/books/{slug}/chapters/{chapter_number}/math-practice-answer")
     def post_math_practice_answer(
@@ -490,7 +530,7 @@ def create_app(engine: Engine | None = None) -> FastAPI:
             task_type="math_practice",
         )
         session.commit()
-        return feedback
+        return _with_scoring_disclosure(feedback, "math_practice")
 
     @app.post("/books/{slug}/chapters/{chapter_number}/math-reasoning-answer")
     def post_math_reasoning_answer(
@@ -582,7 +622,7 @@ def create_app(engine: Engine | None = None) -> FastAPI:
             task_type="math_reasoning",
         )
         session.commit()
-        return feedback
+        return _with_scoring_disclosure(feedback, "math_reasoning")
 
     @app.post("/books/{slug}/chapters/{chapter_number}/reading-mcq-answer")
     def post_reading_mcq_answer(
@@ -632,7 +672,7 @@ def create_app(engine: Engine | None = None) -> FastAPI:
             task_type="reading_multiple_choice",
         )
         session.commit()
-        return feedback
+        return _with_scoring_disclosure(feedback, "reading_multiple_choice")
 
     @app.get("/books/{slug}/essay-attempts/{attempt_id}")
     def get_essay_attempt(
@@ -649,7 +689,9 @@ def create_app(engine: Engine | None = None) -> FastAPI:
             "prompt_type": rec.prompt_type,
             "prompt_text": rec.prompt_text,
             "essay_text": rec.essay_text,
-            "feedback": json.loads(rec.feedback),
+            # older attempts predate `scored_by`; fill it in from the task type so
+            # the detail view discloses AI grading for history too, not just new work
+            "feedback": _with_scoring_disclosure(json.loads(rec.feedback), rec.task_type),
         }
 
     @app.get("/books/{slug}/essay-attempts")
@@ -662,7 +704,7 @@ def create_app(engine: Engine | None = None) -> FastAPI:
         Optionally filtered to one task (write_essay, summarize_written_text)."""
         out = []
         for rec in store.list_essay_attempts(session, slug, task_type=task_type):
-            fb = json.loads(rec.feedback)
+            fb = _with_scoring_disclosure(json.loads(rec.feedback), rec.task_type)
             out.append({
                 "id": rec.id,
                 "chapter_number": rec.chapter_number,
@@ -673,8 +715,10 @@ def create_app(engine: Engine | None = None) -> FastAPI:
                 "max_raw_total": rec.max_raw_total,
                 "word_count": rec.word_count,
                 "created_at": rec.created_at,
+                "scored_by": fb.get("scored_by"),
                 "traits": [
-                    {"name": t.get("name"), "score": t.get("score"), "max": t.get("max")}
+                    {"name": t.get("name"), "score": t.get("score"), "max": t.get("max"),
+                     "scored_by": t.get("scored_by"), "advisory": bool(t.get("advisory"))}
                     for t in fb.get("traits", [])
                 ],
             })

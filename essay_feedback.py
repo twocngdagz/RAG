@@ -53,6 +53,10 @@ TRAIT_MAX = {
     "spelling": 2,
 }
 
+# Traits whose score code computes rather than the model — disclosed per trait
+# so a learner can tell a measured mark from a judged one.
+CODE_SCORED_TRAITS = {"form"}
+
 SYSTEM_PROMPT = """You are a PTE Academic writing rater and feedback coach evaluating a
 Write Essay response.
 
@@ -278,6 +282,10 @@ def _reconcile(result: dict[str, Any], essay_text: str) -> dict[str, Any]:
 
     for tr in result.get("traits", []):
         name = tr.get("name")
+        # Say who decided this number. Form is mechanical and computed below, so
+        # it is code; everything else is the model's judgement, and the learner
+        # is entitled to know that before acting on the score.
+        tr["scored_by"] = "code" if name in CODE_SCORED_TRAITS else "model"
         cap = TRAIT_MAX.get(name)
         if cap is None:
             continue
@@ -299,6 +307,8 @@ def _reconcile(result: dict[str, Any], essay_text: str) -> dict[str, Any]:
     else:
         result["raw_total"] = sum(tr.get("score", 0) for tr in result.get("traits", []))
     result["max_raw_total"] = MAX_RAW_TOTAL
+    # A model decides most of this rubric, so the payload says so at the top level.
+    result["scored_by"] = "model"
     return result
 
 
