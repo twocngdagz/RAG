@@ -39,7 +39,12 @@ from typing import Any
 import httpx
 
 OLLAMA_URL = "https://ollama.com/api/chat"
-DEFAULT_MODEL = "gpt-oss:120b"
+# Switched from gpt-oss:120b after measuring both on the same known-quality
+# essays (test_grader_agreement.py). This one spread four essays of different
+# quality across 12/9/6/0 on the argument traits where gpt-oss squashed them into
+# 12/10/9/4, gave a no-argument essay 0 instead of 15, still caught all five
+# planted misspellings, and did not move at all across six runs. It is slower.
+DEFAULT_MODEL = "nemotron-3-ultra"
 MAX_RAW_TOTAL = 26
 
 # (trait, max) in the fixed output order. Content/DSC/GLR are the 0-6 traits.

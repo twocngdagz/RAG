@@ -556,6 +556,13 @@ function FeedbackReport({ r, essay, onRetry }: { r: EssayFeedback; essay?: strin
 /** How far a score moved when identical text was re-scored, keyed by rubric max
  * (26 Write Essay, 9 Summarize Written Text, 6 Describe Image Content).
  *
+ * STALE: measured against gpt-oss:120b, which the markers no longer use. The
+ * replacement (nemotron-3-ultra) looked steadier — it did not move at all over
+ * six runs — but that essay was sitting at full marks, where a score cannot move
+ * up, so the reading proves nothing yet. Left at the old, higher figure because
+ * over-stating the wobble is the safe direction. Re-measure on an essay that is
+ * not maxing out, then lower it.
+ *
  * Measured by test_grader_agreement.py against gpt-oss:120b, --runs 6, July 2026.
  * `moved` is the WORST range observed across measurement sessions, not the latest
  * — the spread estimate itself varied (essay came out 1, then 3, then 1), so the
