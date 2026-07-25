@@ -77,6 +77,8 @@ class ChatGPTDriver:
             headless=self._headless,
             args=["--no-first-run", "--no-default-browser-check"],
             viewport=None,
+            # pasting is how a person enters a large prompt; typing it is not
+            permissions=["clipboard-read", "clipboard-write"],
         )
         self.page = self._ctx.pages[0] if self._ctx.pages else self._ctx.new_page()
         return self
@@ -138,26 +140,75 @@ class ChatGPTDriver:
         for attempt in range(1, 4):
             composer = self.page.wait_for_selector(COMPOSER, timeout=15000)
             composer.click()
+            # Re-pasting a large prompt on every retry costs minutes. If it is
+            # already in the box, keep it and just try to send again.
+            if len(composer.inner_text() or "") > len(prompt) // 2:
+                print("  prompt already in the composer; retrying the send only", flush=True)
+                self._retry_send(before_user, prompt)
+                if self._wait_until(lambda: self.page.locator(USER).count() > before_user, 20):
+                    return
+                continue
             self.page.keyboard.press("Meta+A")
             self.page.keyboard.press("Backspace")
-            self.page.keyboard.insert_text(prompt)  # dispatches input events
 
-            # Wait for the send control to enable (proof the state updated), click
-            # it, and fall back to Enter if it never enables.
+            # Measured against this composer (a ProseMirror contenteditable):
+            #   clipboard paste  works instantly to ~5,000 chars, silently does
+            #                    nothing above ~20,000 — useless for real prompts
+            #   insert_text      always works, but the cost is quadratic:
+            #                    20k in 0.9s, 80k in 13s, 344k in 350s
+            # So type it, and say how long it is likely to take. Six minutes of
+            # silence reads as a hang, which is exactly how this was misdiagnosed
+            # three times.
+            started = time.time()
+            estimate = max(1, int((len(prompt) / 80_000) ** 2 * 13))
+            print(f"  entering prompt ({len(prompt):,} chars, expect ~{estimate}s)…", flush=True)
+            self.page.keyboard.insert_text(prompt)
+            print(f"  prompt entered in {time.time() - started:.0f}s", flush=True)
+
+            # Poll for the thing that actually matters — the message appearing
+            # as a user turn — and click send whenever the button becomes
+            # available. The earlier version stacked two fixed waits, one for the
+            # button and one for the turn, and both were guesses: six seconds was
+            # right for a short prompt and hopeless after a third of a megabyte.
+            # Watching the outcome needs no magic number, only a ceiling for the
+            # case where it is genuinely stuck.
+            deadline = time.time() + 300
             clicked = False
-            if self._wait_until(
-                lambda: (b := self.page.query_selector(SEND_BTN)) is not None and b.is_enabled(),
-                6,
-            ):
-                self.page.query_selector(SEND_BTN).click()
-                clicked = True
-            if not clicked:
-                self.page.keyboard.press("Enter")
+            last_note = 0.0
+            while time.time() < deadline:
+                if self.page.locator(USER).count() > before_user:
+                    print("  sent", flush=True)
+                    return
 
-            if self._wait_until(lambda: self.page.locator(USER).count() > before_user, 8):
-                return
+                button = self.page.query_selector(SEND_BTN)
+                if button is not None and button.is_enabled():
+                    try:
+                        button.click()
+                        clicked = True
+                    except Exception:
+                        pass          # it can vanish between the check and the click
+                elif not clicked and time.time() - started > 120:
+                    # the editor never settled; Enter is the fallback, not the plan
+                    self.page.keyboard.press("Enter")
+
+                now = time.time()
+                if now - last_note >= 15:
+                    state = "ready" if (button is not None and button.is_enabled()) else "still settling"
+                    print(f"  waiting to send ({int(now - started)}s, {state})", flush=True)
+                    last_note = now
+                time.sleep(0.5)
             print(f"  send attempt {attempt} did not register; retrying…")
         raise RuntimeError("Could not submit the prompt (no user turn appeared after 3 attempts).")
+
+    def _retry_send(self, before_user: int, prompt: str) -> None:
+        settle = max(20, min(120, len(prompt) // 4000))
+        if self._wait_until(
+            lambda: (b := self.page.query_selector(SEND_BTN)) is not None and b.is_enabled(),
+            settle,
+        ):
+            self.page.query_selector(SEND_BTN).click()
+        else:
+            self.page.keyboard.press("Enter")
 
     def send_and_wait(self, chat_url: str, prompt: str, *, timeout_s: int = 180) -> str:
         self.page.goto(chat_url, wait_until="domcontentloaded")
