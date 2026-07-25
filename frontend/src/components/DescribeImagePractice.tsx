@@ -284,7 +284,7 @@ function DescribeImageReport({ r, onRetry }: { r: DescribeImageFeedback; onRetry
         <p className="mt-2 text-brand-50/95">{r.one_line_verdict}</p>
       </div>
 
-      <ScoredByNote scoredBy={r.scored_by} />
+      <ScoredByNote scoredBy={r.scored_by} outOf={r.max_content} />
 
       {r.gating_applied && (
         <p className="flex items-start gap-2 rounded-xl border-l-3 border-rose-400 bg-rose-50 p-4 text-sm text-rose-800">

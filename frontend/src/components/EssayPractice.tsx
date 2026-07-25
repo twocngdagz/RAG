@@ -553,10 +553,25 @@ function FeedbackReport({ r, essay, onRetry }: { r: EssayFeedback; essay?: strin
   )
 }
 
+/** How far a score moved when identical text was re-scored, keyed by rubric max
+ * (26 Write Essay, 9 Summarize Written Text, 6 Describe Image Content).
+ *
+ * Measured by test_grader_agreement.py against gpt-oss:120b, --runs 6, July 2026.
+ * `moved` is the WORST range observed across measurement sessions, not the latest
+ * — the spread estimate itself varied (essay came out 1, then 3, then 1), so the
+ * cautious figure is the honest one to show. Re-run the test before editing these
+ * numbers: what a learner reads must come from a measurement, never a guess. */
+const REPEATABILITY: Record<number, { moved: number; runs: number }> = {
+  26: { moved: 3, runs: 6 },
+  9: { moved: 1, runs: 6 },
+  6: { moved: 1, runs: 6 },
+}
+
 /** Who decided this score. A rubric mark and a machine's opinion look identical
  * on screen, so any task where a model sets the numbers has to say so — otherwise
  * the confidence of the layout does the arguing. */
-export function ScoredByNote({ scoredBy }: { scoredBy?: 'model' | 'code' }) {
+export function ScoredByNote({ scoredBy, outOf }: { scoredBy?: 'model' | 'code'; outOf?: number }) {
+  const rep = outOf ? REPEATABILITY[outOf] : undefined
   if (scoredBy === 'code') {
     return (
       <p className="flex items-start gap-2 rounded-xl border border-emerald-200 bg-emerald-50/70 p-3 text-xs text-emerald-800">
@@ -575,8 +590,17 @@ export function ScoredByNote({ scoredBy }: { scoredBy?: 'model' | 'code' }) {
       <span>
         <strong>Scored by AI.</strong> An AI marked this against the rubric. It&rsquo;s a practice
         estimate to work from, not an official result &mdash; a human examiner can score
-        differently, and the same response may not score the same twice. Traits marked{' '}
-        <em>checked by code</em> below are measured, not judged.
+        differently.{' '}
+        {rep && (
+          <>
+            When we scored the same response {rep.runs} times, the total moved by up to{' '}
+            <strong>
+              {rep.moved} of {outOf}
+            </strong>
+            .{' '}
+          </>
+        )}
+        Traits marked <em>checked by code</em> below are measured, not judged.
       </span>
     </p>
   )
@@ -630,7 +654,7 @@ export function FeedbackBody({ r, essay }: { r: EssayFeedback; essay?: string })
         <p className="mt-3 text-brand-50/95">{r.one_line_verdict}</p>
       </div>
 
-      <ScoredByNote scoredBy={r.scored_by} />
+      <ScoredByNote scoredBy={r.scored_by} outOf={r.max_raw_total} />
 
       {r.gating_applied && (
         <p className="flex items-start gap-2 rounded-xl border-l-3 border-rose-400 bg-rose-50 p-4 text-sm text-rose-800">
