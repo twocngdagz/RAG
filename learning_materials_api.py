@@ -236,9 +236,20 @@ def create_app(engine: Engine | None = None) -> FastAPI:
         ]
 
     def _public_item(item: dict[str, Any]) -> dict[str, Any]:
+        # check_expr and answer_ratio each give the answer away as plainly as
+        # answer_plain does — "1/2 * 6 * 8" is the answer, just unevaluated.
         withheld = {"answer_num", "answer_den", "answer_tex", "answer_plain",
-                    "answer_is_reduced"}
+                    "answer_is_reduced", "check_expr", "answer_ratio"}
         return {k: v for k, v in item.items() if k not in withheld}
+
+    def _for_lesson(bank: list[dict[str, Any]], chapter: int | None) -> list[dict[str, Any]]:
+        """Only this lesson's questions — a child practising Fractions should never
+        be handed a ratio question. The review lessons deliberately mix earlier
+        work; anything untagged is left in so an older bank still serves."""
+        if chapter is None:
+            return bank
+        allowed = set(math_practice_items.chapters_for_lesson(chapter))
+        return [i for i in bank if i.get("chapter") is None or i["chapter"] in allowed]
 
     @app.get("/math-practice-items")
     def get_math_practice_items() -> list[dict[str, Any]]:
@@ -251,14 +262,19 @@ def create_app(engine: Engine | None = None) -> FastAPI:
 
     @app.get("/books/{slug}/math-practice-next")
     def get_math_practice_next(
-        slug: str, after: str | None = None, session: Session = Depends(get_session)
+        slug: str,
+        after: str | None = None,
+        chapter: int | None = None,
+        session: Session = Depends(get_session),
     ) -> dict[str, Any]:
         """The next item the spaced-repetition scheduler chooses, plus progress.
 
         The Learning Engine (V2) decides this deterministically from the learner's
         per-item state — due items first (weakest), then new, then study-ahead —
-        never the model. `after` is the item just answered, so it isn't repeated."""
-        bank = _load_math_practice_bank()
+        never the model. `after` is the item just answered, so it isn't repeated.
+        `chapter` limits it to that lesson's questions, and the progress bar then
+        counts that lesson rather than the whole book."""
+        bank = _for_lesson(_load_math_practice_bank(), chapter)
         by_id = {i["id"]: i for i in bank}
         states = store.load_math_states(session)
         now = time.time()
@@ -277,13 +293,16 @@ def create_app(engine: Engine | None = None) -> FastAPI:
 
     @app.get("/books/{slug}/math-reasoning-next")
     def get_math_reasoning_next(
-        slug: str, after: str | None = None, session: Session = Depends(get_session)
+        slug: str,
+        after: str | None = None,
+        chapter: int | None = None,
+        session: Session = Depends(get_session),
     ) -> dict[str, Any]:
         """The next reasoning item the scheduler chooses, plus progress.
 
         Reasoning items share the one Learning Engine and the one state table with
         the quick practice — same scheduling rules, a different kind of question."""
-        bank = _load_math_reasoning_bank()
+        bank = _for_lesson(_load_math_reasoning_bank(), chapter)
         by_id = {i["id"]: i for i in bank}
         states = store.load_math_states(session)
         now = time.time()
@@ -498,7 +517,8 @@ def create_app(engine: Engine | None = None) -> FastAPI:
         spaced_repetition.update(state, correct=result["correct"], now=now)
         store.save_math_state(session, state)
         states[item["id"]] = state
-        progress = spaced_repetition.summary(states, [i["id"] for i in _load_math_practice_bank()], now)
+        lesson_bank = _for_lesson(_load_math_practice_bank(), chapter_number)
+        progress = spaced_repetition.summary(states, [i["id"] for i in lesson_bank], now)
         feedback = {
             **result,
             "word_count": 0,
@@ -561,9 +581,8 @@ def create_app(engine: Engine | None = None) -> FastAPI:
         spaced_repetition.update(state, correct=det["correct"], now=now)
         store.save_math_state(session, state)
         states[item["id"]] = state
-        progress = spaced_repetition.summary(
-            states, [i["id"] for i in _load_math_reasoning_bank()], now
-        )
+        lesson_bank = _for_lesson(_load_math_reasoning_bank(), chapter_number)
+        progress = spaced_repetition.summary(states, [i["id"] for i in lesson_bank], now)
 
         advisory: dict[str, Any] | None = None
         advisory_error: str | None = None

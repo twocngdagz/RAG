@@ -87,7 +87,7 @@ for leaked in ("answer_plain", "answer_num", "working_tokens", "model_answer", "
 item = next(i for i in bank if i["id"] == served["id"])
 
 # --- a wrong response, with the grader singing its praises ------------------- #
-bad = c.post("/books/math5a/chapters/1/math-reasoning-answer",
+bad = c.post("/books/math5a/chapters/3/math-reasoning-answer",
              json={"item_id": item["id"], "response": "i dont know it is easy"}).json()
 check("wrong response is not marked correct", bad["correct"] is False)
 check("mark ignores the flattering grader", bad["raw_total"] == 0, str(bad["raw_total"]))
@@ -104,7 +104,7 @@ check("schedule moved on the code verdict (wrong -> comes back soon)",
       bad["progress"]["in_progress"] == 1 and bad["progress"]["mastered"] == 0, str(bad["progress"]))
 
 # --- the same item answered properly ----------------------------------------- #
-good = c.post("/books/math5a/chapters/1/math-reasoning-answer",
+good = c.post("/books/math5a/chapters/3/math-reasoning-answer",
               json={"item_id": item["id"], "response": item["model_answer"]}).json()
 check("worked answer is marked correct", good["correct"] is True, good["one_line_verdict"])
 check("full deterministic mark", good["raw_total"] == 2, str(good["raw_total"]))
@@ -112,7 +112,7 @@ check("worked example revealed only after answering", bool(good["model_answer"])
 check("rubric revealed only after answering", len(good["rubric"]) == 3)
 
 # --- right answer, no working: the case this task exists to catch ------------- #
-bare = c.post("/books/math5a/chapters/1/math-reasoning-answer",
+bare = c.post("/books/math5a/chapters/3/math-reasoning-answer",
               json={"item_id": item["id"], "response": f"the answer is {item['answer_plain']}"}).json()
 check("right answer with no working is not fully correct", bare["correct"] is False, str(bare["raw_total"]))
 check("...but the answer itself is credited", bare["answer_shown"] is True)
@@ -125,7 +125,7 @@ def _down(*a, **k):
 
 
 api.math_reasoning_feedback.score_reasoning = _down
-offline = c.post("/books/math5a/chapters/1/math-reasoning-answer",
+offline = c.post("/books/math5a/chapters/3/math-reasoning-answer",
                  json={"item_id": item["id"], "response": item["model_answer"]}).json()
 check("still marked with no grader", offline["correct"] is True and offline["raw_total"] == 2)
 check("advisory absent, and said so plainly",

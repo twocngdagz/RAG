@@ -37,13 +37,30 @@ check("self-test passes", mp.self_test() == 0)
 print("\nevery generated answer is independently correct")
 items = mp.build_items(60, seed=99)
 import math_evaluators as M
-wrong = 0
+# Each item carries the sum that produces its answer, written separately from the
+# generator. math_evaluators works it out by a different code path, so the answer
+# is confirmed by two implementations that share nothing. Items whose rule is not
+# arithmetic (rounding, simplifying a ratio) carry no sum and are covered by
+# mp.self_test() against a second implementation instead.
+wrong, checked = 0, 0
 for it in items:
+    if not it.get("check_expr"):
+        continue
     stored = Fraction(it["answer_num"], it["answer_den"])
-    independent = M.evaluate(it["prompt_inline"].strip("$"))
+    independent = M.evaluate(it["check_expr"])
     if independent is None or independent != stored:
         wrong += 1
-check("60 items, all answers verify against the arithmetic checker", wrong == 0, f"{wrong} wrong")
+    checked += 1
+check("every answer with a sum verifies against the arithmetic checker", wrong == 0, f"{wrong} wrong")
+check("and that covers most of the bank", checked >= 50, f"only {checked} of {len(items)}")
+check("the rest are covered by the item self-test", mp.self_test(60) == 0)
+
+print("\nquestions are tied to the lesson they practise")
+check("every item names its lesson", all("chapter" in i for i in items))
+check("fractions questions are filed under Fractions",
+      {i["chapter"] for i in items if i["skill"] == "add_fractions"} == {3})
+check("a review lesson mixes earlier lessons", mp.chapters_for_lesson(4) == [1, 2, 3])
+check("a normal lesson serves only itself", mp.chapters_for_lesson(7) == [7])
 
 print("\nAPI: bank served (answers withheld), marked, recorded")
 from fastapi.testclient import TestClient
@@ -82,27 +99,35 @@ print("\nscheduler: next-item selection, progress, and persistence")
 # fresh app on a fresh DB + tiny bank so the counts are exact
 os.environ["LEARNING_MATERIALS_DB_URL"] = f"sqlite:///{tempfile.mktemp(suffix='.db')}"
 small = mp.build_items(5, seed=3)
+LESSON = small[0]["chapter"]
+in_lesson = [i for i in small if i["chapter"] == LESSON]
 bp2 = Path(tempfile.mktemp(suffix=".json"))
 bp2.write_text(json.dumps(small))
 os.environ["MATH_PRACTICE_ITEMS_FILE"] = str(bp2)
 c2 = TestClient(api.create_app())
 
-n = c2.get("/books/math5a/math-practice-next").json()
+n = c2.get(f"/books/math5a/math-practice-next?chapter={LESSON}").json()
 check("first item is new", n["reason"] == "new" and n["item"], n["reason"])
-check("progress starts all-new", n["progress"] == {"total": 5, "mastered": 0, "due": 0, "new": 5, "in_progress": 0}, str(n["progress"]))
+check("progress counts this lesson only",
+      n["progress"] == {"total": len(in_lesson), "mastered": 0, "due": 0,
+                        "new": len(in_lesson), "in_progress": 0}, str(n["progress"]))
+check("the served item belongs to this lesson", n["item"]["chapter"] == LESSON)
 
 item0 = next(x for x in small if x["id"] == n["item"]["id"])
-r = c2.post("/books/math5a/chapters/1/math-practice-answer",
+r = c2.post(f"/books/math5a/chapters/{LESSON}/math-practice-answer",
             json={"item_id": item0["id"], "answer": item0["answer_plain"]}).json()
-check("answer returns updated progress", r["progress"]["new"] == 4 and r["progress"]["in_progress"] == 1, str(r["progress"]))
+check("answer returns updated progress",
+      r["progress"]["new"] == len(in_lesson) - 1 and r["progress"]["in_progress"] == 1,
+      str(r["progress"]))
 
-nxt = c2.get(f"/books/math5a/math-practice-next?after={item0['id']}").json()
+nxt = c2.get(f"/books/math5a/math-practice-next?chapter={LESSON}&after={item0['id']}").json()
 check("scheduler does not repeat the just-answered item", nxt["item"]["id"] != item0["id"])
 
 # state survives a fresh app instance on the same DB
 c3 = TestClient(api.create_app())
-persisted = c3.get("/books/math5a/math-practice-next").json()
-check("state persists across restart", persisted["progress"]["new"] == 4, str(persisted["progress"]))
+persisted = c3.get(f"/books/math5a/math-practice-next?chapter={LESSON}").json()
+check("state persists across restart",
+      persisted["progress"]["new"] == len(in_lesson) - 1, str(persisted["progress"]))
 
 print("\n" + "=" * 58)
 print(f"{len(fails)} FAILED: {fails}" if fails else "maths practice slice holds")

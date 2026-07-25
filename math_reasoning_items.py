@@ -300,6 +300,10 @@ def build_items(count: int, *, seed: int = 4242) -> list[dict[str, Any]]:
         items.append({
             "id": f"mr-{len(items) + 1:03d}-{raw['skill']}",
             "kind": "reasoning",
+            # Every reasoning question here is built on fractions, so they all
+            # belong to the Fractions lesson. Without this a child practising
+            # Angles would be handed one.
+            "chapter": 3,
             "skill": raw["skill"],
             "skill_title": raw["skill_title"],
             "capability": raw["capability"],

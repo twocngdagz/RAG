@@ -71,16 +71,20 @@ export const api = {
   swtPassages: () => get<SwtPassage[]>('/swt-passages'),
   readingMcqItems: () => get<ReadingMcqItem[]>('/reading-mcq-items'),
   mathPracticeItems: () => get<MathPracticeItem[]>('/math-practice-items'),
-  mathPracticeNext: (slug: string, after?: string) =>
-    get<MathPracticeNext>(`/books/${slug}/math-practice-next${after ? `?after=${encodeURIComponent(after)}` : ''}`),
+  mathPracticeNext: (slug: string, chapter: number, after?: string) =>
+    get<MathPracticeNext>(
+      `/books/${slug}/math-practice-next?chapter=${chapter}` +
+        (after ? `&after=${encodeURIComponent(after)}` : ''),
+    ),
   mathPracticeAnswer: (slug: string, n: number, itemId: string, answer: string) =>
     post<MathPracticeFeedback>(`/books/${slug}/chapters/${n}/math-practice-answer`, {
       item_id: itemId,
       answer,
     }),
-  mathReasoningNext: (slug: string, after?: string) =>
+  mathReasoningNext: (slug: string, chapter: number, after?: string) =>
     get<MathReasoningNext>(
-      `/books/${slug}/math-reasoning-next${after ? `?after=${encodeURIComponent(after)}` : ''}`,
+      `/books/${slug}/math-reasoning-next?chapter=${chapter}` +
+        (after ? `&after=${encodeURIComponent(after)}` : ''),
     ),
   mathReasoningAnswer: (slug: string, n: number, itemId: string, response: string) =>
     post<MathReasoningFeedback>(`/books/${slug}/chapters/${n}/math-reasoning-answer`, {

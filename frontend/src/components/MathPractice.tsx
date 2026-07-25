@@ -89,7 +89,7 @@ export function MathPractice({ slug, number }: { slug: string; number: number })
       setLoadingNext(true)
       setError(null)
       try {
-        const n = await api.mathPracticeNext(slug, after)
+        const n = await api.mathPracticeNext(slug, number, after)
         setItem(n.item)
         setReason(n.reason)
         setProgress(n.progress)
@@ -101,7 +101,7 @@ export function MathPractice({ slug, number }: { slug: string; number: number })
         setLoadingNext(false)
       }
     },
-    [slug],
+    [slug, number],
   )
 
   useEffect(() => {
