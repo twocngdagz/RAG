@@ -61,7 +61,26 @@ and sent back. Blank, padded, or repeated work costs more time than doing it
 properly, because it will simply come back.
 
 =============================================================================
-3. PRESERVE IDENTITY EXACTLY
+3. RETURN THE FIELDS ASKED FOR AND NOTHING ELSE
+=============================================================================
+
+Each message lists the fields to fill. Return exactly those. Do not add any field
+of your own.
+
+In particular, never add a field citing where your instructions came from —
+instruction_source, instruction_citation, instruction_reference, source_citation,
+source_reference, guidance_citation, quality_guidance_source, or anything similar.
+These have appeared before, containing a reference back to this project. They are
+not part of the record, they end up stored against the word in a database, and the
+citation marker itself breaks the JSON: it arrives with real line breaks inside a
+string value, which makes the whole reply unparseable and throws away every item
+in the batch, not just the field.
+
+Do not cite these instructions. Do not reference them. Just do what they say and
+return the fields.
+
+=============================================================================
+4. PRESERVE IDENTITY EXACTLY
 =============================================================================
 
 Copy these three fields through from the input row, character for character:
@@ -79,7 +98,7 @@ Never invent a new source_label. Never tidy, correct, re-case, or re-spell
 stands and leave it alone.
 
 =============================================================================
-4. QUALITY, IN ORDER OF WHAT ACTUALLY HELPS A LEARNER
+5. QUALITY, IN ORDER OF WHAT ACTUALLY HELPS A LEARNER
 =============================================================================
 
   - The meaning must be plain enough for a learner to understand without a
@@ -96,7 +115,7 @@ stands and leave it alone.
     Leave them out only when you truly cannot tell.
 
 =============================================================================
-5. IF SOMETHING IS WRONG
+6. IF SOMETHING IS WRONG
 =============================================================================
 
 If a row cannot be enriched honestly — the input is corrupt, or the entry is not
