@@ -59,16 +59,18 @@ Rules:
 
 ---
 
-## Decide before B0: where does the scheduler go?
+## Decide before B2: where does the scheduler go?
 
-ADR v3 puts all scheduling behind ADR-0003 at batch 14 of 16. `03_implementation_plan` puts it at Phase 1 and calls it "the single most important change in either codebase."
+Two separate questions were being run together. They are now split, and only the second is still open.
 
-Both are defensible, and it is a real choice:
+**Settled — mastery demotion is B0.3, and it is mandatory.** A learner who forgets something the app called mastered currently never sees it again. `requirements.md:411` already promises the opposite. That is a broken promise against an adopted requirement, so it is repaired on its own, early, using the scheduling that already exists. It is not a scheduling change and does not wait for ADR-0003.
 
-- **ADR v3 order** — evidence model first, scheduling last. Correct dependency logic: you can't decide how to interpret evidence before you can record it. Cost: today's `12h / 1d / {1d,3d,7d}` cap, memoryless recompute, and absorbing `mastered` stay live for the whole migration.
-- **Scheduler first** — fix the live defect, then build the evidence model on top. Cost: you tune a scheduler against item-level state you're about to replace with objective-level evidence, so some of that work gets redone.
+**Still open — how long the gaps between reviews should be.** ADR v3 puts all scheduling behind ADR-0003 at its batch 14. `03_implementation_plan` puts it first and calls it the single most important change in either codebase.
 
-**Recommendation:** keep ADR v3's order, but split ADR-0003 out as a writing task starting at B1 and add one interim batch (B4.5 below) that removes the 7-day cap and makes `mastered` revocable under `legacy_review` — no FSRS, no new columns, just unbounded expansion and a demotion path. That stops the bleeding without pre-empting ADR-0003.
+- **ADR v3 order** — evidence model first, scheduling last. You cannot decide how to interpret evidence before you can record it. Cost: the `12h / 1d / {1d,3d,7d}` ladder and its seven-day ceiling stay live for the whole migration, so a well-known item keeps reappearing weekly.
+- **Scheduler first** — change the intervals now. Cost: you tune them against item-level state you are about to replace with objective-level evidence, so some of that work is redone.
+
+**Recommendation:** keep ADR v3's order and write ADR-0003 alongside from B1 onward. B4.5 remains available as an interim interval-expansion batch if the weekly reappearance turns out to hurt real learners, and remains **skipped** until then. Under ruling F1 the seven-day ceiling is a known temporary limitation, not a policy violation.
 
 ---
 
@@ -146,6 +148,18 @@ No new learner capability is introduced. The learner is protected from regressio
 
 ---
 
+### B0.1 closure note
+
+**Closed 2026-07-27 by approved substitution.** The original acceptance asked for three designed failure probes recorded as commit/revert pairs on a draft PR. That was replaced, with approval, by the following combined evidence:
+
+1. **Three isolated local failures.** A formatting violation caught by `pint --test`; a PHP wrong-argument-type error caught by PHPStan at level 5 (`argument.type`, *"expects int, string"*), which drove `composer check` to exit 1 while pint, pest and prettier stayed green; and a failing test caught by pest. Each probe was removed and its absence verified.
+2. **Genuine CI red/green.** The repaired lint job failed on PR #4 with 17 real eslint `import/order` errors — Wayfinder-generated modules are gitignored and that job never built them — and went green after `php artisan wayfinder:generate --with-form` was added. Real defect, real red, real green, not a synthetic probe.
+3. **Merged main green.** After merge, `composer lint:check`, `composer check` and `composer browser-check` all exit 0 on `main`, including the standing vocabulary baseline journey.
+
+No throwaway probe PR was created, and none is required.
+
+---
+
 ## B0.2 — Research-rule classification · S · —
 
 **Does:** Classifies every pedagogical rule as `invariant` / `initial_policy` / `domain_policy` / `experiment` / `optional_technique` (ADR §5). Records recon commit SHAs and audit dates. Re-runs `test_audit_sensitivity.py`.
@@ -179,7 +193,7 @@ No new screen is introduced. This batch prevents tentative research hypotheses o
 
 ---
 
-## B0.3 — Mastery lapse repair · S · B0.1
+## B0.3 — Mastery lapse repair · S · B0.1 · *runs in parallel with B1*
 
 **Does:** Makes a mastered item return to review when the learner gets it wrong, using the scheduling that already exists. **Does not touch the seven-day cap.**
 
@@ -221,12 +235,13 @@ A learner who forgets something the app marked as mastered currently never sees 
 - `tests/Unit/UpdateLearnerItemStatesAfterSessionTest.php` — interval ladder unchanged, cap still 7 days
 - `tests/Feature/StudySessionSchedulingUpdateTest.php` — a demoted item is composable into a later session
 - `tests/Feature/StudySessionGoldenPayloadTest.php` — baseline payload unchanged
+- `tests/Browser/MasteryLapseBrowserTest.php` — a learner answers a mastered item incorrectly, its mastered status is gone, and the item reappears in a later session
 
 **Hold:** stop if demotion requires changing interval behaviour, adding columns, or pre-empting ADR-0003.
 
 ---
 
-## B1 — Throwaway fractions spike · M · B0
+## B1 — Throwaway fractions spike · M · B0 · *runs in parallel with B0.3*
 
 **Does:** One fractions skill behind a flag, disposable code, hand-written JSON. Deleted afterwards.
 
@@ -272,7 +287,7 @@ Validate that the proposed classroom sequence is understandable and instructiona
 
 ---
 
-## B2 — Competency + objective tables · M · B1
+## B2 — Competency + objective tables · M · B0.3 **and** B1
 
 **Does:** `competency_frameworks`, `learning_objectives`, `learning_objective_associations`. Stable keys and revisions. Nothing reads them.
 
@@ -378,7 +393,7 @@ No immediate visible feature. This batch allows one item to teach or assess seve
 
 ---
 
-## B3 — `study_session_activities` · S · B1
+## B3 — `study_session_activities` · S · B0.3 **and** B1
 
 **Does:** Creates the child table. Nothing reads or writes it.
 
@@ -536,14 +551,16 @@ No progress surface is added yet, but the system can record what the learner act
 
 ### Decision required before implementation
 
-B4.5 changes real learner scheduling behaviour, so it is not enabled automatically.
+B4.5 changes how long the app waits before showing an item again, so it is not enabled automatically.
 
-Recommended decision:
+**Mastery demotion is not part of this decision.** That is B0.3, it is mandatory, and it ships regardless of what happens here.
 
-- **Include B4.5** if the current seven-day cap and irreversible `mastered` state are causing real learner harm before ADR-0003 will be ready.
-- **Skip B4.5** if the current behaviour is acceptable temporarily and avoiding an interim scheduling migration is more valuable.
+The remaining question is only about interval length:
 
-This decision does not block B0–B4.2. It only determines whether B4.5 is executed before B5.
+- **Include B4.5** if production data shows the seven-day ceiling is causing real harm before ADR-0003 is ready — repeated reviews of items the learner clearly knows, crowding out work that needs attention.
+- **Skip B4.5** if weekly reappearance of well-known items is tolerable for now and avoiding an interim scheduling migration is worth more.
+
+**Currently skipped.** There is not yet enough learner history to show harm either way. This decision does not block any other batch; it only determines whether B4.5 runs before B5.
 
 
 **Does:** Under `legacy_review` only: removes the 7-day interval cap so successful reviews expand unbounded. No FSRS, no stability/difficulty columns, no new algorithm.
@@ -1585,16 +1602,17 @@ Every new learner uses one reliable runtime. No learner can land on a half-migra
 ## Order and parallelism
 
 ```
-0 → 0.1 → 0.2 → 0.3 → 1 → [decide]
-                     ├── 2 → 2.1 → 2.2 ─┐
-                     ├── 3 → 4 → 4.1 → 4.2 ─┤
-                     └── (4.5 optional)     │
-                                            ↓
+0 → 0.1 → 0.2 ─┬─ 0.3 ─┐
+               └─ 1 ───┴─ [pedagogy decision]
+                            ├── 2 → 2.1 → 2.2 ─┐
+                            ├── 3 → 4 → 4.1 → 4.2 ─┤
+                            └── (4.5 optional)     │
+                                                   ↓
    5 → 5.1 → 5.2 / 5.3 / 5.4 → 6 → 6.1 → 7 → 7.1 → 8 → 9 → 9.1
    → 10 → 10.1 → 10.2 → 10.3 → 11 → 11.1 → 12 → 12.1 → 13 → 13.1 → 14 → 15 → 16
 ```
 
-Independent and parallelisable: the `2.x` chain against the `3 → 4.x` chain. `5.2`, `5.3` and `5.4` after `5.1`. Everything from `6` onward is a single file.
+B0.3 and B1 run in parallel; B2 and B3 both wait for **both** to finish. Independent and parallelisable after that: the `2.x` chain against the `3 → 4.x` chain. `5.2`, `5.3` and `5.4` after `5.1`. Everything from `6` onward is a single file.
 
 37 required batches plus optional B4.5, none larger than M. The decision point after B1 still governs everything downstream.
 
