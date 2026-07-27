@@ -433,9 +433,11 @@ No immediate visible feature. This batch allows one item to teach or assess seve
 
 ---
 
-## B3 — `study_session_activities` · S · B0.3 **and** B1
+## B3 — Activity-definition identity and `study_session_activities` · S · B0.3 **and** B1
 
-**Does:** Creates the child table. Nothing reads or writes it.
+**Does:** Creates the permanent activity-definition identity, then the child table that points at it. Nothing reads or writes either.
+
+**Why two tables in one batch.** `study_session_activities.activity_definition_id` is a required foreign key, and a required key cannot point at a table that does not exist. B3 therefore creates the definition table first — identity only, `stable_key` plus `revision` — so the constraint is real from the moment the child table exists. B5 fills that same table in; it does not replace it, and the ids B3 creates are permanent.
 
 ### Learner-facing acceptance
 
@@ -458,7 +460,10 @@ No visible feature yet. This batch creates the storage needed for one skill to c
 
 
 ### Technical acceptance
-- All contract-path columns non-null, including `activity_definition_id`.
+- `activity_definitions` exists with identity only: `stable_key` + `revision`, uniquely constrained on the pair so B5 adds columns without changing the constraint.
+- All contract-path columns on `study_session_activities` non-null, including `activity_definition_id`.
+- **Deleting a session item deletes its activities** — cascade. The session is the owner.
+- **Deleting a definition that a session used is rejected** — restrict. A published lesson may be superseded, never erased out from under a learner's history.
 - `unique(study_session_item_id, position)` enforced.
 - `unique(study_session_id, learning_item_id)` on the parent preserved.
 - Index on `(study_session_item_id, phase, phase_position)`.
@@ -467,7 +472,9 @@ No visible feature yet. This batch creates the storage needed for one skill to c
 - `tests/Feature/Migrations/SessionActivitiesMigrationTest.php` — up, down
 - `tests/Feature/SessionActivityConstraintTest.php` — null in any required column rejected
 - `tests/Feature/SessionActivityConstraintTest.php` — duplicate position rejected
-- `tests/Feature/SessionActivityConstraintTest.php` — deleting a session item cascades
+- `tests/Feature/SessionActivityConstraintTest.php` — an activity pointing at a definition that does not exist is rejected
+- `tests/Feature/SessionActivityConstraintTest.php` — deleting a session item cascades to its activities
+- `tests/Feature/SessionActivityConstraintTest.php` — deleting a definition a session used is rejected, and the activity survives
 - `tests/Feature/StudySessionGoldenPayloadTest.php` — still matches B0
 
 ---
@@ -639,9 +646,11 @@ Well-known vocabulary stops returning every seven days forever.
 
 ---
 
-## B5 — Activity definitions · M · B2.2
+## B5 — Complete activity definitions · M · B2.2 **and** B3
 
-**Does:** `activity_definitions` + `activity_definition_objectives`. Immutable published revisions.
+**Does:** Completes the `activity_definitions` table B3 created, and adds `activity_definition_objectives`. Immutable published revisions.
+
+**Extends, never replaces.** B3's table and its ids are permanent. B5 adds columns — contract version, activity type, content, provenance, content hash, status, publication — to the existing rows and keys. Dropping and recreating the table would break every `study_session_activities` row that already points at it.
 
 ### Learner-facing acceptance
 
@@ -664,6 +673,7 @@ A learner's in-progress lesson remains stable even when authors publish a newer 
 
 
 ### Technical acceptance
+- The table B3 created is extended in place; its ids and its `stable_key` + `revision` constraint are unchanged.
 - Editing a published revision is rejected; a new edit creates a new revision.
 - One activity aligns to several objectives with `alignment_role` and `evidence_weight`.
 
@@ -672,6 +682,7 @@ A learner's in-progress lesson remains stable even when authors publish a newer 
 - `tests/Feature/ActivityDefinitionRevisionTest.php` — edit creates revision 2, revision 1 intact
 - `tests/Feature/ActivityDefinitionRevisionTest.php` — many-to-many objective alignment
 - `tests/Feature/ActivityDefinitionRevisionTest.php` — in-flight session keeps revision 1
+- `tests/Feature/ActivityDefinitionRevisionTest.php` — definitions created in B3 keep their ids after B5's migration
 
 ---
 
@@ -1662,7 +1673,7 @@ Every new learner uses one reliable runtime. No learner can land on a half-migra
    → 10 → 10.1 → 10.2 → 10.3 → 11 → 11.1 → 12 → 12.1 → 13 → 13.1 → 14 → 15 → 16
 ```
 
-B0.3 and B1 run in parallel; B2 and B3 both wait for **both** to finish. Independent and parallelisable after that: the `2.x` chain against the `3 → 4.x` chain. `5.2`, `5.3` and `5.4` after `5.1`. Everything from `6` onward is a single file.
+B0.3 and B1 run in parallel; B2 and B3 both wait for **both** to finish. Independent and parallelisable after that: the `2.x` chain against the `3 → 4.x` chain. B5 waits for both chains, because it completes the definition table B3 created and links it to the objectives B2.2 aligned. `5.2`, `5.3` and `5.4` after `5.1`. Everything from `6` onward is a single file.
 
 37 required batches plus optional B4.5, none larger than M. The decision point after B1 still governs everything downstream.
 
