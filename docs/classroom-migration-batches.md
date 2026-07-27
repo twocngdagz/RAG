@@ -701,13 +701,32 @@ A learner's in-progress lesson remains stable even when authors publish a newer 
 - The table B3 created is extended in place; its ids and its `stable_key` + `revision` constraint are unchanged.
 - Editing a published revision is rejected; a new edit creates a new revision.
 - One activity aligns to several objectives with `alignment_role` and `evidence_weight`.
+- `evidence_weight` is nullable and constrained to the range 0–1, stored in an **exact decimal** type. Floating point is not acceptable.
+
+#### `evidence_weight` — storage convention
+
+A **storage convention, not a mastery threshold**, parallel to B4.2's `strength`. It defines how to read a stored number and nothing more.
+
+| Value | Meaning |
+| --- | --- |
+| `NULL` | Contribution not specified |
+| `0` | Contributes no weight |
+| `1` | Maximum configured contribution under this contract and rubric |
+
+**`1` does not mean "sufficient on its own", and no value here means mastery.** How much evidence is enough is domain policy, deferred by this plan to a later batch and its own ADR, and it must not arrive through a schema comment or column semantics.
+
+**Cross-version values require calibration before comparison or aggregation.** A `0.75` authored against one contract version and a `0.75` authored against another are not the same quantity.
+
+If "sufficient on its own" is ever wanted, it needs a separate domain-policy decision recorded here first.
 
 ### Technical tests
 - `tests/Feature/ActivityDefinitionRevisionTest.php` — published revision immutable
 - `tests/Feature/ActivityDefinitionRevisionTest.php` — edit creates revision 2, revision 1 intact
 - `tests/Feature/ActivityDefinitionRevisionTest.php` — many-to-many objective alignment
 - `tests/Feature/ActivityDefinitionRevisionTest.php` — in-flight session keeps revision 1
-- `tests/Feature/ActivityDefinitionRevisionTest.php` — definitions created in B3 keep their ids after B5's migration
+- `tests/Feature/ActivityDefinitionRevisionTest.php` — definitions created in B3 keep their ids after B5's migration, tested against the migration itself rather than after it
+- `tests/Feature/ActivityDefinitionRevisionTest.php` — `evidence_weight` stored as exact decimal; `NULL`, `0` and `1` round-trip unchanged
+- `tests/Feature/ActivityDefinitionRevisionTest.php` — `evidence_weight` below 0 or above 1 rejected
 
 ---
 
