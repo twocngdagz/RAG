@@ -585,12 +585,37 @@ No progress surface is added yet, but the system can record what the learner act
 - One response can create several evidence rows against different objectives.
 - `evidence_classification` ∈ `independent` / `assisted` / `invalidated` / `observational` / `pending_review` is persisted.
 - No evidence row can be written from model prose alone — evaluator identity required.
+- `strength` is nullable and constrained to the range 0–1, stored in an **exact decimal** type. Floating point is not acceptable.
+
+#### `strength` — storage convention
+
+This is a **storage convention, not a mastery threshold**. It defines how to read a stored number. It says nothing about how much evidence is enough, which is domain policy and belongs to a later batch and its own ADR.
+
+| Value | Meaning |
+| --- | --- |
+| `NULL` | Not evaluated |
+| `0` | Evaluated, and provides no support |
+| `1` | Strongest support **under that evaluator and rubric** |
+
+**Values produced by different evaluator versions must not be compared or averaged without calibration.** `0.8` from one evaluator version and `0.8` from another are not the same quantity. This is why every evidence row carries `evaluator_type`, `evaluator_version`, `rubric_key` and `rubric_revision` alongside the number — a strength value read without them is meaningless.
+
+The exact decimal requirement follows from the boundaries: `0` and `1` are load-bearing values, and a binary floating-point type cannot be relied upon to store or compare them exactly.
 
 ### Technical tests
 - `tests/Feature/EvidenceRecordTest.php` — one response → three objective evidence rows
 - `tests/Feature/EvidenceRecordTest.php` — assisted and independent rows distinguishable
 - `tests/Feature/EvidenceRecordTest.php` — missing evaluator version rejected
 - `tests/Feature/EvidenceRecordTest.php` — evidence survives deletion of the mutable definition
+- `tests/Feature/EvidenceRecordTest.php` — `strength` stored as exact decimal; `NULL`, `0` and `1` round-trip unchanged
+- `tests/Feature/EvidenceRecordTest.php` — `strength` below 0 or above 1 rejected
+
+### Standing boundary test
+
+`tests/Feature/EvidenceRecordTest.php` carries a permanent assertion that **no B4.1 or B4.2 internal field reaches the browser** — evaluator, rubric, criterion, objective, evidence and `strength` fields, and their values.
+
+It asserts on the runtime **resource**, not on the internal payload. The payload legitimately carries the full feedback model including evaluator columns; `StudySessionResponseResource` whitelists fields and drops them. Asserting on the payload tests the wrong boundary.
+
+Any later batch that deliberately surfaces one of these fields must change this test as a visible diff and record why.
 
 ---
 
