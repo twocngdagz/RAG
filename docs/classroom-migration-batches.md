@@ -1,0 +1,1619 @@
+# Migration batches — split, with named tests
+
+Splits and details ADR-0002 v3 §38 Batches 0–16. Same acceptance model (learner-facing + technical), same hold criteria, but the size-L batches are split and every test names a file and an assertion.
+
+**Scope against §38.** This document covers §38 Batches 0–16. **ADR §38 Batch 17 — Authoring, enrichment, and mobile compatibility expansion — is deliberately EXCLUDED** as noncanonical follow-on work, and is not restored unless separately approved.
+
+**Count: 37 required batches, plus optional B4.5.** An earlier revision said 26 and omitted legacy retirement entirely; both are corrected.
+
+**This plan adopts runtime retirement (B16) as required work in its own right.** It is not required merely because the still-proposed ADR lists it.
+
+**Sizes:** S ≈ 1 day · M ≈ 2–3 days · L ≈ 4–5 days. Nothing here is larger than M.
+
+**Test conventions:** `tests/Unit`, `tests/Feature`, `tests/Browser/*BrowserTest.php` (Pest + Playwright), RAG root-level `test_*.py`.
+
+
+## Acceptance model
+
+Each batch has two independent acceptance layers.
+
+### Learner-facing acceptance
+
+This describes observable product behaviour:
+
+- the learner problem solved;
+- what must be visible in the browser;
+- phase and ordering behaviour;
+- refresh, resume, retry, and completion behaviour;
+- safe failure behaviour;
+- what must remain unchanged.
+
+For schema, validation, research, or infrastructure batches, the correct learner-facing outcome is usually **no visible change**.
+
+### Technical acceptance
+
+The existing **Done when**, **Tests**, and **Hold** sections remain the engineering acceptance layer. They validate migrations, schemas, invariants, deterministic logic, integrations, and browser automation.
+
+A batch is shippable only when both layers pass. Passing unit or feature tests alone does not prove the learner experience is acceptable.
+
+
+### Standing regression gate for every batch
+
+`tests/Browser/VocabularyBaselineBrowserTest.php` is a permanent CI gate from B0 onward.
+
+Every batch must run:
+
+```bash
+composer check
+composer browser-check
+```
+
+The browser suite must include the B0 vocabulary baseline. This applies even when a batch says **no visible change**.
+
+Rules:
+
+- Infrastructure batches pass only when the baseline learner journey remains unchanged.
+- Visible batches pass only when both the new learner behaviour and the existing vocabulary baseline pass.
+- Updating the baseline fixture requires an explicit approved learner-facing change; it must never be refreshed merely to make a failing test green.
+- A batch summary must state whether the baseline passed and whether the baseline fixture changed.
+
+---
+
+## Decide before B2: where does the scheduler go?
+
+Two separate questions were being run together. They are now split, and only the second is still open.
+
+**Settled — mastery demotion is B0.3, and it is mandatory.** A learner who forgets something the app called mastered currently never sees it again. `requirements.md:411` already promises the opposite. That is a broken promise against an adopted requirement, so it is repaired on its own, early, using the scheduling that already exists. It is not a scheduling change and does not wait for ADR-0003.
+
+**Still open — how long the gaps between reviews should be.** ADR v3 puts all scheduling behind ADR-0003 at its batch 14. `03_implementation_plan` puts it first and calls it the single most important change in either codebase.
+
+- **ADR v3 order** — evidence model first, scheduling last. You cannot decide how to interpret evidence before you can record it. Cost: the `12h / 1d / {1d,3d,7d}` ladder and its seven-day ceiling stay live for the whole migration, so a well-known item keeps reappearing weekly.
+- **Scheduler first** — change the intervals now. Cost: you tune them against item-level state you are about to replace with objective-level evidence, so some of that work is redone.
+
+**Recommendation:** keep ADR v3's order and write ADR-0003 alongside from B1 onward. B4.5 remains available as an interim interval-expansion batch if the weekly reappearance turns out to hurt real learners, and remains **skipped** until then. Under ruling F1 the seven-day ceiling is a known temporary limitation, not a policy violation.
+
+---
+
+## B0 — Baseline lock · S · —
+
+**Does:** Commits the current vocabulary payload and browser journey as golden fixtures. No app code changes.
+
+### Learner-facing acceptance
+
+**Learner problem solved**
+
+No new feature is introduced. This batch protects the vocabulary journey that already works so later architecture changes cannot alter it unnoticed.
+
+**What the learner should see in the browser**
+
+- The same priming screen, learning steps, recall activity, feedback, progress, and wrap-up as before.
+- The same item order for the same stored learner state and injected time.
+- No new labels, controls, loading states, or error messages.
+- Existing in-progress and completed sessions remain usable.
+
+**Behaviour expectations**
+
+- Given the same learner state, seed, and time, when the learner opens the session twice, then the visible activity order and content are identical.
+- Given an existing vocabulary session, when the learner progresses from priming to wrap-up, then every current interaction behaves as before.
+- Given the learner refreshes during the baseline journey, when the page reloads, then the existing resume behaviour is unchanged.
+- Any unapproved visible difference from the recorded baseline fails this batch.
+
+
+### Technical acceptance
+- Same seed + injected time → byte-identical payload, twice.
+- Fixture regenerable by one documented command.
+- Corpus item-type distribution audit committed.
+
+### Technical tests
+- `tests/Feature/StudySessionGoldenPayloadTest.php` — payload equals committed fixture
+- `tests/Feature/StudySessionGoldenPayloadTest.php` — two runs from one seed are identical
+- `tests/Browser/VocabularyBaselineBrowserTest.php` — full journey: priming → learning → recall → wrap-up
+
+---
+
+## B0.1 — Repair the verification gate · S · B0
+
+**Does:** Adds `phpstan.neon` (Larastan, committed level). Switches `pint`/`lint`/`format` to check mode inside `composer check`. Adds full `composer check` + `npx playwright install` to CI.
+
+### Learner-facing acceptance
+
+**Learner problem solved**
+
+No new learner capability is introduced. The learner is protected from regressions that previously could pass a verification command unnoticed.
+
+**What the learner should see in the browser**
+
+- No visible change.
+- Login, dashboard, priming, study, recall, feedback, and wrap-up remain available.
+- No page becomes slower, blank, or broken because verification tooling changed.
+- No formatting or internal diagnostic output appears in learner pages.
+
+**Behaviour expectations**
+
+- Given a normal learner journey, when the verification-gate changes are deployed, then all existing pages render and behave exactly as before.
+- Given a browser interaction that worked before this batch, when repeated afterwards, then it still succeeds without new warnings.
+- This batch is rejected if repairing CI changes runtime behaviour or frontend assets.
+
+
+### Technical acceptance
+- A deliberately introduced type error fails `composer check`.
+- A deliberately misformatted file fails `composer check`.
+- CI fails on both, not just on Pest.
+
+### Technical tests
+- Manual verification, recorded in the PR: three deliberate breakages, three red builds
+- `tests/Feature/MergedLearningItemsDatasetTest.php` — parses the 28 MB seed once, not seven times
+
+**Why separate and first:** you are about to change schema and scheduling on a gate that currently rewrites files instead of failing.
+
+---
+
+### B0.1 closure note
+
+**Closed 2026-07-27 by approved substitution.** The original acceptance asked for three designed failure probes recorded as commit/revert pairs on a draft PR. That was replaced, with approval, by the following combined evidence:
+
+1. **Three isolated local failures.** A formatting violation caught by `pint --test`; a PHP wrong-argument-type error caught by PHPStan at level 5 (`argument.type`, *"expects int, string"*), which drove `composer check` to exit 1 while pint, pest and prettier stayed green; and a failing test caught by pest. Each probe was removed and its absence verified.
+2. **Genuine CI red/green.** The repaired lint job failed on PR #4 with 17 real eslint `import/order` errors — Wayfinder-generated modules are gitignored and that job never built them — and went green after `php artisan wayfinder:generate --with-form` was added. Real defect, real red, real green, not a synthetic probe.
+3. **Merged main green.** After merge, `composer lint:check`, `composer check` and `composer browser-check` all exit 0 on `main`, including the standing vocabulary baseline journey.
+
+No throwaway probe PR was created, and none is required.
+
+---
+
+## B0.2 — Research-rule classification · S · —
+
+**Does:** Classifies every pedagogical rule as `invariant` / `initial_policy` / `domain_policy` / `experiment` / `optional_technique` (ADR §5). Records recon commit SHAs and audit dates. Re-runs `test_audit_sensitivity.py`.
+
+### Learner-facing acceptance
+
+**Learner problem solved**
+
+No new screen is introduced. This batch prevents tentative research hypotheses or arbitrary numeric thresholds from being presented to the learner as proven rules.
+
+**What the learner should see in the browser**
+
+- No visible change.
+- Existing session length, review, feedback, and mastery wording remain unchanged.
+- No experimental confidence prompt, reminder, or mastery rule appears merely because it exists in a research document.
+
+**Behaviour expectations**
+
+- Given a rule classified as an experiment or optional technique, when this batch is complete, then it does not alter production learner behaviour without a later approved implementation batch.
+- Given an existing vocabulary session, when the learner completes it, then no research-classification metadata is exposed.
+- The learner experience changes only through a later batch with explicit learner-facing acceptance.
+
+
+### Technical acceptance
+- Classification table approved and committed.
+- Every numeric threshold in the ADR carries a classification.
+- `test_audit_sensitivity.py` has a current result — the deterministic-over-judge rule is load-bearing in `01` Inv. 5 and its evidence is currently unverified.
+
+### Technical tests
+- `test_audit_sensitivity.py` — passes, result recorded with date
+
+---
+
+## B0.3 — Mastery lapse repair · S · B0.1 · *runs in parallel with B1*
+
+**Does:** Makes a mastered item return to review when the learner gets it wrong, using the scheduling that already exists. **Does not touch the seven-day cap.**
+
+**Mandatory.** `documentation/requirements.md:411` already states *"A mastered item may later become weak again if performance drops."* Ela's `lifecycleState()` never demotes out of `mastered`. This is a live defect against an adopted requirement, not deferred scheduling work — which is why it is separate from the optional B4.5.
+
+### Learner-facing acceptance
+
+**Learner problem solved**
+
+A learner who forgets something the app marked as mastered currently never sees it again. After this, forgetting brings it back.
+
+**What the learner should see in the browser**
+
+- Answering a mastered item incorrectly puts it back into normal review.
+- It reappears in a later session like any other item needing work.
+- Progress stops claiming the learner has mastered something they just got wrong.
+- Nothing else about timing changes — review gaps are as they were.
+- No new screen, label or setting appears.
+
+**Behaviour expectations**
+
+- Given an item is mastered, when the learner answers it incorrectly, then it leaves the mastered state and returns to review.
+- Given an item is mastered, when the learner answers it correctly, then nothing changes.
+- Given an item was demoted, when the learner answers it correctly enough times again, then it can become mastered again.
+- Given the demotion happens, then the next review date is chosen by the existing scheduler — this batch adds no new interval behaviour.
+- Given a partial answer on a mastered item, then behaviour follows the existing weak-score rules, not a new rule invented here.
+
+### Technical acceptance
+- `lifecycleState()` is no longer absorbing: an `incorrect` outcome on a `mastered` item demotes it.
+- Demotion uses the existing weak-score and due-date logic. No new columns, no interval changes.
+- The seven-day cap is untouched.
+- Re-mastery remains possible via the existing `MINIMUM_SAFE_MASTERY_REVIEWS` path.
+- Characterisation tests of current behaviour land first, so the change is a deliberate diff.
+
+### Technical tests
+- `tests/Unit/UpdateLearnerItemStatesAfterSessionTest.php` — incorrect on mastered demotes out of `mastered`
+- `tests/Unit/UpdateLearnerItemStatesAfterSessionTest.php` — correct on mastered leaves it mastered
+- `tests/Unit/UpdateLearnerItemStatesAfterSessionTest.php` — a demoted item can be re-mastered
+- `tests/Unit/UpdateLearnerItemStatesAfterSessionTest.php` — interval ladder unchanged, cap still 7 days
+- `tests/Feature/StudySessionSchedulingUpdateTest.php` — a demoted item is composable into a later session
+- `tests/Feature/StudySessionGoldenPayloadTest.php` — baseline payload unchanged
+- `tests/Browser/MasteryLapseBrowserTest.php` — a learner answers a mastered item incorrectly, its mastered status is gone, and the item reappears in a later session
+
+**Hold:** stop if demotion requires changing interval behaviour, adding columns, or pre-empting ADR-0003.
+
+---
+
+## B1 — Throwaway fractions spike · M · B0 · *runs in parallel with B0.3*
+
+**Does:** One fractions skill behind a flag, disposable code, hand-written JSON. Deleted afterwards.
+
+### Learner-facing acceptance
+
+**Learner problem solved**
+
+Validate that the proposed classroom sequence is understandable and instructionally coherent before permanent architecture is built. A later real-learner observation can strengthen the evidence but does not block this batch.
+
+**What the learner should see in the browser**
+
+- A clearly labelled experimental fractions lesson available only while the feature flag is enabled.
+- A simple learning goal written in child-friendly language.
+- A short explanation and meaningful illustration.
+- Guided practice with visible support.
+- Closed-book practice without the worked solution or answer-revealing support.
+- An explanation prompt asking the learner to describe the method.
+- A clear completion screen.
+- No experimental route or navigation entry when the flag is disabled.
+
+**Behaviour expectations**
+
+- Given the experiment is enabled, when the learner starts it, then phases appear in this order: goal → teach → guided practice → closed-book practice → explain → finish.
+- Given the learner is in guided practice, when help is needed, then relevant support is visible.
+- Given the learner enters closed-book practice, then answer-revealing teaching content is absent.
+- Given the learner makes an error, then an observer can classify it as conceptual, procedural, reading-related, or arithmetic.
+- Given the learner recognises a method but cannot independently produce it, then the observation notes record that distinction.
+- Given the learner finishes the explanation step, then the browser shows an unambiguous completion state.
+
+
+### Technical acceptance
+- The product owner walks the complete flow end to end and records whether the sequence teaches clearly, drags, hides support at the right time, and makes the explanation step useful.
+- Observation notes record likely error *types* — conceptual, procedural, reading, arithmetic — and whether the flow distinguishes recognition from independent production.
+- A real Year 5 learner observation is recommended evidence when available, but it is not required to complete this batch.
+- A written decision: keep the phase order, or change it.
+- Flag defaults off.
+
+### Technical tests
+- `tests/Browser/FractionsSpikeBrowserTest.php` — flow completes
+- `tests/Feature/FeatureFlagTest.php` — route absent when flag off
+
+**Hold:** if the sequence doesn't teach, fix pedagogy before any schema work.
+
+---
+
+## B2 — Competency + objective tables · M · B0.3 **and** B1
+
+**Does:** `competency_frameworks`, `learning_objectives`, `learning_objective_associations`. Stable keys and revisions. Nothing reads them.
+
+### Learner-facing acceptance
+
+**Learner problem solved**
+
+No visible feature yet. This batch prepares future lessons and progress reporting to refer to stable learning objectives instead of disconnected exercises.
+
+**What the learner should see in the browser**
+
+- No visible change.
+- Existing vocabulary sessions continue to open, progress, resume, and complete.
+- No objective IDs, framework keys, or revision numbers appear in learner pages.
+- Historical sessions remain readable.
+
+**Behaviour expectations**
+
+- Given an existing learning item with no objective alignment, when it appears in a current vocabulary session, then it behaves normally.
+- Given the new tables are empty, when the learner studies, then no empty objective card or missing-content state appears.
+- Any learner-facing dependency on the new graph before an approved runtime batch fails this batch.
+
+
+### Technical acceptance
+- Migrations up and down clean.
+- `stable_key + revision` unique on both tables.
+- Missing objective reference rejected.
+
+### Technical tests
+- `tests/Feature/Migrations/CompetencyGraphMigrationTest.php` — up, down, existing sessions load
+- `tests/Feature/ObjectiveGraphTest.php` — duplicate `stable_key + revision` rejected
+- `tests/Feature/ObjectiveGraphTest.php` — dangling objective FK rejected
+
+---
+
+## B2.1 — Objective associations + cycle validation · S · B2
+
+**Does:** Typed associations (`requires`, `builds_on`, `is_child_of`, `is_equivalent_to`, `aligns_with`) and the graph validator.
+
+### Learner-facing acceptance
+
+**Learner problem solved**
+
+No visible feature yet. This batch ensures future lesson order and prerequisites cannot be based on an invalid or circular objective graph.
+
+**What the learner should see in the browser**
+
+- No visible change.
+- Current session composition remains unchanged.
+- No graph-validation details or cycle paths appear in learner pages.
+
+**Behaviour expectations**
+
+- Given valid existing vocabulary data, when a learner opens a session, then the graph validator does not block the journey.
+- Given invalid future curriculum data, when it is authored or imported, then it is rejected before it can create a broken learner sequence.
+- A learner must never discover a curriculum cycle halfway through a session.
+
+
+### Technical acceptance
+- A prerequisite cycle is rejected with the cycle path in the error.
+- `is_equivalent_to` is symmetric or explicitly documented as not.
+
+### Technical tests
+- `tests/Unit/ObjectiveGraphValidatorTest.php` — direct cycle A→B→A rejected
+- `tests/Unit/ObjectiveGraphValidatorTest.php` — indirect cycle A→B→C→A rejected
+- `tests/Unit/ObjectiveGraphValidatorTest.php` — valid DAG accepted
+- `tests/Unit/ObjectiveGraphValidatorTest.php` — equivalence across two frameworks resolves
+
+---
+
+## B2.2 — Item↔objective alignment · S · B2.1
+
+**Does:** `learning_item_objectives` with `alignment_role`. Many-to-many both ways.
+
+### Learner-facing acceptance
+
+**Learner problem solved**
+
+No immediate visible feature. This batch allows one item to teach or assess several objectives and one objective to appear in several learning items.
+
+**What the learner should see in the browser**
+
+- No visible change.
+- Existing zero-alignment vocabulary items still compose and study normally.
+- No objective-alignment controls or internal roles appear in the learner runtime.
+
+**Behaviour expectations**
+
+- Given an existing item with no objective links, when the learner studies it, then the current journey remains available.
+- Given future content has several objective links, then those links do not duplicate the item in the session by themselves.
+- The learner sees one coherent activity, not one repeated card per objective.
+
+
+### Technical acceptance
+- One item aligns to several objectives; one objective to several items.
+- Existing items can have zero alignments during migration.
+- No `objective_id` column is added to `learner_item_states`.
+
+### Technical tests
+- `tests/Feature/ItemObjectiveAlignmentTest.php` — many-to-many both directions
+- `tests/Feature/ItemObjectiveAlignmentTest.php` — zero-alignment item still composes into a session
+- `tests/Feature/Migrations/LearnerItemStatesUnchangedTest.php` — asserts no `objective_id` column exists
+
+---
+
+## B3 — `study_session_activities` · S · B0.3 **and** B1
+
+**Does:** Creates the child table. Nothing reads or writes it.
+
+### Learner-facing acceptance
+
+**Learner problem solved**
+
+No visible feature yet. This batch creates the storage needed for one skill to contain several ordered classroom activities.
+
+**What the learner should see in the browser**
+
+- No visible change.
+- Existing sessions remain one coherent item per selected skill.
+- No duplicate item, empty child activity, or changed progress count appears.
+- Existing session resume behaviour remains intact.
+
+**Behaviour expectations**
+
+- Given a pre-migration session, when the learner opens or completes it, then it renders through the existing path.
+- Given the new child table contains no rows for a legacy session, then the browser does not show an empty activity state.
+- Any change to existing item order or item count fails this batch.
+
+
+### Technical acceptance
+- All contract-path columns non-null, including `activity_definition_id`.
+- `unique(study_session_item_id, position)` enforced.
+- `unique(study_session_id, learning_item_id)` on the parent preserved.
+- Index on `(study_session_item_id, phase, phase_position)`.
+
+### Technical tests
+- `tests/Feature/Migrations/SessionActivitiesMigrationTest.php` — up, down
+- `tests/Feature/SessionActivityConstraintTest.php` — null in any required column rejected
+- `tests/Feature/SessionActivityConstraintTest.php` — duplicate position rejected
+- `tests/Feature/SessionActivityConstraintTest.php` — deleting a session item cascades
+- `tests/Feature/StudySessionGoldenPayloadTest.php` — still matches B0
+
+---
+
+## B4 — Response→activity linkage · M · B3
+
+**Does:** Adds `study_session_activity_id` (nullable, legacy only), `response_path`, `attempt_number` to `study_session_responses`. Backfills existing rows as `legacy`.
+
+### Learner-facing acceptance
+
+**Learner problem solved**
+
+Each submitted answer can belong to the exact activity that produced it, and retries no longer need to overwrite earlier attempts.
+
+**What the learner should see in the browser**
+
+- Existing legacy answers and feedback remain unchanged.
+- When a retry is available, a new attempt is created rather than silently replacing the previous one.
+- Feedback remains attached to the correct guided, recall, or explanation activity.
+- Attempt order remains stable when attempt history is shown.
+- No database identifiers or `response_path` values appear.
+
+**Behaviour expectations**
+
+- Given two activities belong to the same skill, when the learner answers both, then each answer and feedback remain attached to the correct activity.
+- Given the learner submits attempt 1 and retries, when attempt 2 is submitted, then attempt 1 remains preserved.
+- Given the learner refreshes after a submission, then the correct activity and latest attempt are restored.
+- Given a legacy response has no activity link, when the learner opens its historical session, then it still renders normally.
+
+
+### Technical acceptance
+- Contract response without an activity is rejected at DB and application layer.
+- Legacy response with null activity still loads.
+- `unique(study_session_activity_id, attempt_number)`.
+- Activity→item→session consistency validated on write.
+
+### Technical tests
+- `tests/Feature/ResponseActivityLinkageTest.php` — contract response, null activity → rejected
+- `tests/Feature/ResponseActivityLinkageTest.php` — legacy response, null activity → loads
+- `tests/Feature/ResponseActivityLinkageTest.php` — attempts 1 and 2 both persist, ordered
+- `tests/Feature/ResponseActivityLinkageTest.php` — duplicate `(activity, attempt)` rejected
+- `tests/Feature/ResponseActivityLinkageTest.php` — activity belonging to another session rejected
+- `tests/Feature/LegacyResponseCompatibilityTest.php` — pre-migration rows render in wrap-up
+
+---
+
+## B4.1 — Criterion scores · S · B4
+
+**Does:** `study_session_response_criterion_scores`, plus `rubric_key`, `rubric_revision`, `evaluator_type`, `evaluator_version` on the feedback table. Existing English score columns stay.
+
+### Learner-facing acceptance
+
+**Learner problem solved**
+
+Future domains can provide activity-specific feedback criteria while the current English vocabulary feedback remains unchanged.
+
+**What the learner should see in the browser**
+
+- Existing vocabulary feedback wording, ordering, and scores remain identical.
+- No empty generic rubric section appears for legacy responses.
+- When generic criteria are eventually present, they appear in the intended order and belong to the current activity.
+- Internal rubric keys and evaluator versions remain hidden unless a deliberate disclosure UI is specified.
+
+**Behaviour expectations**
+
+- Given an existing vocabulary response, when feedback opens, then the same definition, usage, example, grammar, and overall feedback is shown.
+- Given criterion rows coexist with English columns, then the learner does not see duplicated feedback.
+- Given several criteria exist, then the UI preserves their authored order.
+
+
+### Technical acceptance
+- Criterion rows and English columns coexist on the same response.
+- `unique(response_id, criterion_key)`.
+- `score <= maximum_score` rejected when both present and inverted.
+
+### Technical tests
+- `tests/Feature/CriterionScoreTest.php` — criterion rows written alongside `definition_score` etc.
+- `tests/Feature/CriterionScoreTest.php` — duplicate criterion key rejected
+- `tests/Feature/CriterionScoreTest.php` — score above maximum rejected
+- `tests/Feature/CriterionScoreTest.php` — ordered by `position`
+
+---
+
+## B4.2 — Evidence records · M · B4.1, B2.2
+
+**Does:** `study_session_response_evidence` with `evidence_mode`, `evidence_classification`, objective FK, evaluator identity, `assistance_summary`.
+
+### Learner-facing acceptance
+
+**Learner problem solved**
+
+No progress surface is added yet, but the system can record what the learner actually demonstrated rather than only storing a raw score.
+
+**What the learner should see in the browser**
+
+- No visible change.
+- Existing feedback and completion remain unchanged.
+- No evidence classifications, objective IDs, evaluator keys, or internal confidence values appear yet.
+
+**Behaviour expectations**
+
+- Given one response supports several objectives, when the learner completes the activity, then the visible completion happens once, not once per evidence row.
+- Given evidence is assisted or independent, then that internal distinction does not unexpectedly alter the current vocabulary UI.
+- Given the mutable activity definition changes later, then historical learner responses remain viewable.
+
+
+### Technical acceptance
+- One response can create several evidence rows against different objectives.
+- `evidence_classification` ∈ `independent` / `assisted` / `invalidated` / `observational` / `pending_review` is persisted.
+- No evidence row can be written from model prose alone — evaluator identity required.
+
+### Technical tests
+- `tests/Feature/EvidenceRecordTest.php` — one response → three objective evidence rows
+- `tests/Feature/EvidenceRecordTest.php` — assisted and independent rows distinguishable
+- `tests/Feature/EvidenceRecordTest.php` — missing evaluator version rejected
+- `tests/Feature/EvidenceRecordTest.php` — evidence survives deletion of the mutable definition
+
+---
+
+## B4.5 — Interim interval expansion · M · B4 · *optional, currently skipped*
+
+### Decision required before implementation
+
+B4.5 changes how long the app waits before showing an item again, so it is not enabled automatically.
+
+**Mastery demotion is not part of this decision.** That is B0.3, it is mandatory, and it ships regardless of what happens here.
+
+The remaining question is only about interval length:
+
+- **Include B4.5** if production data shows the seven-day ceiling is causing real harm before ADR-0003 is ready — repeated reviews of items the learner clearly knows, crowding out work that needs attention.
+- **Skip B4.5** if weekly reappearance of well-known items is tolerable for now and avoiding an interim scheduling migration is worth more.
+
+**Currently skipped.** There is not yet enough learner history to show harm either way. This decision does not block any other batch; it only determines whether B4.5 runs before B5.
+
+
+**Does:** Under `legacy_review` only: removes the 7-day interval cap so successful reviews expand unbounded. No FSRS, no stability/difficulty columns, no new algorithm.
+
+**Scope note.** Mastery demotion is NOT part of this batch — it moved to B0.3, which is mandatory. B4.5 concerns interval expansion only.
+
+### Learner-facing acceptance
+
+**Learner problem solved**
+
+Well-known vocabulary stops returning every seven days forever.
+
+**What the learner should see in the browser**
+
+- A consistently successful item gradually appears less often than under the current seven-day cap.
+- Existing due work does not undergo an unexplained mass reshuffle immediately after deployment.
+- Review messaging remains understandable and does not expose interval formulas.
+
+**Behaviour expectations**
+
+- Given an item is recalled correctly across several delayed reviews, when the next review is scheduled, then its interval can grow beyond seven days.
+- Given existing due dates already exist at deployment, when the repair is applied, then most learners do not suddenly receive a large unexpected backlog.
+- Given the same item state and injected time, then the next due decision is deterministic.
+
+
+### Technical acceptance
+- Six consecutive correct reviews produce an interval well beyond 7 days.
+- Existing due dates migrate without a mass reshuffle.
+
+### Technical tests
+- `tests/Unit/UpdateLearnerItemStatesAfterSessionTest.php` — interval expands past 7 days
+- `tests/Unit/UpdateLearnerItemStatesAfterSessionTest.php` — deterministic given injected `now`
+- `tests/Feature/SchedulerMigrationTest.php` — existing due dates shift within a stated bound
+
+**Note:** characterisation tests capturing *current* behaviour must land before this batch, so the change is a deliberate diff.
+
+---
+
+## B5 — Activity definitions · M · B2.2
+
+**Does:** `activity_definitions` + `activity_definition_objectives`. Immutable published revisions.
+
+### Learner-facing acceptance
+
+**Learner problem solved**
+
+A learner's in-progress lesson remains stable even when authors publish a newer version of the activity.
+
+**What the learner should see in the browser**
+
+- No general visual change.
+- A session started with revision 1 continues showing revision 1.
+- New sessions may use revision 2 only after it is published and selected.
+- No revision numbers or immutable-record terminology appear in the normal learner journey.
+
+**Behaviour expectations**
+
+- Given the learner starts revision 1, when revision 2 is published, then refresh and resume still show revision 1.
+- Given a new session is composed after revision 2 becomes active, then it may use revision 2 according to policy.
+- A published edit must never silently change prompts, answers, or resources inside an active session.
+
+
+### Technical acceptance
+- Editing a published revision is rejected; a new edit creates a new revision.
+- One activity aligns to several objectives with `alignment_role` and `evidence_weight`.
+
+### Technical tests
+- `tests/Feature/ActivityDefinitionRevisionTest.php` — published revision immutable
+- `tests/Feature/ActivityDefinitionRevisionTest.php` — edit creates revision 2, revision 1 intact
+- `tests/Feature/ActivityDefinitionRevisionTest.php` — many-to-many objective alignment
+- `tests/Feature/ActivityDefinitionRevisionTest.php` — in-flight session keeps revision 1
+
+---
+
+## B5.1 — `learning.activity.v1` schema + validator · M · B5
+
+**Does:** The contract itself: presentation blocks, response spec, evaluation authority, evidence claims, scaffolding, answer visibility, scheduling descriptor.
+
+### Learner-facing acceptance
+
+**Learner problem solved**
+
+No visible feature yet. This batch defines a complete portable activity shape so future activities behave predictably across domains and devices.
+
+**What the learner should see in the browser**
+
+- No visible change.
+- Existing vocabulary activities continue through the current or explicit adapter path.
+- Invalid activity definitions are blocked before they can produce a broken learner page.
+- No PHP class names, React component names, or contract errors appear in the UI.
+
+**Behaviour expectations**
+
+- Given a valid current activity, when the learner opens it, then its current visible behaviour remains unchanged.
+- Given an invalid future activity definition, then it is rejected before learner delivery.
+- The browser must never infer a missing evidence mode, answer policy, or scheduling policy on its own.
+
+
+### Technical acceptance
+- A definition missing any required field is rejected with the field path.
+- `evidence_mode` incompatible with `answer_visibility` is rejected (e.g. `production` + `never`).
+- An unknown `scheduling.policy` key is rejected.
+- No React or PHP class name can be stored in a definition.
+
+### Technical tests
+- `tests/Unit/ActivityContractValidatorTest.php` — valid fixture passes
+- `tests/Unit/ActivityContractValidatorTest.php` — missing `evidence_mode` rejected, path named
+- `tests/Unit/ActivityContractValidatorTest.php` — `production` + `answer_visibility: never` rejected
+- `tests/Unit/ActivityContractValidatorTest.php` — unknown scheduling policy rejected
+- `tests/Unit/ActivityContractValidatorTest.php` — `"type": "App\\Foo"` rejected
+
+---
+
+## B5.2 — Block schemas + illustration accessibility · S · B5.1
+
+**Does:** Per-block-type schemas and validators. `illustration` distinct from `image`.
+
+### Learner-facing acceptance
+
+**Learner problem solved**
+
+No new block is delivered yet. This batch ensures future illustrations and content blocks can be rendered safely and accessibly.
+
+**What the learner should see in the browser**
+
+- No visible change to current vocabulary content.
+- Invalid illustrations do not reach learner sessions.
+- When illustrations are later enabled, meaningful alternative text and a text equivalent are available.
+- Decorative images do not create noisy screen-reader output.
+
+**Behaviour expectations**
+
+- Given a complex illustration lacks an adequate text equivalent, then it cannot be published to the learner.
+- Given a client cannot render the visual asset later, then the contract contains enough information for an equivalent fallback.
+- Existing text-only vocabulary activities remain unchanged.
+
+
+### Technical acceptance
+- Illustration without `alt_text` rejected.
+- Complex illustration without `text_equivalent` rejected.
+- Every block carries its own `version`.
+
+### Technical tests
+- `tests/Unit/BlockValidatorTest.php` — each registered block type validates its fixture
+- `tests/Unit/BlockValidatorTest.php` — illustration without alt text rejected
+- `tests/Unit/BlockValidatorTest.php` — complex illustration without text equivalent rejected
+- `tests/Unit/BlockValidatorTest.php` — unversioned block rejected
+
+---
+
+## B5.3 — Provenance contract · S · B5.1
+
+**Does:** Origin values and per-origin required fields (ADR §21).
+
+### Learner-facing acceptance
+
+**Learner problem solved**
+
+No visible feature yet. This batch prevents generated practice, transformed explanations, and direct source material from being falsely presented as the same kind of content.
+
+**What the learner should see in the browser**
+
+- No new provenance badge is required yet.
+- Current vocabulary study remains unchanged.
+- Invalid or misleading provenance prevents publication before the learner sees the content.
+- Internal source chunk IDs remain hidden.
+
+**Behaviour expectations**
+
+- Given generated practice is authored from a source concept, then it is recorded as pedagogical generation rather than a direct source quotation.
+- Given required source links are missing, then the content is blocked before learner delivery.
+- Future disclosure UI can distinguish source-derived content from generated practice without changing historical records.
+
+
+### Technical acceptance
+- `source_grounded` without `source_chunk_ids` rejected.
+- `pedagogical_generation` carrying `evidence_spans` rejected.
+- Generated content cannot be labelled `source_grounded`.
+
+### Technical tests
+- `tests/Unit/ProvenanceValidatorTest.php` — one case per origin value
+- `tests/Unit/ProvenanceValidatorTest.php` — `source_grounded` missing chunk ids rejected
+- `tests/Unit/ProvenanceValidatorTest.php` — generated content with evidence spans rejected
+
+---
+
+## B5.4 — Resources, roles, assistance effects · M · B5.1
+
+**Does:** `learning_resources`, the three pivots, `learning.resource.v1`, availability triggers, phase visibility, assistance effects.
+
+### Learner-facing acceptance
+
+**Learner problem solved**
+
+No resource is delivered yet. This batch prepares optional help, remediation, extension, reference, and accessibility materials without hard-coding them into subject screens.
+
+**What the learner should see in the browser**
+
+- No visible change to current vocabulary sessions.
+- Invalid resources or visibility rules do not reach the learner.
+- Future resources can be shown only in allowed phases.
+- Answer-revealing resources cannot be silently treated as harmless assistance.
+
+**Behaviour expectations**
+
+- Given the same illustration is used as core teaching material in one activity and remediation in another, then its role is determined by the link, not its media type.
+- Given a resource reveals an answer, then the contract must define how later evidence is classified.
+- Given a resource is hidden during recall, then the renderer cannot expose it through a generic resource panel.
+
+
+### Technical acceptance
+- Resource type and role are independent (illustration can be `core` or `remediation`).
+- A resource with `reveals_answer` and no `evidence_classification` is rejected.
+- Phase visibility validates against the canonical phase list.
+
+### Technical tests
+- `tests/Feature/LearningResourceRevisionTest.php` — published resource immutable
+- `tests/Unit/ResourceValidatorTest.php` — type/role independence
+- `tests/Unit/ResourceValidatorTest.php` — `reveals_answer` without classification rejected
+- `tests/Unit/ResourceValidatorTest.php` — unknown phase in `phase_visibility` rejected
+- `tests/Unit/ResourceValidatorTest.php` — unknown availability trigger rejected
+
+---
+
+## B6 — Type registries · M · B5.4
+
+**Does:** Explicit array registries for activity types, block types, resource types. No dynamic discovery.
+
+### Learner-facing acceptance
+
+**Learner problem solved**
+
+Supported content renders through controlled type registries, and unsupported content fails safely instead of showing a blank page or stack trace.
+
+**What the learner should see in the browser**
+
+- Existing vocabulary activity looks and behaves as before.
+- If deliberately unsupported content reaches a preview or test session, a clear content-unavailable message appears.
+- Navigation to leave, retry, or return remains usable.
+- No exception trace, PHP class, or component name appears.
+
+**Behaviour expectations**
+
+- Given a known activity, block, or resource type, when the learner opens it, then it renders normally.
+- Given an unknown type, when delivery is attempted, then the page remains stable and communicates that the content cannot be displayed.
+- The generic runtime shows no subject-specific fork to the learner.
+
+
+### Technical acceptance
+- Unknown type fails with the type name in the message.
+- One existing vocabulary activity resolves through the registry with a payload identical to B0.
+- No domain conditional anywhere in the generic path.
+
+### Technical tests
+- `tests/Unit/ActivityRegistryTest.php` — known resolves, unknown throws with name
+- `tests/Unit/BlockRegistryTest.php` — same
+- `tests/Unit/ResourceRegistryTest.php` — same
+- `tests/Feature/StudySessionGoldenPayloadTest.php` — parity holds
+- Static check in CI: no `$domain ===` in the generic runtime path
+
+---
+
+## B6.1 — Evaluator registry + authority + health · M · B6
+
+**Does:** Evaluator registry with authority modes (`deterministic` / `hybrid` / `model_advisory` / `human_review` / `unscored`), version, health state, `on_unhealthy` behaviour.
+
+### Learner-facing acceptance
+
+**Learner problem solved**
+
+A model outage or unhealthy evaluator cannot lose the learner's work, invent an authoritative pass, or block session completion when only optional feedback is affected.
+
+**What the learner should see in the browser**
+
+- The submitted answer remains saved.
+- Deterministic feedback still appears where available.
+- Optional AI commentary may show a friendly unavailable or pending message.
+- The learner can continue or finish the session.
+- No false score is shown merely because the model returned text.
+
+**Behaviour expectations**
+
+- Given the model service times out, when the learner submits, then the attempt remains stored.
+- Given deterministic correctness is available, then it remains authoritative despite model failure.
+- Given a model evaluator is unhealthy, then no authoritative rubric result is presented.
+- Given AI feedback is advisory, then it cannot change visible correctness, weak state, or due date.
+
+
+### Technical acceptance
+- An unhealthy model evaluator cannot issue an authoritative pass.
+- Model failure never deletes or alters a stored attempt.
+- Health state at evaluation time is persisted on the result.
+
+### Technical tests
+- `tests/Feature/EvaluatorAuthorityTest.php` — deterministic result authoritative
+- `tests/Feature/EvaluatorAuthorityTest.php` — unhealthy model evaluator → no authoritative score, attempt intact
+- `tests/Feature/EvaluatorAuthorityTest.php` — model advisory cannot change outcome
+- `tests/Feature/EvaluatorAuthorityTest.php` — health state persisted per result
+- `tests/Feature/AiFailureIsolationTest.php` — provider timeout leaves score, weak state, due date untouched
+
+---
+
+## B7 — Frontend: extract the shell · M · B6
+
+**Does:** Splits `SessionRuntimePage`, `SessionProgress`, `SessionActivityController`, `PhaseHeader`, `SessionWrapUp` out of the 3,702-line runtime. Existing vocabulary rendering untouched inside the controller.
+
+### Learner-facing acceptance
+
+**Learner problem solved**
+
+The learner keeps the same vocabulary journey while the oversized frontend runtime is split into maintainable responsibilities.
+
+**What the learner should see in the browser**
+
+- Identical vocabulary layout and interaction.
+- The same progress, phase labels, prompts, response fields, feedback, and wrap-up.
+- Refresh restores the exact persisted phase and position.
+- Existing stable browser selectors still work.
+- No flash, duplicated screen, or lost response during navigation.
+
+**Behaviour expectations**
+
+- Given the learner is on a specific activity, when the page refreshes, then that exact activity and phase return.
+- Given the backend marks the current phase, then the frontend displays that phase rather than inferring another one.
+- Given the learner completes the full session, then no new shell boundary is visible.
+- Browser Back or Forward must not submit or advance an activity unexpectedly.
+
+
+### Technical acceptance
+- Phase and position read from the backend payload, never derived in React.
+- `runtime.tsx` no longer owns the whole flow.
+- All existing `data-test` selectors still resolve.
+
+### Technical tests
+- `tests/Browser/StudyRuntimeShellBrowserTest.php` — full vocabulary journey
+- `tests/Browser/StudyRuntimeShellBrowserTest.php` — refresh restores exact phase and position
+- `tests/Browser/M08StudyRuntimeBrowserTest.php` — existing coverage unchanged
+
+---
+
+## B7.1 — Frontend: block + response registries · M · B7
+
+**Does:** `PresentationBlockRegistry`, `ResponseRendererRegistry`, `ResourceRendererRegistry`. Existing vocabulary teaching steps rendered through typed blocks or an explicit named adapter.
+
+### Learner-facing acceptance
+
+**Learner problem solved**
+
+Content and response controls are rendered by type, allowing new domains later while keeping the current vocabulary experience intact.
+
+**What the learner should see in the browser**
+
+- Existing vocabulary teaching and response controls look the same.
+- Unsupported block or response types show a safe, visible unavailable state.
+- Rapid repeated clicking creates one submission.
+- Browser navigation does not resubmit.
+- No maths- or PTE-specific UI path appears yet.
+
+**Behaviour expectations**
+
+- Given a known vocabulary block, when it renders through the registry, then content and accessibility remain equivalent.
+- Given an unsupported block, then the rest of the page remains usable.
+- Given submission is processing, when the learner clicks again, then only one attempt is created.
+- Given the learner goes back and forward, then the submitted response is not sent again.
+
+
+### Technical acceptance
+- Vocabulary blocks render through the registry.
+- Unsupported block and unsupported response kind both fail visibly and safely.
+- No maths- or PTE-specific branch in the controller.
+- Double submission prevented while a response is in flight.
+
+### Technical tests
+- `tests/Browser/BlockRegistryBrowserTest.php` — vocabulary renders via registry
+- `tests/Browser/BlockRegistryBrowserTest.php` — unknown block type shows the safe message
+- `tests/Browser/BlockRegistryBrowserTest.php` — unknown response kind shows the safe message
+- `tests/Browser/BlockRegistryBrowserTest.php` — rapid double-click submits once
+- `tests/Browser/BlockRegistryBrowserTest.php` — browser back does not resubmit
+
+---
+
+## B8 — Vocabulary on the contract path · M · B4.2, B7.1
+
+**Does:** One vocabulary skill composed as multiple `study_session_activities` with activity-specific responses, criterion and evidence rows, immutable snapshots, `legacy_review` scheduling.
+
+### Learner-facing acceptance
+
+**Learner problem solved**
+
+One vocabulary skill now uses the permanent multi-activity architecture without changing the familiar learning experience.
+
+**What the learner should see in the browser**
+
+- One skill appears once in high-level session progress.
+- The learner advances through its teaching, practice, recall, and feedback activities.
+- Prompts, examples, response controls, feedback, weak-state messaging, and review timing match the legacy journey.
+- Pause and resume return to the exact activity.
+- No “legacy,” “contract,” “snapshot,” or “evidence” terminology appears.
+
+**Behaviour expectations**
+
+- Given one skill has several activities, when the learner advances, then they appear in persisted order.
+- Given the learner pauses on activity 2, when returning, then activity 2 and its attempt state are restored.
+- Given the contract path completes, then visible score, weak-state result, and next-review message match the legacy path.
+- The skill is not counted several times merely because it has several activities.
+
+
+### Technical acceptance
+- Golden payload parity (or a named adapter projection).
+- Outcome, weak-state and due-date parity with the legacy path.
+- Resume returns to the exact activity.
+- Evidence rows written without changing visible feedback.
+
+### Technical tests
+- `tests/Feature/StudySessionGoldenPayloadTest.php` — parity
+- `tests/Feature/ContractPathParityTest.php` — same score, weak update, due date as legacy
+- `tests/Browser/MultiActivitySessionBrowserTest.php` — one item advances through several activities
+- `tests/Feature/SessionResumeTest.php` — resume lands on exact activity and attempt
+- `tests/Feature/SnapshotImmutabilityTest.php` — publishing revision 2 mid-session changes nothing
+
+**Hold:** expected review point. If parity needs lexical fields in the universal contract, stop and revise.
+
+---
+
+## B9 — Composer guard · S · B8
+
+**Does:** Removes `default => 3` from `itemTypeRank`. Registers English item types explicitly. Unknown domain or type throws in dev/test and fails composition with an actionable error in production.
+
+### Learner-facing acceptance
+
+**Learner problem solved**
+
+Unknown content cannot silently be placed last or treated as a valid session item.
+
+**What the learner should see in the browser**
+
+- Existing English phrase, word, and sentence-pattern order remains as approved.
+- Supported mixed sessions follow a documented order.
+- If composition cannot understand content, the learner sees a recoverable preparation error.
+- Retry and return actions are available.
+- No stack trace or unknown-type key is exposed.
+
+**Behaviour expectations**
+
+- Given a supported English session, when it opens, then expected ordering is preserved.
+- Given a supported mixed session, then ordering follows explicit policy rather than a fallback rank.
+- Given an unsupported domain or type, then the learner is not shown a misleading partial session.
+- Composition failure occurs before study starts.
+
+
+### Technical acceptance
+- Unknown item type stops composition rather than ranking last.
+- English ordering asserted by a fixture containing a phrase chunk, a word and a sentence pattern.
+
+### Technical tests
+- `tests/Unit/ComposeStudySessionTest.php` — unknown type throws, message names domain and type
+- `tests/Unit/ComposeStudySessionTest.php` — English ordering matches expected sequence
+- `tests/Unit/ComposeStudySessionTest.php` — mixed English/maths order matches stated policy
+- `tests/Feature/CompositionFailureTest.php` — production path returns a recoverable error
+
+---
+
+## B9.1 — Renderer availability check · S · B9
+
+**Does:** Composition refuses to select an activity whose type, block types or required services the target client can't render.
+
+### Learner-facing acceptance
+
+**Learner problem solved**
+
+The learner never reaches an activity that their current client cannot render or operate.
+
+**What the learner should see in the browser**
+
+- No half-rendered activity.
+- No missing response control.
+- No activity asking for audio when audio capture is unavailable.
+- A valid fallback is shown when one exists.
+- Otherwise, the activity is excluded before the session begins.
+
+**Behaviour expectations**
+
+- Given the target client lacks a required renderer, then that activity is not selected.
+- Given a required service is unavailable, then an incompatible activity is not presented.
+- Given a valid equivalent fallback exists, then the learner receives the fallback with the same intended learning meaning.
+- Runtime compatibility failure must not be discovered after the learner has answered earlier phases of the same activity.
+
+
+### Technical acceptance
+- Missing renderer blocks selection before the session is presented.
+- Missing required service (e.g. audio capture) blocks selection.
+
+### Technical tests
+- `tests/Feature/RuntimeCompatibilityTest.php` — unsupported activity type not selected
+- `tests/Feature/RuntimeCompatibilityTest.php` — missing required service not selected
+- `tests/Feature/RuntimeCompatibilityTest.php` — valid fallback allows selection
+
+---
+
+## B10 — Fractions: teach + guided · M · B9.1
+
+**Does:** Objective graph for fractions, one learning item, teach activity, worked example, guided practice. Core illustration. Hand-authored content.
+
+### Learner-facing acceptance
+
+**Learner problem solved**
+
+Teach one real fractions skill with a clear explanation, meaningful visual representation, guided practice, and deterministic feedback.
+
+**What the learner should see in the browser**
+
+- A priming screen explaining the fractions goal.
+- A teaching explanation in age-appropriate language.
+- A labelled, accessible fraction illustration.
+- A worked example.
+- Guided practice with visible help.
+- Immediate deterministic feedback.
+- The same application shell and navigation used by vocabulary.
+
+**Behaviour expectations**
+
+- Given the learner enters teaching, then the illustration and explanation are visible.
+- Given the learner enters guided practice, then the allowed support remains available.
+- Given the learner submits the same answer repeatedly under the same conditions, then correctness is identical.
+- No model-generated judgement decides exact mathematical correctness.
+- The learner can complete teaching and guided practice without encountering vocabulary-specific controls.
+
+
+### Technical acceptance
+- Illustration visible during teaching.
+- Deterministic marking on the guided task — no model call decides correctness.
+- Maths renders in the same shell as vocabulary.
+
+### Technical tests
+- `tests/Feature/MathEvaluationTest.php` — marking deterministic across runs
+- `tests/Feature/MathEvaluationTest.php` — no model call in the correctness path
+- `tests/Browser/FractionsTeachBrowserTest.php` — teach → guided completes
+- `tests/Feature/IllustrationProvenanceTest.php` — illustration carries origin and accessibility fields
+
+---
+
+## B10.1 — Fractions: closed-book + phase visibility · S · B10
+
+**Does:** Independent exact-answer practice with answer-revealing support hidden.
+
+### Learner-facing acceptance
+
+**Learner problem solved**
+
+Test whether the learner can solve independently rather than merely following a visible example.
+
+**What the learner should see in the browser**
+
+- A closed-book fractions task.
+- No worked solution, answer, or method-revealing illustration.
+- Clear response controls.
+- A non-revealing accessibility equivalent when needed.
+- Feedback only according to the activity's answer-visibility policy.
+- No “show lesson” shortcut that invalidates independent evidence.
+
+**Behaviour expectations**
+
+- Given the learner enters closed-book practice, then answer-revealing teaching blocks are absent from the DOM.
+- Given a screen reader is used, then an equivalent instruction remains available without revealing the method.
+- Given the learner refreshes, then hidden resources remain hidden.
+- The learner cannot reopen a hidden teaching resource without the attempt being ended or reclassified according to policy.
+
+
+### Technical acceptance
+- Method-revealing illustration hidden during `closed_book_practice`.
+- Accessibility text equivalent still available where it doesn't reveal the answer.
+
+### Technical tests
+- `tests/Feature/PhaseVisibilityTest.php` — illustration hidden in closed-book phase
+- `tests/Feature/PhaseVisibilityTest.php` — non-revealing accessibility equivalent still served
+- `tests/Browser/FractionsRecallBrowserTest.php` — no teaching content in the DOM during recall
+
+---
+
+## B10.2 — Fractions: remediation + assistance classification · M · B10.1
+
+**Does:** Remediation resource triggered after two incorrect attempts. Opening it reclassifies later evidence as assisted.
+
+### Learner-facing acceptance
+
+**Learner problem solved**
+
+Offer targeted help after repeated difficulty while honestly recording that later success used assistance.
+
+**What the learner should see in the browser**
+
+- Standard corrective feedback after the first wrong attempt.
+- No remediation resource after attempt 1.
+- One remediation offer after attempt 2.
+- A clear explanation of what the support is for.
+- The support does not repeatedly reappear after being opened.
+- Refresh preserves attempts and the remediation state.
+
+**Behaviour expectations**
+
+- Given attempt 1 is incorrect, then remediation remains hidden.
+- Given attempt 2 is incorrect, then remediation appears once.
+- Given the learner opens remediation, then later success is internally classified as assisted.
+- Given the learner refreshes after opening it, then the resource state and attempt history remain consistent.
+- Assisted classification does not shame the learner or display internal evidence terminology unless the UX later specifies it.
+
+
+### Technical acceptance
+- Attempt 1 wrong → no remediation. Attempt 2 wrong → remediation, once.
+- Opening remediation marks subsequent evidence `assisted`.
+- Refresh preserves attempts, remediation state and position.
+
+### Technical tests
+- `tests/Feature/ConditionalResourceTest.php` — fires on attempt 2, not 1
+- `tests/Feature/ConditionalResourceTest.php` — fires once, not repeatedly
+- `tests/Feature/AssistanceClassificationTest.php` — evidence after remediation is `assisted`
+- `tests/Browser/FractionsRemediationBrowserTest.php` — refresh preserves state
+
+---
+
+## B10.3 — Fractions: explain + multi-objective evidence · S · B10.2
+
+**Does:** Explain-the-method activity producing reasoning evidence separately from procedural correctness.
+
+### Learner-facing acceptance
+
+**Learner problem solved**
+
+Distinguish being able to calculate the answer from being able to explain why the method works.
+
+**What the learner should see in the browser**
+
+- A prompt asking for an explanation in the learner's own words.
+- A reference explanation after submission.
+- Clear feedback on what was included and what was missing.
+- Procedural correctness remains separate from explanation quality.
+- The lesson ends with a clear completion state.
+
+**Behaviour expectations**
+
+- Given the learner solved the number correctly but explains poorly, then the browser may show strong procedural feedback and weaker reasoning feedback separately.
+- Given the advisory reasoning service fails, then the correct mathematical result remains unchanged.
+- Given the learner completes explanation, then procedure and reasoning are recorded as separate evidence internally.
+- The learner is not told the numerical answer was wrong because an AI disliked the wording.
+
+
+### Technical acceptance
+- One lesson produces separate procedure and reasoning evidence.
+- Reasoning feedback is advisory and cannot change procedural correctness.
+
+### Technical tests
+- `tests/Feature/EvidenceRecordTest.php` — procedure and reasoning evidence rows differ
+- `tests/Feature/AiAdvisoryIsolationTest.php` — model failure leaves procedural evidence intact
+- `tests/Browser/FractionsExplainBrowserTest.php` — full journey, teach → explain → finish
+
+---
+
+## B11 — RAG: emit the package · M · B8, B10.3
+
+**Does:** RAG-side `schema_version`, producer version, domain-pack version, content revision, content hash, objective and activity export.
+
+### Learner-facing acceptance
+
+**Learner problem solved**
+
+No visible feature yet. This batch ensures RAG can emit stable, versioned lesson packages that preserve objectives, activities, resources, and provenance.
+
+**What the learner should see in the browser**
+
+- No visible change.
+- Existing hand-authored lessons remain available.
+- No partially generated package reaches learner navigation.
+- No schema version, hash, or producer metadata appears in normal learner screens.
+
+**Behaviour expectations**
+
+- Given the producer emits the same semantic lesson twice, then it does not create a visibly duplicated lesson merely because generation ran again.
+- Given provenance is missing, then publication is blocked before learner delivery.
+- Given the package is only generated but not imported, then no learner-facing item appears.
+
+
+### Technical acceptance
+- Same semantic content → same hash across runs.
+- Objective graph and alignments serialise.
+- Provenance attached to every generated teaching element.
+
+**Tests (RAG)**
+- `test_package_schema.py` — required top-level fields emitted
+- `test_package_schema.py` — hash stable across two runs
+- `test_package_schema.py` — objective associations round-trip
+- `test_provenance_continuity.py` — ≥2 planted-error cases, one must flag, one must not
+
+---
+
+## B11.1 — Ela: import + reject · M · B11
+
+**Does:** Import validation, major-version rejection, objective coverage evaluator, orphan detection.
+
+### Learner-facing acceptance
+
+**Learner problem solved**
+
+A generated lesson can enter Ela without manual repair, while incompatible or incomplete packages are rejected before a learner starts them.
+
+**What the learner should see in the browser**
+
+- The imported fractions lesson behaves like the reviewed native fixture.
+- Expected objectives, activities, illustrations, responses, and resources are present.
+- An incompatible package is absent from learner sessions.
+- Import failure never appears halfway through study.
+- Source or generated-content disclosure appears only where intentionally designed.
+
+**Behaviour expectations**
+
+- Given a supported package, when imported and assigned, then the learner completes the same journey as the native lesson.
+- Given an unsupported major version, then the learner cannot start a broken lesson.
+- Given an assessment objective lacks an evidence-producing activity, then the lesson is blocked before publication.
+- Given an orphan activity exists, then it is reported to authors rather than surfacing as an unexplained learner step.
+
+
+### Technical acceptance
+- Supported package imports with no hand editing.
+- Unsupported major version rejected with a clear message.
+- An objective intended for assessment with no evidence-producing activity is reported.
+- Import fails before session composition, never during.
+
+### Technical tests
+- `tests/Feature/ContentImportTest.php` — supported version imports
+- `tests/Feature/ContentImportTest.php` — unsupported major version rejected
+- `tests/Feature/ContentImportTest.php` — provenance survives import
+- `tests/Feature/ObjectiveCoverageTest.php` — uncovered objective reported
+- `tests/Feature/ObjectiveCoverageTest.php` — orphan activity reported
+- `tests/Browser/ImportedFractionsBrowserTest.php` — imported lesson matches native fixture
+
+---
+
+## B12 — PTE: teach + idea generation · M · B11.1
+
+**Does:** One PTE writing skill, teaching activity, idea-generation resource, planning scaffold as remediation.
+
+### Learner-facing acceptance
+
+**Learner problem solved**
+
+Teach one PTE writing skill with idea-generation support and a planning scaffold without creating a separate PTE runtime.
+
+**What the learner should see in the browser**
+
+- A clear PTE learning goal.
+- Teaching content explaining the writing method.
+- An idea-generation resource during teaching.
+- A planning scaffold when the learner is eligible for remediation.
+- The same generic shell, progress, resources, and navigation used by other domains.
+- No independent writing task yet in this batch.
+
+**Behaviour expectations**
+
+- Given the learner is in teaching, when the idea-generation resource is opened, then it supports learning and is not recorded as the final response.
+- Given the planning scaffold becomes eligible, then it appears only in the allowed phase.
+- Given the resource is opened, then its declared assistance effect is persisted for later evidence rules.
+- No PTE-specific branch should create visibly inconsistent navigation or controls.
+
+
+### Technical acceptance
+- Scaffolds render through the same registries — no PTE branch.
+- Resources declare assistance effects.
+
+### Technical tests
+- `tests/Feature/PhaseVisibilityTest.php` — idea generation allowed in `teach`
+- `tests/Browser/PteTeachBrowserTest.php` — teach phase completes
+- Static check: no PTE conditional in the generic controller
+
+---
+
+## B12.1 — PTE: independent response + hybrid evaluation · M · B12
+
+**Does:** Constructed response with deterministic bounds (word count, structure) plus rubric evaluation writing criterion and evidence rows.
+
+### Learner-facing acceptance
+
+**Learner problem solved**
+
+Let the learner write independently and receive honest trait-level feedback while preserving the attempt when AI evaluation is unavailable.
+
+**What the learner should see in the browser**
+
+- A clear writing prompt and response area.
+- No prepared ideas or planning scaffold during independent production.
+- A visible word count when appropriate.
+- Clear submission and processing states.
+- Deterministic feedback for word count and required structure.
+- Trait-level rubric feedback when the evaluator is healthy.
+- A friendly unavailable or pending message when optional model evaluation fails.
+- The session can still complete under the approved fallback.
+
+**Behaviour expectations**
+
+- Given independent writing begins, then teaching scaffolds are absent.
+- Given the response violates a deterministic word-count rule, then that result is calculated in application code.
+- Given the model evaluator is unhealthy, then the response remains saved and no false authoritative trait score appears.
+- Given one essay demonstrates several objectives, then feedback remains one coherent response rather than duplicated essays.
+- The task must use a skill/performance scheduling descriptor, not memory-recall.
+
+
+### Technical acceptance
+- Scaffolds hidden during independent production.
+- Deterministic checks own word count and structure.
+- Rubric revision and evaluator health persisted.
+- One essay creates evidence for several objectives.
+- Scheduling uses `skill_practice` or `performance_rehearsal`, never memory-recall.
+
+### Technical tests
+- `tests/Feature/PhaseVisibilityTest.php` — scaffold hidden during independent production
+- `tests/Feature/PteDeterministicChecksTest.php` — word count and structure checked in code
+- `tests/Feature/EvaluatorAuthorityTest.php` — unhealthy rubric evaluator → attempt stored, no authoritative trait score
+- `tests/Feature/EvidenceRecordTest.php` — one essay → multiple objective evidence rows
+- `tests/Feature/AiFailureIsolationTest.php` — model down, session completes
+- `tests/Browser/PteWritingBrowserTest.php` — full journey
+
+---
+
+## B13 — Learner objective state · M · B10.3, B12.1
+
+**Does:** `learner_objective_states` derived from evidence, with independent and assisted counts and a versioned aggregation policy.
+
+### Learner-facing acceptance
+
+**Learner problem solved**
+
+No new progress UI yet. This batch makes future progress derivable from actual independent and assisted evidence rather than opaque completion counts.
+
+**What the learner should see in the browser**
+
+- No visible change.
+- Current dashboard and session completion continue to work.
+- No empty objective progress section appears prematurely.
+- No lesson completion alone is newly labelled as mastery.
+
+**Behaviour expectations**
+
+- Given a learner completes a lesson without successful evidence, then no visible mastery claim is introduced.
+- Given success used remediation, then it is not silently treated as identical to independent success.
+- Given objective state is recalculated, then current learner pages remain stable until the progress batch deliberately consumes it.
+- No model prose can directly create a mastered state.
+
+
+### Technical acceptance
+- State recomputable from persisted evidence alone.
+- Assisted success does not count identically to independent.
+- Completing a lesson with no successful evidence does not mark an objective mastered.
+- No model prose writes state.
+
+### Technical tests
+- `tests/Feature/ObjectiveStateAggregationTest.php` — recompute from evidence reproduces state
+- `tests/Feature/ObjectiveStateAggregationTest.php` — assisted vs independent weighted differently
+- `tests/Feature/ObjectiveStateAggregationTest.php` — lesson completed, no evidence → not mastered
+- `tests/Feature/ObjectiveStateAggregationTest.php` — aggregation policy version recorded
+
+---
+
+## B13.1 — Progress + calibration surfaces · M · B13
+
+**Does:** Objective-level progress, weak skills, due work, calibration gap where captured. Unifies the weak threshold (dashboard `≥2` vs scheduler `≥1`). Separates effort metrics from learning evidence.
+
+### Learner-facing acceptance
+
+**Learner problem solved**
+
+Show what the learner has actually demonstrated, what remains weak, and where confidence differs from performance—without presenting time spent or items viewed as mastery.
+
+**What the learner should see in the browser**
+
+- Objective- or skill-level progress based on stored evidence.
+- Weak skills and due work using one consistent weak definition.
+- Separate states for maths procedure and reasoning.
+- Separate PTE trait progress where evidence exists.
+- Optional calibration insight such as “felt sure but missed.”
+- Effort metrics clearly labelled as effort or habit.
+- No “items viewed” or minutes studied presented as proof of mastery.
+
+**Behaviour expectations**
+
+- Given procedure is strong and reasoning is weak, then the browser can show different states.
+- Given confidence was not captured, then no calibration judgement is invented.
+- Given confidence was high and the answer was wrong, then the calibration surface reflects that mismatch.
+- Given the learner completes a planned session, then effort may be celebrated without claiming the objectives were mastered.
+- Dashboard and scheduler use the same weak threshold.
+
+
+### Technical acceptance
+- One weak definition across dashboard and scheduler.
+- Maths procedure and reasoning can show different states.
+- Confidence shown only where captured.
+
+### Technical tests
+- `tests/Feature/ProgressSnapshotTest.php` — single weak threshold everywhere
+- `tests/Feature/ProgressSnapshotTest.php` — procedure and reasoning states differ independently
+- `tests/Feature/CalibrationTest.php` — "felt sure but missed" populates from captures
+- `tests/Browser/ProgressPageBrowserTest.php` — no vanity metric presented as mastery
+
+---
+
+## B14 — ADR-0003 + scheduling policies · M · B13.1 · **gated**
+
+### ADR-0003 preparation timing
+
+ADR-0003 is a decision dependency for B14, not a blocker for B0 through B13.1.
+
+Work on it in two stages:
+
+1. **Draft the decision skeleton from B1 onward** using the known questions: eligible scheduling subjects, memory versus skill/performance policies, server authority, migration safety, assisted evidence, mastery, and reference vectors.
+2. **Finalise and approve it after the evidence-producing slices are proven**—especially vocabulary contract parity, fractions evidence, PTE evidence, and learner objective aggregation—so the scheduler is designed against real evidence rather than assumptions.
+
+B14 must not begin until ADR-0003 is accepted. Earlier batches may continue while the ADR is being drafted.
+
+
+Start writing ADR-0003 at B1; it must be accepted before this batch. Scope, acceptance and tests are defined by that ADR.
+
+Minimum: `legacy_review` compatibility, `memory_recall` for eligible recall units, an explicit non-memory policy for skill and performance activities, server-authoritative scheduling, policy version snapshots, reference test vectors.
+
+### Learner-facing acceptance
+
+**Learner problem solved**
+
+Schedule different kinds of learning appropriately: recallable knowledge returns through a memory-review policy, while essays, reasoning, and performance tasks use explicit non-memory policies.
+
+**What the learner should see in the browser**
+
+- Vocabulary or other eligible recall items return at expanding, understandable intervals.
+- A lapse brings an item back sooner according to the approved policy.
+- PTE writing and broad performance tasks receive practice plans rather than flashcard-style intervals.
+- Existing due work is migrated without an unexplained mass backlog.
+- Review messaging identifies what is due without exposing algorithm internals.
+- Browser state never becomes the source of the next due date.
+
+**Behaviour expectations**
+
+- Given the same evidence, stored state, policy version, and time, then the next scheduling decision is identical.
+- Given an activity is not eligible for memory scheduling, then it is never sent through FSRS or an equivalent memory-card algorithm.
+- Given evidence is assisted, then the approved policy interprets it differently where ADR-0003 requires.
+- Given scheduling fails, then the learner's response and evidence remain intact.
+- Exact intervals, mastery transitions, retention targets, and migration bounds must match the accepted ADR-0003 rather than being invented in this batch.
+
+### Technical acceptance
+
+Technical acceptance, reference vectors, migration bounds, rollback, and policy-specific tests are governed by the accepted ADR-0003. No implementation begins before that ADR is approved.
+
+**Hold:** no implementation before ADR-0003 is accepted. Reject applying FSRS universally.
+
+---
+
+## B15 — Tracks, presets, source-of-truth update · M · B14
+
+**Does:** `learning_tracks`, `learner_track_enrolments`, `track_presets`. Updates the source-of-truth docs for approved later-phase multi-domain scope. Reclassifies phrase-first as English domain policy.
+
+### Learner-facing acceptance
+
+**Learner problem solved**
+
+Allow one learner to study English, maths, or exam-preparation tracks with appropriate defaults while keeping one coherent product and runtime.
+
+**What the learner should see in the browser**
+
+- A consistent application shell across tracks.
+- Track-appropriate session duration, item caps, wording, and available activity palette.
+- The ability to enrol in and switch between more than one approved track.
+- Existing English remains the default until another track is enabled.
+- Switching track changes defaults and content, not the identity of shared controls.
+- No child-focused track or child account flow without the separate required ADR.
+
+**Behaviour expectations**
+
+- Given the learner switches from English to maths, then defaults and available learning content change while navigation remains consistent.
+- Given the same activity type exists in two tracks, then it uses the same registered renderer.
+- Given the learner has several enrolments, then progress and state remain attached to the correct objectives/items without duplicating the UI shell.
+- Given a track is not approved or enabled, then it does not appear in navigation.
+- Phrase-first remains the explicit English-domain policy rather than a universal rule for maths or PTE.
+
+
+### Technical acceptance
+- Changing a preset changes defaults only, never component identity.
+- Renderer selection still keyed on contract type.
+- Children remain gated behind a separate ADR.
+
+### Technical tests
+- `tests/Feature/TrackPresetTest.php` — preset changes session length, caps, palette
+- `tests/Feature/TrackPresetTest.php` — same renderer resolved across two tracks
+- `tests/Feature/TrackPresetTest.php` — multiple enrolments compose correctly
+- `tests/Browser/TrackSwitchBrowserTest.php` — switching track changes defaults, not navigation
+
+---
+
+## B16 — Retire the legacy runtime · M · B15
+
+**Does:** Stops composing legacy-format sessions, lets in-flight ones finish, and deletes the legacy projector.
+
+**Required, not optional — this plan adopts it.** A migration is not finished while new sessions can still use the old runtime; leaving two paths live indefinitely is how a learner ends up on a half-migrated journey. ADR §40 happens to list the same thing, but that ADR is still proposed and is not the reason this batch is mandatory here.
+
+### Learner-facing acceptance
+
+**Learner problem solved**
+
+Every new learner uses one reliable runtime. No learner can land on a half-migrated path, and nobody loses access to what they already completed.
+
+**What the learner should see in the browser**
+
+- New sessions always use the current runtime.
+- A session already in progress when the change ships can still be finished.
+- Completed past sessions still open, read-only.
+- No "legacy" or "contract" wording anywhere.
+- No dead route, no duplicate journey.
+
+**Behaviour expectations**
+
+- Given a new session is composed, then it always has child activities and snapshots.
+- Given a session was in progress at cutover, when the learner returns, then it completes showing the content originally delivered.
+- Given a completed historical session, when opened, then it renders read-only and cannot be resubmitted.
+- Given the legacy projector is deleted, then no active route depends on it.
+
+### Technical acceptance
+- Zero new legacy-format compositions.
+- Zero legacy fallbacks in runtime metrics after the grace period.
+- Legacy projector deleted, not flagged off.
+- Historical read path retained.
+- English compatibility score columns either removed or explicitly retained read-only, decided and documented.
+
+### Technical tests
+- `tests/Feature/LegacyRetirementTest.php` — new sessions always create child activities
+- `tests/Feature/LegacyRetirementTest.php` — in-flight legacy session completes with original content
+- `tests/Feature/LegacyRetirementTest.php` — completed legacy session renders read-only
+- `tests/Feature/LegacyRetirementTest.php` — resubmission of a historical session is rejected
+- Static check in CI: the legacy projector class no longer exists
+- `tests/Browser/LegacyRetirementBrowserTest.php` — historical session opens read-only
+
+**Hold:** do not delete legacy code while any active session depends on it, or while historical auditability is unresolved.
+
+---
+
+## Order and parallelism
+
+```
+0 → 0.1 → 0.2 ─┬─ 0.3 ─┐
+               └─ 1 ───┴─ [pedagogy decision]
+                            ├── 2 → 2.1 → 2.2 ─┐
+                            ├── 3 → 4 → 4.1 → 4.2 ─┤
+                            └── (4.5 optional)     │
+                                                   ↓
+   5 → 5.1 → 5.2 / 5.3 / 5.4 → 6 → 6.1 → 7 → 7.1 → 8 → 9 → 9.1
+   → 10 → 10.1 → 10.2 → 10.3 → 11 → 11.1 → 12 → 12.1 → 13 → 13.1 → 14 → 15 → 16
+```
+
+B0.3 and B1 run in parallel; B2 and B3 both wait for **both** to finish. Independent and parallelisable after that: the `2.x` chain against the `3 → 4.x` chain. `5.2`, `5.3` and `5.4` after `5.1`. Everything from `6` onward is a single file.
+
+37 required batches plus optional B4.5, none larger than M. The decision point after B1 still governs everything downstream.
+
+ADR §38 Batch 17 (authoring, enrichment, mobile expansion) is excluded as noncanonical follow-on work.
