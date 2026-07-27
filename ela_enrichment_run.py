@@ -82,7 +82,12 @@ def extract_json_array(reply: str) -> list[dict]:
     start, end = text.find("["), text.rfind("]")
     if start == -1 or end <= start:
         raise ValueError("no JSON array in the reply")
-    data = json.loads(text[start : end + 1])
+    # strict=False permits control characters inside string values. ChatGPT adds a
+    # citation field pointing back at the project instructions —
+    # "instruction_source": "\n\nROLE\n\n" — with real line breaks inside the
+    # string, which strict JSON forbids. The content either side of it is perfectly
+    # good, and being strict here threw away 22 batches of finished work.
+    data = json.JSONDecoder(strict=False).decode(text[start : end + 1])
     if not isinstance(data, list) or not data:
         raise ValueError("reply was not a non-empty JSON array")
     return data
