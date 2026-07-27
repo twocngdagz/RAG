@@ -71,12 +71,12 @@ A11 | The honesty gate: a check may certify PASS only if, on this run, it just c
 A12 | Capture predicted confidence before revealing truth; surface the felt-vs-actual gap | Inv. 6 | `experiment` | **Not adopted** | Neither repo captures pre-answer confidence; interaction cost unmeasured |
 A13 | Progress must show demonstrated retention, never items viewed or time spent | Inv. 6 | `invariant` | **Proposed** | Opposes what `BuildLearnerProgressSnapshot` shows today |
 A14 | Mastery is earned through evidence and never self-declared | Inv. 6 | `invariant` | **Adopted** — `architecture guidelines.md:247`; `requirements.md:409`, `:484` | *"review timing and mastery state must remain deterministic app-side behavior"*; *"skipping must not advance the item to a higher mastery state"* |
-A15 | Bounded focus sessions with a clear stop | Inv. 7 | `initial_policy` | **Adopted (session concept only)** — ADR-0001 | Streaks, cues and rewards are not built and not adopted |
+A15 | Bounded focus sessions with a clear stop | Inv. 7 | `initial_policy` | **Adopted (session concept only)** — `docs/adr/0001-focus-sessions-and-mastery-targets.md:3` | Streaks, cues and rewards are not built and not adopted |
 A16 | Sleep consolidates memory; pre-sleep and next-day review nudges | Inv. 7, `04` Diekelmann & Born | `optional_technique` | **Not adopted** | Mechanism well evidenced; the product feature is unbuilt |
 A17 | The scheduler must accept graded, not boolean, outcomes | Part 2 Rule A | `invariant` | **Not adopted** — deferred to ADR-0003 | Structural: half the material types produce partial credit a boolean scheduler cannot consume |
 A18 | Every item must point back to a learning objective | Part 2 Rule B | `invariant` | **Proposed** (ADR §9) | Mastery cannot aggregate above a single item without this |
 A19 | Mastery is retention-gated and **revocable** | Part 3.4 | `invariant` (revocability) + `initial_policy` (thresholds) | **Revocability ADOPTED** — `requirements.md:411`: *"A mastered item may later become weak again if performance drops."* Thresholds not adopted | **Ela's `mastered` is absorbing and never demotes. That is a live defect against an adopted rule, not a contradiction with a proposal.** |
-A20 | Phrase/chunk first, word second, sentence pattern third | Part 4.2 | `domain_policy` (English) | **Adopted for English** — `requirements.md` §1 (ruling F4) | Maths and PTE do not inherit this ordering. The formal source-document rewrite remains in B15 |
+A20 | Phrase/chunk first, word second, sentence pattern third | Part 4.2 | `domain_policy` (English) | **Adopted for English** — `requirements.md:60` *"Primary learning unit: phrase/chunk"* (also `:288`) (ruling F4) | Maths and PTE do not inherit this ordering. The formal source-document rewrite remains in B15 |
 A21 | Production in a sentence is required to graduate a vocabulary item | Part 4.2 | `initial_policy` | **Not adopted** | Graduation criterion unset |
 A22 | Deterministic-first feedback, always, for children | Part 4.4 | `domain_policy` (children) | **Blocked** — children are an explicit non-goal in three Ela docs; ADR §42 requires a separate privacy ADR | Cannot be adopted without that ADR |
 A23 | Learning styles are excluded by design | `04` honesty note 2 | `invariant` | **Proposed** | Modality matching has repeatedly failed to replicate (Pashler et al. 2008) |
@@ -130,9 +130,9 @@ C12 | Queue-quality thresholds: ≥4 topics; ≥3 with modal < ⌈total/2⌉; wo
 | # | Value | Location | Classification | Canonical status |
 |---|---|---|---|---|
 C13 | Leitner `[1min, 10min, 1d, 3d, 7d, 16d]`, mastery review 60d | `spaced_repetition.py` | *standalone/legacy* | **Out of scope for Ela learner scheduling** (ruling F6) |
-C14 | `min_worked_examples`: pte 3, math5a 4; `reading_grade_max`: math5a 6.0 | `domain_packs.py` | `domain_policy` | **RAG content-quality policy.** Implemented |
-C15 | `max_words_per_sentence = 14.0`, `GRADE_TOLERANCE = 0.5` | `readability_evaluators.py` | `domain_policy` | **RAG content-quality policy.** Module constants, not pack fields, so they cannot vary by domain |
-C16 | `SOLVER_RUNS = 3`, `SOLVER_AGREEMENT = 3` | `reading_mcq_items.py` | `initial_policy` | **RAG content-quality policy.** Implemented |
+C14 | `min_worked_examples`: pte 3, math5a 4; `reading_grade_max`: math5a 6.0 | `domain_packs.py` | `domain_policy` | **Implemented, not adopted.** RAG content-quality policy; no authority states it |
+C15 | `max_words_per_sentence = 14.0`, `GRADE_TOLERANCE = 0.5` | `readability_evaluators.py` | `domain_policy` | **Implemented, not adopted.** RAG content-quality policy. Module constants, not pack fields, so they cannot vary by domain |
+C16 | `SOLVER_RUNS = 3`, `SOLVER_AGREEMENT = 3` | `reading_mcq_items.py` | `initial_policy` | **Implemented, not adopted.** RAG content-quality policy; no authority states it |
 
 ---
 

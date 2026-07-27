@@ -1,7 +1,7 @@
 > **NONCANONICAL RESEARCH INPUT.** This document is a dated observation or synthesis,
-> not a decision. It does not adopt anything. Only explicitly accepted ADR and plan
-> decisions are authoritative — see `docs/research-inputs/README.md` and
-> `docs/research-rule-classification.md`.
+> not a decision. It does not adopt anything. Only the authorities listed in
+> `docs/research-rule-classification.md` are authoritative — that list includes the
+> requirements and architecture guidelines, not only ADRs and plans.
 >
 > Captured 2026-07-26 · RAG `296d6b5` · Ela `da188c5`
 

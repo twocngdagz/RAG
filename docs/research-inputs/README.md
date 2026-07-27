@@ -2,9 +2,12 @@
 
 **Nothing in this directory is authoritative. Nothing here adopts anything.**
 
-These are dated observations and syntheses produced on 2026-07-26 to inform a decision. They are inputs to that decision, not the decision. Only explicitly accepted ADR and plan decisions carry authority.
+These are dated observations and syntheses produced on 2026-07-26 to inform a decision. They are inputs to that decision, not the decision. Authority rests only with the documents listed in the authority table of `../research-rule-classification.md` — which includes the requirements and architecture guidelines, not only ADRs and plans.
 
-If a statement here conflicts with an accepted ADR, an accepted plan, or the current code, **the document is wrong** and should be treated as a record of what was believed on its capture date.
+Two different kinds of mismatch, handled differently:
+
+- **Against an accepted decision.** The accepted decision takes precedence. These documents cannot override it.
+- **Against the current code.** Neither one wins by default. Code is implementation, not authority — it can be wrong about what was decided, and several shipped values here were never decided at all. Where an observation no longer matches the code, treat it as a **historical record of the capture date**, not as an error, and check the classification document for what is actually adopted.
 
 ## Capture provenance
 
@@ -37,6 +40,10 @@ Known corrections already recorded there:
 - `01` Invariant 5's "every response gets feedback" is not established by any authority; the adopted rule is the narrower "no AI-required user-critical flow".
 - `03` compresses the CI description inaccurately — the recon maps state it correctly.
 - Several rules are real and working in code but were never written down as decisions, and are marked *implemented, not adopted*.
+
+Known drift since capture, historical rather than wrong:
+
+- `recon_ela_map` §9 describes a verification gate that could not fail. Ela PR #4 (`f196777`) repaired it. The observation was accurate on 2026-07-26.
 
 ## Editing
 
