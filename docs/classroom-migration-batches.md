@@ -241,9 +241,49 @@ A learner who forgets something the app marked as mastered currently never sees 
 
 ---
 
-## B1 — Throwaway fractions spike · M · B0 · *runs in parallel with B0.3*
+## B1 — Throwaway fractions spike · M · B0 · **CLOSED 2026-07-27**
 
 **Does:** One fractions skill behind a flag, disposable code, hand-written JSON. Deleted afterwards.
+
+### Decision — recorded 2026-07-27
+
+**Keep the phase order.** The learner continues through:
+
+```text
+goal → teaching → guided practice → closed-book practice → explain → finish
+```
+
+Walked end to end against a hand-written Year 5 fractions lesson. The sequence
+holds; everything downstream may assume it.
+
+**Three behaviours the permanent implementation must correct.** These came out of
+the walkthrough and are folded into B10, B10.1 and B10.3 below.
+
+1. **Asking for a mixed number means requiring a mixed number.** The spike marked
+   by value alone, so `22/8` was accepted for 11/4 — and the unchanged `11/4`
+   would have been too. The learner never performed the conversion that was asked
+   for. Marking must check the form of the answer, not only its value.
+2. **A wrong closed-book answer needs a way forward.** Offer an optional hint, or
+   a route back to the worked example, before the retry. The spike simply said
+   "Not quite" and left the learner with nowhere to go.
+3. **Explaining must be answered.** After the learner writes their reasoning,
+   show a short model explanation or checklist to compare against. In the spike
+   nothing happened after submitting.
+
+**Wrong-answer feedback must explain the mistake**, not just restate the correct
+answer. "Not quite, you wrote 2 1/4" tells a learner nothing about what went
+wrong.
+
+**Setup note for anyone re-running a spike.** Passing the feature flag as a
+process environment variable did not reach PHP under Herd — the child process did
+not inherit it. Adding the flag to `.env` temporarily worked. Document the `.env`
+route, not the inline variable.
+
+**Disposal.** The spike code was deleted once this decision was recorded, as
+planned. It survives only in the history of the Ela branch
+`codex/b1-fractions-spike`.
+
+
 
 ### Learner-facing acceptance
 
@@ -1092,11 +1132,15 @@ Teach one real fractions skill with a clear explanation, meaningful visual repre
 ### Technical acceptance
 - Illustration visible during teaching.
 - Deterministic marking on the guided task — no model call decides correctness.
+- **Marking checks the form the question asked for, not only the value** (B1 decision 1). A task asking for a mixed number rejects `11/4` and `22/8` even though both equal 2 3/4.
+- **Wrong-answer feedback names the mistake** (B1 decision 4), e.g. "that is the right size but you have not split it into wholes yet" — not a restatement of the correct answer.
 - Maths renders in the same shell as vocabulary.
 
 ### Technical tests
 - `tests/Feature/MathEvaluationTest.php` — marking deterministic across runs
 - `tests/Feature/MathEvaluationTest.php` — no model call in the correctness path
+- `tests/Feature/MathEvaluationTest.php` — a mixed-number question rejects `11/4` and `22/8`, accepts `2 3/4`
+- `tests/Feature/MathEvaluationTest.php` — wrong-answer feedback names the mistake, not the answer
 - `tests/Browser/FractionsTeachBrowserTest.php` — teach → guided completes
 - `tests/Feature/IllustrationProvenanceTest.php` — illustration carries origin and accessibility fields
 
@@ -1132,11 +1176,14 @@ Test whether the learner can solve independently rather than merely following a 
 ### Technical acceptance
 - Method-revealing illustration hidden during `closed_book_practice`.
 - Accessibility text equivalent still available where it doesn't reveal the answer.
+- **After a wrong answer the learner is offered a way forward** (B1 decision 2): an optional hint, or a route back to the worked example, before retrying. Taking either is recorded and classifies the later evidence as assisted; declining leaves it independent.
 
 ### Technical tests
 - `tests/Feature/PhaseVisibilityTest.php` — illustration hidden in closed-book phase
 - `tests/Feature/PhaseVisibilityTest.php` — non-revealing accessibility equivalent still served
 - `tests/Browser/FractionsRecallBrowserTest.php` — no teaching content in the DOM during recall
+- `tests/Browser/FractionsRecallBrowserTest.php` — a wrong answer offers a hint or a way back to the example
+- `tests/Feature/AssistanceClassificationTest.php` — declining the offered help keeps the evidence independent
 
 ---
 
@@ -1210,11 +1257,14 @@ Distinguish being able to calculate the answer from being able to explain why th
 ### Technical acceptance
 - One lesson produces separate procedure and reasoning evidence.
 - Reasoning feedback is advisory and cannot change procedural correctness.
+- **Submitting an explanation is answered** (B1 decision 3): a short model explanation or checklist appears for comparison. Never silence.
 
 ### Technical tests
 - `tests/Feature/EvidenceRecordTest.php` — procedure and reasoning evidence rows differ
 - `tests/Feature/AiAdvisoryIsolationTest.php` — model failure leaves procedural evidence intact
 - `tests/Browser/FractionsExplainBrowserTest.php` — full journey, teach → explain → finish
+- `tests/Browser/FractionsExplainBrowserTest.php` — after submitting, a model explanation or checklist is shown
+- `tests/Feature/AiAdvisoryIsolationTest.php` — the comparison text still appears when the model is unavailable
 
 ---
 
