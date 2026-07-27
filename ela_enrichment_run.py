@@ -110,7 +110,7 @@ def check_identity(batch: list[dict], sent: list[dict]) -> list[str]:
     return problems
 
 
-def run_batch(d: ChatGPTDriver, ids: list[int], n: int, *, dry_run: bool) -> bool:
+def run_batch(d: ChatGPTDriver, ids: list[int], n: int, total: int, *, dry_run: bool) -> bool:
     WORK.mkdir(parents=True, exist_ok=True)
     stem = f"repair-{ids[0]}-{ids[-1]}"
     ids_path = (WORK / f"{stem}.ids.txt").resolve()
@@ -119,7 +119,7 @@ def run_batch(d: ChatGPTDriver, ids: list[int], n: int, *, dry_run: bool) -> boo
     out_path = (WORK / f"{stem}.enriched.json").resolve()
     ids_path.write_text("\n".join(str(i) for i in ids) + "\n")
 
-    print(f"\n── batch {n}: {len(ids)} items, ids {ids[0]}–{ids[-1]}", flush=True)
+    print(f"\n── batch {n} of {total}: {len(ids)} items, ids {ids[0]}–{ids[-1]}", flush=True)
 
     # A reply already fetched and saved is worth reusing: it cost ten minutes of
     # ChatGPT time. This is the case where the run died between the reply landing
@@ -222,23 +222,25 @@ def main(argv: list[str] | None = None) -> int:
     if done:
         print(f"{len(done)} batches already imported — skipping them (--force to redo)")
 
-    ok = bad = skipped = 0
+    ok = bad = 0
     # Headless is served a Cloudflare challenge page that never resolves and looks
     # exactly like being logged out. The window has to be visible.
     with ChatGPTDriver(DEFAULT_PROFILE, headless=False) as d:
         if not d.is_logged_in():
             print("Not logged in — run: python chatgpt_browser_driver.py login")
             return 1
-        for n, chunk in enumerate(chunks, start=1):
-            if f"repair-{chunk[0]}-{chunk[-1]}" in done:
-                skipped += 1
-                continue
+        todo = [c for c in chunks if f"repair-{c[0]}-{c[-1]}" not in done]
+        skipped = len(chunks) - len(todo)
+        # Count the batches this run will actually do. The old counter walked all
+        # 70 slots and kept incrementing while it skipped finished ones, so a
+        # resume opened at "batch 68" and read like it was redoing everything.
+        for n, chunk in enumerate(todo, start=1):
             if ok or bad:
                 pause = random.uniform(args.delay_min, args.delay_max)
                 print(f"   (waiting {pause:.0f}s)", flush=True)
                 time.sleep(pause)
             try:
-                if run_batch(d, chunk, n, dry_run=args.dry_run):
+                if run_batch(d, chunk, n, len(todo), dry_run=args.dry_run):
                     ok += 1
                 else:
                     bad += 1
