@@ -1027,7 +1027,9 @@ A model outage or unhealthy evaluator cannot lose the learner's work, invent an 
 
 ## B7 — Frontend: extract the shell · M · B6
 
-**Does:** Splits `SessionRuntimePage`, `SessionProgress`, `SessionActivityController`, `PhaseHeader`, `SessionWrapUp` out of the 3,702-line runtime. Existing vocabulary rendering untouched inside the controller.
+**Does:** Splits `SessionRuntimePage`, `SessionProgress`, `PhaseHeader` and `SessionWrapUp` out of the 3,702-line runtime. Existing vocabulary rendering untouched, and still inline.
+
+**`SessionActivityController` moves to B7.1.** The activity branch closes over ~70 identifiers in the runtime's component scope, including ten state setters and two refs. Extracting it in B7 would mean a component taking seventy props — a worse structure than the one it replaced — and hand-threading them in a batch whose entire purpose is to change nothing is the wrong risk. B7.1 introduces the block and response registries, which give that region a real seam; the split belongs against that seam, not against prop plumbing.
 
 ### Learner-facing acceptance
 
@@ -1053,13 +1055,20 @@ The learner keeps the same vocabulary journey while the oversized frontend runti
 
 ### Technical acceptance
 - Phase and position read from the backend payload, never derived in React.
-- `runtime.tsx` no longer owns the whole flow.
+- `runtime.tsx` no longer owns the whole flow. The shell — page frame, phase header, progress, wrap-up — is separable from what is being studied.
 - All existing `data-test` selectors still resolve.
+- **The existing browser baseline passes with no test file edited.** If it needs updating rather than simply passing, the extraction has changed behaviour and the batch is not done.
 
 ### Technical tests
-- `tests/Browser/StudyRuntimeShellBrowserTest.php` — full vocabulary journey
-- `tests/Browser/StudyRuntimeShellBrowserTest.php` — refresh restores exact phase and position
+
+`tests/Browser/VocabularyBaselineBrowserTest.php` (batch B0) **supplies B7's full-journey and refresh coverage**. It already walks priming → learning pass → recall → feedback → wrap-up and asserts that a reload returns the learner to the same item and phase. A separate `StudyRuntimeShellBrowserTest` covering the same ground would duplicate it, and two tests asserting the same journey drift apart — one gets updated and the other quietly stops meaning anything.
+
+The baseline passing **unmodified** is the evidence for B7. That is a stronger claim than a new test passing, because a new test is written against the code as it now is.
+
+- `tests/Browser/VocabularyBaselineBrowserTest.php` — full vocabulary journey, unchanged
+- `tests/Browser/VocabularyBaselineBrowserTest.php` — refresh restores exact phase and position, unchanged
 - `tests/Browser/M08StudyRuntimeBrowserTest.php` — existing coverage unchanged
+- `tests/Browser/StudyRuntimeHistoryBrowserTest.php` — **new.** Browser Back and Forward submit nothing and advance nothing. The baseline never touches history, so this is the one B7 promise it cannot evidence. Back is the button people press when they think they have made a mistake: if it re-posts, a learner who wanted to change their mind has recorded the same answer twice with nothing on screen to tell them.
 
 ---
 
