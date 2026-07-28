@@ -834,11 +834,28 @@ No visible feature yet. This batch prevents generated practice, transformed expl
 - `source_grounded` without `source_chunk_ids` rejected.
 - `pedagogical_generation` carrying `evidence_spans` rejected.
 - Generated content cannot be labelled `source_grounded`.
+- **Every published block declares an origin.** A block with no `provenance` is rejected at that block's path, and publication fails.
+
+#### Why block-level provenance is required, not optional
+
+ADR-0002 v3 §21: *"Every published activity, block, and resource declares an origin."*
+
+A lesson is assembled from blocks, and a disclosure surface has to answer "where did this come from?" for the thing the learner is actually looking at — this paragraph, this illustration. One block with no origin makes that answer wrong for the whole lesson, and no later batch can recover an origin that was never recorded.
+
+#### What the validator does and does not prove
+
+It checks that a provenance record is **internally consistent**: each origin has a set of fields it may carry, and a field from another origin's set is refused. Content carrying `generator_version` cannot also claim to be a direct quotation.
+
+It does **not** verify that source-grounded text actually appears in the source. Nothing in Ela reads a book, follows a chunk id, or compares words. A record saying `source_grounded` with a plausible chunk id passes, and the text beside it may have been invented.
+
+**Actual grounding verification belongs to B11 (RAG emits the package) and B11.1 (Ela imports and rejects)**, where the source is available. B5.3 catches a contradiction, not a lie told consistently.
 
 ### Technical tests
 - `tests/Unit/ProvenanceValidatorTest.php` — one case per origin value
 - `tests/Unit/ProvenanceValidatorTest.php` — `source_grounded` missing chunk ids rejected
 - `tests/Unit/ProvenanceValidatorTest.php` — generated content with evidence spans rejected
+- `tests/Unit/BlockValidatorTest.php` — a block with no provenance rejected, for every registered block type
+- `tests/Unit/BlockValidatorTest.php` — missing block provenance reported at the block's own path
 
 ---
 
