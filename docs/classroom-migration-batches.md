@@ -1611,7 +1611,23 @@ No new progress UI yet. This batch makes future progress derivable from actual i
 
 ## B13.1 — Progress + calibration surfaces · M · B13
 
-**Does:** Objective-level progress, weak skills, due work, calibration gap where captured. Unifies the weak threshold (dashboard `≥2` vs scheduler `≥1`). Separates effort metrics from learning evidence.
+**Does:** Objective-level progress, weak skills, due work, calibration gap where captured. Unifies the weak threshold (dashboard `≥2` vs scheduler `≥1`). Separates effort metrics from learning evidence. **Decides whether advisory model feedback may order weak items.**
+
+### Open decision — advisory feedback and weak-item ordering
+
+> **May advisory model feedback change the order of otherwise-equivalent weak items?**
+
+`ComposeStudySession` raises an item's priority within the weak bucket when its rubric scores have declined (`rubric_decline_priority`). Those scores may come from the AI rubric evaluator, which B6.1 classifies as `model_advisory` — an evaluator whose results may never move authoritative learner state.
+
+This is **not** a breach of B6.1's guarantees. Ordering within an already-selected weak set changes neither visible correctness, nor `weak_score`, nor `due_at`. It is a genuinely separate question, and it belongs here because **B13.1 owns weak-item behaviour** — it is the batch that unifies the weak threshold and decides what "weak" means across the dashboard and the scheduler.
+
+It does not belong to B14. B14 owns *when* items return; this is their order within a set already chosen.
+
+`docs/research-rule-classification.md` already classifies this behaviour as implemented but undecided, which is exactly what it is.
+
+**Until this batch decides, preserve the existing ordering.** Changing it earlier would be adopting a policy nobody has approved, in the opposite direction from the current one.
+
+Whichever way it goes, record the reasoning: an advisory evaluator influencing what a learner sees next is defensible if the influence is bounded and visible, and indefensible if it silently substitutes for evidence.
 
 ### Learner-facing acceptance
 
@@ -1642,12 +1658,14 @@ Show what the learner has actually demonstrated, what remains weak, and where co
 - One weak definition across dashboard and scheduler.
 - Maths procedure and reasoning can show different states.
 - Confidence shown only where captured.
+- **The advisory-ordering question above is answered, recorded here with its reasoning, and enforced by a test.** Either outcome is acceptable; leaving it undecided is not. B13.1 cannot close while `rubric_decline_priority` sits in the composer with no ruling behind it.
 
 ### Technical tests
 - `tests/Feature/ProgressSnapshotTest.php` — single weak threshold everywhere
 - `tests/Feature/ProgressSnapshotTest.php` — procedure and reasoning states differ independently
 - `tests/Feature/CalibrationTest.php` — "felt sure but missed" populates from captures
 - `tests/Browser/ProgressPageBrowserTest.php` — no vanity metric presented as mastery
+- `tests/Feature/WeakItemOrderingTest.php` — two weak items, equal on every stored signal except their rubric-score history, are ordered according to the recorded decision. If advisory feedback **may** order them, the declining item comes first and the test says why; if it **may not**, the order is stable and the rubric history changes nothing.
 
 ---
 
