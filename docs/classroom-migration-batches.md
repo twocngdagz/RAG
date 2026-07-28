@@ -1669,6 +1669,14 @@ Start writing ADR-0003 at B1; it must be accepted before this batch. Scope, acce
 
 Minimum: `legacy_review` compatibility, `memory_recall` for eligible recall units, an explicit non-memory policy for skill and performance activities, server-authoritative scheduling, policy version snapshots, reference test vectors.
 
+**Scheduling-policy descriptors are owned by this batch.** ADR-0002 v3's Batch 6 lists them alongside the type and evaluator registries, and they were unassigned when B6 and B6.1 were written. They belong here.
+
+The reason is that a scheduling-policy registry is not the same kind of object as a type registry. A block type registry says how to draw a block; a scheduling-policy registry says **when a learner sees something again**, which is a claim about how people forget and how a skill is built. ADR-0002 v3 §25 names eight initial policy keys and then says explicitly that it "defines the scheduling interface, not the final algorithms", leaving ADR-0003 to decide which policy uses FSRS, what a non-memory policy actually does, and how assisted evidence is interpreted.
+
+Registering those keys before ADR-0003 decides what they mean would create an interface that looks settled and is not — and the first thing built against it would harden a guess into a contract. B5.1 already validates `scheduling.policy` and `scheduling.subject` against §25's lists, so a definition cannot name a policy nobody has heard of; what is deferred is the descriptor that says what each policy *does*.
+
+`legacy_review` is the exception in practice, since it must preserve behaviour that already exists rather than choose new behaviour, but it is still described here so all policies live in one place.
+
 ### Learner-facing acceptance
 
 **Learner problem solved**
