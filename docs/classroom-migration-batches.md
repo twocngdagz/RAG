@@ -1658,12 +1658,14 @@ Show what the learner has actually demonstrated, what remains weak, and where co
 - One weak definition across dashboard and scheduler.
 - Maths procedure and reasoning can show different states.
 - Confidence shown only where captured.
+- **The advisory-ordering question above is answered, recorded here with its reasoning, and enforced by a test.** Either outcome is acceptable; leaving it undecided is not. B13.1 cannot close while `rubric_decline_priority` sits in the composer with no ruling behind it.
 
 ### Technical tests
 - `tests/Feature/ProgressSnapshotTest.php` — single weak threshold everywhere
 - `tests/Feature/ProgressSnapshotTest.php` — procedure and reasoning states differ independently
 - `tests/Feature/CalibrationTest.php` — "felt sure but missed" populates from captures
 - `tests/Browser/ProgressPageBrowserTest.php` — no vanity metric presented as mastery
+- `tests/Feature/WeakItemOrderingTest.php` — two weak items, equal on every stored signal except their rubric-score history, are ordered according to the recorded decision. If advisory feedback **may** order them, the declining item comes first and the test says why; if it **may not**, the order is stable and the rubric history changes nothing.
 
 ---
 
