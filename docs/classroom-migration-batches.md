@@ -887,7 +887,7 @@ It does **not** verify that source-grounded text actually appears in the source.
 
 ## B5.4 — Resources, roles, assistance effects · M · B5.1
 
-**Does:** `learning_resources`, the three pivots, `learning.resource.v1`, availability triggers, phase visibility, assistance effects.
+**Does:** `learning_resources`, **two** of the three pivots, `learning.resource.v1`, availability triggers, phase visibility, assistance effects.
 
 ### Learner-facing acceptance
 
@@ -913,6 +913,25 @@ No resource is delivered yet. This batch prepares optional help, remediation, ex
 - Resource type and role are independent (illustration can be `core` or `remediation`).
 - A resource with `reveals_answer` and no `evidence_classification` is rejected.
 - Phase visibility validates against the canonical phase list.
+- **Two pivots are created: `learning_item_resources` and `activity_definition_resources`.** `lesson_resources` is deferred to B11.1.
+
+#### Why `lesson_resources` is deferred to B11.1
+
+ADR-0002 v3 §27 names three pivots. Ela has no `lessons` table, and a foreign key cannot point at one that does not exist.
+
+§27 rejects a generic polymorphic target *precisely to preserve foreign-key integrity*, so inventing a `lessons` table now — with no importer, no shape and no content — to satisfy the pivot would defeat the reason the pivot is relational in the first place.
+
+**B11.1 is where a stored lesson first exists.** RAG emits the package in B11; Ela imports it in B11.1. That is the batch that gives `lesson_resources` something real to point at, and the batch that adds it.
+
+B5.4 must not create the table, and a test asserts its absence so the deferral is visible rather than forgotten.
+
+#### `evidence_classification` and assistance effects
+
+`reveals_strategy`, `reveals_partial_answer` and `reveals_answer` **require** a classification: a learner shown the answer who then types it has demonstrated copying, and without the classification the attempt banks as ordinary evidence.
+
+`provides_representation` and `provides_prompt` **may** carry one. Whether a representation or a prompt amounts to assistance is domain policy — a formula sheet during teaching is not the same as the same sheet during an exam — and the contract must not decide that for every domain at once.
+
+`none` **may not** carry one, and only because it is self-contradictory: help that by its own declaration does nothing cannot change what an attempt proves.
 
 ### Technical tests
 - `tests/Feature/LearningResourceRevisionTest.php` — published resource immutable
@@ -920,6 +939,11 @@ No resource is delivered yet. This batch prepares optional help, remediation, ex
 - `tests/Unit/ResourceValidatorTest.php` — `reveals_answer` without classification rejected
 - `tests/Unit/ResourceValidatorTest.php` — unknown phase in `phase_visibility` rejected
 - `tests/Unit/ResourceValidatorTest.php` — unknown availability trigger rejected
+- `tests/Unit/ResourceValidatorTest.php` — a contract with no inner `definition`, or an empty one, rejected
+- `tests/Unit/ResourceValidatorTest.php` — non-revealing help may carry a classification; `none` may not
+- `tests/Feature/LearningResourceRevisionTest.php` — a row column contradicting its contract is refused; a blank one is filled from it
+- `tests/Feature/LearningResourceRevisionTest.php` — `conditional_triggers = []` rejected at the database, on both pivots, through a raw insert
+- `tests/Feature/LearningResourceRevisionTest.php` — no `lesson_resources` table is created
 
 ---
 
@@ -1405,7 +1429,7 @@ No visible feature yet. This batch ensures RAG can emit stable, versioned lesson
 
 ## B11.1 — Ela: import + reject · M · B11
 
-**Does:** Import validation, major-version rejection, objective coverage evaluator, orphan detection.
+**Does:** Import validation, major-version rejection, objective coverage evaluator, orphan detection, **and the `lesson_resources` pivot deferred from B5.4**.
 
 ### Learner-facing acceptance
 
@@ -1434,6 +1458,19 @@ A generated lesson can enter Ela without manual repair, while incompatible or in
 - Unsupported major version rejected with a clear message.
 - An objective intended for assessment with no evidence-producing activity is reported.
 - Import fails before session composition, never during.
+- **`lesson_resources` is created in this batch**, with foreign keys to the stored lesson and to `learning_resources`, and the same link columns the other two pivots carry: `role`, `availability`, `conditional_triggers`, `phase_visibility`, `assistance_effect`.
+- **A lesson-level resource in an imported package is stored through that pivot**, not flattened onto an activity or an item.
+
+#### `lesson_resources`, deferred here from B5.4
+
+ADR-0002 v3 §27 names three resource pivots. B5.4 created two —
+`learning_item_resources` and `activity_definition_resources` — and could not create the third: Ela had no `lessons` table, and a foreign key cannot point at one that does not exist. §27 rejects a generic polymorphic target precisely to preserve foreign-key integrity, so inventing a lessons table with no importer, no shape and no content would have defeated the reason the pivot is relational at all.
+
+**This is the batch where a stored lesson first exists.** B11 has RAG emit the package; B11.1 imports it. The lesson row created here is the thing `lesson_resources` points at, so this batch adds the table.
+
+Until it exists, a package carrying a lesson-level resource — a formula sheet for the whole lesson rather than for one activity — has nowhere correct to put it. Flattening it onto every activity would be a workaround that survives into production, so the import must reject such a package rather than distort it, until this pivot lands.
+
+`tests/Feature/LearningResourceRevisionTest.php` in B5.4 asserts the table's absence. That test must be updated or removed **in this batch**, and its failure is the intended signal that the deferral has come due.
 
 ### Technical tests
 - `tests/Feature/ContentImportTest.php` — supported version imports
@@ -1441,6 +1478,9 @@ A generated lesson can enter Ela without manual repair, while incompatible or in
 - `tests/Feature/ContentImportTest.php` — provenance survives import
 - `tests/Feature/ObjectiveCoverageTest.php` — uncovered objective reported
 - `tests/Feature/ObjectiveCoverageTest.php` — orphan activity reported
+- `tests/Feature/LessonResourceImportTest.php` — `lesson_resources` exists, with the same link columns as the other two pivots
+- `tests/Feature/LessonResourceImportTest.php` — a lesson-level resource in an imported package is stored on `lesson_resources`, not copied onto activities
+- `tests/Feature/LessonResourceImportTest.php` — deleting a lesson removes its resource links and leaves the shared resource intact
 - `tests/Browser/ImportedFractionsBrowserTest.php` — imported lesson matches native fixture
 
 ---
