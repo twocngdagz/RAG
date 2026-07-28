@@ -1429,7 +1429,7 @@ No visible feature yet. This batch ensures RAG can emit stable, versioned lesson
 
 ## B11.1 — Ela: import + reject · M · B11
 
-**Does:** Import validation, major-version rejection, objective coverage evaluator, orphan detection.
+**Does:** Import validation, major-version rejection, objective coverage evaluator, orphan detection, **and the `lesson_resources` pivot deferred from B5.4**.
 
 ### Learner-facing acceptance
 
@@ -1458,6 +1458,19 @@ A generated lesson can enter Ela without manual repair, while incompatible or in
 - Unsupported major version rejected with a clear message.
 - An objective intended for assessment with no evidence-producing activity is reported.
 - Import fails before session composition, never during.
+- **`lesson_resources` is created in this batch**, with foreign keys to the stored lesson and to `learning_resources`, and the same link columns the other two pivots carry: `role`, `availability`, `conditional_triggers`, `phase_visibility`, `assistance_effect`.
+- **A lesson-level resource in an imported package is stored through that pivot**, not flattened onto an activity or an item.
+
+#### `lesson_resources`, deferred here from B5.4
+
+ADR-0002 v3 §27 names three resource pivots. B5.4 created two —
+`learning_item_resources` and `activity_definition_resources` — and could not create the third: Ela had no `lessons` table, and a foreign key cannot point at one that does not exist. §27 rejects a generic polymorphic target precisely to preserve foreign-key integrity, so inventing a lessons table with no importer, no shape and no content would have defeated the reason the pivot is relational at all.
+
+**This is the batch where a stored lesson first exists.** B11 has RAG emit the package; B11.1 imports it. The lesson row created here is the thing `lesson_resources` points at, so this batch adds the table.
+
+Until it exists, a package carrying a lesson-level resource — a formula sheet for the whole lesson rather than for one activity — has nowhere correct to put it. Flattening it onto every activity would be a workaround that survives into production, so the import must reject such a package rather than distort it, until this pivot lands.
+
+`tests/Feature/LearningResourceRevisionTest.php` in B5.4 asserts the table's absence. That test must be updated or removed **in this batch**, and its failure is the intended signal that the deferral has come due.
 
 ### Technical tests
 - `tests/Feature/ContentImportTest.php` — supported version imports
@@ -1465,6 +1478,9 @@ A generated lesson can enter Ela without manual repair, while incompatible or in
 - `tests/Feature/ContentImportTest.php` — provenance survives import
 - `tests/Feature/ObjectiveCoverageTest.php` — uncovered objective reported
 - `tests/Feature/ObjectiveCoverageTest.php` — orphan activity reported
+- `tests/Feature/LessonResourceImportTest.php` — `lesson_resources` exists, with the same link columns as the other two pivots
+- `tests/Feature/LessonResourceImportTest.php` — a lesson-level resource in an imported package is stored on `lesson_resources`, not copied onto activities
+- `tests/Feature/LessonResourceImportTest.php` — deleting a lesson removes its resource links and leaves the shared resource intact
 - `tests/Browser/ImportedFractionsBrowserTest.php` — imported lesson matches native fixture
 
 ---
