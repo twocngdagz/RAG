@@ -1074,7 +1074,15 @@ The baseline passing **unmodified** is the evidence for B7. That is a stronger c
 
 ## B7.1 — Frontend: block + response registries · M · B7
 
-**Does:** `PresentationBlockRegistry`, `ResponseRendererRegistry`, `ResourceRendererRegistry`. Existing vocabulary teaching steps rendered through typed blocks or an explicit named adapter.
+**Does:** `PresentationBlockRegistry`, `ResponseRendererRegistry`, `ResourceRendererRegistry`. Existing vocabulary teaching steps rendered through typed blocks or an explicit named adapter. **Extracts `SessionActivityController`, deferred from B7.**
+
+#### `SessionActivityController`, deferred from B7
+
+B7 extracted the session shell — page frame, phase header, progress, wrap-up — and stopped short of the activity area, because at that point it closed over around seventy identifiers in the runtime's component scope, including ten state setters and two refs. A seventy-prop component is a worse structure than the one it replaces.
+
+**This batch is what makes the split worth doing.** Once blocks and responses resolve through registries, the activity area stops being a single interlocked expression and becomes: pick a renderer for this block, pick a renderer for this response. The controller then has a real boundary to sit on rather than a wall of props.
+
+The same rule applies as in B7: the vocabulary baseline must pass **unmodified**. If it needs updating, behaviour has changed and the extraction is wrong.
 
 ### Learner-facing acceptance
 
