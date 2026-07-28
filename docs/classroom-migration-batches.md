@@ -160,7 +160,7 @@ No throwaway probe PR was created, and none is required.
 
 ---
 
-## B0.2 — Research-rule classification · S · —
+## B0.2 — Research-rule classification · S · — · **CLOSED 2026-07-27**
 
 **Does:** Classifies every pedagogical rule as `invariant` / `initial_policy` / `domain_policy` / `experiment` / `optional_technique` (ADR §5). Records recon commit SHAs and audit dates. Re-runs `test_audit_sensitivity.py`.
 
@@ -186,10 +186,36 @@ No new screen is introduced. This batch prevents tentative research hypotheses o
 ### Technical acceptance
 - Classification table approved and committed.
 - Every numeric threshold in the ADR carries a classification.
-- `test_audit_sensitivity.py` has a current result — the deterministic-over-judge rule is load-bearing in `01` Inv. 5 and its evidence is currently unverified.
+- `test_audit_sensitivity.py` has a current result — the deterministic-over-judge rule is load-bearing in `01` Inv. 5. **Verified 2026-07-27**; see the result below.
 
 ### Technical tests
 - `test_audit_sensitivity.py` — passes, result recorded with date
+
+### B0.2 audit-sensitivity result — 2026-07-27
+
+**Passed. All 12 checks.** Run on `main` in the RAG repo against the live guide
+corpus and `gpt-oss:120b`.
+
+Both `CONTRADICTED` probes were detected — the essay word range (guide says
+120–380, claim says 500–600) and the spoken-summary Form band (guide says 0 below
+40 words, claim says 35 words still scores 2). Those are the two the test itself
+records as historically unreliable: at one point the judge returned
+`NOT_IN_GUIDE` for a plainly contradicted range in three runs out of four, which
+is why they are bucketed as advisory and do not decide the exit code. They passed
+here, but one clean run does not overturn that measurement — the deterministic
+`check_word_range` and `check_trait_vocabulary` remain the load-bearing evidence
+for Inv. 5, and both passed as hard failures.
+
+**This was the last of B0.2's three acceptance criteria.** The classification
+table is committed as `docs/research-rule-classification.md` — Table A covers 29
+pedagogical rules, Table B every numeric threshold in ADR-0002 v3, Table C the
+16 shipped values that were never decided. With the audit result recorded,
+**B0.2 is closed.**
+
+The same run is recorded in `docs/research-rule-classification.md`
+§ Sensitivity-test record with the full command, provider and model. This
+section states the outcome where the batch is defined; that one holds the
+evidence.
 
 ---
 
