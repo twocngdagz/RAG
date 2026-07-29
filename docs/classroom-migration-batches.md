@@ -1205,9 +1205,14 @@ Adding them would make the universal contract English-vocabulary-shaped, which i
 Each word gets its own published definitions:
 
 ```text
-vocab:{item-key}:teach
-vocab:{item-key}:recall
+vocab:{item-key}:teach:learn
+vocab:{item-key}:teach:refresh
+vocab:{item-key}:recall:{exercise-type}
 ```
+
+Keyed **by variant**, because every input that changes what the learner sees must select a distinct published definition — nothing is filtered at runtime. The teaching pass differs between meeting an item (`learn`) and re-teaching it (`refresh`); a **due** item is never taught at all, so `teach:review` must not exist. Recall is keyed by exercise type, which the composer picks from the item type and the source bucket together, so the same word is a different activity in a different session.
+
+Only **reachable** variants are published. A word can never be a sentence-building activity, and publishing one would claim a learner could receive something they cannot.
 
 Each contains **complete rendered blocks and real provenance** — no placeholders, no template to be filled in later. A learner-visible content change creates a **new revision**, and a session snapshot copies that exact published revision.
 
