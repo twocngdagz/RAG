@@ -1167,12 +1167,28 @@ One vocabulary skill now uses the permanent multi-activity architecture without 
 - Golden payload parity (or a named adapter projection).
 - Outcome, weak-state and due-date parity with the legacy path.
 - Resume returns to the exact activity.
-- Evidence rows written without changing visible feedback.
+- Evidence rows written without changing visible feedback — **conditionally**, per the rule below.
+
+**Evidence is conditional on real objective alignment**
+
+- Evidence is written **only where the published activity definition carries a genuine objective alignment.**
+- An **unaligned legacy vocabulary item writes no evidence row and still completes normally.** That is the designed behaviour, not a degraded one: most of the migrated corpus is unaligned. B8 invents no vocabulary objective catalogue — a row naming an objective nobody authored would be evidence about a goal that does not exist.
+- Evaluation reads the alignment **frozen on the activity definition**, never the live `learning_item_objectives` pivot. Adding an alignment after a session starts must not change what an older attempt meant.
+- Mapping the existing vocabulary corpus to objectives needs its **own explicit content-authoring batch** if wanted. It is not B2.2 (which supplied the storage), not B9 (which guards composition), and not B8. B11/B11.1 may bring objective-bearing packages later.
+
+**Objective alignment belongs to the frozen revision**
+
+- `activity_definition_objectives` is part of the immutable published revision, exactly like content and provenance. Alignment decides what answering an activity demonstrates, so changing it would rewrite the meaning of every answer already given to that revision while its content and hash stayed identical.
+- Alignment on a published, superseded or retired definition **cannot be inserted, changed, or deleted** — through the ORM or through raw SQL.
+- The pivot's parent foreign keys **RESTRICT** rather than cascade, so historical alignment cannot be deleted as a side effect of removing a definition, an objective, or the framework containing it. Draft deletion removes its own alignment rows explicitly.
+- **An alignment change creates a new revision**, on the same footing as a content or provenance change.
 
 ### Technical tests
 - `tests/Feature/StudySessionGoldenPayloadTest.php` — parity
 - `tests/Feature/ContractPathParityTest.php` — same score, weak update, due date as legacy
 - `tests/Browser/MultiActivitySessionBrowserTest.php` — one item advances through several activities
+- Aligned item produces evidence for the exact objective; unaligned item produces none
+- Frozen alignment resists ORM and raw SQL; neither parent nor framework can be deleted while it points at them
 - `tests/Feature/SessionResumeTest.php` — resume lands on exact activity and attempt
 - `tests/Feature/SnapshotImmutabilityTest.php` — publishing revision 2 mid-session changes nothing
 
