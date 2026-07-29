@@ -13,6 +13,63 @@ Splits and details ADR-0002 v3 §38 Batches 0–16. Same acceptance model (learn
 **Test conventions:** `tests/Unit`, `tests/Feature`, `tests/Browser/*BrowserTest.php` (Pest + Playwright), RAG root-level `test_*.py`.
 
 
+## Batch execution and review pacing
+
+**A batch is the minimum reviewable unit.** It must not be subdivided into informal slices, micro-milestones, per-finding reports, or per-commit approval events unless the workflow owner revises the plan and creates separate batches.
+
+### Implementer
+
+Work continues until one of these is true:
+
+1. Every batch acceptance criterion is implemented.
+2. Required automated and manual verification is complete.
+3. The implementation is ready for the batch's commit boundary.
+4. A genuine escalation condition prevents further progress.
+
+**Discovering a defect, failing test, fixture mismatch, missing regression test, type error, or local design choice is not a reason to stop.** Resolve it within the authorised scope.
+
+Do not return per-finding progress reports, per-commit or partial-slice completion reports, requests for routine implementation decisions, or requests to review work before the batch is complete.
+
+**Authority.** Within the approved plan and file boundaries: choose internal implementation details, correct defects, add or revise tests, update fixtures when intended behaviour or an approved internal contract legitimately changes, refactor affected code, add evidence, make non-material plan clarifications.
+
+**Approval is required** only when a decision materially changes scope, changes approved user-visible behaviour, changes an external compatibility contract, removes an acceptance criterion, requires destructive or irreversible action, requires unavailable credentials or access, or contradicts the approved plan.
+
+**Escalate early only for:** contradictory requirements, unavoidable material scope expansion, inaccessible systems or credentials, destructive operations needing approval, a security or safety concern, or an external dependency making further work impossible. An escalation states the exact blocking condition, work completed, work that can still proceed, and the smallest decision required.
+
+### Reviewer
+
+Inspect the complete implementation, diff, tests and evidence before returning a verdict. Complete the review, collect all findings, deduplicate, classify by severity and disposition, and return them in **one** consolidated response.
+
+Do not report findings incrementally, review one commit at a time, approve informal slices, stop at the first valid defect, or request re-review before the full finding set is addressed.
+
+**Every finding carries one disposition:**
+
+| Disposition | Meaning |
+|---|---|
+| `BLOCKS_BATCH` | The batch cannot be approved until corrected. |
+| `FIX_IN_CURRENT_PASS` | Correct during the consolidated fix pass; no owner decision needed. |
+| `DEFERRED` | Does not block; recorded for later work. |
+
+Preferences and optional improvements must not be blockers without a concrete correctness, compatibility, security, maintainability, or acceptance-criterion risk.
+
+### Correction pass
+
+Address every finding in **one uninterrupted pass**, giving each exactly one disposition: fixed, no change with evidence, blocked by a genuine escalation, deferred where marked non-blocking, or superseded by another accepted correction. Do not return after each finding.
+
+### Bounded re-review
+
+Two complete rounds by default — full implementation review, then full disposition and regression review with the final verdict. A third round only for a newly discovered critical or high-severity correctness defect that could not reasonably have been found in Round 1. Re-review must not introduce new stylistic preferences, expand scope, or reopen accepted design choices.
+
+### Reporting
+
+Progress may be recorded internally. User-facing handoffs occur **only** at: implementation complete, genuine escalation, consolidated review complete, consolidated correction complete, final verdict. Intermediate commits, test fixes and completed subparts are not milestones.
+
+### Coordinator
+
+Reject: review requests before implementation completion, partial finding reviews, per-finding correction reviews, starting the next batch before the current verdict, repeated reopening of accepted findings, and unapproved informal batch subdivision.
+
+The coordinator optimises for completing the approved batch; the reviewer protects correctness at the batch boundary.
+
 ## Acceptance model
 
 Each batch has two independent acceptance layers.
