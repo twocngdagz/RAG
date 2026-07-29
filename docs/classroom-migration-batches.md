@@ -1141,6 +1141,20 @@ One vocabulary skill now uses the permanent multi-activity architecture without 
 - Pause and resume return to the exact activity.
 - No “legacy,” “contract,” “snapshot,” or “evidence” terminology appears.
 
+**Provenance ruling (settled during B8)**
+
+- **Every current learner-visible vocabulary field publishes as `insufficient_source_evidence`.** No field qualifies for a stronger origin, because AI enrichment can overwrite the word, definition, usage notes and example sentences on any item whatever its source type, and the enrichment log records only that a pass ran — never which fields it changed.
+- **Provenance is assigned per rendered field, never per item.** `source_type` records how an item entered the system, not who wrote the text a learner reads. A manually created item can carry an AI-written definition, and nothing distinguishes the two. `manually_authored` is used only where that exact field is known to have been written by the recorded user.
+- Origins that assert grounding are **unavailable for concrete reasons, not preference.** `source_grounded` and `source_transformed` require chunk ids nothing ever recorded; `pedagogical_generation` additionally asserts what the generator was grounded in and which version produced it, and neither was kept. Filling those with empty lists or guessed versions would manufacture a source-grounding claim.
+- **The label is internal and does not block B8 delivery.** Learners see no "unverified" warning — it describes our records, not the content, which is what they already study today.
+- **B11.1 republishes verified content as a new revision.** Because published revisions are immutable, truthful grounding arrives as a new revision rather than silently upgrading what earlier learners were shown.
+
+**Publisher / composer boundary**
+
+- The **publisher** renders the activity, validates the completed contract, and publishes it. Rendering happens once, before anything is published.
+- The **composer** does not render. It resolves the published revision the eligibility rule selects and copies it exactly into the frozen snapshot.
+- Every input that changes what the learner sees selects a **distinct published definition**. There is no runtime filtering of published content, and no fallback: a composition request for an impossible or unpublished combination fails before the learner starts.
+
 **Behaviour expectations**
 
 - Given one skill has several activities, when the learner advances, then they appear in persisted order.
