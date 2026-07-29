@@ -1134,7 +1134,9 @@ One vocabulary skill now uses the permanent multi-activity architecture without 
 **What the learner should see in the browser**
 
 - One skill appears once in high-level session progress.
-- The learner advances through its teaching, practice, recall, and feedback activities.
+- The learner advances through the journey vocabulary already has: **learning pass → recall → feedback panel.** B8 preserves that shape and does not add a phase.
+- There is **no separate practice activity** for vocabulary, and none is invented. The four-phase shape named elsewhere in this plan is what the architecture supports, not a promise every domain contains all four.
+- **Feedback belongs to the recall response**, as it does today — a panel attached to the submitted answer, not a step the learner advances into.
 - Prompts, examples, response controls, feedback, weak-state messaging, and review timing match the legacy journey.
 - Pause and resume return to the exact activity.
 - No “legacy,” “contract,” “snapshot,” or “evidence” terminology appears.
@@ -1168,14 +1170,25 @@ Everything the learner sees is already a rendered string or list before it reach
 
 Adding them would make the universal contract English-vocabulary-shaped, which is the thing this migration exists to undo.
 
-#### Activity definitions are reusable structures; snapshots hold the content
+#### Concrete per-item definitions
 
-A small set of vocabulary definitions (`vocab:teach`, `vocab:recall`) is reused across every word — **not** because per-item definitions would be too numerous, but because *a definition describes a reusable activity structure while a session snapshot contains the actual word-specific content shown to that learner*. Those are different kinds of thing and belong in different rows.
+Each word gets its own published definitions:
+
+```text
+vocab:{item-key}:teach
+vocab:{item-key}:recall
+```
+
+Each contains **complete rendered blocks and real provenance** — no placeholders, no template to be filled in later. A learner-visible content change creates a **new revision**, and a session snapshot copies that exact published revision.
+
+This was chosen over a reusable-structure-plus-recipe design. A recipe contract would have been new architecture introduced to avoid a manageable number of rows, and it would have weakened B3's requirement that every `study_session_activities` row names a real definition — `activity_definition_id` would have to become nullable, and composition would be assembling content that was never published.
+
+With per-item definitions, B5's guarantee holds unchanged: **published means complete, and what the learner received is what was published.**
 
 #### Composition rules
 
-1. **Composition turns the word's lexical data into complete generic blocks.** Rendering happens once, at composition.
-2. **Validate the completed snapshot before saving it.** The snapshot is what a learner will see; it passes the contract validator like any other activity content.
+1. **The word's lexical data is rendered into complete generic blocks, and published as a definition revision.** Rendering happens once, before publication — not during composition.
+2. **Validate before saving, at both points.** The definition passes the contract validator at publication (B5.1 already enforces this), and the snapshot copied into a session is checked against the revision it claims to come from.
 3. **Preserve the word and source revision and provenance in the snapshot.** A snapshot that cannot say which revision of which word it was built from cannot be audited later.
 4. **The learner always resumes from the frozen snapshot, never from live lexical data.** Resume reads what was stored, not what the word says today.
 5. **Editing a word or a definition affects only newly composed sessions.** A session in progress is unaffected by an edit made while the learner is inside it.
