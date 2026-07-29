@@ -1160,7 +1160,28 @@ One vocabulary skill now uses the permanent multi-activity architecture without 
 - `tests/Feature/SessionResumeTest.php` — resume lands on exact activity and attempt
 - `tests/Feature/SnapshotImmutabilityTest.php` — publishing revision 2 mid-session changes nothing
 
-**Hold:** expected review point. If parity needs lexical fields in the universal contract, stop and revise.
+### Hold resolved — no vocabulary fields in the universal contract
+
+**Answered: no.** `learning.activity.v1` does not gain `definition`, `usage_notes`, `example_sentences` or any other English-vocabulary field.
+
+Everything the learner sees is already a rendered string or list before it reaches them: the learning pass builds `{key, title, description, content, bullets}` per step, and the recall prompt is a sentence built from the item's content. `content` is a `prose` block; `bullets` is a `phrase-list`. Nothing on screen needs the contract to name a lexical field.
+
+Adding them would make the universal contract English-vocabulary-shaped, which is the thing this migration exists to undo.
+
+#### Activity definitions are reusable structures; snapshots hold the content
+
+A small set of vocabulary definitions (`vocab:teach`, `vocab:recall`) is reused across every word — **not** because per-item definitions would be too numerous, but because *a definition describes a reusable activity structure while a session snapshot contains the actual word-specific content shown to that learner*. Those are different kinds of thing and belong in different rows.
+
+#### Composition rules
+
+1. **Composition turns the word's lexical data into complete generic blocks.** Rendering happens once, at composition.
+2. **Validate the completed snapshot before saving it.** The snapshot is what a learner will see; it passes the contract validator like any other activity content.
+3. **Preserve the word and source revision and provenance in the snapshot.** A snapshot that cannot say which revision of which word it was built from cannot be audited later.
+4. **The learner always resumes from the frozen snapshot, never from live lexical data.** Resume reads what was stored, not what the word says today.
+5. **Editing a word or a definition affects only newly composed sessions.** A session in progress is unaffected by an edit made while the learner is inside it.
+6. **No unexplained placeholders inside an activity contract.** A snapshot must not contain a token pretending to be finished learner content; if a field could not be rendered, the block is absent, not filled with a stand-in.
+
+**Hold:** resolved above. Reopen only if parity turns out to need something these rules cannot express.
 
 ---
 
