@@ -1134,7 +1134,9 @@ One vocabulary skill now uses the permanent multi-activity architecture without 
 **What the learner should see in the browser**
 
 - One skill appears once in high-level session progress.
-- The learner advances through its teaching, practice, recall, and feedback activities.
+- The learner advances through the journey vocabulary already has: **learning pass → recall → feedback panel.** B8 preserves that shape and does not add a phase.
+- There is **no separate practice activity** for vocabulary, and none is invented. The four-phase shape named elsewhere in this plan is what the architecture supports, not a promise every domain contains all four.
+- **Feedback belongs to the recall response**, as it does today — a panel attached to the submitted answer, not a step the learner advances into.
 - Prompts, examples, response controls, feedback, weak-state messaging, and review timing match the legacy journey.
 - Pause and resume return to the exact activity.
 - No “legacy,” “contract,” “snapshot,” or “evidence” terminology appears.
@@ -1160,7 +1162,39 @@ One vocabulary skill now uses the permanent multi-activity architecture without 
 - `tests/Feature/SessionResumeTest.php` — resume lands on exact activity and attempt
 - `tests/Feature/SnapshotImmutabilityTest.php` — publishing revision 2 mid-session changes nothing
 
-**Hold:** expected review point. If parity needs lexical fields in the universal contract, stop and revise.
+### Hold resolved — no vocabulary fields in the universal contract
+
+**Answered: no.** `learning.activity.v1` does not gain `definition`, `usage_notes`, `example_sentences` or any other English-vocabulary field.
+
+Everything the learner sees is already a rendered string or list before it reaches them: the learning pass builds `{key, title, description, content, bullets}` per step, and the recall prompt is a sentence built from the item's content. `content` is a `prose` block; `bullets` is a `phrase-list`. Nothing on screen needs the contract to name a lexical field.
+
+Adding them would make the universal contract English-vocabulary-shaped, which is the thing this migration exists to undo.
+
+#### Concrete per-item definitions
+
+Each word gets its own published definitions:
+
+```text
+vocab:{item-key}:teach
+vocab:{item-key}:recall
+```
+
+Each contains **complete rendered blocks and real provenance** — no placeholders, no template to be filled in later. A learner-visible content change creates a **new revision**, and a session snapshot copies that exact published revision.
+
+This was chosen over a reusable-structure-plus-recipe design. A recipe contract would have been new architecture introduced to avoid a manageable number of rows, and it would have weakened B3's requirement that every `study_session_activities` row names a real definition — `activity_definition_id` would have to become nullable, and composition would be assembling content that was never published.
+
+With per-item definitions, B5's guarantee holds unchanged: **published means complete, and what the learner received is what was published.**
+
+#### Composition rules
+
+1. **The word's lexical data is rendered into complete generic blocks, and published as a definition revision.** Rendering happens once, before publication — not during composition.
+2. **Validate before saving, at both points.** The definition passes the contract validator at publication (B5.1 already enforces this), and the snapshot copied into a session is checked against the revision it claims to come from.
+3. **Preserve the word and source revision and provenance in the snapshot.** A snapshot that cannot say which revision of which word it was built from cannot be audited later.
+4. **The learner always resumes from the frozen snapshot, never from live lexical data.** Resume reads what was stored, not what the word says today.
+5. **Editing a word or a definition affects only newly composed sessions.** A session in progress is unaffected by an edit made while the learner is inside it.
+6. **No unexplained placeholders inside an activity contract.** A snapshot must not contain a token pretending to be finished learner content; if a field could not be rendered, the block is absent, not filled with a stand-in.
+
+**Hold:** resolved above. Reopen only if parity turns out to need something these rules cannot express.
 
 ---
 
