@@ -1394,6 +1394,7 @@ Teach one real fractions skill with a clear explanation, meaningful visual repre
 
 - Given the learner enters teaching, then the representation and explanation are visible.
 - Given the learner enters guided practice, then the allowed support remains available.
+- Given the learner submits an answer, then the mark is shown immediately and the activity is HELD until they explicitly continue — the session cannot advance or complete past unread feedback.
 - Given the learner submits the same answer repeatedly under the same conditions, then correctness is identical.
 - No model-generated judgement decides exact mathematical correctness.
 - The learner can complete teaching and guided practice without encountering vocabulary-specific controls.
@@ -1404,6 +1405,8 @@ Teach one real fractions skill with a clear explanation, meaningful visual repre
 - Deterministic marking on the guided task — no model call decides correctness.
 - **Marking checks the form the question asked for, not only the value** (B1 decision 1). A task asking for a mixed number rejects `11/4` and `22/8` even though both equal 2 3/4.
 - **Wrong-answer feedback names the mistake** (B1 decision 4), e.g. "that is the right size but you have not split it into wholes yet" — not a restatement of the correct answer.
+- **A marked answer holds its activity open until the learner explicitly continues.** The mark is a response-feedback state within the guided activity, not a new phase. Completion is refused while any composed activity is unfinished, so the Continue step is part of the flow rather than a convention of the page.
+- **Cross-domain ordering policy: English first, then maths.** The reason is the learner's attention rather than any ranking of the subjects — language items are short and recall-like, maths items are longer and need working out. A composed session groups by domain and keeps the due/weak/new interleave within each domain. This is a pedagogical decision and belongs here, not only in code.
 - Maths renders in the same shell as vocabulary.
 
 ### Technical tests
@@ -1411,8 +1414,10 @@ Teach one real fractions skill with a clear explanation, meaningful visual repre
 - `tests/Feature/MathEvaluationTest.php` — no model call in the correctness path
 - `tests/Feature/MathEvaluationTest.php` — a mixed-number question rejects `11/4` and `22/8`, accepts `2 3/4`
 - `tests/Feature/MathEvaluationTest.php` — wrong-answer feedback names the mistake, not the answer
-- `tests/Browser/FractionsTeachBrowserTest.php` — teach → guided completes
+- `tests/Playwright/fractions-teach.spec.ts` — priming → teach → guided → mark → explicit continue → wrap-up
 - `tests/Feature/IllustrationProvenanceTest.php` — the fraction representation carries origin and accessibility fields
+- `tests/Unit/ComposeStudySessionTest.php` — a MIXED queue composed through `ComposeStudySession` puts every English item before any maths item, including when the maths item is due and the English items are new
+- `tests/Unit/ComposeStudySessionTest.php` — an ordinary learner's composed session can contain the fractions item
 
 ---
 
