@@ -1372,7 +1372,7 @@ The learner never reaches an activity that their current client cannot render or
 
 ## B10 — Fractions: teach + guided · M · B9.1
 
-**Does:** Objective graph for fractions, one learning item, teach activity, worked example, guided practice. Core illustration. Hand-authored content.
+**Does:** Objective graph for fractions, one learning item, teach activity, worked example, guided practice. Core fraction representation. Hand-authored content.
 
 ### Learner-facing acceptance
 
@@ -1384,7 +1384,7 @@ Teach one real fractions skill with a clear explanation, meaningful visual repre
 
 - A priming screen explaining the fractions goal.
 - A teaching explanation in age-appropriate language.
-- A labelled, accessible fraction illustration.
+- A labelled, accessible fraction representation.
 - A worked example.
 - Guided practice with visible help.
 - Immediate deterministic feedback.
@@ -1392,7 +1392,7 @@ Teach one real fractions skill with a clear explanation, meaningful visual repre
 
 **Behaviour expectations**
 
-- Given the learner enters teaching, then the illustration and explanation are visible.
+- Given the learner enters teaching, then the representation and explanation are visible.
 - Given the learner enters guided practice, then the allowed support remains available.
 - Given the learner submits the same answer repeatedly under the same conditions, then correctness is identical.
 - No model-generated judgement decides exact mathematical correctness.
@@ -1400,7 +1400,7 @@ Teach one real fractions skill with a clear explanation, meaningful visual repre
 
 
 ### Technical acceptance
-- Illustration visible during teaching.
+- Representation visible during teaching.
 - Deterministic marking on the guided task — no model call decides correctness.
 - **Marking checks the form the question asked for, not only the value** (B1 decision 1). A task asking for a mixed number rejects `11/4` and `22/8` even though both equal 2 3/4.
 - **Wrong-answer feedback names the mistake** (B1 decision 4), e.g. "that is the right size but you have not split it into wholes yet" — not a restatement of the correct answer.
@@ -1412,7 +1412,7 @@ Teach one real fractions skill with a clear explanation, meaningful visual repre
 - `tests/Feature/MathEvaluationTest.php` — a mixed-number question rejects `11/4` and `22/8`, accepts `2 3/4`
 - `tests/Feature/MathEvaluationTest.php` — wrong-answer feedback names the mistake, not the answer
 - `tests/Browser/FractionsTeachBrowserTest.php` — teach → guided completes
-- `tests/Feature/IllustrationProvenanceTest.php` — illustration carries origin and accessibility fields
+- `tests/Feature/IllustrationProvenanceTest.php` — the fraction representation carries origin and accessibility fields
 
 ---
 
@@ -1429,7 +1429,7 @@ Test whether the learner can solve independently rather than merely following a 
 **What the learner should see in the browser**
 
 - A closed-book fractions task.
-- No worked solution, answer, or method-revealing illustration.
+- No worked solution, answer, or method-revealing representation.
 - Clear response controls.
 - A non-revealing accessibility equivalent when needed.
 - Feedback only according to the activity's answer-visibility policy.
@@ -1444,12 +1444,12 @@ Test whether the learner can solve independently rather than merely following a 
 
 
 ### Technical acceptance
-- Method-revealing illustration hidden during `closed_book_practice`.
+- Method-revealing representation hidden during `closed_book_practice`.
 - Accessibility text equivalent still available where it doesn't reveal the answer.
 - **After a wrong answer the learner is offered a way forward** (B1 decision 2): an optional hint, or a route back to the worked example, before retrying. Taking either is recorded and classifies the later evidence as assisted; declining leaves it independent.
 
 ### Technical tests
-- `tests/Feature/PhaseVisibilityTest.php` — illustration hidden in closed-book phase
+- `tests/Feature/PhaseVisibilityTest.php` — method-revealing representation hidden in closed-book phase
 - `tests/Feature/PhaseVisibilityTest.php` — non-revealing accessibility equivalent still served
 - `tests/Browser/FractionsRecallBrowserTest.php` — no teaching content in the DOM during recall
 - `tests/Browser/FractionsRecallBrowserTest.php` — a wrong answer offers a hint or a way back to the example
