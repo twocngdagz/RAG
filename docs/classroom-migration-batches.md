@@ -1456,9 +1456,11 @@ Test whether the learner can solve independently rather than merely following a 
 ### Technical tests
 - `tests/Feature/PhaseVisibilityTest.php` — method-revealing representation hidden in closed-book phase
 - `tests/Feature/PhaseVisibilityTest.php` — non-revealing accessibility equivalent still served
-- `tests/Browser/FractionsRecallBrowserTest.php` — no teaching content in the DOM during recall
-- `tests/Browser/FractionsRecallBrowserTest.php` — a wrong answer offers a hint or a way back to the example
+- `tests/Playwright/fractions-closed-book.spec.ts` — no teaching content in the page during independent practice, including after a refresh
+- `tests/Playwright/fractions-closed-book.spec.ts` — a wrong answer offers a hint or a way back to the example
 - `tests/Feature/AssistanceClassificationTest.php` — declining the offered help keeps the evidence independent
+- `tests/Feature/AssistanceClassificationTest.php` — help is refused before the task has been attempted, and the independent task cannot be finished without being answered
+- `tests/Feature/FractionsLearnerStateTest.php` — one learner-state update per item per session, however many attempts it took
 
 ---
 
