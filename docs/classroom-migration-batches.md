@@ -1292,7 +1292,11 @@ With per-item definitions, B5's guarantee holds unchanged: **published means com
 
 ## B9 — Composer guard · S · B8
 
-**Does:** Removes `default => 3` from `itemTypeRank`. Registers English item types explicitly. Unknown domain or type throws in dev/test and fails composition with an actionable error in production.
+**Does:** Removes `default => 3` from `itemTypeRank`. Registers English item types explicitly. An **unregistered item type** stops composition with an actionable error naming the type and what is registered.
+
+**Scope note.** B9 guarantees that unregistered item types cannot become session items. It does **not** introduce domain identity: `learning_items` has no domain column, no second domain's types exist, and inventing them to have something to interleave would be content authoring rather than a guard. The registry records the domain each type belongs to, so a second domain registers through that seam rather than through a branch added to the ordering path.
+
+**Cross-domain ordering, and errors naming a domain, belong to the batch that introduces the second domain.** Until then a mixed session means a session containing content no domain has registered, and the policy for that is to stop.
 
 ### Learner-facing acceptance
 
@@ -1303,7 +1307,7 @@ Unknown content cannot silently be placed last or treated as a valid session ite
 **What the learner should see in the browser**
 
 - Existing English phrase, word, and sentence-pattern order remains as approved.
-- Supported mixed sessions follow a documented order.
+- A session mixing the supported English types follows that documented order.
 - If composition cannot understand content, the learner sees a recoverable preparation error.
 - Retry and return actions are available.
 - No stack trace or unknown-type key is exposed.
@@ -1311,20 +1315,21 @@ Unknown content cannot silently be placed last or treated as a valid session ite
 **Behaviour expectations**
 
 - Given a supported English session, when it opens, then expected ordering is preserved.
-- Given a supported mixed session, then ordering follows explicit policy rather than a fallback rank.
-- Given an unsupported domain or type, then the learner is not shown a misleading partial session.
+- Given a session mixing supported types, then ordering follows the explicit registry rather than a fallback rank.
+- Given an unregistered item type, then the learner is not shown a misleading partial session.
 - Composition failure occurs before study starts.
 
 
 ### Technical acceptance
-- Unknown item type stops composition rather than ranking last.
-- English ordering asserted by a fixture containing a phrase chunk, a word and a sentence pattern.
+- Unregistered item type stops composition rather than ranking last, on **every** public composition path — session build, draft replacement, draft addition and draft suggestions. A single candidate is never sorted, so ordering alone is not a guard.
+- English ordering asserted through the real composer action by a fixture containing a phrase chunk, a word and a sentence pattern — not by sorting values in a test, which passes even if the composer stops applying the registry.
+- The error names the item type and the registered types. Naming a domain waits for the batch that introduces one.
 
 ### Technical tests
-- `tests/Unit/ComposeStudySessionTest.php` — unknown type throws, message names domain and type
-- `tests/Unit/ComposeStudySessionTest.php` — English ordering matches expected sequence
-- `tests/Unit/ComposeStudySessionTest.php` — mixed English/maths order matches stated policy
-- `tests/Feature/CompositionFailureTest.php` — production path returns a recoverable error
+- `tests/Unit/CompositionItemTypesTest.php` — unregistered type throws, message names the type and what is registered
+- `tests/Unit/ComposeStudySessionTest.php` — English ordering through the real action; unregistered content refused on session build, replacement, addition and suggestions
+- `tests/Feature/CompositionFailureTest.php` — recoverable error, no session created, no internals exposed
+- `tests/Playwright/composition-failure.spec.ts` — the learner sees a recoverable message with retry and return available
 
 ---
 
