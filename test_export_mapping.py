@@ -46,10 +46,21 @@ package = ex.export_chapter("math5a", 3, SOURCE, manifest=REAL_MANIFEST)
 
 check("one chapter becomes one lesson", package["lesson"]["stable_key"] == "math5a:ch03", str(package["lesson"]))
 check("objectives come from the manifest", len(package["objectives"]) == 2, str(len(package["objectives"])))
+# Compared against the MANIFEST rather than a copy of its values: the property
+# is that the export preserves what was declared, and restating the expected
+# alignments here would pass even if both drifted together.
 check(
-    "each activity keeps the alignment it declared",
-    [[a["objective_stable_key"] for a in act["objective_alignments"]] for act in package["activities"]]
-    == [["math5a:ch03:fraction-as-division"], ["math5a:ch03:unlike-fractions"]],
+    "each activity keeps exactly the alignment it declared",
+    [act["objective_alignments"] for act in package["activities"]]
+    == [declared["objective_alignments"] for declared in REAL_MANIFEST["activities"]],
+    str([act["objective_alignments"] for act in package["activities"]]),
+)
+check(
+    "no activity gains an alignment it did not declare",
+    all(
+        len(act["objective_alignments"]) == len(declared["objective_alignments"])
+        for act, declared in zip(package["activities"], REAL_MANIFEST["activities"])
+    ),
 )
 check(
     "blocks live inside the activity definition",
