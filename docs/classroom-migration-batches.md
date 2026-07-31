@@ -1493,9 +1493,10 @@ Offer targeted help after repeated difficulty while honestly recording that late
 
 
 ### Technical acceptance
-- Attempt 1 wrong → no remediation. Attempt 2 wrong → remediation, once.
-- Opening remediation marks subsequent evidence `assisted`.
-- Refresh preserves attempts, remediation state and position.
+- **The two-attempt threshold applies to the REMEDIATION RESOURCE only.** B10.1's optional hint and route back to the worked example remain available after the first wrong attempt — that is B10.1's own acceptance condition and the B1 decision behind it. This batch adds a resource on top; it does not move the existing help behind a second attempt.
+- Attempt 1 wrong → corrective feedback and the existing optional help; no remediation resource. Attempt 2 wrong → remediation resource, once.
+- Opening any answer- or strategy-revealing help marks subsequent evidence `assisted`.
+- Refresh preserves attempts, the remediation resource's offered and opened state, and position.
 
 ### Technical tests
 - `tests/Feature/ConditionalResourceTest.php` — fires on attempt 2, not 1
