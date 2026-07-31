@@ -1,0 +1,53 @@
+{
+  "manifest_schema_version": "lesson.export_manifest.v1",
+  "authored_by": "ela:content-team",
+  "lesson": {
+    "stable_key": "math5a:ch03",
+    "title": "Fractions",
+    "domain": "math"
+  },
+  "objectives": [
+    {
+      "stable_key": "math5a:ch03:unlike-fractions",
+      "statement": "Add and subtract fractions with unlike denominators.",
+      "objective_type": "procedure"
+    },
+    {
+      "stable_key": "math5a:ch03:fraction-as-division",
+      "statement": "Explain why a fraction represents a division.",
+      "objective_type": "concept"
+    }
+  ],
+  "activities": [
+    {
+      "stable_key": "math5a:ch03:teach-division",
+      "elements": ["core_lessons.0.explanation"],
+      "objective_alignments": [
+        {"objective_stable_key": "math5a:ch03:fraction-as-division", "alignment_role": "teaches"}
+      ],
+      "type": "response.acknowledgement",
+      "domain": "math",
+      "evidence_mode": "exposure",
+      "answer_visibility": "never",
+      "response": {"kind": "acknowledgement", "required": false},
+      "evaluation": {"authority": "unscored"},
+      "scheduling": {"policy": "skill_practice", "subject": "learning_item"},
+      "assembly_reason": "The chapter's own explanation of fractions as division"
+    },
+    {
+      "stable_key": "math5a:ch03:teach-unlike",
+      "elements": ["core_lessons.1.explanation"],
+      "objective_alignments": [
+        {"objective_stable_key": "math5a:ch03:unlike-fractions", "alignment_role": "teaches"}
+      ],
+      "type": "response.acknowledgement",
+      "domain": "math",
+      "evidence_mode": "exposure",
+      "answer_visibility": "never",
+      "response": {"kind": "acknowledgement", "required": false},
+      "evaluation": {"authority": "unscored"},
+      "scheduling": {"policy": "skill_practice", "subject": "learning_item"}
+    }
+  ],
+  "resources": []
+}
