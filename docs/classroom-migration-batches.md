@@ -1502,7 +1502,10 @@ Offer targeted help after repeated difficulty while honestly recording that late
 - `tests/Feature/ConditionalResourceTest.php` — fires on attempt 2, not 1
 - `tests/Feature/ConditionalResourceTest.php` — fires once, not repeatedly
 - `tests/Feature/AssistanceClassificationTest.php` — evidence after remediation is `assisted`
-- `tests/Browser/FractionsRemediationBrowserTest.php` — refresh preserves state
+- `tests/Playwright/fractions-remediation.spec.ts` — refresh preserves attempts and the opened state
+- `tests/Playwright/fractions-remediation.spec.ts` — the unopened offer carries a neutral label and leaks no strategy
+- `tests/Feature/ConditionalResourceTest.php` — the link's threshold, phase visibility and availability each control delivery
+- `tests/Feature/RemediationRevisionTest.php` — a session in flight keeps its revision while a new session gets the correction
 
 ---
 
