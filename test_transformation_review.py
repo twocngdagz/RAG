@@ -210,12 +210,20 @@ recommendation = {
         {
             "claim_path": PATH,
             "claim_hash": review.claim_hash(CLAIM),
+            "disposition": review.DISPOSITION_CANDIDATE,
             "recommended_verdict": review.VERDICT_FAITHFUL,
             "rationale": "Page 32 demonstrates the division; the claim states the rule it shows.",
             "recommended_by": AI,
         }
     ],
 }
+
+
+def with_rec(**overrides) -> dict:
+    return {
+        **recommendation,
+        "recommendations": [dict(recommendation["recommendations"][0], **overrides)],
+    }
 
 check(
     "a well-formed recommendation validates as a recommendation",
@@ -259,6 +267,58 @@ check(
         {**recommendation, "recommendations": [dict(recommendation["recommendations"][0], rationale="")]},
         chapter_number=3)),
 )
+
+# --- omissions are recorded, never silent ----------------------------------- #
+
+check(
+    "an omitted claim must say why",
+    any("why" in p for p in review.validate_recommendations(
+        with_rec(disposition=review.DISPOSITION_OMITTED), chapter_number=3)),
+)
+
+check(
+    "an omitted claim with a reason validates",
+    review.validate_recommendations(
+        with_rec(disposition=review.DISPOSITION_OMITTED,
+                 omission_reason="States a method the source does not teach."),
+        chapter_number=3) == [],
+)
+
+check(
+    "a claim with no disposition is rejected",
+    any("disposition" in p for p in review.validate_recommendations(
+        with_rec(disposition=None), chapter_number=3)),
+)
+
+check(
+    "a candidate carrying an omission reason is rejected",
+    any("omission" in p for p in review.validate_recommendations(
+        with_rec(omission_reason="dropped"), chapter_number=3)),
+)
+
+# --- the real chapter 3 worksheet ------------------------------------------- #
+
+worksheet_path = Path(__file__).parent / "review" / "math5a.chapter03.recommendations.json"
+
+if worksheet_path.exists():
+    sheet = json.loads(worksheet_path.read_text(encoding="utf-8"))
+    check(
+        "the chapter 3 worksheet validates",
+        review.validate_recommendations(sheet, chapter_number=3) == [],
+        "; ".join(review.validate_recommendations(sheet, chapter_number=3)),
+    )
+    # Every claim the producer refused is accounted for -- either it goes to a
+    # reviewer or it says why it does not. A refused claim missing from here is
+    # content that vanished without anyone deciding it should.
+    check(
+        "the worksheet accounts for all 16 refused claims",
+        len(sheet["recommendations"]) == 16,
+        str(len(sheet["recommendations"])),
+    )
+    check(
+        "no recommendation in the worksheet can approve anything",
+        all("verdict" not in entry for entry in sheet["recommendations"]),
+    )
 
 missing_path = Path(tempfile.gettempdir()) / "definitely-not-a-review-manifest.json"
 try:

@@ -55,6 +55,14 @@ RECOMMENDATION_SCHEMA_VERSION = "lesson.transformation_recommendation.v1"
 REVIEWER_HUMAN = "human"
 REVIEWER_AI_ASSISTED = "ai_assisted"
 
+# Whether a claim is even going to a reviewer. Omitted claims stay in the
+# worksheet with a reason: a package that quietly drops content it could not
+# justify looks identical to one that covered everything, and the difference
+# matters to whoever asks later why a lesson has no division section.
+DISPOSITION_CANDIDATE = "candidate"
+DISPOSITION_OMITTED = "omitted"
+DISPOSITIONS = (DISPOSITION_CANDIDATE, DISPOSITION_OMITTED)
+
 VERDICT_FAITHFUL = "faithful"
 VERDICT_UNFAITHFUL = "unfaithful"
 VERDICTS = (VERDICT_FAITHFUL, VERDICT_UNFAITHFUL)
@@ -323,6 +331,20 @@ def validate_recommendations(manifest: Any, *, chapter_number: int) -> list[str]
         if not isinstance(entry, dict):
             problems.append(f"{where} must be an object")
             continue
+
+        disposition = entry.get("disposition")
+
+        if disposition not in DISPOSITIONS:
+            problems.append(f"{where} needs a disposition of {' or '.join(DISPOSITIONS)}")
+
+        if disposition == DISPOSITION_OMITTED and not str(entry.get("omission_reason") or "").strip():
+            # An omitted claim with no reason is indistinguishable from a claim
+            # nobody noticed. The worksheet exists so that content missing from
+            # the package is missing on purpose and says why.
+            problems.append(f"{where} is omitted but does not say why")
+
+        if disposition == DISPOSITION_CANDIDATE and str(entry.get("omission_reason") or "").strip():
+            problems.append(f"{where} is a candidate but carries an omission reason")
 
         if "verdict" in entry:
             # The one field name that would let a recommendation be mistaken
