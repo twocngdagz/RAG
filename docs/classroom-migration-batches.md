@@ -1827,6 +1827,28 @@ nothing*. That buys purity at the cost of information the learner is told
 about, and this section already rejects purity-by-default: either outcome is
 acceptable, leaving it undecided is not.
 
+**The ruling applies to ONE mechanism, and a second was found.**
+`ComposeStudySession::weakItemPriorityProfiles` orders an already-selected weak
+set — that is what is sanctioned above. `latestCompletedSessionContext` ALSO
+exempted rubric-declined items from the post-session cooldown, bringing an item
+back a session sooner than deterministic policy would. That is deciding **when**
+an item returns, which condition 3 forbids in its own words: a cooldown is a
+when-mechanism, so no interpretation was needed.
+
+It failed the visibility half too. A reorder can be disclosed on the card it
+moved; a selection cannot be honestly disclosed without conceding what it is,
+and influence that cannot be shown is the silent kind this criterion rules out.
+The tempting counter — that a rubric decline is the essay domain's analogue of
+getting an answer wrong, and wrong answers do exempt — is the argument B12.1
+already answered: a model being the only thing that can judge traits is why it
+gets no authority, not a reason to grant it.
+
+**The rubric leg of the cooldown exemption is removed.** The incorrect-answer
+leg stays, on deterministic grounds. A slipping item is not abandoned: its
+decline still acts through the two sanctioned channels, priority once eligible
+and the calibration surfaces. This is not a permanent ban — ADR-0003 owns
+when-questions and may revisit it deliberately, with the boundary in view.
+
 **Three conditions ride with the ruling**, and its defensibility collapses
 without them:
 
