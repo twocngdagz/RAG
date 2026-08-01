@@ -1,0 +1,658 @@
+{
+  "book": {
+    "slug": "math5a",
+    "title": "Singapore Math Primary Mathematics 5A",
+    "source_pdf": "Singapore Math 5A Textbook"
+  },
+  "generation": {
+    "run_id": "fixture-r1",
+    "pipeline_version": "book_learning_materials.v2",
+    "generator_version": "math5a-grounded-base/2.0.0",
+    "backend": "deterministic-regrounding"
+  },
+  "learning_materials": {
+    "chapters": [
+      {
+        "chapter_number": 3,
+        "chapter_title": "3 Fractions",
+        "chapter_summary": {
+          "text": "Each child receives 3 quarters.",
+          "claim_kind": "source_summary",
+          "origin": "source_grounded",
+          "source_chunk_ids": [
+            "math5a:p31"
+          ],
+          "grounded_in_source_chunk_ids": [],
+          "evidence_spans": [
+            {
+              "node_id": "math5a:p31",
+              "quote": "Each child receives 3 quarters."
+            }
+          ],
+          "reason": null
+        },
+        "core_lessons": [
+          {
+            "title": "Fraction and Division",
+            "explanation": {
+              "text": "Each child receives 5 quarters.",
+              "claim_kind": "factual_explanation",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p31"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "math5a:p31",
+                  "quote": "Each child receives 5 quarters."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Addition and Subtraction of Unlike Fractions",
+            "explanation": {
+              "text": null,
+              "claim_kind": "factual_explanation",
+              "origin": "insufficient_source_evidence",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": "no span in the parsed source covers the whole claim"
+            }
+          }
+        ],
+        "key_terms": [
+          {
+            "term": "fraction",
+            "meaning": {
+              "text": "Express each of the following as a whole number or a mixed number in its simplest form.",
+              "claim_kind": "definition",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p34"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "math5a:p34",
+                  "quote": "Express each of the following as a whole number or a mixed number in its simplest form."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "term": "mixed number",
+            "meaning": {
+              "text": null,
+              "claim_kind": "definition",
+              "origin": "insufficient_source_evidence",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [],
+              "reason": "no span in the parsed source covers the whole claim"
+            }
+          }
+        ],
+        "worked_examples": [
+          {
+            "title": "Division creates a fraction",
+            "example": {
+              "text": "$3 \\div 4 = \\frac{3}{4}$",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p31",
+                "math5a:p32",
+                "math5a:p33",
+                "math5a:p34",
+                "math5a:p35",
+                "math5a:p36",
+                "math5a:p37",
+                "math5a:p38",
+                "math5a:p39",
+                "math5a:p40",
+                "math5a:p41",
+                "math5a:p42",
+                "math5a:p43",
+                "math5a:p44",
+                "math5a:p45",
+                "math5a:p46",
+                "math5a:p47",
+                "math5a:p48",
+                "math5a:p49",
+                "math5a:p50",
+                "math5a:p51",
+                "math5a:p52",
+                "math5a:p53",
+                "math5a:p54",
+                "math5a:p55",
+                "math5a:p56",
+                "math5a:p57",
+                "math5a:p58"
+              ],
+              "generation_reason": "Written for the learner from this chapter's pages (worked_example)",
+              "generator_version": "math5a-grounded-base/2.0.0",
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "Nancy cut a ribbon into 8 equal pieces.",
+              "claim_kind": "factual_explanation",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p34"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "math5a:p34",
+                  "quote": "Nancy cut a ribbon into 8 equal pieces."
+                }
+              ],
+              "reason": null
+            }
+          },
+          {
+            "title": "Long division with remainder",
+            "example": {
+              "text": "$5 \\div 4 = 1 \\frac{1}{4}$\n\n$\\begin{array}{r}\n1 \\\\\n4 \\overline{) 5} \\\\\n\\underline{4} \\\\\n1\n\\end{array}$",
+              "claim_kind": "pedagogical_example",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p31",
+                "math5a:p32",
+                "math5a:p33",
+                "math5a:p34",
+                "math5a:p35",
+                "math5a:p36",
+                "math5a:p37",
+                "math5a:p38",
+                "math5a:p39",
+                "math5a:p40",
+                "math5a:p41",
+                "math5a:p42",
+                "math5a:p43",
+                "math5a:p44",
+                "math5a:p45",
+                "math5a:p46",
+                "math5a:p47",
+                "math5a:p48",
+                "math5a:p49",
+                "math5a:p50",
+                "math5a:p51",
+                "math5a:p52",
+                "math5a:p53",
+                "math5a:p54",
+                "math5a:p55",
+                "math5a:p56",
+                "math5a:p57",
+                "math5a:p58"
+              ],
+              "generation_reason": "Written for the learner from this chapter's pages (worked_example)",
+              "generator_version": "math5a-grounded-base/2.0.0",
+              "evidence_spans": [],
+              "reason": null
+            },
+            "explanation": {
+              "text": "Mary baked 10 cakes of the same size.",
+              "claim_kind": "factual_explanation",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p34"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "math5a:p34",
+                  "quote": "Mary baked 10 cakes of the same size."
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "common_misconceptions": [
+          {
+            "misconception": {
+              "text": "Adding fractions without making the denominators the same.",
+              "claim_kind": "misconception_statement",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p31",
+                "math5a:p32",
+                "math5a:p33",
+                "math5a:p34",
+                "math5a:p35",
+                "math5a:p36",
+                "math5a:p37",
+                "math5a:p38",
+                "math5a:p39",
+                "math5a:p40",
+                "math5a:p41",
+                "math5a:p42",
+                "math5a:p43",
+                "math5a:p44",
+                "math5a:p45",
+                "math5a:p46",
+                "math5a:p47",
+                "math5a:p48",
+                "math5a:p49",
+                "math5a:p50",
+                "math5a:p51",
+                "math5a:p52",
+                "math5a:p53",
+                "math5a:p54",
+                "math5a:p55",
+                "math5a:p56",
+                "math5a:p57",
+                "math5a:p58"
+              ],
+              "generation_reason": "Written for the learner from this chapter's pages (misconception)",
+              "generator_version": "math5a-grounded-base/2.0.0",
+              "evidence_spans": [],
+              "reason": null
+            },
+            "correction": {
+              "text": "If the water is poured equally into 3 jugs, how much water is there in each jug?",
+              "claim_kind": "misconception_correction",
+              "origin": "source_grounded",
+              "source_chunk_ids": [
+                "math5a:p33"
+              ],
+              "grounded_in_source_chunk_ids": [],
+              "evidence_spans": [
+                {
+                  "node_id": "math5a:p33",
+                  "quote": "If the water is poured equally into 3 jugs, how much water is there in each jug?"
+                }
+              ],
+              "reason": null
+            }
+          }
+        ],
+        "practice_questions": [
+          {
+            "question": {
+              "text": "What fraction of the cake did Ann and her brother eat altogether?",
+              "claim_kind": "practice_question",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p31",
+                "math5a:p32",
+                "math5a:p33",
+                "math5a:p34",
+                "math5a:p35",
+                "math5a:p36",
+                "math5a:p37",
+                "math5a:p38",
+                "math5a:p39",
+                "math5a:p40",
+                "math5a:p41",
+                "math5a:p42",
+                "math5a:p43",
+                "math5a:p44",
+                "math5a:p45",
+                "math5a:p46",
+                "math5a:p47",
+                "math5a:p48",
+                "math5a:p49",
+                "math5a:p50",
+                "math5a:p51",
+                "math5a:p52",
+                "math5a:p53",
+                "math5a:p54",
+                "math5a:p55",
+                "math5a:p56",
+                "math5a:p57",
+                "math5a:p58"
+              ],
+              "generation_reason": "Written for the learner from this chapter's pages (practice_question)",
+              "generator_version": "math5a-grounded-base/2.0.0",
+              "evidence_spans": [],
+              "reason": null
+            },
+            "answer": {
+              "text": "$\\frac{5}{6}$",
+              "claim_kind": "practice_answer",
+              "origin": "pedagogical_generation",
+              "source_chunk_ids": [],
+              "grounded_in_source_chunk_ids": [
+                "math5a:p31",
+                "math5a:p32",
+                "math5a:p33",
+                "math5a:p34",
+                "math5a:p35",
+                "math5a:p36",
+                "math5a:p37",
+                "math5a:p38",
+                "math5a:p39",
+                "math5a:p40",
+                "math5a:p41",
+                "math5a:p42",
+                "math5a:p43",
+                "math5a:p44",
+                "math5a:p45",
+                "math5a:p46",
+                "math5a:p47",
+                "math5a:p48",
+                "math5a:p49",
+                "math5a:p50",
+                "math5a:p51",
+                "math5a:p52",
+                "math5a:p53",
+                "math5a:p54",
+                "math5a:p55",
+                "math5a:p56",
+                "math5a:p57",
+                "math5a:p58"
+              ],
+              "generation_reason": "Written for the learner from this chapter's pages (practice_answer)",
+              "generator_version": "math5a-grounded-base/2.0.0",
+              "evidence_spans": [],
+              "reason": null
+            }
+          }
+        ],
+        "review_checklist": [
+          {
+            "text": "I can write a division as a fraction.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p31",
+              "math5a:p32",
+              "math5a:p33",
+              "math5a:p34",
+              "math5a:p35",
+              "math5a:p36",
+              "math5a:p37",
+              "math5a:p38",
+              "math5a:p39",
+              "math5a:p40",
+              "math5a:p41",
+              "math5a:p42",
+              "math5a:p43",
+              "math5a:p44",
+              "math5a:p45",
+              "math5a:p46",
+              "math5a:p47",
+              "math5a:p48",
+              "math5a:p49",
+              "math5a:p50",
+              "math5a:p51",
+              "math5a:p52",
+              "math5a:p53",
+              "math5a:p54",
+              "math5a:p55",
+              "math5a:p56",
+              "math5a:p57",
+              "math5a:p58"
+            ],
+            "generation_reason": "Written for the learner from this chapter's pages (review_checklist)",
+            "generator_version": "math5a-grounded-base/2.0.0",
+            "evidence_spans": [],
+            "reason": null
+          },
+          {
+            "text": "I can express an improper fraction as a mixed number.",
+            "claim_kind": "self_assessment",
+            "origin": "pedagogical_generation",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [
+              "math5a:p31",
+              "math5a:p32",
+              "math5a:p33",
+              "math5a:p34",
+              "math5a:p35",
+              "math5a:p36",
+              "math5a:p37",
+              "math5a:p38",
+              "math5a:p39",
+              "math5a:p40",
+              "math5a:p41",
+              "math5a:p42",
+              "math5a:p43",
+              "math5a:p44",
+              "math5a:p45",
+              "math5a:p46",
+              "math5a:p47",
+              "math5a:p48",
+              "math5a:p49",
+              "math5a:p50",
+              "math5a:p51",
+              "math5a:p52",
+              "math5a:p53",
+              "math5a:p54",
+              "math5a:p55",
+              "math5a:p56",
+              "math5a:p57",
+              "math5a:p58"
+            ],
+            "generation_reason": "Written for the learner from this chapter's pages (review_checklist)",
+            "generator_version": "math5a-grounded-base/2.0.0",
+            "evidence_spans": [],
+            "reason": null
+          }
+        ],
+        "estimated_study_time": {
+          "text": "About two hours of study for this chapter.",
+          "claim_kind": "study_plan",
+          "origin": "pedagogical_generation",
+          "source_chunk_ids": [],
+          "grounded_in_source_chunk_ids": [
+            "math5a:p31",
+            "math5a:p32",
+            "math5a:p33",
+            "math5a:p34",
+            "math5a:p35",
+            "math5a:p36",
+            "math5a:p37",
+            "math5a:p38",
+            "math5a:p39",
+            "math5a:p40",
+            "math5a:p41",
+            "math5a:p42",
+            "math5a:p43",
+            "math5a:p44",
+            "math5a:p45",
+            "math5a:p46",
+            "math5a:p47",
+            "math5a:p48",
+            "math5a:p49",
+            "math5a:p50",
+            "math5a:p51",
+            "math5a:p52",
+            "math5a:p53",
+            "math5a:p54",
+            "math5a:p55",
+            "math5a:p56",
+            "math5a:p57",
+            "math5a:p58"
+          ],
+          "generation_reason": "Written for the learner from this chapter's pages (estimated_study_time)",
+          "generator_version": "math5a-grounded-base/2.0.0",
+          "evidence_spans": [],
+          "reason": null
+        },
+        "learning_objectives": [
+          {
+            "text": null,
+            "claim_kind": "learning_objective",
+            "origin": "insufficient_source_evidence",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": "no span in the parsed source covers the whole claim"
+          },
+          {
+            "text": null,
+            "claim_kind": "learning_objective",
+            "origin": "insufficient_source_evidence",
+            "source_chunk_ids": [],
+            "grounded_in_source_chunk_ids": [],
+            "evidence_spans": [],
+            "reason": "no span in the parsed source covers the whole claim"
+          }
+        ],
+        "source_chunk_ids": [
+          "math5a:p31",
+          "math5a:p32",
+          "math5a:p33",
+          "math5a:p34",
+          "math5a:p35",
+          "math5a:p36",
+          "math5a:p37",
+          "math5a:p38",
+          "math5a:p39",
+          "math5a:p40",
+          "math5a:p41",
+          "math5a:p42",
+          "math5a:p43",
+          "math5a:p44",
+          "math5a:p45",
+          "math5a:p46",
+          "math5a:p47",
+          "math5a:p48",
+          "math5a:p49",
+          "math5a:p50",
+          "math5a:p51",
+          "math5a:p52",
+          "math5a:p53",
+          "math5a:p54",
+          "math5a:p55",
+          "math5a:p56",
+          "math5a:p57",
+          "math5a:p58"
+        ]
+      }
+    ]
+  },
+  "schema_version": "book_learning_materials.v2",
+  "audit": {
+    "status": "regenerated",
+    "checks": []
+  },
+  "source_chunks": [
+    {
+      "node_id": "math5a:p31",
+      "text": "# 3 Fractions\n\n# 1 Fraction and Division\n\n4 children share 3 pancakes equally.\nEach child receives 3 quarters.\n\nIllustration of a boy speaking\n\n```mermaid\ngraph TD\n    A(( )) --- B(( ))\n    C(( )) --- D(( ))\n    E(( )) --- F(( ))\n    A --> G( )\n    C --> H( )\n    C --> I( )\n    E --> J( )\n    style A fill:none,stroke:#000\n    style B fill:none,stroke:none\n    style C fill:none,stroke:#000\n    style D fill:none,stroke:none\n    style E fill:none,stroke:#000\n    style F fill:none,stroke:none\n    style G fill:none,stroke:#000\n    style H fill:none,stroke:#000\n    style I fill:none,stroke:#000\n    style J fill:none,stroke:#000\n```\n\n$$ 3 \\div 4 = \\frac{3}{4} $$\n\n4 children share 5 pancakes equally.\nEach child receives 5 quarters.\n\nIllustration of a boy speaking\n\nDiagram showing 5 circles being divided into quarters and distributed to 4 groups\n\n$$ 5 \\div 4 = \\frac{5}{4} $$"
+    },
+    {
+      "node_id": "math5a:p32",
+      "text": "Here is another way to show that $5 \\div 4 = \\frac{5}{4}$.\n\n$$\n\\begin{array}{r}\n1 \\\\\n4 \\overline{) 5} \\\\\n\\underline{4} \\\\\n1\n\\end{array}\n$$\n\nEach child receives 1 pancake first. Share the remaining pancake.\n\n$$1 \\div 4 = \\frac{1}{4}$$\n\nEach child receives 1 and $\\frac{1}{4}$ pancakes.\n\nIllustration of a child thinking\n\n$$\n\\begin{aligned}\n5 \\div 4 &= 1 \\frac{1}{4} \\\\\n&= \\frac{4}{4} + \\frac{1}{4} \\\\\n&= \\frac{5}{4}\n\\end{aligned}\n$$\n\n1. Express $\\frac{11}{4}$ as a mixed number.\n\n**Method 1:**\n\n$$\n\\begin{aligned}\n\\frac{11}{4} &= \\frac{8}{4} + \\frac{3}{4} \\\\\n&= 2 \\frac{3}{4}\n\\end{aligned}\n$$\n\n**Method 2:**\n\n$\\frac{11}{4} = 11 \\div 4 = \\blacksquare$\n\n$$\n\\begin{array}{r}\n2 \\\\\n4 \\overline{) 11} \\\\\n\\underline{8} \\\\\n3\n\\end{array}\n$$\n\n2.\n\n3.\n\n4."
+    },
+    {
+      "node_id": "math5a:p33",
+      "text": "2. A bucket contains 8 qt of water. If the water is poured equally into 3 jugs, how much water is there in each jug?\n\n$$ 8 \\div 3 =      $$\n\n$$ \\begin{array}{r} 2 \\\\ 3 \\overline{) 8} \\\\ \\underline{6} \\\\ 2 \\end{array} $$\n\nThere are      qt of water in each jug.\n\n3. Find the value of $22 \\div 8$.\n\n**Method 1:**\n\n$$ 22 \\div 8 = 2 \\frac{6}{8} $$\n\n$$ \\begin{array}{r} 2 \\\\ 8 \\overline{) 22} \\\\ \\underline{16} \\\\ 6 \\end{array} $$\n\n$$ = 2 \\frac{    }{4} $$\n\n**Method 2:**\n\n$$ 22 \\div 8 = \\frac{22}{8} $$\n\n$$ = \\frac{    }{4} $$\n\nequals sign\n\n$$ =      $$\n\n4. Find the value of\n\n(a) $7 \\div 3$ (b) $14 \\div 5$ (c) $21 \\div 6$ (d) $77 \\div 9$"
+    },
+    {
+      "node_id": "math5a:p34",
+      "text": "# PRACTICE 3A\n\npage icon\n\n1. Express each of the following as a whole number or a mixed number in its simplest form.\n\n(a) $\\frac{13}{5}$ (b) $\\frac{21}{3}$ (c) $\\frac{24}{9}$ (d) $\\frac{50}{6}$\n\n2. Express each of the following answers as a mixed number in its simplest form.\n\n(a) $30 \\div 8$ (b) $21 \\div 4$ (c) $35 \\div 10$ (d) $78 \\div 7$\n\n3. Nancy cut a ribbon into 8 equal pieces. If the ribbon was 26 m long, how many meters long was each piece?\n\n4. Mrs. York bought 3 m of cloth. She used the cloth to make 9 pillow cases of the same size. How much cloth in meters did she use for each pillow case?\n\n5. Mary baked 10 cakes of the same size. She divided the cakes into 4 equal shares. How many cakes were there in each share?\n\n6. Peter poured 2 liters of milk equally into 5 jugs. How much milk was there in each jug?\n\n7. A red ribbon 11 m long is 5 times as long as a blue ribbon. How long is the blue ribbon?\n\n8. A box of cookies weighing 4 kg was divided into 6 equal shares. What was the weight of each share in kilograms?"
+    },
+    {
+      "node_id": "math5a:p35",
+      "text": "# 2 Addition and Subtraction of Unlike Fractions\n\nAnn ate $\\frac{1}{3}$ of a cake.\n\nHer brother ate $\\frac{1}{2}$ of the same cake.\n\nWhat fraction of the cake did they eat altogether?\n\n<table>\n  <tbody>\n    <tr>\n        <td>Category</td>\n        <td>Fraction</td>\n    </tr>\n    <tr>\n        <td>Ann</td>\n        <td>2/6</td>\n    </tr>\n    <tr>\n        <td>Brother</td>\n        <td>3/6</td>\n    </tr>\n    <tr>\n        <td>Total</td>\n        <td>5/6</td>\n    </tr>\n  </tbody>\n</table>\n\n$\\frac{1}{3} + \\frac{1}{2} = \\frac{2}{6} + \\frac{3}{6}$\n\n$=     $\n\n> The cake is divided into 6 equal parts.\n> Ann ate 2 parts and her brother ate 3 parts.\n\nIllustration of a boy smiling\n\nThey ate      of the cake altogether.\n\n$\\frac{1}{3}$ and $\\frac{1}{2}$ do not have the same denominator.\n\nThey are called **unlike fractions**.\n\n$\\frac{2}{6}$ and $\\frac{3}{6}$ have the same denominator.\n\nThey are called **like fractions**.\n\n> We can change unlike fractions to like fractions using equivalent fractions:\n> $\\frac{1}{3}, \\frac{2}{6}, \\dots$\n> $\\frac{1}{2}, \\frac{3}{6}, \\dots$\n\nIllustration of a boy smiling"
+    },
+    {
+      "node_id": "math5a:p36",
+      "text": "1. Add $\\frac{3}{8}$ and $\\frac{1}{6}$.\n\n$\\frac{3}{8} + \\frac{1}{6} = \\frac{    }{24} + \\frac{    }{24}$\n\n$= \\frac{    }{24}$\n\nThought bubble showing multiples of 8 and 6: 3/8,     /16,     /24, ... and 1/6, ... 24 is a multiple of 8. It is also a multiple of 6.\n\n2. Add $\\frac{2}{3}$ and $\\frac{2}{5}$.\n\n$\\frac{2}{3} + \\frac{2}{5} = \\frac{    }{15} + \\frac{    }{15}$\n\n$= \\frac{    }{15}$\n\n$=     $\n\nThought bubble showing multiples of 5 and 3: 2/5,     /10,     /15, ... and 2/3, ... 15 is a common multiple of 5 and 3.\n\n3. Add $\\frac{7}{10}$ and $\\frac{5}{6}$.\n\n$\\frac{7}{10} + \\frac{5}{6} = \\frac{    }{30} + \\frac{    }{30}$\n\n$= \\frac{    }{30}$\n\n$= \\frac{    }{15}$\n\n$=     $\n\nThought bubble showing multiples of 10 and 6: 7/10,     /20,     /30, ... and 5/6, ... 30 is a common multiple of 10 and 6.\n\n4. Add. Give each answer in its simplest form.\n\n(a) $\\frac{7}{9} + \\frac{5}{6}$      (b) $\\frac{3}{4} + \\frac{5}{12}$      (c) $\\frac{3}{10} + \\frac{5}{6}$"
+    },
+    {
+      "node_id": "math5a:p37",
+      "text": "5. Subtract $\\frac{1}{6}$ from $\\frac{7}{8}$.\n\n$$ \\frac{7}{8} - \\frac{1}{6} = \\frac{    }{24} - \\frac{    }{24} $$\n$$ = \\frac{    }{24} $$\n\nIllustration of a thought bubble showing multiples of 8 and 6: 7/8,     /16,     /24, ... and 1/6, ... 24 is a common multiple of 8 and 6.\n\nIllustration of a boy thinking\n\n6. Subtract $\\frac{1}{10}$ from $\\frac{5}{6}$.\n\n$$ \\frac{5}{6} - \\frac{1}{10} = \\frac{    }{30} - \\frac{    }{30} $$\n$$ = \\frac{    }{30} $$\n$$ = \\frac{    }{15} $$\n\nIllustration of a thought bubble showing multiples of 10 and 6: 1/10,     /20,     /30, ... and 5/6, ... 30 is a common multiple of 10 and 6.\n\nIllustration of a boy thinking\n\n7. Subtract $\\frac{5}{6}$ from $1 \\frac{7}{10}$.\n\n$$ 1 \\frac{7}{10} - \\frac{5}{6} = \\frac{    }{30} - \\frac{    }{30} $$\n$$ = \\frac{    }{30} - \\frac{    }{30} $$\n$$ = \\frac{    }{15} $$\n\nIllustration of a boy thinking\n\n8. Subtract. Give each answer in its simplest form.\n\n(a) $\\frac{5}{6} - \\frac{3}{10}$\n\n(b) $1 \\frac{2}{3} - \\frac{11}{12}$\n\n(c) $1 \\frac{1}{10} - \\frac{5}{6}$"
+    },
+    {
+      "node_id": "math5a:p38",
+      "text": "3\n\nAdd or subtract. Give each answer in its simplest form.\n\n<table>\n  <thead>\n    <tr>\n        <th>(a)</th>\n        <th>(b)</th>\n        <th>(c)</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n        <td>1. $\\frac{7}{12} + \\frac{5}{6}$</td>\n        <td>$\\frac{9}{10} + \\frac{1}{6}$</td>\n        <td>$\\frac{5}{6} + \\frac{7}{8}$</td>\n    </tr>\n    <tr>\n        <td>2. $\\frac{2}{3} - \\frac{5}{12}$</td>\n        <td>$\\frac{5}{6} - \\frac{7}{10}$</td>\n        <td>$\\frac{3}{4} - \\frac{1}{6}$</td>\n    </tr>\n    <tr>\n        <td>3. $\\frac{1}{6} + \\frac{3}{10}$</td>\n        <td>$\\frac{2}{3} + \\frac{1}{12}$</td>\n        <td>$\\frac{5}{12} + \\frac{1}{8}$</td>\n    </tr>\n    <tr>\n        <td>4. $1\\frac{3}{8} - \\frac{7}{12}$</td>\n        <td>$1\\frac{1}{3} - \\frac{7}{10}$</td>\n        <td>$1\\frac{3}{10} - \\frac{5}{6}$</td>\n    </tr>\n  </tbody>\n</table>\n\n5. John mowed $\\frac{2}{5}$ of a lawn. His brother mowed $\\frac{1}{4}$ of it. What fraction of the lawn did they mow?\n\n6. Samy took $\\frac{3}{4}$ hour to travel from home to the zoo. He took $1\\frac{1}{4}$ hours to return home. How much longer did he take to return home than to go to the zoo?\n\n7. Mary ate $\\frac{1}{8}$ of a cake. Peter ate another $\\frac{1}{4}$ of it.\n\n(a) What fraction of the cake did they eat altogether?\n\n(b) What fraction of the cake did Peter eat more than Mary?\n\n8. Ali went to a bookshop. He spent $\\frac{3}{5}$ of his money on books and $\\frac{1}{4}$ of it on a pen.\n\n(a) What fraction of his money did he spend altogether?\n\n(b) What fraction of his money did he have left?"
+    },
+    {
+      "node_id": "math5a:p39",
+      "text": "# 3 Addition and Subtraction of Mixed Numbers\n\n$3 \\frac{5}{8}$ m\n\n(a) Find the total length of $3 \\frac{5}{8}$ m and $1 \\frac{7}{12}$ m.\n\n$$\n\\begin{aligned}\n3 \\frac{5}{8} + 1 \\frac{7}{12} &= 4 \\frac{5}{8} + \\frac{7}{12} \\\\\n&= 4 \\frac{15}{24} + \\frac{14}{24} \\\\\n&= 4 \\frac{    }{24} \\\\\n&=     \n\\end{aligned}\n$$\n\nA thought bubble showing a girl thinking about adding 1 and then adding 7/12 to 3 5/8\n\nThe total length is      m.\n\n(b) Add $4 \\frac{7}{12}$ and $1 \\frac{3}{4}$.\n\n$$\n\\begin{aligned}\n4 \\frac{7}{12} + 1 \\frac{3}{4} &= 5 \\frac{7}{12} + \\frac{3}{4} \\\\\n&= 5 \\frac{7}{12} + \\frac{9}{12} \\\\\n&= 5 \\frac{    }{12} \\\\\n&= 5 \\frac{    }{3} \\\\\n&=     \n\\end{aligned}\n$$\n\nA thought bubble showing a boy thinking: Express the answer in its simplest form."
+    },
+    {
+      "node_id": "math5a:p40",
+      "text": "1. Add $3 \\frac{1}{6}$ and $1 \\frac{9}{10}$.\n\n$$3 \\frac{1}{6} + 1 \\frac{9}{10} = 4 \\frac{1}{6} + \\frac{9}{10}$$\n$$= 4 \\frac{    }{30} + \\frac{    }{30}$$\n$$= 4 \\frac{    }{30}$$\n\n$$=     $$\n\nWorkbook Exercise 17\n\n2. Find the difference in length between $4 \\frac{3}{4}$ m and $3 \\frac{7}{12}$ m.\n\n$$4 \\frac{3}{4} - 3 \\frac{7}{12} = 1 \\frac{3}{4} - \\frac{7}{12}$$\n$$= 1 \\frac{9}{12} - \\frac{7}{12}$$\n$$= 1 \\frac{    }{12}$$\n$$=     $$\n\nIllustration of a boy thinking about a number line subtraction: 4 3/4 minus 1 equals a box, then minus 7/12 equals another box.\n\nThe difference in length is      m.\n\n3. Subtract.\n\n(a) $3 \\frac{1}{6} - 1 \\frac{5}{9} = 2 \\frac{1}{6} - \\frac{5}{9}$\n$$= 2 \\frac{3}{18} - \\frac{10}{18}$$\n$$= 1 \\frac{    }{18} - \\frac{10}{18}$$\n$$=     $$\n\n(b) $4 \\frac{1}{6} - 1 \\frac{3}{10} = 3 \\frac{1}{6} - \\frac{3}{10}$\n$$= 3 \\frac{    }{30} - \\frac{9}{30}$$\n$$= 2 \\frac{    }{30} - \\frac{9}{30}$$\n$$= 2 \\frac{    }{30} =     $$\n$$=     $$\n\n\n\n1.\n\n2.\n\n3.\n\n4.\n\n5.\n\n6.\n\n7.\n\n8.\n\n9."
+    },
+    {
+      "node_id": "math5a:p41",
+      "text": "# PRACTICE 3C\n\nAdd or subtract. Give each answer in its simplest form.\n\n<table>\n  <thead>\n    <tr>\n        <th> </th>\n        <th>(a)</th>\n        <th>(b)</th>\n        <th>(c)</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n        <td>1.</td>\n        <td>$2 \\frac{2}{3} + 1 \\frac{5}{9}$</td>\n        <td>$2 \\frac{1}{8} + 1 \\frac{5}{6}$</td>\n        <td>$1 \\frac{1}{4} + 2 \\frac{5}{6}$</td>\n    </tr>\n    <tr>\n        <td>2.</td>\n        <td>$3 \\frac{5}{6} - 1 \\frac{1}{3}$</td>\n        <td>$3 \\frac{4}{5} - 1 \\frac{3}{10}$</td>\n        <td>$4 \\frac{5}{6} - 1 \\frac{1}{4}$</td>\n    </tr>\n    <tr>\n        <td>3.</td>\n        <td>$3 \\frac{2}{9} + 1 \\frac{1}{6}$</td>\n        <td>$2 \\frac{5}{6} + 5 \\frac{1}{2}$</td>\n        <td>$2 \\frac{5}{6} + 1 \\frac{3}{8}$</td>\n    </tr>\n    <tr>\n        <td>4.</td>\n        <td>$4 \\frac{1}{6} - 1 \\frac{2}{3}$</td>\n        <td>$3 \\frac{1}{6} - 2 \\frac{1}{10}$</td>\n        <td>$3 \\frac{3}{10} - 1 \\frac{1}{6}$</td>\n    </tr>\n  </tbody>\n</table>\n\n5. Robert jogged $1 \\frac{2}{5}$ km. His brother jogged $2 \\frac{1}{2}$ km. Who jogged a longer distance? How much longer?\n\n6. There were $3 \\frac{1}{6}$ cakes on the table. After breakfast, there were $1 \\frac{2}{3}$ cakes left. How many cakes were eaten?\n\n7. A container has a capacity of 3 liters. It contains $1 \\frac{3}{4}$ liters of water. How much more water is needed to fill the container?\n\n8. Ann planned to spend $1 \\frac{1}{2}$ hours to cook a meal. She finished the cooking in $1 \\frac{1}{12}$ hours. How much earlier did she finish the cooking?\n\n9. The total length of two ribbons is $2 \\frac{3}{4}$ m. If one ribbon is $1 \\frac{1}{3}$ m long, what is the length of the other ribbon?"
+    },
+    {
+      "node_id": "math5a:p42",
+      "text": "4\n\n# Product of a Fraction and a Whole Number\n\nLihua bought 12 eggs. She used $\\frac{2}{3}$ of them to bake a cake. How many eggs did she use?\n\n## Method 1:\n\n> Divide 12 eggs into 3 equal groups.\n> 2 groups are shaded to show $\\frac{2}{3}$.\n\nIllustration of a boy thinking\n\n2.\n\n$\\frac{2}{3}$ of 12 =     \n\nShe used      eggs.\n\n## Method 2:\n\n> Write $\\frac{2}{3}$ of 12 as $\\frac{2}{3} \\times 12$.\n\n$\\frac{2}{3} \\times 12 = \\frac{2 \\times 12}{3}$\n$= [\\_\\_\\_]$\n\nIllustration of a girl thinking\n\nShe used      eggs."
+    },
+    {
+      "node_id": "math5a:p43",
+      "text": "1. (a) Multiply $\\frac{2}{3}$ by 5.\n\n$$ \\frac{2}{3} \\times 5 = \\frac{2 \\times 5}{3} $$\n$$ =      $$\n\nThought bubble: 2/3 x 5 = 5 x 2/3\nIllustration of a girl smiling\n\n(b) Multiply 5 by $\\frac{2}{3}$.\n\n$$ 5 \\times \\frac{2}{3} = \\frac{5 \\times 2}{3} $$\n$$ =      $$\n\n2. Find the value of $\\frac{3}{8} \\times 20$.\n\n**Method 1:**\n\n$$ \\frac{3}{8} \\times 20 = \\frac{3 \\times 20}{8} $$\n$$ = \\frac{60}{8} $$\n$$ =      $$\n\nThought bubble: Write 60/8 in its simplest form.\nIllustration of a girl thinking\n\n**Method 2:**\n\n$$ \\frac{3}{8} \\times 20 = \\frac{3 \\times 20^{5}}{8_{2}} $$\n$$ = \\frac{3 \\times 5}{2} $$\n$$ =      $$\n\nThought bubble: 4 is a common factor of 20 and 8. Divide 20 and 8 by 4.\nIllustration of a boy in a cap smiling\n\n**Method 3:**\n\n$$ \\frac{3}{8_{2}} \\times 20^{5} = \\frac{3 \\times 5}{2} $$\n$$ =      $$"
+    },
+    {
+      "node_id": "math5a:p44",
+      "text": "3. How many months are there in $\\frac{5}{6}$ of a year?\n\n$$ \\frac{5}{6} \\text{ of a year} = \\frac{5}{6} \\times 12 \\text{ months} $$\n$$ =      \\text{ months} $$\n\n1 year = 12 months\n\nIllustration of a girl thinking\n\n7.\n\n**Conversion of Measurements**\n\n**Length**\n\n1 m = 100 cm      1 yd = 3 ft\n\n1 km = 1000 m      1 ft = 12 in.\n\n1 mi = 5280 ft\n\n**Weight**\n\n1 kg = 1000 g      1 lb = 16 oz\n\n**Volume of liquid/capacity**\n\n1 $\\ell$ = 1000 ml      1 qt = 2 pt\n\n1 gal = 4 qt      1 qt = 4 c\n\n**Time**\n\n1 year = 12 months\n\n1 week = 7 days\n\n1 day = 24 hours\n\n1 hour = 60 minutes\n\n1 minute = 60 seconds\n\n8.\n\n4. Find the missing number in each     .\n\n(a) $\\frac{1}{2}$ min =      s      (b) $\\frac{7}{10}$ kg =      g      (c) $\\frac{2}{5}$ km =      m\n\n(d) $\\frac{3}{10}$ $\\ell$ =      ml      (e) $\\frac{3}{4}$ year =      months      (f) $\\frac{1}{6}$ h =      min\n\n(g) $\\frac{2}{3}$ yd =      ft      (h) $\\frac{1}{4}$ lb =      oz      (i) $\\frac{3}{4}$ gal =      qt\n\n9.\n\n5. Express $2\\frac{3}{4}$ h in hours and minutes.\n\n$$ \\frac{3}{4} \\text{ h} = \\frac{3}{4} \\times 60 \\text{ min} =      \\text{ min} $$\n$$ 2\\frac{3}{4} \\text{ h} =      \\text{ h }      \\text{ min} $$\n\n10.\n\n6. Find the missing number in each     .\n\n(a) $2\\frac{1}{3}$ h =      h      min      (b) $4\\frac{2}{3}$ yd =      yd      ft\n\n(c) $5\\frac{1}{4}$ gal =      gal      qt      (d) $3\\frac{1}{2}$ km =      km      m\n\n(e) $14\\frac{9}{10}$ $\\ell$ =      $\\ell$      ml      (f) $6\\frac{1}{4}$ years =      years      months"
+    },
+    {
+      "node_id": "math5a:p45",
+      "text": "7. Express $3 \\frac{2}{5}$ km in meters.\n\n$$3 \\text{ km} = 3000 \\text{ m}$$\n\n> $3 \\frac{2}{5} \\text{ km} = 3 \\text{ km} + \\frac{2}{5} \\text{ km}$\n\n$$\\frac{2}{5} \\text{ km} = \\frac{2}{5} \\times 1000 \\text{ m}$$\n\n$$=      \\text{ m}$$\n\nIllustration of a girl smiling\n\n$$3 \\frac{2}{5} \\text{ km} =      \\text{ m}$$\n\n8. Express $2 \\frac{1}{4}$ days in hours.\n\n$$2 \\text{ days} =      \\text{ h}$$\n\n$$\\frac{1}{4} \\text{ day} =      \\text{ h}$$\n\n$$2 \\frac{1}{4} \\text{ days} =      \\text{ h}$$\n\n9. Find the missing number in each     .\n\n(a) $2 \\frac{1}{2} \\text{ m} =      \\text{ cm}$\n\n(b) $1 \\frac{1}{2} \\text{ lb} =      \\text{ oz}$\n\n(c) $3 \\frac{1}{2} \\text{ gal} =      \\text{ qt}$\n\n(d) $2 \\frac{3}{4} \\text{ years} =      \\text{ months}$\n\n(e) $1 \\frac{3}{10} \\ell =      \\text{ ml}$\n\n(f) $4 \\frac{1}{3} \\text{ min} =      \\text{ s}$\n\n(g) $2 \\frac{1}{10} \\text{ km} =      \\text{ m}$\n\n(h) $3 \\frac{1}{3} \\text{ h} =      \\text{ min}$\n\n(i) $5 \\frac{3}{4} \\text{ ft} =      \\text{ in.}$\n\nWorkbook Exercise 20\n\n10. (a) What fraction of $2 is 80¢?\n\n$$\\$2 = 200¢$$\n\n> $\\$1 = 100¢$\n\n$$\\frac{80}{200} =     $$\n\nIllustration of a boy smiling\n\n(b) Express 600 ml as a fraction of 1 liter.\n\n(c) Express 90 cm as a fraction of 3 m.\n\n(d) Express 45 seconds as a fraction of 1 minute.\n\n(e) Express 50 minutes as a fraction of 2 hours."
+    },
+    {
+      "node_id": "math5a:p46",
+      "text": "# PRACTICE 3D\n\nFind the value of each of the following in its simplest form.\n\n<table>\n    <tr>\n        <th></th>\n        <th>(a)</th>\n        <th>(b)</th>\n        <th>(c)</th>\n    </tr>\n    <tr>\n        <td>1.</td>\n        <td>$$ \\frac{1}{2} \\times 14 $$</td>\n        <td>$$ \\frac{1}{4} \\times 26 $$</td>\n        <td>$$ \\frac{2}{5} \\times 40 $$</td>\n    </tr>\n    <tr>\n        <td>2.</td>\n        <td>$$ 30 \\times \\frac{4}{5} $$</td>\n        <td>$$ 40 \\times \\frac{2}{3} $$</td>\n        <td>$$ 15 \\times \\frac{5}{9} $$</td>\n    </tr>\n    <tr>\n        <td>3.</td>\n        <td>$$ \\frac{7}{3} \\times 21 $$</td>\n        <td>$$ \\frac{13}{5} \\times 20 $$</td>\n        <td>$$ 40 \\times \\frac{9}{8} $$</td>\n    </tr>\n</table>\n\nFind the missing number in each     .\n\n<table>\n    <tr>\n        <th></th>\n        <th>(a)</th>\n        <th>(b)</th>\n    </tr>\n    <tr>\n        <td>4.</td>\n        <td>$$ \\frac{2}{3} \\text{ h} =      \\text{ min} $$</td>\n        <td>$$ \\frac{3}{5} \\text{ kg} =      \\text{ g} $$</td>\n    </tr>\n    <tr>\n        <td>5.</td>\n        <td>$$ \\frac{4}{5} \\text{ m} =      \\text{ cm} $$</td>\n        <td>$$ \\frac{9}{10} \\text{ km} =      \\text{ m} $$</td>\n    </tr>\n    <tr>\n        <td>6.</td>\n        <td>$$ 8 \\frac{3}{4} \\text{ years} =      \\text{ years }      \\text{ months} $$</td>\n        <td>$$ 3 \\frac{3}{5} \\text{ } \\ell =      \\text{ } \\ell \\text{ }      \\text{ ml} $$</td>\n    </tr>\n    <tr>\n        <td>7.</td>\n        <td>$$ 9 \\frac{1}{4} \\text{ lb} =      \\text{ lb }      \\text{ oz} $$</td>\n        <td>$$ 5 \\frac{1}{3} \\text{ h} =      \\text{ h }      \\text{ min} $$</td>\n    </tr>\n    <tr>\n        <td>8.</td>\n        <td>$$ 3 \\frac{1}{2} \\text{ ft} =      \\text{ in.} $$</td>\n        <td>$$ 4 \\frac{1}{4} \\text{ gal} =      \\text{ qt} $$</td>\n    </tr>\n    <tr>\n        <td>9.</td>\n        <td>$$ 2 \\frac{7}{10} \\text{ km} =      \\text{ m} $$</td>\n        <td>$$ 4 \\frac{2}{3} \\text{ days} =      \\text{ h} $$</td>\n    </tr>\n</table>\n\n10. (a) What fraction of $1 is 90¢?\n(b) What fraction of 2 $$ \\ell $$ is 750 ml?\n(c) What fraction of 3 lb is 12 oz?\n\n11. (a) Express 9 months as a fraction of 1 year.\n(b) Express 50 minutes as a fraction of 2 hours.\n(c) Express 8 in. as a fraction of 2 ft.\n\n12. In an examination, 40 out of 44 students passed. What fraction of the students passed the examination?\n\n13. Holly earns $350 a month. She saves $70 each month. What fraction of her earnings does she save?"
+    },
+    {
+      "node_id": "math5a:p47",
+      "text": "# icon 5 Product of Fractions\n\n(a) Color $\\frac{3}{4}$ of a rectangle.\n\nCut out $\\frac{1}{2}$ of the colored parts.\n\nWhat fraction of the rectangle is cut out?\n\nDiagram showing a rectangle divided into fourths, with three parts shaded, and then half of those shaded parts being separated.\n\n$$\\frac{1}{2} \\text{ of } \\frac{3}{4} = \\frac{3}{8}$$\n\n$\\frac{3}{8}$ of the rectangle is cut out.\n\n$$\n\\begin{aligned}\n\\frac{1}{2} \\times \\frac{3}{4} &= \\frac{1 \\times 3}{2 \\times 4} \\\\\n&= \\frac{3}{8}\n\\end{aligned}\n$$\n\nThought bubble with a girl saying: Write 1/2 of 3/4 as 1/2 x 3/4\n\n(b) Color $\\frac{1}{2}$ of a rectangle.\n\nCut out $\\frac{3}{4}$ of the colored parts.\n\nThought bubble with a boy saying: Write 3/4 of 1/2 as 3/4 x 1/2\n\nWhat fraction of the rectangle is cut out?\n\nIs $\\frac{1}{2}$ of $\\frac{3}{4}$ the same as $\\frac{3}{4}$ of $\\frac{1}{2}$?\n\nicon of a boy"
+    },
+    {
+      "node_id": "math5a:p48",
+      "text": "1. A flower garden occupies $\\frac{1}{2}$ of a piece of land. $\\frac{3}{5}$ of the garden is used for growing orchids. What fraction of the land is used for growing orchids?\n\n$$\\frac{3}{5} \\times \\frac{1}{2} =     $$\n\n     of the land is used for growing orchids.\n\n<table>\n  <tbody>\n    <tr>\n        <td>[patterned]</td>\n    </tr>\n    <tr>\n        <td>[patterned]</td>\n    </tr>\n    <tr>\n        <td>[shaded]</td>\n    </tr>\n    <tr>\n        <td>[shaded]</td>\n    </tr>\n    <tr>\n        <td>[shaded]</td>\n    </tr>\n  </tbody>\n</table>\n\n4.\n\n2. Mrs. Green bought $\\frac{3}{5}$ lb of sugar. She used $\\frac{3}{4}$ of it to make a cake. How much sugar did she use?\n\n$$\\frac{3}{4} \\times \\frac{3}{5} =     $$\n\nShe used      lb of sugar.\n\n<table>\n  <tbody>\n    <tr>\n        <td>[patterned]</td>\n        <td>[patterned]</td>\n        <td>[patterned]</td>\n        <td> </td>\n        <td> </td>\n    </tr>\n    <tr>\n        <td>[shaded]</td>\n        <td>[shaded]</td>\n        <td>[shaded]</td>\n        <td> </td>\n        <td> </td>\n    </tr>\n    <tr>\n        <td>[shaded]</td>\n        <td>[shaded]</td>\n        <td>[shaded]</td>\n        <td> </td>\n        <td> </td>\n    </tr>\n    <tr>\n        <td>[shaded]</td>\n        <td>[shaded]</td>\n        <td>[shaded]</td>\n        <td> </td>\n        <td> </td>\n    </tr>\n  </tbody>\n</table>\n\n5.\n\n6.\n\n3. Find the area of a rectangle measuring $\\frac{1}{3}$ m by $\\frac{5}{6}$ m.\n\n$$\\frac{1}{3} \\times \\frac{5}{6} =     $$\n\nThe area of the rectangle is      m<sup>2</sup>.\n\nDiagram of a rectangle divided into a grid with dimensions 1m by 1m, showing a sub-rectangle with dimensions 1/3 m by 5/6 m.\n\n7."
+    },
+    {
+      "node_id": "math5a:p49",
+      "text": "4. $\\frac{2}{3}$ of a wall is painted red. $\\frac{1}{4}$ of the remaining part is painted gray.\nWhat fraction of the wall is painted gray?\n\n$$1 - \\frac{2}{3} = \\frac{1}{3}$$\n\nThe remaining part is $\\frac{1}{3}$ of the wall.\n\n$$\\frac{1}{4} \\times \\frac{1}{3} =     $$\n\n     of the wall is painted gray.\n\nGrid diagram showing a wall with sections shaded\n\n5. Multiply $\\frac{4}{5}$ by $\\frac{2}{3}$.\n\n$$\\frac{4}{5} \\times \\frac{2}{3} = \\frac{4 \\times 2}{5 \\times 3}$$\n$$=     $$\n\n6. Find the product of $\\frac{9}{10}$ and $\\frac{5}{12}$.\n\n**Method 1:**\n\n$$\\frac{9}{10} \\times \\frac{5}{12} = \\frac{^{3}9 \\times 5^{1}}{_{2}10 \\times 12_{4}}$$\n$$=     $$\n\n**Method 2:**\n\n$$\\frac{^{3}9}{_{2}10} \\times \\frac{5^{1}}{12_{4}} = \\frac{3 \\times 1}{2 \\times 4}$$\n$$=     $$\n\n7. Find the value of\n\n(a) $\\frac{1}{2}$ of $\\frac{1}{2}$\n\n(b) $\\frac{1}{3}$ of $\\frac{3}{4}$\n\n(c) $\\frac{1}{4}$ of $\\frac{8}{9}$\n\n(d) $\\frac{5}{6} \\times \\frac{1}{5}$\n\n(e) $\\frac{3}{4} \\times \\frac{5}{6}$\n\n(f) $\\frac{4}{5} \\times \\frac{3}{8}$\n\n(g) $\\frac{5}{8} \\times \\frac{4}{9}$\n\n(h) $\\frac{1}{3} \\times \\frac{6}{7}$\n\n(i) $\\frac{5}{6} \\times \\frac{7}{10}$\n\n(j) $\\frac{15}{4} \\times \\frac{8}{3}$\n\n(k) $\\frac{9}{4} \\times \\frac{16}{3}$\n\n(l) $\\frac{12}{5} \\times \\frac{20}{9}$"
+    },
+    {
+      "node_id": "math5a:p50",
+      "text": "# PRACTICE 3E\n\nFind the value of each of the following in its simplest form.\n\n<table>\n  <thead>\n    <tr>\n        <th> </th>\n        <th>(a)</th>\n        <th>(b)</th>\n        <th>(c)</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n        <td>1.</td>\n        <td>$$\\frac{3}{8} \\times \\frac{1}{3}$$</td>\n        <td>$$\\frac{4}{9} \\times \\frac{5}{8}$$</td>\n        <td>$$\\frac{7}{8} \\times \\frac{3}{7}$$</td>\n    </tr>\n    <tr>\n        <td>2.</td>\n        <td>$$\\frac{2}{7} \\times \\frac{7}{10}$$</td>\n        <td>$$\\frac{8}{9} \\times \\frac{3}{4}$$</td>\n        <td>$$\\frac{9}{10} \\times \\frac{5}{6}$$</td>\n    </tr>\n    <tr>\n        <td>3.</td>\n        <td>$$\\frac{5}{6} \\times \\frac{2}{5}$$</td>\n        <td>$$\\frac{3}{4} \\times \\frac{2}{3}$$</td>\n        <td>$$\\frac{3}{10} \\times \\frac{5}{6}$$</td>\n    </tr>\n    <tr>\n        <td>4.</td>\n        <td>$$\\frac{16}{3} \\times \\frac{9}{4}$$</td>\n        <td>$$\\frac{14}{9} \\times \\frac{12}{7}$$</td>\n        <td>$$\\frac{10}{7} \\times \\frac{14}{5}$$</td>\n    </tr>\n    <tr>\n        <td>5.</td>\n        <td>$$\\frac{20}{7} \\times \\frac{7}{4}$$</td>\n        <td>$$\\frac{11}{5} \\times \\frac{20}{11}$$</td>\n        <td>$$\\frac{15}{8} \\times \\frac{8}{3}$$</td>\n    </tr>\n  </tbody>\n</table>\n\n6. Shawn had a piece of string $$1 \\frac{1}{2}$$ m long. He used $$\\frac{1}{3}$$ of it to tie a box. Find the length of the string which was used to tie the box.\n\n7. Kelley had $$\\frac{3}{4}$$ qt of cooking oil. She used $$\\frac{2}{5}$$ of it to fry some fish. How much oil did she use?\n\n8. Mrs. Ruiz bought $$\\frac{4}{5}$$ kg of beef. She cooked $$\\frac{3}{4}$$ of it for lunch. How much beef did she cook?\n\n9. Sally ate $$\\frac{1}{6}$$ of a cake and gave $$\\frac{1}{5}$$ of the remainder to her sister. What fraction of the cake did she give away?\n\n10. Find the area of a rectangle which measures $$\\frac{5}{8}$$ m by $$\\frac{3}{5}$$ m."
+    },
+    {
+      "node_id": "math5a:p51",
+      "text": "# Dividing a Fraction by a Whole Number\n\n4 boys shared $\\frac{2}{3}$ of a pie equally.\nWhat fraction of the pie did each boy receive?\n\n<table>\n  <tbody>\n    <tr>\n        <td>Category</td>\n        <td>Value</td>\n    </tr>\n    <tr>\n        <td>Pie</td>\n        <td>2/3</td>\n    </tr>\n  </tbody>\n</table>\n\nRight arrow icon\n\n<table>\n  <tbody>\n    <tr>\n        <td>Category</td>\n        <td>Value</td>\n    </tr>\n    <tr>\n        <td>Piece</td>\n        <td>1/6</td>\n    </tr>\n  </tbody>\n</table>\n\n$$\\frac{2}{3} \\div 4 = \\frac{1}{6}$$\n\nEach boy received $\\frac{1}{6}$ of the pie.\n\n$$\n\\begin{aligned}\n\\frac{2}{3} \\div 4 &= \\frac{1}{4} \\text{ of } \\frac{2}{3} \\\\\n&= \\frac{1}{{}_{2}4} \\times \\frac{2^{1}}{3} \\\\\n&= \\frac{1}{6}\n\\end{aligned}\n$$\n\nIllustration of a boy thinking: \"Each boy received 1/4 of 2/3 of the pie.\"\n\nHere is another way to divide $\\frac{2}{3}$ by 4.\n\nIllustration of a girl thinking: \"Multiply 2/3 by 1/4.\"\n\n$$\n\\begin{aligned}\n\\frac{2}{3} \\div 4 &= \\frac{2^{1}}{3} \\times \\frac{1}{4_{2}} \\\\\n&= \\frac{1}{6}\n\\end{aligned}\n$$"
+    },
+    {
+      "node_id": "math5a:p52",
+      "text": "1. Divide $\\frac{2}{3}$ by 3.\n\n$\\frac{2}{3} \\div 3 = \\frac{2}{3} \\times \\frac{1}{3}$\n\n= box\n\n<table>\n  <tbody>\n    <tr>\n        <td> </td>\n        <td> </td>\n        <td> </td>\n    </tr>\n    <tr>\n        <td> </td>\n        <td> </td>\n        <td> </td>\n    </tr>\n    <tr>\n        <td>[shaded]</td>\n        <td>[shaded]</td>\n        <td> </td>\n    </tr>\n  </tbody>\n</table>\n\nIllustration of a girl thinking\n\n> Dividing by 3 is the same as multiplying by $\\frac{1}{3}$.\n\n2. Divide.\n\n(a) $\\frac{3}{4} \\div 6 = \\frac{3}{4} \\times \\frac{1}{6}$\n\n= box\n\n(b) $\\frac{3}{5} \\div 9 = \\frac{3}{5} \\times \\frac{1}{9}$\n\n= box\n\n(c) $\\frac{5}{6} \\div 5 = \\frac{5}{6} \\times$     \n\n= box\n\n(d) $\\frac{9}{10} \\div 3 = \\frac{9}{10} \\times$     \n\n= box\n\n3. Find the value of each of the following in its simplest form.\n\n(a) $\\frac{1}{3} \\div 2$\n\n(b) $\\frac{4}{5} \\div 3$\n\n(c) $\\frac{5}{7} \\div 4$\n\n(d) $\\frac{4}{5} \\div 4$\n\n(e) $\\frac{6}{7} \\div 2$\n\n(f) $\\frac{2}{3} \\div 8$\n\n(g) $\\frac{9}{16} \\div 3$\n\n(h) $\\frac{3}{8} \\div 6$\n\n(i) $\\frac{9}{10} \\div 6$\n\n\n\n1.\n\n2.\n\n3.\n\n4.\n\n5.\n\n6.\n\n7.\n\n8.\n\n9."
+    },
+    {
+      "node_id": "math5a:p53",
+      "text": "# PRACTICE 3F\n\nFind the value of each of the following in its simplest form.\n\n<table>\n    <tr>\n        <th></th>\n        <th>(a)</th>\n        <th>(b)</th>\n        <th>(c)</th>\n    </tr>\n    <tr>\n        <td>1.</td>\n        <td>$\\frac{1}{3} \\div 3$</td>\n        <td>$\\frac{5}{6} \\div 3$</td>\n        <td>$\\frac{9}{10} \\div 3$</td>\n    </tr>\n    <tr>\n        <td>2.</td>\n        <td>$\\frac{3}{4} \\div 5$</td>\n        <td>$\\frac{1}{5} \\div 4$</td>\n        <td>$\\frac{8}{9} \\div 6$</td>\n    </tr>\n    <tr>\n        <td>3.</td>\n        <td>$\\frac{2}{5} \\div 3$</td>\n        <td>$\\frac{5}{9} \\div 5$</td>\n        <td>$\\frac{5}{6} \\div 10$</td>\n    </tr>\n</table>\n\n4. A string of length $\\frac{4}{5}$ m is cut into 2 equal pieces. What is the length of each piece?\n\n5. $\\frac{4}{5}$ of the money collected at a garage sale was divided equally among 4 clubs. What fraction of the money did each club receive?\n\n6. 6 packets of cookies weigh $\\frac{3}{10}$ kg. Find the weight of 1 packet of cookies.\n\n7. Sara poured $\\frac{2}{5}$ pt of fruit juice equally into 4 cups. How much fruit juice was there in each cup?\n\n8. The perimeter of a square flower bed is $\\frac{3}{4}$ m. Find the length of each side in meters.\n\n9. Mrs. Jones divided $\\frac{3}{4}$ kg of grapes equally among 6 children. How many kilograms of grapes did each child receive?"
+    },
+    {
+      "node_id": "math5a:p54",
+      "text": "# 7 Word Problems\n\nMelissa had $125. She spent $\\frac{2}{5}$ of the money and saved the rest.\nHow much money did she save?\n\n$$ 1 - \\frac{2}{5} = \\frac{3}{5} $$\n\nShe saved $\\frac{3}{5}$ of the money.\n\n> First, I find what fraction of the money is saved.\n\nIllustration of a boy thinking\n\n$$ \\frac{3}{5} \\times \\$125 = \\$     $$\n\nShe saved $    $.\n\n> I do it in another way.\n\nIllustration of a girl speaking\n\nAmount of money spent = $\\frac{2}{1\\cancel{5}} \\times \\$\\cancel{125}^{25} = \\$50$\n\nAmount of money saved = $125 - $50 = $    \n\n> Here is yet another way.\n> I find 1 unit first.\n\nIllustration of a boy speaking\n\n$125\nBar model showing 5 units, with 2 units shaded and 3 units unshaded\n\n5 units = $125\n\n1 unit = $    \n\nAmount of money saved = 3 units = $"
+    },
+    {
+      "node_id": "math5a:p55",
+      "text": "1. There are 96 children in a library. $\\frac{5}{8}$ of them are girls. How many boys are there?\n\nBar model showing 8 units representing 96 children, with 3 units marked with a question mark. A thought bubble contains the text \"8 units = 96\" and \"3 units = ?\". A cartoon boy is shown next to the bubble.\n\n2. David had $40. He spent $\\frac{1}{5}$ of the money on a storybook and $\\frac{3}{10}$ on a calculator. How much did he spend altogether?\n\nBar model showing 10 units representing $40, with 5 units marked with a question mark. A thought bubble contains the text \"10 units = 40\" and \"5 units = ?\". A cartoon boy is shown next to the bubble.\n\n3. Scott had some eggs. He sold $\\frac{5}{8}$ of them. If he sold 300 eggs, how many eggs did he have at first?\n\nBar model showing 8 units total, with 5 units representing 300 eggs. A question mark is placed over the entire bar."
+    },
+    {
+      "node_id": "math5a:p56",
+      "text": "4. Jim had 360 stamps. He sold $\\frac{1}{3}$ of them on Monday and $\\frac{1}{4}$ of the remainder on Tuesday. How many stamps did he sell on Tuesday?\n\n**Method 1:**\n\n> First, I find what fraction of the stamps were left on Monday.\n\nIllustration of a girl thinking\n\n$$1 - \\frac{1}{3} = \\frac{2}{3}$$\n\nHe had $\\frac{2}{3}$ of the stamps left on Monday.\n\n> Next, I find the number of stamps left on Monday.\n\nIllustration of a girl thinking\n\n$$\\frac{2}{1\\cancel{3}} \\times \\overset{120}{\\cancel{360}} = 2 \\times 120 = 240$$\n\nHe had 240 stamps left on Monday.\n\n$$\\frac{1}{4} \\times 240 = \\blacksquare$$\n\nHe sold $\\blacksquare$ stamps on Tuesday.\n\n**Method 2:**\n\n<table>\n  <tbody>\n    <tr>\n        <td>Category</td>\n        <td>Value</td>\n    </tr>\n    <tr>\n        <td>Total stamps (3 parts)</td>\n        <td>360</td>\n    </tr>\n    <tr>\n        <td>Remainder (2 parts)</td>\n        <td>240</td>\n    </tr>\n  </tbody>\n</table>\n\n> 3 parts = 360\n> 1 part = 120\n> 2 parts = 240\n\nIllustration of a boy thinking\n\nNumber of stamps left on Monday = 4 units = 240\n\nNumber of stamps sold on Tuesday = 1 unit = $\\blacksquare$"
+    },
+    {
+      "node_id": "math5a:p57",
+      "text": "5. Marisol made 300 tarts. She sold $\\frac{3}{4}$ of them and gave $\\frac{1}{3}$ of the remainder to her neighbor. How many tarts did she have left?\n\nBar model diagram showing 300 tarts divided into 4 units, with 3 units shaded (sold) and 1 unit remaining. The remaining unit is further divided into 3 sub-units, with 1 sub-unit given to a neighbor and 2 sub-units left, labeled with a question mark. A second diagram shows the remaining unit labeled as 75.\n\n6. Mr. Anderson gave $\\frac{2}{5}$ of his money to his wife and spent $\\frac{1}{2}$ of the remainder. If he had $300 left, how much money did he have at first?\n\nBar model diagram showing a total amount labeled with a question mark divided into 5 units, with 2 units shaded (given to wife) and 3 units remaining. The 3 remaining units are shown below as a separate bar divided into 2 parts, with the second part labeled $300. A second diagram shows the same structure with the total labeled as $600."
+    },
+    {
+      "node_id": "math5a:p58",
+      "text": "# PRACTICE 3G\n\n1. $\\frac{3}{7}$ of the apples in a box are red apples. The rest are green apples. There are 24 green apples. How many apples are there altogether?\n\n2. After spending $\\frac{2}{5}$ of his money on a toy car, Josh had $42 left. How much money did he have at first?\n\n3. Mr. Ray had $400. He spent $\\frac{2}{5}$ of it on a vacuum cleaner and $\\frac{1}{4}$ of the remainder on a fan. How much money did he have left?\n\n4. A vendor sold $\\frac{2}{3}$ of his hot dogs in the morning and $\\frac{1}{6}$ in the afternoon. He sold 200 hot dogs altogether. How many hot dogs did he have left?\n\n5. Mrs. Gray bought some eggs. She used $\\frac{1}{2}$ of them to make tarts and $\\frac{1}{4}$ of the remainder to make a cake. She had 9 eggs left. How many eggs did she buy?\n\n6. Tyrone bought a bag of marbles. $\\frac{1}{4}$ of the marbles were blue, $\\frac{1}{8}$ were green and $\\frac{1}{5}$ of the remainder were yellow. If there were 24 yellow marbles, how many marbles did he buy?\n\n7. Jeff gave $\\frac{1}{4}$ of a sum of money to his wife. Then he divided the remainder equally among his 4 children.\n\n(a) What fraction of the sum of money did each child receive?\n\n(b) If each child received $600, find the sum of money.\n\n8. Rosa read 10 pages of a book on Monday. She read $\\frac{1}{3}$ of the remainder on Tuesday. If she still had 24 pages to read, how many pages were there in the book?"
+    }
+  ]
+}

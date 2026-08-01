@@ -31,6 +31,14 @@ from typing import Any
 @dataclass(frozen=True)
 class DomainPack:
     slug: str
+    # What this pack's rules and wording are, as a version an emitted package
+    # can name. A package says which pack produced it so that a lesson emitted
+    # under last month's rules is identifiable as such rather than silently
+    # assumed to match today's.
+    #
+    # Bump this when the pack changes anything that alters the lessons it
+    # produces: the audience, the ground truth, the evaluators, the limits.
+    version: str
     title: str
     audience: str
     ground_truth: str
@@ -65,6 +73,7 @@ class DomainPack:
 REGISTRY: dict[str, DomainPack] = {
     "pte": DomainPack(
         slug="pte",
+        version="1.0.0",
         title="PTE Academic",
         audience="adult test takers, CEFR B1-C1, preparing for PTE Academic",
         ground_truth="the official Pearson PTE Academic Score Guide (PDF)",
@@ -86,6 +95,7 @@ REGISTRY: dict[str, DomainPack] = {
     ),
     "math5a": DomainPack(
         slug="math5a",
+        version="1.0.0",
         title="Singapore Math Primary Mathematics 5A",
         audience="Year 5 / Grade 5 pupils (about 10-11 years old) and their teachers",
         ground_truth="arithmetic itself — every calculation is evaluated exactly",

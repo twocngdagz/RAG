@@ -1,0 +1,297 @@
+{
+  "schema_version": "lesson.transformation_recommendation.v1",
+  "chapter_number": 3,
+  "source_content_revision": "sha256:e6978286efa1e6d75eb0ca00312933e9",
+  "note": "Advisory only. Nothing here licenses source_transformed; a human content owner must record verdicts under their own identity in the approval manifest.",
+  "recommendations": [
+    {
+      "claim_path": "chapter03.chapter_summary",
+      "claim_hash": "sha256:e4b5ef50a18f9fbc66417577b68376f8",
+      "disposition": "candidate",
+      "cited_source_chunk_ids": [
+        "math5a:p31",
+        "math5a:p35",
+        "math5a:p39",
+        "math5a:p42",
+        "math5a:p47",
+        "math5a:p51",
+        "math5a:p54"
+      ],
+      "suggested_transformation_type": "condensed_summary",
+      "recommended_verdict": "faithful",
+      "rationale": "Every clause maps to a section the chapter has: Fraction and Division (p31), unlike/like fractions (p35), mixed numbers (p39), fraction times whole number (p42), product of fractions (p47), dividing a fraction by a whole number (p51), word problems (p54). Nothing claimed that the chapter does not cover.",
+      "recommended_by": {
+        "id": "openai-codex",
+        "name": "OpenAI Codex",
+        "kind": "ai_assisted"
+      }
+    },
+    {
+      "claim_path": "chapter03.key_terms.1.meaning",
+      "claim_hash": "sha256:bb2cdc28f931343af3f7351bb0d493cf",
+      "disposition": "candidate",
+      "cited_source_chunk_ids": [
+        "math5a:p32",
+        "math5a:p39"
+      ],
+      "suggested_transformation_type": "usage_to_definition",
+      "recommended_verdict": "faithful",
+      "rationale": "'Mixed number' is the book's own term (p32, p34, p39). p32 works 5 div 4 = 1 1/4, the whole-plus-fraction form the definition states, and the cited example is the book's own.",
+      "recommended_by": {
+        "id": "openai-codex",
+        "name": "OpenAI Codex",
+        "kind": "ai_assisted"
+      }
+    },
+    {
+      "claim_path": "chapter03.key_terms.2.meaning",
+      "claim_hash": "sha256:817772b8a0a57cdc9e3c112f0a20c90d",
+      "disposition": "candidate",
+      "cited_source_chunk_ids": [
+        "math5a:p35"
+      ],
+      "suggested_transformation_type": "usage_to_definition",
+      "recommended_verdict": "faithful",
+      "rationale": "p35 introduces 'like fractions' as the book's own term. The definition states the property its examples share.",
+      "recommended_by": {
+        "id": "openai-codex",
+        "name": "OpenAI Codex",
+        "kind": "ai_assisted"
+      }
+    },
+    {
+      "claim_path": "chapter03.key_terms.3.meaning",
+      "claim_hash": "sha256:7112678bcd3eb507dd98e6718f34b4d8",
+      "disposition": "candidate",
+      "cited_source_chunk_ids": [
+        "math5a:p35"
+      ],
+      "suggested_transformation_type": "usage_to_definition",
+      "recommended_verdict": "faithful",
+      "rationale": "p35 introduces 'unlike fractions' alongside 'like fractions'. Same basis as the previous term.",
+      "recommended_by": {
+        "id": "openai-codex",
+        "name": "OpenAI Codex",
+        "kind": "ai_assisted"
+      }
+    },
+    {
+      "claim_path": "chapter03.core_lessons.1.explanation",
+      "claim_hash": "sha256:e0b27b7732bf3ab8d714d38dd2146920",
+      "disposition": "candidate",
+      "cited_source_chunk_ids": [
+        "math5a:p35",
+        "math5a:p36",
+        "math5a:p37"
+      ],
+      "suggested_transformation_type": "demonstration_to_statement",
+      "recommended_verdict": "faithful",
+      "rationale": "p35 introduces unlike vs like fractions; p36 adds 3/8 + 1/6 and p37 subtracts 1/6 from 7/8, both by converting to a common denominator first. The claim states that method in that order.",
+      "recommended_by": {
+        "id": "openai-codex",
+        "name": "OpenAI Codex",
+        "kind": "ai_assisted"
+      }
+    },
+    {
+      "claim_path": "chapter03.core_lessons.2.explanation",
+      "claim_hash": "sha256:a0314d1b39eb4319853681dc2a1451e3",
+      "disposition": "candidate",
+      "cited_source_chunk_ids": [
+        "math5a:p39",
+        "math5a:p40"
+      ],
+      "suggested_transformation_type": "demonstration_to_statement",
+      "recommended_verdict": "faithful",
+      "rationale": "p39 opens 'Addition and Subtraction of Mixed Numbers'; p40 works 3 1/6 + 1 9/10 by handling whole and fraction parts and finding a common denominator.",
+      "recommended_by": {
+        "id": "openai-codex",
+        "name": "OpenAI Codex",
+        "kind": "ai_assisted"
+      }
+    },
+    {
+      "claim_path": "chapter03.core_lessons.3.explanation",
+      "claim_hash": "sha256:dfd41c0cba3cf37161f061a2053d4288",
+      "disposition": "candidate",
+      "cited_source_chunk_ids": [
+        "math5a:p42",
+        "math5a:p43"
+      ],
+      "suggested_transformation_type": "demonstration_to_statement",
+      "recommended_verdict": "faithful",
+      "rationale": "p42 opens 'Product of a Fraction and a Whole Number'; p43 shows three methods. The claim states the rule they share.",
+      "recommended_by": {
+        "id": "openai-codex",
+        "name": "OpenAI Codex",
+        "kind": "ai_assisted"
+      }
+    },
+    {
+      "claim_path": "chapter03.core_lessons.4.explanation",
+      "claim_hash": "sha256:fb52b84acb43a9fc7776117bdd1c6c11",
+      "disposition": "candidate",
+      "cited_source_chunk_ids": [
+        "math5a:p47",
+        "math5a:p48",
+        "math5a:p49"
+      ],
+      "suggested_transformation_type": "demonstration_to_statement",
+      "recommended_verdict": "faithful",
+      "rationale": "p47 opens 'Product of Fractions' with a colouring model; p48-49 work examples. The claim states the multiply-across rule they demonstrate.",
+      "recommended_by": {
+        "id": "openai-codex",
+        "name": "OpenAI Codex",
+        "kind": "ai_assisted"
+      }
+    },
+    {
+      "claim_path": "chapter03.common_misconceptions.0.correction",
+      "claim_hash": "sha256:5de61fcde0caf5692dc3edf45b6c6730",
+      "disposition": "candidate",
+      "cited_source_chunk_ids": [
+        "math5a:p35",
+        "math5a:p36",
+        "math5a:p37"
+      ],
+      "suggested_transformation_type": "demonstration_to_statement",
+      "recommended_verdict": "faithful",
+      "rationale": "p35-37 establish that unlike fractions must be made like before numerators are added or subtracted. The correction states that requirement.",
+      "recommended_by": {
+        "id": "openai-codex",
+        "name": "OpenAI Codex",
+        "kind": "ai_assisted"
+      }
+    },
+    {
+      "claim_path": "chapter03.core_lessons.0.explanation",
+      "claim_hash": "sha256:b7a3b3f72a82e8da065671a60b09a681",
+      "disposition": "omitted",
+      "cited_source_chunk_ids": [
+        "math5a:p31",
+        "math5a:p32"
+      ],
+      "suggested_transformation_type": "demonstration_to_statement",
+      "recommended_verdict": "unfaithful",
+      "rationale": "The mathematical substance is the book's (3 div 4 appears on p31), but the wording is commentary about the book rather than teaching.",
+      "recommended_by": {
+        "id": "openai-codex",
+        "name": "OpenAI Codex",
+        "kind": "ai_assisted"
+      },
+      "omission_reason": "Reviewer ruled: rewrite before review. Drafting replacement prose is new content-authoring work and would still need human review, so it is out of B11's scope."
+    },
+    {
+      "claim_path": "chapter03.core_lessons.6.explanation",
+      "claim_hash": "sha256:6a38b6814bdf5e74b54f928ecaa9b8fe",
+      "disposition": "omitted",
+      "cited_source_chunk_ids": [
+        "math5a:p54",
+        "math5a:p55",
+        "math5a:p57"
+      ],
+      "suggested_transformation_type": "condensed_summary",
+      "recommended_verdict": "unfaithful",
+      "rationale": "Accurate as a description -- bar models do appear on p54, p55 and p57 -- but it describes the chapter instead of teaching the concept.",
+      "recommended_by": {
+        "id": "openai-codex",
+        "name": "OpenAI Codex",
+        "kind": "ai_assisted"
+      },
+      "omission_reason": "Reviewer ruled: rewrite before review. Same reason as core_lessons.0."
+    },
+    {
+      "claim_path": "chapter03.common_misconceptions.2.correction",
+      "claim_hash": "sha256:86859dcb9591e2117c4477a5b386b751",
+      "disposition": "omitted",
+      "cited_source_chunk_ids": [
+        "math5a:p50",
+        "math5a:p56",
+        "math5a:p57",
+        "math5a:p58"
+      ],
+      "suggested_transformation_type": "demonstration_to_statement",
+      "recommended_verdict": "unfaithful",
+      "rationale": "The 74 div 21 example does not appear anywhere in chapter 3. The arithmetic is right (21x3=63, remainder 11) but the example is invented, so the claim presents fabricated work as something the workbook demonstrates.",
+      "recommended_by": {
+        "id": "openai-codex",
+        "name": "OpenAI Codex",
+        "kind": "ai_assisted"
+      },
+      "omission_reason": "Reviewer ruled: omit. pedagogical_generation is not currently legal for misconception_correction, and changing that rule to keep one invented example would expand the batch."
+    },
+    {
+      "claim_path": "chapter03.core_lessons.5.explanation",
+      "claim_hash": "sha256:121537939ce97c8c02a9495c506a4133",
+      "disposition": "omitted",
+      "cited_source_chunk_ids": [
+        "math5a:p51",
+        "math5a:p52"
+      ],
+      "suggested_transformation_type": "demonstration_to_statement",
+      "recommended_verdict": "unfaithful",
+      "rationale": "'Reciprocal' does not appear anywhere in chapter 3. p51 shares 1/2 among 4 boys; p52 works 2/3 div 3 directly. The arithmetic verifies (2/3 div 4 = 1/6) but multiply-by-the-reciprocal is a different method from the one the book demonstrates.",
+      "recommended_by": {
+        "id": "openai-codex",
+        "name": "OpenAI Codex",
+        "kind": "ai_assisted"
+      },
+      "omission_reason": "Omitted pending human approval under a different origin: states a method the source does not teach."
+    },
+    {
+      "claim_path": "chapter03.common_misconceptions.1.correction",
+      "claim_hash": "sha256:d90f44deee29d9abcda3679f77189572",
+      "disposition": "omitted",
+      "cited_source_chunk_ids": [
+        "math5a:p51",
+        "math5a:p52"
+      ],
+      "suggested_transformation_type": "demonstration_to_statement",
+      "recommended_verdict": "unfaithful",
+      "rationale": "Same reciprocal problem as core_lessons.5. Arithmetic verified across all three sides, but the method is not the book's, so a learner cannot check the correction against the chapter.",
+      "recommended_by": {
+        "id": "openai-codex",
+        "name": "OpenAI Codex",
+        "kind": "ai_assisted"
+      },
+      "omission_reason": "Omitted pending human approval under a different origin: same cause as core_lessons.5."
+    },
+    {
+      "claim_path": "chapter03.key_terms.0.meaning",
+      "claim_hash": "sha256:b901254f49d8f4a0bf694971c14e2905",
+      "disposition": "omitted",
+      "cited_source_chunk_ids": [
+        "math5a:p35"
+      ],
+      "suggested_transformation_type": "usage_to_definition",
+      "recommended_verdict": "unfaithful",
+      "rationale": "'Numerator' does not appear anywhere in chapter 3; 'denominator' does, on p35. The definition is mathematically correct but imports vocabulary this chapter never teaches.",
+      "recommended_by": {
+        "id": "openai-codex",
+        "name": "OpenAI Codex",
+        "kind": "ai_assisted"
+      },
+      "omission_reason": "Omitted pending human approval under a different origin: names a term absent from the source."
+    },
+    {
+      "claim_path": "chapter03.key_terms.4.meaning",
+      "claim_hash": "sha256:2d54f7954ad4d0aff99f74260a229f0b",
+      "disposition": "omitted",
+      "cited_source_chunk_ids": [
+        "math5a:p50",
+        "math5a:p56",
+        "math5a:p57",
+        "math5a:p58"
+      ],
+      "suggested_transformation_type": "usage_to_definition",
+      "recommended_verdict": "unfaithful",
+      "rationale": "The definition says a remainder is 'written as r', but chapter 3 works remainders as fractions and mixed numbers throughout. Could not be settled from the page text alone.",
+      "recommended_by": {
+        "id": "openai-codex",
+        "name": "OpenAI Codex",
+        "kind": "ai_assisted"
+      },
+      "omission_reason": "Omitted as unresolved: the r notation belongs to the division chapter rather than this one."
+    }
+  ]
+}
