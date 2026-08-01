@@ -80,7 +80,7 @@ def export_chapter(
 
     lesson = {
         **manifest["lesson"],
-        "provenance": _lesson_provenance(chapter, source_resource_id),
+        "provenance": _lesson_provenance(manifest),
     }
 
     objectives = [
@@ -291,20 +291,26 @@ def _resource(
     }
 
 
-def _lesson_provenance(chapter: dict[str, Any], source_resource_id: str) -> dict[str, Any]:
-    summary = chapter.get("chapter_summary")
+def _lesson_provenance(manifest: dict[str, Any]) -> dict[str, Any]:
+    """Where the LESSON came from, which is not where any one claim came from.
 
-    if isinstance(summary, dict):
-        try:
-            return lesson_provenance.translate(
-                summary,
-                source_path="chapter_summary",
-                source_resource_id=source_resource_id,
-            )
-        except lesson_provenance.UnsupportedProvenance as error:
-            raise ExportRefused(str(error)) from error
+    This used to translate `chapter_summary`'s provenance, which coupled the
+    lesson's identity to whether one sentence happened to be quotable from the
+    source. On a workbook it never is -- Singapore Math 5A demonstrates rather
+    than explains -- so no math5a chapter could be exported at all, however
+    publishable its actual content was.
 
-    raise ExportRefused("chapter_summary carries no provenance, so the lesson cannot say where it came from")
+    A lesson's stable key, title and domain are written in the manifest, by a
+    person, exactly as objective statements are. So it carries the same origin
+    they do, and for the same verifiable reason: that is how it got there.
+
+    The claims inside the lesson keep their own provenance. Nothing here weakens
+    what any individual element says about its evidence.
+    """
+    return {
+        "origin": lesson_provenance.MANUALLY_AUTHORED,
+        "author_reference": _author_reference(manifest, "lesson"),
+    }
 
 
 def _author_reference(manifest: dict[str, Any], path: str) -> str:
