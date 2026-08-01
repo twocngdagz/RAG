@@ -1624,6 +1624,14 @@ A generated lesson can enter Ela without manual repair, while incompatible or in
 - **`lesson_resources` is created in this batch**, with foreign keys to the stored lesson and to `learning_resources`, and the same link columns the other two pivots carry: `role`, `availability`, `conditional_triggers`, `phase_visibility`, `assistance_effect`.
 - **A lesson-level resource in an imported package is stored through that pivot**, not flattened onto an activity or an item.
 
+#### Recorded during B11.1: three things this batch deliberately did not do
+
+**`objective_associations` are emitted and hashed by B11, and not imported.** RAG builds the objective-to-objective graph — `requires`, `builds_on`, `is_child_of`, `is_equivalent_to`, `aligns_with` — and folds it into the package's content hash, so a change to it changes the hash. Ela's importer ignores it. Nothing in B11.1's acceptance asks for it, and no learner-facing behaviour depends on it yet, but **B13 — Learner objective state** is the first batch that reasons across objectives, so the graph must be imported by then or B13 works from a graph that exists only in RAG.
+
+**An activity's `evidence_mode` vocabulary is now major-version surface.** B11.1's importer refuses a package whose activity carries an evidence mode the runtime cannot place in a session, rather than defaulting it to teaching — a learner must never be shown an activity nobody decided how to deliver. The consequence is that a `learning.package.v1.x` release which legitimately ADDS a mode is refused by an older Ela, even though minor versions are additive by contract. That is the intended conservatism, and it means adding a mode requires shipping the runtime that understands it first.
+
+**A dropped objective persists after re-import, and that is harmless.** Activities, resource links and lesson membership are all cleaned up when a package stops declaring them, because each of those reaches a learner. Objectives are not: nothing delivers an objective directly, and both the coverage and assessed rules read the package rather than the database, so a withdrawn objective creates no stale learner path. It stays in its competency framework until something needs it removed.
+
 #### `lesson_resources`, deferred here from B5.4
 
 ADR-0002 v3 §27 names three resource pivots. B5.4 created two —
