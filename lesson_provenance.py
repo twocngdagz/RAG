@@ -90,6 +90,20 @@ def translate(claim: dict[str, Any], *, source_path: str, source_resource_id: st
 
     chunk_ids = _chunk_ids(claim)
 
+    if origin == MANUALLY_AUTHORED:
+        # Handled explicitly. Falling through to the generated-content branch
+        # produced a record carrying `generator_version` under an origin that
+        # says a person wrote it — a contradiction Ela rejects, and a claim
+        # about authorship that nothing supports.
+        author = str(claim.get("author_reference") or "").strip()
+
+        if not author:
+            raise UnsupportedProvenance(
+                f"{source_path} claims manual authorship but does not say who wrote it"
+            )
+
+        return {"origin": origin, "author_reference": author}
+
     if origin == SOURCE_GROUNDED:
         record = {
             "origin": origin,
@@ -111,6 +125,22 @@ def translate(claim: dict[str, Any], *, source_path: str, source_resource_id: st
             "generator_version": str(claim.get("generator_version") or "").strip(),
         }
 
+    # Optional evidence the claim carries is PRESERVED, not dropped. Evidence
+    # spans are the strongest thing a grounded claim has — the exact words in
+    # the source it rests on — and discarding them at the boundary means the
+    # importer can never show a learner or a reviewer why the system believes
+    # what it says.
+    for field in OPTIONAL_FIELDS[origin]:
+        value = claim.get(field)
+
+        if isinstance(value, (list, tuple)):
+            value = [item for item in value if item not in (None, "")]
+
+            if value:
+                record[field] = list(value)
+        elif str(value or "").strip():
+            record[field] = str(value).strip()
+
     missing = [
         field
         for field in REQUIRED_FIELDS[origin]
@@ -122,8 +152,6 @@ def translate(claim: dict[str, Any], *, source_path: str, source_resource_id: st
             f"{source_path} claims {origin} but supplies no {', '.join(missing)}"
         )
 
-    # Grounded content with no chunks is an unsupported claim wearing a
-    # supported origin's label.
     if origin in (SOURCE_GROUNDED, SOURCE_TRANSFORMED) and not chunk_ids:
         raise UnsupportedProvenance(f"{source_path} claims {origin} with no source chunks")
 

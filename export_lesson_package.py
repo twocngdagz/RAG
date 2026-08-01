@@ -20,6 +20,7 @@ whoever fixes it exactly which line of the mapping is wrong.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import sys
 from pathlib import Path
@@ -61,6 +62,7 @@ def export_chapter(
     does not gain the ability to invent one.
     """
     pack = domain_packs.get(slug)
+    _assert_pack_matches_source(pack, materials)
 
     if manifest is None:
         manifest = manifest_module.load(slug, chapter_number)
@@ -98,7 +100,14 @@ def export_chapter(
     ]
 
     resources = [
-        _resource(resource, chapter, source_resource_id, f"resources.{index}")
+        _resource(
+            resource,
+            chapter,
+            pack,
+            source_resource_id,
+            manifest["lesson"]["stable_key"],
+            f"resources.{index}",
+        )
         for index, resource in enumerate(manifest.get("resources") or [])
     ]
 
@@ -108,6 +117,7 @@ def export_chapter(
     ]
 
     package = lesson_package.build_package(
+        objective_associations=manifest.get("objective_associations") or [],
         pack=pack,
         content_revision=content_revision,
         lesson=lesson,
@@ -221,13 +231,27 @@ def _block_chunks(block: dict[str, Any]) -> list[str]:
 def _resource(
     declared: dict[str, Any],
     chapter: dict[str, Any],
+    pack,
     source_resource_id: str,
+    lesson_stable_key: str,
     path: str,
 ) -> dict[str, Any]:
     blocks = [
         _block(reference, chapter, source_resource_id, f"{path}.elements.{index}")
         for index, reference in enumerate(declared["elements"])
     ]
+
+    links = declared.get("links") or []
+
+    if not links:
+        raise ExportRefused(f"{path}.links is empty; a resource nothing links to reaches no learner")
+
+    for index, link in enumerate(links):
+        if link.get("scope") == "lesson" and link.get("lesson_stable_key") != lesson_stable_key:
+            raise ExportRefused(
+                f"{path}.links.{index} is lesson-scoped but names "
+                f"{link.get('lesson_stable_key')!r} rather than {lesson_stable_key!r}"
+            )
 
     return {
         "stable_key": declared["stable_key"],
@@ -236,9 +260,23 @@ def _resource(
             "resource_type": declared.get("resource_type", "alternative_explanation"),
             "resource_type_version": 1,
             "title": declared.get("title", ""),
+            # Ela's resource contract requires both. Omitting them produced a
+            # resource that passed this repository's structural check and would
+            # have been refused at import.
+            "domain": declared.get("domain", pack.slug),
             "definition": {"blocks": blocks},
+            "provenance": {
+                "origin": lesson_provenance.PEDAGOGICAL_GENERATION,
+                "grounded_in_source_chunk_ids": sorted(
+                    {chunk for block in blocks for chunk in _block_chunks(block)}
+                ),
+                "generation_reason": declared.get(
+                    "assembly_reason", "Assembled from declared chapter elements"
+                ),
+                "generator_version": f"{lesson_package.PRODUCER_VERSION} pack:{pack.version}",
+            },
         },
-        "links": declared.get("links", []),
+        "links": links,
     }
 
 
@@ -275,6 +313,22 @@ def _author_reference(manifest: dict[str, Any], path: str) -> str:
     return reference
 
 
+def _assert_pack_matches_source(pack, materials: dict[str, Any]) -> None:
+    """The pack and the book must be the same book.
+
+    Exporting a `sample-v2` book under the `math5a` pack produces a package
+    whose pack rules and source resource describe different material — and the
+    resource id every block carries would name a book the pack has never seen.
+    """
+    book_slug = str((materials.get("book") or {}).get("slug") or "").strip()
+
+    if book_slug and book_slug != pack.slug:
+        raise ExportRefused(
+            f"the source book is {book_slug!r} but the pack is {pack.slug!r}; "
+            f"a package cannot describe one book under another's rules"
+        )
+
+
 def _chapter(materials: dict[str, Any], chapter_number: int) -> dict[str, Any]:
     chapters = (materials.get("learning_materials") or materials).get("chapters") or []
 
@@ -292,10 +346,26 @@ def _source_resource_id(materials: dict[str, Any], slug: str) -> str:
 
 
 def _content_revision(materials: dict[str, Any], chapter_number: int) -> str:
-    generation = materials.get("generation") or {}
-    revision = generation.get("run_id") or generation.get("generated_at") or "unknown"
+    """A revision that identifies THIS content, or a refusal.
 
-    return f"chapter{chapter_number:02d}@{revision}"
+    Emitting `chapter03@unknown` looks like a revision and identifies nothing:
+    two different generations of a chapter would carry the same string, and an
+    importer deciding whether it already has this material would be comparing
+    labels that never change. Where the generator recorded a run, that is used;
+    otherwise the revision is derived from the chapter's own canonical content,
+    which at least moves when the content does.
+    """
+    generation = materials.get("generation") or {}
+    recorded = str(generation.get("run_id") or generation.get("generated_at") or "").strip()
+
+    if recorded:
+        return f"chapter{chapter_number:02d}@{recorded}"
+
+    chapter = _chapter(materials, chapter_number)
+    canonical = json.dumps(chapter, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
+    digest = hashlib.sha256(canonical.encode("utf-8")).hexdigest()[:16]
+
+    return f"chapter{chapter_number:02d}@sha256:{digest}"
 
 
 def emit_package_file(

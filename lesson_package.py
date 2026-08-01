@@ -41,6 +41,21 @@ PRODUCER_VERSION = "rag-lesson-package/1.0.0"
 
 ACTIVITY_CONTRACT = "learning.activity.v1"
 
+# Ela's vocabulary for how one objective relates to another. Mirrored, and a
+# test asserts the mirror holds.
+OBJECTIVE_ASSOCIATION_TYPES = (
+    "requires",
+    "builds_on",
+    "is_child_of",
+    "is_equivalent_to",
+    "aligns_with",
+)
+
+# What a resource link must say. Storing a role and nothing else leaves the
+# importer to decide when a resource may appear and what using it costs, which
+# are teaching decisions the exporter does not get to delegate.
+REQUIRED_LINK_FIELDS = ("role", "availability", "phase_visibility", "assistance_effect")
+
 REQUIRED_TOP_LEVEL_FIELDS = (
     "schema_version",
     "producer_version",
@@ -50,6 +65,7 @@ REQUIRED_TOP_LEVEL_FIELDS = (
     "content_hash",
     "lesson",
     "objectives",
+    "objective_associations",
     "activities",
     "resources",
 )
@@ -78,6 +94,10 @@ def content_hash(package: dict[str, Any]) -> str:
         "activities": [
             {"position": index, **_activity_identity(activity)}
             for index, activity in enumerate(package.get("activities") or [])
+        ],
+        "objective_associations": [
+            {"position": index, **_association_identity(association)}
+            for index, association in enumerate(package.get("objective_associations") or [])
         ],
         "resources": [
             {"position": index, **_resource_identity(resource)}
@@ -108,6 +128,15 @@ def _objective_identity(objective: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def _association_identity(association: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "from_objective_stable_key": association.get("from_objective_stable_key"),
+        "to_objective_stable_key": association.get("to_objective_stable_key"),
+        "association_type": association.get("association_type"),
+        "strength": association.get("strength"),
+    }
+
+
 def _activity_identity(activity: dict[str, Any]) -> dict[str, Any]:
     return {
         "stable_key": activity.get("stable_key"),
@@ -135,6 +164,7 @@ def build_package(
     objectives: list[dict[str, Any]],
     activities: list[dict[str, Any]],
     resources: list[dict[str, Any]] | None = None,
+    objective_associations: list[dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     """Assemble one chapter's package, hash included.
 
@@ -149,6 +179,7 @@ def build_package(
         "content_revision": content_revision,
         "lesson": lesson,
         "objectives": objectives,
+        "objective_associations": objective_associations or [],
         "activities": activities,
         "resources": resources or [],
     }
@@ -171,7 +202,7 @@ def structural_problems(package: dict[str, Any]) -> list[str]:
         if field not in package:
             problems.append(f"missing {field}")
 
-    objective_keys = set()
+    objective_keys: set[str] = set()
 
     for index, objective in enumerate(package.get("objectives") or []):
         path = f"objectives.{index}"
@@ -179,6 +210,11 @@ def structural_problems(package: dict[str, Any]) -> list[str]:
 
         if not key:
             problems.append(f"{path} has no stable_key")
+        elif key in objective_keys:
+            # Collapsing duplicates into a set hid this. Two objectives sharing
+            # a key leave the importer no way to decide which one an alignment
+            # or an upsert means.
+            problems.append(f"{path} repeats stable_key {key!r}")
         else:
             objective_keys.add(key)
 
@@ -187,13 +223,135 @@ def structural_problems(package: dict[str, Any]) -> list[str]:
 
         problems.extend(_provenance_problems(objective.get("provenance"), path))
 
-    resource_keys = {
-        str(resource.get("stable_key") or "").strip()
-        for resource in package.get("resources") or []
-    }
+    problems.extend(_association_problems(package, objective_keys))
+
+    resource_keys: set[str] = set()
+
+    for index, resource in enumerate(package.get("resources") or []):
+        path = f"resources.{index}"
+        key = str(resource.get("stable_key") or "").strip()
+
+        if not key:
+            problems.append(f"{path} has no stable_key")
+        elif key in resource_keys:
+            problems.append(f"{path} repeats stable_key {key!r}")
+        else:
+            resource_keys.add(key)
+
+        problems.extend(_resource_problems(resource, path, package))
+
+    activity_keys: set[str] = set()
 
     for index, activity in enumerate(package.get("activities") or []):
-        problems.extend(_activity_problems(activity, f"activities.{index}", objective_keys, resource_keys))
+        path = f"activities.{index}"
+        key = str(activity.get("stable_key") or "").strip()
+
+        if key and key in activity_keys:
+            problems.append(f"{path} repeats stable_key {key!r}")
+        elif key:
+            activity_keys.add(key)
+
+        problems.extend(_activity_problems(activity, path, objective_keys, resource_keys))
+
+    return problems
+
+
+def _association_problems(package: dict[str, Any], objective_keys: set[str]) -> list[str]:
+    """The objective graph: how objectives relate to each other.
+
+    Distinct from an activity's alignments, which say what an activity assesses.
+    This says one objective requires or builds on another — the structure a
+    later batch reads to decide what a learner is ready for.
+    """
+    problems: list[str] = []
+    seen: set[tuple[str, str, str]] = set()
+
+    for index, association in enumerate(package.get("objective_associations") or []):
+        path = f"objective_associations.{index}"
+        source = str((association or {}).get("from_objective_stable_key") or "").strip()
+        target = str((association or {}).get("to_objective_stable_key") or "").strip()
+        kind = str((association or {}).get("association_type") or "").strip()
+
+        for label, key in (("from", source), ("to", target)):
+            if not key:
+                problems.append(f"{path} has no {label}_objective_stable_key")
+            elif key not in objective_keys:
+                problems.append(f"{path}.{label} names {key!r}, which this package does not define")
+
+        if kind not in OBJECTIVE_ASSOCIATION_TYPES:
+            problems.append(
+                f"{path}.association_type {kind!r} is not one of {', '.join(OBJECTIVE_ASSOCIATION_TYPES)}"
+            )
+
+        if source and source == target:
+            problems.append(f"{path} relates {source!r} to itself")
+
+        signature = (source, target, kind)
+
+        if signature in seen:
+            problems.append(f"{path} repeats the association {source!r} -{kind}-> {target!r}")
+
+        seen.add(signature)
+
+    return problems
+
+
+def _resource_problems(resource: dict[str, Any], path: str, package: dict[str, Any]) -> list[str]:
+    """A resource as Ela's own contract requires it, not as this package finds convenient."""
+    problems: list[str] = []
+    definition = resource.get("definition")
+
+    if not isinstance(definition, dict):
+        return problems + [f"{path}.definition is missing"]
+
+    for field in ("contract", "resource_type", "title", "domain"):
+        if not str(definition.get(field) or "").strip():
+            problems.append(f"{path}.definition.{field} is missing")
+
+    problems.extend(_provenance_problems(definition.get("provenance"), f"{path}.definition"))
+
+    blocks = ((definition.get("definition") or {}).get("blocks")) or []
+
+    if not blocks:
+        problems.append(f"{path}.definition.definition.blocks is empty")
+
+    for block_index, block in enumerate(blocks):
+        block_path = f"{path}.definition.definition.blocks.{block_index}"
+
+        if not isinstance(block, dict):
+            problems.append(f"{block_path} is not an object")
+            continue
+
+        problems.extend(_provenance_problems(block.get("provenance"), block_path))
+
+    links = resource.get("links") or []
+
+    if not links:
+        problems.append(f"{path}.links is empty; a resource nothing links to reaches no learner")
+
+    lesson_key = str((package.get("lesson") or {}).get("stable_key") or "").strip()
+
+    for link_index, link in enumerate(links):
+        link_path = f"{path}.links.{link_index}"
+
+        if not isinstance(link, dict):
+            problems.append(f"{link_path} is not an object")
+            continue
+
+        for field in REQUIRED_LINK_FIELDS:
+            if not link.get(field):
+                problems.append(f"{link_path}.{field} is missing")
+
+        if link.get("scope") == "lesson" and str(link.get("lesson_stable_key") or "").strip() != lesson_key:
+            problems.append(f"{link_path} is lesson-scoped but does not name this lesson")
+
+        effect = link.get("assistance_effect") or {}
+
+        # A resource that reveals strategy or answers must say what that costs,
+        # or evidence produced afterwards is recorded as though it were unaided.
+        if isinstance(effect, dict) and str(effect.get("type") or "").startswith("reveals"):
+            if not str(effect.get("evidence_classification") or "").strip():
+                problems.append(f"{link_path}.assistance_effect declares no evidence_classification")
 
     return problems
 
