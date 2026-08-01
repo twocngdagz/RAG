@@ -39,7 +39,16 @@ FIELD_CLAIM_KINDS: dict[str, str] = {
     "learning_objectives": "learning_objective",
     "key_terms": "definition",
     "core_lessons": "factual_explanation",
-    "worked_examples": "pedagogical_example",
+    # An example and the explanation beside it are different claims, and the
+    # contract treats them differently. The worked example may be invented --
+    # a fresh problem in the book's style teaches fine. Its EXPLANATION may
+    # not: the contract allows only source_grounded or
+    # insufficient_source_evidence there, because an explanation of how the
+    # book's method works must be the book's, not a model's account of it.
+    # Mapping both fields to one kind let generated prose stand as the
+    # explanation of a worked example, which the contract refuses outright.
+    "worked_example": "pedagogical_example",
+    "worked_example_explanation": "factual_explanation",
     "misconception": "misconception_statement",
     "correction": "misconception_correction",
     "practice_question": "practice_question",
@@ -227,7 +236,13 @@ def _approval_for(
     )
 
 
-def clean_chunks_from_pages(pages: list[dict[str, Any]], slug: str, chapter_number: int) -> list[dict[str, Any]]:
+def clean_chunks_from_pages(
+    pages: list[dict[str, Any]],
+    slug: str,
+    chapter_number: int,
+    *,
+    source_pdf: str | None = None,
+) -> list[dict[str, Any]]:
     """A clean-chunks artifact derived deterministically from the parsed pages.
 
     One chunk per page, ids from the page number, so regenerating the same
@@ -240,7 +255,12 @@ def clean_chunks_from_pages(pages: list[dict[str, Any]], slug: str, chapter_numb
     return [
         {
             "node_id": f"{slug}:p{page['page']}",
-            "source_pdf": page.get("source_pdf", slug),
+            # The DOCUMENT the chunk belongs to, which is not the slug. The
+            # contract cross-checks this against the book's own `source_pdf`
+            # and refuses a chunk that names a different document -- exactly
+            # the check that catches a claim grounded in the wrong book. A
+            # slug default silently failed it on every chunk.
+            "source_pdf": source_pdf or page.get("source_pdf") or slug,
             "chapter_number": chapter_number,
             "text": page.get("markdown") or page.get("text") or "",
         }

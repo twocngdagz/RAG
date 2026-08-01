@@ -85,8 +85,8 @@ def _claims(chapter: dict[str, Any], number: int) -> list[tuple[str, str, str]]:
         out.append((f"{prefix}.core_lessons.{index}.explanation", "core_lessons", lesson["explanation"]["text"]))
 
     for index, example in enumerate(chapter["worked_examples"]):
-        out.append((f"{prefix}.worked_examples.{index}.example", "worked_examples", example["example"]["text"]))
-        out.append((f"{prefix}.worked_examples.{index}.explanation", "worked_examples", example["explanation"]["text"]))
+        out.append((f"{prefix}.worked_examples.{index}.example", "worked_example", example["example"]["text"]))
+        out.append((f"{prefix}.worked_examples.{index}.explanation", "worked_example_explanation", example["explanation"]["text"]))
 
     for index, item in enumerate(chapter["common_misconceptions"]):
         out.append((f"{prefix}.common_misconceptions.{index}.misconception", "misconception", item["misconception"]["text"]))

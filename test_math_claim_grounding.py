@@ -56,6 +56,21 @@ def contract_status(claims: dict) -> dict:
     return validate_book_contract(book_file=book_file, clean_chunks_file=chunks_file)
 
 
+# A worked example may be invented; the explanation beside it may not. The
+# contract allows only source_grounded or insufficient_source_evidence for
+# `worked_examples[].explanation`, so the two fields cannot share a kind --
+# mapping both to `pedagogical_example` let generated prose stand as the
+# explanation of a worked example, and the contract refuses that outright.
+grounded = grounding.build_claim(SENTENCE, "worked_example_explanation", CHUNKS)
+check("a worked example's explanation grounds when it is the book's words",
+      grounded["origin"] == "source_grounded", grounded["origin"])
+check("a worked example's explanation is never generated",
+      grounding.FIELD_CLAIM_KINDS["worked_example_explanation"] not in grounding.GENERATED_CLAIM_KINDS)
+invented = grounding.build_claim("Nothing on any page resembles this sentence at all.",
+                                 "worked_example_explanation", CHUNKS)
+check("an invented explanation of a worked example refuses",
+      invented["origin"] == "insufficient_source_evidence", invented["origin"])
+
 print("the origin comes from the KIND first")
 
 for field, expected in [
@@ -64,7 +79,7 @@ for field, expected in [
     ("practice_answer", "pedagogical_generation"),
     ("review_checklist", "pedagogical_generation"),
     ("misconception", "pedagogical_generation"),
-    ("worked_examples", "pedagogical_generation"),
+    ("worked_example", "pedagogical_generation"),
 ]:
     # The text is lifted verbatim from the page, so a text-matching rule would
     # call every one of these grounded. None of them is the book's claim.
@@ -122,8 +137,8 @@ chapter = {
     "learning_objectives": [grounding.build_claim(LONGER, "learning_objectives", CHUNKS)],
     "key_terms": [{"term": "quarter", "meaning": grounding.build_claim(SENTENCE, "key_terms", CHUNKS)}],
     "core_lessons": [{"title": "Fractions", "explanation": grounding.build_claim(LONGER, "core_lessons", CHUNKS)}],
-    "worked_examples": [{"title": "Example", "example": grounding.build_claim(SENTENCE, "worked_examples", CHUNKS),
-                          "explanation": grounding.build_claim(LONGER, "core_lessons", CHUNKS)}],
+    "worked_examples": [{"title": "Example", "example": grounding.build_claim(SENTENCE, "worked_example", CHUNKS),
+                          "explanation": grounding.build_claim(LONGER, "worked_example_explanation", CHUNKS)}],
     "common_misconceptions": [{"misconception": grounding.build_claim(SENTENCE, "misconception", CHUNKS),
                                "correction": grounding.build_claim(LONGER, "correction", CHUNKS)}],
     "practice_questions": [{"question": grounding.build_claim(SENTENCE, "practice_question", CHUNKS),

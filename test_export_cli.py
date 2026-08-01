@@ -22,9 +22,12 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 FIXTURES = ROOT / "tests" / "fixtures"
-BOOK = FIXTURES / "book_learning_materials_v2.valid.json"
-CHUNKS = FIXTURES / "book_learning_materials_v2.clean_chunks.json"
-MANIFEST = FIXTURES / "b11" / "sample-v2.chapter01.export_manifest.json"
+# One book, one pack, one chapter. The triple must agree: a source describing
+# `sample-v2` exported under math5a's rules is refused by the exporter, and a
+# test that did that was asserting CLI behaviour it could never reach.
+BOOK = FIXTURES / "b11" / "math5a.chapter03.book_learning_materials.json"
+CHUNKS = FIXTURES / "b11" / "math5a.chapter03.clean_chunks.json"
+MANIFEST = FIXTURES / "b11" / "math5a.chapter03.export_manifest.json"
 
 fails: list[str] = []
 
@@ -41,7 +44,7 @@ def run(book: Path, manifest: Path, out: Path) -> subprocess.CompletedProcess:
             sys.executable,
             str(ROOT / "export_lesson_package.py"),
             "--slug", "math5a",
-            "--chapter", "1",
+            "--chapter", "3",
             "--book", str(book),
             "--clean-chunks", str(CHUNKS),
             "--manifest", str(manifest),
@@ -68,7 +71,7 @@ package = json.loads(out.read_text()) if out.exists() else {}
 
 check("reloads as the same package", package.get("content_hash") is not None)
 check("names its schema", package.get("schema_version") == "learning.package.v1", str(package.get("schema_version")))
-check("carries the lesson", package.get("lesson", {}).get("stable_key") == "sample-v2:ch01")
+check("carries the lesson", package.get("lesson", {}).get("stable_key") == "math5a:ch03")
 check("carries objectives and activities", bool(package.get("objectives")) and bool(package.get("activities")))
 
 
@@ -81,12 +84,17 @@ check("the rerun exits zero", rerun.returncode == 0, rerun.stderr[:200])
 
 reloaded = json.loads(second.read_text()) if second.exists() else {}
 
+# Both hashes ABSENT compared equal, so a run that wrote nothing at all passed
+# this check. The hash must exist before it can agree with anything.
 check(
     "the same source and mapping give the same hash",
-    reloaded.get("content_hash") == package.get("content_hash"),
-    f"{reloaded.get('content_hash', '')[:12]} vs {package.get('content_hash', '')[:12]}",
+    bool(reloaded.get("content_hash")) and reloaded.get("content_hash") == package.get("content_hash"),
+    f"{reloaded.get('content_hash') or 'missing'} vs {package.get('content_hash') or 'missing'}",
 )
-check("the two files are byte-identical", second.read_text() == out.read_text())
+check(
+    "the two files are byte-identical",
+    second.exists() and out.exists() and second.read_text() == out.read_text(),
+)
 
 
 print("\nan invalid source writes nothing")
