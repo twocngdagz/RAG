@@ -10,19 +10,30 @@ Every refusal names a path. "The chapter cannot be exported" is not actionable;
 "activities.1.elements.0 -> core_lessons.9.explanation does not resolve" tells
 whoever fixes it exactly which line of the mapping is wrong.
 
-    python export_lesson_package.py math5a 3
+    python export_lesson_package.py --slug math5a --chapter 3 \\
+        --book output/math5a.chapter03.book_learning_materials.json \\
+        --clean-chunks output/math5a.clean_chunks.json \\
+        --manifest output/math5a.chapter03.export_manifest.json \\
+        --out output/math5a.chapter03.package.json
 """
 
 from __future__ import annotations
 
+import argparse
 import json
 import sys
+from pathlib import Path
 from typing import Any
 
 import domain_packs
 import lesson_export_manifest as manifest_module
 import lesson_package
 import lesson_provenance
+from book_learning_materials_contract import (
+    BookLearningMaterialsContractError,
+    atomic_write_json,
+    validate_book_contract,
+)
 
 # RAG claim kinds that describe teaching a learner reads. Anything outside this
 # is metadata about the chapter, not content within it.
@@ -287,13 +298,86 @@ def _content_revision(materials: dict[str, Any], chapter_number: int) -> str:
     return f"chapter{chapter_number:02d}@{revision}"
 
 
+def emit_package_file(
+    *,
+    slug: str,
+    chapter_number: int,
+    book_file: str | Path,
+    clean_chunks_file: str | Path,
+    manifest_file: str | Path,
+    output_file: str | Path,
+) -> dict[str, Any]:
+    """Validate the source, assemble the package, and write it — in that order.
+
+    The source contract runs FIRST and must pass. A book that fails it has
+    something wrong with its claims or their grounding, and exporting anyway
+    would launder that into a package Ela then imports as though it were sound —
+    the one place the problem stops being visible.
+
+    Nothing is written unless everything succeeds. A partial package on disk is
+    worse than none: it looks like an artefact, and B11.1 has no way to tell it
+    from a complete one.
+    """
+    audit = validate_book_contract(book_file=book_file, clean_chunks_file=clean_chunks_file)
+
+    if audit.get("status") != "PASS":
+        summary = audit.get("summary") or {}
+        raise ExportRefused(
+            f"{book_file} does not pass the source contract "
+            f"({summary.get('error_count', 'unknown')} errors); no package was written"
+        )
+
+    manifest = json.loads(Path(manifest_file).read_text(encoding="utf-8"))
+    problems = manifest_module.validate(manifest)
+
+    if problems:
+        raise manifest_module.ManifestInvalid(
+            f"{manifest_file} cannot be exported from:\n  " + "\n  ".join(problems)
+        )
+
+    materials = json.loads(Path(book_file).read_text(encoding="utf-8"))
+    package = export_chapter(slug, chapter_number, materials, manifest=manifest)
+
+    # Reused rather than reinvented: a second writer is a second answer to what
+    # "written" means, and they drift.
+    atomic_write_json(Path(output_file), package)
+
+    return package
+
+
+def _main(argv: list[str]) -> int:
+    parser = argparse.ArgumentParser(description="Emit one chapter as a lesson package.")
+    parser.add_argument("--slug", required=True, help="domain pack slug, e.g. math5a")
+    parser.add_argument("--chapter", required=True, type=int)
+    parser.add_argument("--book", required=True, help="generated book learning materials JSON")
+    parser.add_argument("--clean-chunks", required=True, help="clean chunks the book is grounded in")
+    parser.add_argument("--manifest", required=True, help="the declared export mapping")
+    parser.add_argument("--out", required=True, help="where to write the package")
+
+    args = parser.parse_args(argv)
+
+    try:
+        package = emit_package_file(
+            slug=args.slug,
+            chapter_number=args.chapter,
+            book_file=args.book,
+            clean_chunks_file=args.clean_chunks,
+            manifest_file=args.manifest,
+            output_file=args.out,
+        )
+    except (
+        ExportRefused,
+        manifest_module.ManifestMissing,
+        manifest_module.ManifestInvalid,
+        BookLearningMaterialsContractError,
+    ) as error:
+        print(f"refused: {error}", file=sys.stderr)
+        return 1
+
+    print(f"wrote {args.out} ({package['content_hash'][:12]})")
+
+    return 0
+
+
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
-        print(__doc__)
-        raise SystemExit(2)
-
-    pack_slug, chapter_arg = sys.argv[1], int(sys.argv[2])
-    pack = domain_packs.get(pack_slug)
-    source = json.loads(open(pack.base_path(chapter_arg)).read())
-
-    print(json.dumps(export_chapter(pack_slug, chapter_arg, source), indent=2, ensure_ascii=False))
+    raise SystemExit(_main(sys.argv[1:]))

@@ -1,0 +1,113 @@
+{
+  "manifest_schema_version": "lesson.export_manifest.v1",
+  "authored_by": "ela:content-team",
+  "lesson": {
+    "stable_key": "sample-v2:ch01",
+    "title": "Sample chapter",
+    "domain": "math"
+  },
+  "objectives": [
+    {
+      "stable_key": "sample-v2:ch01:core",
+      "statement": "Apply the method this chapter teaches.",
+      "objective_type": "procedure"
+    }
+  ],
+  "activities": [
+    {
+      "stable_key": "sample-v2:ch01:teach",
+      "elements": [
+        "core_lessons.0.explanation",
+        "key_terms.0.meaning",
+        "worked_examples.0.explanation",
+        "common_misconceptions.0.correction"
+      ],
+      "objective_alignments": [
+        {
+          "objective_stable_key": "sample-v2:ch01:core",
+          "alignment_role": "teaches"
+        }
+      ],
+      "type": "response.acknowledgement",
+      "domain": "math",
+      "evidence_mode": "exposure",
+      "answer_visibility": "never",
+      "response": {
+        "kind": "acknowledgement",
+        "required": false
+      },
+      "evaluation": {
+        "authority": "unscored"
+      },
+      "scheduling": {
+        "policy": "skill_practice",
+        "subject": "learning_item"
+      },
+      "resource_links": [
+        {
+          "resource_stable_key": "sample-v2:ch01:examples",
+          "role": "core"
+        }
+      ]
+    },
+    {
+      "stable_key": "sample-v2:ch01:practice",
+      "elements": [
+        "core_lessons.0.explanation"
+      ],
+      "objective_alignments": [
+        {
+          "objective_stable_key": "sample-v2:ch01:core",
+          "alignment_role": "assesses"
+        }
+      ],
+      "type": "response.free_text",
+      "domain": "math",
+      "evidence_mode": "cued_recall",
+      "answer_visibility": "after_submission",
+      "response": {
+        "kind": "short_answer",
+        "required": true
+      },
+      "evaluation": {
+        "authority": "deterministic",
+        "marking": {
+          "marker": "ela.math.fraction_conversion",
+          "expected": "1 1/2",
+          "required_form": "mixed_number"
+        }
+      },
+      "scheduling": {
+        "policy": "skill_practice",
+        "subject": "learning_item"
+      }
+    }
+  ],
+  "resources": [
+    {
+      "stable_key": "sample-v2:ch01:examples",
+      "title": "Worked examples from this chapter",
+      "resource_type": "worked_example_set",
+      "elements": [
+        "worked_examples.0.explanation"
+      ],
+      "links": [
+        {
+          "scope": "lesson",
+          "lesson_stable_key": "sample-v2:ch01",
+          "role": "reference",
+          "availability": "learner_requested",
+          "phase_visibility": {
+            "allowed": [
+              "teach"
+            ]
+          },
+          "assistance_effect": {
+            "type": "reveals_strategy",
+            "evidence_classification": "assisted"
+          }
+        }
+      ]
+    }
+  ]
+}
