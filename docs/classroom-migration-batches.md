@@ -1800,6 +1800,49 @@ It does not belong to B14. B14 owns *when* items return; this is their order wit
 
 Whichever way it goes, record the reasoning: an advisory evaluator influencing what a learner sees next is defensible if the influence is bounded and visible, and indefensible if it silently substitutes for evidence.
 
+#### Ruling: yes — it may, bounded and disclosed
+
+**Advisory model feedback MAY order otherwise-equivalent weak items.** The
+existing behaviour stands. The criterion above decides it, and today's
+behaviour meets all three parts.
+
+**Bounded.** The signal reorders cards inside a bucket that deterministic
+evidence already selected. It cannot put an item in front of a learner that
+evidence did not choose, and it cannot touch a mark, a score, `weak_score`,
+`due_at`, or mastery. Those walls are enforced elsewhere and stay absolute.
+
+**Visible.** The runtime shows *"Returned sooner — recent rubric quality slipped
+on this item, so it came back early for steadier review"* on the exact card the
+signal moved. That is the same disclosure the app already uses wherever
+assistance touches what an attempt means.
+
+**Not a substitute for evidence.** The items are tied on every stored signal.
+The alternative to using the one real signal that distinguishes them is not
+neutrality — it is ordering by accident of insertion. Given a genuine tie, "the
+one that is slipping comes first, and we say so" serves the learner strictly
+better than a coin flip.
+
+The strongest counter-argument is that the cleanest rule is *the model shapes
+nothing*. That buys purity at the cost of information the learner is told
+about, and this section already rejects purity-by-default: either outcome is
+acceptable, leaving it undecided is not.
+
+**Three conditions ride with the ruling**, and its defensibility collapses
+without them:
+
+1. **Absence degrades silently.** When the rubric evaluator is down or the
+   score history is missing, ordering falls back to the stable deterministic
+   order — no signal, no reorder, no error. Two learners' sessions may differ in
+   card order because a model was up or down; that is acceptable for a
+   tie-break and only for a tie-break.
+2. **The note and the reorder are inseparable.** Reordered without the note is
+   the silent influence this criterion calls indefensible. The note without a
+   reorder is a false claim. One implies the other.
+3. **It never decides when anything returns.** This ruling is also ADR-0003's
+   first input: advisory signals may break ties within a deterministically
+   chosen set, and may never decide when an item comes back. B14's scheduling
+   policies must not cross that line.
+
 ### Learner-facing acceptance
 
 **Learner problem solved**
