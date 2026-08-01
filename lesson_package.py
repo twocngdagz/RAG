@@ -64,6 +64,7 @@ REQUIRED_TOP_LEVEL_FIELDS = (
     "content_revision",
     "content_hash",
     "lesson",
+    "competency_framework",
     "objectives",
     "objective_associations",
     "activities",
@@ -124,6 +125,11 @@ def _objective_identity(objective: dict[str, Any]) -> dict[str, Any]:
         "stable_key": objective.get("stable_key"),
         "statement": objective.get("statement"),
         "objective_type": objective.get("objective_type"),
+        # Part of the objective's MEANING, so it belongs in the hash: the same
+        # statement taught and the same statement measured are different
+        # lessons, and a hash that could not tell them apart would call a
+        # change to assessment "the same semantic content".
+        "assessed": bool(objective.get("assessed", False)),
         "provenance": objective.get("provenance"),
     }
 
@@ -165,6 +171,7 @@ def build_package(
     activities: list[dict[str, Any]],
     resources: list[dict[str, Any]] | None = None,
     objective_associations: list[dict[str, Any]] | None = None,
+    competency_framework: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     """Assemble one chapter's package, hash included.
 
@@ -178,6 +185,9 @@ def build_package(
         "pack_version": pack.version,
         "content_revision": content_revision,
         "lesson": lesson,
+        # Which framework these objectives belong to. Carried at the top level
+        # because it describes the whole set, not any one objective.
+        "competency_framework": competency_framework or {},
         "objectives": objectives,
         "objective_associations": objective_associations or [],
         "activities": activities,

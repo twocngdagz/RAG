@@ -112,6 +112,14 @@ def validate(manifest: dict[str, Any]) -> list[str]:
         if not str((objective or {}).get("objective_type") or "").strip():
             problems.append(f"{path}.objective_type is missing")
 
+    framework = manifest.get("competency_framework") or {}
+
+    if not str(framework.get("stable_key") or "").strip():
+        problems.append("competency_framework.stable_key is missing")
+
+    if not str(framework.get("title") or "").strip():
+        problems.append("competency_framework.title is missing")
+
     if not manifest.get("activities"):
         problems.append("activities is empty; a lesson with no activities teaches nothing")
 

@@ -10,12 +10,14 @@
     {
       "stable_key": "math5a:ch03:unlike-fractions",
       "statement": "Add and subtract fractions with unlike denominators.",
-      "objective_type": "procedure"
+      "objective_type": "procedure",
+      "assessed": true
     },
     {
       "stable_key": "math5a:ch03:fraction-as-division",
       "statement": "Explain why a fraction represents a division.",
-      "objective_type": "concept"
+      "objective_type": "concept",
+      "assessed": false
     }
   ],
   "activities": [
@@ -28,34 +30,59 @@
         "common_misconceptions.0.correction"
       ],
       "objective_alignments": [
-        {"objective_stable_key": "math5a:ch03:fraction-as-division", "alignment_role": "teaches"},
-        {"objective_stable_key": "math5a:ch03:unlike-fractions", "alignment_role": "teaches"}
+        {
+          "objective_stable_key": "math5a:ch03:fraction-as-division",
+          "alignment_role": "teaches"
+        },
+        {
+          "objective_stable_key": "math5a:ch03:unlike-fractions",
+          "alignment_role": "teaches"
+        }
       ],
       "type": "response.acknowledgement",
       "domain": "math",
       "evidence_mode": "exposure",
       "answer_visibility": "never",
       "guidance": "Read the explanation, then the worked example, then the correction. Move on when the method makes sense.",
-      "response": {"kind": "acknowledgement", "required": false},
-      "evaluation": {"authority": "unscored"},
-      "scheduling": {"policy": "skill_practice", "subject": "learning_item"},
+      "response": {
+        "kind": "acknowledgement",
+        "required": false
+      },
+      "evaluation": {
+        "authority": "unscored"
+      },
+      "scheduling": {
+        "policy": "skill_practice",
+        "subject": "learning_item"
+      },
       "assembly_reason": "The chapter's explanation, its key term, one worked example and the correction it pairs with",
       "resource_links": [
-        {"resource_stable_key": "math5a:ch03:worked-examples", "role": "core"}
+        {
+          "resource_stable_key": "math5a:ch03:worked-examples",
+          "role": "core"
+        }
       ]
     },
     {
       "stable_key": "math5a:ch03:practice",
-      "elements": ["practice_questions.0.question"],
+      "elements": [
+        "practice_questions.0.question"
+      ],
       "objective_alignments": [
-        {"objective_stable_key": "math5a:ch03:unlike-fractions", "alignment_role": "assesses"}
+        {
+          "objective_stable_key": "math5a:ch03:unlike-fractions",
+          "alignment_role": "assesses"
+        }
       ],
       "type": "response.free_text",
       "domain": "math",
       "evidence_mode": "cued_recall",
       "answer_visibility": "after_submission",
       "guidance": "Work it out and write your answer.",
-      "response": {"kind": "short_answer", "required": true},
+      "response": {
+        "kind": "short_answer",
+        "required": true
+      },
       "evaluation": {
         "authority": "deterministic",
         "marking": {
@@ -64,10 +91,16 @@
           "required_form": "mixed_number"
         }
       },
-      "scheduling": {"policy": "skill_practice", "subject": "learning_item"},
+      "scheduling": {
+        "policy": "skill_practice",
+        "subject": "learning_item"
+      },
       "assembly_reason": "The chapter's own practice question, marked against its stated answer",
       "resource_links": [
-        {"resource_stable_key": "math5a:ch03:worked-examples", "role": "remediation"}
+        {
+          "resource_stable_key": "math5a:ch03:worked-examples",
+          "role": "remediation"
+        }
       ]
     }
   ],
@@ -86,7 +119,12 @@
           "lesson_stable_key": "math5a:ch03",
           "role": "reference",
           "availability": "learner_requested",
-          "phase_visibility": {"allowed": ["teach", "guided_practice"]},
+          "phase_visibility": {
+            "allowed": [
+              "teach",
+              "guided_practice"
+            ]
+          },
           "assistance_effect": {
             "type": "reveals_strategy",
             "evidence_classification": "assisted"
@@ -94,5 +132,9 @@
         }
       ]
     }
-  ]
+  ],
+  "competency_framework": {
+    "stable_key": "math5a:framework",
+    "title": "Singapore Math Primary Mathematics 5A"
+  }
 }

@@ -88,6 +88,11 @@ def export_chapter(
             "stable_key": objective["stable_key"],
             "statement": objective["statement"],
             "objective_type": objective["objective_type"],
+            # Whether a learner is MEASURED against this objective, not merely
+            # taught it. The importer refuses to publish an assessed objective
+            # nothing can produce evidence for, and without this field that
+            # check governs nothing: every objective looks unassessed.
+            "assessed": bool(objective.get("assessed", False)),
             # An objective statement is written in the manifest, by a person, so
             # it is manually authored — and it says so only because that is
             # verifiably how it got there, not because RAG has nothing better.
@@ -98,6 +103,11 @@ def export_chapter(
         }
         for index, objective in enumerate(manifest.get("objectives") or [])
     ]
+
+    # Objectives belong to a framework. Ela's column is required and it will not
+    # guess one, because filing a book's objectives under a framework nobody
+    # chose is worse than refusing the package.
+    competency_framework = manifest["competency_framework"]
 
     resources = [
         _resource(
@@ -117,6 +127,7 @@ def export_chapter(
     ]
 
     package = lesson_package.build_package(
+        competency_framework=competency_framework,
         objective_associations=manifest.get("objective_associations") or [],
         pack=pack,
         content_revision=content_revision,
