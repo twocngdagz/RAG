@@ -29,6 +29,8 @@ from __future__ import annotations
 import re
 from typing import Any
 
+import transformation_review
+
 # Which canonical kind each chapter field carries. A generic replacement for
 # `source_statement` would repeat the original mistake in a valid-looking word.
 FIELD_CLAIM_KINDS: dict[str, str] = {
@@ -120,8 +122,18 @@ def build_claim(
     chunks: list[dict[str, Any]],
     *,
     generator_version: str = "math5a-grounded-base/2.0.0",
+    claim_path: str | None = None,
+    approvals: Any | None = None,
 ) -> dict[str, Any]:
-    """One claim, honest about what stands behind it."""
+    """One claim, honest about what stands behind it.
+
+    `approvals` is a `transformation_review.ApprovalSet` or None. It is consulted
+    ONLY for claims that could be grounded but are not -- prose carrying the
+    book's substance in other words. Without it such claims refuse, which is why
+    it is optional: the refusing behaviour is the safe default, and a caller that
+    forgets to pass approvals loses content rather than gaining unverified
+    provenance.
+    """
     claim_kind = FIELD_CLAIM_KINDS.get(field)
 
     if claim_kind is None:
@@ -145,14 +157,39 @@ def build_claim(
     spans = cover_with_spans(text, chunks)
 
     if spans is None:
+        # Not quotable. That is the START of the transformed question, not the
+        # answer to it: a claim is transformed precisely BECAUSE its words are
+        # not the book's, so no amount of further text comparison can decide
+        # this. Only a person who read both can.
+        approval, refusal = _approval_for(claim_path, text, chunks, approvals)
+
+        if approval is None:
+            return {
+                "text": None,
+                "claim_kind": claim_kind,
+                "origin": "insufficient_source_evidence",
+                "source_chunk_ids": [],
+                "grounded_in_source_chunk_ids": [],
+                "evidence_spans": [],
+                "reason": refusal,
+            }
+
         return {
-            "text": None,
+            "text": text,
             "claim_kind": claim_kind,
-            "origin": "insufficient_source_evidence",
-            "source_chunk_ids": [],
+            "origin": "source_transformed",
+            "source_chunk_ids": unique_preserve_order(
+                [str(chunk_id) for chunk_id in approval["source_chunk_ids"]]
+            ),
             "grounded_in_source_chunk_ids": [],
+            "transformation": approval["transformation_type"],
+            # No evidence spans: there are no source words to quote. Inventing
+            # them by quoting the nearest page would make the claim look
+            # grounded to anyone reading the record later.
             "evidence_spans": [],
-            "reason": "no span in the parsed source covers the whole claim",
+            "reviewed_by": approval["reviewer"]["id"],
+            "reviewed_at": approval.get("reviewed_at"),
+            "reason": None,
         }
 
     return {
@@ -164,6 +201,30 @@ def build_claim(
         "evidence_spans": spans,
         "reason": None,
     }
+
+
+def _approval_for(
+    claim_path: str | None,
+    text: str,
+    chunks: list[dict[str, Any]],
+    approvals: Any | None,
+) -> tuple[dict[str, Any] | None, str]:
+    """The approval licensing this transformation, or why the claim refuses."""
+    if approvals is None:
+        return None, "no span in the parsed source covers the whole claim"
+
+    if not claim_path:
+        # An approval names a claim by path. Consulting the set without one
+        # could only match by text, and approving text wherever it appears is
+        # exactly the corpus-wide exemption this mechanism exists to avoid.
+        return None, "claim has no path, so no approval can be matched to it"
+
+    return approvals.approval_for(
+        claim_path,
+        text,
+        transformation_review.source_revision(chunks),
+        {str(chunk.get("node_id") or "") for chunk in chunks},
+    )
 
 
 def clean_chunks_from_pages(pages: list[dict[str, Any]], slug: str, chapter_number: int) -> list[dict[str, Any]]:
