@@ -1577,12 +1577,16 @@ No visible feature yet. This batch ensures RAG can emit stable, versioned lesson
 - Same semantic content → same hash across runs.
 - Objective graph and alignments serialise.
 - Provenance attached to every generated teaching element.
+- **Scope: ONE representative complete chapter. Corpus-wide manifest authoring is deferred.** The batch ships a single chapter package that exercises every relationship B11.1 imports — objectives, a teaching activity built from ordered claims of several kinds, an evidence-producing activity with an explicit evaluation contract and alignment, a resource with lesson-level link semantics, per-block provenance, and stable identifiers. Authoring manifests for the remaining chapters is content work, not this batch, and B11.1 must not assume the corpus is ready.
+- **The mapping is declared, never inferred.** RAG's generated chapters carry no stable keys, no objective statements and no objective references, so an export manifest supplies them. A chapter without one is refused: deriving an objective from an explanation's wording, or aligning a question to whichever objective sits nearest it, publishes an alignment nobody authored, and evidence is then recorded against goals nobody set.
 
 **Tests (RAG)**
 - `test_package_schema.py` — required top-level fields emitted
-- `test_package_schema.py` — hash stable across two runs
+- `test_package_schema.py` — hash stable across two runs, and moved by reordering or realigning the lesson
 - `test_package_schema.py` — objective associations round-trip
 - `test_provenance_continuity.py` — ≥2 planted-error cases, one must flag, one must not
+- `test_export_mapping.py` — an unmapped chapter is refused rather than inferred, and `manually_authored` requires evidence of authorship
+- `test_representative_package.py` — one complete chapter exercises every relationship B11.1 imports
 
 ---
 
