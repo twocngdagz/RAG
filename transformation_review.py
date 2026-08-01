@@ -39,6 +39,22 @@ from typing import Any
 
 REVIEW_SCHEMA_VERSION = "lesson.transformation_review.v1"
 
+# Advisory recommendations live under their OWN schema in their OWN file, and
+# `load()` reads only the approval schema. That separation is the enforcement:
+# a recommendation cannot license anything, because the code path that licenses
+# claims never opens the file recommendations are in.
+#
+# The distinction is the whole point of the gate. A model reading a claim beside
+# its source and judging it faithful is useful work -- it narrows what a person
+# must look at -- but recording it as an approval would swap "a model wrote
+# this" for "a model approved it" while presenting the result as reviewed.
+RECOMMENDATION_SCHEMA_VERSION = "lesson.transformation_recommendation.v1"
+
+# Who is answering. An approval requires a person; a recommendation requires an
+# honest statement that it is not one.
+REVIEWER_HUMAN = "human"
+REVIEWER_AI_ASSISTED = "ai_assisted"
+
 VERDICT_FAITHFUL = "faithful"
 VERDICT_UNFAITHFUL = "unfaithful"
 VERDICTS = (VERDICT_FAITHFUL, VERDICT_UNFAITHFUL)
@@ -254,7 +270,86 @@ def validate(manifest: Any, *, chapter_number: int) -> list[str]:
             for field in ("id", "name"):
                 if not str(reviewer.get(field) or "").strip():
                     problems.append(f"{where} reviewer is missing {field}")
+
+            kind = reviewer.get("kind")
+
+            if kind != REVIEWER_HUMAN:
+                # An approval is a person's statement. Anything else answering
+                # here -- a model, a script, an unstated kind -- would make the
+                # record claim a human check that did not happen, which is
+                # worse than having no record at all.
+                problems.append(
+                    f"{where} reviewer.kind is {kind!r}; an authoritative approval "
+                    f"requires {REVIEWER_HUMAN!r}"
+                )
         elif reviewer is not None:
             problems.append(f"{where} reviewer must be an object identifying a person")
+
+    return problems
+
+
+def validate_recommendations(manifest: Any, *, chapter_number: int) -> list[str]:
+    """Everything wrong with an ADVISORY recommendation file.
+
+    Deliberately a separate function from `validate()`, over a separate schema,
+    so that no caller can pass one where the other is expected and have it come
+    back clean. A recommendation carries `recommended_verdict`, never `verdict`:
+    the field an approval is read for does not exist here, so a recommendation
+    handed to the approval path fails on missing fields rather than licensing
+    anything.
+    """
+    problems: list[str] = []
+
+    if not isinstance(manifest, dict):
+        return ["recommendations manifest must be an object"]
+
+    if manifest.get("schema_version") != RECOMMENDATION_SCHEMA_VERSION:
+        problems.append(
+            f"schema_version must be {RECOMMENDATION_SCHEMA_VERSION!r}, "
+            f"got {manifest.get('schema_version')!r}"
+        )
+
+    if manifest.get("chapter_number") != chapter_number:
+        problems.append(f"recommendations are for chapter {manifest.get('chapter_number')!r}")
+
+    entries = manifest.get("recommendations")
+
+    if not isinstance(entries, list):
+        return problems + ["recommendations must be a list"]
+
+    for index, entry in enumerate(entries):
+        where = f"recommendations[{index}]"
+
+        if not isinstance(entry, dict):
+            problems.append(f"{where} must be an object")
+            continue
+
+        if "verdict" in entry:
+            # The one field name that would let a recommendation be mistaken
+            # for an approval by anything reading loosely.
+            problems.append(f"{where} must not carry `verdict`; recommendations advise, they do not decide")
+
+        if entry.get("recommended_verdict") not in VERDICTS:
+            problems.append(f"{where} needs a recommended_verdict of {' or '.join(VERDICTS)}")
+
+        if not str(entry.get("rationale") or "").strip():
+            # A recommendation exists to save a person reading time. One with no
+            # reasoning saves them nothing and invites agreement by default.
+            problems.append(f"{where} must say why")
+
+        author = entry.get("recommended_by")
+
+        if not isinstance(author, dict):
+            problems.append(f"{where} must name what produced the recommendation")
+        else:
+            if author.get("kind") != REVIEWER_AI_ASSISTED:
+                problems.append(
+                    f"{where} recommended_by.kind must be {REVIEWER_AI_ASSISTED!r} -- "
+                    f"a recommendation states plainly that no person made it"
+                )
+
+            for field in ("id", "name"):
+                if not str(author.get(field) or "").strip():
+                    problems.append(f"{where} recommended_by is missing {field}")
 
     return problems

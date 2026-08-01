@@ -35,7 +35,7 @@ CHUNKS = [
 
 CLAIM = "Dividing a whole by a number creates a fraction."
 PATH = "chapter03.core_lessons.0.explanation"
-REVIEWER = {"id": "roy@aitac.edu.au", "name": "Mederic Roy Beldia"}
+REVIEWER = {"id": "content-owner@example.test", "name": "A Content Owner", "kind": review.REVIEWER_HUMAN}
 
 
 def manifest(**overrides) -> dict:
@@ -186,6 +186,78 @@ check(
 check(
     "a reviewer that is not a person is rejected",
     any("reviewer" in p for p in review.validate(manifest(reviewer="automation"), chapter_number=3)),
+)
+
+# --- an AI recommendation can never become an approval ---------------------- #
+
+AI = {"id": "openai-codex", "name": "OpenAI Codex", "kind": review.REVIEWER_AI_ASSISTED}
+
+check(
+    "an AI-assisted reviewer cannot approve",
+    any("kind" in p for p in review.validate(manifest(reviewer=AI), chapter_number=3)),
+)
+
+check(
+    "a reviewer with no stated kind cannot approve",
+    any("kind" in p for p in review.validate(
+        manifest(reviewer={"id": "someone", "name": "Someone"}), chapter_number=3)),
+)
+
+recommendation = {
+    "schema_version": review.RECOMMENDATION_SCHEMA_VERSION,
+    "chapter_number": 3,
+    "recommendations": [
+        {
+            "claim_path": PATH,
+            "claim_hash": review.claim_hash(CLAIM),
+            "recommended_verdict": review.VERDICT_FAITHFUL,
+            "rationale": "Page 32 demonstrates the division; the claim states the rule it shows.",
+            "recommended_by": AI,
+        }
+    ],
+}
+
+check(
+    "a well-formed recommendation validates as a recommendation",
+    review.validate_recommendations(recommendation, chapter_number=3) == [],
+    "; ".join(review.validate_recommendations(recommendation, chapter_number=3)),
+)
+
+# The load path reads the approval schema only. A recommendation file handed to
+# it fails on the schema line before any claim is licensed.
+check(
+    "a recommendation file is not a valid approval file",
+    review.validate(recommendation, chapter_number=3) != [],
+)
+
+with tempfile.TemporaryDirectory() as tmp:
+    rec_path = Path(tmp) / "recs.json"
+    rec_path.write_text(json.dumps(recommendation), encoding="utf-8")
+    try:
+        review.load(rec_path, chapter_number=3)
+        check("loading a recommendation file as approvals raises", False)
+    except review.ReviewManifestInvalid:
+        check("loading a recommendation file as approvals raises", True)
+
+smuggled = dict(recommendation["recommendations"][0], verdict=review.VERDICT_FAITHFUL)
+check(
+    "a recommendation carrying `verdict` is rejected",
+    any("verdict" in p for p in review.validate_recommendations(
+        {**recommendation, "recommendations": [smuggled]}, chapter_number=3)),
+)
+
+check(
+    "a recommendation claiming to be human is rejected",
+    any("kind" in p for p in review.validate_recommendations(
+        {**recommendation, "recommendations": [dict(recommendation["recommendations"][0], recommended_by=REVIEWER)]},
+        chapter_number=3)),
+)
+
+check(
+    "a recommendation with no rationale is rejected",
+    any("why" in p for p in review.validate_recommendations(
+        {**recommendation, "recommendations": [dict(recommendation["recommendations"][0], rationale="")]},
+        chapter_number=3)),
 )
 
 missing_path = Path(tempfile.gettempdir()) / "definitely-not-a-review-manifest.json"
