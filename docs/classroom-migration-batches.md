@@ -2005,7 +2005,16 @@ Allow one learner to study English, maths, or exam-preparation tracks with appro
 
 ## B16 — Retire the legacy runtime · M · B15
 
-**Does:** Stops composing legacy-format sessions, lets in-flight ones finish, and deletes the legacy projector.
+**Does:** Stops composing legacy-format sessions, lets in-flight ones finish, and deletes the legacy runtime surface.
+
+**What "the legacy runtime surface" is.** Earlier drafts of this batch said "the legacy projector", and B16 found that no class by that name has ever existed in Ela — so a CI check asserting its absence would have passed against an empty repository and proved nothing. The real surface is a keystone declaration and the code that reads it:
+
+- `ActivityTypeRegistry`'s four `'path' => 'legacy'` entries — the declaration every legacy read path keys off
+- `ActivityTypeRegistry::legacyTypes()`, and the two `EvaluatorRegistry` entries that consume it
+- `BuildStudySessionRuntimePayload::legacyCurrentPhase()`
+- `StudySessionController::legacyLearningPhaseItem()` and `::legacyRecallItem()`
+
+**Four things retire together**, on the appointment ADR-0003 set for them: the `legacy_review` policy, the ADR's fidelity clause, the pinned parity test that records the ladder, and the runtime surface above. Deleting the runtime while leaving the archival policy would strand a clause whose expiry condition has fired.
 
 **Required, not optional — this plan adopts it.** A migration is not finished while new sessions can still use the old runtime; leaving two paths live indefinitely is how a learner ends up on a half-migrated journey. ADR §40 happens to list the same thing, but that ADR is still proposed and is not the reason this batch is mandatory here.
 
@@ -2028,21 +2037,21 @@ Every new learner uses one reliable runtime. No learner can land on a half-migra
 - Given a new session is composed, then it always has child activities and snapshots.
 - Given a session was in progress at cutover, when the learner returns, then it completes showing the content originally delivered.
 - Given a completed historical session, when opened, then it renders read-only and cannot be resubmitted.
-- Given the legacy projector is deleted, then no active route depends on it.
+- Given the legacy runtime surface is deleted, then no active route depends on it.
 
 ### Technical acceptance
 - Zero new legacy-format compositions.
 - Zero legacy fallbacks in runtime metrics after the grace period.
-- Legacy projector deleted, not flagged off.
+- Legacy runtime surface deleted, not flagged off — and deletion gated on `php artisan legacy:census` reporting zero in-flight legacy sessions, which is the Hold's own condition made mechanical rather than a calendar. A fixed date strands whoever is mid-session on the last day.
+- English compatibility score columns **retained read-only**, documented: they hold what a learner was told about answers they gave, and dropping them would resolve the auditability condition by destroying it.
 - Historical read path retained.
-- English compatibility score columns either removed or explicitly retained read-only, decided and documented.
 
 ### Technical tests
 - `tests/Feature/LegacyRetirementTest.php` — new sessions always create child activities
 - `tests/Feature/LegacyRetirementTest.php` — in-flight legacy session completes with original content
 - `tests/Feature/LegacyRetirementTest.php` — completed legacy session renders read-only
 - `tests/Feature/LegacyRetirementTest.php` — resubmission of a historical session is rejected
-- Static check in CI: the legacy projector class no longer exists
+- Static check in CI: `ActivityTypeRegistry` declares no `legacy` path. That is the keystone every legacy read path keys off, it is one assertion, and unlike a check for a class that never existed it cannot pass vacuously
 - `tests/Browser/LegacyRetirementBrowserTest.php` — historical session opens read-only
 
 **Hold:** do not delete legacy code while any active session depends on it, or while historical auditability is unresolved.
