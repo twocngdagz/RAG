@@ -195,7 +195,13 @@
       }
     }
   ],
-  "objective_associations": [],
+  "objective_associations": [
+    {
+      "from_objective_stable_key": "math5a:ch03:multiply-fractions",
+      "to_objective_stable_key": "math5a:ch03:multiply-fraction-by-whole",
+      "association_type": "builds_on"
+    }
+  ],
   "resources": [
     {
       "stable_key": "math5a:ch03:review-checklist",
@@ -203,14 +209,7 @@
       "resource_type": "checklist",
       "elements": [
         "review_checklist.0",
-        "review_checklist.1",
-        "review_checklist.2",
-        "review_checklist.3",
-        "review_checklist.4",
-        "review_checklist.5",
-        "review_checklist.6",
-        "review_checklist.7",
-        "review_checklist.8"
+        "review_checklist.1"
       ],
       "links": [
         {
@@ -232,5 +231,34 @@
       ]
     }
   ],
-  "assets": []
+  "assets": [
+    {
+      "stable_key": "math5a:ch03:asset:three-quarters-bar",
+      "media_type": "image/svg+xml",
+      "illustrates": "worked_examples.0",
+      "alt_text": "A bar divided into four equal parts with three of them shaded.",
+      "caption": "Three pizzas shared between four children: each child gets three quarters.",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 160 40\"><rect x=\"0\" y=\"0\" width=\"120\" height=\"40\" fill=\"#cfe8ff\"/><rect x=\"120\" y=\"0\" width=\"40\" height=\"40\" fill=\"#ffffff\"/><g stroke=\"#1f4e79\" stroke-width=\"2\" fill=\"none\"><rect x=\"0\" y=\"0\" width=\"160\" height=\"40\"/><line x1=\"40\" y1=\"0\" x2=\"40\" y2=\"40\"/><line x1=\"80\" y1=\"0\" x2=\"80\" y2=\"40\"/><line x1=\"120\" y1=\"0\" x2=\"120\" y2=\"40\"/></g></svg>",
+      "provenance": {
+        "origin": "pedagogical_generation",
+        "grounded_in_source_chunk_ids": [
+          "math5a:p31"
+        ],
+        "generation_reason": "A bar model drawn from the numbers in the worked example",
+        "generator_version": "rag-diagrams/0.0.0-fixture"
+      }
+    },
+    {
+      "stable_key": "math5a:ch03:asset:two-thirds-photo",
+      "media_type": "image/png",
+      "illustrates": "math5a:ch03:multiply-fractions",
+      "alt_text": "A photograph standing in for a hand-drawn fraction picture.",
+      "caption": "An author's own picture, uploaded through the same gate.",
+      "file": "two-thirds.png",
+      "provenance": {
+        "origin": "manually_authored",
+        "author_reference": "ela:content-team"
+      }
+    }
+  ]
 }
