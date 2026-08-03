@@ -2083,166 +2083,230 @@ ADR §38 Batch 17 (authoring, enrichment, mobile expansion) is excluded as nonca
 
 **The objective, which is also this phase's final acceptance test:**
 
-> Roy opens Ela, enrols in a book, and is taught its lessons the way a classroom
-> teaches: primed, then the lesson's concepts explained one at a time, then its
-> worked examples explained in detail, then practice with assistance, then the
-> quiz alone — and the practised items return on schedule, while the lesson
-> itself stays open to go back and redo. All of it using the methods the book
-> itself teaches.
+> Roy opens Ela, enrols in a book, and is taught its lessons the way a
+> classroom teaches: primed, each concept explained, its worked example
+> walked in detail, a try with help nearby, then the quiz alone — and the
+> practised concepts return on schedule, a different question each time,
+> while the lesson stays open to go back and redo. All of it using the
+> methods and models the book itself teaches, with its pictures.
 
-Phase 1 (B0–B16) built the engine this runs on and proved the pipeline at one
-chapter's width. Its lesson, learned the hard way, applies to this document
-first: **the acceptance sentence must be the intent, not a fragment of it.**
-Every batch below answers to the sentence above, and the phase cannot close
-while `tests/Browser/LearningInElaBrowserTest.php` — that sentence as a test —
-does not exist and pass.
+Phase 1 completed its sentences and missed this one, because it was never
+written down as a sentence that had to pass. This phase opens with it and
+closes on it: `tests/Browser/LearningInElaBrowserTest.php` is that sentence
+as a test (B21), and the phase cannot close while it fails.
 
-What already exists and is not rebuilt: priming, the one-at-a-time teaching
-wizard, guided-then-independent practice with assisted evidence, server
-marking, the spaced scheduler under ADR-0003, tracks and enrolments, the
-package contract and importer. The three gaps this phase closes: the package
-carries a sliver of a lesson; Ela has no book→lesson front door; enrolment
-feeds nothing.
+**Thirteen decisions govern this phase**, made in the grilling session of
+2026-08-03 and recorded with their reasons in `CONTEXT.md`, which rides this
+plan change. The plan below is those decisions cut into batches; where the
+two disagree, `CONTEXT.md` wins and the plan gets fixed. In brief: the
+schedulable card is the **concept** (= its objective, one thing); a
+returning card asks **one question straight**, help on struggle, re-teach
+only on Redo; lessons are **open with the next signposted**; reviews are
+**on-demand mixed quizzes**; enrolment targets the **book**; the first pass
+runs **teach-try per concept**; the **subject preset** decides what a
+session is; enrichment flows **through RAG only, additive by proof**;
+illustrations come **both kinds, human-approved**; the package breaks
+cleanly to **v2**, is **one self-contained fingerprinted file**, and images
+are **generated at authoring time, never live**.
 
-**Four rulings, made by Roy before this draft (2026-08-03):** math5a goes
-first — the widened road is built against the chapter that already survived
-it, and PTE follows on the de-risked path. Lessons present through the
-existing wizard, one block at a time — classroom pacing, not a scrolling
-document. Practice item sets ship whole — every generated item becomes an
-importable activity, so the self-quizzing loop has depth and the scheduler has
-material. And this plan was redrafted from those rulings rather than merged as
-first written.
-
----
-
-## B17 — RAG: export the whole lesson · M · none
-
-**Does:** Widens the export mapping so a package carries the full enriched
-lesson — the teaching document (method pattern, concept explanations, phrase
-bank, techniques, every worked example with its decode/plan/annotations,
-common mistakes) as ordered teach blocks, and the lesson's full practice item
-set as activities. Manifest authoring stays human (objectives, assessed,
-alignments) but gains a generated draft to correct rather than a blank page.
-
-**Learner problem solved:** nothing visible yet; the lesson that later reaches
-a learner is the whole lesson, not two activities.
-
-### Technical acceptance
-- Exporting math5a chapter 3 carries every Coach section as blocks, in order,
-  and every practice item as an activity with alignments.
-- Existing package guarantees hold: same content → same hash; provenance on
-  every element; refusal lists every problem.
-- A manifest draft is generated from the enriched lesson; the author edits and
-  approves it; nothing exports from an unapproved draft.
-
-### Technical tests
-- `test_export_full_lesson.py` — every enriched section survives to blocks, in order
-- `test_export_full_lesson.py` — practice item count in package equals the enriched lesson's
-- `test_export_manifest_draft.py` — draft requires explicit approval before export
+**Standing hold, phase-wide:** when a named test and a batch sentence
+disagree, the sentence wins and the test is wrong. When something
+undecided surfaces mid-batch, work stops and the decision goes to Roy —
+recorded, then built.
 
 ---
 
-## B18 — Ela: the book and lesson shell · M · B17
+## B17 — The v2 package: export everything, import everything · M · none
 
-**Does:** Book (track) page listing its lessons in order with progress; lesson
-page presenting the imported teaching document through the existing wizard —
-one block at a time, classroom pacing — with entry points: Learn (teach pass),
-Practice (this lesson's loop), and Redo, which restarts the teach pass without
-erasing evidence.
+**Does:** Both directions of the road, at full width. RAG exports
+`learning.package.v2`: the whole lesson as ordered teach blocks grouped per
+concept (explain → worked example, the teach-try shape B18 will walk), the
+concepts themselves (each one both card and objective, stated once in the
+manifest), each concept's full question bank, computed SVG diagrams inline,
+approved raster images in a base64 asset section — one self-contained file,
+the content hash covering every byte. Ela's importer learns v2 and refuses
+v1 through the existing major-version machinery: each concept becomes a
+learning item tied 1:1 to its objective, bank exercises become its
+activities, assets unpack and render. Chapter 3 is re-exported and
+re-imported as the proof pair. Manifest authoring stays human but starts
+from a generated draft.
 
-**What the learner sees:** a front door. Choose a book, see its lessons one to
-N, open lesson 3, be taught it concept by concept, example by example.
+**The enrichment rule is enforced here:** re-exporting an enriched chapter
+compares old package to new by element identity and prints "N added,
+0 removed" — anything removed refuses to export as enrichment and must be
+a named edit. Re-import revises forward-only: a learner mid-lesson keeps
+the revision they were given.
 
-### Behaviour expectations
-- Given a lesson is opened, its concepts and examples present one at a time in
-  package order through the same wizard every domain uses.
-- Given the learner finishes teaching, practice for that lesson is offered.
-- Given the learner chooses Redo, the teach pass restarts; prior evidence and
-  schedules are untouched.
-- No PTE- or maths-specific branch anywhere in the shell.
+**Feature accomplished (no browser face of its own):** the one real
+package carries everything RAG knows about chapter 3 — every explanation,
+all seven worked examples, all 43 exercises under their 5 concepts, every
+diagram — and Ela holds it whole.
 
 ### Technical tests
-- `tests/Feature/BookShellTest.php` — lessons listed in package order, per book
-- `tests/Feature/LessonPageTest.php` — teach blocks delivered in order; Redo restarts without touching evidence
-- `tests/Browser/LessonShellBrowserTest.php` — a lesson teaches one block at a time to wrap-up
+- `test_export_v2.py` — every enriched section, example, exercise and image
+  survives to the package by identity, in order
+- `test_export_v2.py` — enrichment re-export prints added/removed; a removal
+  refuses
+- `tests/Feature/V2ImportTest.php` — concepts become cards 1:1 with
+  objectives; banks land under their concepts; image bytes survive intact
+- `tests/Feature/V2ImportTest.php` — v1 package refused by major version;
+  re-import of an enriched chapter revises without touching learner history
 
 ---
 
-## B19 — Ela: enrolment feeds the loop · M · B18
+## B18 — The book front door · M · B17
 
-**Does:** Discharges B15's sentence "switching track changes defaults **and
-available learning content**": enrolling in a book brings its lessons' practice
-items into the learner's scheduled sessions; the dashboard shows due work from
-every enrolment; the per-lesson Practice loop and the dashboard session draw
-from one pool under the ADR's policies.
+**Does:** The learner-facing shell. A book page: ordered lessons,
+"you are here", next lesson signposted, everything clickable, no locks.
+A lesson page with three doors — **Learn** (the teaching pass through the
+existing wizard, teach-try per concept: explanation blocks one at a time,
+the worked example walked in detail, one try with help available, one try
+alone, then the next concept), **Practice** (this lesson's loop), and
+**Redo** (restart the teaching pass; evidence and schedules untouched).
+REVIEW lessons appear in their book positions; opening one starts a
+practice-only mixed session over the lessons it covers — no teaching pass,
+no cards of its own, real evidence.
 
-### Behaviour expectations
-- Given the learner enrols in a book, its items enter their composition pool;
-  given they withdraw, new sessions stop drawing from it and history stands.
-- Given items were practised in a lesson loop, the same states drive their
-  return in dashboard sessions — one schedule, not two.
-- A learner with no enrolment beyond English sees exactly today's behaviour.
+**What you see in the browser:**
+- The math5a book page: nine lessons in order, your position highlighted,
+  "Continue" on the next one.
+- Lesson 3 opened fresh: "add unlike fractions" explained, its example
+  stepped through, "your turn" with help nearby, then alone — then the next
+  concept begins. One block at a time throughout.
+- Using the help on a guided try is visibly counted as assisted.
+- REVIEW A opened: a mixed quiz across Lessons 1–3's concepts, straight
+  questions, no teaching.
+- Redo on a finished lesson: the teaching starts over; the progress page
+  still shows every prior attempt.
 
 ### Technical tests
-- `tests/Feature/EnrolmentPoolTest.php` — enrol → items compose; withdraw → they stop; English-only parity holds
-- `tests/Feature/OneScheduleTest.php` — lesson-loop practice and dashboard sessions share item state
-- `tests/Browser/EnrolBrowserTest.php` — enrol from the book page; next session includes the book
+- `tests/Feature/BookShellTest.php` — lessons in package order; position and
+  signpost derived from completion; no gating anywhere
+- `tests/Feature/LessonPageTest.php` — teach-try arc delivered per concept in
+  order; Redo restarts without touching evidence
+- `tests/Feature/ReviewLessonTest.php` — a review session draws only from
+  covered lessons' banks, due or not, and schedules nothing of its own
+- `tests/Browser/LessonShellBrowserTest.php` — lesson 3's first pass walked:
+  explain → example → helped try (assisted) → alone try, concept by concept
 
 ---
 
-## B20 — math5a, the whole book · M · B17, B18, B19
+## B19 — Enrolment feeds one schedule · M · B18
 
-**Does:** Authors the remaining eight manifests (chapters 1, 2, 4–6 and the
-three reviews), exports each at full width, imports them, and completes the
-book in Ela: nine lessons in order behind one enrolment, each taught through
-the wizard, each with its full practice set scheduling.
+**Does:** Discharges B15's sentence "switching track changes defaults and
+available learning content." Enrolment targets the book; enrolling brings
+its concept cards into the learner's pool; the subject's preset decides
+what a session is (a maths session is ~10 quick questions, a PTE session is
+one writing task). A returning card goes straight to one exercise from its
+bank — **a different exercise than last time** — with the concept's worked
+example offered on repeated struggle, classified as assistance. The lesson
+loop and dashboard sessions share one item state: one schedule, never two.
+Withdrawing stops new draws; history stands. A learner with no enrolment
+beyond English sees exactly today's behaviour, proven by parity test.
 
-**Learner problem solved:** the first complete book. Enrol in math5a and every
-lesson is there, in order, learnable the classroom way.
-
-### Technical acceptance
-- All nine math5a lessons imported and learnable end to end through the shell.
-- Each manifest authored from its generated draft and approved; the importer's
-  refusals during the batch are fixed in manifests, never bypassed.
-- Re-importing any chapter revises in place; learners mid-lesson are untouched.
+**What you see in the browser:**
+- "Enrol" on the math5a book page; the dashboard now shows due work from it.
+- Tomorrow's session: straight questions on exactly the concepts you're
+  shaky on — no re-teaching, a fresh question each return, help appearing
+  only when you struggle.
+- The book page shows each lesson's honest counts: mastered / learning / new
+  per concept.
 
 ### Technical tests
-- `tests/Feature/Math5aBookCoverageTest.php` — nine lessons present, ordered, each with its full item set
-- `tests/Browser/BookJourneyBrowserTest.php` — enrol, open lesson 1, complete it, lesson 2 is next
+- `tests/Feature/EnrolmentPoolTest.php` — enrol → cards compose; withdraw →
+  they stop; English-only composition byte-identical to today
+- `tests/Feature/OneScheduleTest.php` — lesson-loop and dashboard sessions
+  read and write the same card state
+- `tests/Feature/RotationTest.php` — consecutive returns of one card ask
+  different bank exercises
+- `tests/Feature/SessionShapeTest.php` — preset decides: maths ≈ ten
+  questions, PTE = one task
+- `tests/Browser/EnrolBrowserTest.php` — enrol, next session includes the
+  book, straight to questions
+
+---
+
+## B20 — math5a complete, with its pictures · M · B19
+
+**Does:** The remaining eight manifests (generated draft → author approves),
+an enrichment-and-illustration pass over all nine lessons — every concept
+whose model the book names gets its computed diagram (bar models, area
+models, step layouts as SVG); friendly images generated in RAG at authoring
+time, each one author-approved before it ships, none ever generated live —
+then export and import of the whole book. The generic numeric/ratio marker
+registers the normal way so all 200 exercises mark deterministically.
+REVIEW A/B/C wired to their covered lessons.
+
+**What you see in the browser:**
+- The book page shows all nine entries; every teaching lesson opens and
+  teaches; every review runs its mixed quiz.
+- Lesson 3's sharing example shows the pizza area model as a picture, with
+  caption and labels — the models the book itself teaches, visible.
+- No image appears anywhere without approval and provenance behind it.
+
+### Technical tests
+- `tests/Feature/Math5aBookCoverageTest.php` — six teaching lessons, three
+  reviews, every concept present with its bank; every named model concept
+  carries its diagram
+- `tests/Feature/ImageProvenanceTest.php` — an unapproved or
+  provenance-less image refuses at import
+- `tests/Browser/BookJourneyBrowserTest.php` — enrol, learn lesson 1,
+  "Continue" moves to lesson 2; REVIEW A mixes chapters 1–3
 
 ---
 
 ## B21 — The objective as a test · S · B20
 
-**Does:** Writes and passes `tests/Browser/LearningInElaBrowserTest.php`: the
-phase's opening sentence as one browser walk — enrol in math5a, be primed,
-taught lesson 3's method and examples one at a time, guided with assistance,
-quizzed alone, scheduled to return; go back and redo the lesson. The phase is
-complete when this passes, and not before.
-
-**Hold:** no batch in this phase closes on tests narrower than its sentences.
-When a named test and a batch sentence disagree, the sentence wins and the test
-is wrong.
+**Does:** Writes and passes
+`tests/Browser/LearningInElaBrowserTest.php` — the phase's opening sentence
+as one browser walk: enrol in math5a → primed → lesson 3 taught in the
+teach-try rhythm, examples in detail with their pictures → helped try
+counted assisted → quiz alone → a later session returns the weak concept
+straight to a fresh question → REVIEW quiz → Redo the lesson → schedule and
+history intact throughout. The phase is complete when this passes, and not
+before.
 
 ---
 
-## B22 — PTE writing lessons on the proven road · M · B21
+## B22 — PTE writing on the proven road · M · B21
 
-**Does:** The second book takes the road without new engine work — that
-sentence is the batch's claim, and needing engine changes fails it. Manifests
-are authored for the PTE writing-type lessons (Write Essay, Summarize Written
-Text, and any other lesson whose activity types Ela delivers); each exports,
-imports, and is learnable through the same shell behind a PTE enrolment.
-Speaking and listening lessons are **explicitly out**: they need audio
-capabilities that do not exist, importing them must keep refusing until a
-future batch builds those, and the refusal list is printed as this batch's
-coverage report — an honest boundary, not a quiet promise.
+**Does:** The second book takes the road **without engine work** — that
+sentence is the batch's claim, and needing engine changes fails it.
+Manifests for the PTE writing-type lessons (concepts are the writing
+skills; exercises are prompts; the PTE preset makes a session one task).
+Speaking and listening lessons are **explicitly out**: the importer's own
+refusals name them, printed as this batch's coverage report, until an audio
+capability batch exists — stated, not hidden.
+
+**What you see in the browser:**
+- The pte book beside math5a; enrol in both, each with its own progress.
+- A PTE writing lesson taught in the same rhythm; a PTE session is one real
+  writing task with the word band, deterministic checks, and advisory trait
+  feedback.
 
 ### Technical tests
-- `tests/Feature/PteImportCoverageTest.php` — each deliverable lesson imports; each excluded one refuses with its stated reason
-- `tests/Browser/PteLessonBrowserTest.php` — one imported PTE writing lesson: taught, practised, marked, scheduled
+- `tests/Feature/PteImportCoverageTest.php` — each deliverable lesson
+  imports; each excluded one refuses with its stated reason
+- `tests/Browser/PteLessonBrowserTest.php` — one writing lesson: taught,
+  practised, marked, scheduled
 
 ---
+
+## How any new book arrives (standing section)
+
+A new book — IELTS, an interview course, math5b, anything — ships when:
+
+1. its RAG domain pack exists (generation rules for the subject);
+2. its manifests are authored and approved;
+3. every activity type it uses is registered in Ela's runtime **or refused
+   by name** until built.
+
+The book → lesson → concept → exercise model never changes per subject;
+only task types, marking, and modality do. Books without a source PDF are
+legitimate — provenance says authored. Named and deliberately not promised
+here: audio (PTE/IELTS speaking and listening, spoken interviews),
+prerequisite hints from the imported objective graph, and a big-media asset
+channel for video — each a future decision, on the record as not decided.
 
 ## Phase 2 order
 
@@ -2250,8 +2314,6 @@ coverage report — an honest boundary, not a quiet promise.
 17 → 18 → 19 → 20 → 21 → 22
 ```
 
-Six batches, sequential: the road is widened against the proven chapter,
-the shell and enrolment make it learnable, math5a becomes the first complete
-book, the objective test closes the classroom claim, and PTE's writing
-lessons prove the road is reusable. Speaking/listening audio is a future
-batch with its own capability decisions, deliberately not promised here.
+Six batches, sequential. The road first at full width, the front door, the
+schedule, the first whole book with its pictures, the objective as a test,
+then the second book proving the road is reusable.
