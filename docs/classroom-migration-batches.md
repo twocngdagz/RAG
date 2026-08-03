@@ -2104,6 +2104,15 @@ package contract and importer. The three gaps this phase closes: the package
 carries a sliver of a lesson; Ela has no book→lesson front door; enrolment
 feeds nothing.
 
+**Four rulings, made by Roy before this draft (2026-08-03):** math5a goes
+first — the widened road is built against the chapter that already survived
+it, and PTE follows on the de-risked path. Lessons present through the
+existing wizard, one block at a time — classroom pacing, not a scrolling
+document. Practice item sets ship whole — every generated item becomes an
+importable activity, so the self-quizzing loop has depth and the scheduler has
+material. And this plan was redrafted from those rulings rather than merged as
+first written.
+
 ---
 
 ## B17 — RAG: export the whole lesson · M · none
@@ -2181,23 +2190,25 @@ from one pool under the ADR's policies.
 
 ---
 
-## B20 — PTE writing lessons through the road · M · B17, B18, B19
+## B20 — math5a, the whole book · M · B17, B18, B19
 
-**Does:** Authors manifests for the PTE lessons Ela can already deliver — the
-writing-type lessons — exports, imports, and learns them through the shell.
-Speaking and listening lessons are **explicitly out**: they need audio
-capabilities that do not exist, and importing them must keep refusing until a
-batch builds those. The refusal list is printed as the batch's coverage report.
+**Does:** Authors the remaining eight manifests (chapters 1, 2, 4–6 and the
+three reviews), exports each at full width, imports them, and completes the
+book in Ela: nine lessons in order behind one enrolment, each taught through
+the wizard, each with its full practice set scheduling.
+
+**Learner problem solved:** the first complete book. Enrol in math5a and every
+lesson is there, in order, learnable the classroom way.
 
 ### Technical acceptance
-- Every PTE lesson whose activity types Ela delivers is imported and learnable
-  end to end through the shell.
-- Every excluded lesson is excluded by the importer's own stated refusal, and
-  the exclusions are recorded here with their reasons.
+- All nine math5a lessons imported and learnable end to end through the shell.
+- Each manifest authored from its generated draft and approved; the importer's
+  refusals during the batch are fixed in manifests, never bypassed.
+- Re-importing any chapter revises in place; learners mid-lesson are untouched.
 
 ### Technical tests
-- `tests/Feature/PteImportCoverageTest.php` — each deliverable lesson imports; each excluded one refuses with its reason
-- `tests/Browser/PteLessonBrowserTest.php` — one imported PTE writing lesson: taught, practised, marked, scheduled
+- `tests/Feature/Math5aBookCoverageTest.php` — nine lessons present, ordered, each with its full item set
+- `tests/Browser/BookJourneyBrowserTest.php` — enrol, open lesson 1, complete it, lesson 2 is next
 
 ---
 
@@ -2215,11 +2226,32 @@ is wrong.
 
 ---
 
+## B22 — PTE writing lessons on the proven road · M · B21
+
+**Does:** The second book takes the road without new engine work — that
+sentence is the batch's claim, and needing engine changes fails it. Manifests
+are authored for the PTE writing-type lessons (Write Essay, Summarize Written
+Text, and any other lesson whose activity types Ela delivers); each exports,
+imports, and is learnable through the same shell behind a PTE enrolment.
+Speaking and listening lessons are **explicitly out**: they need audio
+capabilities that do not exist, importing them must keep refusing until a
+future batch builds those, and the refusal list is printed as this batch's
+coverage report — an honest boundary, not a quiet promise.
+
+### Technical tests
+- `tests/Feature/PteImportCoverageTest.php` — each deliverable lesson imports; each excluded one refuses with its stated reason
+- `tests/Browser/PteLessonBrowserTest.php` — one imported PTE writing lesson: taught, practised, marked, scheduled
+
+---
+
 ## Phase 2 order
 
 ```
-17 → 18 → 19 → 20 → 21
+17 → 18 → 19 → 20 → 21 → 22
 ```
 
-Five batches, sequential. Speaking/listening audio is a future batch with its
-own capability decisions, deliberately not promised here.
+Six batches, sequential: the road is widened against the proven chapter,
+the shell and enrolment make it learnable, math5a becomes the first complete
+book, the objective test closes the classroom claim, and PTE's writing
+lessons prove the road is reusable. Speaking/listening audio is a future
+batch with its own capability decisions, deliberately not promised here.
