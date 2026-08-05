@@ -28,6 +28,12 @@ live, and read here. It supplies what the chapter cannot:
     resources          only material explicitly declared reusable
     assets             pictures sealed into the package, each saying what it
                        illustrates and where it came from
+    diagrams           pictures COMPUTED from the maths: which drawing, which
+                       worked example or exercise supplies the numbers, and
+                       where in the lesson the learner meets it. The numbers are
+                       read from the material rather than restated here, so a
+                       diagram cannot come to show a different sum from the one
+                       it sits beside
 
 Element references are PATHS into the chapter — `review_checklist.2` — so the
 manifest points at content rather than restating it. A path that does not
@@ -43,6 +49,13 @@ from pathlib import Path
 from typing import Any
 
 import exercise_bank
+import lesson_diagrams
+
+# Where a diagram may read its numbers from: a worked example of the teaching
+# document being published, or one exercise out of a concept's bank. Both are
+# material this package already carries, so the picture and the question a
+# learner meets can never be two different sums.
+DIAGRAM_SOURCES = ("worked_examples.", "exercises.")
 
 # Manifests are AUTHORED, so they live with the code rather than in output/,
 # which is generated and gitignored. This pointed at output/ and B11.1 wrote the
@@ -182,6 +195,32 @@ def validate(manifest: dict[str, Any]) -> list[str]:
 
         if not (asset or {}).get("provenance"):
             problems.append(f"{path}.provenance is missing")
+
+    for index, diagram in enumerate(manifest.get("diagrams") or []):
+        path = f"diagrams.{index}"
+
+        # No caption, no alt text and no provenance here: a computed diagram
+        # writes its own from the numbers it drew. A caption authored by hand
+        # could say quarters while the picture shows thirds, and the learner who
+        # cannot see the picture is the one who would never find out.
+        for field in ("stable_key", "kind", "illustrates", "numbers_from", "appears_after"):
+            if not str((diagram or {}).get(field) or "").strip():
+                problems.append(f"{path}.{field} is missing")
+
+        kind = str((diagram or {}).get("kind") or "").strip()
+
+        if kind and kind not in lesson_diagrams.KINDS:
+            problems.append(
+                f"{path}.kind {kind!r} is not one of {', '.join(lesson_diagrams.KINDS)}"
+            )
+
+        reference = str((diagram or {}).get("numbers_from") or "").strip()
+
+        if reference and not reference.startswith(DIAGRAM_SOURCES):
+            problems.append(
+                f"{path}.numbers_from {reference!r} names neither a worked example "
+                f"({DIAGRAM_SOURCES[0]}<n>) nor an exercise ({DIAGRAM_SOURCES[1]}<item id>)"
+            )
 
     return problems
 

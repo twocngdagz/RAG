@@ -211,6 +211,8 @@ def structural_problems(package: dict[str, Any]) -> list[str]:
         )
     )
 
+    problems.extend(_illustration_problems(package))
+
     problems.extend(_exercise_link_problems(package, resource_keys))
 
     return problems
@@ -367,6 +369,41 @@ def _asset_problems(package: dict[str, Any], *, addressable: set[str]) -> list[s
             )
 
         problems.extend(_provenance_problems(asset.get("provenance"), path))
+
+    return problems
+
+
+def _illustration_problems(package: dict[str, Any]) -> list[str]:
+    """A block that shows a picture must name one this package carries.
+
+    An illustration block pointing at an asset that is not in the file is a hole
+    in the lesson that only appears when a learner reaches it — the package
+    imports cleanly and the picture is simply never there. So the reference is
+    resolved here, where it is still an export refusal.
+    """
+    from teaching_document import ILLUSTRATION_BLOCK_TYPE
+
+    problems: list[str] = []
+    assets = {str(asset.get("stable_key") or "").strip() for asset in package.get("assets") or []}
+
+    for index, block in enumerate((package.get("teaching_document") or {}).get("blocks") or []):
+        if not isinstance(block, dict) or block.get("type") != ILLUSTRATION_BLOCK_TYPE:
+            continue
+
+        path = f"teaching_document.blocks.{index}"
+        content = block.get("content") or {}
+        key = str(content.get("asset_stable_key") or "").strip()
+
+        if not key:
+            problems.append(f"{path} shows a picture but names no asset_stable_key")
+        elif key not in assets:
+            problems.append(f"{path} shows {key!r}, which this package does not carry")
+
+        # Restated on the block as well as on the asset: what a learner reads
+        # under the picture travels with the block that renders it.
+        for field in ("caption", "alt_text"):
+            if not str(content.get(field) or "").strip():
+                problems.append(f"{path}.content.{field} is missing")
 
     return problems
 

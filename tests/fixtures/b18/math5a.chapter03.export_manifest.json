@@ -1,0 +1,285 @@
+{
+  "manifest_schema_version": "lesson.export_manifest.v2",
+  "authored_by": "ela:content-team",
+  "competency_framework": {
+    "stable_key": "math5a:framework",
+    "title": "Singapore Math Primary Mathematics 5A"
+  },
+  "lesson": {
+    "stable_key": "math5a:ch03",
+    "title": "Fractions",
+    "domain": "math"
+  },
+  "teaching_document": {
+    "generator_version": "enrich_lessons/pte_lesson_enrichment.v1"
+  },
+  "concepts": [
+    {
+      "stable_key": "math5a:ch03:add-unlike-fractions",
+      "statement": "Add two fractions with unlike denominators and give the answer in its simplest form.",
+      "objective_type": "procedure",
+      "assessed": true,
+      "bank": {
+        "source": "math_practice_items",
+        "skill": "add_fractions",
+        "type": "response.free_text",
+        "domain": "math",
+        "evidence_mode": "cued_recall",
+        "answer_visibility": "after_submission",
+        "guidance": "Make the bottom numbers match, add the tops, then write the answer in its simplest form.",
+        "response": {
+          "kind": "short_answer",
+          "required": true
+        },
+        "evaluation": {
+          "authority": "deterministic",
+          "marking": {
+            "marker": "ela.math.numeric",
+            "required_form": "simplest_fraction"
+          }
+        },
+        "scheduling": {
+          "policy": "skill_practice",
+          "subject": "learning_item"
+        },
+        "resource_links": [
+          {
+            "resource_stable_key": "math5a:ch03:review-checklist",
+            "role": "remediation"
+          }
+        ]
+      }
+    },
+    {
+      "stable_key": "math5a:ch03:subtract-unlike-fractions",
+      "statement": "Subtract one fraction from another when the bottom numbers are unlike, and give the answer in its simplest form.",
+      "objective_type": "procedure",
+      "assessed": true,
+      "bank": {
+        "source": "math_practice_items",
+        "skill": "subtract_fractions",
+        "type": "response.free_text",
+        "domain": "math",
+        "evidence_mode": "cued_recall",
+        "answer_visibility": "after_submission",
+        "guidance": "Make the bottom numbers match, subtract the tops, then write the answer in its simplest form.",
+        "response": {
+          "kind": "short_answer",
+          "required": true
+        },
+        "evaluation": {
+          "authority": "deterministic",
+          "marking": {
+            "marker": "ela.math.numeric",
+            "required_form": "simplest_fraction"
+          }
+        },
+        "scheduling": {
+          "policy": "skill_practice",
+          "subject": "learning_item"
+        },
+        "resource_links": [
+          {
+            "resource_stable_key": "math5a:ch03:review-checklist",
+            "role": "remediation"
+          }
+        ]
+      }
+    },
+    {
+      "stable_key": "math5a:ch03:multiply-fraction-by-whole",
+      "statement": "Multiply a fraction by a whole number and give the answer in its simplest form.",
+      "objective_type": "procedure",
+      "assessed": true,
+      "bank": {
+        "source": "math_practice_items",
+        "skill": "fraction_times_whole",
+        "type": "response.free_text",
+        "domain": "math",
+        "evidence_mode": "cued_recall",
+        "answer_visibility": "after_submission",
+        "guidance": "Multiply the top number by the whole number, keep the bottom, then write the answer in its simplest form.",
+        "response": {
+          "kind": "short_answer",
+          "required": true
+        },
+        "evaluation": {
+          "authority": "deterministic",
+          "marking": {
+            "marker": "ela.math.numeric",
+            "required_form": "simplest_fraction"
+          }
+        },
+        "scheduling": {
+          "policy": "skill_practice",
+          "subject": "learning_item"
+        },
+        "resource_links": [
+          {
+            "resource_stable_key": "math5a:ch03:review-checklist",
+            "role": "remediation"
+          }
+        ]
+      }
+    },
+    {
+      "stable_key": "math5a:ch03:multiply-fractions",
+      "statement": "Multiply two fractions and give the answer in its simplest form.",
+      "objective_type": "procedure",
+      "assessed": true,
+      "bank": {
+        "source": "math_practice_items",
+        "skill": "fraction_times_fraction",
+        "type": "response.free_text",
+        "domain": "math",
+        "evidence_mode": "cued_recall",
+        "answer_visibility": "after_submission",
+        "guidance": "Multiply the tops together and the bottoms together, then write the answer in its simplest form.",
+        "response": {
+          "kind": "short_answer",
+          "required": true
+        },
+        "evaluation": {
+          "authority": "deterministic",
+          "marking": {
+            "marker": "ela.math.numeric",
+            "required_form": "simplest_fraction"
+          }
+        },
+        "scheduling": {
+          "policy": "skill_practice",
+          "subject": "learning_item"
+        },
+        "resource_links": [
+          {
+            "resource_stable_key": "math5a:ch03:review-checklist",
+            "role": "remediation"
+          }
+        ]
+      }
+    },
+    {
+      "stable_key": "math5a:ch03:divide-fraction-by-whole",
+      "statement": "Divide a fraction by a whole number and give the answer in its simplest form.",
+      "objective_type": "procedure",
+      "assessed": true,
+      "bank": {
+        "source": "math_practice_items",
+        "skill": "fraction_div_whole",
+        "type": "response.free_text",
+        "domain": "math",
+        "evidence_mode": "cued_recall",
+        "answer_visibility": "after_submission",
+        "guidance": "Turn the whole number upside down and multiply, then write the answer in its simplest form.",
+        "response": {
+          "kind": "short_answer",
+          "required": true
+        },
+        "evaluation": {
+          "authority": "deterministic",
+          "marking": {
+            "marker": "ela.math.numeric",
+            "required_form": "simplest_fraction"
+          }
+        },
+        "scheduling": {
+          "policy": "skill_practice",
+          "subject": "learning_item"
+        },
+        "resource_links": [
+          {
+            "resource_stable_key": "math5a:ch03:review-checklist",
+            "role": "remediation"
+          }
+        ]
+      }
+    }
+  ],
+  "objective_associations": [
+    {
+      "from_objective_stable_key": "math5a:ch03:multiply-fractions",
+      "to_objective_stable_key": "math5a:ch03:multiply-fraction-by-whole",
+      "association_type": "builds_on"
+    }
+  ],
+  "resources": [
+    {
+      "stable_key": "math5a:ch03:review-checklist",
+      "title": "What to check before you finish",
+      "resource_type": "checklist",
+      "elements": [
+        "review_checklist.0",
+        "review_checklist.1"
+      ],
+      "links": [
+        {
+          "scope": "lesson",
+          "lesson_stable_key": "math5a:ch03",
+          "role": "reference",
+          "availability": "learner_requested",
+          "phase_visibility": {
+            "allowed": [
+              "teach",
+              "guided_practice"
+            ]
+          },
+          "assistance_effect": {
+            "type": "reveals_strategy",
+            "evidence_classification": "assisted"
+          }
+        }
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "stable_key": "math5a:ch03:asset:three-quarters-bar",
+      "media_type": "image/svg+xml",
+      "illustrates": "worked_examples.0",
+      "alt_text": "A bar divided into four equal parts with three of them shaded.",
+      "caption": "Three pizzas shared between four children: each child gets three quarters.",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 160 40\"><rect x=\"0\" y=\"0\" width=\"120\" height=\"40\" fill=\"#cfe8ff\"/><rect x=\"120\" y=\"0\" width=\"40\" height=\"40\" fill=\"#ffffff\"/><g stroke=\"#1f4e79\" stroke-width=\"2\" fill=\"none\"><rect x=\"0\" y=\"0\" width=\"160\" height=\"40\"/><line x1=\"40\" y1=\"0\" x2=\"40\" y2=\"40\"/><line x1=\"80\" y1=\"0\" x2=\"80\" y2=\"40\"/><line x1=\"120\" y1=\"0\" x2=\"120\" y2=\"40\"/></g></svg>",
+      "provenance": {
+        "origin": "manually_authored",
+        "author_reference": "ela:content-team"
+      }
+    }
+  ],
+  "diagrams": [
+    {
+      "stable_key": "math5a:ch03:diagram:add-unlike-fractions",
+      "kind": "bar_model",
+      "illustrates": "math5a:ch03:add-unlike-fractions",
+      "numbers_from": "worked_examples.2",
+      "appears_after": "worked_examples.2"
+    },
+    {
+      "stable_key": "math5a:ch03:diagram:subtract-unlike-fractions",
+      "kind": "bar_model",
+      "illustrates": "math5a:ch03:subtract-unlike-fractions",
+      "numbers_from": "exercises.mp-011-subtract_fractions",
+      "appears_after": "techniques.2"
+    },
+    {
+      "stable_key": "math5a:ch03:diagram:multiply-fraction-by-whole",
+      "kind": "step_layout",
+      "illustrates": "math5a:ch03:multiply-fraction-by-whole",
+      "numbers_from": "worked_examples.4",
+      "appears_after": "worked_examples.4"
+    },
+    {
+      "stable_key": "math5a:ch03:diagram:multiply-fractions",
+      "kind": "area_model",
+      "illustrates": "math5a:ch03:multiply-fractions",
+      "numbers_from": "exercises.mp-081-fraction_times_fraction",
+      "appears_after": "worked_examples.5"
+    },
+    {
+      "stable_key": "math5a:ch03:diagram:divide-fraction-by-whole",
+      "kind": "step_layout",
+      "illustrates": "math5a:ch03:divide-fraction-by-whole",
+      "numbers_from": "worked_examples.6",
+      "appears_after": "worked_examples.6"
+    }
+  ]
+}

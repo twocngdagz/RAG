@@ -3,9 +3,10 @@
 The exporter TRANSFORMS a declared mapping. It does not decide what a claim
 teaches or assesses — the manifest says that, because the chapter cannot. What
 this module does is follow the mapping into the material, publish the whole
-teaching document as ordered blocks, fill each concept's question bank, seal the
-assets in, translate each claim's provenance into the record Ela validates, and
-hash the result.
+teaching document as ordered blocks, fill each concept's question bank, draw the
+declared diagrams from the numbers the material already carries, seal the assets
+in, translate each claim's provenance into the record Ela validates, and hash
+the result.
 
 Every refusal names a path. "The chapter cannot be exported" is not actionable;
 "resources.0.elements.2 -> review_checklist.9 does not resolve" tells whoever
@@ -35,6 +36,7 @@ import domain_packs
 import enrichment_comparison
 import exercise_bank
 import lesson_assets
+import lesson_diagrams
 import lesson_export_manifest as manifest_module
 import lesson_package
 import lesson_provenance
@@ -147,13 +149,48 @@ def export_chapter(
         for index, resource in enumerate(manifest.get("resources") or [])
     ]
 
+    # Drawn before the assets are sealed, because a computed diagram IS an
+    # asset: it goes through the same gate as a photograph an author uploaded,
+    # and a second way into the asset channel would be a second answer to what
+    # an asset is.
+    try:
+        drawn = [
+            _diagram(
+                declared,
+                blocks=published_document["blocks"],
+                items=practice_items,
+                lesson_stable_key=lesson_stable_key,
+                exercise_keys={
+                    str(exercise.get("stable_key") or "")
+                    for concept in concepts
+                    for exercise in concept.get("exercises") or []
+                },
+                path=f"diagrams.{index}",
+            )
+            for index, declared in enumerate(manifest.get("diagrams") or [])
+        ]
+    except lesson_diagrams.DiagramRefused as error:
+        raise ExportRefused(str(error)) from error
+
+    base_dir = asset_base or Path(".")
+
     try:
         assets = [
-            lesson_assets.build(asset, base_dir=asset_base or Path("."), path=f"assets.{index}")
+            lesson_assets.build(asset, base_dir=base_dir, path=f"assets.{index}")
             for index, asset in enumerate(manifest.get("assets") or [])
+        ] + [
+            lesson_assets.build(diagram["asset"], base_dir=base_dir, path=f"diagrams.{index}")
+            for index, diagram in enumerate(drawn)
         ]
     except lesson_assets.AssetRefused as error:
         raise ExportRefused(str(error)) from error
+
+    try:
+        published_document = teaching_document_module.with_illustrations(
+            published_document, [_illustration(diagram) for diagram in drawn]
+        )
+    except teaching_document_module.TeachingDocumentRefused as error:
+        raise ExportRefused(f"teaching_document -> {error}") from error
 
     package = lesson_package.build_package(
         competency_framework=competency_framework,
@@ -223,6 +260,116 @@ def _concept(
             "author_reference": _author_reference(manifest, path),
         },
         "exercises": exercises,
+    }
+
+
+def _diagram(
+    declared: dict[str, Any],
+    *,
+    blocks: list[dict[str, Any]],
+    items: list[dict[str, Any]],
+    lesson_stable_key: str,
+    exercise_keys: set[str],
+    path: str,
+) -> dict[str, Any]:
+    """One computed diagram: the numbers it reads, and the picture it becomes.
+
+    The manifest says WHICH drawing and WHERE the numbers live; it never says
+    what the numbers are. Restating them here would let a picture and the
+    example beside it drift apart, and a maths picture that disagrees with its
+    question teaches the wrong thing.
+    """
+    reference = str(declared.get("numbers_from") or "").strip()
+    source_text, grounded_in_source_chunk_ids = _diagram_numbers(
+        reference,
+        blocks=blocks,
+        items=items,
+        lesson_stable_key=lesson_stable_key,
+        exercise_keys=exercise_keys,
+        path=path,
+    )
+
+    return {
+        "asset": lesson_diagrams.build(
+            declared,
+            source_text=source_text,
+            source_reference=reference,
+            grounded_in_source_chunk_ids=grounded_in_source_chunk_ids,
+            path=path,
+        ),
+        "appears_after": str(declared.get("appears_after") or "").strip(),
+    }
+
+
+def _diagram_numbers(
+    reference: str,
+    *,
+    blocks: list[dict[str, Any]],
+    items: list[dict[str, Any]],
+    lesson_stable_key: str,
+    exercise_keys: set[str],
+    path: str,
+) -> tuple[str, list[str]]:
+    """The text a diagram reads its numbers from, and what that text rests on."""
+    if reference.startswith("worked_examples."):
+        block = next((block for block in blocks if block.get("key") == reference), None)
+
+        if block is None:
+            raise lesson_diagrams.DiagramRefused(
+                f"{path}.numbers_from names {reference!r}, which this teaching document does not contain"
+            )
+
+        question = str((block.get("content") or {}).get("input") or "").strip()
+
+        if not question:
+            raise lesson_diagrams.DiagramRefused(
+                f"{path}.numbers_from names {reference!r}, which poses no question to draw from"
+            )
+
+        # A diagram drawn from a worked example rests on whatever that example
+        # rests on. It is the same teaching, in a second form.
+        return question, _block_chunks(block)
+
+    item_id = reference[len("exercises."):]
+    item = next((item for item in items if str(item.get("id") or "") == item_id), None)
+
+    if item is None:
+        raise lesson_diagrams.DiagramRefused(
+            f"{path}.numbers_from names exercise {item_id!r}, which the item bank does not have"
+        )
+
+    if f"{lesson_stable_key}:{item_id}" not in exercise_keys:
+        raise lesson_diagrams.DiagramRefused(
+            f"{path}.numbers_from names exercise {item_id!r}, which no concept in this lesson asks; "
+            f"a picture of a question the lesson never puts is met by nobody"
+        )
+
+    question = str(item.get("prompt") or "").strip()
+
+    if not question:
+        raise lesson_diagrams.DiagramRefused(
+            f"{path}.numbers_from names exercise {item_id!r}, which has no question to draw from"
+        )
+
+    # Deliberately empty, and honest: these numbers came from a parametric
+    # generator and rest on no passage of the book, exactly as the exercise
+    # itself does.
+    return question, []
+
+
+def _illustration(diagram: dict[str, Any]) -> dict[str, Any]:
+    """The block a learner meets the picture in, carrying what it says about itself."""
+    asset = diagram["asset"]
+
+    return {
+        "key": f"illustration.{asset['stable_key']}",
+        "appears_after": diagram["appears_after"],
+        "content": {
+            "caption": asset["caption"],
+            "alt_text": asset["alt_text"],
+            "asset_stable_key": asset["stable_key"],
+        },
+        "provenance": asset["provenance"],
     }
 
 
