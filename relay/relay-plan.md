@@ -22,5 +22,18 @@ a removal as enrichment. Prove it on chapter 3: emit
 `output/math5a.chapter03.package.json` in v2 form and report its
 `content_hash` in your summary — the operator carries it to the Ela run.
 
-Acceptance and named tests are in the canonical B17 section. Commit locally
-when the suites pass — report exit codes, not output lines.
+Acceptance and named tests are in the canonical B17 section.
+
+Verification means EVERY suite in the repository, not the ones this batch
+happened to touch:
+
+    for t in test_export_v2 test_package_schema test_export_mapping \
+             test_export_cli test_representative_package test_provenance_continuity; do
+      .venv/bin/python $t.py; echo "$t exit $?"
+    done
+
+A batch is not done until every one exits 0. Report the EXIT CODES, not
+output lines. Do not narrow the list to the suites you edited — a batch is
+judged by what it broke as well as by what it built.
+
+Commit locally when they are all green.
