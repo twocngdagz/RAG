@@ -232,5 +232,42 @@
       ]
     }
   ],
-  "assets": []
+  "assets": [],
+  "diagrams": [
+    {
+      "stable_key": "math5a:ch03:diagram:add-unlike-fractions",
+      "kind": "bar_model",
+      "illustrates": "math5a:ch03:add-unlike-fractions",
+      "numbers_from": "worked_examples.2",
+      "appears_after": "worked_examples.2"
+    },
+    {
+      "stable_key": "math5a:ch03:diagram:subtract-unlike-fractions",
+      "kind": "bar_model",
+      "illustrates": "math5a:ch03:subtract-unlike-fractions",
+      "numbers_from": "exercises.mp-011-subtract_fractions",
+      "appears_after": "techniques.2"
+    },
+    {
+      "stable_key": "math5a:ch03:diagram:multiply-fraction-by-whole",
+      "kind": "step_layout",
+      "illustrates": "math5a:ch03:multiply-fraction-by-whole",
+      "numbers_from": "worked_examples.4",
+      "appears_after": "worked_examples.4"
+    },
+    {
+      "stable_key": "math5a:ch03:diagram:multiply-fractions",
+      "kind": "area_model",
+      "illustrates": "math5a:ch03:multiply-fractions",
+      "numbers_from": "exercises.mp-081-fraction_times_fraction",
+      "appears_after": "worked_examples.5"
+    },
+    {
+      "stable_key": "math5a:ch03:diagram:divide-fraction-by-whole",
+      "kind": "step_layout",
+      "illustrates": "math5a:ch03:divide-fraction-by-whole",
+      "numbers_from": "worked_examples.6",
+      "appears_after": "worked_examples.6"
+    }
+  ]
 }
