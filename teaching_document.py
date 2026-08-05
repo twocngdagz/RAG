@@ -25,6 +25,11 @@ NOTHING IS SILENTLY DROPPED. A document carrying a section this module does not
 know how to publish is REFUSED, not exported without it. Quietly shipping the
 sections we happen to recognise would lose teaching and say nothing, and the
 loss would surface as a learner meeting a lesson with a hole in it.
+
+PICTURES ARE MET IN THE TEACHING, NOT BESIDE IT. A computed diagram enters the
+block list immediately after the block it illustrates, so the wizard shows the
+worked example and then draws it. The block carries the asset's key, its caption
+and its alt text; the picture itself rides in the package's asset channel.
 """
 
 from __future__ import annotations
@@ -68,6 +73,11 @@ BLOCK_TYPE = {
     "mastery_checklist": "checklist",
     "strategy_notes": "strategy_notes",
 }
+
+# What a picture is, as a block. Named once here because the package's
+# structural check reads the same constant: a block of this type must name an
+# asset the package actually contains.
+ILLUSTRATION_BLOCK_TYPE = "illustration"
 
 # Sections a teaching document cannot be published without. The other two are
 # genuinely optional — the Coach page hides them when empty — so an otherwise
@@ -144,6 +154,65 @@ def build(
         "title": str(document.get("lesson_title") or "").strip(),
         "generator_version": generator_version,
         "blocks": blocks,
+    }
+
+
+def with_illustrations(
+    document: dict[str, Any], illustrations: list[dict[str, Any]]
+) -> dict[str, Any]:
+    """The same document, with each picture placed after the block it illustrates.
+
+    Inserted rather than appended, because a diagram that arrived at the end of
+    the lesson would be met after the teaching it explains — and position is
+    what a wizard shows a learner next. Positions are restated afterwards, so
+    the list never carries numbers that describe where a block used to be.
+
+    An illustration naming a block this document does not have is REFUSED. The
+    alternative — dropping it, or parking it at the end — would ship a lesson
+    whose picture sits somewhere nobody chose.
+    """
+    if not illustrations:
+        return document
+
+    blocks = list(document.get("blocks") or [])
+    keys = {str(block.get("key") or "") for block in blocks}
+    placed: dict[str, list[dict[str, Any]]] = {}
+
+    for illustration in illustrations:
+        anchor = str(illustration.get("appears_after") or "").strip()
+
+        if anchor not in keys:
+            raise TeachingDocumentRefused(
+                f"the illustration {illustration.get('key')!r} appears after {anchor!r}, which this "
+                f"teaching document does not contain; a picture with no place in the lesson is "
+                f"met nowhere"
+            )
+
+        placed.setdefault(anchor, []).append(illustration)
+
+    arranged: list[dict[str, Any]] = []
+
+    for block in blocks:
+        arranged.append(block)
+
+        for illustration in placed.get(str(block.get("key") or ""), []):
+            arranged.append(
+                {
+                    "key": illustration["key"],
+                    "type": ILLUSTRATION_BLOCK_TYPE,
+                    "version": 1,
+                    # The picture belongs to the same part of the lesson as the
+                    # teaching it draws, so it carries that section rather than
+                    # a section of its own.
+                    "section": block.get("section"),
+                    "content": illustration["content"],
+                    "provenance": illustration["provenance"],
+                }
+            )
+
+    return {
+        **document,
+        "blocks": [{**block, "position": index} for index, block in enumerate(arranged)],
     }
 
 

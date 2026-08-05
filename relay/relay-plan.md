@@ -9,31 +9,27 @@ the test is wrong.
 
 ### Batch 1
 
-The RAG half of canonical batch **B17 — The v2 package: export everything**.
+The RAG half of canonical batch **B18 — Pictures: diagrams computed,
+friendly images gated**.
 
-Do exactly what the canonical plan's B17 section states for the RAG side:
-`learning.package.v2` — the full teaching document as ordered blocks
-(method, concept explanations, every worked example with
-decode/plan/annotations, common mistakes), concepts as first-class entries
-each simultaneously the objective, each concept's exercise bank, an asset
-channel (SVG inline, raster as base64), the whole file fingerprinted; the
-enrichment comparison that prints "N added, 0 removed" and refuses to export
-a removal as enrichment. Prove it on chapter 3: emit
-`output/math5a.chapter03.package.json` in v2 form and report its
-`content_hash` in your summary — the operator carries it to the Ela run.
+Read `docs/classroom-migration-batches.md` (B18) and `CONTEXT.md` first.
 
-Acceptance and named tests are in the canonical B17 section.
+**Scope for this batch: computed diagrams only.** Build the deterministic
+drawing — bar models, area models, step-by-step layouts — from the numbers
+in a concept's worked examples and exercises, emitted as SVG inside the v2
+package's existing asset channel and referenced by illustration blocks with
+caption and alt-text, provenance `pedagogical_generation`. The same input
+must always draw the same picture, and a test must prove that.
 
-Verification means EVERY suite in the repository, not the ones this batch
-happened to touch:
+**Explicitly NOT in this batch: friendly generated images.** They need a
+hosted image model and an author-approval gate that does not exist yet. Do
+not call any image service, do not add an API key, do not stub one. If your
+work would need one, stop and say so rather than inventing it.
 
-    for t in test_export_v2 test_package_schema test_export_mapping \
-             test_export_cli test_representative_package test_provenance_continuity; do
-      .venv/bin/python $t.py; echo "$t exit $?"
-    done
+Enrich chapter 3 with its diagrams and re-export: the enrichment comparison
+must print its added/removed counts and must refuse a removal, and the
+package hash must change because the assets changed.
 
-A batch is not done until every one exits 0. Report the EXIT CODES, not
-output lines. Do not narrow the list to the suites you edited — a batch is
-judged by what it broke as well as by what it built.
-
+Verification is EVERY suite in the repository, exactly as this playlist's
+header requires, plus the export reproduced end to end. Report EXIT CODES.
 Commit locally when they are all green.

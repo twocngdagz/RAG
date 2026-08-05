@@ -119,13 +119,13 @@ def sample_concept(key: str = "convert", exercises: list[dict] | None = None) ->
     }
 
 
-def sample_asset(content: str = "<svg/>") -> dict:
+def sample_asset(svg: str = "<svg/>") -> dict:
     return {
         "stable_key": "math5a:ch03:asset:bar",
         "media_type": "image/svg+xml",
-        "encoding": "inline",
-        "content": content,
-        "byte_length": len(content.encode("utf-8")),
+        "encoding": "inline_svg",
+        "svg": svg,
+        "byte_length": len(svg.encode("utf-8")),
         "sha256": "not-checked-here",
         "alt_text": "A bar in thirds.",
         "caption": "Two thirds shaded.",
@@ -324,6 +324,11 @@ refused(
     sample_package(assets=[{**sample_asset(), "alt_text": ""}]),
     "alt_text",
     "a picture nobody described is refused",
+)
+refused(
+    sample_package(assets=[{key: value for key, value in sample_asset().items() if key != "svg"}]),
+    "svg is missing",
+    "an inline SVG with no markup in it is refused",
 )
 
 
