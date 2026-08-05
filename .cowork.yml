@@ -18,7 +18,7 @@ models:
       idleTimeout: 900
   reviewer:
     provider: anthropic
-    model: claude-fable-5
+    model: claude-opus-4-8
     cliAdapter:
       kind: claude
       command: claude
