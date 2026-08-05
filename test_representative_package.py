@@ -1,19 +1,19 @@
-"""One complete chapter, exercising every relationship B11.1 has to import.
+"""One complete chapter, exercising every relationship the importer has to build.
 
-B11 ships ONE representative package rather than manifests for every chapter —
-authoring the corpus is content work, not this batch. What this proves is that a
-real chapter can cross into Ela intact: objectives, a teaching activity built
-from ordered claims of several kinds, an evidence-producing activity with a
-marking contract, a resource with lesson-level link semantics, provenance on
-every block, and identifiers stable enough to import against twice.
+The importer's job, stated as relationships: each concept becomes a schedulable
+card tied 1:1 to its objective; the card's bank hangs under it; the teaching
+document stores as ordered blocks; a resource carries lesson-level link
+semantics including what using it costs; pictures come out of the file rather
+than off a network; and every element says where it came from.
 
-A teaching-only manifest would prove none of that. The half B11.1 depends on is
-exactly the half a teaching-only slice leaves out.
+A teaching-only slice would prove none of that. The half the importer depends on
+is exactly the half a teaching-only slice leaves out.
 
     python test_representative_package.py
 """
 from __future__ import annotations
 
+import base64
 import json
 from pathlib import Path
 
@@ -29,71 +29,107 @@ def check(label: str, cond: bool, detail: str = "") -> None:
         fails.append(label)
 
 
-FIXTURES = Path(__file__).resolve().parent / "tests" / "fixtures" / "b11"
-SOURCE = json.loads((FIXTURES / "math5a.chapter03.book_learning_materials.json").read_text())
+ROOT = Path(__file__).resolve().parent
+FIXTURES = ROOT / "tests" / "fixtures" / "b17"
+SOURCE = json.loads((ROOT / "tests" / "fixtures" / "b11" / "math5a.chapter03.book_learning_materials.json").read_text())
 MANIFEST = json.loads((FIXTURES / "math5a.chapter03.export_manifest.json").read_text())
+COACH = json.loads((FIXTURES / "math5a.chapter03.enrichment.json").read_text())
+ITEMS = json.loads((FIXTURES / "math_practice_items.json").read_text())
 
-package = ex.export_chapter("math5a", 3, SOURCE, manifest=MANIFEST)
 
-teaching = next(a for a in package["activities"] if a["stable_key"] == "math5a:ch03:teach")
-practice = next(a for a in package["activities"] if a["stable_key"] == "math5a:ch03:practice")
+def export(manifest=MANIFEST):
+    return ex.export_chapter(
+        "math5a",
+        3,
+        SOURCE,
+        manifest=manifest,
+        teaching_document=COACH,
+        practice_items=ITEMS,
+        asset_base=FIXTURES,
+    )
+
+
+package = export()
 resource = package["resources"][0]
 
 
-print("objectives")
+print("concepts: one card, one objective, one statement")
 
-check("at least one objective", len(package["objectives"]) >= 1, str(len(package["objectives"])))
+check("the lesson introduces its concepts", len(package["concepts"]) == 5, str(len(package["concepts"])))
 check(
-    "every objective states what a learner can do",
-    all(o["statement"].strip() for o in package["objectives"]),
+    "every concept states what a learner can do",
+    all(concept["statement"].strip() for concept in package["concepts"]),
+)
+check(
+    "every concept says whether a learner is measured against it",
+    all("assessed" in concept for concept in package["concepts"]),
+    "an importer refuses to publish an assessed objective nothing can produce evidence for",
+)
+check(
+    "keys are unique, so a card maps 1:1",
+    len({concept["stable_key"] for concept in package["concepts"]}) == len(package["concepts"]),
+)
+check(
+    "the objective graph names concepts this package defines",
+    all(
+        association["from_objective_stable_key"] in {c["stable_key"] for c in package["concepts"]}
+        and association["to_objective_stable_key"] in {c["stable_key"] for c in package["concepts"]}
+        for association in package["objective_associations"]
+    ),
+    str(package["objective_associations"]),
 )
 
 
-print("\na teaching activity built from ordered claims of several kinds")
+print("\nbanks: a returning card has somewhere to draw from")
 
-blocks = teaching["definition"]["presentation"]["blocks"]
-keys = [b["content"]["key"] for b in blocks]
+banks = {concept["stable_key"]: concept["exercises"] for concept in package["concepts"]}
 
-check("draws on more than one kind of chapter content", len(blocks) >= 4, str(keys))
+check("every card has a bank", all(banks.values()), str({k: len(v) for k, v in banks.items()}))
+check("a card can ask something different next time", all(len(bank) > 1 for bank in banks.values()))
 check(
-    "includes a core lesson, a key term, an example and a correction",
-    keys == [
-        "core_lessons_0_explanation",
-        "key_terms_0_meaning",
-        "worked_examples_0_example",
-        "common_misconceptions_0_correction",
-    ],
-    str(keys),
+    "every exercise is a complete activity definition",
+    all(
+        exercise["definition"]["contract"] == "learning.activity.v1"
+        for bank in banks.values()
+        for exercise in bank
+    ),
 )
 check(
-    "keeps the declared order",
-    keys.index("core_lessons_0_explanation") < keys.index("worked_examples_0_example"),
-    "a worked example before its explanation teaches backwards",
+    "every exercise produces evidence against a named concept",
+    all(
+        exercise["objective_alignments"][0]["alignment_role"] == "assesses"
+        for bank in banks.values()
+        for exercise in bank
+    ),
+)
+check(
+    "every exercise can be marked without asking a model",
+    all(
+        exercise["definition"]["evaluation"]["authority"] == "deterministic"
+        and exercise["definition"]["evaluation"]["marking"]["expected"]["plain"]
+        for bank in banks.values()
+        for exercise in bank
+    ),
+)
+check(
+    "exercise keys are unique across the whole lesson",
+    len({exercise["stable_key"] for bank in banks.values() for exercise in bank})
+    == sum(len(bank) for bank in banks.values()),
 )
 
 
-print("\nan evidence-producing activity with a real evaluation contract")
+print("\nthe teaching document: the taught thing, in order")
 
-evaluation = practice["definition"]["evaluation"]
+blocks = package["teaching_document"]["blocks"]
 
-check("collects an answer", practice["definition"]["response"]["kind"] == "short_answer", str(practice["definition"]["response"]))
-check("the answer is required", practice["definition"]["response"]["required"] is True)
-check("marking is deterministic", evaluation["authority"] == "deterministic", str(evaluation))
-check("names a marker", bool(evaluation.get("marking", {}).get("marker")), str(evaluation))
-check("names what it expects", bool(evaluation.get("marking", {}).get("expected")), str(evaluation))
+check("it is stored as ordered blocks", [b["position"] for b in blocks] == list(range(len(blocks))))
+check("every block says what kind of teaching it is", all(b["type"] for b in blocks))
+check("every block is addressable", len({b["key"] for b in blocks}) == len(blocks))
 check(
-    "produces evidence against a named objective",
-    [a["objective_stable_key"] for a in practice["objective_alignments"]] == ["math5a:ch03:unlike-fractions"],
-    str(practice["objective_alignments"]),
-)
-check(
-    "assesses rather than teaches",
-    practice["objective_alignments"][0]["alignment_role"] == "assesses",
-)
-check(
-    "the teaching activity does NOT claim to assess",
-    all(a["alignment_role"] == "teaches" for a in teaching["objective_alignments"]),
-    str(teaching["objective_alignments"]),
+    "the method comes before the examples that use it",
+    next(i for i, b in enumerate(blocks) if b["section"] == "core_method")
+    < next(i for i, b in enumerate(blocks) if b["section"] == "worked_examples"),
+    "a worked example before its method teaches backwards",
 )
 
 
@@ -112,22 +148,42 @@ check(
     str(link.get("assistance_effect")),
 )
 check(
-    "activities link to it by key, and the key resolves",
+    "exercises link to it by key, and the key resolves",
     all(
-        l["resource_stable_key"] == resource["stable_key"]
-        for a in package["activities"]
-        for l in a["resource_links"]
+        reference["resource_stable_key"] == resource["stable_key"]
+        for bank in banks.values()
+        for exercise in bank
+        for reference in exercise["resource_links"]
     ),
 )
 
 
-print("\nprovenance on every block")
+print("\npictures the learner never waits for")
 
-all_blocks = [
-    (a["stable_key"], b)
-    for a in package["activities"]
-    for b in a["definition"]["presentation"]["blocks"]
-] + [(resource["stable_key"], b) for b in resource["definition"]["definition"]["blocks"]]
+assets = {asset["stable_key"]: asset for asset in package["assets"]}
+raster = assets["math5a:ch03:asset:two-thirds-photo"]
+
+check("the picture is in the file, not behind a URL", "content" in raster and "url" not in raster, str(sorted(raster)))
+check("its bytes survive the crossing", base64.b64decode(raster["content"]) == (FIXTURES / "two-thirds.png").read_bytes())
+check("it says what it illustrates", raster["illustrates"] in {c["stable_key"] for c in package["concepts"]})
+check(
+    "every picture carries provenance, caption and alt text",
+    all(asset["provenance"] and asset["caption"] and asset["alt_text"] for asset in package["assets"]),
+)
+
+
+print("\nprovenance on every element")
+
+all_blocks = (
+    [("teaching_document", block) for block in blocks]
+    + [
+        (exercise["stable_key"], block)
+        for bank in banks.values()
+        for exercise in bank
+        for block in exercise["definition"]["presentation"]["blocks"]
+    ]
+    + [(resource["stable_key"], block) for block in resource["definition"]["definition"]["blocks"]]
+)
 
 check("every block carries an origin", all(b["provenance"].get("origin") for _, b in all_blocks), str(len(all_blocks)))
 check(
@@ -142,25 +198,37 @@ check(
     "no block claims a person wrote the book's content",
     all(b["provenance"]["origin"] != "manually_authored" for _, b in all_blocks),
 )
+check(
+    "generated content names the generator that wrote it",
+    all(
+        b["provenance"]["generator_version"]
+        for _, b in all_blocks
+        if b["provenance"]["origin"] == "pedagogical_generation"
+    ),
+)
 
 
 print("\nstable ordering and identifiers")
 
-again = ex.export_chapter("math5a", 3, SOURCE, manifest=MANIFEST)
+again = export()
 
 check("the same chapter exports to the same hash", again["content_hash"] == package["content_hash"])
 check(
     "identifiers are stable across runs",
-    [a["stable_key"] for a in again["activities"]] == [a["stable_key"] for a in package["activities"]],
+    [c["stable_key"] for c in again["concepts"]] == [c["stable_key"] for c in package["concepts"]],
+)
+check(
+    "bank order is stable across runs",
+    [e["stable_key"] for c in again["concepts"] for e in c["exercises"]]
+    == [e["stable_key"] for c in package["concepts"] for e in c["exercises"]],
 )
 
 swapped = json.loads(json.dumps(MANIFEST))
-swapped["activities"] = [swapped["activities"][1], swapped["activities"][0]]
-reordered = ex.export_chapter("math5a", 3, SOURCE, manifest=swapped)
+swapped["concepts"] = [swapped["concepts"][1], swapped["concepts"][0]] + swapped["concepts"][2:]
 
 check(
-    "practising before being taught is a different lesson",
-    reordered["content_hash"] != package["content_hash"],
+    "teaching the concepts in a different order is a different lesson",
+    export(swapped)["content_hash"] != package["content_hash"],
 )
 
 check("the whole package is structurally importable", lesson_package.structural_problems(package) == [])

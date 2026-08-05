@@ -1,0 +1,687 @@
+{
+  "schema_version": "pte_lesson_enrichment.v1",
+  "task_type": "fractions",
+  "lesson_title": "3 Fractions",
+  "source_label": "math5a:ch03",
+  "modality": "reading",
+  "overview": {
+    "what_it_is": "This lesson teaches how fractions link to division. You will add, subtract, multiply, divide, and solve problems.",
+    "format_facts": [
+      {
+        "label": "Main skill",
+        "value": "Work with fractions and mixed numbers"
+      },
+      {
+        "label": "Study time",
+        "value": "About four hours"
+      },
+      {
+        "label": "Models used",
+        "value": "Fraction strips, sharing stories, and bar models"
+      },
+      {
+        "label": "Answer style",
+        "value": "Show each step and write a final sentence"
+      }
+    ],
+    "scoring_factors": [
+      {
+        "name": "Correct method",
+        "what_it_measures": "Whether you chose the right fraction operation"
+      },
+      {
+        "name": "Accurate working",
+        "what_it_measures": "Whether each number and fraction step is correct"
+      },
+      {
+        "name": "Simplest form",
+        "what_it_measures": "Whether the final fraction uses the smallest numbers"
+      },
+      {
+        "name": "Clear answer",
+        "what_it_measures": "Whether the answer matches the question and units"
+      }
+    ],
+    "critical_rules": [
+      "A division can be written as a fraction.",
+      "Make bottom numbers match before adding or subtracting.",
+      "Add or subtract only the top numbers.",
+      "Multiply tops together and bottoms together.",
+      "To divide by a whole number, turn it upside down and multiply.",
+      "Write every remainder when division is not exact."
+    ]
+  },
+  "learning_goals": [
+    "You will write a division as a fraction.",
+    "You will change an improper fraction into a mixed number.",
+    "You will make unlike fractions have matching bottoms.",
+    "You will add and subtract fractions correctly.",
+    "You will add and subtract mixed numbers.",
+    "You will multiply a fraction by a whole number.",
+    "You will multiply two fractions.",
+    "You will divide a fraction by a whole number.",
+    "You will solve fraction problems using bar models."
+  ],
+  "core_method": {
+    "name": "Read → Model → Choose → Match → Work → Check → State",
+    "summary": "Understand the parts first. Choose one operation. Show each step. Then check the answer.",
+    "steps": [
+      {
+        "step": "Read",
+        "detail": "Find what is known and what is asked."
+      },
+      {
+        "step": "Model",
+        "detail": "Picture equal parts or describe a bar model."
+      },
+      {
+        "step": "Choose",
+        "detail": "Choose to add, subtract, multiply, or divide."
+      },
+      {
+        "step": "Match",
+        "detail": "For adding or subtracting, make the bottoms match."
+      },
+      {
+        "step": "Work",
+        "detail": "Show each fraction step in the correct order."
+      },
+      {
+        "step": "Check",
+        "detail": "Make the answer simpler and check its size."
+      },
+      {
+        "step": "State",
+        "detail": "Write the answer in a full sentence."
+      }
+    ],
+    "formula": "$\\text{Read} \\rightarrow \\text{Model} \\rightarrow \\text{Choose} \\rightarrow \\text{Match} \\rightarrow \\text{Work} \\rightarrow \\text{Check} \\rightarrow \\text{State}$"
+  },
+  "techniques": [
+    {
+      "name": "Write division as a fraction",
+      "purpose": "Show equal sharing with one clear fraction.",
+      "how_to": [
+        "Write the number being shared on top.",
+        "Write the number of groups on the bottom.",
+        "Check that each group gets an equal share.",
+        "Make the fraction simpler when possible."
+      ],
+      "example": "$3 \\div 4 = \\frac{3}{4}$.",
+      "why_it_matters": "It links sharing, division, and fractions.",
+      "common_error": "Writing the divisor on top by mistake."
+    },
+    {
+      "name": "Change to a mixed number",
+      "purpose": "Show how many wholes and parts remain.",
+      "how_to": [
+        "Divide the top number by the bottom number.",
+        "The quotient gives the whole-number part.",
+        "The remainder becomes the new top number.",
+        "Keep the same bottom number."
+      ],
+      "example": "$\\frac{11}{4} = 11 \\div 4 = 2\\frac{3}{4}$.",
+      "why_it_matters": "Mixed numbers show the amount more clearly.",
+      "common_error": "Using the quotient as the new bottom number."
+    },
+    {
+      "name": "Make matching bottoms",
+      "purpose": "Prepare unlike fractions for adding or subtracting.",
+      "how_to": [
+        "List multiples of each bottom number.",
+        "Find the first number both lists share.",
+        "Change each fraction without changing its value.",
+        "Check that both bottoms now match."
+      ],
+      "example": "$\\frac{1}{3} = \\frac{2}{6}$ and $\\frac{1}{2} = \\frac{3}{6}$.",
+      "why_it_matters": "Only equal-sized parts can be joined or compared.",
+      "common_error": "Changing the bottom without changing the top."
+    },
+    {
+      "name": "Add or subtract mixed numbers",
+      "purpose": "Work with wholes and fraction parts together.",
+      "how_to": [
+        "Separate the whole parts and fraction parts.",
+        "Make the fraction bottoms match.",
+        "Add or subtract the fraction parts.",
+        "Regroup one whole when the top part is too small.",
+        "Join the whole and fraction parts again."
+      ],
+      "example": "$3\\frac{1}{4} - 1\\frac{2}{3} = 1\\frac{7}{12}$.",
+      "why_it_matters": "Separating parts makes each step easier to see.",
+      "common_error": "Subtracting a larger fraction from a smaller fraction."
+    },
+    {
+      "name": "Multiply fractions",
+      "purpose": "Find a fraction of another amount.",
+      "how_to": [
+        "Write whole numbers over $1$ when needed.",
+        "Multiply the top numbers together.",
+        "Multiply the bottom numbers together.",
+        "Make the final fraction simpler."
+      ],
+      "example": "$\\frac{1}{2} \\times \\frac{3}{4} = \\frac{3}{8}$.",
+      "why_it_matters": "This method works for any two fractions.",
+      "common_error": "Making the bottoms match before multiplying."
+    },
+    {
+      "name": "Divide by a whole number",
+      "purpose": "Split a fraction into equal smaller shares.",
+      "how_to": [
+        "Write the whole number as a fraction over $1$.",
+        "Turn that fraction upside down.",
+        "Change division into multiplication.",
+        "Multiply the tops and bottoms.",
+        "Make the answer simpler."
+      ],
+      "example": "$\\frac{2}{3} \\div 4 = \\frac{2}{3} \\times \\frac{1}{4} = \\frac{1}{6}$.",
+      "why_it_matters": "The reciprocal changes division into an easier product.",
+      "common_error": "Turning the first fraction upside down."
+    },
+    {
+      "name": "Use a bar model",
+      "purpose": "Turn a word problem into visible equal parts.",
+      "how_to": [
+        "Draw one bar for the whole amount.",
+        "Split it into equal parts.",
+        "Label the known fraction parts.",
+        "Mark the missing part with a question mark.",
+        "Choose the operation shown by the model."
+      ],
+      "example": "One bar shows a cake. Ann eats $\\frac{1}{3}$. Her brother eats $\\frac{1}{2}$.",
+      "why_it_matters": "The model shows which amounts must be joined.",
+      "common_error": "Choosing an operation before reading the whole problem."
+    }
+  ],
+  "worked_examples": [
+    {
+      "title": "Write a division as a fraction",
+      "input": "Four children share three identical pizzas equally. What share does each child get?",
+      "decoding": "Three pizzas are shared among four children. Each child gets one equal share.",
+      "plan": "Write the amount shared on top. Write the number of children below.",
+      "model_answer": "There are three pizzas and four equal groups. Write the division as $3 \\div 4$. Then write it as a fraction: $3 \\div 4 = \\frac{3}{4}$. Each child gets $\\frac{3}{4}$ of a pizza.",
+      "annotations": [
+        {
+          "part": "$3$ on top",
+          "comment": "This is the amount being shared."
+        },
+        {
+          "part": "$4$ on the bottom",
+          "comment": "This is the number of equal groups."
+        },
+        {
+          "part": "$\\frac{3}{4}$",
+          "comment": "The fraction shows each child's share."
+        },
+        {
+          "part": "Final sentence",
+          "comment": "It answers using the correct object."
+        }
+      ]
+    },
+    {
+      "title": "Change an improper fraction",
+      "input": "Write $\\frac{11}{4}$ as a mixed number.",
+      "decoding": "The top is larger than the bottom. The fraction contains whole groups.",
+      "plan": "Divide the top by the bottom. Use the remainder as the fraction part.",
+      "model_answer": "Divide the top by the bottom: $11 \\div 4 = 2 \\text{ r } 3$. The quotient is $2$, so there are two wholes. The remainder is $3$, so the fraction part is $\\frac{3}{4}$. Therefore, $\\frac{11}{4} = 2\\frac{3}{4}$. The mixed number is $2\\frac{3}{4}$.",
+      "annotations": [
+        {
+          "part": "$11 \\div 4$",
+          "comment": "Division finds the number of whole groups."
+        },
+        {
+          "part": "$2 \\text{ r } 3$",
+          "comment": "The remainder must be written."
+        },
+        {
+          "part": "$\\frac{3}{4}$",
+          "comment": "The remainder goes over the old bottom."
+        },
+        {
+          "part": "$2\\frac{3}{4}$",
+          "comment": "This joins the wholes and leftover part."
+        }
+      ]
+    },
+    {
+      "title": "Add unlike fractions",
+      "input": "Work out $\\frac{1}{3} + \\frac{1}{2}$.",
+      "decoding": "The bottoms differ. The parts are not the same size yet.",
+      "plan": "Change both fractions into sixths. Then add the top numbers.",
+      "model_answer": "The shared bottom number is $6$. Change each fraction: $\\frac{1}{3} = \\frac{2}{6}$ and $\\frac{1}{2} = \\frac{3}{6}$. Now add: $\\frac{2}{6} + \\frac{3}{6} = \\frac{5}{6}$. The answer is $\\frac{5}{6}$.",
+      "annotations": [
+        {
+          "part": "$6$",
+          "comment": "Both bottom numbers divide into six."
+        },
+        {
+          "part": "$\\frac{2}{6}$",
+          "comment": "This has the same value as one third."
+        },
+        {
+          "part": "$\\frac{3}{6}$",
+          "comment": "This has the same value as one half."
+        },
+        {
+          "part": "$\\frac{5}{6}$",
+          "comment": "Only the top numbers are added."
+        }
+      ]
+    },
+    {
+      "title": "Subtract mixed numbers by regrouping",
+      "input": "Work out $3\\frac{1}{4} - 1\\frac{2}{3}$.",
+      "decoding": "The fraction bottoms differ. The first fraction part is also smaller.",
+      "plan": "Use twelfths. Regroup one whole. Then subtract each part.",
+      "model_answer": "First make the bottoms match: $\\frac{1}{4} = \\frac{3}{12}$ and $\\frac{2}{3} = \\frac{8}{12}$. We cannot subtract $\\frac{8}{12}$ from $\\frac{3}{12}$. Regroup one whole from $3$: $3\\frac{3}{12} = 2\\frac{15}{12}$. Now subtract: $2\\frac{15}{12} - 1\\frac{8}{12} = 1\\frac{7}{12}$. The answer is $1\\frac{7}{12}$.",
+      "annotations": [
+        {
+          "part": "$12$",
+          "comment": "This is a shared bottom number."
+        },
+        {
+          "part": "$3\\frac{3}{12}$",
+          "comment": "The first mixed number is written in twelfths."
+        },
+        {
+          "part": "$2\\frac{15}{12}$",
+          "comment": "One whole becomes twelve twelfths."
+        },
+        {
+          "part": "$1\\frac{7}{12}$",
+          "comment": "The whole and fraction parts are both subtracted."
+        }
+      ]
+    },
+    {
+      "title": "Multiply a fraction by a whole number",
+      "input": "Work out $\\frac{2}{3} \\times 12$.",
+      "decoding": "This asks for two thirds of twelve.",
+      "plan": "Multiply the top by twelve. Then divide by the bottom.",
+      "model_answer": "Multiply the top number by the whole number: $\\frac{2}{3} \\times 12 = \\frac{2 \\times 12}{3}$. This gives $\\frac{24}{3}$. Now divide: $24 \\div 3 = 8$. Therefore, $\\frac{2}{3} \\times 12 = 8$. The answer is $8$.",
+      "annotations": [
+        {
+          "part": "$2 \\times 12$",
+          "comment": "The whole number multiplies the top."
+        },
+        {
+          "part": "$\\frac{24}{3}$",
+          "comment": "The bottom number stays the same."
+        },
+        {
+          "part": "$24 \\div 3$",
+          "comment": "The fraction can now be divided."
+        },
+        {
+          "part": "$8$",
+          "comment": "The answer is a whole number."
+        }
+      ]
+    },
+    {
+      "title": "Multiply two fractions",
+      "input": "Work out $\\frac{3}{5} \\times \\frac{10}{9}$.",
+      "decoding": "Both numbers are fractions. Matching bottoms is not needed.",
+      "plan": "Multiply across. Then make the answer simpler.",
+      "model_answer": "Multiply the top numbers: $3 \\times 10 = 30$. Multiply the bottom numbers: $5 \\times 9 = 45$. So, $\\frac{3}{5} \\times \\frac{10}{9} = \\frac{30}{45}$. Divide both parts by $15$: $\\frac{30 \\div 15}{45 \\div 15} = \\frac{2}{3}$. The answer is $\\frac{2}{3}$.",
+      "annotations": [
+        {
+          "part": "$3 \\times 10$",
+          "comment": "Multiply the two top numbers."
+        },
+        {
+          "part": "$5 \\times 9$",
+          "comment": "Multiply the two bottom numbers."
+        },
+        {
+          "part": "$\\frac{30}{45}$",
+          "comment": "This product is correct but not simplest."
+        },
+        {
+          "part": "$\\frac{2}{3}$",
+          "comment": "Both parts were divided by the same number."
+        }
+      ]
+    },
+    {
+      "title": "Divide a fraction by a whole number",
+      "input": "Work out $\\frac{2}{3} \\div 4$.",
+      "decoding": "Two thirds must be split into four equal shares.",
+      "plan": "Change division into multiplication by one quarter.",
+      "model_answer": "Write the whole number as $\\frac{4}{1}$. Turn it upside down to get $\\frac{1}{4}$. Change division into multiplication: $\\frac{2}{3} \\div 4 = \\frac{2}{3} \\times \\frac{1}{4}$. Multiply: $\\frac{2 \\times 1}{3 \\times 4} = \\frac{2}{12}$. Make it simpler: $\\frac{2}{12} = \\frac{1}{6}$. The answer is $\\frac{1}{6}$.",
+      "annotations": [
+        {
+          "part": "$\\frac{4}{1}$",
+          "comment": "Any whole number can be written over one."
+        },
+        {
+          "part": "$\\frac{1}{4}$",
+          "comment": "This is the reciprocal of four."
+        },
+        {
+          "part": "$\\frac{2}{12}$",
+          "comment": "The tops and bottoms were multiplied."
+        },
+        {
+          "part": "$\\frac{1}{6}$",
+          "comment": "The final fraction is in simplest form."
+        }
+      ]
+    },
+    {
+      "title": "Solve a cake word problem",
+      "input": "Ann ate $\\frac{1}{3}$ of a cake. Her brother ate $\\frac{1}{2}$. What fraction did they eat altogether?",
+      "decoding": "The word altogether means join the two eaten parts.",
+      "plan": "Bar model: one bar is the whole cake. Mark one third and one half. Add both parts.",
+      "model_answer": "Bar model: draw one cake bar. Split it into six equal parts. Ann ate two parts because $\\frac{1}{3} = \\frac{2}{6}$. Her brother ate three parts because $\\frac{1}{2} = \\frac{3}{6}$. Add the eaten parts: $\\frac{2}{6} + \\frac{3}{6} = \\frac{5}{6}$. Ann and her brother ate $\\frac{5}{6}$ of the cake altogether.",
+      "annotations": [
+        {
+          "part": "One whole bar",
+          "comment": "The bar stands for the full cake."
+        },
+        {
+          "part": "Six equal parts",
+          "comment": "Six works for thirds and halves."
+        },
+        {
+          "part": "$\\frac{2}{6} + \\frac{3}{6}$",
+          "comment": "The matching parts can now be joined."
+        },
+        {
+          "part": "$\\frac{5}{6}$",
+          "comment": "The answer is less than one whole cake."
+        }
+      ]
+    },
+    {
+      "title": "Correct an addition mistake",
+      "input": "A pupil writes $\\frac{1}{4} + \\frac{1}{2} = \\frac{2}{6}$. Find and fix the mistake.",
+      "decoding": "The pupil added both tops and bottoms. Fraction parts cannot be added this way.",
+      "plan": "Make matching bottoms first. Then add only the tops.",
+      "model_answer": "The bottoms are $4$ and $2$. Change one half into quarters: $\\frac{1}{2} = \\frac{2}{4}$. Now add: $\\frac{1}{4} + \\frac{2}{4} = \\frac{3}{4}$. The pupil should not add the bottom numbers. The correct answer is $\\frac{3}{4}$.",
+      "annotations": [
+        {
+          "part": "$\\frac{2}{6}$",
+          "comment": "This came from adding both tops and bottoms."
+        },
+        {
+          "part": "$\\frac{1}{2} = \\frac{2}{4}$",
+          "comment": "The fractions now use equal-sized parts."
+        },
+        {
+          "part": "$1 + 2 = 3$",
+          "comment": "Only the top numbers are added."
+        },
+        {
+          "part": "$\\frac{3}{4}$",
+          "comment": "The bottom stays four."
+        }
+      ]
+    }
+  ],
+  "useful_language": [
+    {
+      "category": "Parts of a fraction",
+      "items": [
+        {
+          "item": "numerator",
+          "when_to_use": "This means the top number of a fraction."
+        },
+        {
+          "item": "denominator",
+          "when_to_use": "This means the bottom number of a fraction."
+        },
+        {
+          "item": "fraction",
+          "when_to_use": "Use it for one or more equal parts."
+        },
+        {
+          "item": "whole",
+          "when_to_use": "Use it for one complete item or group."
+        }
+      ]
+    },
+    {
+      "category": "Number forms",
+      "items": [
+        {
+          "item": "mixed number",
+          "when_to_use": "Use it for wholes joined with a fraction."
+        },
+        {
+          "item": "improper fraction",
+          "when_to_use": "Use it when the top is at least the bottom."
+        },
+        {
+          "item": "simplest form",
+          "when_to_use": "Use it when both parts cannot shrink again."
+        },
+        {
+          "item": "equivalent fractions",
+          "when_to_use": "Use it for fractions with the same value."
+        }
+      ]
+    },
+    {
+      "category": "Operation words",
+      "items": [
+        {
+          "item": "sum",
+          "when_to_use": "Use it for the answer to addition."
+        },
+        {
+          "item": "difference",
+          "when_to_use": "Use it for the answer to subtraction."
+        },
+        {
+          "item": "product",
+          "when_to_use": "Use it for the answer to multiplication."
+        },
+        {
+          "item": "quotient",
+          "when_to_use": "Use it for the whole answer in division."
+        }
+      ]
+    },
+    {
+      "category": "Division words",
+      "items": [
+        {
+          "item": "remainder",
+          "when_to_use": "Use it for the amount left after division."
+        },
+        {
+          "item": "reciprocal",
+          "when_to_use": "Use it for a fraction turned upside down."
+        },
+        {
+          "item": "share equally",
+          "when_to_use": "Use it when each group gets the same amount."
+        },
+        {
+          "item": "divisor",
+          "when_to_use": "Use it for the number you divide by."
+        }
+      ]
+    },
+    {
+      "category": "Word-problem clues",
+      "items": [
+        {
+          "item": "altogether",
+          "when_to_use": "This often tells you to add."
+        },
+        {
+          "item": "left",
+          "when_to_use": "This often tells you to subtract."
+        },
+        {
+          "item": "of",
+          "when_to_use": "This often tells you to multiply."
+        },
+        {
+          "item": "shared among",
+          "when_to_use": "This often tells you to divide."
+        }
+      ]
+    }
+  ],
+  "common_mistakes": [
+    {
+      "mistake": "Adding the bottom numbers.",
+      "why_it_hurts": "The answer no longer shows equal-sized parts.",
+      "fix": "Make the bottoms match. Add only the tops."
+    },
+    {
+      "mistake": "Changing only the bottom number.",
+      "why_it_hurts": "This changes the value of the fraction.",
+      "fix": "Multiply the top and bottom by the same number."
+    },
+    {
+      "mistake": "Forgetting to make the answer simpler.",
+      "why_it_hurts": "The answer may be correct but unfinished.",
+      "fix": "Divide both parts by a shared factor."
+    },
+    {
+      "mistake": "Matching bottoms before multiplying fractions.",
+      "why_it_hurts": "It creates extra work and more mistakes.",
+      "fix": "Multiply tops together and bottoms together."
+    },
+    {
+      "mistake": "Turning the first fraction upside down.",
+      "why_it_hurts": "Only the number after the division sign changes.",
+      "fix": "Keep the first fraction. Turn the divisor upside down."
+    },
+    {
+      "mistake": "Leaving out a remainder.",
+      "why_it_hurts": "The written division answer becomes incomplete.",
+      "fix": "Write the remainder, such as $74 \\div 21 = 3 \\text{ r } 11$."
+    },
+    {
+      "mistake": "Subtracting mixed numbers without regrouping.",
+      "why_it_hurts": "The first fraction part may be too small.",
+      "fix": "Trade one whole for matching fraction parts."
+    },
+    {
+      "mistake": "Choosing an operation from one word only.",
+      "why_it_hurts": "The word may not show the full problem.",
+      "fix": "Read the whole question and draw a bar model."
+    }
+  ],
+  "practice_plan": {
+    "time_budget": [
+      {
+        "phase": "Fraction meaning",
+        "minutes": "30",
+        "focus": "Link equal sharing, division, and fractions"
+      },
+      {
+        "phase": "Mixed numbers",
+        "minutes": "35",
+        "focus": "Change between improper fractions and mixed numbers"
+      },
+      {
+        "phase": "Add and subtract",
+        "minutes": "55",
+        "focus": "Make matching bottoms and regroup"
+      },
+      {
+        "phase": "Multiply fractions",
+        "minutes": "40",
+        "focus": "Multiply whole numbers and fraction pairs"
+      },
+      {
+        "phase": "Divide fractions",
+        "minutes": "30",
+        "focus": "Use the reciprocal of a whole number"
+      },
+      {
+        "phase": "Word problems",
+        "minutes": "35",
+        "focus": "Draw bar models and choose operations"
+      },
+      {
+        "phase": "Mixed review",
+        "minutes": "15",
+        "focus": "Check methods, answers, and simplest form"
+      }
+    ],
+    "drills": [
+      {
+        "name": "Division to fraction cards",
+        "instructions": "Write ten divisions as fractions. Check which answers can shrink."
+      },
+      {
+        "name": "Mixed-number ladder",
+        "instructions": "Change eight improper fractions into mixed numbers. Show each division."
+      },
+      {
+        "name": "Shared-bottom hunt",
+        "instructions": "Find the smallest shared bottom for ten fraction pairs."
+      },
+      {
+        "name": "Add and subtract set",
+        "instructions": "Complete six additions and six subtractions. Check every bottom."
+      },
+      {
+        "name": "Multiplication sprint",
+        "instructions": "Multiply five fractions by whole numbers and five fraction pairs."
+      },
+      {
+        "name": "Reciprocal practice",
+        "instructions": "Divide eight fractions by whole numbers. Write every changed step."
+      },
+      {
+        "name": "Bar-model stories",
+        "instructions": "Draw bar models for four problems before doing any arithmetic."
+      },
+      {
+        "name": "Find the mistake",
+        "instructions": "Correct five wrong fraction solutions. Explain each error aloud."
+      }
+    ],
+    "routine": "Warm up with fraction facts. Learn one method. Copy one example. Complete four questions. Check the bottom numbers, operation, simplest form, and final sentence."
+  },
+  "mastery_checklist": [
+    "I can write a division as a fraction.",
+    "I can explain what the top and bottom show.",
+    "I can change an improper fraction into a mixed number.",
+    "I can find a shared bottom number.",
+    "I can add and subtract unlike fractions.",
+    "I can regroup when subtracting mixed numbers.",
+    "I can multiply a fraction by a whole number.",
+    "I can multiply two fractions.",
+    "I can divide a fraction by a whole number.",
+    "I can make my final fraction simpler.",
+    "I can draw a useful bar model.",
+    "I can write a complete answer sentence."
+  ],
+  "strategy_notes": [
+    "Estimate the answer before doing the full working.",
+    "Check whether the answer should exceed one whole.",
+    "Write each changed fraction on a new step.",
+    "Circle the operation words in word problems.",
+    "Draw the bar model before choosing the operation.",
+    "Keep units beside measurements and amounts.",
+    "Check that matching fractions still have equal value.",
+    "When dividing, turn only the second number upside down.",
+    "Use times-table facts to find shared bottoms quickly.",
+    "Read the final sentence against the question again."
+  ],
+  "metadata": {
+    "difficulty": "intermediate",
+    "estimated_study_time": "4 hours",
+    "tags": [
+      "fractions",
+      "division",
+      "mixed_numbers",
+      "unlike_fractions",
+      "fraction_multiplication",
+      "fraction_division",
+      "bar_models",
+      "word_problems"
+    ],
+    "provenance_note": "The lesson follows the supplied chapter facts and examples. It adds standard bar-model guidance, regrouping practice, checking steps, and extra examples for teaching. Output guidance follows the uploaded lesson-enrichment instructions."
+  }
+}

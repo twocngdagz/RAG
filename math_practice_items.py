@@ -36,6 +36,12 @@ from typing import Any, Callable
 
 OUTPUT_FILE = "output/math_practice_items.json"
 
+# Who generated an item, for the provenance record a package carries. Named here
+# because this file IS the generator: an exporter that made up a version string
+# would be recording a fact about authorship that nothing supports. Bump it when
+# a change here alters the questions or the answers this file produces.
+GENERATOR_VERSION = "math-practice-items/1.0.0"
+
 # Capability tags (see the V2 architecture). Only computable-answer capabilities
 # belong in this deterministic slice.
 RECALL = "recall"

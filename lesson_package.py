@@ -1,9 +1,25 @@
-"""What RAG hands Ela: one lesson per chapter, versioned, hashed, and traceable.
+"""What RAG hands Ela: one lesson per chapter, whole, versioned, hashed, traceable.
 
-Nothing here reaches a learner. This is the envelope — Ela imports it in B11.1,
-and only then does anything become visible. The package exists so that what was
-generated can be identified later: which producer made it, under which pack's
-rules, from which source revision, and whether the content has changed since.
+Nothing here reaches a learner. This is the envelope — Ela imports it, and only
+then does anything become visible. The package exists so that what was generated
+can be identified later: which producer made it, under which pack's rules, from
+which source revision, and whether the content has changed since.
+
+v2 CARRIES THE WHOLE LESSON. v1 shipped whichever chapter claims a manifest
+named, arranged as a couple of activities. That is a sample of a lesson, not a
+lesson. v2 carries what a classroom carries:
+
+    teaching_document  the taught thing, as ordered blocks — the method, each
+                       concept explained, every worked example with its
+                       decoding, plan and annotations, the mistakes to avoid
+    concepts           the masterable abilities this lesson introduces. A
+                       concept IS the objective: one entity, one statement,
+                       authored once. It is also the schedulable card.
+    exercises          each concept's question bank, inside the concept, so a
+                       returning card can ask a different question each time
+    assets             the pictures, inside the file — SVG as text, everything
+                       else as base64
+    resources          material declared reusable, with its link semantics
 
 Four versions travel with every package, and they answer different questions:
 
@@ -13,14 +29,22 @@ Four versions travel with every package, and they answer different questions:
                      month is not silently assumed to match today's
     content_revision which REVISION of the source material it came from
 
-The CONTENT HASH covers the lesson as a learner would meet it: the material, the
-order it is met in, which objectives each activity claims to serve, and which
-resources it links. Rerun the producer against unchanged material and the hash is
-identical, so an importer can tell "generated again" from "genuinely different".
-Reorder two activities and it moves, because that is a different lesson. Bump the
-producer's own version and it does not: that is a fact about the tool.
+THE CONTENT HASH COVERS THE FILE, EVERY BYTE OF IT. Not a projection of selected
+identity fields, as v1 hashed: the whole teaching document, every concept and
+every exercise in its bank, the objective graph, the resources, and every byte
+of every asset — which is why "N added, 0 removed" covers pictures too. Nothing
+is excluded but the hash itself.
 
-Activities carry COMPLETE `learning.activity.v1` definitions. Ela validates and
+v1 kept the envelope out so that a producer bump would not look like new
+content. That could not survive contact with a package that carries provenance:
+an assembled resource records which code assembled it, so the producer's version
+is INSIDE the content whether the envelope is hashed or not, and an exclusion
+list that leaks is worse than none. The whole file it is. Two different
+questions now have two different answers, which is the honest split: the hash
+says whether this is the same FILE, and the enrichment comparison says whether
+this is the same LESSON.
+
+Exercises carry COMPLETE `learning.activity.v1` definitions. Ela validates and
 stores that shape directly, so emitting a package-only arrangement of blocks
 would mean the importer had to reconstruct the real thing — and a reconstruction
 is a second definition of what an activity is, in the repository that does not
@@ -34,15 +58,16 @@ import json
 from typing import Any
 
 # The shape of the file. Bump when a reader would have to parse it differently.
-SCHEMA_VERSION = "learning.package.v1"
+SCHEMA_VERSION = "learning.package.v2"
 
 # The code that emits it. Bump when the emitter's behaviour changes.
-PRODUCER_VERSION = "rag-lesson-package/1.0.0"
+PRODUCER_VERSION = "rag-lesson-package/2.0.0"
 
 ACTIVITY_CONTRACT = "learning.activity.v1"
 
 # Ela's vocabulary for how one objective relates to another. Mirrored, and a
-# test asserts the mirror holds.
+# test asserts the mirror holds. A concept IS an objective, so these relate
+# concepts — there is no second graph and no second vocabulary.
 OBJECTIVE_ASSOCIATION_TYPES = (
     "requires",
     "builds_on",
@@ -65,11 +90,19 @@ REQUIRED_TOP_LEVEL_FIELDS = (
     "content_hash",
     "lesson",
     "competency_framework",
-    "objectives",
+    "teaching_document",
+    "concepts",
     "objective_associations",
-    "activities",
     "resources",
+    "assets",
 )
+
+# The only field outside the fingerprint, and only because a value cannot
+# contain its own hash. Stated as an EXCLUSION so that a field added to the
+# package later is covered by default: the opposite would let new content escape
+# the hash silently, which is the one mistake this hash exists to make
+# impossible.
+UNFINGERPRINTED_FIELDS = ("content_hash",)
 
 
 class PackageRefused(Exception):
@@ -77,89 +110,19 @@ class PackageRefused(Exception):
 
 
 def content_hash(package: dict[str, Any]) -> str:
-    """The SHA-256 of the lesson a learner would meet.
+    """The SHA-256 of the package, every byte of it.
 
-    Covers the material AND the relationships between its parts. Hashing the
-    three collections alone would call two lessons identical when one had been
-    reordered, or when an activity had been realigned to a different objective —
-    both of which change what the lesson teaches.
+    Key order is canonicalised so re-serialising the same package cannot move the
+    hash; LIST order is not, because the order blocks and exercises come in is
+    part of what the lesson teaches.
     """
-    semantic = {
-        "lesson": _lesson_identity(package.get("lesson") or {}),
-        # Positions are included explicitly rather than relied on implicitly, so
-        # the hash states that order is part of the meaning.
-        "objectives": [
-            {"position": index, **_objective_identity(objective)}
-            for index, objective in enumerate(package.get("objectives") or [])
-        ],
-        "activities": [
-            {"position": index, **_activity_identity(activity)}
-            for index, activity in enumerate(package.get("activities") or [])
-        ],
-        "objective_associations": [
-            {"position": index, **_association_identity(association)}
-            for index, association in enumerate(package.get("objective_associations") or [])
-        ],
-        "resources": [
-            {"position": index, **_resource_identity(resource)}
-            for index, resource in enumerate(package.get("resources") or [])
-        ],
+    fingerprinted = {
+        field: value for field, value in package.items() if field not in UNFINGERPRINTED_FIELDS
     }
 
-    canonical = json.dumps(semantic, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
+    canonical = json.dumps(fingerprinted, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
 
     return hashlib.sha256(canonical.encode("utf-8")).hexdigest()
-
-
-def _lesson_identity(lesson: dict[str, Any]) -> dict[str, Any]:
-    return {
-        "stable_key": lesson.get("stable_key"),
-        "title": lesson.get("title"),
-        "domain": lesson.get("domain"),
-        "provenance": lesson.get("provenance"),
-    }
-
-
-def _objective_identity(objective: dict[str, Any]) -> dict[str, Any]:
-    return {
-        "stable_key": objective.get("stable_key"),
-        "statement": objective.get("statement"),
-        "objective_type": objective.get("objective_type"),
-        # Part of the objective's MEANING, so it belongs in the hash: the same
-        # statement taught and the same statement measured are different
-        # lessons, and a hash that could not tell them apart would call a
-        # change to assessment "the same semantic content".
-        "assessed": bool(objective.get("assessed", False)),
-        "provenance": objective.get("provenance"),
-    }
-
-
-def _association_identity(association: dict[str, Any]) -> dict[str, Any]:
-    return {
-        "from_objective_stable_key": association.get("from_objective_stable_key"),
-        "to_objective_stable_key": association.get("to_objective_stable_key"),
-        "association_type": association.get("association_type"),
-        "strength": association.get("strength"),
-    }
-
-
-def _activity_identity(activity: dict[str, Any]) -> dict[str, Any]:
-    return {
-        "stable_key": activity.get("stable_key"),
-        # Which objectives this claims to serve is part of what the lesson
-        # teaches, not metadata about it.
-        "objective_alignments": activity.get("objective_alignments"),
-        "definition": activity.get("definition"),
-        "resource_links": activity.get("resource_links"),
-    }
-
-
-def _resource_identity(resource: dict[str, Any]) -> dict[str, Any]:
-    return {
-        "stable_key": resource.get("stable_key"),
-        "definition": resource.get("definition"),
-        "links": resource.get("links"),
-    }
 
 
 def build_package(
@@ -167,11 +130,12 @@ def build_package(
     pack,
     content_revision: str,
     lesson: dict[str, Any],
-    objectives: list[dict[str, Any]],
-    activities: list[dict[str, Any]],
+    teaching_document: dict[str, Any],
+    concepts: list[dict[str, Any]],
     resources: list[dict[str, Any]] | None = None,
     objective_associations: list[dict[str, Any]] | None = None,
     competency_framework: dict[str, Any] | None = None,
+    assets: list[dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     """Assemble one chapter's package, hash included.
 
@@ -185,13 +149,14 @@ def build_package(
         "pack_version": pack.version,
         "content_revision": content_revision,
         "lesson": lesson,
-        # Which framework these objectives belong to. Carried at the top level
-        # because it describes the whole set, not any one objective.
+        # Which framework these concepts belong to. Carried at the top level
+        # because it describes the whole set, not any one of them.
         "competency_framework": competency_framework or {},
-        "objectives": objectives,
+        "teaching_document": teaching_document,
+        "concepts": concepts,
         "objective_associations": objective_associations or [],
-        "activities": activities,
         "resources": resources or [],
+        "assets": assets or [],
     }
 
     package["content_hash"] = content_hash(package)
@@ -203,8 +168,8 @@ def structural_problems(package: dict[str, Any]) -> list[str]:
     """Everything that would stop Ela accepting this, with the path to each.
 
     Returns paths rather than a boolean, because "the package is bad" is not
-    actionable and "activities.1 aligns to objective 'convert' which the package
-    does not define" tells whoever fixes it what to do.
+    actionable and "concepts.1.exercises.0 aligns to objective 'convert' which
+    this package does not define" tells whoever fixes it what to do.
     """
     problems: list[str] = []
 
@@ -212,28 +177,11 @@ def structural_problems(package: dict[str, Any]) -> list[str]:
         if field not in package:
             problems.append(f"missing {field}")
 
-    objective_keys: set[str] = set()
+    concept_keys, exercise_keys, concept_problems = _concept_problems(package)
+    problems.extend(concept_problems)
 
-    for index, objective in enumerate(package.get("objectives") or []):
-        path = f"objectives.{index}"
-        key = str(objective.get("stable_key") or "").strip()
-
-        if not key:
-            problems.append(f"{path} has no stable_key")
-        elif key in objective_keys:
-            # Collapsing duplicates into a set hid this. Two objectives sharing
-            # a key leave the importer no way to decide which one an alignment
-            # or an upsert means.
-            problems.append(f"{path} repeats stable_key {key!r}")
-        else:
-            objective_keys.add(key)
-
-        if not str(objective.get("statement") or "").strip():
-            problems.append(f"{path} has no statement")
-
-        problems.extend(_provenance_problems(objective.get("provenance"), path))
-
-    problems.extend(_association_problems(package, objective_keys))
+    problems.extend(_teaching_document_problems(package.get("teaching_document")))
+    problems.extend(_association_problems(package, concept_keys))
 
     resource_keys: set[str] = set()
 
@@ -250,28 +198,185 @@ def structural_problems(package: dict[str, Any]) -> list[str]:
 
         problems.extend(_resource_problems(resource, path, package))
 
-    activity_keys: set[str] = set()
+    # Resolved after the collections above, because an asset says what it
+    # illustrates and that has to be something this package actually contains.
+    problems.extend(
+        _asset_problems(
+            package,
+            addressable=concept_keys
+            | exercise_keys
+            | resource_keys
+            | _teaching_block_keys(package)
+            | {str((package.get("lesson") or {}).get("stable_key") or "").strip()},
+        )
+    )
 
-    for index, activity in enumerate(package.get("activities") or []):
-        path = f"activities.{index}"
-        key = str(activity.get("stable_key") or "").strip()
-
-        if key and key in activity_keys:
-            problems.append(f"{path} repeats stable_key {key!r}")
-        elif key:
-            activity_keys.add(key)
-
-        problems.extend(_activity_problems(activity, path, objective_keys, resource_keys))
+    problems.extend(_exercise_link_problems(package, resource_keys))
 
     return problems
 
 
-def _association_problems(package: dict[str, Any], objective_keys: set[str]) -> list[str]:
-    """The objective graph: how objectives relate to each other.
+def _concept_problems(package: dict[str, Any]) -> tuple[set[str], set[str], list[str]]:
+    """A concept is an objective, a card, and a question bank — all three or none."""
+    problems: list[str] = []
+    concept_keys: set[str] = set()
+    exercise_keys: set[str] = set()
 
-    Distinct from an activity's alignments, which say what an activity assesses.
-    This says one objective requires or builds on another — the structure a
-    later batch reads to decide what a learner is ready for.
+    concepts = package.get("concepts") or []
+
+    if not concepts:
+        problems.append("concepts is empty; a lesson that introduces nothing teaches nothing")
+
+    for index, concept in enumerate(concepts):
+        path = f"concepts.{index}"
+        key = str(concept.get("stable_key") or "").strip()
+
+        if not key:
+            problems.append(f"{path} has no stable_key")
+        elif key in concept_keys:
+            # Two concepts sharing a key leave the importer no way to decide
+            # which card an alignment or an upsert means.
+            problems.append(f"{path} repeats stable_key {key!r}")
+        else:
+            concept_keys.add(key)
+
+        # The statement is the objective, written once. It is what a learner is
+        # told they will be able to do and what mastery is claimed about.
+        if not str(concept.get("statement") or "").strip():
+            problems.append(f"{path} has no statement")
+
+        if not str(concept.get("objective_type") or "").strip():
+            problems.append(f"{path} has no objective_type")
+
+        problems.extend(_provenance_problems(concept.get("provenance"), path))
+
+        if not concept.get("exercises"):
+            problems.append(
+                f"{path} has no exercises; a concept card with an empty bank can never be asked"
+            )
+
+        for exercise_index, exercise in enumerate(concept.get("exercises") or []):
+            exercise_path = f"{path}.exercises.{exercise_index}"
+            exercise_key = str(exercise.get("stable_key") or "").strip()
+
+            if exercise_key and exercise_key in exercise_keys:
+                problems.append(f"{exercise_path} repeats stable_key {exercise_key!r}")
+            elif exercise_key:
+                exercise_keys.add(exercise_key)
+
+    # Alignments are checked in a second pass, because an exercise may legitimately
+    # align to a concept declared after it — the capstone exception.
+    for index, concept in enumerate(package.get("concepts") or []):
+        for exercise_index, exercise in enumerate(concept.get("exercises") or []):
+            problems.extend(
+                _exercise_problems(
+                    exercise,
+                    f"concepts.{index}.exercises.{exercise_index}",
+                    concept_keys,
+                )
+            )
+
+    return concept_keys, exercise_keys, problems
+
+
+def _teaching_document_problems(document: Any) -> list[str]:
+    """The taught thing, in order, with every block saying where it came from."""
+    if not isinstance(document, dict):
+        return ["teaching_document is missing"]
+
+    problems: list[str] = []
+    blocks = document.get("blocks") or []
+
+    if not blocks:
+        return problems + ["teaching_document.blocks is empty; the lesson teaches nothing"]
+
+    if not str(document.get("generator_version") or "").strip():
+        problems.append("teaching_document names no generator_version")
+
+    seen: set[str] = set()
+
+    for index, block in enumerate(blocks):
+        path = f"teaching_document.blocks.{index}"
+
+        if not isinstance(block, dict):
+            problems.append(f"{path} is not an object")
+            continue
+
+        key = str(block.get("key") or "").strip()
+
+        if not key:
+            problems.append(f"{path} has no key")
+        elif key in seen:
+            problems.append(f"{path} repeats key {key!r}")
+        else:
+            seen.add(key)
+
+        for field in ("type", "section", "content"):
+            if not block.get(field):
+                problems.append(f"{path}.{field} is missing")
+
+        # Position is asserted rather than assumed. A block list that arrived
+        # re-sorted would teach in an order nobody authored.
+        if block.get("position") != index:
+            problems.append(f"{path}.position is {block.get('position')!r}, not {index}")
+
+        problems.extend(_provenance_problems(block.get("provenance"), path))
+
+    return problems
+
+
+def _teaching_block_keys(package: dict[str, Any]) -> set[str]:
+    return {
+        str(block.get("key") or "").strip()
+        for block in ((package.get("teaching_document") or {}).get("blocks") or [])
+        if isinstance(block, dict)
+    }
+
+
+def _asset_problems(package: dict[str, Any], *, addressable: set[str]) -> list[str]:
+    problems: list[str] = []
+    seen: set[str] = set()
+
+    for index, asset in enumerate(package.get("assets") or []):
+        path = f"assets.{index}"
+
+        if not isinstance(asset, dict):
+            problems.append(f"{path} is not an object")
+            continue
+
+        key = str(asset.get("stable_key") or "").strip()
+
+        if not key:
+            problems.append(f"{path} has no stable_key")
+        elif key in seen:
+            problems.append(f"{path} repeats stable_key {key!r}")
+        else:
+            seen.add(key)
+
+        for field in ("media_type", "encoding", "content", "alt_text", "caption"):
+            if not str(asset.get(field) or "").strip():
+                problems.append(f"{path}.{field} is missing")
+
+        illustrates = str(asset.get("illustrates") or "").strip()
+
+        if not illustrates:
+            problems.append(f"{path} does not say what it illustrates")
+        elif illustrates not in addressable:
+            problems.append(
+                f"{path} illustrates {illustrates!r}, which this package does not contain"
+            )
+
+        problems.extend(_provenance_problems(asset.get("provenance"), path))
+
+    return problems
+
+
+def _association_problems(package: dict[str, Any], concept_keys: set[str]) -> list[str]:
+    """The objective graph: how one concept relates to another.
+
+    Distinct from an exercise's alignments, which say what it assesses. This says
+    one concept requires or builds on another — the structure a later batch reads
+    to decide what a learner is ready for.
     """
     problems: list[str] = []
     seen: set[tuple[str, str, str]] = set()
@@ -285,7 +390,7 @@ def _association_problems(package: dict[str, Any], objective_keys: set[str]) -> 
         for label, key in (("from", source), ("to", target)):
             if not key:
                 problems.append(f"{path} has no {label}_objective_stable_key")
-            elif key not in objective_keys:
+            elif key not in concept_keys:
                 problems.append(f"{path}.{label} names {key!r}, which this package does not define")
 
         if kind not in OBJECTIVE_ASSOCIATION_TYPES:
@@ -366,23 +471,41 @@ def _resource_problems(resource: dict[str, Any], path: str, package: dict[str, A
     return problems
 
 
-def _activity_problems(
-    activity: dict[str, Any],
+def _exercise_link_problems(package: dict[str, Any], resource_keys: set[str]) -> list[str]:
+    problems: list[str] = []
+
+    for index, concept in enumerate(package.get("concepts") or []):
+        for exercise_index, exercise in enumerate(concept.get("exercises") or []):
+            path = f"concepts.{index}.exercises.{exercise_index}"
+
+            for link_index, link in enumerate(exercise.get("resource_links") or []):
+                key = str((link or {}).get("resource_stable_key") or "").strip()
+
+                if key not in resource_keys:
+                    problems.append(
+                        f"{path}.resource_links.{link_index} names {key!r}, "
+                        f"which this package does not define"
+                    )
+
+    return problems
+
+
+def _exercise_problems(
+    exercise: dict[str, Any],
     path: str,
-    objective_keys: set[str],
-    resource_keys: set[str],
+    concept_keys: set[str],
 ) -> list[str]:
     problems: list[str] = []
 
-    if not str(activity.get("stable_key") or "").strip():
+    if not str(exercise.get("stable_key") or "").strip():
         problems.append(f"{path} has no stable_key")
 
-    alignments = activity.get("objective_alignments") or []
+    alignments = exercise.get("objective_alignments") or []
 
-    # No fallback. An activity that does not say what it assesses is not
-    # assumed to assess everything in the chapter — that would publish an
-    # alignment nobody authored, and evidence would be recorded against
-    # objectives the activity may not touch.
+    # No fallback. An exercise that does not say what it assesses is not assumed
+    # to assess everything in the chapter — that would publish an alignment
+    # nobody authored, and evidence would be recorded against concepts the
+    # exercise may not touch.
     if not alignments:
         problems.append(f"{path} lists no objective_alignments")
 
@@ -392,21 +515,13 @@ def _activity_problems(
 
         if not key:
             problems.append(f"{alignment_path} names no objective")
-        elif key not in objective_keys:
+        elif key not in concept_keys:
             problems.append(f"{alignment_path} names {key!r}, which this package does not define")
 
         if not str((alignment or {}).get("alignment_role") or "").strip():
             problems.append(f"{alignment_path} has no alignment_role")
 
-    for link_index, link in enumerate(activity.get("resource_links") or []):
-        key = str((link or {}).get("resource_stable_key") or "").strip()
-
-        if key not in resource_keys:
-            problems.append(
-                f"{path}.resource_links.{link_index} names {key!r}, which this package does not define"
-            )
-
-    problems.extend(_definition_problems(activity.get("definition"), f"{path}.definition"))
+    problems.extend(_definition_problems(exercise.get("definition"), f"{path}.definition"))
 
     return problems
 
@@ -446,11 +561,11 @@ def _definition_problems(definition: Any, path: str) -> list[str]:
 
 
 def _provenance_problems(provenance: Any, path: str) -> list[str]:
-    """Provenance is per element, because one activity is not one claim.
+    """Provenance is per element, because one lesson is not one claim.
 
-    An explanation lifted from the book and an example the model invented can
-    sit in the same activity, and a learner deserves a system that knows which
-    is which.
+    An explanation lifted from the book, an example the model invented, and a
+    question a generator computed can sit in the same lesson, and a learner
+    deserves a system that knows which is which.
     """
     if not isinstance(provenance, dict):
         return [f"{path} has no provenance"]
