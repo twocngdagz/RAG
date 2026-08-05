@@ -411,8 +411,8 @@ check(
 check(
     "an SVG rides as text, not as bytes",
     all(
-        assets[diagram["stable_key"]]["encoding"] == "inline"
-        and assets[diagram["stable_key"]]["content"].startswith("<svg")
+        assets[diagram["stable_key"]]["encoding"] == "inline_svg"
+        and assets[diagram["stable_key"]]["svg"].startswith("<svg")
         for diagram in MANIFEST["diagrams"]
     ),
 )
@@ -580,7 +580,7 @@ elsewhere_in = [
     marker
     for diagram in MANIFEST["diagrams"]
     for marker in ("http", "<image", "xlink:href", "url(", "<use")
-    if marker in assets[diagram["stable_key"]]["content"].replace(NAMESPACE, "<svg ")
+    if marker in assets[diagram["stable_key"]]["svg"].replace(NAMESPACE, "<svg ")
 ]
 
 check(

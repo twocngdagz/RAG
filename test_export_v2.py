@@ -272,7 +272,7 @@ assets = {asset["stable_key"]: asset for asset in package["assets"]}
 svg = assets["math5a:ch03:asset:three-quarters-bar"]
 raster = assets["math5a:ch03:asset:two-thirds-photo"]
 
-check("SVG rides as text", svg["encoding"] == "inline" and svg["content"].startswith("<svg"), svg["encoding"])
+check("SVG rides as text", svg["encoding"] == "inline_svg" and svg["svg"].startswith("<svg"), svg["encoding"])
 check("raster rides as base64", raster["encoding"] == "base64", raster["encoding"])
 check(
     "the encoded bytes are the file's bytes",

@@ -355,9 +355,19 @@ def _asset_problems(package: dict[str, Any], *, addressable: set[str]) -> list[s
         else:
             seen.add(key)
 
-        for field in ("media_type", "encoding", "content", "alt_text", "caption"):
+        for field in ("media_type", "encoding", "alt_text", "caption"):
             if not str(asset.get(field) or "").strip():
                 problems.append(f"{path}.{field} is missing")
+
+        # The picture itself rides in the field its encoding names — an inline
+        # SVG in `svg`, encoded bytes in `content` — so which field must be
+        # there is read off the encoding rather than fixed here.
+        from lesson_assets import PAYLOAD_FIELD
+
+        payload = PAYLOAD_FIELD.get(str(asset.get("encoding") or "").strip())
+
+        if payload and not str(asset.get(payload) or "").strip():
+            problems.append(f"{path}.{payload} is missing")
 
         illustrates = str(asset.get("illustrates") or "").strip()
 

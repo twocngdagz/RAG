@@ -7,10 +7,16 @@ five-year-old archive and still show its diagrams.
 
 Two encodings, because there are two kinds of picture:
 
-    inline    SVG, which is text. A computed diagram — a bar model, an area
-              model — is written into the package as the markup that draws it,
-              so it stays inspectable and diffable.
-    base64    everything else. A raster image is bytes, and bytes ride encoded.
+    inline_svg  SVG, which is text. A computed diagram — a bar model, an area
+                model — is written into the package as the markup that draws
+                it, in a field called `svg`, so it stays inspectable and
+                diffable.
+    base64      everything else. A raster image is bytes, and bytes ride
+                encoded, in a field called `content`.
+
+The payload's field name travels with the encoding because that is what Ela's
+importer reads: an inline SVG comes out of `svg`, encoded bytes out of
+`content`. The consumer's contract is released, so the producer conforms to it.
 
 Both end up as characters in the same file, and the content hash covers them, so
 "N added, 0 removed" covers images too: they are inside the thing compared.
@@ -32,6 +38,12 @@ import lesson_provenance
 
 # SVG is text, so it rides as itself. Anything else is bytes and is encoded.
 INLINE_MEDIA_TYPE = "image/svg+xml"
+
+# What each encoding is called, and which field the picture rides in under it.
+# Ela reads these names, so they are the names written.
+INLINE_SVG_ENCODING = "inline_svg"
+BASE64_ENCODING = "base64"
+PAYLOAD_FIELD = {INLINE_SVG_ENCODING: "svg", BASE64_ENCODING: "content"}
 
 # Where an asset may say it came from. `manually_authored` is an author's own
 # upload; `pedagogical_generation` is a drawing made for the lesson. Those are
@@ -88,9 +100,9 @@ def build(declared: dict[str, Any], *, base_dir: Path, path: str) -> dict[str, A
                 f"{path} rides inline but is {media_type!r}; only {INLINE_MEDIA_TYPE} is text"
             )
 
-        content = str(inline).strip()
-        raw = content.encode("utf-8")
-        encoding = "inline"
+        payload = str(inline).strip()
+        raw = payload.encode("utf-8")
+        encoding = INLINE_SVG_ENCODING
     else:
         if media_type == INLINE_MEDIA_TYPE:
             raise AssetRefused(
@@ -103,8 +115,8 @@ def build(declared: dict[str, Any], *, base_dir: Path, path: str) -> dict[str, A
             raise AssetRefused(f"{path} names {file_reference!r}, which does not exist")
 
         raw = source.read_bytes()
-        content = base64.b64encode(raw).decode("ascii")
-        encoding = "base64"
+        payload = base64.b64encode(raw).decode("ascii")
+        encoding = BASE64_ENCODING
 
     if not raw:
         raise AssetRefused(f"{path} is empty; there is no picture in it")
@@ -113,7 +125,7 @@ def build(declared: dict[str, Any], *, base_dir: Path, path: str) -> dict[str, A
         "stable_key": key,
         "media_type": media_type,
         "encoding": encoding,
-        "content": content,
+        PAYLOAD_FIELD[encoding]: payload,
         # The bytes as they were before encoding, so an importer can check that
         # what it decoded is what was sealed in.
         "byte_length": len(raw),
