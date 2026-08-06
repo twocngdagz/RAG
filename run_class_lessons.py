@@ -60,19 +60,27 @@ import class_lesson_contract as contract
 import domain_packs
 import lesson_export_manifest as manifest_module
 import teaching_document
-from book_learning_materials_contract import atomic_write_json
 from chatgpt_browser_driver import DEFAULT_PROFILE, ChatGPTDriver
+
+# Where a chapter's class lessons live, and what reading one promises. Defined
+# once, next door, because the exporter reads the same file: two copies of the
+# store's shape drift, and the drift shows up as a package missing teaching.
+from class_lesson_store import (  # noqa: F401  (re-exported: this runner's own vocabulary)
+    STORE_FILE,
+    STORE_SCHEMA_VERSION,
+    ClassLessonsRefused,
+    empty_store,
+    lesson_of,
+    record,
+    store_path,
+)
+from class_lesson_store import load as load_store
+from class_lesson_store import save as save_store
 
 # Reading a JSON object out of a ChatGPT reply is the enrichment runner's job
 # already, DOM quirks and citation artifacts included. A second copy of it would
 # drift the first time ChatGPT's markup moved.
 from enrich_lessons import extract_json_object, scrape_reply_json, strip_citation_artifacts
-
-# Class lessons are generated content, so they live in output/ beside the
-# enrichments they are written from, one file per chapter.
-STORE_FILE = "output/{slug}.chapter{n:02d}.class_lessons.json"
-
-STORE_SCHEMA_VERSION = "class_lesson_set.v1"
 
 
 class RunRefused(Exception):
@@ -80,76 +88,7 @@ class RunRefused(Exception):
 
 
 # --------------------------------------------------------------------------- #
-# 1. What a chapter's class lessons are stored as.
-# --------------------------------------------------------------------------- #
-
-def store_path(slug: str, chapter: int) -> Path:
-    return Path(STORE_FILE.format(slug=slug, n=chapter))
-
-
-def empty_store(slug: str, chapter: int) -> dict[str, Any]:
-    return {
-        "schema_version": STORE_SCHEMA_VERSION,
-        "book_slug": slug,
-        "lesson_stable_key": f"{slug}:ch{chapter:02d}",
-        # Keyed by concept, so a chapter run twice cannot produce two lessons for
-        # one concept however many times it is repeated.
-        "concepts": {},
-    }
-
-
-def load_store(path: Path, slug: str, chapter: int) -> dict[str, Any]:
-    """What has been generated for this chapter so far, or an empty set."""
-    if not path.exists():
-        return empty_store(slug, chapter)
-
-    try:
-        store = json.loads(path.read_text(encoding="utf-8"))
-    except json.JSONDecodeError as error:
-        raise RunRefused(f"{path} is not readable JSON: {error}") from error
-
-    schema = str(store.get("schema_version") or "").strip()
-
-    if schema != STORE_SCHEMA_VERSION:
-        raise RunRefused(
-            f"{path} is {schema or 'unversioned'!r}, not {STORE_SCHEMA_VERSION!r}; refusing to "
-            f"write class lessons into a file this runner does not understand"
-        )
-
-    if store.get("lesson_stable_key") != f"{slug}:ch{chapter:02d}":
-        raise RunRefused(
-            f"{path} holds {store.get('lesson_stable_key')!r} but this run is for "
-            f"{slug}:ch{chapter:02d}; one chapter's lessons would be written into another's"
-        )
-
-    return store
-
-
-def lesson_of(store: dict[str, Any], concept_key: str) -> dict[str, Any] | None:
-    """The concept's class lesson as it stands, or None if it has never run."""
-    entry = (store.get("concepts") or {}).get(concept_key)
-
-    return entry.get("class_lesson") if isinstance(entry, dict) else None
-
-
-def record(store: dict[str, Any], concept_key: str, lesson: dict[str, Any], report: dict) -> None:
-    """Keep this run's result, and what the run did, next to the lesson.
-
-    `runs` is the list of what each pass added, so how many times a concept has
-    been run and what each run was worth are the same fact read two ways.
-    """
-    entry = (store.setdefault("concepts", {})).setdefault(concept_key, {"runs": [], "class_lesson": {}})
-    entry["runs"] = list(entry.get("runs") or []) + [contract.summary(report)]
-    entry["class_lesson"] = lesson
-
-
-def save_store(path: Path, store: dict[str, Any]) -> None:
-    """Written after every concept, so an interrupted chapter keeps what it did."""
-    atomic_write_json(path, store)
-
-
-# --------------------------------------------------------------------------- #
-# 2. What a run reads: the concepts, and the chapter's enriched material.
+# 1. What a run reads: the concepts, and the chapter's enriched material.
 # --------------------------------------------------------------------------- #
 
 def concepts_of(slug: str, chapter: int, *, manifest_file: str | Path | None = None) -> tuple[list[dict], Path, bool]:
@@ -232,7 +171,7 @@ def load_material(pack: domain_packs.DomainPack, chapter: int, *, enrichment_fil
 
 
 # --------------------------------------------------------------------------- #
-# 3. The run: one concept at a time, resuming where it stopped.
+# 2. The run: one concept at a time, resuming where it stopped.
 # --------------------------------------------------------------------------- #
 
 def to_run(concepts: list[dict], store: dict[str, Any], *, expand: bool, only: list[str] | None) -> list[dict]:
@@ -546,7 +485,7 @@ def main(argv: list[str] | None = None) -> int:
 
     try:
         return args.func(args)
-    except (RunRefused, manifest_module.ManifestUnapproved) as error:
+    except (RunRefused, ClassLessonsRefused, manifest_module.ManifestUnapproved) as error:
         print(f"refused: {error}", file=sys.stderr)
         return 1
 
