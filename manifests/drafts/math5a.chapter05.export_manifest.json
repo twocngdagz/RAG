@@ -2,25 +2,36 @@
   "manifest_schema_version": "lesson.export_manifest.v2",
   "approved": false,
   "draft": {
-    "generator": "draft_export_manifest/1.0.0",
+    "generator": "draft_export_manifest/2.0.0",
     "written_from": {
       "materials": "output/math5a.chapter05.book_learning_materials.json",
-      "exercise_bank": "output/math_practice_items.json",
-      "teaching_document": "output/math5a.chapter05.enrichment.json"
+      "enrichment": "output/math5a.chapter05.enrichment.json",
+      "exercise_bank": "output/math_practice_items.json"
     },
     "what_this_is": "A proposal, not a mapping. Nothing here was read by a person. The exporter refuses to publish it while approved is false.",
+    "how_it_was_derived": "Every concept is one of this chapter's own learning goals from its enrichment, in the enrichment's order, stated in the enrichment's words. Nothing here was written by this generator: it matched the goals to the questions the exercise bank can ask, to the techniques that carry them out, and to the mastery checklist that says they are checked.",
+    "how_matches_were_made": "Matched on shared words. Each sentence is lowercased, stripped of its LaTeX and of the everyday words the whole book uses, and what is left is reduced to a rough stem so 'fractions' and 'fraction' count as one word. A shared word is worth 1 divided by the number of candidates that use it, so a word only one candidate uses decides a match and a word all of them use decides nothing. A total of 1.0 or more is a match. Every match lists the words that produced it.",
     "to_approve": [
-      "Read what_the_material_says below against the chapter itself.",
-      "Rewrite every concept statement: they are the bank's skill titles, not sentences about what a learner can do.",
+      "Read what_the_material_says and every concept note against the chapter itself.",
+      "Check each statement is a goal this chapter really teaches — they are the enrichment's own sentences, so a wrong one is fixed in the enrichment, not here.",
       "Settle every concept stable_key now — after approval a learner's evidence is filed under it and it cannot move.",
+      "Decide what to do about every concept with no questions and every skill with no concept: not_exportable_until lists the ones that block a package.",
       "Fill authored_by with who approved it.",
       "Delete this draft block, set approved to true, and move the file to manifests/math5a.chapter05.export_manifest.json."
     ],
+    "coverage": {
+      "concepts": 5,
+      "with_questions": 2,
+      "taught_but_not_yet_practised": 3,
+      "skills_without_a_concept": 0,
+      "objective_type_from_the_material": 4,
+      "assessed_from_the_material": 5
+    },
     "needs_review": [
-      "Every statement is the bank's skill title copied across, which is a name for a skill and not a statement of what a learner can do. Rewrite all of them.",
-      "The bank proposes 2 concept(s) but this chapter's material carries 1 teaching lesson(s). Check that the chapter actually teaches each one before a learner is scheduled a card for it.",
-      "Every objective_type is 'procedure', the only value this repository has ever emitted. Where the bank calls a skill 'recall' rather than 'application', that may be the wrong word for it.",
-      "Every concept is assessed: true, because every question in these banks is machine-marked and can produce evidence. Say so deliberately.",
+      "Every statement is one of this chapter's 5 learning goals from its enrichment, verbatim and in the enrichment's order. This generator wrote none of them.",
+      "3 of 5 concept(s) have no questions: math5a:ch05:use-the-triangle-area-formula-correctly, math5a:ch05:solve-simple-area-word-problems, math5a:ch05:check-units-and-spot-common-errors. They are taught and not yet practised. No questions were invented for them, and the exporter will not publish a concept without a bank.",
+      "1 concept(s) carry no objective_type: no technique in this chapter's enrichment gives an ordered method for them, so the material does not say what kind of thing they are. The field is absent rather than defaulted.",
+      "Where objective_type is set it reads 'procedure', on the evidence that a named technique carries the goal out in ordered steps. It is also the only value this repository has ever emitted, so check it against Ela's vocabulary.",
       "No bank declares guidance -- chapter 3's approved banks carry a one-line reminder of the method, and writing teaching is not this generator's to do.",
       "No bank declares evaluation.marking.required_form. Chapter 3 requires answers in simplest fraction form; decide what shape these answers must take.",
       "No resources are declared. Material is reusable because an author says so, and chapter 3 promotes its review checklist that way.",
@@ -30,6 +41,10 @@
     ],
     "what_the_material_says": {
       "chapter_title_as_printed": "4 Area of Triangle",
+      "enrichment_lesson_title": "4 Area of Triangle",
+      "learning_goals": 5,
+      "techniques": 4,
+      "mastery_checklist": 8,
       "learning_objectives": [
         "Calculate the area of a triangle when the base and height are given.",
         "Use the relationship between a triangle and its surrounding rectangle to find the triangle’s area."
@@ -43,21 +58,275 @@
     },
     "concepts": [
       {
-        "stable_key": "math5a:ch05:triangle-area",
-        "skill": "triangle_area",
-        "statement_is_provisional": true,
-        "exercises_in_bank": 9,
-        "sample_question": "A triangle has a base of $8$ cm and a height of $8$ cm. What is its area, in square centimetres?",
-        "bank_calls_this": "application"
+        "stable_key": "math5a:ch05:identify-a-triangles-base-and-height",
+        "statement_is": "the chapter's own learning_goals.0, verbatim",
+        "questions": {
+          "skill": "triangle_area",
+          "skill_title": "Area of a triangle",
+          "exercises_in_bank": 9,
+          "sample_question": "A triangle has a base of $8$ cm and a height of $8$ cm. What is its area, in square centimetres?",
+          "bank_calls_this": "application",
+          "score": 2.5,
+          "matched_on": [
+            "bas",
+            "height",
+            "triangl"
+          ],
+          "beat_for_this_concept": [],
+          "this_skill_also_matched": [
+            {
+              "at": "learning_goals.1",
+              "score": 1.0,
+              "matched_on": [
+                "area",
+                "triangl"
+              ]
+            }
+          ]
+        },
+        "objective_type_from": {
+          "technique": "Use the related rectangle",
+          "at": "techniques.0",
+          "ordered_steps": 4,
+          "score": 1.17,
+          "matched_on": [
+            "bas",
+            "height",
+            "triangl"
+          ]
+        },
+        "assessed_from": {
+          "mastery_checklist": [
+            {
+              "at": "mastery_checklist.0",
+              "says": "I can choose a triangle's base.",
+              "score": 1.0,
+              "matched_on": [
+                "bas",
+                "triangl"
+              ]
+            },
+            {
+              "at": "mastery_checklist.3",
+              "says": "I can multiply the base and height.",
+              "score": 1.0,
+              "matched_on": [
+                "bas",
+                "height"
+              ]
+            }
+          ],
+          "and_the_bank_can_ask_it": true
+        }
       },
       {
-        "stable_key": "math5a:ch05:triangle-half-rectangle",
-        "skill": "triangle_half_rectangle",
-        "statement_is_provisional": true,
-        "exercises_in_bank": 9,
-        "sample_question": "A triangle fills exactly half of a $7$ cm by $4$ cm rectangle. What is the area of the triangle, in square centimetres?",
-        "bank_calls_this": "application"
+        "stable_key": "math5a:ch05:use-the-triangle-area-formula-correctly",
+        "statement_is": "the chapter's own learning_goals.1, verbatim",
+        "questions": null,
+        "no_questions_because": "no skill in the bank matched this goal",
+        "closest_it_did_not_match": [
+          {
+            "skill": "triangle_area",
+            "score": 1.0,
+            "matched_on": [
+              "area",
+              "triangl"
+            ],
+            "declared_by": "math5a:ch05:identify-a-triangles-base-and-height"
+          },
+          {
+            "skill": "triangle_half_rectangle",
+            "score": 1.0,
+            "matched_on": [
+              "area",
+              "triangl"
+            ],
+            "declared_by": "math5a:ch05:find-half-a-related-rectangles-area"
+          }
+        ],
+        "objective_type_from": {
+          "technique": "Use the related rectangle",
+          "at": "techniques.0",
+          "ordered_steps": 4,
+          "score": 2.0,
+          "matched_on": [
+            "area",
+            "formula",
+            "triangl"
+          ]
+        },
+        "assessed_from": {
+          "mastery_checklist": [
+            {
+              "at": "mastery_checklist.2",
+              "says": "I can write the triangle area formula.",
+              "score": 2.5,
+              "matched_on": [
+                "area",
+                "formula",
+                "triangl"
+              ]
+            }
+          ],
+          "and_the_bank_can_ask_it": false
+        }
+      },
+      {
+        "stable_key": "math5a:ch05:find-half-a-related-rectangles-area",
+        "statement_is": "the chapter's own learning_goals.2, verbatim",
+        "questions": {
+          "skill": "triangle_half_rectangle",
+          "skill_title": "Triangle inside a rectangle",
+          "exercises_in_bank": 9,
+          "sample_question": "A triangle fills exactly half of a $7$ cm by $4$ cm rectangle. What is the area of the triangle, in square centimetres?",
+          "bank_calls_this": "application",
+          "score": 2.5,
+          "matched_on": [
+            "area",
+            "half",
+            "rectangl"
+          ],
+          "beat_for_this_concept": [],
+          "this_skill_also_matched": [
+            {
+              "at": "learning_goals.1",
+              "score": 1.0,
+              "matched_on": [
+                "area",
+                "triangl"
+              ]
+            }
+          ]
+        },
+        "objective_type_from": {
+          "technique": "Use the related rectangle",
+          "at": "techniques.0",
+          "ordered_steps": 4,
+          "score": 1.67,
+          "matched_on": [
+            "area",
+            "half",
+            "rectangl",
+            "related"
+          ]
+        },
+        "assessed_from": {
+          "mastery_checklist": [
+            {
+              "at": "mastery_checklist.5",
+              "says": "I can use a related rectangle.",
+              "score": 2.0,
+              "matched_on": [
+                "rectangl",
+                "related"
+              ]
+            },
+            {
+              "at": "mastery_checklist.2",
+              "says": "I can write the triangle area formula.",
+              "score": 1.0,
+              "matched_on": [
+                "area"
+              ]
+            }
+          ],
+          "and_the_bank_can_ask_it": true
+        }
+      },
+      {
+        "stable_key": "math5a:ch05:solve-simple-area-word-problems",
+        "statement_is": "the chapter's own learning_goals.3, verbatim",
+        "questions": null,
+        "no_questions_because": "no skill in the bank matched this goal",
+        "closest_it_did_not_match": [
+          {
+            "skill": "triangle_area",
+            "score": 0.5,
+            "matched_on": [
+              "area"
+            ],
+            "declared_by": "math5a:ch05:identify-a-triangles-base-and-height"
+          },
+          {
+            "skill": "triangle_half_rectangle",
+            "score": 0.5,
+            "matched_on": [
+              "area"
+            ],
+            "declared_by": "math5a:ch05:find-half-a-related-rectangles-area"
+          }
+        ],
+        "objective_type_from": null,
+        "closest_technique_it_did_not_match": [
+          {
+            "technique": "Use the related rectangle",
+            "at": "techniques.0",
+            "ordered_steps": 4,
+            "score": 0.5,
+            "matched_on": [
+              "area"
+            ]
+          }
+        ],
+        "assessed_from": {
+          "mastery_checklist": [
+            {
+              "at": "mastery_checklist.2",
+              "says": "I can write the triangle area formula.",
+              "score": 1.0,
+              "matched_on": [
+                "area"
+              ]
+            }
+          ],
+          "and_the_bank_can_ask_it": false
+        }
+      },
+      {
+        "stable_key": "math5a:ch05:check-units-and-spot-common-errors",
+        "statement_is": "the chapter's own learning_goals.4, verbatim",
+        "questions": null,
+        "no_questions_because": "no skill in the bank matched this goal",
+        "closest_it_did_not_match": [],
+        "objective_type_from": {
+          "technique": "Check with the rectangle",
+          "at": "techniques.3",
+          "ordered_steps": 4,
+          "score": 2.0,
+          "matched_on": [
+            "check",
+            "unit"
+          ]
+        },
+        "assessed_from": {
+          "mastery_checklist": [
+            {
+              "at": "mastery_checklist.6",
+              "says": "I can write square units correctly.",
+              "score": 1.0,
+              "matched_on": [
+                "unit"
+              ]
+            },
+            {
+              "at": "mastery_checklist.7",
+              "says": "I can correct a forgotten-half error.",
+              "score": 1.0,
+              "matched_on": [
+                "error"
+              ]
+            }
+          ],
+          "and_the_bank_can_ask_it": false
+        }
       }
+    ],
+    "skills_without_a_concept": [],
+    "not_exportable_until": [
+      "concepts.1.bank is missing; a concept without one is a card with nothing to ask",
+      "concepts.3.objective_type is missing",
+      "concepts.3.bank is missing; a concept without one is a card with nothing to ask",
+      "concepts.4.bank is missing; a concept without one is a card with nothing to ask"
     ]
   },
   "authored_by": "",
@@ -75,12 +344,13 @@
   },
   "concepts": [
     {
-      "stable_key": "math5a:ch05:triangle-area",
-      "statement": "Area of a triangle",
+      "stable_key": "math5a:ch05:identify-a-triangles-base-and-height",
+      "statement": "You will identify a triangle's base and height.",
       "objective_type": "procedure",
       "assessed": true,
       "bank": {
         "source": "math_practice_items",
+        "skill": "triangle_area",
         "type": "response.free_text",
         "domain": "math",
         "evidence_mode": "cued_recall",
@@ -98,17 +368,23 @@
         "scheduling": {
           "policy": "skill_practice",
           "subject": "learning_item"
-        },
-        "skill": "triangle_area"
+        }
       }
     },
     {
-      "stable_key": "math5a:ch05:triangle-half-rectangle",
-      "statement": "Triangle inside a rectangle",
+      "stable_key": "math5a:ch05:use-the-triangle-area-formula-correctly",
+      "statement": "You will use the triangle area formula correctly.",
+      "objective_type": "procedure",
+      "assessed": true
+    },
+    {
+      "stable_key": "math5a:ch05:find-half-a-related-rectangles-area",
+      "statement": "You will find half a related rectangle's area.",
       "objective_type": "procedure",
       "assessed": true,
       "bank": {
         "source": "math_practice_items",
+        "skill": "triangle_half_rectangle",
         "type": "response.free_text",
         "domain": "math",
         "evidence_mode": "cued_recall",
@@ -126,9 +402,19 @@
         "scheduling": {
           "policy": "skill_practice",
           "subject": "learning_item"
-        },
-        "skill": "triangle_half_rectangle"
+        }
       }
+    },
+    {
+      "stable_key": "math5a:ch05:solve-simple-area-word-problems",
+      "statement": "You will solve simple area word problems.",
+      "assessed": true
+    },
+    {
+      "stable_key": "math5a:ch05:check-units-and-spot-common-errors",
+      "statement": "You will check units and spot common errors.",
+      "objective_type": "procedure",
+      "assessed": true
     }
   ],
   "objective_associations": [],

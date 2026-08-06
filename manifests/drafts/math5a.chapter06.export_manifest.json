@@ -2,24 +2,38 @@
   "manifest_schema_version": "lesson.export_manifest.v2",
   "approved": false,
   "draft": {
-    "generator": "draft_export_manifest/1.0.0",
+    "generator": "draft_export_manifest/2.0.0",
     "written_from": {
       "materials": "output/math5a.chapter06.book_learning_materials.json",
-      "exercise_bank": "output/math_practice_items.json",
-      "teaching_document": "output/math5a.chapter06.enrichment.json"
+      "enrichment": "output/math5a.chapter06.enrichment.json",
+      "exercise_bank": "output/math_practice_items.json"
     },
     "what_this_is": "A proposal, not a mapping. Nothing here was read by a person. The exporter refuses to publish it while approved is false.",
+    "how_it_was_derived": "Every concept is one of this chapter's own learning goals from its enrichment, in the enrichment's order, stated in the enrichment's words. Nothing here was written by this generator: it matched the goals to the questions the exercise bank can ask, to the techniques that carry them out, and to the mastery checklist that says they are checked.",
+    "how_matches_were_made": "Matched on shared words. Each sentence is lowercased, stripped of its LaTeX and of the everyday words the whole book uses, and what is left is reduced to a rough stem so 'fractions' and 'fraction' count as one word. A shared word is worth 1 divided by the number of candidates that use it, so a word only one candidate uses decides a match and a word all of them use decides nothing. A total of 1.0 or more is a match. Every match lists the words that produced it.",
     "to_approve": [
-      "Read what_the_material_says below against the chapter itself.",
-      "Rewrite every concept statement: they are the bank's skill titles, not sentences about what a learner can do.",
+      "Read what_the_material_says and every concept note against the chapter itself.",
+      "Check each statement is a goal this chapter really teaches — they are the enrichment's own sentences, so a wrong one is fixed in the enrichment, not here.",
       "Settle every concept stable_key now — after approval a learner's evidence is filed under it and it cannot move.",
+      "Decide what to do about every concept with no questions and every skill with no concept: not_exportable_until lists the ones that block a package.",
       "Fill authored_by with who approved it.",
       "Delete this draft block, set approved to true, and move the file to manifests/math5a.chapter06.export_manifest.json."
     ],
+    "coverage": {
+      "concepts": 7,
+      "with_questions": 2,
+      "taught_but_not_yet_practised": 5,
+      "skills_without_a_concept": 1,
+      "objective_type_from_the_material": 4,
+      "assessed_from_the_material": 5
+    },
     "needs_review": [
-      "Every statement is the bank's skill title copied across, which is a name for a skill and not a statement of what a learner can do. Rewrite all of them.",
-      "Every objective_type is 'procedure', the only value this repository has ever emitted. Where the bank calls a skill 'recall' rather than 'application', that may be the wrong word for it.",
-      "Every concept is assessed: true, because every question in these banks is machine-marked and can produce evidence. Say so deliberately.",
+      "Every statement is one of this chapter's 7 learning goals from its enrichment, verbatim and in the enrichment's order. This generator wrote none of them.",
+      "5 of 7 concept(s) have no questions: math5a:ch06:read-a-ratio-using-the-word-to, math5a:ch06:write-ratios-in-the-correct-order, math5a:ch06:reverse-a-ratio-without-changing-its-meaning, math5a:ch06:find-ratios-that-show-the-same-comparison, math5a:ch06:compare-three-amounts-with-one-ratio. They are taught and not yet practised. No questions were invented for them, and the exporter will not publish a concept without a bank.",
+      "1 skill(s) the bank can ask of this chapter matched no concept: ratio_share (9 questions). They were left unattached rather than hung on the nearest concept.",
+      "3 concept(s) carry no objective_type: no technique in this chapter's enrichment gives an ordered method for them, so the material does not say what kind of thing they are. The field is absent rather than defaulted.",
+      "Where objective_type is set it reads 'procedure', on the evidence that a named technique carries the goal out in ordered steps. It is also the only value this repository has ever emitted, so check it against Ela's vocabulary.",
+      "2 concept(s) carry no assessed flag: the mastery checklist does not name them and the bank cannot ask them, so nothing in the material claims they produce evidence.",
       "No bank declares guidance -- chapter 3's approved banks carry a one-line reminder of the method, and writing teaching is not this generator's to do.",
       "No bank declares evaluation.marking.required_form. Chapter 3 requires answers in simplest fraction form; decide what shape these answers must take.",
       "No resources are declared. Material is reusable because an author says so, and chapter 3 promotes its review checklist that way.",
@@ -29,6 +43,10 @@
     ],
     "what_the_material_says": {
       "chapter_title_as_printed": "5 Ratio",
+      "enrichment_lesson_title": "5 Ratio",
+      "learning_goals": 7,
+      "techniques": 6,
+      "mastery_checklist": 11,
       "learning_objectives": [
         "Read and write a ratio of two quantities.",
         "Write the reverse ratio correctly.",
@@ -47,29 +65,356 @@
     },
     "concepts": [
       {
-        "stable_key": "math5a:ch06:ratio-simplify",
-        "skill": "ratio_simplify",
-        "statement_is_provisional": true,
-        "exercises_in_bank": 9,
-        "sample_question": "Write the ratio $28 : 8$ in its simplest form.",
-        "bank_calls_this": "application"
+        "stable_key": "math5a:ch06:read-a-ratio-using-the-word-to",
+        "statement_is": "the chapter's own learning_goals.0, verbatim",
+        "questions": null,
+        "no_questions_because": "no skill in the bank matched this goal",
+        "closest_it_did_not_match": [
+          {
+            "skill": "ratio_simplify",
+            "score": 0.33,
+            "matched_on": [
+              "ratio"
+            ],
+            "declared_by": "math5a:ch06:write-ratios-in-their-simplest-form"
+          },
+          {
+            "skill": "ratio_missing_part",
+            "score": 0.33,
+            "matched_on": [
+              "ratio"
+            ],
+            "declared_by": "math5a:ch06:find-missing-amounts-using-unit-parts"
+          }
+        ],
+        "objective_type_from": null,
+        "closest_technique_it_did_not_match": [
+          {
+            "technique": "Find one unit",
+            "at": "techniques.4",
+            "ordered_steps": 4,
+            "score": 0.17,
+            "matched_on": [
+              "ratio"
+            ]
+          }
+        ],
+        "assessed_from": null
       },
       {
-        "stable_key": "math5a:ch06:ratio-missing-part",
-        "skill": "ratio_missing_part",
-        "statement_is_provisional": true,
-        "exercises_in_bank": 9,
-        "sample_question": "Ribbon A is $80$ m long. The ratio of A to B is $8 : 5$. How many metres long is Ribbon B?",
-        "bank_calls_this": "application"
+        "stable_key": "math5a:ch06:write-ratios-in-the-correct-order",
+        "statement_is": "the chapter's own learning_goals.1, verbatim",
+        "questions": null,
+        "no_questions_because": "no skill in the bank matched this goal",
+        "closest_it_did_not_match": [
+          {
+            "skill": "ratio_simplify",
+            "score": 0.33,
+            "matched_on": [
+              "ratio"
+            ],
+            "declared_by": "math5a:ch06:write-ratios-in-their-simplest-form"
+          },
+          {
+            "skill": "ratio_missing_part",
+            "score": 0.33,
+            "matched_on": [
+              "ratio"
+            ],
+            "declared_by": "math5a:ch06:find-missing-amounts-using-unit-parts"
+          }
+        ],
+        "objective_type_from": null,
+        "closest_technique_it_did_not_match": [
+          {
+            "technique": "Reverse both parts",
+            "at": "techniques.1",
+            "ordered_steps": 4,
+            "score": 0.67,
+            "matched_on": [
+              "order",
+              "ratio"
+            ]
+          }
+        ],
+        "assessed_from": {
+          "mastery_checklist": [
+            {
+              "at": "mastery_checklist.2",
+              "says": "I can write a ratio in the named order.",
+              "score": 1.17,
+              "matched_on": [
+                "order",
+                "ratio"
+              ]
+            }
+          ],
+          "and_the_bank_can_ask_it": false
+        }
       },
       {
-        "stable_key": "math5a:ch06:ratio-share",
+        "stable_key": "math5a:ch06:reverse-a-ratio-without-changing-its-meaning",
+        "statement_is": "the chapter's own learning_goals.2, verbatim",
+        "questions": null,
+        "no_questions_because": "no skill in the bank matched this goal",
+        "closest_it_did_not_match": [
+          {
+            "skill": "ratio_simplify",
+            "score": 0.33,
+            "matched_on": [
+              "ratio"
+            ],
+            "declared_by": "math5a:ch06:write-ratios-in-their-simplest-form"
+          },
+          {
+            "skill": "ratio_missing_part",
+            "score": 0.33,
+            "matched_on": [
+              "ratio"
+            ],
+            "declared_by": "math5a:ch06:find-missing-amounts-using-unit-parts"
+          }
+        ],
+        "objective_type_from": {
+          "technique": "Reverse both parts",
+          "at": "techniques.1",
+          "ordered_steps": 4,
+          "score": 2.17,
+          "matched_on": [
+            "chang",
+            "ratio",
+            "revers"
+          ]
+        },
+        "assessed_from": {
+          "mastery_checklist": [
+            {
+              "at": "mastery_checklist.3",
+              "says": "I can reverse a ratio correctly.",
+              "score": 1.17,
+              "matched_on": [
+                "ratio",
+                "revers"
+              ]
+            }
+          ],
+          "and_the_bank_can_ask_it": false
+        }
+      },
+      {
+        "stable_key": "math5a:ch06:find-ratios-that-show-the-same-comparison",
+        "statement_is": "the chapter's own learning_goals.3, verbatim",
+        "questions": null,
+        "no_questions_because": "no skill in the bank matched this goal",
+        "closest_it_did_not_match": [
+          {
+            "skill": "ratio_simplify",
+            "score": 0.33,
+            "matched_on": [
+              "ratio"
+            ],
+            "declared_by": "math5a:ch06:write-ratios-in-their-simplest-form"
+          },
+          {
+            "skill": "ratio_missing_part",
+            "score": 0.33,
+            "matched_on": [
+              "ratio"
+            ],
+            "declared_by": "math5a:ch06:find-missing-amounts-using-unit-parts"
+          }
+        ],
+        "objective_type_from": null,
+        "closest_technique_it_did_not_match": [
+          {
+            "technique": "Reverse both parts",
+            "at": "techniques.1",
+            "ordered_steps": 4,
+            "score": 0.67,
+            "matched_on": [
+              "comparison",
+              "ratio"
+            ]
+          }
+        ],
+        "assessed_from": null
+      },
+      {
+        "stable_key": "math5a:ch06:write-ratios-in-their-simplest-form",
+        "statement_is": "the chapter's own learning_goals.4, verbatim",
+        "questions": {
+          "skill": "ratio_simplify",
+          "skill_title": "Simplify a ratio",
+          "exercises_in_bank": 9,
+          "sample_question": "Write the ratio $28 : 8$ in its simplest form.",
+          "bank_calls_this": "application",
+          "score": 2.33,
+          "matched_on": [
+            "form",
+            "ratio",
+            "simplest"
+          ],
+          "beat_for_this_concept": [],
+          "this_skill_also_matched": []
+        },
+        "objective_type_from": {
+          "technique": "Reach the simplest form",
+          "at": "techniques.3",
+          "ordered_steps": 4,
+          "score": 2.17,
+          "matched_on": [
+            "form",
+            "ratio",
+            "simplest"
+          ]
+        },
+        "assessed_from": {
+          "mastery_checklist": [
+            {
+              "at": "mastery_checklist.5",
+              "says": "I can write a ratio in simplest form.",
+              "score": 2.17,
+              "matched_on": [
+                "form",
+                "ratio",
+                "simplest"
+              ]
+            }
+          ],
+          "and_the_bank_can_ask_it": true
+        }
+      },
+      {
+        "stable_key": "math5a:ch06:find-missing-amounts-using-unit-parts",
+        "statement_is": "the chapter's own learning_goals.5, verbatim",
+        "questions": {
+          "skill": "ratio_missing_part",
+          "skill_title": "Find a missing amount",
+          "exercises_in_bank": 9,
+          "sample_question": "Ribbon A is $80$ m long. The ratio of A to B is $8 : 5$. How many metres long is Ribbon B?",
+          "bank_calls_this": "application",
+          "score": 2.0,
+          "matched_on": [
+            "amount",
+            "miss"
+          ],
+          "beat_for_this_concept": [],
+          "this_skill_also_matched": [
+            {
+              "at": "learning_goals.6",
+              "score": 1.33,
+              "matched_on": [
+                "amount",
+                "ratio"
+              ]
+            }
+          ]
+        },
+        "objective_type_from": {
+          "technique": "Find one unit",
+          "at": "techniques.4",
+          "ordered_steps": 4,
+          "score": 1.83,
+          "matched_on": [
+            "amount",
+            "miss",
+            "unit"
+          ]
+        },
+        "assessed_from": {
+          "mastery_checklist": [
+            {
+              "at": "mastery_checklist.7",
+              "says": "I can use units to find missing amounts.",
+              "score": 1.67,
+              "matched_on": [
+                "amount",
+                "miss",
+                "unit"
+              ]
+            },
+            {
+              "at": "mastery_checklist.8",
+              "says": "I can share a total using ratio parts.",
+              "score": 1.0,
+              "matched_on": [
+                "part"
+              ]
+            }
+          ],
+          "and_the_bank_can_ask_it": true
+        }
+      },
+      {
+        "stable_key": "math5a:ch06:compare-three-amounts-with-one-ratio",
+        "statement_is": "the chapter's own learning_goals.6, verbatim",
+        "questions": null,
+        "no_questions_because": "no skill in the bank matched this goal",
+        "closest_it_did_not_match": [
+          {
+            "skill": "ratio_missing_part",
+            "score": 1.33,
+            "matched_on": [
+              "amount",
+              "ratio"
+            ],
+            "declared_by": "math5a:ch06:find-missing-amounts-using-unit-parts"
+          },
+          {
+            "skill": "ratio_simplify",
+            "score": 0.33,
+            "matched_on": [
+              "ratio"
+            ],
+            "declared_by": "math5a:ch06:write-ratios-in-their-simplest-form"
+          }
+        ],
+        "objective_type_from": {
+          "technique": "Share a total",
+          "at": "techniques.5",
+          "ordered_steps": 4,
+          "score": 1.17,
+          "matched_on": [
+            "ratio",
+            "thre"
+          ]
+        },
+        "assessed_from": {
+          "mastery_checklist": [
+            {
+              "at": "mastery_checklist.9",
+              "says": "I can compare three amounts with one ratio.",
+              "score": 2.5,
+              "matched_on": [
+                "amount",
+                "compar",
+                "ratio",
+                "thre"
+              ]
+            }
+          ],
+          "and_the_bank_can_ask_it": false
+        }
+      }
+    ],
+    "skills_without_a_concept": [
+      {
         "skill": "ratio_share",
-        "statement_is_provisional": true,
+        "skill_title": "Share in a given ratio",
         "exercises_in_bank": 9,
         "sample_question": "$165$ sweets are shared between Ana and Ben in the ratio $5 : 6$. How many sweets does Ana get?",
-        "bank_calls_this": "application"
+        "why": "no learning goal in this chapter's enrichment matched it"
       }
+    ],
+    "not_exportable_until": [
+      "concepts.0.objective_type is missing",
+      "concepts.0.bank is missing; a concept without one is a card with nothing to ask",
+      "concepts.1.objective_type is missing",
+      "concepts.1.bank is missing; a concept without one is a card with nothing to ask",
+      "concepts.2.bank is missing; a concept without one is a card with nothing to ask",
+      "concepts.3.objective_type is missing",
+      "concepts.3.bank is missing; a concept without one is a card with nothing to ask",
+      "concepts.6.bank is missing; a concept without one is a card with nothing to ask"
     ]
   },
   "authored_by": "",
@@ -87,12 +432,32 @@
   },
   "concepts": [
     {
-      "stable_key": "math5a:ch06:ratio-simplify",
-      "statement": "Simplify a ratio",
+      "stable_key": "math5a:ch06:read-a-ratio-using-the-word-to",
+      "statement": "You will read a ratio using the word \"to\"."
+    },
+    {
+      "stable_key": "math5a:ch06:write-ratios-in-the-correct-order",
+      "statement": "You will write ratios in the correct order.",
+      "assessed": true
+    },
+    {
+      "stable_key": "math5a:ch06:reverse-a-ratio-without-changing-its-meaning",
+      "statement": "You will reverse a ratio without changing its meaning.",
+      "objective_type": "procedure",
+      "assessed": true
+    },
+    {
+      "stable_key": "math5a:ch06:find-ratios-that-show-the-same-comparison",
+      "statement": "You will find ratios that show the same comparison."
+    },
+    {
+      "stable_key": "math5a:ch06:write-ratios-in-their-simplest-form",
+      "statement": "You will write ratios in their simplest form.",
       "objective_type": "procedure",
       "assessed": true,
       "bank": {
         "source": "math_practice_items",
+        "skill": "ratio_simplify",
         "type": "response.free_text",
         "domain": "math",
         "evidence_mode": "cued_recall",
@@ -110,17 +475,17 @@
         "scheduling": {
           "policy": "skill_practice",
           "subject": "learning_item"
-        },
-        "skill": "ratio_simplify"
+        }
       }
     },
     {
-      "stable_key": "math5a:ch06:ratio-missing-part",
-      "statement": "Find a missing amount",
+      "stable_key": "math5a:ch06:find-missing-amounts-using-unit-parts",
+      "statement": "You will find missing amounts using unit parts.",
       "objective_type": "procedure",
       "assessed": true,
       "bank": {
         "source": "math_practice_items",
+        "skill": "ratio_missing_part",
         "type": "response.free_text",
         "domain": "math",
         "evidence_mode": "cued_recall",
@@ -138,37 +503,14 @@
         "scheduling": {
           "policy": "skill_practice",
           "subject": "learning_item"
-        },
-        "skill": "ratio_missing_part"
+        }
       }
     },
     {
-      "stable_key": "math5a:ch06:ratio-share",
-      "statement": "Share in a given ratio",
+      "stable_key": "math5a:ch06:compare-three-amounts-with-one-ratio",
+      "statement": "You will compare three amounts with one ratio.",
       "objective_type": "procedure",
-      "assessed": true,
-      "bank": {
-        "source": "math_practice_items",
-        "type": "response.free_text",
-        "domain": "math",
-        "evidence_mode": "cued_recall",
-        "answer_visibility": "after_submission",
-        "response": {
-          "kind": "short_answer",
-          "required": true
-        },
-        "evaluation": {
-          "authority": "deterministic",
-          "marking": {
-            "marker": "ela.math.numeric"
-          }
-        },
-        "scheduling": {
-          "policy": "skill_practice",
-          "subject": "learning_item"
-        },
-        "skill": "ratio_share"
-      }
+      "assessed": true
     }
   ],
   "objective_associations": [],
