@@ -2107,6 +2107,42 @@ objective; a package is one self-contained fingerprinted file; images are
 generated at authoring time, never live. Where this plan and CONTEXT.md
 disagree, CONTEXT.md wins and this file gets fixed.
 
+**The contract, and who writes what — the design this phase runs on.**
+
+A **contract** (previously called an "export manifest") is the brief handed to
+the generator BEFORE it writes anything. It is not a description of what came
+out; it is the specification that drives what goes in, and the same
+specification governs export and import afterwards. One contract, three
+stages: brief the generator, export what it returned, import it against the
+same shape.
+
+**One contract per CONCEPT, not per chapter.** "Convert a division into a
+fraction" has its own contract, and the generator writes that concept's entire
+class lesson from it — the explanation, the worked examples, the practice.
+Chapter 3 is five contracts, not one.
+
+A contract states what the generator must produce, the metadata it must
+attach, the format it must return, and how much context it has to work with.
+
+**Who generates: anyone except the operator.** Where this plan says a job is
+"content work" or "a human job", it means it belongs to an external
+generator — a person, a third-party LLM, the enrichment pipeline — and the
+distinction that matters is only that **it is not the operator relaying the
+plan**. The operator never authors content and never builds machinery that
+authors content on their behalf; specifying such a generator in a batch brief
+IS authoring it. This is written down because it was broken once: the operator
+read "content work", designed a heuristic generator, and produced lesson
+statements that discarded the teaching layer an LLM had already written.
+
+**Enrichment is repeatable, not one-shot.** A generated lesson that comes back
+thin is enriched again, as many passes as it takes; illustrations can be added
+to a concept afterwards without regenerating it. Each pass is additive and
+proven so ("N added, 0 removed").
+
+**Absent illustrations are silence, never an error.** A concept with no
+picture renders without one — no gap, no placeholder, no failure. A concept
+with pictures shows them. Nothing blocks on their absence at any stage.
+
 **Where a lesson's content comes from — explicit, because vagueness here
 produced a wasted batch.** The factory (RAG) generates. The pipeline carries
 what the factory generated. Nothing in this phase authors teaching content by
