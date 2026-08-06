@@ -9,43 +9,45 @@ the test is wrong.
 
 ### Batch 1
 
-Canonical batch **B20.1 — Class lessons: the transform stage**. RAG only.
-Read `docs/classroom-migration-batches.md` (B20.1) and `CONTEXT.md` first.
-B20.1's section is the specification; this brief does not restate it.
+**Rebuild the chapter lesson plans (export manifests) from the enrichment.**
+This corrects B21a, whose generator read the exercise bank's `skill` labels and
+produced concept statements like "Place value" — throwing away the class
+material an external LLM had already written for all nine chapters. Read
+`docs/classroom-migration-batches.md` (the contract section, and B21) and
+`CONTEXT.md` first.
 
-**You are building a CONTRACT and a RUNNER. You are not writing lessons.**
-Any lesson content you write yourself is a defect, however good it reads. The
-generator is external — ChatGPT through Playwright, exactly as
-`enrich_lessons.py` already drives enrichment. Read that file first; this is
-its sibling, not its replacement.
+**The rule the plan now states, and this batch exists to honour:** a lesson
+plan is DERIVED from the chapter's enrichment, never invented. A concept's
+statement is that chapter's own `learning_goals` line — "You will find the
+value of any digit", not "Place value". Nothing in this batch writes teaching
+content; it maps what an external generator already wrote.
 
-What the batch delivers:
+Rework `draft_export_manifest.py` so a chapter's draft is built from
+`output/math5a.chapterNN.enrichment.json`:
 
-1. **The contract.** A document, in the repository, that an outside generator
-   could be handed with no other instructions: what a class lesson must
-   contain for one concept, the structure it returns in, the format, the
-   length, and the context it is given. Chapter 3's existing lesson material
-   is the shape to describe — goal, technique with its steps and its common
-   error, worked examples with decoding/plan/model answer/annotations — but
-   describe the contract, do not copy that chapter's content into it.
+- **Concepts come from the enrichment.** Its `learning_goals`, `techniques`
+  and `mastery_checklist` describe what the chapter teaches; the exercise
+  bank's `skill` values say which questions exist. Match them, and say plainly
+  in the draft how each concept was matched.
+- **A goal with no matching questions is still a concept.** It is taught and
+  not yet practised; do not drop it, and do not invent questions for it.
+- **A `skill` with no matching goal is reported, not silently attached.** The
+  draft names it as unmatched so a person can see the gap.
+- **`objective_type` and `assessed` are the enrichment's evidence, not a
+  default.** If the material does not say, leave the field absent and report
+  it rather than stamping every concept `procedure, assessed=true` as the
+  previous generator did.
+- REVIEW chapters (4, 8, 9) carry no concepts and name the chapters they
+  review, per decision 4. Take the coverage from the chapter's own material,
+  not from a shape you choose.
 
-2. **The runner.** Per concept, never per chapter. Every run sends the
-   concept's CURRENT class lesson as context so the generator expands rather
-   than repeats, and nothing already there is deleted. Unlimited re-runs. A
-   chapter of nine concepts that fails at the fifth resumes at the fifth and
-   never re-runs the four completed.
+Then regenerate all eight drafts under `manifests/drafts/`, still unapproved.
+Chapter 3's approved manifest must keep exporting **byte-identical at
+content_hash `0cc0598abed2`** — prove it.
 
-3. **Illustrations are out of scope here** and must not appear in the prompt.
-   They attach afterwards through the asset contract that already exists (an
-   asset names the concept it `illustrates`). Do not generate, stub, or call
-   any image service.
+Report honestly, per chapter: how many concepts, how many matched to
+questions, what was left unmatched, and where the material was too thin to say.
+Do not pad.
 
-Do not run the automation against ChatGPT in this batch — Roy runs it. Build
-it so it can be run, and prove the pieces with tests that need no network.
-
-The named tests are in the canonical B20.1 section:
-`test_class_lesson_contract.py`, `test_class_lesson_runner.py`,
-`test_class_lesson_resume.py`.
-
-Verification is EVERY suite in this repository, as this playlist's header
-requires. Report EXIT CODES. Commit locally.
+Verification is EVERY suite in this repository. Report EXIT CODES. Commit
+locally.

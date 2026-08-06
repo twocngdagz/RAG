@@ -2,28 +2,38 @@
   "manifest_schema_version": "lesson.export_manifest.v2",
   "approved": false,
   "draft": {
-    "generator": "draft_export_manifest/1.0.0",
+    "generator": "draft_export_manifest/2.0.0",
     "written_from": {
       "materials": "output/math5a.chapter08.book_learning_materials.json",
-      "exercise_bank": "output/math_practice_items.json",
-      "teaching_document": "output/math5a.chapter08.enrichment.json"
+      "enrichment": "output/math5a.chapter08.enrichment.json",
+      "exercise_bank": "output/math_practice_items.json"
     },
     "what_this_is": "A proposal, not a mapping. Nothing here was read by a person. The exporter refuses to publish it while approved is false.",
+    "how_it_was_derived": "Every concept is one of this chapter's own learning goals from its enrichment, in the enrichment's order, stated in the enrichment's words. Nothing here was written by this generator: it matched the goals to the questions the exercise bank can ask, to the techniques that carry them out, and to the mastery checklist that says they are checked.",
+    "how_matches_were_made": "Matched on shared words. Each sentence is lowercased, stripped of its LaTeX and of the everyday words the whole book uses, and what is left is reduced to a rough stem so 'fractions' and 'fraction' count as one word. A shared word is worth 1 divided by the number of candidates that use it, so a word only one candidate uses decides a match and a word all of them use decides nothing. A total of 1.0 or more is a match. Every match lists the words that produced it.",
     "to_approve": [
-      "Read what_the_material_says below against the chapter itself.",
+      "Read what_the_material_says and every concept note against the chapter itself.",
+      "Confirm reviews names the lessons this review actually reviews.",
       "Fill authored_by with who approved it.",
       "Delete this draft block, set approved to true, and move the file to manifests/math5a.chapter08.export_manifest.json."
     ],
+    "coverage": {
+      "concepts": 0,
+      "reviews": 6,
+      "lessons_considered": 6,
+      "sentences_that_matched_nothing": 3
+    },
     "needs_review": [
-      "This is a review lesson. It teaches nothing and has no questions of its own, so it declares no concepts; reviews names the lessons it draws on (math5a:ch01, math5a:ch02, math5a:ch03, math5a:ch05, math5a:ch06, math5a:ch07), read from the bank's REVIEW_COVERS. Confirm that list is the one the book reviews.",
-      "The exporter cannot publish a review lesson yet: it refuses a manifest with no concepts. Approving this one needs that work first.",
-      "No resources are declared. Material is reusable because an author says so, and chapter 3 promotes its review checklist that way.",
-      "No diagrams are declared. Which drawing teaches which example is a teaching decision, and a wrong picture in maths teaches something false.",
-      "teaching_document.generator_version reads 'enrich_lessons/pte_lesson_enrichment.v1', taken from the document's own schema version. Confirm which run actually wrote it.",
-      "authored_by is empty. Approving this mapping means putting a name to it."
+      "This is a review lesson. It teaches nothing of its own, so it declares no concepts; reviews names the lessons it draws on (math5a:ch01, math5a:ch02, math5a:ch03, math5a:ch05, math5a:ch06, math5a:ch07), read from its own chapter summary and learning goals. Confirm that list is the one the book reviews.",
+      "3 of this review's own sentences matched no lesson in this book: learning_goals.2 (You will multiply and divide by $10$, $100$, and $1{,}000$.); learning_goals.3 (You will change litres, millilitres, metres, centimetres, and time.); learning_goals.5 (You will solve money problems with several steps.). Either this book does not teach what its review revises, or the wording differs enough that shared words could not see it.",
+      "The exporter cannot publish a review lesson yet: it refuses a manifest with no concepts. Approving this one needs that work first."
     ],
     "what_the_material_says": {
       "chapter_title_as_printed": "REVIEW B",
+      "enrichment_lesson_title": "REVIEW B",
+      "learning_goals": 9,
+      "techniques": 7,
+      "mastery_checklist": 10,
       "learning_objectives": [
         "Subtract a given number from a larger number.",
         "Round numbers to the nearest thousand.",
@@ -39,7 +49,257 @@
       "practice_questions": 33,
       "review_checklist": 8
     },
-    "concepts": []
+    "how_reviews_were_read": {
+      "reviews": [
+        "math5a:ch01",
+        "math5a:ch02",
+        "math5a:ch03",
+        "math5a:ch05",
+        "math5a:ch06",
+        "math5a:ch07"
+      ],
+      "said": [
+        {
+          "at": "chapter_summary",
+          "says": "This chapter provides a mixed review of place‑value subtraction, rounding, multiplication and division by powers of ten, fraction and unit conversions, money word problems, ratios, and basic geometry (area, perimeter, angles).",
+          "reviews": [
+            "math5a:ch01",
+            "math5a:ch03",
+            "math5a:ch02",
+            "math5a:ch05",
+            "math5a:ch07",
+            "math5a:ch06"
+          ],
+          "matched_on": {
+            "math5a:ch01": [
+              "plac",
+              "problem",
+              "round",
+              "ten",
+              "valu",
+              "word"
+            ],
+            "math5a:ch03": [
+              "division",
+              "fraction",
+              "mixed",
+              "problem"
+            ],
+            "math5a:ch02": [
+              "division",
+              "multiplication",
+              "plac",
+              "valu"
+            ],
+            "math5a:ch05": [
+              "area",
+              "problem",
+              "unit",
+              "word"
+            ],
+            "math5a:ch07": [
+              "angl",
+              "subtraction"
+            ],
+            "math5a:ch06": [
+              "ratio",
+              "unit",
+              "word"
+            ]
+          },
+          "closest_it_did_not_match": []
+        },
+        {
+          "at": "learning_goals.0",
+          "says": "You will subtract thousands from larger whole numbers.",
+          "reviews": [
+            "math5a:ch03",
+            "math5a:ch01"
+          ],
+          "matched_on": {
+            "math5a:ch03": [
+              "number",
+              "subtract",
+              "whol"
+            ],
+            "math5a:ch01": [
+              "number",
+              "thousand",
+              "whol"
+            ]
+          },
+          "closest_it_did_not_match": []
+        },
+        {
+          "at": "learning_goals.1",
+          "says": "You will round whole numbers to the nearest thousand.",
+          "reviews": [
+            "math5a:ch01"
+          ],
+          "matched_on": {
+            "math5a:ch01": [
+              "number",
+              "round",
+              "thousand",
+              "whol"
+            ]
+          },
+          "closest_it_did_not_match": []
+        },
+        {
+          "at": "learning_goals.2",
+          "says": "You will multiply and divide by $10$, $100$, and $1{,}000$.",
+          "reviews": [],
+          "matched_on": {},
+          "closest_it_did_not_match": [
+            {
+              "lesson": "math5a:ch03",
+              "score": 0.67,
+              "matched_on": [
+                "divid",
+                "multiply"
+              ]
+            },
+            {
+              "lesson": "math5a:ch02",
+              "score": 0.67,
+              "matched_on": [
+                "divid",
+                "multiply"
+              ]
+            }
+          ]
+        },
+        {
+          "at": "learning_goals.3",
+          "says": "You will change litres, millilitres, metres, centimetres, and time.",
+          "reviews": [],
+          "matched_on": {},
+          "closest_it_did_not_match": [
+            {
+              "lesson": "math5a:ch06",
+              "score": 0.5,
+              "matched_on": [
+                "chang"
+              ]
+            },
+            {
+              "lesson": "math5a:ch03",
+              "score": 0.5,
+              "matched_on": [
+                "chang"
+              ]
+            }
+          ]
+        },
+        {
+          "at": "learning_goals.4",
+          "says": "You will write parts of amounts as fractions.",
+          "reviews": [
+            "math5a:ch06",
+            "math5a:ch03"
+          ],
+          "matched_on": {
+            "math5a:ch06": [
+              "amount",
+              "part"
+            ],
+            "math5a:ch03": [
+              "fraction"
+            ]
+          },
+          "closest_it_did_not_match": []
+        },
+        {
+          "at": "learning_goals.5",
+          "says": "You will solve money problems with several steps.",
+          "reviews": [],
+          "matched_on": {},
+          "closest_it_did_not_match": [
+            {
+              "lesson": "math5a:ch05",
+              "score": 0.33,
+              "matched_on": [
+                "problem"
+              ]
+            },
+            {
+              "lesson": "math5a:ch03",
+              "score": 0.33,
+              "matched_on": [
+                "problem"
+              ]
+            }
+          ]
+        },
+        {
+          "at": "learning_goals.6",
+          "says": "You will use fractions to find used and leftover amounts.",
+          "reviews": [
+            "math5a:ch06",
+            "math5a:ch03"
+          ],
+          "matched_on": {
+            "math5a:ch06": [
+              "amount"
+            ],
+            "math5a:ch03": [
+              "fraction"
+            ]
+          },
+          "closest_it_did_not_match": []
+        },
+        {
+          "at": "learning_goals.7",
+          "says": "You will share amounts using two-part and three-part ratios.",
+          "reviews": [
+            "math5a:ch06",
+            "math5a:ch03"
+          ],
+          "matched_on": {
+            "math5a:ch06": [
+              "amount",
+              "part",
+              "ratio",
+              "thre"
+            ],
+            "math5a:ch03": [
+              "two"
+            ]
+          },
+          "closest_it_did_not_match": []
+        },
+        {
+          "at": "learning_goals.8",
+          "says": "You will find area, perimeter, and missing angles.",
+          "reviews": [
+            "math5a:ch07",
+            "math5a:ch05"
+          ],
+          "matched_on": {
+            "math5a:ch07": [
+              "angl",
+              "miss"
+            ],
+            "math5a:ch05": [
+              "area"
+            ]
+          },
+          "closest_it_did_not_match": []
+        }
+      ],
+      "considered": [
+        "math5a:ch01",
+        "math5a:ch02",
+        "math5a:ch03",
+        "math5a:ch05",
+        "math5a:ch06",
+        "math5a:ch07"
+      ]
+    },
+    "not_exportable_until": [
+      "concepts is empty; a lesson that introduces nothing teaches nothing"
+    ]
   },
   "authored_by": "",
   "competency_framework": {

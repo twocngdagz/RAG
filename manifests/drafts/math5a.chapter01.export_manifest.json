@@ -2,24 +2,37 @@
   "manifest_schema_version": "lesson.export_manifest.v2",
   "approved": false,
   "draft": {
-    "generator": "draft_export_manifest/1.0.0",
+    "generator": "draft_export_manifest/2.0.0",
     "written_from": {
       "materials": "output/math5a.chapter01.book_learning_materials.json",
-      "exercise_bank": "output/math_practice_items.json",
-      "teaching_document": "output/math5a.chapter01.enrichment.json"
+      "enrichment": "output/math5a.chapter01.enrichment.json",
+      "exercise_bank": "output/math_practice_items.json"
     },
     "what_this_is": "A proposal, not a mapping. Nothing here was read by a person. The exporter refuses to publish it while approved is false.",
+    "how_it_was_derived": "Every concept is one of this chapter's own learning goals from its enrichment, in the enrichment's order, stated in the enrichment's words. Nothing here was written by this generator: it matched the goals to the questions the exercise bank can ask, to the techniques that carry them out, and to the mastery checklist that says they are checked.",
+    "how_matches_were_made": "Matched on shared words. Each sentence is lowercased, stripped of its LaTeX and of the everyday words the whole book uses, and what is left is reduced to a rough stem so 'fractions' and 'fraction' count as one word. A shared word is worth 1 divided by the number of candidates that use it, so a word only one candidate uses decides a match and a word all of them use decides nothing. A total of 1.0 or more is a match. Every match lists the words that produced it.",
     "to_approve": [
-      "Read what_the_material_says below against the chapter itself.",
-      "Rewrite every concept statement: they are the bank's skill titles, not sentences about what a learner can do.",
+      "Read what_the_material_says and every concept note against the chapter itself.",
+      "Check each statement is a goal this chapter really teaches — they are the enrichment's own sentences, so a wrong one is fixed in the enrichment, not here.",
       "Settle every concept stable_key now — after approval a learner's evidence is filed under it and it cannot move.",
+      "Decide what to do about every concept with no questions and every skill with no concept: not_exportable_until lists the ones that block a package.",
       "Fill authored_by with who approved it.",
       "Delete this draft block, set approved to true, and move the file to manifests/math5a.chapter01.export_manifest.json."
     ],
+    "coverage": {
+      "concepts": 8,
+      "with_questions": 2,
+      "taught_but_not_yet_practised": 6,
+      "skills_without_a_concept": 2,
+      "objective_type_from_the_material": 6,
+      "assessed_from_the_material": 8
+    },
     "needs_review": [
-      "Every statement is the bank's skill title copied across, which is a name for a skill and not a statement of what a learner can do. Rewrite all of them.",
-      "Every objective_type is 'procedure', the only value this repository has ever emitted. Where the bank calls a skill 'recall' rather than 'application', that may be the wrong word for it.",
-      "Every concept is assessed: true, because every question in these banks is machine-marked and can produce evidence. Say so deliberately.",
+      "Every statement is one of this chapter's 8 learning goals from its enrichment, verbatim and in the enrichment's order. This generator wrote none of them.",
+      "6 of 8 concept(s) have no questions: math5a:ch01:read-numbers-up-to-the-millions, math5a:ch01:write-large-numbers-in-words-and-figures, math5a:ch01:use-estimates-to-check-exact-answers, math5a:ch01:multiply-and-divide-using-place-value, math5a:ch01:follow-the-correct-order-of-operations, math5a:ch01:solve-word-problems-using-bar-models. They are taught and not yet practised. No questions were invented for them, and the exporter will not publish a concept without a bank.",
+      "2 skill(s) the bank can ask of this chapter matched no concept: multiply_by_tens (9 questions), divide_by_tens (8 questions). They were left unattached rather than hung on the nearest concept.",
+      "2 concept(s) carry no objective_type: no technique in this chapter's enrichment gives an ordered method for them, so the material does not say what kind of thing they are. The field is absent rather than defaulted.",
+      "Where objective_type is set it reads 'procedure', on the evidence that a named technique carries the goal out in ordered steps. It is also the only value this repository has ever emitted, so check it against Ela's vocabulary.",
       "No bank declares guidance -- chapter 3's approved banks carry a one-line reminder of the method, and writing teaching is not this generator's to do.",
       "No bank declares evaluation.marking.required_form. Chapter 3 requires answers in simplest fraction form; decide what shape these answers must take.",
       "No resources are declared. Material is reusable because an author says so, and chapter 3 promotes its review checklist that way.",
@@ -29,6 +42,10 @@
     ],
     "what_the_material_says": {
       "chapter_title_as_printed": "1 Whole Numbers",
+      "enrichment_lesson_title": "1 Whole Numbers",
+      "learning_goals": 8,
+      "techniques": 8,
+      "mastery_checklist": 14,
       "learning_objectives": [
         "Read and write whole numbers up to 9,999,999 in figures and words.",
         "Identify the place value of any digit in a whole number.",
@@ -52,37 +69,392 @@
     },
     "concepts": [
       {
-        "stable_key": "math5a:ch01:digit-value",
-        "skill": "digit_value",
-        "statement_is_provisional": true,
-        "exercises_in_bank": 9,
-        "sample_question": "In $719{,}362$, what is the value of the digit $9$?",
-        "bank_calls_this": "recall"
+        "stable_key": "math5a:ch01:read-numbers-up-to-the-millions",
+        "statement_is": "the chapter's own learning_goals.0, verbatim",
+        "questions": null,
+        "no_questions_because": "no skill in the bank matched this goal",
+        "closest_it_did_not_match": [],
+        "objective_type_from": null,
+        "closest_technique_it_did_not_match": [
+          {
+            "technique": "Read numbers in three-digit groups",
+            "at": "techniques.1",
+            "ordered_steps": 4,
+            "score": 0.75,
+            "matched_on": [
+              "million",
+              "number"
+            ]
+          }
+        ],
+        "assessed_from": {
+          "mastery_checklist": [
+            {
+              "at": "mastery_checklist.0",
+              "says": "I can read whole numbers up to the millions.",
+              "score": 1.5,
+              "matched_on": [
+                "million",
+                "number"
+              ]
+            }
+          ],
+          "and_the_bank_can_ask_it": false
+        }
       },
       {
-        "stable_key": "math5a:ch01:round-number",
-        "skill": "round_number",
-        "statement_is_provisional": true,
-        "exercises_in_bank": 9,
-        "sample_question": "Round $59{,}177$ to the nearest thousand.",
-        "bank_calls_this": "recall"
+        "stable_key": "math5a:ch01:write-large-numbers-in-words-and-figures",
+        "statement_is": "the chapter's own learning_goals.1, verbatim",
+        "questions": null,
+        "no_questions_because": "no skill in the bank matched this goal",
+        "closest_it_did_not_match": [],
+        "objective_type_from": {
+          "technique": "Read numbers in three-digit groups",
+          "at": "techniques.1",
+          "ordered_steps": 4,
+          "score": 1.25,
+          "matched_on": [
+            "larg",
+            "number"
+          ]
+        },
+        "assessed_from": {
+          "mastery_checklist": [
+            {
+              "at": "mastery_checklist.1",
+              "says": "I can write large numbers using words and figures.",
+              "score": 3.0,
+              "matched_on": [
+                "figur",
+                "larg",
+                "number",
+                "word"
+              ]
+            }
+          ],
+          "and_the_bank_can_ask_it": false
+        }
       },
       {
-        "stable_key": "math5a:ch01:multiply-by-tens",
+        "stable_key": "math5a:ch01:find-the-value-of-any-digit",
+        "statement_is": "the chapter's own learning_goals.2, verbatim",
+        "questions": {
+          "skill": "digit_value",
+          "skill_title": "Place value",
+          "exercises_in_bank": 9,
+          "sample_question": "In $719{,}362$, what is the value of the digit $9$?",
+          "bank_calls_this": "recall",
+          "score": 2.0,
+          "matched_on": [
+            "digit",
+            "valu"
+          ],
+          "beat_for_this_concept": [],
+          "this_skill_also_matched": [
+            {
+              "at": "learning_goals.5",
+              "score": 2.0,
+              "matched_on": [
+                "plac",
+                "valu"
+              ]
+            }
+          ]
+        },
+        "objective_type_from": null,
+        "closest_technique_it_did_not_match": [
+          {
+            "technique": "Build a place-value chart",
+            "at": "techniques.0",
+            "ordered_steps": 4,
+            "score": 0.75,
+            "matched_on": [
+              "digit",
+              "valu"
+            ]
+          }
+        ],
+        "assessed_from": {
+          "mastery_checklist": [
+            {
+              "at": "mastery_checklist.2",
+              "says": "I can state the full value of any digit.",
+              "score": 2.0,
+              "matched_on": [
+                "digit",
+                "valu"
+              ]
+            }
+          ],
+          "and_the_bank_can_ask_it": true
+        }
+      },
+      {
+        "stable_key": "math5a:ch01:round-to-tens-hundreds-and-thousands",
+        "statement_is": "the chapter's own learning_goals.3, verbatim",
+        "questions": {
+          "skill": "round_number",
+          "skill_title": "Rounding",
+          "exercises_in_bank": 9,
+          "sample_question": "Round $59{,}177$ to the nearest thousand.",
+          "bank_calls_this": "recall",
+          "score": 1.33,
+          "matched_on": [
+            "round",
+            "ten"
+          ],
+          "beat_for_this_concept": [],
+          "this_skill_also_matched": []
+        },
+        "objective_type_from": {
+          "technique": "Use the rounding neighbour",
+          "at": "techniques.2",
+          "ordered_steps": 5,
+          "score": 1.67,
+          "matched_on": [
+            "hundred",
+            "round",
+            "ten",
+            "thousand"
+          ]
+        },
+        "assessed_from": {
+          "mastery_checklist": [
+            {
+              "at": "mastery_checklist.4",
+              "says": "I can round to the nearest ten.",
+              "score": 1.33,
+              "matched_on": [
+                "round",
+                "ten"
+              ]
+            },
+            {
+              "at": "mastery_checklist.5",
+              "says": "I can round to the nearest hundred.",
+              "score": 1.33,
+              "matched_on": [
+                "hundred",
+                "round"
+              ]
+            },
+            {
+              "at": "mastery_checklist.6",
+              "says": "I can round to the nearest thousand.",
+              "score": 1.33,
+              "matched_on": [
+                "round",
+                "thousand"
+              ]
+            }
+          ],
+          "and_the_bank_can_ask_it": true
+        }
+      },
+      {
+        "stable_key": "math5a:ch01:use-estimates-to-check-exact-answers",
+        "statement_is": "the chapter's own learning_goals.4, verbatim",
+        "questions": null,
+        "no_questions_because": "no skill in the bank matched this goal",
+        "closest_it_did_not_match": [],
+        "objective_type_from": {
+          "technique": "Estimate with friendly numbers",
+          "at": "techniques.3",
+          "ordered_steps": 4,
+          "score": 2.83,
+          "matched_on": [
+            "answer",
+            "check",
+            "estimat",
+            "exact"
+          ]
+        },
+        "assessed_from": {
+          "mastery_checklist": [
+            {
+              "at": "mastery_checklist.7",
+              "says": "I can make useful estimates before exact work.",
+              "score": 2.0,
+              "matched_on": [
+                "estimat",
+                "exact"
+              ]
+            },
+            {
+              "at": "mastery_checklist.13",
+              "says": "I can check whether my final answer is reasonable.",
+              "score": 2.0,
+              "matched_on": [
+                "answer",
+                "check"
+              ]
+            }
+          ],
+          "and_the_bank_can_ask_it": false
+        }
+      },
+      {
+        "stable_key": "math5a:ch01:multiply-and-divide-using-place-value",
+        "statement_is": "the chapter's own learning_goals.5, verbatim",
+        "questions": null,
+        "no_questions_because": "two skills matched this goal equally and a concept declares one bank",
+        "skills_that_tied": [
+          {
+            "skill": "divide_by_tens",
+            "score": 1.0,
+            "matched_on": [
+              "divid"
+            ]
+          },
+          {
+            "skill": "multiply_by_tens",
+            "score": 1.0,
+            "matched_on": [
+              "multiply"
+            ]
+          }
+        ],
+        "objective_type_from": {
+          "technique": "Shift places when multiplying",
+          "at": "techniques.4",
+          "ordered_steps": 4,
+          "score": 1.83,
+          "matched_on": [
+            "multiply",
+            "plac",
+            "valu"
+          ]
+        },
+        "assessed_from": {
+          "mastery_checklist": [
+            {
+              "at": "mastery_checklist.8",
+              "says": "I can multiply by $10$, $100$, and $1{,}000$.",
+              "score": 1.0,
+              "matched_on": [
+                "multiply"
+              ]
+            },
+            {
+              "at": "mastery_checklist.9",
+              "says": "I can divide by $10$, $100$, and $1{,}000$.",
+              "score": 1.0,
+              "matched_on": [
+                "divid"
+              ]
+            },
+            {
+              "at": "mastery_checklist.3",
+              "says": "I can use zero as a place holder.",
+              "score": 1.0,
+              "matched_on": [
+                "plac"
+              ]
+            },
+            {
+              "at": "mastery_checklist.2",
+              "says": "I can state the full value of any digit.",
+              "score": 1.0,
+              "matched_on": [
+                "valu"
+              ]
+            }
+          ],
+          "and_the_bank_can_ask_it": false
+        }
+      },
+      {
+        "stable_key": "math5a:ch01:follow-the-correct-order-of-operations",
+        "statement_is": "the chapter's own learning_goals.6, verbatim",
+        "questions": null,
+        "no_questions_because": "no skill in the bank matched this goal",
+        "closest_it_did_not_match": [],
+        "objective_type_from": {
+          "technique": "Follow operation priority",
+          "at": "techniques.6",
+          "ordered_steps": 4,
+          "score": 1.83,
+          "matched_on": [
+            "follow",
+            "operation",
+            "order"
+          ]
+        },
+        "assessed_from": {
+          "mastery_checklist": [
+            {
+              "at": "mastery_checklist.11",
+              "says": "I can follow the correct order of operations.",
+              "score": 3.0,
+              "matched_on": [
+                "follow",
+                "operation",
+                "order"
+              ]
+            }
+          ],
+          "and_the_bank_can_ask_it": false
+        }
+      },
+      {
+        "stable_key": "math5a:ch01:solve-word-problems-using-bar-models",
+        "statement_is": "the chapter's own learning_goals.7, verbatim",
+        "questions": null,
+        "no_questions_because": "no skill in the bank matched this goal",
+        "closest_it_did_not_match": [],
+        "objective_type_from": {
+          "technique": "Draw a bar model",
+          "at": "techniques.7",
+          "ordered_steps": 5,
+          "score": 2.0,
+          "matched_on": [
+            "bar",
+            "model"
+          ]
+        },
+        "assessed_from": {
+          "mastery_checklist": [
+            {
+              "at": "mastery_checklist.12",
+              "says": "I can draw a bar model for a word problem.",
+              "score": 3.5,
+              "matched_on": [
+                "bar",
+                "model",
+                "problem",
+                "word"
+              ]
+            }
+          ],
+          "and_the_bank_can_ask_it": false
+        }
+      }
+    ],
+    "skills_without_a_concept": [
+      {
         "skill": "multiply_by_tens",
-        "statement_is_provisional": true,
+        "skill_title": "Multiply using tens",
         "exercises_in_bank": 9,
         "sample_question": "$$31 \\times 70$$",
-        "bank_calls_this": "application"
+        "why": "it matched math5a:ch01:multiply-and-divide-using-place-value exactly as well as another skill did, and a concept declares one bank"
       },
       {
-        "stable_key": "math5a:ch01:divide-by-tens",
         "skill": "divide_by_tens",
-        "statement_is_provisional": true,
+        "skill_title": "Divide using tens",
         "exercises_in_bank": 8,
         "sample_question": "$$15{,}000 \\div 30$$",
-        "bank_calls_this": "application"
+        "why": "it matched math5a:ch01:multiply-and-divide-using-place-value exactly as well as another skill did, and a concept declares one bank"
       }
+    ],
+    "not_exportable_until": [
+      "concepts.0.objective_type is missing",
+      "concepts.0.bank is missing; a concept without one is a card with nothing to ask",
+      "concepts.1.bank is missing; a concept without one is a card with nothing to ask",
+      "concepts.2.objective_type is missing",
+      "concepts.4.bank is missing; a concept without one is a card with nothing to ask",
+      "concepts.5.bank is missing; a concept without one is a card with nothing to ask",
+      "concepts.6.bank is missing; a concept without one is a card with nothing to ask",
+      "concepts.7.bank is missing; a concept without one is a card with nothing to ask"
     ]
   },
   "authored_by": "",
@@ -100,12 +472,23 @@
   },
   "concepts": [
     {
-      "stable_key": "math5a:ch01:digit-value",
-      "statement": "Place value",
+      "stable_key": "math5a:ch01:read-numbers-up-to-the-millions",
+      "statement": "You will read numbers up to the millions.",
+      "assessed": true
+    },
+    {
+      "stable_key": "math5a:ch01:write-large-numbers-in-words-and-figures",
+      "statement": "You will write large numbers in words and figures.",
       "objective_type": "procedure",
+      "assessed": true
+    },
+    {
+      "stable_key": "math5a:ch01:find-the-value-of-any-digit",
+      "statement": "You will find the value of any digit.",
       "assessed": true,
       "bank": {
         "source": "math_practice_items",
+        "skill": "digit_value",
         "type": "response.free_text",
         "domain": "math",
         "evidence_mode": "cued_recall",
@@ -123,17 +506,17 @@
         "scheduling": {
           "policy": "skill_practice",
           "subject": "learning_item"
-        },
-        "skill": "digit_value"
+        }
       }
     },
     {
-      "stable_key": "math5a:ch01:round-number",
-      "statement": "Rounding",
+      "stable_key": "math5a:ch01:round-to-tens-hundreds-and-thousands",
+      "statement": "You will round to tens, hundreds, and thousands.",
       "objective_type": "procedure",
       "assessed": true,
       "bank": {
         "source": "math_practice_items",
+        "skill": "round_number",
         "type": "response.free_text",
         "domain": "math",
         "evidence_mode": "cued_recall",
@@ -151,65 +534,32 @@
         "scheduling": {
           "policy": "skill_practice",
           "subject": "learning_item"
-        },
-        "skill": "round_number"
+        }
       }
     },
     {
-      "stable_key": "math5a:ch01:multiply-by-tens",
-      "statement": "Multiply using tens",
+      "stable_key": "math5a:ch01:use-estimates-to-check-exact-answers",
+      "statement": "You will use estimates to check exact answers.",
       "objective_type": "procedure",
-      "assessed": true,
-      "bank": {
-        "source": "math_practice_items",
-        "type": "response.free_text",
-        "domain": "math",
-        "evidence_mode": "cued_recall",
-        "answer_visibility": "after_submission",
-        "response": {
-          "kind": "short_answer",
-          "required": true
-        },
-        "evaluation": {
-          "authority": "deterministic",
-          "marking": {
-            "marker": "ela.math.numeric"
-          }
-        },
-        "scheduling": {
-          "policy": "skill_practice",
-          "subject": "learning_item"
-        },
-        "skill": "multiply_by_tens"
-      }
+      "assessed": true
     },
     {
-      "stable_key": "math5a:ch01:divide-by-tens",
-      "statement": "Divide using tens",
+      "stable_key": "math5a:ch01:multiply-and-divide-using-place-value",
+      "statement": "You will multiply and divide using place value.",
       "objective_type": "procedure",
-      "assessed": true,
-      "bank": {
-        "source": "math_practice_items",
-        "type": "response.free_text",
-        "domain": "math",
-        "evidence_mode": "cued_recall",
-        "answer_visibility": "after_submission",
-        "response": {
-          "kind": "short_answer",
-          "required": true
-        },
-        "evaluation": {
-          "authority": "deterministic",
-          "marking": {
-            "marker": "ela.math.numeric"
-          }
-        },
-        "scheduling": {
-          "policy": "skill_practice",
-          "subject": "learning_item"
-        },
-        "skill": "divide_by_tens"
-      }
+      "assessed": true
+    },
+    {
+      "stable_key": "math5a:ch01:follow-the-correct-order-of-operations",
+      "statement": "You will follow the correct order of operations.",
+      "objective_type": "procedure",
+      "assessed": true
+    },
+    {
+      "stable_key": "math5a:ch01:solve-word-problems-using-bar-models",
+      "statement": "You will solve word problems using bar models.",
+      "objective_type": "procedure",
+      "assessed": true
     }
   ],
   "objective_associations": [],

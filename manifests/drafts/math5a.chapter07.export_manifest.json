@@ -2,25 +2,38 @@
   "manifest_schema_version": "lesson.export_manifest.v2",
   "approved": false,
   "draft": {
-    "generator": "draft_export_manifest/1.0.0",
+    "generator": "draft_export_manifest/2.0.0",
     "written_from": {
       "materials": "output/math5a.chapter07.book_learning_materials.json",
-      "exercise_bank": "output/math_practice_items.json",
-      "teaching_document": "output/math5a.chapter07.enrichment.json"
+      "enrichment": "output/math5a.chapter07.enrichment.json",
+      "exercise_bank": "output/math_practice_items.json"
     },
     "what_this_is": "A proposal, not a mapping. Nothing here was read by a person. The exporter refuses to publish it while approved is false.",
+    "how_it_was_derived": "Every concept is one of this chapter's own learning goals from its enrichment, in the enrichment's order, stated in the enrichment's words. Nothing here was written by this generator: it matched the goals to the questions the exercise bank can ask, to the techniques that carry them out, and to the mastery checklist that says they are checked.",
+    "how_matches_were_made": "Matched on shared words. Each sentence is lowercased, stripped of its LaTeX and of the everyday words the whole book uses, and what is left is reduced to a rough stem so 'fractions' and 'fraction' count as one word. A shared word is worth 1 divided by the number of candidates that use it, so a word only one candidate uses decides a match and a word all of them use decides nothing. A total of 1.0 or more is a match. Every match lists the words that produced it.",
     "to_approve": [
-      "Read what_the_material_says below against the chapter itself.",
-      "Rewrite every concept statement: they are the bank's skill titles, not sentences about what a learner can do.",
+      "Read what_the_material_says and every concept note against the chapter itself.",
+      "Check each statement is a goal this chapter really teaches — they are the enrichment's own sentences, so a wrong one is fixed in the enrichment, not here.",
       "Settle every concept stable_key now — after approval a learner's evidence is filed under it and it cannot move.",
+      "Decide what to do about every concept with no questions and every skill with no concept: not_exportable_until lists the ones that block a package.",
       "Fill authored_by with who approved it.",
       "Delete this draft block, set approved to true, and move the file to manifests/math5a.chapter07.export_manifest.json."
     ],
+    "coverage": {
+      "concepts": 7,
+      "with_questions": 2,
+      "taught_but_not_yet_practised": 5,
+      "skills_without_a_concept": 2,
+      "objective_type_from_the_material": 4,
+      "assessed_from_the_material": 6
+    },
     "needs_review": [
-      "Every statement is the bank's skill title copied across, which is a name for a skill and not a statement of what a learner can do. Rewrite all of them.",
-      "The bank proposes 4 concept(s) but this chapter's material carries 2 teaching lesson(s). Check that the chapter actually teaches each one before a learner is scheduled a card for it.",
-      "Every objective_type is 'procedure', the only value this repository has ever emitted. Where the bank calls a skill 'recall' rather than 'application', that may be the wrong word for it.",
-      "Every concept is assessed: true, because every question in these banks is machine-marked and can produce evidence. Say so deliberately.",
+      "Every statement is one of this chapter's 7 learning goals from its enrichment, verbatim and in the enrichment's order. This generator wrote none of them.",
+      "5 of 7 concept(s) have no questions: math5a:ch07:measure-an-angle-using-a-protractor, math5a:ch07:choose-the-correct-protractor-scale, math5a:ch07:spot-vertically-opposite-angles, math5a:ch07:find-missing-angles-using-subtraction, math5a:ch07:work-out-turns-on-a-compass-rose. They are taught and not yet practised. No questions were invented for them, and the exporter will not publish a concept without a bank.",
+      "2 skill(s) the bank can ask of this chapter matched no concept: angle_right (8 questions), angle_opposite (8 questions). They were left unattached rather than hung on the nearest concept.",
+      "3 concept(s) carry no objective_type: no technique in this chapter's enrichment gives an ordered method for them, so the material does not say what kind of thing they are. The field is absent rather than defaulted.",
+      "Where objective_type is set it reads 'procedure', on the evidence that a named technique carries the goal out in ordered steps. It is also the only value this repository has ever emitted, so check it against Ela's vocabulary.",
+      "1 concept(s) carry no assessed flag: the mastery checklist does not name them and the bank cannot ask them, so nothing in the material claims they produce evidence.",
       "No bank declares guidance -- chapter 3's approved banks carry a one-line reminder of the method, and writing teaching is not this generator's to do.",
       "No bank declares evaluation.marking.required_form. Chapter 3 requires answers in simplest fraction form; decide what shape these answers must take.",
       "No resources are declared. Material is reusable because an author says so, and chapter 3 promotes its review checklist that way.",
@@ -30,6 +43,10 @@
     ],
     "what_the_material_says": {
       "chapter_title_as_printed": "6 Angles",
+      "enrichment_lesson_title": "6 Angles",
+      "learning_goals": 7,
+      "techniques": 6,
+      "mastery_checklist": 12,
       "learning_objectives": [
         "Measure an angle using a protractor.",
         "Identify and use vertically opposite angles.",
@@ -47,37 +64,330 @@
     },
     "concepts": [
       {
-        "stable_key": "math5a:ch07:angle-right",
+        "stable_key": "math5a:ch07:measure-an-angle-using-a-protractor",
+        "statement_is": "the chapter's own learning_goals.0, verbatim",
+        "questions": null,
+        "no_questions_because": "no skill in the bank matched this goal",
+        "closest_it_did_not_match": [
+          {
+            "skill": "angle_right",
+            "score": 0.25,
+            "matched_on": [
+              "angl"
+            ],
+            "declared_by": ""
+          },
+          {
+            "skill": "angle_point",
+            "score": 0.25,
+            "matched_on": [
+              "angl"
+            ],
+            "declared_by": "math5a:ch07:use-the-angles-at-a-point-rule"
+          }
+        ],
+        "objective_type_from": {
+          "technique": "Place a protractor correctly",
+          "at": "techniques.0",
+          "ordered_steps": 5,
+          "score": 1.03,
+          "matched_on": [
+            "angl",
+            "measur",
+            "protractor"
+          ]
+        },
+        "assessed_from": {
+          "mastery_checklist": [
+            {
+              "at": "mastery_checklist.2",
+              "says": "I can measure an angle in degrees.",
+              "score": 1.17,
+              "matched_on": [
+                "angl",
+                "measur"
+              ]
+            }
+          ],
+          "and_the_bank_can_ask_it": false
+        }
+      },
+      {
+        "stable_key": "math5a:ch07:choose-the-correct-protractor-scale",
+        "statement_is": "the chapter's own learning_goals.1, verbatim",
+        "questions": null,
+        "no_questions_because": "no skill in the bank matched this goal",
+        "closest_it_did_not_match": [],
+        "objective_type_from": {
+          "technique": "Choose the correct scale",
+          "at": "techniques.1",
+          "ordered_steps": 4,
+          "score": 1.0,
+          "matched_on": [
+            "protractor",
+            "scal"
+          ]
+        },
+        "assessed_from": {
+          "mastery_checklist": [
+            {
+              "at": "mastery_checklist.1",
+              "says": "I can choose the correct protractor scale.",
+              "score": 1.5,
+              "matched_on": [
+                "protractor",
+                "scal"
+              ]
+            }
+          ],
+          "and_the_bank_can_ask_it": false
+        }
+      },
+      {
+        "stable_key": "math5a:ch07:spot-vertically-opposite-angles",
+        "statement_is": "the chapter's own learning_goals.2, verbatim",
+        "questions": null,
+        "no_questions_because": "no skill in the bank matched this goal",
+        "closest_it_did_not_match": [
+          {
+            "skill": "angle_right",
+            "score": 0.25,
+            "matched_on": [
+              "angl"
+            ],
+            "declared_by": ""
+          },
+          {
+            "skill": "angle_point",
+            "score": 0.25,
+            "matched_on": [
+              "angl"
+            ],
+            "declared_by": "math5a:ch07:use-the-angles-at-a-point-rule"
+          }
+        ],
+        "objective_type_from": {
+          "technique": "Use vertically opposite angles",
+          "at": "techniques.2",
+          "ordered_steps": 4,
+          "score": 2.2,
+          "matched_on": [
+            "angl",
+            "opposit",
+            "vertically"
+          ]
+        },
+        "assessed_from": {
+          "mastery_checklist": [
+            {
+              "at": "mastery_checklist.4",
+              "says": "I can identify vertically opposite angles.",
+              "score": 2.17,
+              "matched_on": [
+                "angl",
+                "opposit",
+                "vertically"
+              ]
+            },
+            {
+              "at": "mastery_checklist.3",
+              "says": "I can spot a right angle.",
+              "score": 1.17,
+              "matched_on": [
+                "angl",
+                "spot"
+              ]
+            }
+          ],
+          "and_the_bank_can_ask_it": false
+        }
+      },
+      {
+        "stable_key": "math5a:ch07:use-the-straight-line-rule",
+        "statement_is": "the chapter's own learning_goals.3, verbatim",
+        "questions": {
+          "skill": "angle_straight_line",
+          "skill_title": "Angles on a straight line",
+          "exercises_in_bank": 8,
+          "sample_question": "Angle $q$ and $25^\\circ$ lie on a straight line. How many degrees is angle $q$?",
+          "bank_calls_this": "application",
+          "score": 1.0,
+          "matched_on": [
+            "lin",
+            "straight"
+          ],
+          "beat_for_this_concept": [
+            {
+              "skill": "angle_opposite",
+              "score": 1.0,
+              "matched_on": [
+                "lin",
+                "straight"
+              ]
+            }
+          ],
+          "this_skill_also_matched": []
+        },
+        "objective_type_from": null,
+        "closest_technique_it_did_not_match": [
+          {
+            "technique": "Use vertically opposite angles",
+            "at": "techniques.2",
+            "ordered_steps": 4,
+            "score": 0.83,
+            "matched_on": [
+              "lin",
+              "straight"
+            ]
+          }
+        ],
+        "assessed_from": {
+          "mastery_checklist": [
+            {
+              "at": "mastery_checklist.5",
+              "says": "I can use the $180^\\circ$ straight-line rule.",
+              "score": 2.5,
+              "matched_on": [
+                "lin",
+                "rul",
+                "straight"
+              ]
+            }
+          ],
+          "and_the_bank_can_ask_it": true
+        }
+      },
+      {
+        "stable_key": "math5a:ch07:use-the-angles-at-a-point-rule",
+        "statement_is": "the chapter's own learning_goals.4, verbatim",
+        "questions": {
+          "skill": "angle_point",
+          "skill_title": "Angles at a point",
+          "exercises_in_bank": 8,
+          "sample_question": "Three angles meet at a point: $69^\\circ$, $55^\\circ$ and angle $r$. How many degrees is angle $r$?",
+          "bank_calls_this": "application",
+          "score": 1.25,
+          "matched_on": [
+            "angl",
+            "point"
+          ],
+          "beat_for_this_concept": [],
+          "this_skill_also_matched": []
+        },
+        "objective_type_from": null,
+        "closest_technique_it_did_not_match": [
+          {
+            "technique": "Use angles around a point",
+            "at": "techniques.4",
+            "ordered_steps": 5,
+            "score": 0.53,
+            "matched_on": [
+              "angl",
+              "point"
+            ]
+          }
+        ],
+        "assessed_from": {
+          "mastery_checklist": [],
+          "and_the_bank_can_ask_it": true
+        }
+      },
+      {
+        "stable_key": "math5a:ch07:find-missing-angles-using-subtraction",
+        "statement_is": "the chapter's own learning_goals.5, verbatim",
+        "questions": null,
+        "no_questions_because": "no skill in the bank matched this goal",
+        "closest_it_did_not_match": [
+          {
+            "skill": "angle_right",
+            "score": 0.25,
+            "matched_on": [
+              "angl"
+            ],
+            "declared_by": ""
+          },
+          {
+            "skill": "angle_point",
+            "score": 0.25,
+            "matched_on": [
+              "angl"
+            ],
+            "declared_by": "math5a:ch07:use-the-angles-at-a-point-rule"
+          }
+        ],
+        "objective_type_from": null,
+        "closest_technique_it_did_not_match": [
+          {
+            "technique": "Use angles around a point",
+            "at": "techniques.4",
+            "ordered_steps": 5,
+            "score": 0.7,
+            "matched_on": [
+              "angl",
+              "miss"
+            ]
+          }
+        ],
+        "assessed_from": {
+          "mastery_checklist": [
+            {
+              "at": "mastery_checklist.7",
+              "says": "I can find a missing angle using subtraction.",
+              "score": 2.17,
+              "matched_on": [
+                "angl",
+                "miss",
+                "subtraction"
+              ]
+            }
+          ],
+          "and_the_bank_can_ask_it": false
+        }
+      },
+      {
+        "stable_key": "math5a:ch07:work-out-turns-on-a-compass-rose",
+        "statement_is": "the chapter's own learning_goals.6, verbatim",
+        "questions": null,
+        "no_questions_because": "no skill in the bank matched this goal",
+        "closest_it_did_not_match": [],
+        "objective_type_from": {
+          "technique": "Use compass turns",
+          "at": "techniques.5",
+          "ordered_steps": 5,
+          "score": 1.33,
+          "matched_on": [
+            "compass",
+            "turn"
+          ]
+        },
+        "assessed_from": null
+      }
+    ],
+    "skills_without_a_concept": [
+      {
         "skill": "angle_right",
-        "statement_is_provisional": true,
+        "skill_title": "Angles in a right angle",
         "exercises_in_bank": 8,
         "sample_question": "A right angle is split into $52^\\circ$ and angle $p$. How many degrees is angle $p$?",
-        "bank_calls_this": "application"
+        "why": "no learning goal in this chapter's enrichment matched it"
       },
       {
-        "stable_key": "math5a:ch07:angle-straight-line",
-        "skill": "angle_straight_line",
-        "statement_is_provisional": true,
-        "exercises_in_bank": 8,
-        "sample_question": "Angle $q$ and $25^\\circ$ lie on a straight line. How many degrees is angle $q$?",
-        "bank_calls_this": "application"
-      },
-      {
-        "stable_key": "math5a:ch07:angle-point",
-        "skill": "angle_point",
-        "statement_is_provisional": true,
-        "exercises_in_bank": 8,
-        "sample_question": "Three angles meet at a point: $69^\\circ$, $55^\\circ$ and angle $r$. How many degrees is angle $r$?",
-        "bank_calls_this": "application"
-      },
-      {
-        "stable_key": "math5a:ch07:angle-opposite",
         "skill": "angle_opposite",
-        "statement_is_provisional": true,
+        "skill_title": "Crossing lines",
         "exercises_in_bank": 8,
         "sample_question": "Two straight lines cross. One of the angles is $147^\\circ$. How many degrees is the angle next to it on the straight line?",
-        "bank_calls_this": "application"
+        "why": "it matched math5a:ch07:use-the-straight-line-rule, which declares angle_straight_line instead — that skill matched the same goal better"
       }
+    ],
+    "not_exportable_until": [
+      "concepts.0.bank is missing; a concept without one is a card with nothing to ask",
+      "concepts.1.bank is missing; a concept without one is a card with nothing to ask",
+      "concepts.2.bank is missing; a concept without one is a card with nothing to ask",
+      "concepts.3.objective_type is missing",
+      "concepts.4.objective_type is missing",
+      "concepts.5.objective_type is missing",
+      "concepts.5.bank is missing; a concept without one is a card with nothing to ask",
+      "concepts.6.bank is missing; a concept without one is a card with nothing to ask"
     ]
   },
   "authored_by": "",
@@ -95,12 +405,30 @@
   },
   "concepts": [
     {
-      "stable_key": "math5a:ch07:angle-right",
-      "statement": "Angles in a right angle",
+      "stable_key": "math5a:ch07:measure-an-angle-using-a-protractor",
+      "statement": "You will measure an angle using a protractor.",
       "objective_type": "procedure",
+      "assessed": true
+    },
+    {
+      "stable_key": "math5a:ch07:choose-the-correct-protractor-scale",
+      "statement": "You will choose the correct protractor scale.",
+      "objective_type": "procedure",
+      "assessed": true
+    },
+    {
+      "stable_key": "math5a:ch07:spot-vertically-opposite-angles",
+      "statement": "You will spot vertically opposite angles.",
+      "objective_type": "procedure",
+      "assessed": true
+    },
+    {
+      "stable_key": "math5a:ch07:use-the-straight-line-rule",
+      "statement": "You will use the straight-line rule.",
       "assessed": true,
       "bank": {
         "source": "math_practice_items",
+        "skill": "angle_straight_line",
         "type": "response.free_text",
         "domain": "math",
         "evidence_mode": "cued_recall",
@@ -118,17 +446,16 @@
         "scheduling": {
           "policy": "skill_practice",
           "subject": "learning_item"
-        },
-        "skill": "angle_right"
+        }
       }
     },
     {
-      "stable_key": "math5a:ch07:angle-straight-line",
-      "statement": "Angles on a straight line",
-      "objective_type": "procedure",
+      "stable_key": "math5a:ch07:use-the-angles-at-a-point-rule",
+      "statement": "You will use the angles-at-a-point rule.",
       "assessed": true,
       "bank": {
         "source": "math_practice_items",
+        "skill": "angle_point",
         "type": "response.free_text",
         "domain": "math",
         "evidence_mode": "cued_recall",
@@ -146,65 +473,18 @@
         "scheduling": {
           "policy": "skill_practice",
           "subject": "learning_item"
-        },
-        "skill": "angle_straight_line"
+        }
       }
     },
     {
-      "stable_key": "math5a:ch07:angle-point",
-      "statement": "Angles at a point",
-      "objective_type": "procedure",
-      "assessed": true,
-      "bank": {
-        "source": "math_practice_items",
-        "type": "response.free_text",
-        "domain": "math",
-        "evidence_mode": "cued_recall",
-        "answer_visibility": "after_submission",
-        "response": {
-          "kind": "short_answer",
-          "required": true
-        },
-        "evaluation": {
-          "authority": "deterministic",
-          "marking": {
-            "marker": "ela.math.numeric"
-          }
-        },
-        "scheduling": {
-          "policy": "skill_practice",
-          "subject": "learning_item"
-        },
-        "skill": "angle_point"
-      }
+      "stable_key": "math5a:ch07:find-missing-angles-using-subtraction",
+      "statement": "You will find missing angles using subtraction.",
+      "assessed": true
     },
     {
-      "stable_key": "math5a:ch07:angle-opposite",
-      "statement": "Crossing lines",
-      "objective_type": "procedure",
-      "assessed": true,
-      "bank": {
-        "source": "math_practice_items",
-        "type": "response.free_text",
-        "domain": "math",
-        "evidence_mode": "cued_recall",
-        "answer_visibility": "after_submission",
-        "response": {
-          "kind": "short_answer",
-          "required": true
-        },
-        "evaluation": {
-          "authority": "deterministic",
-          "marking": {
-            "marker": "ela.math.numeric"
-          }
-        },
-        "scheduling": {
-          "policy": "skill_practice",
-          "subject": "learning_item"
-        },
-        "skill": "angle_opposite"
-      }
+      "stable_key": "math5a:ch07:work-out-turns-on-a-compass-rose",
+      "statement": "You will work out turns on a compass rose.",
+      "objective_type": "procedure"
     }
   ],
   "objective_associations": [],

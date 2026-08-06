@@ -2,28 +2,39 @@
   "manifest_schema_version": "lesson.export_manifest.v2",
   "approved": false,
   "draft": {
-    "generator": "draft_export_manifest/1.0.0",
+    "generator": "draft_export_manifest/2.0.0",
     "written_from": {
       "materials": "output/math5a.chapter09.book_learning_materials.json",
-      "exercise_bank": "output/math_practice_items.json",
-      "teaching_document": "output/math5a.chapter09.enrichment.json"
+      "enrichment": "output/math5a.chapter09.enrichment.json",
+      "exercise_bank": "output/math_practice_items.json"
     },
     "what_this_is": "A proposal, not a mapping. Nothing here was read by a person. The exporter refuses to publish it while approved is false.",
+    "how_it_was_derived": "Every concept is one of this chapter's own learning goals from its enrichment, in the enrichment's order, stated in the enrichment's words. Nothing here was written by this generator: it matched the goals to the questions the exercise bank can ask, to the techniques that carry them out, and to the mastery checklist that says they are checked.",
+    "how_matches_were_made": "Matched on shared words. Each sentence is lowercased, stripped of its LaTeX and of the everyday words the whole book uses, and what is left is reduced to a rough stem so 'fractions' and 'fraction' count as one word. A shared word is worth 1 divided by the number of candidates that use it, so a word only one candidate uses decides a match and a word all of them use decides nothing. A total of 1.0 or more is a match. Every match lists the words that produced it.",
     "to_approve": [
-      "Read what_the_material_says below against the chapter itself.",
+      "Read what_the_material_says and every concept note against the chapter itself.",
+      "Confirm reviews names the lessons this review actually reviews.",
       "Fill authored_by with who approved it.",
       "Delete this draft block, set approved to true, and move the file to manifests/math5a.chapter09.export_manifest.json."
     ],
+    "coverage": {
+      "concepts": 0,
+      "reviews": 4,
+      "lessons_considered": 6,
+      "sentences_that_matched_nothing": 4
+    },
     "needs_review": [
-      "This is a review lesson. It teaches nothing and has no questions of its own, so it declares no concepts; reviews names the lessons it draws on (math5a:ch01, math5a:ch02, math5a:ch03, math5a:ch05, math5a:ch06, math5a:ch07), read from the bank's REVIEW_COVERS. Confirm that list is the one the book reviews.",
-      "The exporter cannot publish a review lesson yet: it refuses a manifest with no concepts. Approving this one needs that work first.",
-      "No resources are declared. Material is reusable because an author says so, and chapter 3 promotes its review checklist that way.",
-      "No diagrams are declared. Which drawing teaches which example is a teaching decision, and a wrong picture in maths teaches something false.",
-      "teaching_document.generator_version reads 'enrich_lessons/pte_lesson_enrichment.v1', taken from the document's own schema version. Confirm which run actually wrote it.",
-      "authored_by is empty. Approving this mapping means putting a name to it."
+      "This is a review lesson. It teaches nothing of its own, so it declares no concepts; reviews names the lessons it draws on (math5a:ch01, math5a:ch03, math5a:ch05, math5a:ch06), read from its own chapter summary and learning goals. Confirm that list is the one the book reviews.",
+      "4 of this review's own sentences matched no lesson in this book: learning_goals.2 (You will change yards, feet, and inches.); learning_goals.3 (You will change pounds and ounces.); learning_goals.4 (You will change gallons, quarts, and cups.); learning_goals.9 (You will multiply and divide compound units.). Either this book does not teach what its review revises, or the wording differs enough that shared words could not see it.",
+      "The exercise bank's own table says this review covers math5a:ch01, math5a:ch02, math5a:ch03, math5a:ch05, math5a:ch06, math5a:ch07, which is not what the chapter's material says (math5a:ch01, math5a:ch03, math5a:ch05, math5a:ch06). One of them is wrong and a person has to say which.",
+      "The exporter cannot publish a review lesson yet: it refuses a manifest with no concepts. Approving this one needs that work first."
     ],
     "what_the_material_says": {
       "chapter_title_as_printed": "REVIEW C",
+      "enrichment_lesson_title": "REVIEW C",
+      "learning_goals": 10,
+      "techniques": 8,
+      "mastery_checklist": 15,
       "learning_objectives": [
         "Round numbers to the nearest hundred or decimal place.",
         "Convert between different units of length, weight, volume and capacity.",
@@ -36,7 +47,223 @@
       "practice_questions": 44,
       "review_checklist": 5
     },
-    "concepts": []
+    "how_reviews_were_read": {
+      "reviews": [
+        "math5a:ch01",
+        "math5a:ch03",
+        "math5a:ch05",
+        "math5a:ch06"
+      ],
+      "said": [
+        {
+          "at": "chapter_summary",
+          "says": "This chapter reviews measurement conversions, fractions, ratios, geometry, and arithmetic with compound units for Year 5.",
+          "reviews": [
+            "math5a:ch06",
+            "math5a:ch03"
+          ],
+          "matched_on": {
+            "math5a:ch06": [
+              "ratio",
+              "unit"
+            ],
+            "math5a:ch03": [
+              "fraction"
+            ]
+          },
+          "closest_it_did_not_match": []
+        },
+        {
+          "at": "learning_goals.0",
+          "says": "You will round whole numbers to the nearest hundred.",
+          "reviews": [
+            "math5a:ch01"
+          ],
+          "matched_on": {
+            "math5a:ch01": [
+              "hundred",
+              "number",
+              "round",
+              "whol"
+            ]
+          },
+          "closest_it_did_not_match": []
+        },
+        {
+          "at": "learning_goals.1",
+          "says": "You will round decimals to one decimal place.",
+          "reviews": [
+            "math5a:ch01"
+          ],
+          "matched_on": {
+            "math5a:ch01": [
+              "plac",
+              "round"
+            ]
+          },
+          "closest_it_did_not_match": []
+        },
+        {
+          "at": "learning_goals.2",
+          "says": "You will change yards, feet, and inches.",
+          "reviews": [],
+          "matched_on": {},
+          "closest_it_did_not_match": [
+            {
+              "lesson": "math5a:ch06",
+              "score": 0.5,
+              "matched_on": [
+                "chang"
+              ]
+            },
+            {
+              "lesson": "math5a:ch03",
+              "score": 0.5,
+              "matched_on": [
+                "chang"
+              ]
+            }
+          ]
+        },
+        {
+          "at": "learning_goals.3",
+          "says": "You will change pounds and ounces.",
+          "reviews": [],
+          "matched_on": {},
+          "closest_it_did_not_match": [
+            {
+              "lesson": "math5a:ch06",
+              "score": 0.5,
+              "matched_on": [
+                "chang"
+              ]
+            },
+            {
+              "lesson": "math5a:ch03",
+              "score": 0.5,
+              "matched_on": [
+                "chang"
+              ]
+            }
+          ]
+        },
+        {
+          "at": "learning_goals.4",
+          "says": "You will change gallons, quarts, and cups.",
+          "reviews": [],
+          "matched_on": {},
+          "closest_it_did_not_match": [
+            {
+              "lesson": "math5a:ch06",
+              "score": 0.5,
+              "matched_on": [
+                "chang"
+              ]
+            },
+            {
+              "lesson": "math5a:ch03",
+              "score": 0.5,
+              "matched_on": [
+                "chang"
+              ]
+            }
+          ]
+        },
+        {
+          "at": "learning_goals.5",
+          "says": "You will find a fraction of a quantity.",
+          "reviews": [
+            "math5a:ch03"
+          ],
+          "matched_on": {
+            "math5a:ch03": [
+              "fraction"
+            ]
+          },
+          "closest_it_did_not_match": []
+        },
+        {
+          "at": "learning_goals.6",
+          "says": "You will find a whole from a known fraction.",
+          "reviews": [
+            "math5a:ch03"
+          ],
+          "matched_on": {
+            "math5a:ch03": [
+              "fraction",
+              "whol"
+            ]
+          },
+          "closest_it_did_not_match": []
+        },
+        {
+          "at": "learning_goals.7",
+          "says": "You will solve ratio problems with rectangles.",
+          "reviews": [
+            "math5a:ch05",
+            "math5a:ch06"
+          ],
+          "matched_on": {
+            "math5a:ch05": [
+              "problem",
+              "rectangl"
+            ],
+            "math5a:ch06": [
+              "ratio"
+            ]
+          },
+          "closest_it_did_not_match": []
+        },
+        {
+          "at": "learning_goals.8",
+          "says": "You will find perimeter, area, and volume.",
+          "reviews": [
+            "math5a:ch05"
+          ],
+          "matched_on": {
+            "math5a:ch05": [
+              "area"
+            ]
+          },
+          "closest_it_did_not_match": []
+        },
+        {
+          "at": "learning_goals.9",
+          "says": "You will multiply and divide compound units.",
+          "reviews": [],
+          "matched_on": {},
+          "closest_it_did_not_match": [
+            {
+              "lesson": "math5a:ch03",
+              "score": 0.67,
+              "matched_on": [
+                "divid",
+                "multiply"
+              ]
+            },
+            {
+              "lesson": "math5a:ch02",
+              "score": 0.67,
+              "matched_on": [
+                "divid",
+                "multiply"
+              ]
+            }
+          ]
+        }
+      ],
+      "considered": [
+        "math5a:ch01",
+        "math5a:ch02",
+        "math5a:ch03",
+        "math5a:ch05",
+        "math5a:ch06",
+        "math5a:ch07"
+      ]
+    },
+    "not_exportable_until": [
+      "concepts is empty; a lesson that introduces nothing teaches nothing"
+    ]
   },
   "authored_by": "",
   "competency_framework": {
@@ -58,10 +285,8 @@
   "diagrams": [],
   "reviews": [
     "math5a:ch01",
-    "math5a:ch02",
     "math5a:ch03",
     "math5a:ch05",
-    "math5a:ch06",
-    "math5a:ch07"
+    "math5a:ch06"
   ]
 }
