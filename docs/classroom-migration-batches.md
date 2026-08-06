@@ -2107,6 +2107,92 @@ objective; a package is one self-contained fingerprinted file; images are
 generated at authoring time, never live. Where this plan and CONTEXT.md
 disagree, CONTEXT.md wins and this file gets fixed.
 
+**The contract, and who writes what — the design this phase runs on.**
+
+A **contract** (previously called an "export manifest") is the brief handed to
+the generator BEFORE it writes anything. It is not a description of what came
+out; it is the specification that drives what goes in, and the same
+specification governs export and import afterwards. One contract, three
+stages: brief the generator, export what it returned, import it against the
+same shape.
+
+**One contract per CONCEPT, not per chapter.** "Convert a division into a
+fraction" has its own contract, and the generator writes that concept's entire
+class lesson from it — the explanation, the worked examples, the practice.
+Chapter 3 is five contracts, not one.
+
+**The contract is what this plan's batches deliver. The content is not.**
+Writing the contract IS the job: what must be generated to absorb this
+concept, how it is to be generated, the structure it comes back in, the
+format, and how long it runs. Get that right and the generator becomes
+swappable — ChatGPT, another model through an API, or a human the work is
+outsourced to. None of them needs to know anything this document does not
+state, because the contract is the whole interface.
+
+A contract therefore states, for one concept:
+
+- **What to produce** — the explanation, the worked examples, the practice,
+  and anything else the concept needs before a learner can absorb it.
+- **What it must carry** — stable keys, the concept's statement, whether it
+  is assessed, provenance on every element, alignment of each exercise.
+- **The structure and format** — the exact shape the result comes back in, so
+  the export reads it without interpretation.
+- **How long** — how much the generator produces, and how much context it has
+  to work from.
+
+A generator that satisfies the contract produces something importable. A
+generator that does not is refused at export, whoever or whatever it was.
+
+**Who generates: anyone except the operator.** Where this plan says a job is
+"content work" or "a human job", it means it belongs to an external
+generator — a person, a third-party LLM, the enrichment pipeline — and the
+distinction that matters is only that **it is not the operator relaying the
+plan**. The operator never authors content and never builds machinery that
+authors content on their behalf; specifying such a generator in a batch brief
+IS authoring it. This is written down because it was broken once: the operator
+read "content work", designed a heuristic generator, and produced lesson
+statements that discarded the teaching layer an LLM had already written.
+
+**Enrichment is repeatable, not one-shot.** A generated lesson that comes back
+thin is enriched again, as many passes as it takes; illustrations can be added
+to a concept afterwards without regenerating it. Each pass is additive and
+proven so ("N added, 0 removed").
+
+**Absent illustrations are silence, never an error.** A concept with no
+picture renders without one — no gap, no placeholder, no failure. A concept
+with pictures shows them. Nothing blocks on their absence at any stage.
+
+**Where a lesson's content comes from — explicit, because vagueness here
+produced a wasted batch.** The factory (RAG) generates. The pipeline carries
+what the factory generated. Nothing in this phase authors teaching content by
+hand, and no batch asks a person to write it.
+
+Each chapter's material exists as four files, and every batch that needs a
+chapter states which it reads:
+
+| File | Holds | Written by |
+| --- | --- | --- |
+| `output/math5a.chapterNN.book_learning_materials.json` | the grounded base: source chunks, extracted claims | the pipeline |
+| `output/math5a.chapterNN.enrichment.json` | **the teaching layer: `learning_goals`, `mastery_checklist`, `techniques`, `worked_examples`, `common_mistakes`, `practice_plan`** | an LLM |
+| `output/math5a.chapterNN.clean_chunks.json` | the chunks the exporter grounds against | derived |
+| `output/math_practice_items.json` | every exercise, tagged by chapter and `skill` | the pipeline |
+
+**A manifest is DERIVED from the enrichment, never invented.** A concept's
+statement is the LLM's own `learning_goals` line for that skill; its exercises
+are the bank entries carrying that `skill`. A generator that names a concept
+from a bank label — "Place value" instead of "You will find the value of any
+digit" — has thrown away the teaching layer and is wrong, however green its
+tests are.
+
+**Illustrations are accommodated, never required.** A chapter that has
+diagrams carries them; a chapter that has none exports, imports and teaches
+without them, and no batch blocks on their absence. No batch hand-draws one.
+
+**If a batch's inputs look missing, that is a plan question, not an operator
+decision.** Batches are not split, re-scoped, or given invented deliverables
+outside this document. Inventory every file above before calling anything
+blocked.
+
 **Standing implementation facts** (not decisions, recorded so no batch
 re-derives them): marking the maths banks needs one generic numeric/ratio
 marker, registered the normal way with its own declared fields; the help a
@@ -2260,14 +2346,88 @@ as today — proven, not assumed.
 
 ---
 
-## B21 — math5a, the whole book · M · B20
+## B20.1 — Class lessons: the transform stage · M · B20
 
-**Does:** The remaining eight manifests authored from generated drafts and
-approved; eight export/import pairs; every teaching lesson with its concepts,
-banks, and pictures; the three REVIEWs wired to their covered lessons; and
-the enrichment loop exercised once for real — one concept enriched in RAG
-(more examples, one more image), re-exported with "N added, 0 removed",
+**The gap this closes.** Extraction gives topics. Enrichment gives detail.
+Neither gives a *class lesson* — goals, objectives, a structure a learner can
+be taught through. Chapter 3's lesson was made by a person doing that
+transformation by hand, and nothing in this plan said who does it for the
+other chapters or for a new book. That silence is what produced a batch that
+invented content instead of facilitating its generation.
+
+**Does:** A second ChatGPT automation, separate from enrichment, that turns a
+concept's enriched material into a class lesson — driven by a contract this
+batch writes, run through Playwright the way `enrich_lessons.py` already
+drives enrichment.
+
+**The operator and this plan write the CONTRACT and the RUNNER. They never
+write a lesson.** The contract states what a class lesson must contain, the
+structure it comes back in, the format, and how long it runs. Any generator
+that satisfies it is acceptable — ChatGPT, a model behind an API, or a person
+the work is outsourced to.
+
+### How it runs
+
+**Per concept, never per chapter.** Chapter 3 is five runs, one for each
+concept. A whole chapter in one prompt is too heavy: enrichment alone takes
+eighteen to twenty minutes, and a chapter's worth of class-lesson generation
+would be far larger.
+
+**Every run carries the concept's current lesson as context.** Run one finds
+nothing and generates. Run two sends what run one produced — *this already
+exists, expand it so the student understands more*. Run three sends both. The
+generator always sees the current state, so each pass **expands rather than
+repeats**, and nothing is ever deleted.
+
+**Runs are unlimited.** The learner still does not understand? Run it again.
+Each pass adds.
+
+**Stop and resume per concept.** A chapter of nine concepts that fails at the
+fifth resumes at the fifth — not from the beginning, and never duplicating
+the four already done. Re-running is always safe.
+
+**Illustrations are NOT in this prompt.** They are generated separately and
+attached afterwards through the asset contract that already exists (an asset
+names the concept it `illustrates`; a concept with no picture renders without
+one and raises nothing).
+
+### Acceptance
+- A concept with no class lesson gets one; the same concept run again comes
+  back expanded, with its previous content intact and visible in the prompt.
+- Running a chapter twice does not duplicate any concept's lesson.
+- A run interrupted mid-chapter resumes at the concept it stopped on.
+- The contract is a document a person could hand to an outside generator
+  with no other instructions.
+- No illustration is generated here.
+
+### Technical tests
+- `test_class_lesson_contract.py` — the contract states content, structure, format and length; a response missing any required part is refused
+- `test_class_lesson_runner.py` — first run generates; second run's prompt contains the first run's lesson; nothing is deleted across runs
+- `test_class_lesson_resume.py` — interrupted chapter resumes at the failed concept and does not re-run completed ones
+
+---
+
+## B21 — math5a, the whole book · M · B20.1
+
+**Does:** The remaining eight chapters' class lessons produced by **B20.1's
+transform stage** — one run per concept, expanded by re-running where a
+lesson is thin — then exported and imported; eight export/import pairs; every teaching lesson with its concepts,
+banks, and whatever pictures exist for it; the three REVIEWs wired to the
+chapters they cover as the book states; and the enrichment loop exercised once
+for real — one concept enriched in RAG, re-exported with "N added, 0 removed",
 re-imported as a revision while a learner is mid-book.
+
+**Inputs, all of which exist today** (inventoried 2026-08-05): every chapter
+1–9 has its grounded base, its enrichment (5–10 learning goals, 4–8
+techniques, 5–9 worked examples, 8–15 checklist lines), and its clean chunks.
+Exercise banks exist for the six teaching chapters — 35, 45, 43, 18, 27, 32 —
+and the three REVIEW chapters have none, correctly: a review quizzes the
+concepts of the chapters it covers (decision 4) and owns none itself.
+
+**Approval is a person reading generated content, never writing it.** The
+generator produces a complete manifest from the enrichment; approval is a
+yes/no on what it produced. If a statement reads badly, the fix is the
+enrichment or the generator — not a human writing eighteen sentences.
 
 **What Roy sees in the browser:** all nine entries of math5a live and
 learnable in order; the enriched concept visibly richer the next time it is
