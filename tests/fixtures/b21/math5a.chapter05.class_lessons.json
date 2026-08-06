@@ -1,0 +1,718 @@
+{
+  "schema_version": "class_lesson_set.v1",
+  "book_slug": "math5a",
+  "lesson_stable_key": "math5a:ch05",
+  "concepts": {
+    "math5a:ch05:identify-a-triangles-base-and-height": {
+      "runs": [
+        "6 added, 0 removed"
+      ],
+      "class_lesson": {
+        "schema_version": "class_lesson.v1",
+        "concept_key": "math5a:ch05:identify-a-triangles-base-and-height",
+        "concept_statement": "You will identify a triangle's base and height.",
+        "goal": "You will choose a triangle's base and match its straight height.",
+        "techniques": [
+          {
+            "name": "Choose and Check",
+            "purpose": "Use this method when choosing a matching base and height.",
+            "steps": [
+              {
+                "step": "Choose the base",
+                "detail": "Choose one side of the triangle as the base."
+              },
+              {
+                "step": "Find the top",
+                "detail": "Find the opposite corner above the chosen base."
+              },
+              {
+                "step": "Find the straight distance",
+                "detail": "Trace the shortest straight line from the corner to the base."
+              },
+              {
+                "step": "Check the corner",
+                "detail": "Check that the height meets the base squarely."
+              }
+            ],
+            "example": "For base $AB$, the matching height meets $AB$ at a square corner.",
+            "why_it_matters": "The check gives the correct height for the chosen base.",
+            "common_error": "Learners choose a sloping side because it looks longer."
+          },
+          {
+            "name": "Extend and Match",
+            "purpose": "Use this when the height meets outside the triangle.",
+            "steps": [
+              {
+                "step": "Choose the base",
+                "detail": "Choose the side that will act as the base."
+              },
+              {
+                "step": "Extend the base",
+                "detail": "Continue the base line beyond the triangle when needed."
+              },
+              {
+                "step": "Drop the height",
+                "detail": "Find the straight line from the opposite corner."
+              },
+              {
+                "step": "Check the meeting",
+                "detail": "Make sure both lines meet at a square corner."
+              }
+            ],
+            "example": "Base $AB$ may extend to $D$, where height $CD$ meets squarely.",
+            "why_it_matters": "You can identify heights that lie outside sloping triangles.",
+            "common_error": "Learners stop at the triangle's edge and choose a sloping side."
+          }
+        ],
+        "worked_examples": [
+          {
+            "title": "Height inside the triangle",
+            "input": "In triangle $ABC$, sides $AB$ and $AC$ meet at a square corner. Choose $AB$ as the base. Identify the matching height.",
+            "decoding": "I must find the straight distance from $C$ to base $AB$.",
+            "plan": "Use Choose and Check because the height lies inside.",
+            "model_answer": "First, choose $AB$ as the base. The opposite corner is $C$. Look for the straight line from $C$ to $AB$. Side $AC$ reaches $AB$ at $A$. The corner at $A$ is square. Therefore, $AC$ is the matching height. The base is $AB$, and the height is $AC$.",
+            "annotations": [
+              {
+                "part": "Choose $AB$ as the base",
+                "comment": "The chosen base decides which height must be used."
+              },
+              {
+                "part": "The opposite corner is $C$",
+                "comment": "The matching height starts from the opposite corner."
+              },
+              {
+                "part": "The corner at $A$ is square",
+                "comment": "A height must meet its base at a square corner."
+              }
+            ]
+          },
+          {
+            "title": "Height outside the triangle",
+            "input": "In triangle $ABC$, choose $AB$ as the base. The line $AB$ continues past $B$ to $D$. Line $CD$ meets the continued base at a square corner. Identify the matching height.",
+            "decoding": "I must find the straight height, even though it lies outside.",
+            "plan": "Use Extend and Match because the triangle is sloping.",
+            "model_answer": "First, choose $AB$ as the base. Continue its line from $B$ to $D$. The opposite corner is $C$. Line $CD$ reaches the continued base at $D$. The corner at $D$ is square. Therefore, $CD$ is the matching height. The base is $AB$, and the height is $CD$.",
+            "annotations": [
+              {
+                "part": "Continue its line from $B$ to $D$",
+                "comment": "A base may be extended to meet the height."
+              },
+              {
+                "part": "Line $CD$ reaches the continued base",
+                "comment": "The height may fall outside a sloping triangle."
+              },
+              {
+                "part": "The corner at $D$ is square",
+                "comment": "This confirms that $CD$ is the straight height."
+              }
+            ]
+          },
+          {
+            "title": "A different chosen base",
+            "input": "In triangle $PQR$, line $QS$ meets side $PR$ at a square corner. Choose $PR$ as the base. Identify the matching height.",
+            "decoding": "I must match base $PR$ with its square-meeting line.",
+            "plan": "Use Choose and Check to test the line from $Q$.",
+            "model_answer": "First, choose $PR$ as the base. The opposite corner is $Q$. Line $QS$ goes from $Q$ to base $PR$. It meets $PR$ at $S$. The corner at $S$ is square. Therefore, $QS$ is the matching height. The base is $PR$, and the height is $QS$.",
+            "annotations": [
+              {
+                "part": "The opposite corner is $Q$",
+                "comment": "The height starts from the corner opposite the base."
+              },
+              {
+                "part": "It meets $PR$ at $S$",
+                "comment": "The height must reach the chosen base line."
+              },
+              {
+                "part": "The corner at $S$ is square",
+                "comment": "This square corner proves the base and height match."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "math5a:ch05:use-the-triangle-area-formula-correctly": {
+      "runs": [
+        "4 added, 0 removed",
+        "3 added, 0 removed"
+      ],
+      "class_lesson": {
+        "schema_version": "class_lesson.v1",
+        "concept_key": "math5a:ch05:use-the-triangle-area-formula-correctly",
+        "concept_statement": "You will use the triangle area formula correctly.",
+        "goal": "You will correctly use the triangle area formula to find area.",
+        "techniques": [
+          {
+            "name": "Write, Substitute, Halve",
+            "purpose": "Use this method when the base and matching height are given.",
+            "steps": [
+              {
+                "step": "Write",
+                "detail": "Write $\\text{Area} = \\frac{1}{2} \\times \\text{base} \\times \\text{height}$."
+              },
+              {
+                "step": "Substitute",
+                "detail": "Replace the words with the given base and height."
+              },
+              {
+                "step": "Halve",
+                "detail": "Halve one even factor before multiplying the numbers."
+              },
+              {
+                "step": "Multiply",
+                "detail": "Multiply the remaining factors to find the area."
+              },
+              {
+                "step": "State",
+                "detail": "State the triangle's area using the correct square unit."
+              }
+            ],
+            "example": "$\\frac{1}{2} \\times 12 \\times 7 = 6 \\times 7 = 42\\text{ cm}^2$.",
+            "why_it_matters": "The ordered steps include the half and prevent skipped working.",
+            "common_error": "Learners sometimes multiply the base and height without halving."
+          },
+          {
+            "name": "Multiply, Then Divide",
+            "purpose": "Use this method when neither base nor height is even.",
+            "steps": [
+              {
+                "step": "Write",
+                "detail": "Write $\\text{Area} = \\frac{1}{2} \\times \\text{base} \\times \\text{height}$."
+              },
+              {
+                "step": "Substitute",
+                "detail": "Put the given base and height into the formula."
+              },
+              {
+                "step": "Multiply",
+                "detail": "Multiply the base and height before finding one half."
+              },
+              {
+                "step": "Divide",
+                "detail": "Divide the product by $2$ without rounding it."
+              },
+              {
+                "step": "State",
+                "detail": "State the exact area using the correct square unit."
+              }
+            ],
+            "example": "$\\frac{1}{2} \\times 9 \\times 7 = 63 \\div 2 = 31.5\\text{ cm}^2$.",
+            "why_it_matters": "This method gives an exact answer when both factors are odd.",
+            "common_error": "Learners sometimes round an odd product instead of halving exactly."
+          }
+        ],
+        "worked_examples": [
+          {
+            "title": "Halve the base first",
+            "input": "Find the area of a triangle with base $14$ cm and height $9$ cm.",
+            "decoding": "I need half the product of $14$ and $9$.",
+            "plan": "Use Write, Substitute, Halve because both lengths are given.",
+            "model_answer": "Write the formula. $\\text{Area} = \\frac{1}{2} \\times \\text{base} \\times \\text{height}$. Substitute the given lengths. $\\text{Area} = \\frac{1}{2} \\times 14 \\times 9$. Halve the even base first. $14 \\div 2 = 7$. Now multiply. $\\text{Area} = 7 \\times 9 = 63\\text{ cm}^2$. The triangle's area is $63\\text{ cm}^2$.",
+            "annotations": [
+              {
+                "part": "$\\text{Area} = \\frac{1}{2} \\times 14 \\times 9$",
+                "comment": "The base and height replace the words in the formula."
+              },
+              {
+                "part": "$14 \\div 2 = 7$",
+                "comment": "Only one factor is halved before multiplying."
+              },
+              {
+                "part": "$7 \\times 9 = 63\\text{ cm}^2$",
+                "comment": "This multiplication gives half the related rectangle's area."
+              }
+            ]
+          },
+          {
+            "title": "Halve the height first",
+            "input": "Find the area of a triangle with base $15$ m and height $8$ m.",
+            "decoding": "I need half the product of $15$ and $8$.",
+            "plan": "Use Write, Substitute, Halve and halve the even height.",
+            "model_answer": "Write the formula. $\\text{Area} = \\frac{1}{2} \\times \\text{base} \\times \\text{height}$. Substitute the given lengths. $\\text{Area} = \\frac{1}{2} \\times 15 \\times 8$. Halve the even height first. $8 \\div 2 = 4$. Now multiply. $\\text{Area} = 15 \\times 4 = 60\\text{ m}^2$. The triangle's area is $60\\text{ m}^2$.",
+            "annotations": [
+              {
+                "part": "$\\text{Area} = \\frac{1}{2} \\times 15 \\times 8$",
+                "comment": "The formula shows that the product must be halved."
+              },
+              {
+                "part": "$8 \\div 2 = 4$",
+                "comment": "The even height is easier to halve than $15$."
+              },
+              {
+                "part": "$15 \\times 4 = 60\\text{ m}^2$",
+                "comment": "The remaining factors give the triangle's area."
+              }
+            ]
+          },
+          {
+            "title": "Both lengths are odd",
+            "input": "Find the area of a triangle with base $9$ cm and height $7$ cm.",
+            "decoding": "I need half the product of $9$ and $7$.",
+            "plan": "Use Multiply, Then Divide because both factors are odd.",
+            "model_answer": "Write the formula. $\\text{Area} = \\frac{1}{2} \\times \\text{base} \\times \\text{height}$. Substitute the given lengths. $\\text{Area} = \\frac{1}{2} \\times 9 \\times 7$. Neither factor is even, so multiply first. $9 \\times 7 = 63$. Now divide the product by $2$. $63 \\div 2 = 31.5$. Therefore, $\\text{Area} = 31.5\\text{ cm}^2$. The triangle's area is $31.5\\text{ cm}^2$.",
+            "annotations": [
+              {
+                "part": "$\\text{Area} = \\frac{1}{2} \\times 9 \\times 7$",
+                "comment": "The one-half remains visible in the formula."
+              },
+              {
+                "part": "$9 \\times 7 = 63$",
+                "comment": "Multiplying first works because both factors are odd."
+              },
+              {
+                "part": "$63 \\div 2 = 31.5$",
+                "comment": "The odd product gives an exact decimal area."
+              },
+              {
+                "part": "$31.5\\text{ cm}^2$",
+                "comment": "The exact answer is kept instead of being rounded."
+              }
+            ]
+          },
+          {
+            "title": "An odd product in metres",
+            "input": "Find the area of a triangle with base $5$ m and height $11$ m.",
+            "decoding": "I need half the product of $5$ and $11$.",
+            "plan": "Use Multiply, Then Divide because neither factor is even.",
+            "model_answer": "Write the formula. $\\text{Area} = \\frac{1}{2} \\times \\text{base} \\times \\text{height}$. Substitute the given lengths. $\\text{Area} = \\frac{1}{2} \\times 5 \\times 11$. Multiply the two lengths first. $5 \\times 11 = 55$. Divide the product by $2$. $55 \\div 2 = 27.5$. Therefore, $\\text{Area} = 27.5\\text{ m}^2$. The triangle's area is $27.5\\text{ m}^2$.",
+            "annotations": [
+              {
+                "part": "$\\text{Area} = \\frac{1}{2} \\times 5 \\times 11$",
+                "comment": "The formula uses the given base and height once."
+              },
+              {
+                "part": "$5 \\times 11 = 55$",
+                "comment": "The base and height form an odd product."
+              },
+              {
+                "part": "$55 \\div 2 = 27.5$",
+                "comment": "Dividing by $2$ correctly applies the one-half."
+              },
+              {
+                "part": "$27.5\\text{ m}^2$",
+                "comment": "The decimal is the exact area of the triangle."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "math5a:ch05:find-half-a-related-rectangles-area": {
+      "runs": [
+        "6 added, 0 removed"
+      ],
+      "class_lesson": {
+        "schema_version": "class_lesson.v1",
+        "concept_key": "math5a:ch05:find-half-a-related-rectangles-area",
+        "concept_statement": "You will find half a related rectangle's area.",
+        "goal": "You will find a triangle's area by halving its related rectangle.",
+        "techniques": [
+          {
+            "name": "Rectangle then half",
+            "purpose": "Use this when a triangle fills half a related rectangle.",
+            "steps": [
+              {
+                "step": "Find the rectangle",
+                "detail": "Multiply the rectangle's base by its height."
+              },
+              {
+                "step": "Take half",
+                "detail": "Divide the rectangle's area by $2$."
+              },
+              {
+                "step": "Name the area",
+                "detail": "Write the triangle's answer using square units."
+              }
+            ],
+            "example": "A $6$ by $5$ rectangle has area $6 \\times 5 = 30$ square units, so the triangle has area $30 \\div 2 = 15$ square units.",
+            "why_it_matters": "It shows why the triangle uses half the rectangle.",
+            "common_error": "Learners sometimes give the whole rectangle's area as the triangle's area."
+          },
+          {
+            "name": "Halve before multiplying",
+            "purpose": "Use this when one rectangle side is an even number.",
+            "steps": [
+              {
+                "step": "Choose an even side",
+                "detail": "Find the side that can divide evenly by $2$."
+              },
+              {
+                "step": "Halve one side",
+                "detail": "Divide only that side by $2$."
+              },
+              {
+                "step": "Multiply",
+                "detail": "Multiply the halved side by the other side."
+              },
+              {
+                "step": "Add square units",
+                "detail": "Write the final area using square units."
+              }
+            ],
+            "example": "For a $12$ by $7$ rectangle, use $12 \\div 2 = 6$, then $6 \\times 7 = 42$ square units.",
+            "why_it_matters": "The numbers stay smaller and easier to multiply.",
+            "common_error": "Learners sometimes halve both sides, making the answer too small."
+          }
+        ],
+        "worked_examples": [
+          {
+            "title": "Half of a six-by-five rectangle",
+            "input": "A triangle fills half a $6$ by $5$ rectangle. Find its area.",
+            "decoding": "I need half the area of the whole rectangle.",
+            "plan": "Use Rectangle then half because the triangle fills one half.",
+            "model_answer": "First find the related rectangle's area. $6 \\times 5 = 30$ square units. The triangle fills half the rectangle. $30 \\div 2 = 15$ square units. The triangle's area is $15$ square units.",
+            "annotations": [
+              {
+                "part": "$6 \\times 5 = 30$ square units",
+                "comment": "This finds the area of the whole related rectangle."
+              },
+              {
+                "part": "$30 \\div 2 = 15$ square units",
+                "comment": "Dividing by $2$ finds one of two equal halves."
+              },
+              {
+                "part": "The triangle's area is $15$ square units.",
+                "comment": "The final sentence clearly states the required area."
+              }
+            ]
+          },
+          {
+            "title": "Half of a twelve-by-seven rectangle",
+            "input": "A triangle is half of a $12$ cm by $7$ cm rectangle. Find its area.",
+            "decoding": "I need one half of the rectangle's area.",
+            "plan": "Use Halve before multiplying because $12$ is even.",
+            "model_answer": "The related rectangle measures $12$ cm by $7$ cm. Halve the even side first. $12 \\div 2 = 6$. Now multiply by the other side. $6 \\times 7 = 42\\text{ cm}^2$. The triangle's area is $42\\text{ cm}^2$.",
+            "annotations": [
+              {
+                "part": "$12 \\div 2 = 6$",
+                "comment": "Halving one side gives half the rectangle's area."
+              },
+              {
+                "part": "$6 \\times 7 = 42\\text{ cm}^2$",
+                "comment": "This multiplies using smaller and easier numbers."
+              },
+              {
+                "part": "$42\\text{ cm}^2$",
+                "comment": "Square centimetres show that the answer measures area."
+              }
+            ]
+          },
+          {
+            "title": "Correcting the whole-rectangle answer",
+            "input": "Noah says half of an $8$ cm by $9$ cm rectangle has area $72\\text{ cm}^2$. Is he correct?",
+            "decoding": "I must check whether Noah remembered to take half.",
+            "plan": "Use Rectangle then half to compare his answer correctly.",
+            "model_answer": "First find the whole rectangle's area. $8 \\times 9 = 72\\text{ cm}^2$. Noah used the whole rectangle's area. The triangle needs half that area. $72 \\div 2 = 36\\text{ cm}^2$. Noah is not correct. The triangle's area is $36\\text{ cm}^2$.",
+            "annotations": [
+              {
+                "part": "$8 \\times 9 = 72\\text{ cm}^2$",
+                "comment": "This answer belongs to the whole rectangle."
+              },
+              {
+                "part": "$72 \\div 2 = 36\\text{ cm}^2$",
+                "comment": "This missing step changes the rectangle area into half."
+              },
+              {
+                "part": "Noah is not correct.",
+                "comment": "This directly answers the question before stating the area."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "math5a:ch05:solve-simple-area-word-problems": {
+      "runs": [
+        "6 added, 0 removed"
+      ],
+      "class_lesson": {
+        "schema_version": "class_lesson.v1",
+        "concept_key": "math5a:ch05:solve-simple-area-word-problems",
+        "concept_statement": "You will solve simple area word problems.",
+        "goal": "You will find a triangle's area from a simple story.",
+        "techniques": [
+          {
+            "name": "Read, Pick, Solve",
+            "purpose": "Use this when a word problem gives a triangle's measurements.",
+            "steps": [
+              {
+                "step": "Read the question",
+                "detail": "Find what triangle area the question asks for."
+              },
+              {
+                "step": "Pick the facts",
+                "detail": "Write down the given base and matching height."
+              },
+              {
+                "step": "Choose the rule",
+                "detail": "Use $\\text{Area} = \\frac{1}{2} \\times \\text{base} \\times \\text{height}$."
+              },
+              {
+                "step": "Calculate",
+                "detail": "Substitute the measurements, multiply, and take one half."
+              },
+              {
+                "step": "Answer the story",
+                "detail": "State the answer in words with square units."
+              }
+            ],
+            "example": "Base $14$ m and height $6$ m give $\\frac{1}{2} \\times 14 \\times 6 = 42\\text{ m}^2$.",
+            "why_it_matters": "It turns the story into clear and complete maths.",
+            "common_error": "Learners multiply every number mentioned, even unrelated numbers."
+          },
+          {
+            "name": "Rectangle Then Half",
+            "purpose": "Use this when the story describes half a rectangle.",
+            "steps": [
+              {
+                "step": "Find the rectangle",
+                "detail": "Multiply the shared base and height."
+              },
+              {
+                "step": "Take one half",
+                "detail": "Divide the rectangle's area by $2$."
+              },
+              {
+                "step": "Match the unit",
+                "detail": "Use the square unit named in the question."
+              },
+              {
+                "step": "Write the answer",
+                "detail": "Connect the final area to the object."
+              }
+            ],
+            "example": "A $16$ m by $5$ m rectangle has area $80\\text{ m}^2$, so half is $40\\text{ m}^2$.",
+            "why_it_matters": "It shows which part of the story must be halved.",
+            "common_error": "Learners give the full rectangle's area as the triangle's area."
+          }
+        ],
+        "worked_examples": [
+          {
+            "title": "Triangular Flower Bed",
+            "input": "A triangular flower bed has base $14$ m and height $6$ m. What is its area?",
+            "decoding": "I need the area inside the triangular flower bed.",
+            "plan": "Use Read, Pick, Solve because both measurements are given.",
+            "model_answer": "The base is $14$ m. The height is $6$ m. Use the triangle area rule. $\\text{Area} = \\frac{1}{2} \\times \\text{base} \\times \\text{height}$. Put in the measurements. $\\text{Area} = \\frac{1}{2} \\times 14 \\times 6$. Halve $14$ first. $\\text{Area} = 7 \\times 6 = 42\\text{ m}^2$. The flower bed's area is $42\\text{ m}^2$.",
+            "annotations": [
+              {
+                "part": "The base is $14$ m. The height is $6$ m.",
+                "comment": "These are the facts needed for the area."
+              },
+              {
+                "part": "$\\text{Area} = \\frac{1}{2} \\times 14 \\times 6$",
+                "comment": "The measurements replace the words in the rule."
+              },
+              {
+                "part": "$7 \\times 6 = 42\\text{ m}^2$",
+                "comment": "Halving $14$ first makes multiplication easier."
+              },
+              {
+                "part": "The flower bed's area is $42\\text{ m}^2$.",
+                "comment": "The final sentence answers the story directly."
+              }
+            ]
+          },
+          {
+            "title": "Half of a Playground",
+            "input": "A rectangular playground is $16$ m long and $5$ m wide. Half of it is a triangular sandpit. What is the sandpit's area?",
+            "decoding": "I need half the area of the rectangular playground.",
+            "plan": "Use Rectangle Then Half because the sandpit covers half.",
+            "model_answer": "First find the playground's full area. $16 \\times 5 = 80\\text{ m}^2$. The triangular sandpit covers half the playground. $80 \\div 2 = 40\\text{ m}^2$. The sandpit's area is $40\\text{ m}^2$.",
+            "annotations": [
+              {
+                "part": "$16 \\times 5 = 80\\text{ m}^2$",
+                "comment": "This finds the whole rectangular playground."
+              },
+              {
+                "part": "$80 \\div 2 = 40\\text{ m}^2$",
+                "comment": "The word half tells us to divide by $2$."
+              },
+              {
+                "part": "The sandpit's area is $40\\text{ m}^2$.",
+                "comment": "This names the object and includes square metres."
+              }
+            ]
+          },
+          {
+            "title": "Triangular Festival Flag",
+            "input": "A triangular festival flag has base $18$ cm and height $7$ cm. Find the area of cloth used.",
+            "decoding": "The cloth used is the area inside the triangle.",
+            "plan": "Use Read, Pick, Solve because the needed facts appear directly.",
+            "model_answer": "The flag's base is $18$ cm. Its height is $7$ cm. Use the triangle area rule. $\\text{Area} = \\frac{1}{2} \\times 18 \\times 7$. Halve $18$ first. $\\text{Area} = 9 \\times 7 = 63\\text{ cm}^2$. The area of cloth used is $63\\text{ cm}^2$.",
+            "annotations": [
+              {
+                "part": "The cloth used is the area inside the triangle.",
+                "comment": "This changes the story words into a maths goal."
+              },
+              {
+                "part": "$\\text{Area} = \\frac{1}{2} \\times 18 \\times 7$",
+                "comment": "Only the base and height enter the calculation."
+              },
+              {
+                "part": "$9 \\times 7 = 63\\text{ cm}^2$",
+                "comment": "Only one factor is halved before multiplying."
+              },
+              {
+                "part": "The area of cloth used is $63\\text{ cm}^2$.",
+                "comment": "The answer uses the wording from the question."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "math5a:ch05:check-units-and-spot-common-errors": {
+      "runs": [
+        "7 added, 0 removed"
+      ],
+      "class_lesson": {
+        "schema_version": "class_lesson.v1",
+        "concept_key": "math5a:ch05:check-units-and-spot-common-errors",
+        "concept_statement": "You will check units and spot common errors.",
+        "goal": "You will check triangle-area answers and correct common errors.",
+        "techniques": [
+          {
+            "name": "Five-point error sweep",
+            "purpose": "Use this after completing or checking a triangle-area solution.",
+            "steps": [
+              {
+                "step": "Check the lengths",
+                "detail": "Confirm the base and height form a matching pair."
+              },
+              {
+                "step": "Check the half",
+                "detail": "Make sure the working takes half exactly once."
+              },
+              {
+                "step": "Check the product",
+                "detail": "Repeat the multiplication and division to test them."
+              },
+              {
+                "step": "Check the size",
+                "detail": "Confirm the triangle is half its related rectangle."
+              },
+              {
+                "step": "Check the unit",
+                "detail": "Write a square unit after the final area."
+              }
+            ],
+            "example": "Check $8 \\times 5 = 40$, then $40 \\div 2 = 20\\text{ cm}^2$.",
+            "why_it_matters": "The sweep catches errors before the answer is finished.",
+            "common_error": "Learners check the multiplication but forget the half or unit."
+          },
+          {
+            "name": "Rectangle half-check",
+            "purpose": "Use this when an area answer seems too large or small.",
+            "steps": [
+              {
+                "step": "Find the rectangle",
+                "detail": "Multiply the same base and height."
+              },
+              {
+                "step": "Find its half",
+                "detail": "Divide the rectangle's area by $2$."
+              },
+              {
+                "step": "Compare answers",
+                "detail": "Check that both triangle answers are equal."
+              },
+              {
+                "step": "Label the area",
+                "detail": "Finish with the correct square unit."
+              }
+            ],
+            "example": "The rectangle is $12 \\times 6 = 72\\text{ m}^2$, so the triangle is $72 \\div 2 = 36\\text{ m}^2$.",
+            "why_it_matters": "This check quickly finds forgotten or repeated halving.",
+            "common_error": "Learners accept the full rectangle's area as the triangle's area."
+          },
+          {
+            "name": "Unit meaning check",
+            "purpose": "Use this when checking how an area answer is labelled.",
+            "steps": [
+              {
+                "step": "Name the measure",
+                "detail": "Decide whether the answer measures length or area."
+              },
+              {
+                "step": "Choose the unit",
+                "detail": "Use square units because area covers a surface."
+              },
+              {
+                "step": "Match the given unit",
+                "detail": "Keep centimetres, metres, or another given unit."
+              }
+            ],
+            "example": "Lengths in centimetres give an area in $\\text{cm}^2$.",
+            "why_it_matters": "The correct unit shows that the answer measures area.",
+            "common_error": "Learners write $\\text{cm}$ instead of $\\text{cm}^2$."
+          }
+        ],
+        "worked_examples": [
+          {
+            "title": "Forgotten half and wrong unit",
+            "input": "Leo says a triangle with base $8$ cm and height $5$ cm has area $40$ cm. Find and correct his errors.",
+            "decoding": "I must check Leo's working, answer size, and unit.",
+            "plan": "Use the five-point error sweep to find every mistake.",
+            "model_answer": "First check Leo's product. $8 \\times 5 = 40$. This is the related rectangle's area. Leo forgot to take half. $40 \\div 2 = 20$. Next check the unit. Area needs square centimetres, not centimetres. The corrected result is $20\\text{ cm}^2$. Leo made two errors. The triangle's area is $20\\text{ cm}^2$.",
+            "annotations": [
+              {
+                "part": "$8 \\times 5 = 40$",
+                "comment": "This product gives the whole related rectangle."
+              },
+              {
+                "part": "$40 \\div 2 = 20$",
+                "comment": "The division finds the triangle's half."
+              },
+              {
+                "part": "$20\\text{ cm}^2$",
+                "comment": "Square centimetres show that the answer is an area."
+              }
+            ]
+          },
+          {
+            "title": "Halving both lengths",
+            "input": "Ava finds the area of a triangle with base $10$ cm and height $8$ cm. She writes $10 \\div 2 = 5$, $8 \\div 2 = 4$, and $5 \\times 4 = 20\\text{ cm}^2$. Is she correct?",
+            "decoding": "I must check whether Ava took half correctly.",
+            "plan": "Use the rectangle half-check to compare her answer.",
+            "model_answer": "Find the related rectangle's area first. $10 \\times 8 = 80\\text{ cm}^2$. The triangle must have half this area. $80 \\div 2 = 40\\text{ cm}^2$. Ava divided both lengths by $2$. This took half twice. Her answer became one quarter of the rectangle. Ava is not correct. The triangle's area is $40\\text{ cm}^2$.",
+            "annotations": [
+              {
+                "part": "$10 \\times 8 = 80\\text{ cm}^2$",
+                "comment": "This gives the full related rectangle's area."
+              },
+              {
+                "part": "$80 \\div 2 = 40\\text{ cm}^2$",
+                "comment": "Only one division by $2$ is needed."
+              },
+              {
+                "part": "$5 \\times 4 = 20\\text{ cm}^2$",
+                "comment": "Halving both factors makes the result four times smaller."
+              }
+            ]
+          },
+          {
+            "title": "Correct number but incorrect label",
+            "input": "Noah calculates a triangle's area as $6 \\times 7 = 42$, then $42 \\div 2 = 21\\text{ m}$. Is his final answer correct?",
+            "decoding": "I must check both the number and its unit.",
+            "plan": "Use the unit meaning check after checking the calculation.",
+            "model_answer": "First check the number. $6 \\times 7 = 42$. Then take half. $42 \\div 2 = 21$. The number $21$ is correct. Now check the unit. Metres measure length, but this answer measures area. The unit must be square metres. Noah's label is incorrect. The triangle's area is $21\\text{ m}^2$.",
+            "annotations": [
+              {
+                "part": "$42 \\div 2 = 21$",
+                "comment": "The calculation correctly finds half the rectangle."
+              },
+              {
+                "part": "$21\\text{ m}$",
+                "comment": "Metres alone measure a one-dimensional length."
+              },
+              {
+                "part": "$21\\text{ m}^2$",
+                "comment": "Square metres correctly label the covered area."
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
