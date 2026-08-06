@@ -118,22 +118,6 @@ _ILLUSTRATION_RE = re.compile(
 # to say so in the refusal — an unlisted key is refused whatever it is called.
 _PICTURE_WORDS = ("illustration", "image", "picture", "diagram", "figure", "svg", "asset")
 
-# The enrichment sections worth showing as teaching notes. `practice_plan` is a
-# study routine and `metadata` is bookkeeping; neither teaches the concept, and
-# the prompt is long enough without them.
-_MATERIAL_SECTIONS = (
-    "overview",
-    "learning_goals",
-    "core_method",
-    "techniques",
-    "worked_examples",
-    "useful_language",
-    "common_mistakes",
-    "mastery_checklist",
-    "strategy_notes",
-)
-
-
 class ClassLessonRefused(Exception):
     """A reply is not a class lesson under this contract, and why."""
 
@@ -282,6 +266,10 @@ def render_material(material: dict[str, Any]) -> str:
     concept is a teaching judgement, and this module has no basis for making it —
     guessing would hand the generator the wrong half of a chapter and call it
     context. The generator is given all of it and told which concept to teach.
+
+    Every teaching section is rendered. `practice_plan` is not: it is a study
+    routine, not teaching about the concept, and the prompt is long enough
+    without it. `metadata` is bookkeeping and goes the same way.
     """
     if not isinstance(material, dict):
         raise ClassLessonRefused("the chapter's enriched material is not an object")
@@ -376,11 +364,6 @@ def render_material(material: dict[str, Any]) -> str:
             ]
 
     return "\n".join(out)
-
-
-def material_sections(material: dict[str, Any]) -> list[str]:
-    """Which teaching sections this chapter's material actually carries."""
-    return [section for section in _MATERIAL_SECTIONS if material.get(section)]
 
 
 # --------------------------------------------------------------------------- #
