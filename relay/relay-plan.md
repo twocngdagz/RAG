@@ -9,45 +9,35 @@ the test is wrong.
 
 ### Batch 1
 
-**Rebuild the chapter lesson plans (export manifests) from the enrichment.**
-This corrects B21a, whose generator read the exercise bank's `skill` labels and
-produced concept statements like "Place value" — throwing away the class
-material an external LLM had already written for all nine chapters. Read
-`docs/classroom-migration-batches.md` (the contract section, and B21) and
+**B21, RAG half — carry class lessons into the package.** Read
+`docs/classroom-migration-batches.md` (B21, and the contract section) and
 `CONTEXT.md` first.
 
-**The rule the plan now states, and this batch exists to honour:** a lesson
-plan is DERIVED from the chapter's enrichment, never invented. A concept's
-statement is that chapter's own `learning_goals` line — "You will find the
-value of any digit", not "Place value". Nothing in this batch writes teaching
-content; it maps what an external generator already wrote.
+B20.1 generates class lessons per concept into
+`output/<slug>.chapterNN.class_lessons.json`. **The exporter does not read
+them yet** — a package is still built from the enrichment alone, so the
+techniques and worked examples an external generator wrote are ignored.
+Closing that is this batch.
 
-Rework `draft_export_manifest.py` so a chapter's draft is built from
-`output/math5a.chapterNN.enrichment.json`:
+Chapter 5 is the proof: it has real class lessons for all five concepts
+(11 techniques, 16 worked examples), generated through the live contract.
 
-- **Concepts come from the enrichment.** Its `learning_goals`, `techniques`
-  and `mastery_checklist` describe what the chapter teaches; the exercise
-  bank's `skill` values say which questions exist. Match them, and say plainly
-  in the draft how each concept was matched.
-- **A goal with no matching questions is still a concept.** It is taught and
-  not yet practised; do not drop it, and do not invent questions for it.
-- **A `skill` with no matching goal is reported, not silently attached.** The
-  draft names it as unmatched so a person can see the gap.
-- **`objective_type` and `assessed` are the enrichment's evidence, not a
-  default.** If the material does not say, leave the field absent and report
-  it rather than stamping every concept `procedure, assessed=true` as the
-  previous generator did.
-- REVIEW chapters (4, 8, 9) carry no concepts and name the chapters they
-  review, per decision 4. Take the coverage from the chapter's own material,
-  not from a shape you choose.
+Do this:
 
-Then regenerate all eight drafts under `manifests/drafts/`, still unapproved.
-Chapter 3's approved manifest must keep exporting **byte-identical at
-content_hash `0cc0598abed2`** — prove it.
-
-Report honestly, per chapter: how many concepts, how many matched to
-questions, what was left unmatched, and where the material was too thin to say.
-Do not pad.
+- **The export reads a chapter's class lessons when they exist** and turns
+  each concept's goal, techniques and worked examples into teaching blocks
+  for that concept, in the package's existing block vocabulary. A concept's
+  blocks belong to that concept, not to the chapter at large.
+- **A chapter with no class lessons still exports**, exactly as it does
+  today, from the enrichment. Chapter 3 must keep exporting **byte-identical
+  at content_hash `0cc0598abed2`** — prove it.
+- **Class lessons ADD to a package; they never replace the enrichment's
+  material.** The enrichment's overview, method, goals, mistakes and practice
+  plan stay.
+- **Approval is not yours to grant.** The exporter refuses an unapproved
+  manifest and must keep refusing. Do not flip `approved`, do not add a flag
+  that bypasses it, and do not weaken the refusal to make a test pass. Where a
+  test needs an approved mapping, build a fixture, never edit a real draft.
 
 Verification is EVERY suite in this repository. Report EXIT CODES. Commit
 locally.
