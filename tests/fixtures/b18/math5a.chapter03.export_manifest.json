@@ -1,5 +1,6 @@
 {
   "manifest_schema_version": "lesson.export_manifest.v2",
+  "approved": true,
   "authored_by": "ela:content-team",
   "competency_framework": {
     "stable_key": "math5a:framework",

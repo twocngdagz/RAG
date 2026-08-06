@@ -25,7 +25,13 @@ The ground truth differs in kind, and that is the interesting part:
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+from pathlib import Path
 from typing import Any
+
+# How far chapters_with_materials looks. A book's chapters are found by asking
+# the pack where chapter N lives rather than by matching filenames, because the
+# pack owns the naming — and that needs a number to stop counting at.
+CHAPTER_SCAN_LIMIT = 99
 
 
 @dataclass(frozen=True)
@@ -130,6 +136,15 @@ def get(slug: str) -> DomainPack:
     if slug not in REGISTRY:
         raise KeyError(f"unknown domain pack {slug!r}; have {sorted(REGISTRY)}")
     return REGISTRY[slug]
+
+
+def chapters_with_materials(pack: DomainPack) -> list[int]:
+    """Every chapter this book has generated learning materials for, in order."""
+    return [
+        chapter
+        for chapter in range(1, CHAPTER_SCAN_LIMIT + 1)
+        if Path(pack.base_path(chapter)).exists()
+    ]
 
 
 def slug_of(doc: dict[str, Any]) -> str:

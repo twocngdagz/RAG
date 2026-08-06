@@ -65,6 +65,12 @@ MANIFEST_FILE = "manifests/{slug}.chapter{n:02d}.export_manifest.json"
 
 MANIFEST_SCHEMA_VERSION = "lesson.export_manifest.v2"
 
+# Where a mapping says a person has read it. Required, and required to be exactly
+# true: a draft that lost its marker, a field misspelled, a generator that never
+# learned to write one — every one of those means nobody said yes, and every one
+# of them would pass a check that only looked for `false`.
+APPROVAL_FIELD = "approved"
+
 
 class ManifestMissing(Exception):
     """No mapping exists for this chapter, so it cannot be exported."""
@@ -72,6 +78,10 @@ class ManifestMissing(Exception):
 
 class ManifestInvalid(Exception):
     """A mapping exists but does not say enough to export from."""
+
+
+class ManifestUnapproved(Exception):
+    """A mapping exists and nobody has approved it, so it may not be published."""
 
 
 def manifest_path(slug: str, chapter: int) -> Path:
@@ -94,12 +104,40 @@ def load(slug: str, chapter: int) -> dict[str, Any]:
     except json.JSONDecodeError as error:
         raise ManifestInvalid(f"{path} is not readable JSON: {error}") from error
 
+    assert_approved(manifest, str(path))
+
     problems = validate(manifest)
 
     if problems:
         raise ManifestInvalid(f"{path} cannot be exported from:\n  " + "\n  ".join(problems))
 
     return manifest
+
+
+def assert_approved(manifest: dict[str, Any], source: str) -> None:
+    """Refuse a mapping nobody has said yes to.
+
+    A draft mapping is a machine's guess at what a chapter teaches: which abilities
+    it introduces, what each one claims a learner can do, and which questions
+    measure it. Publish that unread and every piece of evidence a learner produces
+    is filed against a goal nobody set — and it will look, from the outside, exactly
+    like teaching somebody wrote.
+
+    So approval is stated, not assumed. `approved` must be exactly `true`. Absent
+    is not approved: a mapping that never says who read it has not been read, and
+    treating silence as consent is how a draft ships by accident.
+    """
+    if manifest.get(APPROVAL_FIELD) is True:
+        return
+
+    stated = repr(manifest[APPROVAL_FIELD]) if APPROVAL_FIELD in manifest else "not stated at all"
+
+    raise ManifestUnapproved(
+        f"{source} is not approved ({APPROVAL_FIELD} is {stated}), so it cannot be exported. "
+        f"A mapping decides what a lesson claims to teach and what a learner's evidence is "
+        f"filed against; until a person has read this one and set {APPROVAL_FIELD} to true, "
+        f"publishing it would put a guess in front of a learner."
+    )
 
 
 def validate(manifest: dict[str, Any]) -> list[str]:

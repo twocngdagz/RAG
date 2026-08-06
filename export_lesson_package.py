@@ -8,6 +8,11 @@ declared diagrams from the numbers the material already carries, seal the assets
 in, translate each claim's provenance into the record Ela validates, and hash
 the result.
 
+It exports from APPROVED mappings only. Drafts exist now — a generator proposes
+what a chapter's concepts might be — and a proposal that reached a learner would
+be indistinguishable from teaching somebody wrote. So a mapping that does not
+say `"approved": true` is refused before anything else happens.
+
 Every refusal names a path. "The chapter cannot be exported" is not actionable;
 "resources.0.elements.2 -> review_checklist.9 does not resolve" tells whoever
 fixes it exactly which line of the mapping is wrong.
@@ -84,6 +89,11 @@ def export_chapter(
     if manifest is None:
         manifest = manifest_module.load(slug, chapter_number)
     else:
+        # Supplying the mapping in memory skips reading it off disk; it does not
+        # skip the person who has to approve it. Otherwise the one caller that
+        # passes a manifest directly would be the way an unread draft ships.
+        manifest_module.assert_approved(manifest, "the supplied mapping")
+
         problems = manifest_module.validate(manifest)
 
         if problems:
@@ -586,9 +596,15 @@ def emit_package_file(
     compare_with: str | Path | None = None,
     edit_reason: str | None = None,
 ) -> tuple[dict[str, Any], dict[str, Any] | None]:
-    """Validate the source, assemble the package, compare, and write — in that order.
+    """Check approval, validate the source, assemble, compare, and write — in that order.
 
-    The source contract runs FIRST and must pass. A book that fails it has
+    Approval is checked FIRST, before anything is read or audited. An unapproved
+    mapping cannot be published however sound the material behind it is, so
+    spending the audit on one only buys a refusal that names the wrong problem:
+    whoever pointed the exporter at a draft needs to be told it is a draft, not
+    handed a report about claim grounding.
+
+    The source contract runs next and must pass. A book that fails it has
     something wrong with its claims or their grounding, and exporting anyway
     would launder that into a package Ela then imports as though it were sound —
     the one place the problem stops being visible.
@@ -601,6 +617,9 @@ def emit_package_file(
     worse than none: it looks like an artefact, and an importer has no way to
     tell it from a complete one.
     """
+    manifest = _read_json(manifest_file, "the declared mapping")
+    manifest_module.assert_approved(manifest, str(manifest_file))
+
     audit = validate_book_contract(book_file=book_file, clean_chunks_file=clean_chunks_file)
 
     if audit.get("status") != "PASS":
@@ -610,7 +629,6 @@ def emit_package_file(
             f"({summary.get('error_count', 'unknown')} errors); no package was written"
         )
 
-    manifest = json.loads(Path(manifest_file).read_text(encoding="utf-8"))
     problems = manifest_module.validate(manifest)
 
     if problems:
@@ -731,6 +749,7 @@ def _main(argv: list[str]) -> int:
         ExportRefused,
         manifest_module.ManifestMissing,
         manifest_module.ManifestInvalid,
+        manifest_module.ManifestUnapproved,
         enrichment_comparison.EnrichmentRemovedContent,
         BookLearningMaterialsContractError,
     ) as error:

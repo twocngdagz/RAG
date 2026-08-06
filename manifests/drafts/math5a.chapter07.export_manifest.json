@@ -1,0 +1,214 @@
+{
+  "manifest_schema_version": "lesson.export_manifest.v2",
+  "approved": false,
+  "draft": {
+    "generator": "draft_export_manifest/1.0.0",
+    "written_from": {
+      "materials": "output/math5a.chapter07.book_learning_materials.json",
+      "exercise_bank": "output/math_practice_items.json",
+      "teaching_document": "output/math5a.chapter07.enrichment.json"
+    },
+    "what_this_is": "A proposal, not a mapping. Nothing here was read by a person. The exporter refuses to publish it while approved is false.",
+    "to_approve": [
+      "Read what_the_material_says below against the chapter itself.",
+      "Rewrite every concept statement: they are the bank's skill titles, not sentences about what a learner can do.",
+      "Settle every concept stable_key now — after approval a learner's evidence is filed under it and it cannot move.",
+      "Fill authored_by with who approved it.",
+      "Delete this draft block, set approved to true, and move the file to manifests/math5a.chapter07.export_manifest.json."
+    ],
+    "needs_review": [
+      "Every statement is the bank's skill title copied across, which is a name for a skill and not a statement of what a learner can do. Rewrite all of them.",
+      "The bank proposes 4 concept(s) but this chapter's material carries 2 teaching lesson(s). Check that the chapter actually teaches each one before a learner is scheduled a card for it.",
+      "Every objective_type is 'procedure', the only value this repository has ever emitted. Where the bank calls a skill 'recall' rather than 'application', that may be the wrong word for it.",
+      "Every concept is assessed: true, because every question in these banks is machine-marked and can produce evidence. Say so deliberately.",
+      "No bank declares guidance -- chapter 3's approved banks carry a one-line reminder of the method, and writing teaching is not this generator's to do.",
+      "No bank declares evaluation.marking.required_form. Chapter 3 requires answers in simplest fraction form; decide what shape these answers must take.",
+      "No resources are declared. Material is reusable because an author says so, and chapter 3 promotes its review checklist that way.",
+      "No diagrams are declared. Which drawing teaches which example is a teaching decision, and a wrong picture in maths teaches something false.",
+      "teaching_document.generator_version reads 'enrich_lessons/pte_lesson_enrichment.v1', taken from the document's own schema version. Confirm which run actually wrote it.",
+      "authored_by is empty. Approving this mapping means putting a name to it."
+    ],
+    "what_the_material_says": {
+      "chapter_title_as_printed": "6 Angles",
+      "learning_objectives": [
+        "Measure an angle using a protractor.",
+        "Identify and use vertically opposite angles.",
+        "Apply the rule that angles on a straight line add to $180^\\circ$.",
+        "Apply the rule that angles at a point add to $360^\\circ$.",
+        "Calculate unknown angles by subtraction from $90^\\circ$, $180^\\circ$ or $360^\\circ$."
+      ],
+      "teaching_lessons": [
+        "Measuring Angles",
+        "Finding Unknown Angles"
+      ],
+      "worked_examples": 7,
+      "practice_questions": 11,
+      "review_checklist": 5
+    },
+    "concepts": [
+      {
+        "stable_key": "math5a:ch07:angle-right",
+        "skill": "angle_right",
+        "statement_is_provisional": true,
+        "exercises_in_bank": 8,
+        "sample_question": "A right angle is split into $52^\\circ$ and angle $p$. How many degrees is angle $p$?",
+        "bank_calls_this": "application"
+      },
+      {
+        "stable_key": "math5a:ch07:angle-straight-line",
+        "skill": "angle_straight_line",
+        "statement_is_provisional": true,
+        "exercises_in_bank": 8,
+        "sample_question": "Angle $q$ and $25^\\circ$ lie on a straight line. How many degrees is angle $q$?",
+        "bank_calls_this": "application"
+      },
+      {
+        "stable_key": "math5a:ch07:angle-point",
+        "skill": "angle_point",
+        "statement_is_provisional": true,
+        "exercises_in_bank": 8,
+        "sample_question": "Three angles meet at a point: $69^\\circ$, $55^\\circ$ and angle $r$. How many degrees is angle $r$?",
+        "bank_calls_this": "application"
+      },
+      {
+        "stable_key": "math5a:ch07:angle-opposite",
+        "skill": "angle_opposite",
+        "statement_is_provisional": true,
+        "exercises_in_bank": 8,
+        "sample_question": "Two straight lines cross. One of the angles is $147^\\circ$. How many degrees is the angle next to it on the straight line?",
+        "bank_calls_this": "application"
+      }
+    ]
+  },
+  "authored_by": "",
+  "competency_framework": {
+    "stable_key": "math5a:framework",
+    "title": "Singapore Math Primary Mathematics 5A"
+  },
+  "lesson": {
+    "stable_key": "math5a:ch07",
+    "title": "Angles",
+    "domain": "math"
+  },
+  "teaching_document": {
+    "generator_version": "enrich_lessons/pte_lesson_enrichment.v1"
+  },
+  "concepts": [
+    {
+      "stable_key": "math5a:ch07:angle-right",
+      "statement": "Angles in a right angle",
+      "objective_type": "procedure",
+      "assessed": true,
+      "bank": {
+        "source": "math_practice_items",
+        "type": "response.free_text",
+        "domain": "math",
+        "evidence_mode": "cued_recall",
+        "answer_visibility": "after_submission",
+        "response": {
+          "kind": "short_answer",
+          "required": true
+        },
+        "evaluation": {
+          "authority": "deterministic",
+          "marking": {
+            "marker": "ela.math.numeric"
+          }
+        },
+        "scheduling": {
+          "policy": "skill_practice",
+          "subject": "learning_item"
+        },
+        "skill": "angle_right"
+      }
+    },
+    {
+      "stable_key": "math5a:ch07:angle-straight-line",
+      "statement": "Angles on a straight line",
+      "objective_type": "procedure",
+      "assessed": true,
+      "bank": {
+        "source": "math_practice_items",
+        "type": "response.free_text",
+        "domain": "math",
+        "evidence_mode": "cued_recall",
+        "answer_visibility": "after_submission",
+        "response": {
+          "kind": "short_answer",
+          "required": true
+        },
+        "evaluation": {
+          "authority": "deterministic",
+          "marking": {
+            "marker": "ela.math.numeric"
+          }
+        },
+        "scheduling": {
+          "policy": "skill_practice",
+          "subject": "learning_item"
+        },
+        "skill": "angle_straight_line"
+      }
+    },
+    {
+      "stable_key": "math5a:ch07:angle-point",
+      "statement": "Angles at a point",
+      "objective_type": "procedure",
+      "assessed": true,
+      "bank": {
+        "source": "math_practice_items",
+        "type": "response.free_text",
+        "domain": "math",
+        "evidence_mode": "cued_recall",
+        "answer_visibility": "after_submission",
+        "response": {
+          "kind": "short_answer",
+          "required": true
+        },
+        "evaluation": {
+          "authority": "deterministic",
+          "marking": {
+            "marker": "ela.math.numeric"
+          }
+        },
+        "scheduling": {
+          "policy": "skill_practice",
+          "subject": "learning_item"
+        },
+        "skill": "angle_point"
+      }
+    },
+    {
+      "stable_key": "math5a:ch07:angle-opposite",
+      "statement": "Crossing lines",
+      "objective_type": "procedure",
+      "assessed": true,
+      "bank": {
+        "source": "math_practice_items",
+        "type": "response.free_text",
+        "domain": "math",
+        "evidence_mode": "cued_recall",
+        "answer_visibility": "after_submission",
+        "response": {
+          "kind": "short_answer",
+          "required": true
+        },
+        "evaluation": {
+          "authority": "deterministic",
+          "marking": {
+            "marker": "ela.math.numeric"
+          }
+        },
+        "scheduling": {
+          "policy": "skill_practice",
+          "subject": "learning_item"
+        },
+        "skill": "angle_opposite"
+      }
+    }
+  ],
+  "objective_associations": [],
+  "resources": [],
+  "assets": [],
+  "diagrams": []
+}
