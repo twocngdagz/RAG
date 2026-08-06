@@ -1,0 +1,251 @@
+{
+  "manifest_schema_version": "lesson.export_manifest.v2",
+  "approved": false,
+  "draft": {
+    "generator": "draft_export_manifest/1.0.0",
+    "written_from": {
+      "materials": "output/math5a.chapter02.book_learning_materials.json",
+      "exercise_bank": "output/math_practice_items.json",
+      "teaching_document": "output/math5a.chapter02.enrichment.json"
+    },
+    "what_this_is": "A proposal, not a mapping. Nothing here was read by a person. The exporter refuses to publish it while approved is false.",
+    "to_approve": [
+      "Read what_the_material_says below against the chapter itself.",
+      "Rewrite every concept statement: they are the bank's skill titles, not sentences about what a learner can do.",
+      "Settle every concept stable_key now — after approval a learner's evidence is filed under it and it cannot move.",
+      "Fill authored_by with who approved it.",
+      "Delete this draft block, set approved to true, and move the file to manifests/math5a.chapter02.export_manifest.json."
+    ],
+    "needs_review": [
+      "Every statement is the bank's skill title copied across, which is a name for a skill and not a statement of what a learner can do. Rewrite all of them.",
+      "Every objective_type is 'procedure', the only value this repository has ever emitted. Where the bank calls a skill 'recall' rather than 'application', that may be the wrong word for it.",
+      "Every concept is assessed: true, because every question in these banks is machine-marked and can produce evidence. Say so deliberately.",
+      "No bank declares guidance -- chapter 3's approved banks carry a one-line reminder of the method, and writing teaching is not this generator's to do.",
+      "No bank declares evaluation.marking.required_form. Chapter 3 requires answers in simplest fraction form; decide what shape these answers must take.",
+      "No resources are declared. Material is reusable because an author says so, and chapter 3 promotes its review checklist that way.",
+      "No diagrams are declared. Which drawing teaches which example is a teaching decision, and a wrong picture in maths teaches something false.",
+      "teaching_document.generator_version reads 'enrich_lessons/pte_lesson_enrichment.v1', taken from the document's own schema version. Confirm which run actually wrote it.",
+      "authored_by is empty. Approving this mapping means putting a name to it."
+    ],
+    "what_the_material_says": {
+      "chapter_title_as_printed": "2 Multiplication and Division by a 2-digit Whole Number",
+      "learning_objectives": [
+        "Multiply a whole number by a two‑digit number using different methods.",
+        "Divide a whole number by a two‑digit number and write the remainder.",
+        "Estimate the size of the quotient before doing long division.",
+        "Check and correct an estimated quotient that is too big or too small."
+      ],
+      "teaching_lessons": [
+        "Method 1 – Multiply by breaking into factors",
+        "Method 2 – Multiply directly",
+        "Method 1 – Division by cancelling zeros",
+        "Method 2 – Long division with estimation",
+        "Estimating the quotient"
+      ],
+      "worked_examples": 6,
+      "practice_questions": 26,
+      "review_checklist": 5
+    },
+    "concepts": [
+      {
+        "stable_key": "math5a:ch02:times-table",
+        "skill": "times_table",
+        "statement_is_provisional": true,
+        "exercises_in_bank": 9,
+        "sample_question": "$$8 \\times 6$$",
+        "bank_calls_this": "recall"
+      },
+      {
+        "stable_key": "math5a:ch02:multiply-multiple-of-ten",
+        "skill": "multiply_multiple_of_ten",
+        "statement_is_provisional": true,
+        "exercises_in_bank": 9,
+        "sample_question": "$$92 \\times 90$$",
+        "bank_calls_this": "application"
+      },
+      {
+        "stable_key": "math5a:ch02:multiply-two-digit",
+        "skill": "multiply_two_digit",
+        "statement_is_provisional": true,
+        "exercises_in_bank": 9,
+        "sample_question": "$$279 \\times 99$$",
+        "bank_calls_this": "application"
+      },
+      {
+        "stable_key": "math5a:ch02:divide-exact",
+        "skill": "divide_exact",
+        "statement_is_provisional": true,
+        "exercises_in_bank": 9,
+        "sample_question": "$$667 \\div 29$$",
+        "bank_calls_this": "application"
+      },
+      {
+        "stable_key": "math5a:ch02:division-remainder",
+        "skill": "division_remainder",
+        "statement_is_provisional": true,
+        "exercises_in_bank": 9,
+        "sample_question": "What is the remainder when $224$ is divided by $23$?",
+        "bank_calls_this": "application"
+      }
+    ]
+  },
+  "authored_by": "",
+  "competency_framework": {
+    "stable_key": "math5a:framework",
+    "title": "Singapore Math Primary Mathematics 5A"
+  },
+  "lesson": {
+    "stable_key": "math5a:ch02",
+    "title": "Multiplication and Division by a 2-digit Whole Number",
+    "domain": "math"
+  },
+  "teaching_document": {
+    "generator_version": "enrich_lessons/pte_lesson_enrichment.v1"
+  },
+  "concepts": [
+    {
+      "stable_key": "math5a:ch02:times-table",
+      "statement": "Times tables",
+      "objective_type": "procedure",
+      "assessed": true,
+      "bank": {
+        "source": "math_practice_items",
+        "type": "response.free_text",
+        "domain": "math",
+        "evidence_mode": "cued_recall",
+        "answer_visibility": "after_submission",
+        "response": {
+          "kind": "short_answer",
+          "required": true
+        },
+        "evaluation": {
+          "authority": "deterministic",
+          "marking": {
+            "marker": "ela.math.numeric"
+          }
+        },
+        "scheduling": {
+          "policy": "skill_practice",
+          "subject": "learning_item"
+        },
+        "skill": "times_table"
+      }
+    },
+    {
+      "stable_key": "math5a:ch02:multiply-multiple-of-ten",
+      "statement": "Multiply by a multiple of ten",
+      "objective_type": "procedure",
+      "assessed": true,
+      "bank": {
+        "source": "math_practice_items",
+        "type": "response.free_text",
+        "domain": "math",
+        "evidence_mode": "cued_recall",
+        "answer_visibility": "after_submission",
+        "response": {
+          "kind": "short_answer",
+          "required": true
+        },
+        "evaluation": {
+          "authority": "deterministic",
+          "marking": {
+            "marker": "ela.math.numeric"
+          }
+        },
+        "scheduling": {
+          "policy": "skill_practice",
+          "subject": "learning_item"
+        },
+        "skill": "multiply_multiple_of_ten"
+      }
+    },
+    {
+      "stable_key": "math5a:ch02:multiply-two-digit",
+      "statement": "Multiply by a 2-digit number",
+      "objective_type": "procedure",
+      "assessed": true,
+      "bank": {
+        "source": "math_practice_items",
+        "type": "response.free_text",
+        "domain": "math",
+        "evidence_mode": "cued_recall",
+        "answer_visibility": "after_submission",
+        "response": {
+          "kind": "short_answer",
+          "required": true
+        },
+        "evaluation": {
+          "authority": "deterministic",
+          "marking": {
+            "marker": "ela.math.numeric"
+          }
+        },
+        "scheduling": {
+          "policy": "skill_practice",
+          "subject": "learning_item"
+        },
+        "skill": "multiply_two_digit"
+      }
+    },
+    {
+      "stable_key": "math5a:ch02:divide-exact",
+      "statement": "Divide by a 2-digit number",
+      "objective_type": "procedure",
+      "assessed": true,
+      "bank": {
+        "source": "math_practice_items",
+        "type": "response.free_text",
+        "domain": "math",
+        "evidence_mode": "cued_recall",
+        "answer_visibility": "after_submission",
+        "response": {
+          "kind": "short_answer",
+          "required": true
+        },
+        "evaluation": {
+          "authority": "deterministic",
+          "marking": {
+            "marker": "ela.math.numeric"
+          }
+        },
+        "scheduling": {
+          "policy": "skill_practice",
+          "subject": "learning_item"
+        },
+        "skill": "divide_exact"
+      }
+    },
+    {
+      "stable_key": "math5a:ch02:division-remainder",
+      "statement": "Division with a remainder",
+      "objective_type": "procedure",
+      "assessed": true,
+      "bank": {
+        "source": "math_practice_items",
+        "type": "response.free_text",
+        "domain": "math",
+        "evidence_mode": "cued_recall",
+        "answer_visibility": "after_submission",
+        "response": {
+          "kind": "short_answer",
+          "required": true
+        },
+        "evaluation": {
+          "authority": "deterministic",
+          "marking": {
+            "marker": "ela.math.numeric"
+          }
+        },
+        "scheduling": {
+          "policy": "skill_practice",
+          "subject": "learning_item"
+        },
+        "skill": "division_remainder"
+      }
+    }
+  ],
+  "objective_associations": [],
+  "resources": [],
+  "assets": [],
+  "diagrams": []
+}

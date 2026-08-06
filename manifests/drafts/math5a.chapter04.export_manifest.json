@@ -1,0 +1,67 @@
+{
+  "manifest_schema_version": "lesson.export_manifest.v2",
+  "approved": false,
+  "draft": {
+    "generator": "draft_export_manifest/1.0.0",
+    "written_from": {
+      "materials": "output/math5a.chapter04.book_learning_materials.json",
+      "exercise_bank": "output/math_practice_items.json",
+      "teaching_document": "output/math5a.chapter04.enrichment.json"
+    },
+    "what_this_is": "A proposal, not a mapping. Nothing here was read by a person. The exporter refuses to publish it while approved is false.",
+    "to_approve": [
+      "Read what_the_material_says below against the chapter itself.",
+      "Fill authored_by with who approved it.",
+      "Delete this draft block, set approved to true, and move the file to manifests/math5a.chapter04.export_manifest.json."
+    ],
+    "needs_review": [
+      "This is a review lesson. It teaches nothing and has no questions of its own, so it declares no concepts; reviews names the lessons it draws on (math5a:ch01, math5a:ch02, math5a:ch03), read from the bank's REVIEW_COVERS. Confirm that list is the one the book reviews.",
+      "The exporter cannot publish a review lesson yet: it refuses a manifest with no concepts. Approving this one needs that work first.",
+      "No resources are declared. Material is reusable because an author says so, and chapter 3 promotes its review checklist that way.",
+      "No diagrams are declared. Which drawing teaches which example is a teaching decision, and a wrong picture in maths teaches something false.",
+      "teaching_document.generator_version reads 'enrich_lessons/pte_lesson_enrichment.v1', taken from the document's own schema version. Confirm which run actually wrote it.",
+      "authored_by is empty. Approving this mapping means putting a name to it."
+    ],
+    "what_the_material_says": {
+      "chapter_title_as_printed": "REVIEW A",
+      "learning_objectives": [
+        "Read and write numbers in figures and in words",
+        "Identify the value of a digit in a large number",
+        "Round numbers to the nearest thousand",
+        "Estimate the results of addition, subtraction, multiplication and division",
+        "Find a common factor and a common multiple of two numbers",
+        "Simplify fractions and change between mixed numbers and improper fractions",
+        "Compare and order fractions",
+        "Solve word problems involving whole numbers and fractions"
+      ],
+      "teaching_lessons": [],
+      "worked_examples": 0,
+      "practice_questions": 101,
+      "review_checklist": 8
+    },
+    "concepts": []
+  },
+  "authored_by": "",
+  "competency_framework": {
+    "stable_key": "math5a:framework",
+    "title": "Singapore Math Primary Mathematics 5A"
+  },
+  "lesson": {
+    "stable_key": "math5a:ch04",
+    "title": "REVIEW A",
+    "domain": "math"
+  },
+  "teaching_document": {
+    "generator_version": "enrich_lessons/pte_lesson_enrichment.v1"
+  },
+  "concepts": [],
+  "objective_associations": [],
+  "resources": [],
+  "assets": [],
+  "diagrams": [],
+  "reviews": [
+    "math5a:ch01",
+    "math5a:ch02",
+    "math5a:ch03"
+  ]
+}

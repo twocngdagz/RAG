@@ -1,0 +1,70 @@
+{
+  "manifest_schema_version": "lesson.export_manifest.v2",
+  "approved": false,
+  "draft": {
+    "generator": "draft_export_manifest/1.0.0",
+    "written_from": {
+      "materials": "output/math5a.chapter08.book_learning_materials.json",
+      "exercise_bank": "output/math_practice_items.json",
+      "teaching_document": "output/math5a.chapter08.enrichment.json"
+    },
+    "what_this_is": "A proposal, not a mapping. Nothing here was read by a person. The exporter refuses to publish it while approved is false.",
+    "to_approve": [
+      "Read what_the_material_says below against the chapter itself.",
+      "Fill authored_by with who approved it.",
+      "Delete this draft block, set approved to true, and move the file to manifests/math5a.chapter08.export_manifest.json."
+    ],
+    "needs_review": [
+      "This is a review lesson. It teaches nothing and has no questions of its own, so it declares no concepts; reviews names the lessons it draws on (math5a:ch01, math5a:ch02, math5a:ch03, math5a:ch05, math5a:ch06, math5a:ch07), read from the bank's REVIEW_COVERS. Confirm that list is the one the book reviews.",
+      "The exporter cannot publish a review lesson yet: it refuses a manifest with no concepts. Approving this one needs that work first.",
+      "No resources are declared. Material is reusable because an author says so, and chapter 3 promotes its review checklist that way.",
+      "No diagrams are declared. Which drawing teaches which example is a teaching decision, and a wrong picture in maths teaches something false.",
+      "teaching_document.generator_version reads 'enrich_lessons/pte_lesson_enrichment.v1', taken from the document's own schema version. Confirm which run actually wrote it.",
+      "authored_by is empty. Approving this mapping means putting a name to it."
+    ],
+    "what_the_material_says": {
+      "chapter_title_as_printed": "REVIEW B",
+      "learning_objectives": [
+        "Subtract a given number from a larger number.",
+        "Round numbers to the nearest thousand.",
+        "Multiply and divide whole numbers by 10, 100 and 1 000.",
+        "Convert between different units (litres ↔ millilitres, metres ↔ centimetres, hours ↔ minutes).",
+        "Express quantities as fractions and simplify them.",
+        "Solve word problems involving fractions, ratios and proportional reasoning.",
+        "Calculate area and perimeter of rectangles and composite shapes.",
+        "Find missing angles in simple geometric diagrams."
+      ],
+      "teaching_lessons": [],
+      "worked_examples": 0,
+      "practice_questions": 33,
+      "review_checklist": 8
+    },
+    "concepts": []
+  },
+  "authored_by": "",
+  "competency_framework": {
+    "stable_key": "math5a:framework",
+    "title": "Singapore Math Primary Mathematics 5A"
+  },
+  "lesson": {
+    "stable_key": "math5a:ch08",
+    "title": "REVIEW B",
+    "domain": "math"
+  },
+  "teaching_document": {
+    "generator_version": "enrich_lessons/pte_lesson_enrichment.v1"
+  },
+  "concepts": [],
+  "objective_associations": [],
+  "resources": [],
+  "assets": [],
+  "diagrams": [],
+  "reviews": [
+    "math5a:ch01",
+    "math5a:ch02",
+    "math5a:ch03",
+    "math5a:ch05",
+    "math5a:ch06",
+    "math5a:ch07"
+  ]
+}

@@ -1,0 +1,219 @@
+{
+  "manifest_schema_version": "lesson.export_manifest.v2",
+  "approved": false,
+  "draft": {
+    "generator": "draft_export_manifest/1.0.0",
+    "written_from": {
+      "materials": "output/math5a.chapter01.book_learning_materials.json",
+      "exercise_bank": "output/math_practice_items.json",
+      "teaching_document": "output/math5a.chapter01.enrichment.json"
+    },
+    "what_this_is": "A proposal, not a mapping. Nothing here was read by a person. The exporter refuses to publish it while approved is false.",
+    "to_approve": [
+      "Read what_the_material_says below against the chapter itself.",
+      "Rewrite every concept statement: they are the bank's skill titles, not sentences about what a learner can do.",
+      "Settle every concept stable_key now — after approval a learner's evidence is filed under it and it cannot move.",
+      "Fill authored_by with who approved it.",
+      "Delete this draft block, set approved to true, and move the file to manifests/math5a.chapter01.export_manifest.json."
+    ],
+    "needs_review": [
+      "Every statement is the bank's skill title copied across, which is a name for a skill and not a statement of what a learner can do. Rewrite all of them.",
+      "Every objective_type is 'procedure', the only value this repository has ever emitted. Where the bank calls a skill 'recall' rather than 'application', that may be the wrong word for it.",
+      "Every concept is assessed: true, because every question in these banks is machine-marked and can produce evidence. Say so deliberately.",
+      "No bank declares guidance -- chapter 3's approved banks carry a one-line reminder of the method, and writing teaching is not this generator's to do.",
+      "No bank declares evaluation.marking.required_form. Chapter 3 requires answers in simplest fraction form; decide what shape these answers must take.",
+      "No resources are declared. Material is reusable because an author says so, and chapter 3 promotes its review checklist that way.",
+      "No diagrams are declared. Which drawing teaches which example is a teaching decision, and a wrong picture in maths teaches something false.",
+      "teaching_document.generator_version reads 'enrich_lessons/pte_lesson_enrichment.v1', taken from the document's own schema version. Confirm which run actually wrote it.",
+      "authored_by is empty. Approving this mapping means putting a name to it."
+    ],
+    "what_the_material_says": {
+      "chapter_title_as_printed": "1 Whole Numbers",
+      "learning_objectives": [
+        "Read and write whole numbers up to 9,999,999 in figures and words.",
+        "Identify the place value of any digit in a whole number.",
+        "Round numbers to the nearest 10, 100 or 1 000 and make reasonable estimates.",
+        "Multiply and divide whole numbers by 10, 100 or 1 000 using place‑value reasoning.",
+        "Apply the order of operations correctly.",
+        "Solve word problems involving addition, subtraction, multiplication and division of whole numbers."
+      ],
+      "teaching_lessons": [
+        "Place Values",
+        "Writing Numbers in Words and Figures",
+        "Rounding and Estimation",
+        "Multiplying by Tens, Hundreds or Thousands",
+        "Dividing by Tens, Hundreds or Thousands",
+        "Order of Operations",
+        "Word Problems"
+      ],
+      "worked_examples": 8,
+      "practice_questions": 8,
+      "review_checklist": 6
+    },
+    "concepts": [
+      {
+        "stable_key": "math5a:ch01:digit-value",
+        "skill": "digit_value",
+        "statement_is_provisional": true,
+        "exercises_in_bank": 9,
+        "sample_question": "In $719{,}362$, what is the value of the digit $9$?",
+        "bank_calls_this": "recall"
+      },
+      {
+        "stable_key": "math5a:ch01:round-number",
+        "skill": "round_number",
+        "statement_is_provisional": true,
+        "exercises_in_bank": 9,
+        "sample_question": "Round $59{,}177$ to the nearest thousand.",
+        "bank_calls_this": "recall"
+      },
+      {
+        "stable_key": "math5a:ch01:multiply-by-tens",
+        "skill": "multiply_by_tens",
+        "statement_is_provisional": true,
+        "exercises_in_bank": 9,
+        "sample_question": "$$31 \\times 70$$",
+        "bank_calls_this": "application"
+      },
+      {
+        "stable_key": "math5a:ch01:divide-by-tens",
+        "skill": "divide_by_tens",
+        "statement_is_provisional": true,
+        "exercises_in_bank": 8,
+        "sample_question": "$$15{,}000 \\div 30$$",
+        "bank_calls_this": "application"
+      }
+    ]
+  },
+  "authored_by": "",
+  "competency_framework": {
+    "stable_key": "math5a:framework",
+    "title": "Singapore Math Primary Mathematics 5A"
+  },
+  "lesson": {
+    "stable_key": "math5a:ch01",
+    "title": "Whole Numbers",
+    "domain": "math"
+  },
+  "teaching_document": {
+    "generator_version": "enrich_lessons/pte_lesson_enrichment.v1"
+  },
+  "concepts": [
+    {
+      "stable_key": "math5a:ch01:digit-value",
+      "statement": "Place value",
+      "objective_type": "procedure",
+      "assessed": true,
+      "bank": {
+        "source": "math_practice_items",
+        "type": "response.free_text",
+        "domain": "math",
+        "evidence_mode": "cued_recall",
+        "answer_visibility": "after_submission",
+        "response": {
+          "kind": "short_answer",
+          "required": true
+        },
+        "evaluation": {
+          "authority": "deterministic",
+          "marking": {
+            "marker": "ela.math.numeric"
+          }
+        },
+        "scheduling": {
+          "policy": "skill_practice",
+          "subject": "learning_item"
+        },
+        "skill": "digit_value"
+      }
+    },
+    {
+      "stable_key": "math5a:ch01:round-number",
+      "statement": "Rounding",
+      "objective_type": "procedure",
+      "assessed": true,
+      "bank": {
+        "source": "math_practice_items",
+        "type": "response.free_text",
+        "domain": "math",
+        "evidence_mode": "cued_recall",
+        "answer_visibility": "after_submission",
+        "response": {
+          "kind": "short_answer",
+          "required": true
+        },
+        "evaluation": {
+          "authority": "deterministic",
+          "marking": {
+            "marker": "ela.math.numeric"
+          }
+        },
+        "scheduling": {
+          "policy": "skill_practice",
+          "subject": "learning_item"
+        },
+        "skill": "round_number"
+      }
+    },
+    {
+      "stable_key": "math5a:ch01:multiply-by-tens",
+      "statement": "Multiply using tens",
+      "objective_type": "procedure",
+      "assessed": true,
+      "bank": {
+        "source": "math_practice_items",
+        "type": "response.free_text",
+        "domain": "math",
+        "evidence_mode": "cued_recall",
+        "answer_visibility": "after_submission",
+        "response": {
+          "kind": "short_answer",
+          "required": true
+        },
+        "evaluation": {
+          "authority": "deterministic",
+          "marking": {
+            "marker": "ela.math.numeric"
+          }
+        },
+        "scheduling": {
+          "policy": "skill_practice",
+          "subject": "learning_item"
+        },
+        "skill": "multiply_by_tens"
+      }
+    },
+    {
+      "stable_key": "math5a:ch01:divide-by-tens",
+      "statement": "Divide using tens",
+      "objective_type": "procedure",
+      "assessed": true,
+      "bank": {
+        "source": "math_practice_items",
+        "type": "response.free_text",
+        "domain": "math",
+        "evidence_mode": "cued_recall",
+        "answer_visibility": "after_submission",
+        "response": {
+          "kind": "short_answer",
+          "required": true
+        },
+        "evaluation": {
+          "authority": "deterministic",
+          "marking": {
+            "marker": "ela.math.numeric"
+          }
+        },
+        "scheduling": {
+          "policy": "skill_practice",
+          "subject": "learning_item"
+        },
+        "skill": "divide_by_tens"
+      }
+    }
+  ],
+  "objective_associations": [],
+  "resources": [],
+  "assets": [],
+  "diagrams": []
+}
