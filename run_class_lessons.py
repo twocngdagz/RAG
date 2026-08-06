@@ -489,8 +489,12 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     sub = parser.add_subparsers(dest="command", required=True)
 
     def common(target) -> None:
-        target.add_argument("--book", default="math5a", choices=sorted(domain_packs.REGISTRY),
-                            help="which domain pack / book (default math5a)")
+        # Required rather than defaulted. The sibling runner defaults to pte and
+        # this stage exists for math5a; a default either way would be the wrong
+        # book for half the commands typed, and it decides where every file is
+        # read from and written to.
+        target.add_argument("--book", required=True, choices=sorted(domain_packs.REGISTRY),
+                            help="which domain pack / book, e.g. math5a")
         target.add_argument("--chapter", type=int, required=True)
         target.add_argument("--manifest", help="read concepts from this mapping instead of the "
                                                "chapter's approved manifest (an unapproved one is "
