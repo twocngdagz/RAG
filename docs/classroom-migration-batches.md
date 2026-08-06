@@ -2107,6 +2107,37 @@ objective; a package is one self-contained fingerprinted file; images are
 generated at authoring time, never live. Where this plan and CONTEXT.md
 disagree, CONTEXT.md wins and this file gets fixed.
 
+**Where a lesson's content comes from — explicit, because vagueness here
+produced a wasted batch.** The factory (RAG) generates. The pipeline carries
+what the factory generated. Nothing in this phase authors teaching content by
+hand, and no batch asks a person to write it.
+
+Each chapter's material exists as four files, and every batch that needs a
+chapter states which it reads:
+
+| File | Holds | Written by |
+| --- | --- | --- |
+| `output/math5a.chapterNN.book_learning_materials.json` | the grounded base: source chunks, extracted claims | the pipeline |
+| `output/math5a.chapterNN.enrichment.json` | **the teaching layer: `learning_goals`, `mastery_checklist`, `techniques`, `worked_examples`, `common_mistakes`, `practice_plan`** | an LLM |
+| `output/math5a.chapterNN.clean_chunks.json` | the chunks the exporter grounds against | derived |
+| `output/math_practice_items.json` | every exercise, tagged by chapter and `skill` | the pipeline |
+
+**A manifest is DERIVED from the enrichment, never invented.** A concept's
+statement is the LLM's own `learning_goals` line for that skill; its exercises
+are the bank entries carrying that `skill`. A generator that names a concept
+from a bank label — "Place value" instead of "You will find the value of any
+digit" — has thrown away the teaching layer and is wrong, however green its
+tests are.
+
+**Illustrations are accommodated, never required.** A chapter that has
+diagrams carries them; a chapter that has none exports, imports and teaches
+without them, and no batch blocks on their absence. No batch hand-draws one.
+
+**If a batch's inputs look missing, that is a plan question, not an operator
+decision.** Batches are not split, re-scoped, or given invented deliverables
+outside this document. Inventory every file above before calling anything
+blocked.
+
 **Standing implementation facts** (not decisions, recorded so no batch
 re-derives them): marking the maths banks needs one generic numeric/ratio
 marker, registered the normal way with its own declared fields; the help a
@@ -2262,12 +2293,26 @@ as today — proven, not assumed.
 
 ## B21 — math5a, the whole book · M · B20
 
-**Does:** The remaining eight manifests authored from generated drafts and
+**Does:** The remaining eight manifests **generated from each chapter's
+enrichment file** — concept statements taken from that chapter's
+`learning_goals`, exercises attached by matching the bank's `skill` — then
 approved; eight export/import pairs; every teaching lesson with its concepts,
-banks, and pictures; the three REVIEWs wired to their covered lessons; and
-the enrichment loop exercised once for real — one concept enriched in RAG
-(more examples, one more image), re-exported with "N added, 0 removed",
+banks, and whatever pictures exist for it; the three REVIEWs wired to the
+chapters they cover as the book states; and the enrichment loop exercised once
+for real — one concept enriched in RAG, re-exported with "N added, 0 removed",
 re-imported as a revision while a learner is mid-book.
+
+**Inputs, all of which exist today** (inventoried 2026-08-05): every chapter
+1–9 has its grounded base, its enrichment (5–10 learning goals, 4–8
+techniques, 5–9 worked examples, 8–15 checklist lines), and its clean chunks.
+Exercise banks exist for the six teaching chapters — 35, 45, 43, 18, 27, 32 —
+and the three REVIEW chapters have none, correctly: a review quizzes the
+concepts of the chapters it covers (decision 4) and owns none itself.
+
+**Approval is a person reading generated content, never writing it.** The
+generator produces a complete manifest from the enrichment; approval is a
+yes/no on what it produced. If a statement reads badly, the fix is the
+enrichment or the generator — not a human writing eighteen sentences.
 
 **What Roy sees in the browser:** all nine entries of math5a live and
 learnable in order; the enriched concept visibly richer the next time it is
