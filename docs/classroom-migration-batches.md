@@ -2346,12 +2346,72 @@ as today — proven, not assumed.
 
 ---
 
-## B21 — math5a, the whole book · M · B20
+## B20.1 — Class lessons: the transform stage · M · B20
 
-**Does:** The remaining eight manifests **generated from each chapter's
-enrichment file** — concept statements taken from that chapter's
-`learning_goals`, exercises attached by matching the bank's `skill` — then
-approved; eight export/import pairs; every teaching lesson with its concepts,
+**The gap this closes.** Extraction gives topics. Enrichment gives detail.
+Neither gives a *class lesson* — goals, objectives, a structure a learner can
+be taught through. Chapter 3's lesson was made by a person doing that
+transformation by hand, and nothing in this plan said who does it for the
+other chapters or for a new book. That silence is what produced a batch that
+invented content instead of facilitating its generation.
+
+**Does:** A second ChatGPT automation, separate from enrichment, that turns a
+concept's enriched material into a class lesson — driven by a contract this
+batch writes, run through Playwright the way `enrich_lessons.py` already
+drives enrichment.
+
+**The operator and this plan write the CONTRACT and the RUNNER. They never
+write a lesson.** The contract states what a class lesson must contain, the
+structure it comes back in, the format, and how long it runs. Any generator
+that satisfies it is acceptable — ChatGPT, a model behind an API, or a person
+the work is outsourced to.
+
+### How it runs
+
+**Per concept, never per chapter.** Chapter 3 is five runs, one for each
+concept. A whole chapter in one prompt is too heavy: enrichment alone takes
+eighteen to twenty minutes, and a chapter's worth of class-lesson generation
+would be far larger.
+
+**Every run carries the concept's current lesson as context.** Run one finds
+nothing and generates. Run two sends what run one produced — *this already
+exists, expand it so the student understands more*. Run three sends both. The
+generator always sees the current state, so each pass **expands rather than
+repeats**, and nothing is ever deleted.
+
+**Runs are unlimited.** The learner still does not understand? Run it again.
+Each pass adds.
+
+**Stop and resume per concept.** A chapter of nine concepts that fails at the
+fifth resumes at the fifth — not from the beginning, and never duplicating
+the four already done. Re-running is always safe.
+
+**Illustrations are NOT in this prompt.** They are generated separately and
+attached afterwards through the asset contract that already exists (an asset
+names the concept it `illustrates`; a concept with no picture renders without
+one and raises nothing).
+
+### Acceptance
+- A concept with no class lesson gets one; the same concept run again comes
+  back expanded, with its previous content intact and visible in the prompt.
+- Running a chapter twice does not duplicate any concept's lesson.
+- A run interrupted mid-chapter resumes at the concept it stopped on.
+- The contract is a document a person could hand to an outside generator
+  with no other instructions.
+- No illustration is generated here.
+
+### Technical tests
+- `test_class_lesson_contract.py` — the contract states content, structure, format and length; a response missing any required part is refused
+- `test_class_lesson_runner.py` — first run generates; second run's prompt contains the first run's lesson; nothing is deleted across runs
+- `test_class_lesson_resume.py` — interrupted chapter resumes at the failed concept and does not re-run completed ones
+
+---
+
+## B21 — math5a, the whole book · M · B20.1
+
+**Does:** The remaining eight chapters' class lessons produced by **B20.1's
+transform stage** — one run per concept, expanded by re-running where a
+lesson is thin — then exported and imported; eight export/import pairs; every teaching lesson with its concepts,
 banks, and whatever pictures exist for it; the three REVIEWs wired to the
 chapters they cover as the book states; and the enrichment loop exercised once
 for real — one concept enriched in RAG, re-exported with "N added, 0 removed",
