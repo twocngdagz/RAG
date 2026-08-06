@@ -9,47 +9,43 @@ the test is wrong.
 
 ### Batch 1
 
-**B21a — the inputs the rest of math5a needs.** This is the first half of
-canonical batch B21, split because B21 assumes two things that do not exist:
-a manifest-draft generator (B17's text promised "authored from generated
-drafts" and no generator was ever built) and clean-chunks files for chapters
-other than 3.
+Canonical batch **B20.1 — Class lessons: the transform stage**. RAG only.
+Read `docs/classroom-migration-batches.md` (B20.1) and `CONTEXT.md` first.
+B20.1's section is the specification; this brief does not restate it.
 
-Read `docs/classroom-migration-batches.md` (B21) and `CONTEXT.md` first.
+**You are building a CONTRACT and a RUNNER. You are not writing lessons.**
+Any lesson content you write yourself is a defect, however good it reads. The
+generator is external — ChatGPT through Playwright, exactly as
+`enrich_lessons.py` already drives enrichment. Read that file first; this is
+its sibling, not its replacement.
 
-Three deliverables, in this order:
+What the batch delivers:
 
-**1. Clean-chunks for every chapter.** Chapter 3 has
-`output/math5a.chapter03.clean_chunks.json`; chapters 1, 2, 4, 5, 6, 7, 8 and
-9 have none. Each chapter's `book_learning_materials.json` already carries its
-`source_chunks`, so derive the chunks file the exporter needs from the same
-material rather than re-parsing the PDF. Same input, same output, every time.
+1. **The contract.** A document, in the repository, that an outside generator
+   could be handed with no other instructions: what a class lesson must
+   contain for one concept, the structure it returns in, the format, the
+   length, and the context it is given. Chapter 3's existing lesson material
+   is the shape to describe — goal, technique with its steps and its common
+   error, worked examples with decoding/plan/model answer/annotations — but
+   describe the contract, do not copy that chapter's content into it.
 
-**2. A manifest-draft generator.** A command that reads a chapter's learning
-materials and its exercise bank and writes a DRAFT manifest: the concepts it
-can see, each with a proposed statement, a proposed `objective_type`, a
-proposed `assessed` flag, and the exercises aligned to it. Chapter 3's
-approved manifest at `manifests/math5a.chapter03.export_manifest.json` is the
-shape to match.
+2. **The runner.** Per concept, never per chapter. Every run sends the
+   concept's CURRENT class lesson as context so the generator expands rather
+   than repeats, and nothing already there is deleted. Unlimited re-runs. A
+   chapter of nine concepts that fails at the fifth resumes at the fifth and
+   never re-runs the four completed.
 
-A draft is NOT approved. Mark every draft explicitly as awaiting approval —
-`"approved": false` or an equivalent the exporter checks — and make the
-exporter REFUSE to export from an unapproved draft. That refusal is the
-point: it keeps a machine's guess about what a chapter teaches from reaching
-a learner without a person having read it. Prove the refusal with a test.
+3. **Illustrations are out of scope here** and must not appear in the prompt.
+   They attach afterwards through the asset contract that already exists (an
+   asset names the concept it `illustrates`). Do not generate, stub, or call
+   any image service.
 
-Chapter 3's existing manifest is already approved and must keep exporting
-unchanged: same package, same content_hash `0cc0598abed2`. Prove that too.
+Do not run the automation against ChatGPT in this batch — Roy runs it. Build
+it so it can be run, and prove the pieces with tests that need no network.
 
-**3. Draft manifests for the eight chapters.** Run the generator and commit
-its output under `manifests/drafts/`. Do not mark them approved. Do not
-invent teaching content for the three REVIEW chapters (4, 8, 9) — they teach
-nothing and carry no exercises of their own; a review's manifest names the
-lessons it reviews, per decision 4.
-
-Report honestly what each draft looks like — especially chapters 5 and 7,
-whose material is thin (one and two teaching lessons). Do not pad them.
+The named tests are in the canonical B20.1 section:
+`test_class_lesson_contract.py`, `test_class_lesson_runner.py`,
+`test_class_lesson_resume.py`.
 
 Verification is EVERY suite in this repository, as this playlist's header
-requires, plus chapter 3's export reproduced at its existing hash. Report
-EXIT CODES. Commit locally.
+requires. Report EXIT CODES. Commit locally.

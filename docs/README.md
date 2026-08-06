@@ -19,6 +19,7 @@ PDF ─▶ grounded base ─▶ [store · API] ─▶ enrichment (teaching layer
 | — | Enrichment prompt — verbatim ChatGPT project instructions | [enrichment-prompt.md](enrichment-prompt.md) |
 | — | Enrichment prompt — reusable **engine** (book-agnostic) | [enrichment-engine.md](enrichment-engine.md) |
 | — | Enrichment prompt — **PTE domain pack** (swappable per book) | [enrichment-domain-pte.md](enrichment-domain-pte.md) |
+| 4 | **Class lessons** (enriched chapter → one class lesson per concept, run by `run_class_lessons.py`) | [class-lesson-contract.md](class-lesson-contract.md) |
 | — | Whole-book lesson generation (overview) | [WHOLE_BOOK_LESSON.md](WHOLE_BOOK_LESSON.md) |
 
 The top-level `README.md` is the full chronological history (including legacy
