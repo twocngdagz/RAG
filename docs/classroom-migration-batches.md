@@ -2121,8 +2121,27 @@ fraction" has its own contract, and the generator writes that concept's entire
 class lesson from it — the explanation, the worked examples, the practice.
 Chapter 3 is five contracts, not one.
 
-A contract states what the generator must produce, the metadata it must
-attach, the format it must return, and how much context it has to work with.
+**The contract is what this plan's batches deliver. The content is not.**
+Writing the contract IS the job: what must be generated to absorb this
+concept, how it is to be generated, the structure it comes back in, the
+format, and how long it runs. Get that right and the generator becomes
+swappable — ChatGPT, another model through an API, or a human the work is
+outsourced to. None of them needs to know anything this document does not
+state, because the contract is the whole interface.
+
+A contract therefore states, for one concept:
+
+- **What to produce** — the explanation, the worked examples, the practice,
+  and anything else the concept needs before a learner can absorb it.
+- **What it must carry** — stable keys, the concept's statement, whether it
+  is assessed, provenance on every element, alignment of each exercise.
+- **The structure and format** — the exact shape the result comes back in, so
+  the export reads it without interpretation.
+- **How long** — how much the generator produces, and how much context it has
+  to work from.
+
+A generator that satisfies the contract produces something importable. A
+generator that does not is refused at export, whoever or whatever it was.
 
 **Who generates: anyone except the operator.** Where this plan says a job is
 "content work" or "a human job", it means it belongs to an external
