@@ -210,8 +210,11 @@ A reply is refused, and asked for again, if it:
 - is missing any required part, or leaves one empty;
 - has fewer than 1 technique, fewer than 2 steps in a technique, fewer than 2
   worked examples, or a worked example without an annotation;
+- gives two techniques the same `name`, or two worked examples the same `title`
+  — items are matched by name, so the lesson could only keep one of them;
 - carries a key this contract does not list;
-- contains an illustration in any form;
+- contains a picture: image markup, a data URI, an image link, or an image file
+  name, anywhere in any field;
 - adds nothing to the current class lesson.
 
 Refusal costs a run, not the lesson: what already exists is kept, and the request
