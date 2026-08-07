@@ -253,8 +253,20 @@ def _fraction_divided_by_whole(rng: random.Random):
 # Lesson 5 — Area of a triangle
 # --------------------------------------------------------------------------- #
 
+def _even_product_pair(a: int, b: int, *, b_hi: int) -> tuple[int, int]:
+    """Keep area answers whole without drawing more randoms.
+
+    Triangle area is (a*b)/2. An odd product leaves a half, and a bank that mixes
+    wholes with a half cannot imply one required_form. Adjusting `b` by one (no
+    further rng call) keeps later generators on the same seed stream.
+    """
+    if (a * b) % 2 == 0:
+        return a, b
+    return a, b + 1 if b < b_hi else b - 1
+
+
 def _triangle_area(rng: random.Random):
-    base, height = rng.randint(3, 20), rng.randint(3, 20)
+    base, height = _even_product_pair(rng.randint(3, 20), rng.randint(3, 20), b_hi=20)
     return _item("triangle_area",
                  f"A triangle has a base of ${base}$ cm and a height of ${height}$ cm. "
                  "What is its area, in square centimetres?",
@@ -264,7 +276,7 @@ def _triangle_area(rng: random.Random):
 
 
 def _triangle_half_rectangle(rng: random.Random):
-    w, h = rng.randint(3, 15), rng.randint(3, 15)
+    w, h = _even_product_pair(rng.randint(3, 15), rng.randint(3, 15), b_hi=15)
     return _item("triangle_half_rectangle",
                  f"A triangle fills exactly half of a ${w}$ cm by ${h}$ cm rectangle. "
                  "What is the area of the triangle, in square centimetres?",

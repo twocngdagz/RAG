@@ -2439,15 +2439,15 @@
     "skill_title": "Area of a triangle",
     "chapter": 5,
     "capability": "application",
-    "prompt": "A triangle has a base of $9$ cm and a height of $7$ cm. What is its area, in square centimetres?",
-    "prompt_inline": "triangle area, base 9, height 7",
+    "prompt": "A triangle has a base of $9$ cm and a height of $8$ cm. What is its area, in square centimetres?",
+    "prompt_inline": "triangle area, base 9, height 8",
     "answer_kind": "number",
-    "answer_num": 63,
-    "answer_den": 2,
-    "answer_tex": "$31\\frac{1}{2}$",
-    "answer_plain": "31 1/2",
+    "answer_num": 36,
+    "answer_den": 1,
+    "answer_tex": "$36$",
+    "answer_plain": "36",
     "answer_is_reduced": true,
-    "check_expr": "1/2 * 9 * 7"
+    "check_expr": "1/2 * 9 * 8"
   },
   {
     "id": "mp-153-triangle_half_rectangle",
