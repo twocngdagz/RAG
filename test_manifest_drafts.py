@@ -537,6 +537,144 @@ check(
     "a draft wrote teaching",
 )
 
+print("\nrequired_form is read from the answers, never copied from chapter 3")
+
+# Whole numbers only: every answer_den is 1.
+wholes = [
+    {"answer_kind": "number", "answer_den": 1, "answer_is_reduced": True},
+    {"answer_kind": "number", "answer_den": 1, "answer_is_reduced": True},
+]
+# Reduced non-whole fractions: what chapter 3's banks look like.
+fractions = [
+    {"answer_kind": "number", "answer_den": 30, "answer_is_reduced": True},
+    {"answer_kind": "number", "answer_den": 2, "answer_is_reduced": True},
+]
+# A bank that mixes wholes and fractions does not imply one form.
+mixed = wholes + fractions
+# Ratios are not numbers; the numeric forms do not apply.
+ratios = [
+    {"answer_kind": "ratio", "answer_den": 2, "answer_is_reduced": None},
+    {"answer_kind": "ratio", "answer_den": 3, "answer_is_reduced": None},
+]
+# An unreduced fraction cannot claim simplest_fraction.
+unreduced = [
+    {"answer_kind": "number", "answer_den": 4, "answer_is_reduced": False},
+]
+
+check(
+    "a bank of plain numbers proposes whole_number",
+    drafts._required_form(wholes)[0] == drafts.FORM_WHOLE_NUMBER,
+    str(drafts._required_form(wholes)),
+)
+check(
+    "a bank of reduced non-whole fractions proposes simplest_fraction",
+    drafts._required_form(fractions)[0] == drafts.FORM_SIMPLEST_FRACTION,
+    str(drafts._required_form(fractions)),
+)
+check(
+    "a bank that mixes wholes and fractions leaves required_form unset",
+    drafts._required_form(mixed)[0] is None
+    and "whole numbers" in drafts._required_form(mixed)[1]["why_unset"],
+    str(drafts._required_form(mixed)),
+)
+check(
+    "a bank of ratios leaves required_form unset rather than guessing",
+    drafts._required_form(ratios)[0] is None,
+    str(drafts._required_form(ratios)),
+)
+check(
+    "an unreduced fraction bank leaves simplest_fraction unset",
+    drafts._required_form(unreduced)[0] is None
+    and "not reduced" in drafts._required_form(unreduced)[1]["why_unset"],
+    str(drafts._required_form(unreduced)),
+)
+
+# Against the real bank: chapter 5's half-rectangle skill is all wholes; its
+# triangle-area skill mixes a half with wholes and must not be guessed.
+half_rect = [item for item in ITEMS if item["skill"] == "triangle_half_rectangle"]
+triangle = [item for item in ITEMS if item["skill"] == "triangle_area"]
+angles = [item for item in ITEMS if item["skill"] == "angle_point"]
+ratio_skill = [item for item in ITEMS if item["skill"] == "ratio_simplify"]
+
+check(
+    "triangle_half_rectangle proposes whole_number from its answers",
+    drafts._required_form(half_rect)[0] == drafts.FORM_WHOLE_NUMBER,
+    str(drafts._required_form(half_rect)),
+)
+check(
+    "triangle_area leaves required_form unset: wholes and a half do not agree",
+    drafts._required_form(triangle)[0] is None,
+    str(drafts._required_form(triangle)),
+)
+check(
+    "an angle bank proposes whole_number, never simplest_fraction",
+    drafts._required_form(angles)[0] == drafts.FORM_WHOLE_NUMBER,
+    str(drafts._required_form(angles)),
+)
+check(
+    "a ratio bank leaves required_form unset",
+    drafts._required_form(ratio_skill)[0] is None,
+    str(drafts._required_form(ratio_skill)),
+)
+
+banked = [
+    (chapter, concept, note)
+    for chapter in TEACHING_CHAPTERS
+    for concept, note in zip(BUILT[chapter]["concepts"], BUILT[chapter]["draft"]["concepts"])
+    if concept.get("bank")
+]
+
+check(
+    "every banked concept's required_form matches what its answers imply",
+    all(
+        ((concept["bank"].get("evaluation") or {}).get("marking") or {}).get("required_form")
+        == drafts._required_form([item for item in ITEMS if item["skill"] == concept["bank"]["skill"]])[0]
+        for _, concept, _ in banked
+    ),
+    "a bank carries a form its answers do not imply",
+)
+check(
+    "and every draft names how that form was read, or why it was left unset",
+    all(note.get("required_form_from") for _, _, note in banked),
+    "a bank was attached without saying how its form was decided",
+)
+check(
+    "at least one bank proposes whole_number, so the happy path is exercised",
+    any(
+        ((concept["bank"].get("evaluation") or {}).get("marking") or {}).get("required_form")
+        == drafts.FORM_WHOLE_NUMBER
+        for _, concept, _ in banked
+    ),
+    "no bank proposed whole_number",
+)
+check(
+    "at least one bank leaves required_form unset, and needs_review names it",
+    any(
+        concept.get("bank")
+        and not ((concept["bank"].get("evaluation") or {}).get("marking") or {}).get("required_form")
+        for _, concept, _ in banked
+    )
+    and all(
+        any("required_form unset" in note for note in BUILT[chapter]["draft"]["needs_review"])
+        for chapter in TEACHING_CHAPTERS
+        if any(
+            concept.get("bank")
+            and not ((concept["bank"].get("evaluation") or {}).get("marking") or {}).get("required_form")
+            for concept in BUILT[chapter]["concepts"]
+        )
+    ),
+    "an unset form passed unmentioned",
+)
+check(
+    "no bank is stamped simplest_fraction just because chapter 3 was",
+    not any(
+        ((concept["bank"].get("evaluation") or {}).get("marking") or {}).get("required_form")
+        == drafts.FORM_SIMPLEST_FRACTION
+        for _, concept, _ in banked
+    ),
+    "simplest_fraction appeared on a draft whose answers are not all fractions",
+)
+
 print("\nchapter 3, already approved, exports exactly what it exported before")
 
 package = ex.export_chapter(

@@ -35,6 +35,13 @@ WHAT IT PROPOSES, AND WHAT IT LEAVES EMPTY ON PURPOSE:
     assessed        true only where the chapter's own mastery checklist claims the
                     learner is checked on it, or the bank can ask it. Absent where
                     the material does not say
+    required_form   what shape a correct answer must take, read from the bank's
+                    own answers (`answer_kind`, `answer_den`, whether each
+                    reduces). `whole_number` when every answer is a plain number;
+                    `simplest_fraction` when every answer is a reduced non-whole
+                    fraction. Absent — and named in needs_review — when the
+                    answers do not agree, because a wrong form marks a correct
+                    learner wrong
 
 A skill the bank can ask and no goal matched is NOT attached to whichever concept
 is nearest — the draft names it as unmatched so a person sees the gap.
@@ -74,9 +81,9 @@ from book_learning_materials_contract import atomic_write_json
 # approving one is: read it, fix it, sign it, flip `approved`, move it up.
 DRAFT_FILE = "manifests/drafts/{slug}.chapter{n:02d}.export_manifest.json"
 
-# 2.0.0: concepts are the enrichment's learning goals. 1.0.0 read the exercise
-# bank's skill labels, which is what this version exists to correct.
-DRAFT_GENERATOR_VERSION = "draft_export_manifest/2.0.0"
+# 2.1.0: required_form is proposed from the bank's answers. 2.0.0: concepts are
+# the enrichment's learning goals. 1.0.0 read the exercise bank's skill labels.
+DRAFT_GENERATOR_VERSION = "draft_export_manifest/2.1.0"
 
 # What subject this lesson and its questions belong to, as chapter 3's approved
 # manifest names it. Not the pack slug: `math5a` is which book, `math` is which
@@ -85,9 +92,10 @@ PROPOSED_DOMAIN = "math"
 
 # The delivery and marking declaration chapter 3's approved banks carry, with the
 # teaching taken out. `guidance` is a sentence telling a learner how to do the
-# maths and `required_form` says what shape an answer must take -- both are
-# authoring decisions, and one of them is subject-specific enough that copying
-# chapter 3's would put "simplest fraction" on a bank of angle questions.
+# maths — an authoring decision this generator does not write. `required_form` is
+# proposed separately from the answers themselves: copying chapter 3's
+# `simplest_fraction` onto a bank of angle questions would mark a correct
+# whole-number answer as the wrong shape.
 BANK_TEMPLATE: dict[str, Any] = {
     "source": "math_practice_items",
     "type": "response.free_text",
@@ -98,6 +106,11 @@ BANK_TEMPLATE: dict[str, Any] = {
     "evaluation": {"authority": "deterministic", "marking": {"marker": "ela.math.numeric"}},
     "scheduling": {"policy": "skill_practice", "subject": "learning_item"},
 }
+
+# Forms the answers themselves can imply. Closed, and only these two: a bank of
+# plain numbers and a bank of reduced fractions. Anything else is left unset.
+FORM_WHOLE_NUMBER = "whole_number"
+FORM_SIMPLEST_FRACTION = "simplest_fraction"
 
 # The one value this repository has ever emitted for it, and the only one the
 # enrichment gives evidence for: a technique is an ordered method, and a goal
@@ -274,8 +287,12 @@ def _proposals(
         if checked or chosen:
             concept["assessed"] = True
 
+        form_from: dict[str, Any] | None = None
+
         if chosen:
-            concept["bank"] = _bank(chosen.key)
+            asked = [item for item in items if item.get("skill") == chosen.key]
+            form, form_from = _required_form(asked)
+            concept["bank"] = _bank(chosen.key, required_form=form)
 
         proposals.append(
             {
@@ -285,6 +302,7 @@ def _proposals(
                 "bank_shared_with": shared_with,
                 "technique_matches": procedure or method,
                 "checklist_matches": checked,
+                "required_form_from": form_from,
                 # What it came closest to and did not take, so a reviewer fixing a
                 # gap can see whether the material nearly said it or never did.
                 "closest_skills": [] if chosen else enrichment_concepts.score(goal, skill_vocabulary)[:2],
@@ -295,15 +313,76 @@ def _proposals(
     return proposals
 
 
-def _bank(skill: str) -> dict[str, Any]:
+def _bank(skill: str, *, required_form: str | None) -> dict[str, Any]:
     """The declaration a concept's questions are delivered and marked under.
 
     `skill` sits second, where chapter 3's approved manifest puts it: the source
     and the skill together are what the bank IS, and the rest is contract.
+    `required_form` is set only when the answers themselves imply one shape.
     """
     declared = copy.deepcopy(BANK_TEMPLATE)
 
+    if required_form:
+        declared["evaluation"]["marking"]["required_form"] = required_form
+
     return {"source": declared.pop("source"), "skill": skill, **declared}
+
+
+def _required_form(items: list[dict[str, Any]]) -> tuple[str | None, dict[str, Any]]:
+    """What shape every answer in this bank must take, read from the answers.
+
+    Returns `(form, evidence)`. `form` is set only when every answer agrees:
+    all plain numbers (`answer_den == 1`) imply `whole_number`; all reduced
+    non-whole fractions imply `simplest_fraction`. Mixed kinds, mixed dens, an
+    unreduced fraction, or an empty bank leave `form` unset — a wrong form marks
+    a correct learner wrong, so the draft names the gap rather than guessing.
+    """
+    evidence: dict[str, Any] = {
+        "exercises_in_bank": len(items),
+        "answer_kinds": sorted({str(item.get("answer_kind") or "") for item in items}),
+        "answer_dens": sorted({item.get("answer_den") for item in items}),
+        "all_reduced": bool(items) and all(item.get("answer_is_reduced") for item in items),
+    }
+
+    if not items:
+        evidence["why_unset"] = "the bank has no answers to read a form from"
+        return None, evidence
+
+    kinds = {str(item.get("answer_kind") or "").strip() for item in items}
+
+    if kinds != {"number"}:
+        evidence["why_unset"] = (
+            f"the answers are {', '.join(sorted(kinds)) or 'untyped'}, and only a bank of "
+            f"numbers can imply whole_number or simplest_fraction"
+        )
+        return None, evidence
+
+    dens = {item.get("answer_den") for item in items}
+
+    if dens == {1}:
+        evidence["form"] = FORM_WHOLE_NUMBER
+        evidence["because"] = "every answer has answer_den 1 — a plain number"
+        return FORM_WHOLE_NUMBER, evidence
+
+    if 1 in dens:
+        evidence["why_unset"] = (
+            "some answers are whole numbers (answer_den 1) and some are not, so the bank "
+            "does not imply one form"
+        )
+        return None, evidence
+
+    if not all(item.get("answer_is_reduced") for item in items):
+        evidence["why_unset"] = (
+            "at least one answer is not reduced, so simplest_fraction cannot be claimed "
+            "from the bank"
+        )
+        return None, evidence
+
+    evidence["form"] = FORM_SIMPLEST_FRACTION
+    evidence["because"] = (
+        "every answer is a non-whole number (answer_den != 1) and every one is reduced"
+    )
+    return FORM_SIMPLEST_FRACTION, evidence
 
 
 def _one_bank(
@@ -679,6 +758,11 @@ def _concept_note(
     else:
         note["assessed_from"] = None
 
+    if chosen:
+        note["required_form_from"] = proposal.get("required_form_from")
+    else:
+        note["required_form_from"] = None
+
     return note
 
 
@@ -892,10 +976,51 @@ def _needs_review(
         "No bank declares guidance -- chapter 3's approved banks carry a one-line "
         "reminder of the method, and writing teaching is not this generator's to do."
     )
-    notes.append(
-        "No bank declares evaluation.marking.required_form. Chapter 3 requires answers "
-        "in simplest fraction form; decide what shape these answers must take."
-    )
+
+    with_form = [
+        p
+        for p in proposals
+        if ((p["concept"].get("bank") or {}).get("evaluation") or {}).get("marking", {}).get(
+            "required_form"
+        )
+    ]
+    without_form = [
+        p
+        for p in proposals
+        if p["concept"].get("bank")
+        and not ((p["concept"].get("bank") or {}).get("evaluation") or {})
+        .get("marking", {})
+        .get("required_form")
+    ]
+
+    if with_form:
+        named = ", ".join(
+            f"{p['concept']['stable_key']}="
+            f"{p['concept']['bank']['evaluation']['marking']['required_form']}"
+            for p in with_form
+        )
+        notes.append(
+            f"{len(with_form)} bank(s) propose evaluation.marking.required_form from their "
+            f"answers: {named}."
+        )
+
+    if without_form:
+        named = ", ".join(
+            f"{p['concept']['stable_key']} ({(p.get('required_form_from') or {}).get('why_unset', 'unset')})"
+            for p in without_form
+        )
+        notes.append(
+            f"{len(without_form)} bank(s) leave evaluation.marking.required_form unset because "
+            f"their answers do not imply one form: {named}. A wrong form marks a correct "
+            f"learner wrong, so decide what shape those answers must take."
+        )
+
+    if not with_form and not without_form:
+        notes.append(
+            "No bank declares evaluation.marking.required_form — this chapter has no "
+            "questions yet, so nothing implies a form."
+        )
+
     notes.append(
         "No resources are declared. Material is reusable because an author says so, and "
         "chapter 3 promotes its review checklist that way."
