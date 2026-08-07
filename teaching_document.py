@@ -39,6 +39,12 @@ worked example whichever document it came from — but each one names the concep
 it belongs to, because the wizard teaches one concept at a time and blocks pooled
 at the chapter level cannot be split back apart. They are ADDED: the chapter's own
 overview, method, goals, mistakes and practice plan stay exactly where they were.
+
+THE SAME BLOCK TYPE CARRIES ITS TEACHING IN THE SAME FIELDS. A class lesson
+writes a technique's method as steps and the enrichment writes it as `how_to`;
+a `concept_explanation` block carries it in `how_to`, whichever document it came
+out of, because that is the field its consumer reads. One block type with two
+shapes is a block a renderer can only half show.
 """
 
 from __future__ import annotations
@@ -251,28 +257,27 @@ def _class_lesson_blocks(entry: dict[str, Any]) -> list[dict[str, Any]]:
     ]
 
     for index, technique in enumerate(lesson.get("techniques") or []):
+        part = f"techniques.{index}"
         built.append(
             _class_lesson_block(
                 concept_stable_key,
-                f"techniques.{index}",
+                part,
                 "techniques",
-                {
-                    "name": _text(technique.get("name")),
-                    "purpose": _text(technique.get("purpose")),
-                    # `steps` rather than the enrichment's `how_to`, because the
-                    # contract asks for a name AND an instruction per step and
-                    # flattening them into one line would throw the name away.
-                    # The package already carries steps in that shape: it is how
-                    # the chapter's own method is written.
-                    "steps": [
-                        {"step": _text(step.get("step")), "detail": _text(step.get("detail"))}
-                        for step in (technique.get("steps") or [])
-                        if isinstance(step, dict)
-                    ],
-                    "example": _text(technique.get("example")),
-                    "why_it_matters": _text(technique.get("why_it_matters")),
-                    "common_error": _text(technique.get("common_error")),
-                },
+                _required(
+                    _class_lesson_key(concept_stable_key, part),
+                    {
+                        "name": _text(technique.get("name")),
+                        "purpose": _text(technique.get("purpose")),
+                        "how_to": _how_to(technique.get("steps")),
+                        "example": _text(technique.get("example")),
+                        "why_it_matters": _text(technique.get("why_it_matters")),
+                        "common_error": _text(technique.get("common_error")),
+                    },
+                    # The same two an enrichment technique cannot be published
+                    # without, because this is the same block: a name with no
+                    # method under it is a heading, not an explanation.
+                    must_have=("name", "how_to"),
+                ),
                 provenance,
             )
         )
@@ -302,6 +307,45 @@ def _class_lesson_blocks(entry: dict[str, Any]) -> list[dict[str, Any]]:
     return built
 
 
+def _how_to(steps: Any) -> list[str]:
+    """A class lesson's steps, as the instructions a concept_explanation carries.
+
+    ONE FIELD, BECAUSE THE CONSUMER READS ONE. A `concept_explanation` block's
+    method lives in `how_to`. A block that carried it under `steps` instead —
+    which is the field the class-lesson contract asks the generator for — arrives
+    with nothing in the field the importer looks in, and renders as a heading
+    with nothing under it. The producer conforms to the consumer, the same ruling
+    that settled which field an asset's picture rides in.
+
+    NEITHER HALF IS DROPPED. The contract asks for a step's name AND its
+    instruction — "Write", "Write Area = ½ × base × height" — and both are
+    teaching: the name is the move, the detail is how to make it. They join into
+    one line the way this repository already writes a method step, `name: detail`,
+    so a learner meets both and neither is anyone's to summarise away.
+    """
+    lines: list[str] = []
+
+    for step in steps or []:
+        if not isinstance(step, dict):
+            continue
+
+        name = _text(step.get("step"))
+        detail = _text(step.get("detail"))
+        line = f"{name}: {detail}" if name and detail else name or detail
+
+        if line:
+            lines.append(line)
+
+    return lines
+
+
+def _class_lesson_key(concept_stable_key: str, part: str) -> str:
+    # The concept is inside the key as well as beside it, because keys have to be
+    # unique across a document that may carry several concepts' class lessons and
+    # a chapter's own teaching at the same time.
+    return f"{CLASS_LESSON_SECTION}.{concept_stable_key}.{part}"
+
+
 def _class_lesson_block(
     concept_stable_key: str,
     part: str,
@@ -310,10 +354,7 @@ def _class_lesson_block(
     provenance: dict[str, Any],
 ) -> dict[str, Any]:
     return {
-        # The concept is inside the key as well as beside it, because keys have
-        # to be unique across a document that may carry several concepts' class
-        # lessons and a chapter's own teaching at the same time.
-        "key": f"{CLASS_LESSON_SECTION}.{concept_stable_key}.{part}",
+        "key": _class_lesson_key(concept_stable_key, part),
         "type": CLASS_LESSON_BLOCK_TYPE[kind],
         "version": 1,
         "section": CLASS_LESSON_SECTION,

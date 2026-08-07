@@ -14,6 +14,12 @@ examples. Chapter 3 is the control, and the harder half of the claim — it has 
 class lessons, and it must still export at exactly the fingerprint it exports at
 today, byte for byte.
 
+A TECHNIQUE'S METHOD CROSSES UNDER THE NAME ITS BLOCK CARRIES. The contract asks
+the generator for `steps`, a name and an instruction each; a `concept_explanation`
+block carries its method in `how_to`. Nothing translated between them, so the
+import refused every technique block chapter 5 produced. The assertions below read
+the field the consumer reads, and hold it against the steps in the material.
+
 WHY A FIXTURE MAPPING FOR CHAPTER 5. Approval is a person reading generated
 content, and it is not this suite's to grant. Chapter 5's real draft stays
 unapproved in `manifests/drafts/` — three of its five concepts have no questions
@@ -162,14 +168,40 @@ check("and they arrive in the order they are taught: goal, then method, then exa
 
 technique = next(block for block in built if block["type"] == "concept_explanation")
 
-check("a technique keeps its steps, each with its name and its instruction",
-      len(technique["content"]["steps"]) >= 2
-      and all(step["step"] and step["detail"] for step in technique["content"]["steps"]),
-      str(technique["content"]["steps"])[:120])
+check("a technique's method rides where a concept_explanation carries it",
+      len(technique["content"]["how_to"]) >= 2 and all(technique["content"]["how_to"]),
+      str(technique["content"])[:160])
+check("and nowhere else, so a reader has one place to look",
+      "steps" not in technique["content"], str(sorted(technique["content"])))
+check("each step keeps its name and its instruction, neither summarised away",
+      technique["content"]["how_to"]
+      == [f"{step['step']}: {step['detail']}"
+          for step in checked[built[0]["concept_stable_key"]]["techniques"][0]["steps"]],
+      str(technique["content"]["how_to"])[:160])
+
 check("and the rest of what the contract asked for",
       all(technique["content"][field]
           for field in ("name", "purpose", "example", "why_it_matters", "common_error")),
       str(sorted(technique["content"])))
+
+taught = [line for block in built if block["type"] == "concept_explanation"
+          for line in block["content"]["how_to"]]
+
+check("a step named for the move keeps the instruction that says how to make it",
+      any(line.startswith("Write: ") and "\\frac{1}{2}" in line for line in taught),
+      str([line for line in taught if line.startswith("Write")])[:200])
+
+methodless = copy(entries)
+methodless[0]["class_lesson"]["techniques"][0]["steps"] = []
+
+try:
+    td.with_class_lessons({"blocks": []}, methodless)
+    check("a technique with no method is refused, never published as an empty heading", False,
+          "it became a heading with nothing under it")
+except td.TeachingDocumentRefused as error:
+    check("a technique with no method is refused, never published as an empty heading", True)
+    check("and the refusal names the block and the field it is missing",
+          "how_to" in str(error) and "techniques.0" in str(error), str(error)[:200])
 
 example = next(block for block in built if block["type"] == "worked_example")
 
@@ -193,6 +225,23 @@ check("twelve blocks for two concepts: two goals, four techniques, six examples"
       len(class_blocks) == 12
       and [block["type"] for block in class_blocks].count("worked_example") == 6,
       str(len(class_blocks)))
+
+published = [block for block in class_blocks if block["type"] == "concept_explanation"]
+methods = [line for block in published for line in block["content"]["how_to"]]
+generated = [
+    f"{step['step']}: {step['detail']}"
+    for key in DECLARED
+    for technique in checked[key]["techniques"]
+    for step in technique["steps"]
+]
+
+check("every technique the export publishes carries its method where the consumer reads it",
+      len(published) == 4 and all(block["content"]["how_to"] for block in published),
+      str([len(block["content"]["how_to"]) for block in published]))
+check("and every step of chapter 5's real material arrives with both of its halves",
+      methods == generated, str(methods[:2]))
+check("no technique block carries a method anywhere else",
+      all("steps" not in block["content"] for block in published))
 check("positions are restated across the whole document",
       [block["position"] for block in blocks] == list(range(len(blocks))))
 check("every block is still addressable on its own",
