@@ -9,12 +9,18 @@ models:
       # fail cleanly -- it can hang indefinitely -- and with idle detection
       # disabled a hang burns the whole budget. The flag is required here so a
       # missing-trust hang is impossible rather than merely unlikely.
+      # -p and --output-format stream-json are REQUIRED: the adapter parses
+      # JSONL and does not add them itself, and `text` buffers to the end so a
+      # silent run looks 0-byte. --force is the trust gate. Effort is in the
+      # model id (-medium); there is no effort flag.
       args:
+        - -p
         - --force
-      # Grok/GPT models are silent until finished; silence is not a health
-      # signal, so idle detection is disabled (7 days) and liveness is judged
-      # by CPU on the child process, never by log growth. Effort is part of the
-      # model id (-high), so there is no effort flag.
+        - --output-format
+        - stream-json
+      # Grok is silent until finished; silence is not a health signal, so idle
+      # detection is disabled (7 days) and liveness is judged by CPU on the
+      # child process, never by log growth.
       timeout: 604800
       idleTimeout: 604800
   reviewer:
@@ -28,7 +34,10 @@ models:
       # liveness is judged by CPU on the child process, not by log growth.
       # Effort is in the model id (-medium); there is no effort flag.
       args:
+        - -p
         - --force
+        - --output-format
+        - stream-json
       timeout: 604800
       idleTimeout: 604800
 roles:
