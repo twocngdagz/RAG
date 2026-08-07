@@ -1,7 +1,7 @@
 models:
   implementer:
     provider: cursor
-    model: cursor-grok-4.5-high
+    model: cursor-grok-4.5-medium
     cliAdapter:
       kind: cursor
       command: cursor-agent
@@ -18,19 +18,19 @@ models:
       timeout: 604800
       idleTimeout: 604800
   reviewer:
-    provider: anthropic
-    model: claude-opus-4-8
+    provider: cursor
+    model: gpt-5.6-sol-medium
     cliAdapter:
-      kind: claude
-      command: claude
+      kind: cursor
+      command: cursor-agent
+      # Sol is silent until finished, like Grok — so the same rules apply:
+      # --force is the trust gate, idle detection is disabled (7 days), and
+      # liveness is judged by CPU on the child process, not by log growth.
+      # Effort is in the model id (-medium); there is no effort flag.
       args:
-        - --effort
-        - max
-        - --include-partial-messages
-        - --allowedTools
-        - Bash(git status:*) Bash(git diff:*) Bash(git log:*) Bash(python:*) Bash(.venv/bin/python:*)
+        - --force
       timeout: 604800
-      idleTimeout: 900
+      idleTimeout: 604800
 roles:
   implementer:
     model: implementer
