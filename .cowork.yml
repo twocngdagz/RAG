@@ -1,21 +1,22 @@
 models:
   implementer:
-    provider: anthropic
-    model: claude-opus-5
+    provider: cursor
+    model: cursor-grok-4.5-high
     cliAdapter:
-      kind: claude
-      command: claude
+      kind: cursor
+      command: cursor-agent
+      # --force is the workspace-trust gate. Without it cursor-agent does not
+      # fail cleanly -- it can hang indefinitely -- and with idle detection
+      # disabled a hang burns the whole budget. The flag is required here so a
+      # missing-trust hang is impossible rather than merely unlikely.
       args:
-        - --effort
-        - max
-        - --include-partial-messages
-        - --permission-mode
-        - acceptEdits
-        - --allowedTools
-        - Bash(git status:*) Bash(git add:*) Bash(git commit:*) Bash(git diff:*) Bash(git log:*)
-          Bash(python:*) Bash(.venv/bin/python:*)
+        - --force
+      # Grok/GPT models are silent until finished; silence is not a health
+      # signal, so idle detection is disabled (7 days) and liveness is judged
+      # by CPU on the child process, never by log growth. Effort is part of the
+      # model id (-high), so there is no effort flag.
       timeout: 604800
-      idleTimeout: 900
+      idleTimeout: 604800
   reviewer:
     provider: anthropic
     model: claude-opus-4-8

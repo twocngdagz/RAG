@@ -9,32 +9,40 @@ the test is wrong.
 
 ### Batch 1
 
-**Fix the technique block's field name so a class lesson can be imported.**
+**Fix: a chapter cannot export because its lesson plan never says what form a
+correct answer takes.** Read `docs/classroom-migration-batches.md` (the
+contract section and B21) and `CONTEXT.md` first.
 
-B21's RAG half turns a class-lesson technique into a `concept_explanation`
-teaching block. The consumer refuses every one of them:
+Importing chapter 5 into the consumer is refused:
 
-    teaching block `class_lesson.math5a:ch05:identify-a-triangles-base-and-height.techniques.0`
-    needs `how_to` in its content, and a concept_explanation block without it
-    renders as a heading with nothing under it
+    Activity definition [math5a:ch05:mp-015-triangle_area] does not satisfy
+    learning.activity.v1: evaluation.marking.required_form is required and missing
 
-The cause: a class lesson's technique carries its method under **`steps`** — a
-list of `{step, detail}` pairs, which is what the class-lesson contract asks
-the generator for. A `concept_explanation` block requires **`how_to`**. Nobody
-translates between them, so the method arrives empty and the block is refused.
+**Why.** The numeric marker needs two things to mark an answer: `expected`
+(the answer, which the pipeline computes) and `required_form` (what a correct
+answer must look like — a plain number, or a fraction reduced to simplest
+form). Chapter 3's approved plan carries `required_form: simplest_fraction`
+because a person set it. The draft generator (`draft_export_manifest.py`)
+never emits it, so every generated plan is unexportable at the first
+deterministic-marked concept.
 
-**The producer conforms to the consumer** — the same ruling that settled the
-asset field earlier. When a technique becomes a block, its steps must reach
-the block as `how_to`, keeping each step's name and its detail readable; a
-step named "Write" whose detail is "Write Area = ½ × base × height" must not
-lose either half.
+Do this:
 
-Prove it end to end: export chapter 5 from its real material — the fixtures
-under `tests/fixtures/b21/` are the tracked copies — and assert the technique
-blocks carry `how_to` with the steps intact.
+- **The draft generator proposes `required_form` from the exercises
+  themselves.** The answers in each concept's bank say what form fits: chapter
+  5's triangle-area answers are whole numbers and simple decimals; chapter
+  3's are fractions. Derive it from the answer data (`answer_kind`,
+  `answer_den`, whether it reduces), do not hard-code per chapter.
+- **Where the answers do not make the form unambiguous, say so** — leave it
+  absent and report it, exactly as the generator already reports an unmatched
+  skill. Do not guess a form onto a concept whose answers do not imply one; a
+  wrong `required_form` marks a correct learner wrong.
+- Regenerate the eight drafts under `manifests/drafts/`, still unapproved.
+- Chapter 3's approved manifest is untouched and must still export
+  byte-identical at content_hash `0cc0598abed2` — prove it.
 
-Do not weaken any refusal to make this pass, do not touch the approval gate,
-and chapter 3 must still export byte-identical at `0cc0598abed2`.
+Do not touch the approval gate. Do not weaken the marker's requirement; the
+plan must satisfy it, not the marker relax it.
 
 Verification is EVERY suite in this repository. Report EXIT CODES. Commit
 locally.
