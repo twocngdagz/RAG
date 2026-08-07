@@ -2,7 +2,7 @@
   "manifest_schema_version": "lesson.export_manifest.v2",
   "approved": false,
   "draft": {
-    "generator": "draft_export_manifest/2.0.0",
+    "generator": "draft_export_manifest/2.1.0",
     "written_from": {
       "materials": "output/math5a.chapter08.book_learning_materials.json",
       "enrichment": "output/math5a.chapter08.enrichment.json",

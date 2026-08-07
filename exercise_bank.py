@@ -132,7 +132,9 @@ def _exercise(
             f"Parametric practice for {item.get('skill_title') or item.get('skill')}; "
             f"the answer is computed by exact rational arithmetic, not by a model"
         ),
-        "generator_version": math_practice_items.GENERATOR_VERSION,
+        "generator_version": math_practice_items.generator_version_for(
+            str(item.get("skill") or "")
+        ),
     }
 
     definition = {

@@ -62,6 +62,20 @@ check("fractions questions are filed under Fractions",
 check("a review lesson mixes earlier lessons", mp.chapters_for_lesson(4) == [1, 2, 3])
 check("a normal lesson serves only itself", mp.chapters_for_lesson(7) == [7])
 
+print("\nprovenance names the generator that wrote each skill")
+check(
+    "unchanged skills still claim 1.0.0",
+    mp.generator_version_for("add_fractions") == mp.GENERATOR_VERSION == "math-practice-items/1.0.0",
+    mp.generator_version_for("add_fractions"),
+)
+check(
+    "revised triangle skills claim 1.0.1, not the base string",
+    mp.generator_version_for("triangle_area") == "math-practice-items/1.0.1"
+    and mp.generator_version_for("triangle_half_rectangle") == "math-practice-items/1.0.1"
+    and mp.generator_version_for("triangle_area") != mp.GENERATOR_VERSION,
+    mp.generator_version_for("triangle_area"),
+)
+
 print("\nAPI: bank served (answers withheld), marked, recorded")
 from fastapi.testclient import TestClient
 import learning_materials_api as api

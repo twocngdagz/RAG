@@ -9,32 +9,28 @@ the test is wrong.
 
 ### Batch 1
 
-**Fix the technique block's field name so a class lesson can be imported.**
+**Fix an inconsistency in the required_form you just added.** Read
+`docs/classroom-migration-batches.md` (contract section) and `CONTEXT.md`.
 
-B21's RAG half turns a class-lesson technique into a `concept_explanation`
-teaching block. The consumer refuses every one of them:
+`draft_export_manifest.py` now proposes `required_form` for numeric-marked
+concepts. It is inconsistent: two concepts with identical answer data get
+different results.
 
-    teaching block `class_lesson.math5a:ch05:identify-a-triangles-base-and-height.techniques.0`
-    needs `how_to` in its content, and a concept_explanation block without it
-    renders as a heading with nothing under it
+    find-half-a-related-rectangles-area  answers 14, 60  (answer_kind number, answer_den 1)  -> whole_number  ✓
+    identify-a-triangles-base-and-height answers 32, 90  (answer_kind number, answer_den 1)  -> ABSENT       ✗
 
-The cause: a class lesson's technique carries its method under **`steps`** — a
-list of `{step, detail}` pairs, which is what the class-lesson contract asks
-the generator for. A `concept_explanation` block requires **`how_to`**. Nobody
-translates between them, so the method arrives empty and the block is refused.
+Same data, opposite output. The absent one is exactly the concept that blocks
+chapter 5 from importing.
 
-**The producer conforms to the consumer** — the same ruling that settled the
-asset field earlier. When a technique becomes a block, its steps must reach
-the block as `how_to`, keeping each step's name and its detail readable; a
-step named "Write" whose detail is "Write Area = ½ × base × height" must not
-lose either half.
+The rule must be about the ANSWERS, not the concept's wording: any numeric
+marker whose bank answers are ALL whole numbers (`answer_kind` number,
+`answer_den` 1) gets `whole_number`. Answers that reduce to fractions get the
+fraction form, as chapter 3 does. Only leave it absent when the answers
+genuinely do not agree on a form — and report that, do not guess.
 
-Prove it end to end: export chapter 5 from its real material — the fixtures
-under `tests/fixtures/b21/` are the tracked copies — and assert the technique
-blocks carry `how_to` with the steps intact.
+Regenerate the eight drafts. Chapter 3 must still export byte-identical at
+`0cc0598abed2`. Extend `test_manifest_drafts.py` so a concept whose answers
+are all whole numbers gets `whole_number` — the test that would have caught
+this.
 
-Do not weaken any refusal to make this pass, do not touch the approval gate,
-and chapter 3 must still export byte-identical at `0cc0598abed2`.
-
-Verification is EVERY suite in this repository. Report EXIT CODES. Commit
-locally.
+Verification is EVERY suite. Report EXIT CODES. Commit locally.

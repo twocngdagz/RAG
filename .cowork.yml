@@ -1,35 +1,45 @@
 models:
   implementer:
-    provider: anthropic
-    model: claude-opus-5
+    provider: cursor
+    model: cursor-grok-4.5-medium
     cliAdapter:
-      kind: claude
-      command: claude
+      kind: cursor
+      command: cursor-agent
+      # --force is the workspace-trust gate. Without it cursor-agent does not
+      # fail cleanly -- it can hang indefinitely -- and with idle detection
+      # disabled a hang burns the whole budget. The flag is required here so a
+      # missing-trust hang is impossible rather than merely unlikely.
+      # -p and --output-format stream-json are REQUIRED: the adapter parses
+      # JSONL and does not add them itself, and `text` buffers to the end so a
+      # silent run looks 0-byte. --force is the trust gate. Effort is in the
+      # model id (-medium); there is no effort flag.
       args:
-        - --effort
-        - max
-        - --include-partial-messages
-        - --permission-mode
-        - acceptEdits
-        - --allowedTools
-        - Bash(git status:*) Bash(git add:*) Bash(git commit:*) Bash(git diff:*) Bash(git log:*)
-          Bash(python:*) Bash(.venv/bin/python:*)
+        - -p
+        - --force
+        - --output-format
+        - stream-json
+      # Grok is silent until finished; silence is not a health signal, so idle
+      # detection is disabled (7 days) and liveness is judged by CPU on the
+      # child process, never by log growth.
       timeout: 604800
-      idleTimeout: 900
+      idleTimeout: 604800
   reviewer:
-    provider: anthropic
-    model: claude-opus-4-8
+    provider: cursor
+    model: gpt-5.6-sol-medium
     cliAdapter:
-      kind: claude
-      command: claude
+      kind: cursor
+      command: cursor-agent
+      # Sol is silent until finished, like Grok — so the same rules apply:
+      # --force is the trust gate, idle detection is disabled (7 days), and
+      # liveness is judged by CPU on the child process, not by log growth.
+      # Effort is in the model id (-medium); there is no effort flag.
       args:
-        - --effort
-        - max
-        - --include-partial-messages
-        - --allowedTools
-        - Bash(git status:*) Bash(git diff:*) Bash(git log:*) Bash(python:*) Bash(.venv/bin/python:*)
+        - -p
+        - --force
+        - --output-format
+        - stream-json
       timeout: 604800
-      idleTimeout: 900
+      idleTimeout: 604800
 roles:
   implementer:
     model: implementer

@@ -40,7 +40,27 @@ OUTPUT_FILE = "output/math_practice_items.json"
 # because this file IS the generator: an exporter that made up a version string
 # would be recording a fact about authorship that nothing supports. Bump it when
 # a change here alters the questions or the answers this file produces.
+#
+# Skill-scoped bumps live in GENERATOR_VERSION_BY_SKILL: a revision that only
+# changes some skills must not rewrite provenance on every other exercise, or
+# chapter 3's package fingerprint would move for content it does not contain.
 GENERATOR_VERSION = "math-practice-items/1.0.0"
+
+# Skills revised since 1.0.0. Triangle generators now force whole-number areas
+# so a bank can imply required_form; their exercises must not still claim 1.0.0.
+GENERATOR_VERSION_BY_SKILL = {
+    "triangle_area": "math-practice-items/1.0.1",
+    "triangle_half_rectangle": "math-practice-items/1.0.1",
+}
+
+
+def generator_version_for(skill: str) -> str:
+    """The provenance string for one skill's exercises.
+
+    Unchanged skills keep GENERATOR_VERSION so packages that never ask a revised
+    skill (chapter 3) stay byte-identical. Revised skills name their own bump.
+    """
+    return GENERATOR_VERSION_BY_SKILL.get(str(skill or "").strip(), GENERATOR_VERSION)
 
 # Capability tags (see the V2 architecture). Only computable-answer capabilities
 # belong in this deterministic slice.
@@ -253,8 +273,20 @@ def _fraction_divided_by_whole(rng: random.Random):
 # Lesson 5 — Area of a triangle
 # --------------------------------------------------------------------------- #
 
+def _even_product_pair(a: int, b: int, *, b_hi: int) -> tuple[int, int]:
+    """Keep area answers whole without drawing more randoms.
+
+    Triangle area is (a*b)/2. An odd product leaves a half, and a bank that mixes
+    wholes with a half cannot imply one required_form. Adjusting `b` by one (no
+    further rng call) keeps later generators on the same seed stream.
+    """
+    if (a * b) % 2 == 0:
+        return a, b
+    return a, b + 1 if b < b_hi else b - 1
+
+
 def _triangle_area(rng: random.Random):
-    base, height = rng.randint(3, 20), rng.randint(3, 20)
+    base, height = _even_product_pair(rng.randint(3, 20), rng.randint(3, 20), b_hi=20)
     return _item("triangle_area",
                  f"A triangle has a base of ${base}$ cm and a height of ${height}$ cm. "
                  "What is its area, in square centimetres?",
@@ -264,7 +296,7 @@ def _triangle_area(rng: random.Random):
 
 
 def _triangle_half_rectangle(rng: random.Random):
-    w, h = rng.randint(3, 15), rng.randint(3, 15)
+    w, h = _even_product_pair(rng.randint(3, 15), rng.randint(3, 15), b_hi=15)
     return _item("triangle_half_rectangle",
                  f"A triangle fills exactly half of a ${w}$ cm by ${h}$ cm rectangle. "
                  "What is the area of the triangle, in square centimetres?",

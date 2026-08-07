@@ -2,7 +2,7 @@
   "manifest_schema_version": "lesson.export_manifest.v2",
   "approved": false,
   "draft": {
-    "generator": "draft_export_manifest/2.0.0",
+    "generator": "draft_export_manifest/2.1.0",
     "written_from": {
       "materials": "output/math5a.chapter06.book_learning_materials.json",
       "enrichment": "output/math5a.chapter06.enrichment.json",
@@ -35,7 +35,8 @@
       "Where objective_type is set it reads 'procedure', on the evidence that a named technique carries the goal out in ordered steps. It is also the only value this repository has ever emitted, so check it against Ela's vocabulary.",
       "2 concept(s) carry no assessed flag: the mastery checklist does not name them and the bank cannot ask them, so nothing in the material claims they produce evidence.",
       "No bank declares guidance -- chapter 3's approved banks carry a one-line reminder of the method, and writing teaching is not this generator's to do.",
-      "No bank declares evaluation.marking.required_form. Chapter 3 requires answers in simplest fraction form; decide what shape these answers must take.",
+      "1 bank(s) propose evaluation.marking.required_form from their answers: math5a:ch06:find-missing-amounts-using-unit-parts=whole_number.",
+      "1 bank(s) leave evaluation.marking.required_form unset because their answers do not imply one form: math5a:ch06:write-ratios-in-their-simplest-form (the answers are ratio, and only a bank of numbers can imply whole_number or simplest_fraction). A wrong form marks a correct learner wrong, so decide what shape those answers must take.",
       "No resources are declared. Material is reusable because an author says so, and chapter 3 promotes its review checklist that way.",
       "No diagrams are declared. Which drawing teaches which example is a teaching decision, and a wrong picture in maths teaches something false.",
       "teaching_document.generator_version reads 'enrich_lessons/pte_lesson_enrichment.v1', taken from the document's own schema version. Confirm which run actually wrote it.",
@@ -99,7 +100,8 @@
             ]
           }
         ],
-        "assessed_from": null
+        "assessed_from": null,
+        "required_form_from": null
       },
       {
         "stable_key": "math5a:ch06:write-ratios-in-the-correct-order",
@@ -150,7 +152,8 @@
             }
           ],
           "and_the_bank_can_ask_it": false
-        }
+        },
+        "required_form_from": null
       },
       {
         "stable_key": "math5a:ch06:reverse-a-ratio-without-changing-its-meaning",
@@ -199,7 +202,8 @@
             }
           ],
           "and_the_bank_can_ask_it": false
-        }
+        },
+        "required_form_from": null
       },
       {
         "stable_key": "math5a:ch06:find-ratios-that-show-the-same-comparison",
@@ -237,7 +241,8 @@
             ]
           }
         ],
-        "assessed_from": null
+        "assessed_from": null,
+        "required_form_from": null
       },
       {
         "stable_key": "math5a:ch06:write-ratios-in-their-simplest-form",
@@ -282,6 +287,21 @@
             }
           ],
           "and_the_bank_can_ask_it": true
+        },
+        "required_form_from": {
+          "exercises_in_bank": 9,
+          "answer_kinds": [
+            "ratio"
+          ],
+          "answer_dens": [
+            1,
+            2,
+            3,
+            5,
+            9
+          ],
+          "all_reduced": false,
+          "why_unset": "the answers are ratio, and only a bank of numbers can imply whole_number or simplest_fraction"
         }
       },
       {
@@ -343,6 +363,18 @@
             }
           ],
           "and_the_bank_can_ask_it": true
+        },
+        "required_form_from": {
+          "exercises_in_bank": 9,
+          "answer_kinds": [
+            "number"
+          ],
+          "answer_dens": [
+            1
+          ],
+          "all_reduced": true,
+          "form": "whole_number",
+          "because": "every answer has answer_den 1 — a plain number"
         }
       },
       {
@@ -394,7 +426,8 @@
             }
           ],
           "and_the_bank_can_ask_it": false
-        }
+        },
+        "required_form_from": null
       }
     ],
     "skills_without_a_concept": [
@@ -497,7 +530,8 @@
         "evaluation": {
           "authority": "deterministic",
           "marking": {
-            "marker": "ela.math.numeric"
+            "marker": "ela.math.numeric",
+            "required_form": "whole_number"
           }
         },
         "scheduling": {
