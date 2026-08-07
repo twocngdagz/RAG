@@ -708,6 +708,16 @@ check(
     package["content_hash"][:24],
 )
 check(
+    "and every exercise still claims math-practice-items/1.0.0 — triangle bumps are skill-scoped",
+    {
+        exercise["definition"]["provenance"]["generator_version"]
+        for concept in package["concepts"]
+        for exercise in concept.get("exercises") or []
+    }
+    == {"math-practice-items/1.0.0"},
+    "a revised skill's provenance leaked into chapter 3",
+)
+check(
     "and the chunks it is validated against are the derived ones",
     derive_clean_chunks.derive(materials(3), chapter_number=3)
     == json.loads((ROOT / "tests" / "fixtures" / "b11" / "math5a.chapter03.clean_chunks.json").read_text()),

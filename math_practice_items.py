@@ -40,7 +40,27 @@ OUTPUT_FILE = "output/math_practice_items.json"
 # because this file IS the generator: an exporter that made up a version string
 # would be recording a fact about authorship that nothing supports. Bump it when
 # a change here alters the questions or the answers this file produces.
+#
+# Skill-scoped bumps live in GENERATOR_VERSION_BY_SKILL: a revision that only
+# changes some skills must not rewrite provenance on every other exercise, or
+# chapter 3's package fingerprint would move for content it does not contain.
 GENERATOR_VERSION = "math-practice-items/1.0.0"
+
+# Skills revised since 1.0.0. Triangle generators now force whole-number areas
+# so a bank can imply required_form; their exercises must not still claim 1.0.0.
+GENERATOR_VERSION_BY_SKILL = {
+    "triangle_area": "math-practice-items/1.0.1",
+    "triangle_half_rectangle": "math-practice-items/1.0.1",
+}
+
+
+def generator_version_for(skill: str) -> str:
+    """The provenance string for one skill's exercises.
+
+    Unchanged skills keep GENERATOR_VERSION so packages that never ask a revised
+    skill (chapter 3) stay byte-identical. Revised skills name their own bump.
+    """
+    return GENERATOR_VERSION_BY_SKILL.get(str(skill or "").strip(), GENERATOR_VERSION)
 
 # Capability tags (see the V2 architecture). Only computable-answer capabilities
 # belong in this deterministic slice.
