@@ -3,10 +3,18 @@
 The exporter TRANSFORMS a declared mapping. It does not decide what a claim
 teaches or assesses — the manifest says that, because the chapter cannot. What
 this module does is follow the mapping into the material, publish the whole
-teaching document as ordered blocks, fill each concept's question bank, draw the
-declared diagrams from the numbers the material already carries, seal the assets
-in, translate each claim's provenance into the record Ela validates, and hash
-the result.
+teaching document as ordered blocks, add each concept's class lesson to them
+where the transform stage has written one, fill each concept's question bank,
+draw the declared diagrams from the numbers the material already carries, seal
+the assets in, translate each claim's provenance into the record Ela validates,
+and hash the result.
+
+Class lessons ADD. A chapter that has been through B20.1's transform stage
+carries, per concept, the thing a teacher stands up and delivers — the goal, the
+techniques, the examples worked in front of the class — and those become blocks
+belonging to that concept. The enrichment's own material stays exactly where it
+was. A chapter that has never been through the transform stage has no class
+lessons, and exports from its enrichment as it always did.
 
 It exports from APPROVED mappings only. Drafts exist now — a generator proposes
 what a chapter's concepts might be — and a proposal that reached a learner would
@@ -37,6 +45,8 @@ import sys
 from pathlib import Path
 from typing import Any
 
+import class_lesson_contract
+import class_lesson_store
 import domain_packs
 import enrichment_comparison
 import exercise_bank
@@ -70,6 +80,8 @@ def export_chapter(
     *,
     teaching_document: dict[str, Any] | None = None,
     practice_items: list[dict[str, Any]] | None = None,
+    class_lessons: dict[str, Any] | None = None,
+    class_lessons_file: str | Path | None = None,
     asset_base: Path | None = None,
 ) -> dict[str, Any]:
     """One chapter, one package.
@@ -78,10 +90,14 @@ def export_chapter(
     ends that nobody has written down, and merging chapters would put a learner
     in front of material the book kept apart.
 
-    `manifest`, `teaching_document` and `practice_items` may be supplied
-    directly; otherwise they are read from the paths the pack declares.
+    `manifest`, `teaching_document`, `practice_items` and `class_lessons` may be
+    supplied directly; otherwise they are read from the paths the pack declares.
     Supplying the manifest is still supplying a DECLARED mapping — the exporter
     does not gain the ability to invent one.
+
+    A chapter nobody has run the transform stage for has no class lessons, and
+    that is SILENCE rather than a gap: it exports from its enrichment exactly as
+    it did before class lessons existed.
     """
     pack = domain_packs.get(slug)
     _assert_pack_matches_source(pack, materials)
@@ -109,6 +125,9 @@ def export_chapter(
     if practice_items is None:
         practice_items = _read_json(math_practice_items.OUTPUT_FILE, "the practice item bank")
 
+    if class_lessons is None:
+        class_lessons = _read_class_lessons(slug, chapter_number, class_lessons_file)
+
     source_resource_id = _source_resource_id(materials, slug)
     content_revision = _content_revision(materials, chapter_number)
     lesson_stable_key = manifest["lesson"]["stable_key"]
@@ -118,13 +137,33 @@ def export_chapter(
         "provenance": _lesson_provenance(manifest),
     }
 
+    chapter_chunk_ids = [str(chunk) for chunk in chapter.get("source_chunk_ids") or []]
+
     try:
         published_document = teaching_document_module.build(
             teaching_document,
             slug=slug,
             chapter_number=chapter_number,
-            grounded_in_source_chunk_ids=[str(chunk) for chunk in chapter.get("source_chunk_ids") or []],
+            grounded_in_source_chunk_ids=chapter_chunk_ids,
             generator_version=str(manifest["teaching_document"]["generator_version"]).strip(),
+        )
+    except teaching_document_module.TeachingDocumentRefused as error:
+        raise ExportRefused(f"teaching_document -> {error}") from error
+
+    # Added to the enrichment's blocks, never in place of them, and added BEFORE
+    # the diagrams are drawn so a picture may be placed after a class lesson's
+    # worked example exactly as it may after the chapter's own.
+    try:
+        published_document = teaching_document_module.with_class_lessons(
+            published_document,
+            _class_lessons(
+                class_lessons,
+                slug=slug,
+                chapter_number=chapter_number,
+                manifest=manifest,
+                lesson_stable_key=lesson_stable_key,
+                grounded_in_source_chunk_ids=chapter_chunk_ids,
+            ),
         )
     except teaching_document_module.TeachingDocumentRefused as error:
         raise ExportRefused(f"teaching_document -> {error}") from error
@@ -271,6 +310,132 @@ def _concept(
         },
         "exercises": exercises,
     }
+
+
+def _read_class_lessons(
+    slug: str, chapter_number: int, path: str | Path | None
+) -> dict[str, Any] | None:
+    """The chapter's class lessons, or None because it has none.
+
+    Absence at the DEFAULT path is silence: most chapters have not been through
+    the transform stage yet, and one that has not still exports from its
+    enrichment. A path NAMED by the caller is a different thing — asking for a
+    file that is not there is a mistake worth hearing about, not a chapter
+    exporting quietly without the teaching somebody meant to include.
+    """
+    if path is not None:
+        return _read_json(path, "the chapter's class lessons")
+
+    default = class_lesson_store.store_path(slug, chapter_number)
+
+    return _read_json(default, "the chapter's class lessons") if default.exists() else None
+
+
+def _class_lessons(
+    store: dict[str, Any] | None,
+    *,
+    slug: str,
+    chapter_number: int,
+    manifest: dict[str, Any],
+    lesson_stable_key: str,
+    grounded_in_source_chunk_ids: list[str],
+) -> list[dict[str, Any]]:
+    """This chapter's class lessons, held to the contract and to the mapping.
+
+    THE CONTRACT IS CHECKED AGAIN HERE, and deliberately. It governs three
+    stages — it briefs the generator, it is what the runner accepted a reply
+    under, and it is what the export publishes — and a file on disk can be edited
+    between the second and the third. Re-checking costs nothing and is the only
+    thing standing between a hand-edited store and a package.
+
+    THE STATEMENT IS CHECKED TOO, because the contract checks a lesson against the
+    concept it claims to be for. A statement that moved in the mapping after the
+    lesson was generated means the lesson teaches something the card no longer
+    says, and the honest answer is to run that concept again rather than to ship
+    the mismatch.
+
+    A concept with no class lesson is silence: this chapter has not been run for
+    it yet, and the enrichment still teaches. A class lesson for a concept the
+    mapping does not declare is not silence — it is teaching about to be dropped
+    without a word, so it is refused.
+    """
+    if not store:
+        return []
+
+    try:
+        class_lesson_store.assert_holds(
+            store, slug=slug, chapter=chapter_number, source="the chapter's class lessons"
+        )
+    except class_lesson_store.ClassLessonsRefused as error:
+        raise ExportRefused(f"class_lessons -> {error}") from error
+
+    lessons = class_lesson_store.lessons(store)
+
+    if not lessons:
+        return []
+
+    generator_version = str(
+        (manifest.get("class_lessons") or {}).get("generator_version") or ""
+    ).strip()
+
+    if not generator_version:
+        raise ExportRefused(
+            "class_lessons -> this chapter has class lessons, but the mapping does not say which "
+            "generator produced them; naming one RAG cannot verify would be inventing a fact "
+            "about authorship, exactly as teaching_document.generator_version would be"
+        )
+
+    declared = {
+        str((concept or {}).get("stable_key") or "").strip(): concept
+        for concept in manifest.get("concepts") or []
+    }
+    orphans = sorted(set(lessons) - set(declared))
+
+    if orphans:
+        raise ExportRefused(
+            f"class_lessons -> there is teaching for {', '.join(orphans)}, which this mapping does "
+            f"not declare as a concept of {lesson_stable_key}. Exporting without it would drop a "
+            f"class lesson somebody generated and say nothing"
+        )
+
+    built: list[dict[str, Any]] = []
+
+    for key, concept in declared.items():
+        lesson = lessons.get(key)
+
+        if lesson is None:
+            continue
+
+        try:
+            checked = class_lesson_contract.validate(
+                lesson,
+                concept_key=key,
+                concept_statement=str((concept or {}).get("statement") or ""),
+            )
+        except class_lesson_contract.ClassLessonRefused as error:
+            raise ExportRefused(f"class_lessons.{key} -> {error}") from error
+
+        built.append(
+            {
+                "concept_stable_key": key,
+                "class_lesson": checked,
+                "provenance": {
+                    "origin": lesson_provenance.PEDAGOGICAL_GENERATION,
+                    # A class lesson is a transform of the chapter's enriched
+                    # material, so it rests on what that material rests on. Naming
+                    # nothing would understate it; naming anything else would
+                    # claim the generator read something it never saw.
+                    "grounded_in_source_chunk_ids": sorted(set(grounded_in_source_chunk_ids)),
+                    "generation_reason": (
+                        f"Class lesson for {key}, written from this chapter's enriched material "
+                        f"under {class_lesson_contract.SCHEMA_VERSION}"
+                    ),
+                    "generator_version": generator_version,
+                },
+            }
+        )
+
+    return built
 
 
 def _diagram(
@@ -593,6 +758,7 @@ def emit_package_file(
     output_file: str | Path,
     enrichment_file: str | Path | None = None,
     practice_items_file: str | Path | None = None,
+    class_lessons_file: str | Path | None = None,
     compare_with: str | Path | None = None,
     edit_reason: str | None = None,
 ) -> tuple[dict[str, Any], dict[str, Any] | None]:
@@ -650,6 +816,7 @@ def emit_package_file(
         practice_items=_read_json(
             practice_items_file or math_practice_items.OUTPUT_FILE, "the practice item bank"
         ),
+        class_lessons_file=class_lessons_file,
         # Asset files are named relative to the manifest that declares them, so
         # a mapping stays movable: the pictures travel with the mapping.
         asset_base=Path(manifest_file).resolve().parent,
@@ -722,6 +889,11 @@ def _main(argv: list[str]) -> int:
         help="the computed question bank concepts draw from (default: the generator's own output)",
     )
     parser.add_argument(
+        "--class-lessons",
+        help="the chapter's class lessons (default: the transform stage's own output, if it is "
+             "there; a chapter with none exports from its enrichment)",
+    )
+    parser.add_argument(
         "--compare-with",
         help="a package to compare against instead of whatever is already at --out",
     )
@@ -742,6 +914,7 @@ def _main(argv: list[str]) -> int:
             output_file=args.out,
             enrichment_file=args.enrichment,
             practice_items_file=args.practice_items,
+            class_lessons_file=args.class_lessons,
             compare_with=args.compare_with,
             edit_reason=args.edit,
         )
@@ -758,6 +931,20 @@ def _main(argv: list[str]) -> int:
 
     if report is not None:
         print(enrichment_comparison.summary(report) + (f" (edit: {args.edit})" if args.edit else ""))
+
+    # Said out loud, because teaching being carried in silence is the failure this
+    # channel exists to end: a chapter whose class lessons were ignored used to
+    # export exactly like one that had none.
+    carried = sorted(
+        {
+            str(block.get("concept_stable_key") or "")
+            for block in package["teaching_document"]["blocks"]
+            if block.get("concept_stable_key")
+        }
+    )
+
+    if carried:
+        print(f"class lessons carried for {len(carried)} concept(s): {', '.join(carried)}")
 
     print(f"wrote {args.out} ({package['content_hash'][:12]})")
 

@@ -11,7 +11,10 @@ lesson. v2 carries what a classroom carries:
 
     teaching_document  the taught thing, as ordered blocks — the method, each
                        concept explained, every worked example with its
-                       decoding, plan and annotations, the mistakes to avoid
+                       decoding, plan and annotations, the mistakes to avoid,
+                       and where a concept has a class lesson, its goal,
+                       techniques and worked examples, each block naming the
+                       concept it belongs to
     concepts           the masterable abilities this lesson introduces. A
                        concept IS the objective: one entity, one statement,
                        authored once. It is also the schedulable card.
@@ -180,7 +183,7 @@ def structural_problems(package: dict[str, Any]) -> list[str]:
     concept_keys, exercise_keys, concept_problems = _concept_problems(package)
     problems.extend(concept_problems)
 
-    problems.extend(_teaching_document_problems(package.get("teaching_document")))
+    problems.extend(_teaching_document_problems(package.get("teaching_document"), concept_keys))
     problems.extend(_association_problems(package, concept_keys))
 
     resource_keys: set[str] = set()
@@ -281,7 +284,7 @@ def _concept_problems(package: dict[str, Any]) -> tuple[set[str], set[str], list
     return concept_keys, exercise_keys, problems
 
 
-def _teaching_document_problems(document: Any) -> list[str]:
+def _teaching_document_problems(document: Any, concept_keys: set[str]) -> list[str]:
     """The taught thing, in order, with every block saying where it came from."""
     if not isinstance(document, dict):
         return ["teaching_document is missing"]
@@ -321,6 +324,20 @@ def _teaching_document_problems(document: Any) -> list[str]:
         # re-sorted would teach in an order nobody authored.
         if block.get("position") != index:
             problems.append(f"{path}.position is {block.get('position')!r}, not {index}")
+
+        # A block may belong to ONE concept rather than to the chapter at large —
+        # a class lesson's blocks do. If it says so, the concept has to be one
+        # this package defines: teaching filed under a card that is not here is
+        # met by nobody, and the package would import without complaint.
+        if "concept_stable_key" in block:
+            concept = str(block.get("concept_stable_key") or "").strip()
+
+            if not concept:
+                problems.append(f"{path}.concept_stable_key is empty")
+            elif concept not in concept_keys:
+                problems.append(
+                    f"{path} belongs to concept {concept!r}, which this package does not define"
+                )
 
         problems.extend(_provenance_problems(block.get("provenance"), path))
 

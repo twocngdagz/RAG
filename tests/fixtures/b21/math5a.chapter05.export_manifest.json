@@ -1,0 +1,83 @@
+{
+  "manifest_schema_version": "lesson.export_manifest.v2",
+  "approved": true,
+  "authored_by": "tests:b21-fixture",
+  "fixture_note": "A fixture mapping, approved only here. The real chapter 5 draft lives unapproved in manifests/drafts/ and stays that way: three of its five concepts have no questions yet, so it cannot be published. The two concepts below are the two its own draft matched to a bank, copied verbatim.",
+  "competency_framework": {
+    "stable_key": "math5a:framework",
+    "title": "Singapore Math Primary Mathematics 5A"
+  },
+  "lesson": {
+    "stable_key": "math5a:ch05",
+    "title": "Area of Triangle",
+    "domain": "math"
+  },
+  "teaching_document": {
+    "generator_version": "enrich_lessons/pte_lesson_enrichment.v1"
+  },
+  "class_lessons": {
+    "generator_version": "run_class_lessons/class_lesson.v1-fixture"
+  },
+  "concepts": [
+    {
+      "stable_key": "math5a:ch05:identify-a-triangles-base-and-height",
+      "statement": "You will identify a triangle's base and height.",
+      "objective_type": "procedure",
+      "assessed": true,
+      "bank": {
+        "source": "math_practice_items",
+        "skill": "triangle_area",
+        "type": "response.free_text",
+        "domain": "math",
+        "evidence_mode": "cued_recall",
+        "answer_visibility": "after_submission",
+        "response": {
+          "kind": "short_answer",
+          "required": true
+        },
+        "evaluation": {
+          "authority": "deterministic",
+          "marking": {
+            "marker": "ela.math.numeric"
+          }
+        },
+        "scheduling": {
+          "policy": "skill_practice",
+          "subject": "learning_item"
+        }
+      }
+    },
+    {
+      "stable_key": "math5a:ch05:find-half-a-related-rectangles-area",
+      "statement": "You will find half a related rectangle's area.",
+      "objective_type": "procedure",
+      "assessed": true,
+      "bank": {
+        "source": "math_practice_items",
+        "skill": "triangle_half_rectangle",
+        "type": "response.free_text",
+        "domain": "math",
+        "evidence_mode": "cued_recall",
+        "answer_visibility": "after_submission",
+        "response": {
+          "kind": "short_answer",
+          "required": true
+        },
+        "evaluation": {
+          "authority": "deterministic",
+          "marking": {
+            "marker": "ela.math.numeric"
+          }
+        },
+        "scheduling": {
+          "policy": "skill_practice",
+          "subject": "learning_item"
+        }
+      }
+    }
+  ],
+  "objective_associations": [],
+  "resources": [],
+  "assets": [],
+  "diagrams": []
+}

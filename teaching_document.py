@@ -30,6 +30,21 @@ PICTURES ARE MET IN THE TEACHING, NOT BESIDE IT. A computed diagram enters the
 block list immediately after the block it illustrates, so the wizard shows the
 worked example and then draws it. The block carries the asset's key, its caption
 and its alt text; the picture itself rides in the package's asset channel.
+
+A CLASS LESSON BELONGS TO ONE CONCEPT, AND ADDS. B20.1's transform stage writes,
+per concept, the thing a teacher stands up and delivers: a goal, the techniques
+that reach it, and the examples worked in front of the class. Those become blocks
+too — the SAME block types, because a goal is a goal and a worked example is a
+worked example whichever document it came from — but each one names the concept
+it belongs to, because the wizard teaches one concept at a time and blocks pooled
+at the chapter level cannot be split back apart. They are ADDED: the chapter's own
+overview, method, goals, mistakes and practice plan stay exactly where they were.
+
+THE SAME BLOCK TYPE CARRIES ITS TEACHING IN THE SAME FIELDS. A class lesson
+writes a technique's method as steps and the enrichment writes it as `how_to`;
+a `concept_explanation` block carries it in `how_to`, whichever document it came
+out of, because that is the field its consumer reads. One block type with two
+shapes is a block a renderer can only half show.
 """
 
 from __future__ import annotations
@@ -78,6 +93,24 @@ BLOCK_TYPE = {
 # structural check reads the same constant: a block of this type must name an
 # asset the package actually contains.
 ILLUSTRATION_BLOCK_TYPE = "illustration"
+
+# Where a class lesson's blocks say they came from. Not one of SECTION_ORDER,
+# because they did not come out of the Coach document at all: they came from the
+# class-lesson contract, one concept at a time. Saying so is the difference
+# between "the chapter's goals" and "this concept's goal", which is a difference
+# a learner meets.
+CLASS_LESSON_SECTION = "class_lesson"
+
+# What each part of a class lesson IS, as a block. No new vocabulary: the goal is
+# the same kind of block the chapter's goals are, a technique explains a concept
+# exactly as an enrichment technique does, and a worked example is a worked
+# example. A second set of types for the same teaching would leave a renderer
+# with two ways to show one thing.
+CLASS_LESSON_BLOCK_TYPE = {
+    "goal": BLOCK_TYPE["learning_goals"],
+    "techniques": BLOCK_TYPE["techniques"],
+    "worked_examples": BLOCK_TYPE["worked_examples"],
+}
 
 # Sections a teaching document cannot be published without. The other two are
 # genuinely optional — the Coach page hides them when empty — so an otherwise
@@ -154,6 +187,183 @@ def build(
         "title": str(document.get("lesson_title") or "").strip(),
         "generator_version": generator_version,
         "blocks": blocks,
+    }
+
+
+def with_class_lessons(
+    document: dict[str, Any], class_lessons: list[dict[str, Any]]
+) -> dict[str, Any]:
+    """The same document, with each concept's class lesson added as its own blocks.
+
+    ADDED, and that word is the whole design. A class lesson is the classroom
+    teaching for ONE concept; the enrichment is what surrounds it — the chapter's
+    method, its overview, its goals, the mistakes to avoid, the practice plan.
+    Letting one stand in for the other would lose whichever of them the generator
+    did not happen to cover, and the loss would be invisible: the package would
+    still look like a complete lesson.
+
+    Each entry is `{concept_stable_key, class_lesson, provenance}`. The lesson has
+    already been held to `class_lesson_contract` by whoever read it off disk —
+    this module places teaching, it does not decide what a class lesson is.
+
+    Blocks come out in the order the entries arrive, and per concept in the order
+    the teaching is delivered: the goal, then the techniques that reach it, then
+    the examples worked in front of the class.
+    """
+    if not class_lessons:
+        return document
+
+    blocks = list(document.get("blocks") or [])
+    keys = {str(block.get("key") or "") for block in blocks}
+
+    for entry in class_lessons:
+        for block in _class_lesson_blocks(entry):
+            if block["key"] in keys:
+                raise TeachingDocumentRefused(
+                    f"the class lesson block {block['key']!r} is already in this teaching "
+                    f"document; two blocks under one key leave a reader no way to say which "
+                    f"teaching is which"
+                )
+
+            keys.add(block["key"])
+            blocks.append(block)
+
+    # Restated across the whole list, so no block carries a number describing
+    # where it used to be.
+    return {**document, "blocks": [{**block, "position": index} for index, block in enumerate(blocks)]}
+
+
+def _class_lesson_blocks(entry: dict[str, Any]) -> list[dict[str, Any]]:
+    """One concept's class lesson, as the blocks a learner is taught through."""
+    concept_stable_key = _text(entry.get("concept_stable_key"))
+    lesson = entry.get("class_lesson") or {}
+    provenance = entry.get("provenance") or {}
+
+    if not concept_stable_key:
+        raise TeachingDocumentRefused(
+            "a class lesson arrived without the concept it belongs to; blocks pooled at the "
+            "chapter level cannot be split back apart"
+        )
+
+    goal = _text(lesson.get("goal"))
+
+    if not goal:
+        raise TeachingDocumentRefused(
+            f"the class lesson for {concept_stable_key!r} has no goal, so it teaches nothing"
+        )
+
+    built: list[dict[str, Any]] = [
+        _class_lesson_block(concept_stable_key, "goal", "goal", {"lines": [goal]}, provenance)
+    ]
+
+    for index, technique in enumerate(lesson.get("techniques") or []):
+        part = f"techniques.{index}"
+        built.append(
+            _class_lesson_block(
+                concept_stable_key,
+                part,
+                "techniques",
+                _required(
+                    _class_lesson_key(concept_stable_key, part),
+                    {
+                        "name": _text(technique.get("name")),
+                        "purpose": _text(technique.get("purpose")),
+                        "how_to": _how_to(technique.get("steps")),
+                        "example": _text(technique.get("example")),
+                        "why_it_matters": _text(technique.get("why_it_matters")),
+                        "common_error": _text(technique.get("common_error")),
+                    },
+                    # The same two an enrichment technique cannot be published
+                    # without, because this is the same block: a name with no
+                    # method under it is a heading, not an explanation.
+                    must_have=("name", "how_to"),
+                ),
+                provenance,
+            )
+        )
+
+    for index, example in enumerate(lesson.get("worked_examples") or []):
+        built.append(
+            _class_lesson_block(
+                concept_stable_key,
+                f"worked_examples.{index}",
+                "worked_examples",
+                {
+                    "title": _text(example.get("title")),
+                    "input": _text(example.get("input")),
+                    "decoding": _text(example.get("decoding")),
+                    "plan": _text(example.get("plan")),
+                    "model_answer": _text(example.get("model_answer")),
+                    "annotations": [
+                        {"part": _text(note.get("part")), "comment": _text(note.get("comment"))}
+                        for note in (example.get("annotations") or [])
+                        if isinstance(note, dict)
+                    ],
+                },
+                provenance,
+            )
+        )
+
+    return built
+
+
+def _how_to(steps: Any) -> list[str]:
+    """A class lesson's steps, as the instructions a concept_explanation carries.
+
+    ONE FIELD, BECAUSE THE CONSUMER READS ONE. A `concept_explanation` block's
+    method lives in `how_to`. A block that carried it under `steps` instead —
+    which is the field the class-lesson contract asks the generator for — arrives
+    with nothing in the field the importer looks in, and renders as a heading
+    with nothing under it. The producer conforms to the consumer, the same ruling
+    that settled which field an asset's picture rides in.
+
+    NEITHER HALF IS DROPPED. The contract asks for a step's name AND its
+    instruction — "Write", "Write Area = ½ × base × height" — and both are
+    teaching: the name is the move, the detail is how to make it. They join into
+    one line the way this repository already writes a method step, `name: detail`,
+    so a learner meets both and neither is anyone's to summarise away.
+    """
+    lines: list[str] = []
+
+    for step in steps or []:
+        if not isinstance(step, dict):
+            continue
+
+        name = _text(step.get("step"))
+        detail = _text(step.get("detail"))
+        line = f"{name}: {detail}" if name and detail else name or detail
+
+        if line:
+            lines.append(line)
+
+    return lines
+
+
+def _class_lesson_key(concept_stable_key: str, part: str) -> str:
+    # The concept is inside the key as well as beside it, because keys have to be
+    # unique across a document that may carry several concepts' class lessons and
+    # a chapter's own teaching at the same time.
+    return f"{CLASS_LESSON_SECTION}.{concept_stable_key}.{part}"
+
+
+def _class_lesson_block(
+    concept_stable_key: str,
+    part: str,
+    kind: str,
+    content: dict[str, Any],
+    provenance: dict[str, Any],
+) -> dict[str, Any]:
+    return {
+        "key": _class_lesson_key(concept_stable_key, part),
+        "type": CLASS_LESSON_BLOCK_TYPE[kind],
+        "version": 1,
+        "section": CLASS_LESSON_SECTION,
+        # Whose teaching this is. The wizard runs explain -> worked example -> try
+        # per concept, and it can only do that if each block says which concept it
+        # belongs to.
+        "concept_stable_key": concept_stable_key,
+        "content": content,
+        "provenance": provenance,
     }
 
 

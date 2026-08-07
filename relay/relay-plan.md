@@ -9,45 +9,32 @@ the test is wrong.
 
 ### Batch 1
 
-**Rebuild the chapter lesson plans (export manifests) from the enrichment.**
-This corrects B21a, whose generator read the exercise bank's `skill` labels and
-produced concept statements like "Place value" — throwing away the class
-material an external LLM had already written for all nine chapters. Read
-`docs/classroom-migration-batches.md` (the contract section, and B21) and
-`CONTEXT.md` first.
+**Fix the technique block's field name so a class lesson can be imported.**
 
-**The rule the plan now states, and this batch exists to honour:** a lesson
-plan is DERIVED from the chapter's enrichment, never invented. A concept's
-statement is that chapter's own `learning_goals` line — "You will find the
-value of any digit", not "Place value". Nothing in this batch writes teaching
-content; it maps what an external generator already wrote.
+B21's RAG half turns a class-lesson technique into a `concept_explanation`
+teaching block. The consumer refuses every one of them:
 
-Rework `draft_export_manifest.py` so a chapter's draft is built from
-`output/math5a.chapterNN.enrichment.json`:
+    teaching block `class_lesson.math5a:ch05:identify-a-triangles-base-and-height.techniques.0`
+    needs `how_to` in its content, and a concept_explanation block without it
+    renders as a heading with nothing under it
 
-- **Concepts come from the enrichment.** Its `learning_goals`, `techniques`
-  and `mastery_checklist` describe what the chapter teaches; the exercise
-  bank's `skill` values say which questions exist. Match them, and say plainly
-  in the draft how each concept was matched.
-- **A goal with no matching questions is still a concept.** It is taught and
-  not yet practised; do not drop it, and do not invent questions for it.
-- **A `skill` with no matching goal is reported, not silently attached.** The
-  draft names it as unmatched so a person can see the gap.
-- **`objective_type` and `assessed` are the enrichment's evidence, not a
-  default.** If the material does not say, leave the field absent and report
-  it rather than stamping every concept `procedure, assessed=true` as the
-  previous generator did.
-- REVIEW chapters (4, 8, 9) carry no concepts and name the chapters they
-  review, per decision 4. Take the coverage from the chapter's own material,
-  not from a shape you choose.
+The cause: a class lesson's technique carries its method under **`steps`** — a
+list of `{step, detail}` pairs, which is what the class-lesson contract asks
+the generator for. A `concept_explanation` block requires **`how_to`**. Nobody
+translates between them, so the method arrives empty and the block is refused.
 
-Then regenerate all eight drafts under `manifests/drafts/`, still unapproved.
-Chapter 3's approved manifest must keep exporting **byte-identical at
-content_hash `0cc0598abed2`** — prove it.
+**The producer conforms to the consumer** — the same ruling that settled the
+asset field earlier. When a technique becomes a block, its steps must reach
+the block as `how_to`, keeping each step's name and its detail readable; a
+step named "Write" whose detail is "Write Area = ½ × base × height" must not
+lose either half.
 
-Report honestly, per chapter: how many concepts, how many matched to
-questions, what was left unmatched, and where the material was too thin to say.
-Do not pad.
+Prove it end to end: export chapter 5 from its real material — the fixtures
+under `tests/fixtures/b21/` are the tracked copies — and assert the technique
+blocks carry `how_to` with the steps intact.
+
+Do not weaken any refusal to make this pass, do not touch the approval gate,
+and chapter 3 must still export byte-identical at `0cc0598abed2`.
 
 Verification is EVERY suite in this repository. Report EXIT CODES. Commit
 locally.

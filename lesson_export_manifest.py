@@ -19,6 +19,9 @@ live, and read here. It supplies what the chapter cannot:
     lesson             stable key, title, domain
     teaching_document  which generator produced the Coach document being
                        published, which the document itself does not record
+    class_lessons      which generator produced the chapter's class lessons,
+                       which the class-lesson store does not record either.
+                       Declared only by a chapter that HAS them
     concepts           stable key, statement, type — authored, not extracted.
                        The statement is written ONCE: a concept is its own
                        objective, and two names for one idea is the disease
@@ -163,6 +166,18 @@ def validate(manifest: dict[str, Any]) -> list[str]:
             "teaching_document.generator_version is missing; the teaching document does not "
             "record which run produced it and the exporter may not invent one"
         )
+
+    # Declared only by a chapter that has class lessons, so its ABSENCE is not a
+    # gap and is not checked here — whether this chapter has any is a fact about
+    # a file on disk, and the exporter is where that is known. What is checked is
+    # the shape: a block that says a generator was named, with no name in it,
+    # would be worse than no block at all.
+    if "class_lessons" in manifest:
+        if not str((manifest.get("class_lessons") or {}).get("generator_version") or "").strip():
+            problems.append(
+                "class_lessons.generator_version is missing; the class lessons do not record "
+                "which generator wrote them and the exporter may not invent one"
+            )
 
     concept_keys: set[str] = set()
 
