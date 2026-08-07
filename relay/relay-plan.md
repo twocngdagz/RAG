@@ -9,40 +9,28 @@ the test is wrong.
 
 ### Batch 1
 
-**Fix: a chapter cannot export because its lesson plan never says what form a
-correct answer takes.** Read `docs/classroom-migration-batches.md` (the
-contract section and B21) and `CONTEXT.md` first.
+**Fix an inconsistency in the required_form you just added.** Read
+`docs/classroom-migration-batches.md` (contract section) and `CONTEXT.md`.
 
-Importing chapter 5 into the consumer is refused:
+`draft_export_manifest.py` now proposes `required_form` for numeric-marked
+concepts. It is inconsistent: two concepts with identical answer data get
+different results.
 
-    Activity definition [math5a:ch05:mp-015-triangle_area] does not satisfy
-    learning.activity.v1: evaluation.marking.required_form is required and missing
+    find-half-a-related-rectangles-area  answers 14, 60  (answer_kind number, answer_den 1)  -> whole_number  ✓
+    identify-a-triangles-base-and-height answers 32, 90  (answer_kind number, answer_den 1)  -> ABSENT       ✗
 
-**Why.** The numeric marker needs two things to mark an answer: `expected`
-(the answer, which the pipeline computes) and `required_form` (what a correct
-answer must look like — a plain number, or a fraction reduced to simplest
-form). Chapter 3's approved plan carries `required_form: simplest_fraction`
-because a person set it. The draft generator (`draft_export_manifest.py`)
-never emits it, so every generated plan is unexportable at the first
-deterministic-marked concept.
+Same data, opposite output. The absent one is exactly the concept that blocks
+chapter 5 from importing.
 
-Do this:
+The rule must be about the ANSWERS, not the concept's wording: any numeric
+marker whose bank answers are ALL whole numbers (`answer_kind` number,
+`answer_den` 1) gets `whole_number`. Answers that reduce to fractions get the
+fraction form, as chapter 3 does. Only leave it absent when the answers
+genuinely do not agree on a form — and report that, do not guess.
 
-- **The draft generator proposes `required_form` from the exercises
-  themselves.** The answers in each concept's bank say what form fits: chapter
-  5's triangle-area answers are whole numbers and simple decimals; chapter
-  3's are fractions. Derive it from the answer data (`answer_kind`,
-  `answer_den`, whether it reduces), do not hard-code per chapter.
-- **Where the answers do not make the form unambiguous, say so** — leave it
-  absent and report it, exactly as the generator already reports an unmatched
-  skill. Do not guess a form onto a concept whose answers do not imply one; a
-  wrong `required_form` marks a correct learner wrong.
-- Regenerate the eight drafts under `manifests/drafts/`, still unapproved.
-- Chapter 3's approved manifest is untouched and must still export
-  byte-identical at content_hash `0cc0598abed2` — prove it.
+Regenerate the eight drafts. Chapter 3 must still export byte-identical at
+`0cc0598abed2`. Extend `test_manifest_drafts.py` so a concept whose answers
+are all whole numbers gets `whole_number` — the test that would have caught
+this.
 
-Do not touch the approval gate. Do not weaken the marker's requirement; the
-plan must satisfy it, not the marker relax it.
-
-Verification is EVERY suite in this repository. Report EXIT CODES. Commit
-locally.
+Verification is EVERY suite. Report EXIT CODES. Commit locally.
