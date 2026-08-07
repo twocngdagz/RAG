@@ -539,10 +539,11 @@ check(
 
 print("\nrequired_form is read from the answers, never copied from chapter 3")
 
-# Whole numbers only: every answer_den is 1.
+# Whole numbers only: every answer_den is 1. The answers the plan named for the
+# chapter-5 concept that used to stay unset — same shape, must get whole_number.
 wholes = [
-    {"answer_kind": "number", "answer_den": 1, "answer_is_reduced": True},
-    {"answer_kind": "number", "answer_den": 1, "answer_is_reduced": True},
+    {"answer_kind": "number", "answer_den": 1, "answer_is_reduced": True, "answer_num": 32},
+    {"answer_kind": "number", "answer_den": 1, "answer_is_reduced": True, "answer_num": 90},
 ]
 # Reduced non-whole fractions: what chapter 3's banks look like.
 fractions = [
@@ -589,8 +590,8 @@ check(
     str(drafts._required_form(unreduced)),
 )
 
-# Against the real bank: chapter 5's half-rectangle skill is all wholes; its
-# triangle-area skill mixes a half with wholes and must not be guessed.
+# Against the real bank: both chapter-5 area skills are all wholes, so both
+# propose whole_number. A half in either bank would leave the form unset.
 half_rect = [item for item in ITEMS if item["skill"] == "triangle_half_rectangle"]
 triangle = [item for item in ITEMS if item["skill"] == "triangle_area"]
 angles = [item for item in ITEMS if item["skill"] == "angle_point"]
@@ -602,8 +603,9 @@ check(
     str(drafts._required_form(half_rect)),
 )
 check(
-    "triangle_area leaves required_form unset: wholes and a half do not agree",
-    drafts._required_form(triangle)[0] is None,
+    "triangle_area proposes whole_number from its answers — same rule as the half-rectangle bank",
+    drafts._required_form(triangle)[0] == drafts.FORM_WHOLE_NUMBER
+    and {item["answer_den"] for item in triangle} == {1},
     str(drafts._required_form(triangle)),
 )
 check(
@@ -646,6 +648,16 @@ check(
         for _, concept, _ in banked
     ),
     "no bank proposed whole_number",
+)
+check(
+    "identify-a-triangles-base-and-height proposes whole_number from its whole-number answers",
+    any(
+        concept["stable_key"] == "math5a:ch05:identify-a-triangles-base-and-height"
+        and ((concept["bank"].get("evaluation") or {}).get("marking") or {}).get("required_form")
+        == drafts.FORM_WHOLE_NUMBER
+        for _, concept, _ in banked
+    ),
+    "the concept that blocked chapter 5 still has no required_form",
 )
 check(
     "at least one bank leaves required_form unset, and needs_review names it",
