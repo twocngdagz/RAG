@@ -9,35 +9,32 @@ the test is wrong.
 
 ### Batch 1
 
-**B21, RAG half — carry class lessons into the package.** Read
-`docs/classroom-migration-batches.md` (B21, and the contract section) and
-`CONTEXT.md` first.
+**Fix the technique block's field name so a class lesson can be imported.**
 
-B20.1 generates class lessons per concept into
-`output/<slug>.chapterNN.class_lessons.json`. **The exporter does not read
-them yet** — a package is still built from the enrichment alone, so the
-techniques and worked examples an external generator wrote are ignored.
-Closing that is this batch.
+B21's RAG half turns a class-lesson technique into a `concept_explanation`
+teaching block. The consumer refuses every one of them:
 
-Chapter 5 is the proof: it has real class lessons for all five concepts
-(11 techniques, 16 worked examples), generated through the live contract.
+    teaching block `class_lesson.math5a:ch05:identify-a-triangles-base-and-height.techniques.0`
+    needs `how_to` in its content, and a concept_explanation block without it
+    renders as a heading with nothing under it
 
-Do this:
+The cause: a class lesson's technique carries its method under **`steps`** — a
+list of `{step, detail}` pairs, which is what the class-lesson contract asks
+the generator for. A `concept_explanation` block requires **`how_to`**. Nobody
+translates between them, so the method arrives empty and the block is refused.
 
-- **The export reads a chapter's class lessons when they exist** and turns
-  each concept's goal, techniques and worked examples into teaching blocks
-  for that concept, in the package's existing block vocabulary. A concept's
-  blocks belong to that concept, not to the chapter at large.
-- **A chapter with no class lessons still exports**, exactly as it does
-  today, from the enrichment. Chapter 3 must keep exporting **byte-identical
-  at content_hash `0cc0598abed2`** — prove it.
-- **Class lessons ADD to a package; they never replace the enrichment's
-  material.** The enrichment's overview, method, goals, mistakes and practice
-  plan stay.
-- **Approval is not yours to grant.** The exporter refuses an unapproved
-  manifest and must keep refusing. Do not flip `approved`, do not add a flag
-  that bypasses it, and do not weaken the refusal to make a test pass. Where a
-  test needs an approved mapping, build a fixture, never edit a real draft.
+**The producer conforms to the consumer** — the same ruling that settled the
+asset field earlier. When a technique becomes a block, its steps must reach
+the block as `how_to`, keeping each step's name and its detail readable; a
+step named "Write" whose detail is "Write Area = ½ × base × height" must not
+lose either half.
+
+Prove it end to end: export chapter 5 from its real material — the fixtures
+under `tests/fixtures/b21/` are the tracked copies — and assert the technique
+blocks carry `how_to` with the steps intact.
+
+Do not weaken any refusal to make this pass, do not touch the approval gate,
+and chapter 3 must still export byte-identical at `0cc0598abed2`.
 
 Verification is EVERY suite in this repository. Report EXIT CODES. Commit
 locally.
