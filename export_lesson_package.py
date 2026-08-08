@@ -354,10 +354,13 @@ def _class_lessons(
     says, and the honest answer is to run that concept again rather than to ship
     the mismatch.
 
-    A concept with no class lesson is silence: this chapter has not been run for
-    it yet, and the enrichment still teaches. A class lesson for a concept the
-    mapping does not declare is not silence — it is teaching about to be dropped
-    without a word, so it is refused.
+    A concept with no class lesson, when NO class lessons exist for the chapter,
+    is silence: this chapter has not been run yet, and the enrichment still
+    teaches. Once ANY class lesson exists, every declared concept must have one
+    — otherwise that concept has zero teaching steps and the consumer jumps
+    straight to recall. A class lesson for a concept the mapping does not
+    declare is not silence either — it is teaching about to be dropped without
+    a word, so it is refused.
     """
     if not store:
         return []
@@ -396,6 +399,15 @@ def _class_lessons(
             f"class_lessons -> there is teaching for {', '.join(orphans)}, which this mapping does "
             f"not declare as a concept of {lesson_stable_key}. Exporting without it would drop a "
             f"class lesson somebody generated and say nothing"
+        )
+
+    missing = sorted(set(declared) - set(lessons))
+
+    if missing:
+        raise ExportRefused(
+            f"class_lessons -> {', '.join(missing)} has no class lesson; once class lessons "
+            f"exist, every declared concept needs teaching, or that concept jumps straight to "
+            f"recall"
         )
 
     built: list[dict[str, Any]] = []
@@ -937,9 +949,9 @@ def _main(argv: list[str]) -> int:
     # export exactly like one that had none.
     carried = sorted(
         {
-            str(block.get("concept_stable_key") or "")
+            str(block.get("teaches") or "")
             for block in package["teaching_document"]["blocks"]
-            if block.get("concept_stable_key")
+            if block.get("teaches")
         }
     )
 

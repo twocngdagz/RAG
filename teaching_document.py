@@ -36,9 +36,11 @@ per concept, the thing a teacher stands up and delivers: a goal, the techniques
 that reach it, and the examples worked in front of the class. Those become blocks
 too — the SAME block types, because a goal is a goal and a worked example is a
 worked example whichever document it came from — but each one names the concept
-it belongs to, because the wizard teaches one concept at a time and blocks pooled
-at the chapter level cannot be split back apart. They are ADDED: the chapter's own
-overview, method, goals, mistakes and practice plan stay exactly where they were.
+it teaches (`teaches`), because the wizard teaches one concept at a time and
+blocks pooled at the chapter level cannot be split back apart. They are ADDED:
+the chapter's own overview, method, goals, mistakes and practice plan stay
+exactly where they were, and carry no `teaches` — they belong to no single
+concept.
 
 THE SAME BLOCK TYPE CARRIES ITS TEACHING IN THE SAME FIELDS. A class lesson
 writes a technique's method as steps and the enrichment writes it as `how_to`;
@@ -358,10 +360,13 @@ def _class_lesson_block(
         "type": CLASS_LESSON_BLOCK_TYPE[kind],
         "version": 1,
         "section": CLASS_LESSON_SECTION,
-        # Whose teaching this is. The wizard runs explain -> worked example -> try
-        # per concept, and it can only do that if each block says which concept it
-        # belongs to.
-        "concept_stable_key": concept_stable_key,
+        # Whose teaching this is. The consumer selects a concept's teaching by
+        # `teaches == concept stable_key`; a block that only hid the concept in
+        # its key left every concept with zero teaching steps. Same ruling as
+        # how_to carrying a technique's method: the producer supplies the field
+        # the consumer reads. Derived from the class-lesson concept this block
+        # was generated under — never guessed.
+        "teaches": concept_stable_key,
         "content": content,
         "provenance": provenance,
     }
@@ -406,19 +411,28 @@ def with_illustrations(
         arranged.append(block)
 
         for illustration in placed.get(str(block.get("key") or ""), []):
-            arranged.append(
-                {
-                    "key": illustration["key"],
-                    "type": ILLUSTRATION_BLOCK_TYPE,
-                    "version": 1,
-                    # The picture belongs to the same part of the lesson as the
-                    # teaching it draws, so it carries that section rather than
-                    # a section of its own.
-                    "section": block.get("section"),
-                    "content": illustration["content"],
-                    "provenance": illustration["provenance"],
-                }
-            )
+            picture = {
+                "key": illustration["key"],
+                "type": ILLUSTRATION_BLOCK_TYPE,
+                "version": 1,
+                # The picture belongs to the same part of the lesson as the
+                # teaching it draws, so it carries that section rather than
+                # a section of its own.
+                "section": block.get("section"),
+                "content": illustration["content"],
+                "provenance": illustration["provenance"],
+            }
+            # An illustration already names what it illustrates on the asset;
+            # when the block it follows teaches a concept, the picture teaches
+            # that concept too. Derived from the anchor — never guessed. A
+            # chapter-level picture with no concept on its anchor stays
+            # untagged, which is correct.
+            teaches = _text(illustration.get("teaches")) or _text(block.get("teaches"))
+
+            if teaches:
+                picture["teaches"] = teaches
+
+            arranged.append(picture)
 
     return {
         **document,

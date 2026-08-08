@@ -14,7 +14,8 @@ lesson. v2 carries what a classroom carries:
                        decoding, plan and annotations, the mistakes to avoid,
                        and where a concept has a class lesson, its goal,
                        techniques and worked examples, each block naming the
-                       concept it belongs to
+                       concept it teaches (`teaches`), with every declared
+                       concept covered once any class lesson is present
     concepts           the masterable abilities this lesson introduces. A
                        concept IS the objective: one entity, one statement,
                        authored once. It is also the schedulable card.
@@ -289,6 +290,8 @@ def _teaching_document_problems(document: Any, concept_keys: set[str]) -> list[s
     if not isinstance(document, dict):
         return ["teaching_document is missing"]
 
+    from teaching_document import CLASS_LESSON_SECTION
+
     problems: list[str] = []
     blocks = document.get("blocks") or []
 
@@ -299,6 +302,8 @@ def _teaching_document_problems(document: Any, concept_keys: set[str]) -> list[s
         problems.append("teaching_document names no generator_version")
 
     seen: set[str] = set()
+    taught: set[str] = set()
+    class_lessons_present = False
 
     for index, block in enumerate(blocks):
         path = f"teaching_document.blocks.{index}"
@@ -325,21 +330,49 @@ def _teaching_document_problems(document: Any, concept_keys: set[str]) -> list[s
         if block.get("position") != index:
             problems.append(f"{path}.position is {block.get('position')!r}, not {index}")
 
-        # A block may belong to ONE concept rather than to the chapter at large —
-        # a class lesson's blocks do. If it says so, the concept has to be one
-        # this package defines: teaching filed under a card that is not here is
-        # met by nobody, and the package would import without complaint.
-        if "concept_stable_key" in block:
-            concept = str(block.get("concept_stable_key") or "").strip()
+        # A class-lesson block teaches ONE concept. The consumer selects teaching
+        # by `teaches`; every such block must carry a valid one — optional was
+        # how a concept shipped with zero teaching steps and jumped to recall.
+        # Chapter-level blocks carry no teaches: a tag on core_method (or any
+        # other section) would let fabricated coverage disguise a missing class
+        # lesson, which is exactly the failure this check exists to catch.
+        section = str(block.get("section") or "")
+        is_class_lesson = section == CLASS_LESSON_SECTION
 
-            if not concept:
-                problems.append(f"{path}.concept_stable_key is empty")
+        if is_class_lesson:
+            class_lessons_present = True
+            concept = str(block.get("teaches") or "").strip()
+
+            if "teaches" not in block:
+                problems.append(f"{path}.teaches is missing")
+            elif not concept:
+                problems.append(f"{path}.teaches is empty")
             elif concept not in concept_keys:
                 problems.append(
                     f"{path} belongs to concept {concept!r}, which this package does not define"
                 )
+            else:
+                taught.add(concept)
+        elif "teaches" in block:
+            problems.append(
+                f"{path}.teaches is set on section {section!r}; only class_lesson blocks "
+                f"carry teaches, and chapter-level blocks must stay untagged"
+            )
 
         problems.extend(_provenance_problems(block.get("provenance"), path))
+
+    # Once class lessons exist, every declared concept needs teaching coverage.
+    # Partial coverage is the original failure: the uncovered concept jumps
+    # straight to recall.
+    if class_lessons_present:
+        uncovered = sorted(concept_keys - taught)
+
+        if uncovered:
+            problems.append(
+                "teaching_document has class lessons but no teaching for "
+                + ", ".join(uncovered)
+                + "; a concept with no teaching jumps straight to recall"
+            )
 
     return problems
 
