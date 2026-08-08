@@ -20,6 +20,11 @@ block carries its method in `how_to`. Nothing translated between them, so the
 import refused every technique block chapter 5 produced. The assertions below read
 the field the consumer reads, and hold it against the steps in the material.
 
+A CONCEPT'S TEACHING IS SELECTED BY `teaches`. The consumer picks a concept's
+blocks with `block.teaches == concept stable_key`. Putting the concept only in
+the block key left every concept with zero teaching steps. Class-lesson blocks
+carry `teaches`; chapter-level enrichment blocks do not.
+
 WHY A FIXTURE MAPPING FOR CHAPTER 5. Approval is a person reading generated
 content, and it is not this suite's to grant. Chapter 5's real draft stays
 unapproved in `manifests/drafts/` — three of its five concepts have no questions
@@ -156,15 +161,17 @@ check("sixteen worked examples become sixteen blocks",
       kinds.count("worked_example") == 16, str(kinds.count("worked_example")))
 check("each concept's goal becomes one block", kinds.count("goals") == 5, str(kinds.count("goals")))
 check("no block belongs to the chapter at large",
-      all(block["concept_stable_key"] for block in built))
+      all(block["teaches"] for block in built))
 check("a concept's blocks are its own",
-      all(block["key"].startswith(f"class_lesson.{block['concept_stable_key']}.")
+      all(block["key"].startswith(f"class_lesson.{block['teaches']}.")
           for block in built))
 check("and they arrive in the order they are taught: goal, then method, then examples",
       [kinds[index] for index in range(6)]
       == ["goals", "concept_explanation", "concept_explanation", "worked_example",
           "worked_example", "worked_example"],
       str(kinds[:6]))
+check("the consumer's field is teaches, not a name only RAG knows",
+      all("teaches" in block and "concept_stable_key" not in block for block in built))
 
 technique = next(block for block in built if block["type"] == "concept_explanation")
 
@@ -176,7 +183,7 @@ check("and nowhere else, so a reader has one place to look",
 check("each step keeps its name and its instruction, neither summarised away",
       technique["content"]["how_to"]
       == [f"{step['step']}: {step['detail']}"
-          for step in checked[built[0]["concept_stable_key"]]["techniques"][0]["steps"]],
+          for step in checked[built[0]["teaches"]]["techniques"][0]["steps"]],
       str(technique["content"]["how_to"])[:160])
 
 check("and the rest of what the contract asked for",
@@ -210,6 +217,37 @@ check("a worked example keeps its decoding, its plan and the teacher's annotatio
       and bool(example["content"]["annotations"]),
       str(sorted(example["content"])))
 
+# An illustration of a concept's teaching carries teaches too — derived from the
+# block it follows, never guessed. A chapter-level picture with no concept on its
+# anchor stays untagged (chapter 3's enrichment diagrams stay that way).
+picture_doc = td.with_illustrations(
+    {"blocks": [block for block in built if block["teaches"] == DECLARED[0]][:1]},
+    [
+        {
+            "key": "illustration.fixture",
+            "appears_after": built[0]["key"],
+            "content": {
+                "caption": "a picture",
+                "alt_text": "alt",
+                "asset_stable_key": "math5a:ch05:fixture",
+            },
+            "provenance": built[0]["provenance"],
+        }
+    ],
+)
+picture = next(block for block in picture_doc["blocks"] if block["type"] == "illustration")
+
+check("an illustration of a concept's teaching carries teaches too",
+      picture.get("teaches") == DECLARED[0], str(picture.get("teaches")))
+check("and a chapter-level picture with no concept on its anchor stays untagged",
+      "teaches" not in td.with_illustrations(
+          {"blocks": [{"key": "worked_examples.0", "section": "worked_examples",
+                       "type": "worked_example", "content": {}, "provenance": {}}]},
+          [{"key": "illustration.loose", "appears_after": "worked_examples.0",
+            "content": {"caption": "c", "alt_text": "a", "asset_stable_key": "x"},
+            "provenance": {}}],
+      )["blocks"][1])
+
 
 print("\nthe export reads them, and the package carries them under their concepts")
 
@@ -219,12 +257,17 @@ class_blocks = [block for block in blocks if block["section"] == td.CLASS_LESSON
 concept_keys = {concept["stable_key"] for concept in package["concepts"]}
 
 check("the package carries the class lessons of the concepts it declares",
-      {block["concept_stable_key"] for block in class_blocks} == concept_keys,
-      str(sorted({block["concept_stable_key"] for block in class_blocks})))
+      {block["teaches"] for block in class_blocks} == concept_keys,
+      str(sorted({block["teaches"] for block in class_blocks})))
 check("twelve blocks for two concepts: two goals, four techniques, six examples",
       len(class_blocks) == 12
       and [block["type"] for block in class_blocks].count("worked_example") == 6,
       str(len(class_blocks)))
+check("every concept has at least one block whose teaches equals its stable_key",
+      all(any(block.get("teaches") == key for block in class_blocks) for key in concept_keys),
+      str(sorted(concept_keys)))
+check("chapter-level blocks carry no teaches — they belong to no single concept",
+      all("teaches" not in block for block in blocks if block["section"] != td.CLASS_LESSON_SECTION))
 
 published = [block for block in class_blocks if block["type"] == "concept_explanation"]
 methods = [line for block in published for line in block["content"]["how_to"]]
@@ -301,11 +344,11 @@ one_blocks = [
 ]
 
 check("a concept nobody has run the transform stage for is silence, not a refusal",
-      {block["concept_stable_key"] for block in one_blocks} == {DECLARED[0]},
-      str(sorted({block["concept_stable_key"] for block in one_blocks})))
+      {block["teaches"] for block in one_blocks} == {DECLARED[0]},
+      str(sorted({block["teaches"] for block in one_blocks})))
 check("and the concept it was run for keeps everything it had, in the same place",
       one_blocks
-      == [block for block in class_blocks if block["concept_stable_key"] == DECLARED[0]],
+      == [block for block in class_blocks if block["teaches"] == DECLARED[0]],
       f"{len(one_blocks)} blocks")
 
 
@@ -367,7 +410,8 @@ check("chapter 3 has no class lessons to read",
 check("and exports at the fingerprint it has always exported at",
       chapter3["content_hash"] == CH3_HASH, chapter3["content_hash"][:12])
 check("no block in it belongs to a concept",
-      all("concept_stable_key" not in block for block in chapter3["teaching_document"]["blocks"]))
+      all("teaches" not in block and "concept_stable_key" not in block
+          for block in chapter3["teaching_document"]["blocks"]))
 check("looking for class lessons and finding none is the same as being told there are none",
       export3(class_lessons={})["content_hash"] == CH3_HASH)
 
@@ -491,17 +535,17 @@ check("a mapping that says a generator was named, with no name in it, is invalid
 print("\nand a block cannot belong to a concept the package does not carry")
 
 orphaned = copy(package)
-orphaned["teaching_document"]["blocks"][-1]["concept_stable_key"] = "math5a:ch05:not-a-concept"
+orphaned["teaching_document"]["blocks"][-1]["teaches"] = "math5a:ch05:not-a-concept"
 problems = lesson_package.structural_problems(orphaned)
 
 check("the package refuses it structurally",
       any("math5a:ch05:not-a-concept" in problem for problem in problems), str(problems[:2]))
 
 blank = copy(package)
-blank["teaching_document"]["blocks"][-1]["concept_stable_key"] = ""
+blank["teaching_document"]["blocks"][-1]["teaches"] = ""
 
 check("and a block that says it belongs to a concept must name one",
-      any("concept_stable_key is empty" in problem
+      any("teaches is empty" in problem
           for problem in lesson_package.structural_problems(blank)),
       str(lesson_package.structural_problems(blank)[:2]))
 

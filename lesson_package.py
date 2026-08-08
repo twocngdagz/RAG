@@ -325,15 +325,16 @@ def _teaching_document_problems(document: Any, concept_keys: set[str]) -> list[s
         if block.get("position") != index:
             problems.append(f"{path}.position is {block.get('position')!r}, not {index}")
 
-        # A block may belong to ONE concept rather than to the chapter at large —
-        # a class lesson's blocks do. If it says so, the concept has to be one
-        # this package defines: teaching filed under a card that is not here is
-        # met by nobody, and the package would import without complaint.
-        if "concept_stable_key" in block:
-            concept = str(block.get("concept_stable_key") or "").strip()
+        # A block may teach ONE concept rather than the chapter at large — a
+        # class lesson's blocks do. The consumer selects teaching by `teaches`;
+        # if the block says so, the concept has to be one this package defines:
+        # teaching filed under a card that is not here is met by nobody, and
+        # the package would import without complaint.
+        if "teaches" in block:
+            concept = str(block.get("teaches") or "").strip()
 
             if not concept:
-                problems.append(f"{path}.concept_stable_key is empty")
+                problems.append(f"{path}.teaches is empty")
             elif concept not in concept_keys:
                 problems.append(
                     f"{path} belongs to concept {concept!r}, which this package does not define"

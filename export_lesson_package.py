@@ -937,9 +937,9 @@ def _main(argv: list[str]) -> int:
     # export exactly like one that had none.
     carried = sorted(
         {
-            str(block.get("concept_stable_key") or "")
+            str(block.get("teaches") or "")
             for block in package["teaching_document"]["blocks"]
-            if block.get("concept_stable_key")
+            if block.get("teaches")
         }
     )
 
