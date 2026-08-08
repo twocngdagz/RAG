@@ -337,19 +337,14 @@ except enrichment_comparison.EnrichmentRemovedContent as error:
 check("teaching that arrived is teaching the fingerprint covers",
       plain["content_hash"] != package["content_hash"])
 
-one_concept = export5(lessons=only(CH5_LESSONS, DECLARED[:1]))
-one_blocks = [
-    block for block in one_concept["teaching_document"]["blocks"]
-    if block["section"] == td.CLASS_LESSON_SECTION
-]
-
-check("a concept nobody has run the transform stage for is silence, not a refusal",
-      {block["teaches"] for block in one_blocks} == {DECLARED[0]},
-      str(sorted({block["teaches"] for block in one_blocks})))
-check("and the concept it was run for keeps everything it had, in the same place",
-      one_blocks
-      == [block for block in class_blocks if block["teaches"] == DECLARED[0]],
-      f"{len(one_blocks)} blocks")
+try:
+    export5(lessons=only(CH5_LESSONS, DECLARED[:1]))
+    check("partial class-lesson coverage is refused, never shipped", False,
+          "a concept with no teaching would jump straight to recall")
+except ex.ExportRefused as error:
+    check("partial class-lesson coverage is refused, never shipped", True)
+    check("and the refusal names the concept that would jump to recall",
+          DECLARED[1] in str(error) and "no class lesson" in str(error), str(error)[:240])
 
 
 print("\nand the export finds them where the transform stage leaves them, unasked")
@@ -548,6 +543,29 @@ check("and a block that says it belongs to a concept must name one",
       any("teaches is empty" in problem
           for problem in lesson_package.structural_problems(blank)),
       str(lesson_package.structural_problems(blank)[:2]))
+
+untagged = copy(package)
+del untagged["teaching_document"]["blocks"][-1]["teaches"]
+
+check("a class-lesson block with no teaches is refused, never optional",
+      any("teaches is missing" in problem
+          for problem in lesson_package.structural_problems(untagged)),
+      str(lesson_package.structural_problems(untagged)[:2]))
+
+partial = copy(package)
+partial["teaching_document"]["blocks"] = [
+    {**block, "position": index}
+    for index, block in enumerate(
+        block for block in package["teaching_document"]["blocks"]
+        if block.get("teaches") != DECLARED[1]
+    )
+]
+partial_problems = lesson_package.structural_problems(partial)
+
+check("partial teaching coverage is refused structurally too",
+      any(DECLARED[1] in problem and "jumps straight to recall" in problem
+          for problem in partial_problems),
+      str(partial_problems[:3]))
 
 
 print("\n" + "=" * 58)
