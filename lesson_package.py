@@ -333,13 +333,14 @@ def _teaching_document_problems(document: Any, concept_keys: set[str]) -> list[s
         # A class-lesson block teaches ONE concept. The consumer selects teaching
         # by `teaches`; every such block must carry a valid one — optional was
         # how a concept shipped with zero teaching steps and jumped to recall.
+        # Chapter-level blocks carry no teaches: a tag on core_method (or any
+        # other section) would let fabricated coverage disguise a missing class
+        # lesson, which is exactly the failure this check exists to catch.
         section = str(block.get("section") or "")
         is_class_lesson = section == CLASS_LESSON_SECTION
 
         if is_class_lesson:
             class_lessons_present = True
-
-        if is_class_lesson or "teaches" in block:
             concept = str(block.get("teaches") or "").strip()
 
             if "teaches" not in block:
@@ -352,6 +353,11 @@ def _teaching_document_problems(document: Any, concept_keys: set[str]) -> list[s
                 )
             else:
                 taught.add(concept)
+        elif "teaches" in block:
+            problems.append(
+                f"{path}.teaches is set on section {section!r}; only class_lesson blocks "
+                f"carry teaches, and chapter-level blocks must stay untagged"
+            )
 
         problems.extend(_provenance_problems(block.get("provenance"), path))
 

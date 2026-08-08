@@ -567,6 +567,22 @@ check("partial teaching coverage is refused structurally too",
           for problem in partial_problems),
       str(partial_problems[:3]))
 
+disguised = copy(partial)
+core = next(
+    block for block in disguised["teaching_document"]["blocks"]
+    if block.get("section") == "core_method"
+)
+core["teaches"] = DECLARED[1]
+disguised_problems = lesson_package.structural_problems(disguised)
+
+check("a chapter-level teaches tag is refused, never counted as coverage",
+      any("only class_lesson blocks" in problem for problem in disguised_problems),
+      str(disguised_problems[:3]))
+check("and fabricated chapter-level tags do not disguise a missing class lesson",
+      any(DECLARED[1] in problem and "jumps straight to recall" in problem
+          for problem in disguised_problems),
+      str(disguised_problems[:3]))
+
 
 print("\n" + "=" * 58)
 print(f"{len(fails)} FAILED: {fails}" if fails else "class lessons cross, and nothing beside them moved")
